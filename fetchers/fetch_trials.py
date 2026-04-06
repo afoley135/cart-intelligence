@@ -60,37 +60,63 @@ OUTPUT_PATH = Path(__file__).parent.parent / "data" / "trials.json"
 # Heuristic — Claude can be used to improve this post-fetch if needed
 # ---------------------------------------------------------------------------
 
+# Only include signals that are unambiguous explicit mentions
 IN_VIVO_SIGNALS = [
-    "in vivo", "lentiviral vector", "lipid nanoparticle", "lnp",
-    "viral delivery", "pseudotyped", "fusogen", "systemic delivery",
-    "non-viral", "aav", "adeno-associated"
+    "in vivo car",
+    "in vivo chimeric antigen receptor",
+    "in vivo generated car",
+    "in vivo t cell",
+    "lentiviral vector car",
+    "lipid nanoparticle car",
+    "lnp-delivered car",
+    "non-viral car",
+    "systemic car delivery",
 ]
 
 EX_VIVO_SIGNALS = [
-    "ex vivo", "leukapheresis", "autologous", "allogeneic manufacturing",
-    "cell manufacturing", "transduced cells"
+    "ex vivo",
+    "leukapheresis",
+    "autologous car",
+    "allogeneic car",
+    "manufactured car",
+    "cell manufacturing",
 ]
 
 BISPECIFIC_SIGNALS = [
-    "bispecific", "t cell engager", "tce", "bite", "duobody",
-    "cd3 x", "x cd3"
+    "bispecific",
+    "t cell engager",
+    " tce ",
+    "bite ",
+    "duobody",
 ]
 
-CAR_NK_SIGNALS = ["car-nk", "car nk", "natural killer"]
+CAR_NK_SIGNALS = [
+    "car-nk",
+    "car nk cell",
+    "natural killer car",
+]
 
 
 def infer_modality(title: str, summary: str, interventions: list[str]) -> str:
     text = " ".join([title, summary] + interventions).lower()
+
+    # Bispecific and CAR-NK are usually explicitly named — keep these
     if any(s in text for s in BISPECIFIC_SIGNALS):
         return "Bispecific TCE"
     if any(s in text for s in CAR_NK_SIGNALS):
         return "CAR-NK"
-    if any(s in text for s in IN_VIVO_SIGNALS):
-        return "In vivo CAR-T"
-    if any(s in text for s in EX_VIVO_SIGNALS):
-        return "Ex vivo CAR-T"
-    return "CAR-T (unclassified)"
 
+    # Only assert in vivo / ex vivo if explicitly stated
+    is_in_vivo = any(s in text for s in IN_VIVO_SIGNALS)
+    is_ex_vivo = any(s in text for s in EX_VIVO_SIGNALS)
+
+    if is_in_vivo and not is_ex_vivo:
+        return "In vivo CAR-T"
+    if is_ex_vivo and not is_in_vivo:
+        return "Ex vivo CAR-T"
+
+    # Ambiguous or not enough signal — don't guess
+    return "Not reported"
 
 # ---------------------------------------------------------------------------
 # Fetch helpers
