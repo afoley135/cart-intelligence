@@ -60,11 +60,14 @@ Summary: {summary}
 PUB_PROMPT = """\
 You are a biotech competitive intelligence analyst specialising in cell therapy.
 
-Given the following publication, write a single punchy sentence (max 20 words)
-that captures the strategic "so what" for someone tracking the in vivo CAR-T space.
+Given the following publication abstract, write a single punchy sentence (max 20 words)
+capturing the strategic "so what" for someone tracking the in vivo CAR-T space.
 Focus on the key finding and why it matters competitively or clinically.
 
-Return ONLY the sentence. No preamble, no punctuation at start, no quotes.
+Rules:
+- Return ONLY the sentence, nothing else
+- No preamble, no sign-off, no offers to help
+- If the abstract is insufficient to draw a conclusion, return exactly: Abstract not available
 
 Title: {title}
 Journal: {journal}
@@ -117,17 +120,40 @@ def summarise_publications(pubs_data: dict) -> tuple[dict, int]:
     for pub in pubs_data.get("publications", []):
         if pub.get("sowhat"):
             continue
+
+        # Skip if no abstract available
+        abstract = (pub.get("abstract") or "").strip()
+        if not abstract or len(abstract) < 50:
+            pub["sowhat"] = "Abstract not available"
+            updated += 1
+            continue
+
         prompt = PUB_PROMPT.format(
             title=pub.get("title", ""),
             journal=pub.get("journal", ""),
             preprint=pub.get("preprint", False),
-            abstract=(pub.get("abstract", "") or "")[:800],
+            abstract=abstract[:800],
         )
         sowhat = generate_sowhat(prompt)
-        if sowhat:
+
+        # Catch any conversational/unhelpful responses
+        unhelpful_phrases = [
+            "i'd be happy",
+            "i would be happy",
+            "i'm unable",
+            "i am unable",
+            "i cannot access",
+            "i can't access",
+            "not able to access",
+            "please provide",
+        ]
+        if not sowhat or any(p in sowhat.lower() for p in unhelpful_phrases):
+            pub["sowhat"] = "Abstract not available"
+        else:
             pub["sowhat"] = sowhat
             updated += 1
             logging.info(f"  [{pub.get('pmid') or pub.get('doi', '')[:20]}] {sowhat}")
+
         time.sleep(RATE_LIMIT_DELAY)
     return pubs_data, updated
 
