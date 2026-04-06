@@ -1,232 +1,206 @@
 """
-fetch_publications.py
----------------------
-Fetches recent in vivo CAR-T publications from:
-  - PubMed via NCBI E-utilities API (peer-reviewed)
-  - bioRxiv via REST API (preprints)
+fetch_trials.py
+---------------
+Fetches in vivo CAR-T (and configurable modality) clinical trials from the
+ClinicalTrials.gov v2 API and writes structured JSON to data/trials.json.
 
-Writes structured JSON to data/publications.json.
-
-API docs:
-  PubMed:  https://www.ncbi.nlm.nih.gov/books/NBK25501/
-  bioRxiv: https://api.biorxiv.org/
-
-No API key required, but optionally set NCBI_API_KEY env var for
-higher rate limits (10 req/s vs 3 req/s).
+API docs: https://clinicaltrials.gov/data-api/api
+No API key required.
 """
 
 import json
-import os
 import time
 import logging
-import xml.etree.ElementTree as ET
 import requests
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# Configuration
+# Configuration — edit these to expand or narrow the search
 # ---------------------------------------------------------------------------
 
-# How many days back to look for new publications
-LOOKBACK_DAYS = 30
-
-# Max results per source
-PUBMED_MAX = 100
-BIORXIV_MAX = 50
-
-# PubMed search query — uses standard Entrez query syntax
-# Adjust MeSH terms / free text as needed
-PUBMED_QUERY = (
-    '("in vivo CAR-T"[tiab] OR "in vivo CAR T"[tiab] OR '
-    '"in vivo chimeric antigen receptor"[tiab] OR '
-    '"lentiviral CAR T in vivo"[tiab] OR '
-    '"lipid nanoparticle CAR"[tiab] OR '
-    '"non-viral CAR T"[tiab]) '
-    'AND ("last {days} days"[dp])'
-)
-
-# bioRxiv category to search within
-BIORXIV_CATEGORY = "immunology"
-BIORXIV_SEARCH_TERMS = [
+# Each entry is a separate API query. Results are deduplicated by NCT ID.
+QUERIES = [
     "in vivo CAR-T",
     "in vivo CAR T cell",
-    "lipid nanoparticle CAR",
+    "lentiviral CAR T in vivo",
+    "lipid nanoparticle CAR T",
+    "LNP CAR-T",
 ]
 
-NCBI_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
-BIORXIV_BASE = "https://api.biorxiv.org"
+# Optional: restrict to specific conditions (leave empty to include all)
+CONDITIONS = []  # e.g. ["lymphoma", "leukemia", "multiple myeloma"]
 
-OUTPUT_PATH = Path(__file__).parent.parent / "data" / "publications.json"
+# Fields to retrieve from the API
+FIELDS = [
+    "NCTId",
+    "BriefTitle",
+    "OfficialTitle",
+    "LeadSponsorName",
+    "OverallStatus",
+    "Phase",
+    "Condition",
+    "InterventionName",
+    "InterventionType",
+    "PrimaryOutcomeMeasure",
+    "StartDate",
+    "LastUpdatePostDate",
+    "LocationCountry",
+    "EnrollmentCount",
+    "BriefSummary",
+    "StudyType",
+]
 
-# Optional NCBI API key — get one free at https://www.ncbi.nlm.nih.gov/account/
-NCBI_API_KEY = os.environ.get("NCBI_API_KEY", "")
+BASE_URL = "https://clinicaltrials.gov/api/v2/studies"
+PAGE_SIZE = 100
+OUTPUT_PATH = Path(__file__).parent.parent / "data" / "trials.json"
+
+# ---------------------------------------------------------------------------
+# Modality inference
+# Heuristic — Claude can be used to improve this post-fetch if needed
+# ---------------------------------------------------------------------------
+
+IN_VIVO_SIGNALS = [
+    "in vivo", "lentiviral vector", "lipid nanoparticle", "lnp",
+    "viral delivery", "pseudotyped", "fusogen", "systemic delivery",
+    "non-viral", "aav", "adeno-associated"
+]
+
+EX_VIVO_SIGNALS = [
+    "ex vivo", "leukapheresis", "autologous", "allogeneic manufacturing",
+    "cell manufacturing", "transduced cells"
+]
+
+BISPECIFIC_SIGNALS = [
+    "bispecific", "t cell engager", "tce", "bite", "duobody",
+    "cd3 x", "x cd3"
+]
+
+CAR_NK_SIGNALS = ["car-nk", "car nk", "natural killer"]
+
+
+def infer_modality(title: str, summary: str, interventions: list[str]) -> str:
+    text = " ".join([title, summary] + interventions).lower()
+    if any(s in text for s in BISPECIFIC_SIGNALS):
+        return "Bispecific TCE"
+    if any(s in text for s in CAR_NK_SIGNALS):
+        return "CAR-NK"
+    if any(s in text for s in IN_VIVO_SIGNALS):
+        return "In vivo CAR-T"
+    if any(s in text for s in EX_VIVO_SIGNALS):
+        return "Ex vivo CAR-T"
+    return "CAR-T (unclassified)"
 
 
 # ---------------------------------------------------------------------------
-# PubMed helpers
+# Fetch helpers
 # ---------------------------------------------------------------------------
 
-def pubmed_search(query: str, max_results: int) -> list[str]:
-    """Return list of PMIDs matching query."""
+def fetch_page(query: str, page_token: str | None = None) -> dict:
     params = {
-        "db": "pubmed",
-        "term": query,
-        "retmax": max_results,
-        "retmode": "json",
-        "sort": "date",
+        "query.term": query,
+        "fields": ",".join(FIELDS),
+        "pageSize": PAGE_SIZE,
+        "format": "json",
     }
-    if NCBI_API_KEY:
-        params["api_key"] = NCBI_API_KEY
+    if page_token:
+        params["pageToken"] = page_token
+    if CONDITIONS:
+        params["query.cond"] = " OR ".join(CONDITIONS)
 
-    resp = requests.get(f"{NCBI_BASE}/esearch.fcgi", params=params, timeout=30)
+    resp = requests.get(BASE_URL, params=params, timeout=30)
     resp.raise_for_status()
-    return resp.json().get("esearchresult", {}).get("idlist", [])
+    return resp.json()
 
 
-def pubmed_fetch(pmids: list[str]) -> list[dict]:
-    """Fetch full records for a list of PMIDs."""
-    if not pmids:
-        return []
-
-    params = {
-        "db": "pubmed",
-        "id": ",".join(pmids),
-        "retmode": "xml",
-        "rettype": "abstract",
-    }
-    if NCBI_API_KEY:
-        params["api_key"] = NCBI_API_KEY
-
-    resp = requests.get(f"{NCBI_BASE}/efetch.fcgi", params=params, timeout=30)
-    resp.raise_for_status()
-
-    root = ET.fromstring(resp.text)
-    results = []
-
-    for article in root.findall(".//PubmedArticle"):
-        try:
-            results.append(parse_pubmed_article(article))
-        except Exception as e:
-            logging.warning(f"Failed to parse PubMed article: {e}")
-
-    return results
+def fetch_all_for_query(query: str) -> list[dict]:
+    studies = []
+    page_token = None
+    page = 1
+    while True:
+        logging.info(f"  Query '{query}' — page {page}")
+        data = fetch_page(query, page_token)
+        studies.extend(data.get("studies", []))
+        page_token = data.get("nextPageToken")
+        if not page_token:
+            break
+        page += 1
+        time.sleep(0.5)  # be polite to the API
+    return studies
 
 
-def parse_pubmed_article(article: ET.Element) -> dict:
-    def txt(path: str, default="") -> str:
-        el = article.find(path)
-        return "".join(el.itertext()).strip() if el is not None else default
+# ---------------------------------------------------------------------------
+# Parsing
+# ---------------------------------------------------------------------------
 
-    pmid = txt(".//PMID")
-    title = txt(".//ArticleTitle")
-    journal = txt(".//Journal/Title")
-    abstract = txt(".//AbstractText")
+def extract_field(proto: dict, *keys: str, default="") -> str:
+    """Walk nested protocol dict safely."""
+    node = proto
+    for k in keys:
+        if not isinstance(node, dict):
+            return default
+        node = node.get(k, {})
+    return node if isinstance(node, str) else default
 
-    # Authors
-    authors = []
-    for author in article.findall(".//Author"):
-        last = txt("LastName", "") if (ln := author.find("LastName")) is not None else ""
-        last = "".join(ln.itertext()).strip() if ln is not None else ""
-        initials = "".join((author.find("Initials") or ET.Element("x")).itertext()).strip()
-        if last:
-            authors.append(f"{last} {initials}".strip())
-    author_str = ", ".join(authors[:5])
-    if len(authors) > 5:
-        author_str += " et al."
 
-    # Publication date
-    pub_date = article.find(".//PubDate")
-    year = txt(".//PubDate/Year") or txt(".//PubDate/MedlineDate")[:4]
-    month = txt(".//PubDate/Month") or ""
-    date_str = f"{year}-{month}" if month else year
+def parse_study(raw: dict) -> dict:
+    proto = raw.get("protocolSection", {})
+    id_mod = proto.get("identificationModule", {})
+    status_mod = proto.get("statusModule", {})
+    sponsor_mod = proto.get("sponsorCollaboratorsModule", {})
+    desc_mod = proto.get("descriptionModule", {})
+    design_mod = proto.get("designModule", {})
+    conditions_mod = proto.get("conditionsModule", {})
+    interventions_mod = proto.get("armsInterventionsModule", {})
+    outcomes_mod = proto.get("outcomesModule", {})
+    contacts_mod = proto.get("contactsLocationsModule", {})
 
-    # DOI
-    doi = ""
-    for id_el in article.findall(".//ArticleId"):
-        if id_el.get("IdType") == "doi":
-            doi = id_el.text or ""
+    nct_id = id_mod.get("nctId", "")
+    title = id_mod.get("briefTitle", "") or id_mod.get("officialTitle", "")
+    sponsor = sponsor_mod.get("leadSponsor", {}).get("name", "")
+    status = status_mod.get("overallStatus", "")
+    phases = design_mod.get("phases", [])
+    phase = " / ".join(phases) if phases else "N/A"
+    conditions = conditions_mod.get("conditions", [])
+    summary = desc_mod.get("briefSummary", "")
+    enrollment = design_mod.get("enrollmentInfo", {}).get("count", "")
+    last_updated = status_mod.get("lastUpdatePostDateStruct", {}).get("date", "")
+    start_date = status_mod.get("startDateStruct", {}).get("date", "")
 
-    # MeSH terms
-    mesh = [
-        "".join(m.itertext()).strip()
-        for m in article.findall(".//MeshHeading/DescriptorName")
+    interventions = [
+        i.get("name", "") for i in
+        interventions_mod.get("interventions", [])
     ]
 
+    primary_outcomes = [
+        o.get("measure", "") for o in
+        outcomes_mod.get("primaryOutcomes", [])
+    ]
+
+    countries = list({
+        loc.get("country", "") for loc in
+        contacts_mod.get("locations", [])
+        if loc.get("country")
+    })
+
+    modality = infer_modality(title, summary, interventions)
+
     return {
-        "source": "pubmed",
-        "pmid": pmid,
+        "nct_id": nct_id,
         "title": title,
-        "journal": journal,
-        "authors": author_str,
-        "abstract": abstract,
-        "date": date_str,
-        "doi": doi,
-        "mesh_terms": mesh,
-        "preprint": False,
-        "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
-        "sowhat": None,  # filled in by AI summarizer step
-    }
-
-
-# ---------------------------------------------------------------------------
-# bioRxiv helpers
-# ---------------------------------------------------------------------------
-
-def biorxiv_fetch(term: str, lookback_days: int, max_results: int) -> list[dict]:
-    """Fetch preprints matching term from bioRxiv."""
-    end_date = datetime.now(timezone.utc).date()
-    start_date = end_date - timedelta(days=lookback_days)
-
-    url = (
-        f"{BIORXIV_BASE}/details/biorxiv/"
-        f"{start_date.isoformat()}/{end_date.isoformat()}/0/json"
-    )
-
-    resp = requests.get(url, timeout=30)
-    resp.raise_for_status()
-    data = resp.json()
-
-    collection = data.get("collection", [])
-    term_lower = term.lower()
-    results = []
-
-    for item in collection:
-        text = " ".join([
-            item.get("title", ""),
-            item.get("abstract", ""),
-            item.get("category", ""),
-        ]).lower()
-        if term_lower in text:
-            results.append(parse_biorxiv_item(item))
-        if len(results) >= max_results:
-            break
-
-    return results
-
-
-def parse_biorxiv_item(item: dict) -> dict:
-    doi = item.get("doi", "")
-    authors_raw = item.get("authors", "")
-    # bioRxiv returns "Last1 F1; Last2 F2; ..." format
-    author_list = [a.strip() for a in authors_raw.split(";") if a.strip()]
-    author_str = ", ".join(author_list[:5])
-    if len(author_list) > 5:
-        author_str += " et al."
-
-    return {
-        "source": "biorxiv",
-        "pmid": None,
-        "title": item.get("title", ""),
-        "journal": "bioRxiv (preprint)",
-        "authors": author_str,
-        "abstract": item.get("abstract", ""),
-        "date": item.get("date", ""),
-        "doi": doi,
-        "mesh_terms": [],
-        "preprint": True,
-        "url": f"https://doi.org/{doi}" if doi else "",
-        "sowhat": None,
+        "sponsor": sponsor,
+        "modality": modality,
+        "conditions": conditions,
+        "phase": phase,
+        "status": status,
+        "interventions": interventions,
+        "primary_outcomes": primary_outcomes,
+        "enrollment": enrollment,
+        "start_date": start_date,
+        "last_updated": last_updated,
+        "countries": countries,
+        "summary": summary,
+        "url": f"https://clinicaltrials.gov/study/{nct_id}",
     }
 
 
@@ -236,57 +210,37 @@ def parse_biorxiv_item(item: dict) -> dict:
 
 def run():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
-    logging.info("Starting publications fetch")
+    logging.info("Starting ClinicalTrials.gov fetch")
 
-    all_pubs: dict[str, dict] = {}  # keyed by DOI or PMID for deduplication
+    all_studies: dict[str, dict] = {}  # keyed by NCT ID for deduplication
 
-    # --- PubMed ---
-    logging.info("Fetching from PubMed...")
-    try:
-        query = PUBMED_QUERY.format(days=LOOKBACK_DAYS)
-        pmids = pubmed_search(query, PUBMED_MAX)
-        logging.info(f"  Found {len(pmids)} PMIDs")
-        if pmids:
-            time.sleep(0.4)  # respect rate limit
-            articles = pubmed_fetch(pmids)
-            for a in articles:
-                key = a["doi"] or f"pmid:{a['pmid']}"
-                if key not in all_pubs:
-                    all_pubs[key] = a
-            logging.info(f"  Parsed {len(articles)} PubMed articles")
-    except requests.RequestException as e:
-        logging.error(f"PubMed fetch failed: {e}")
-
-    # --- bioRxiv ---
-    logging.info("Fetching from bioRxiv...")
-    for term in BIORXIV_SEARCH_TERMS:
+    for query in QUERIES:
+        logging.info(f"Querying: '{query}'")
         try:
-            logging.info(f"  Searching bioRxiv for: '{term}'")
-            preprints = biorxiv_fetch(term, LOOKBACK_DAYS, BIORXIV_MAX)
-            for p in preprints:
-                key = p["doi"] or p["title"][:60]
-                if key not in all_pubs:
-                    all_pubs[key] = p
-            logging.info(f"  Found {len(preprints)} preprints")
-            time.sleep(0.5)
+            raw_studies = fetch_all_for_query(query)
+            for raw in raw_studies:
+                parsed = parse_study(raw)
+                nct = parsed["nct_id"]
+                if nct and nct not in all_studies:
+                    all_studies[nct] = parsed
         except requests.RequestException as e:
-            logging.error(f"bioRxiv fetch failed for '{term}': {e}")
+            logging.error(f"Failed query '{query}': {e}")
 
-    pubs_list = sorted(
-        all_pubs.values(),
-        key=lambda p: p["date"] or "",
-        reverse=True,
+    studies_list = sorted(
+        all_studies.values(),
+        key=lambda s: s["last_updated"] or "",
+        reverse=True
     )
 
     output = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "count": len(pubs_list),
-        "publications": pubs_list,
+        "count": len(studies_list),
+        "studies": studies_list,
     }
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(output, indent=2, ensure_ascii=False))
-    logging.info(f"Wrote {len(pubs_list)} publications to {OUTPUT_PATH}")
+    logging.info(f"Wrote {len(studies_list)} trials to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":
