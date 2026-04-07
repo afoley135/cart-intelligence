@@ -100,22 +100,21 @@ CAR_NK_SIGNALS = [
 def infer_modality(title: str, summary: str, interventions: list[str]) -> str:
     text = " ".join([title, summary] + interventions).lower()
 
-    # Bispecific and CAR-NK are usually explicitly named — keep these
+    # Bispecific and CAR-NK are usually explicitly named
     if any(s in text for s in BISPECIFIC_SIGNALS):
         return "Bispecific TCE"
     if any(s in text for s in CAR_NK_SIGNALS):
         return "CAR-NK"
 
-    # Only assert in vivo / ex vivo if explicitly stated
-    is_in_vivo = any(s in text for s in IN_VIVO_SIGNALS)
-    is_ex_vivo = any(s in text for s in EX_VIVO_SIGNALS)
-
-    if is_in_vivo and not is_ex_vivo:
+    # In vivo takes priority — if mentioned at all, classify as in vivo
+    # (ex vivo trials almost never reference in vivo CAR-T)
+    if any(s in text for s in IN_VIVO_SIGNALS):
         return "In vivo CAR-T"
-    if is_ex_vivo and not is_in_vivo:
+
+    # Only classify as ex vivo if no in vivo signal present
+    if any(s in text for s in EX_VIVO_SIGNALS):
         return "Ex vivo CAR-T"
 
-    # Ambiguous or not enough signal — don't guess
     return "Not reported"
 
 # ---------------------------------------------------------------------------
