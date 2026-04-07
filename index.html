@@ -16,11 +16,11 @@
     }
     body { font-family: var(--font); background: var(--bg-tertiary); color: var(--text); min-height: 100vh; }
     .shell { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem; }
-    .header { padding: 1.5rem 0 1.25rem; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-bottom: 0.5px solid var(--border-strong); margin-bottom: 1.5rem; }
-    .header-left h1 { font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
-    .header-left p { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
-    .live-dot { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-tertiary); }
-    .live-dot span { width: 7px; height: 7px; border-radius: 50%; background: #1D9E75; display: inline-block; }
+    .header { padding: 1.5rem 0 1.25rem; border-bottom: 0.5px solid var(--border-strong); margin-bottom: 1.5rem; }
+.header-left h1 { font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+.header-left p { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
+.live-dot { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-tertiary); margin-top: 6px; }
+.live-dot span { width: 7px; height: 7px; border-radius: 50%; background: #1D9E75; display: inline-block; }
     .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
     .metric { background: var(--bg); border-radius: var(--radius-md); border: 0.5px solid var(--border); padding: 1rem 1.125rem; }
     .metric-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
@@ -81,10 +81,12 @@
 <body>
 <div class="shell">
   <div class="header">
-    <div class="header-left">
-      <h1>In vivo CAR-T intelligence</h1>
-      <p>Competitive landscape tracker &middot; Clinical trials, publications, news &amp; patents</p>
-    </div>
+  <div class="header-left">
+    <h1>In vivo CAR-T intelligence</h1>
+    <p>Competitive landscape tracker &middot; Clinical trials, publications, news &amp; patents</p>
+    <div class="live-dot"><span></span><span id="last-updated">Loading...</span></div>
+  </div>
+</div>
     <div class="live-dot"><span></span><span id="last-updated">Loading...</span></div>
   </div>
   <div class="metrics">
