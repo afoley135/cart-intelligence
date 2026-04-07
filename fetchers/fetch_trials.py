@@ -36,6 +36,7 @@ FIELDS = [
     "NCTId",
     "BriefTitle",
     "OfficialTitle",
+    "DetailedDescription",
     "LeadSponsorName",
     "OverallStatus",
     "Phase",
@@ -181,13 +182,17 @@ def parse_study(raw: dict) -> dict:
     contacts_mod = proto.get("contactsLocationsModule", {})
 
     nct_id = id_mod.get("nctId", "")
-    title = id_mod.get("briefTitle", "") or id_mod.get("officialTitle", "")
-    sponsor = sponsor_mod.get("leadSponsor", {}).get("name", "")
-    status = status_mod.get("overallStatus", "")
-    phases = design_mod.get("phases", [])
-    phase = " / ".join(phases) if phases else "N/A"
-    conditions = conditions_mod.get("conditions", [])
-    summary = desc_mod.get("briefSummary", "")
+    brief_title    = id_mod.get("briefTitle", "") or ""
+official_title = id_mod.get("officialTitle", "") or ""
+title          = brief_title or official_title
+sponsor        = sponsor_mod.get("leadSponsor", {}).get("name", "")
+status         = status_mod.get("overallStatus", "")
+phases         = design_mod.get("phases", [])
+phase          = phases
+conditions     = conditions_mod.get("conditions", [])
+brief_summary  = desc_mod.get("briefSummary", "") or ""
+detailed_desc  = desc_mod.get("detailedDescription", "") or ""
+summary        = brief_summary or detailed_desc
     enrollment = design_mod.get("enrollmentInfo", {}).get("count", "")
     last_updated = status_mod.get("lastUpdatePostDateStruct", {}).get("date", "")
     start_date = status_mod.get("startDateStruct", {}).get("date", "")
@@ -208,7 +213,11 @@ def parse_study(raw: dict) -> dict:
         if loc.get("country")
     })
 
-    modality = infer_modality(title, summary, interventions)
+    modality = infer_modality(
+    brief_title + " " + official_title + " " + detailed_desc,
+    summary,
+    interventions
+)
 
     return {
         "nct_id": nct_id,
