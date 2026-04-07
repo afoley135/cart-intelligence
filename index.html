@@ -182,10 +182,10 @@ async function loadData(){
   }
 }
 
-function isWatchlisted(sponsor){
-  if(!sponsor)return false;
-  const s=sponsor.toLowerCase();
-  return WATCHLIST.some(w=>s.includes(w)||w.includes(s.split(' ')[0]));
+function isWatchlisted(sponsor) {
+  if (!sponsor) return false;
+  const s = sponsor.toLowerCase();
+  return WATCHLIST.some(w => s.includes(w));
 }
 
 function updateMetrics(){
