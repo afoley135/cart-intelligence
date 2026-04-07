@@ -183,16 +183,16 @@ def parse_study(raw: dict) -> dict:
 
     nct_id = id_mod.get("nctId", "")
     brief_title    = id_mod.get("briefTitle", "") or ""
-official_title = id_mod.get("officialTitle", "") or ""
-title          = brief_title or official_title
-sponsor        = sponsor_mod.get("leadSponsor", {}).get("name", "")
-status         = status_mod.get("overallStatus", "")
-phases         = design_mod.get("phases", [])
-phase          = phases
-conditions     = conditions_mod.get("conditions", [])
-brief_summary  = desc_mod.get("briefSummary", "") or ""
-detailed_desc  = desc_mod.get("detailedDescription", "") or ""
-summary        = brief_summary or detailed_desc
+    official_title = id_mod.get("officialTitle", "") or ""
+    title          = brief_title or official_title
+    sponsor        = sponsor_mod.get("leadSponsor", {}).get("name", "")
+    status         = status_mod.get("overallStatus", "")
+    phases         = design_mod.get("phases", [])
+    phase          = phases
+    conditions     = conditions_mod.get("conditions", [])
+    brief_summary  = desc_mod.get("briefSummary", "") or ""
+    detailed_desc  = desc_mod.get("detailedDescription", "") or ""
+    summary        = brief_summary or detailed_desc
     enrollment = design_mod.get("enrollmentInfo", {}).get("count", "")
     last_updated = status_mod.get("lastUpdatePostDateStruct", {}).get("date", "")
     start_date = status_mod.get("startDateStruct", {}).get("date", "")
