@@ -17,10 +17,10 @@
     body { font-family: var(--font); background: var(--bg-tertiary); color: var(--text); min-height: 100vh; }
     .shell { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem; }
     .header { padding: 1.5rem 0 1.25rem; border-bottom: 0.5px solid var(--border-strong); margin-bottom: 1.5rem; }
-.header-left h1 { font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
-.header-left p { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
-.live-dot { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-tertiary); white-space: nowrap; }
-.live-dot::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #1D9E75; display: inline-block; flex-shrink: 0; margin-right: 6px; }
+    .header h1 { font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+    .header p { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
+    .live-dot { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-tertiary); margin-top: 6px; white-space: nowrap; }
+    .live-dot::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #1D9E75; display: inline-block; flex-shrink: 0; }
     .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
     .metric { background: var(--bg); border-radius: var(--radius-md); border: 0.5px solid var(--border); padding: 1rem 1.125rem; }
     .metric-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
@@ -81,15 +81,16 @@
 <body>
 <div class="shell">
   <div class="header">
-  <div class="header-left">
     <h1>In vivo CAR-T intelligence</h1>
     <p>Competitive landscape tracker &middot; Clinical trials, publications, news &amp; patents</p>
-    <div class="live-dot" style="margin-top: 6px;"><span id="last-updated">Loading...</span></div>
+    <div class="live-dot"><span id="last-updated">Loading...</span></div>
+  </div>
   <div class="metrics">
     <div class="metric"><div class="metric-label">Trials tracked</div><div class="metric-value" id="m-trials">—</div><div class="metric-sub">from ClinicalTrials.gov</div></div>
     <div class="metric"><div class="metric-label">In vivo CAR-T</div><div class="metric-value" id="m-invivo">—</div><div class="metric-sub">confirmed modality</div></div>
     <div class="metric"><div class="metric-label">Watchlist trials</div><div class="metric-value" id="m-watchlist">—</div><div class="metric-sub">from competitive set</div></div>
     <div class="metric"><div class="metric-label">Publications</div><div class="metric-value" id="m-pubs">—</div><div class="metric-sub">PubMed + bioRxiv</div></div>
+    <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
   </div>
   <div class="tabs">
     <div class="tab active" onclick="switchTab('trials')">Clinical trials</div>
@@ -97,6 +98,7 @@
     <div class="tab" onclick="switchTab('news')">News</div>
     <div class="tab" onclick="switchTab('patents')">Patents</div>
   </div>
+
   <div id="pane-trials" class="pane active">
     <div class="filters">
       <input type="text" id="trial-search" placeholder="Search sponsor, condition..." oninput="filterTrials()" />
@@ -131,6 +133,7 @@
       </table>
     </div>
   </div>
+
   <div id="pane-pubs" class="pane">
     <div class="filters">
       <input type="text" id="pub-search" placeholder="Search title, authors, journal..." oninput="filterPubs()" />
@@ -142,13 +145,18 @@
     </div>
     <div class="card-feed" id="pub-list"><div class="state-msg">Loading publications...</div></div>
   </div>
+
   <div id="pane-news" class="pane">
-    <div class="placeholder">
-      <div class="placeholder-icon">📰</div>
-      <h3>News feed coming soon</h3>
-      <p>Automated news fetching from industry sources (BioPharma Dive, STAT News, Fierce Biotech, Endpoints) is planned for the next pipeline phase.</p>
+    <div class="filters">
+      <input type="text" id="news-search" placeholder="Search headline, source..." oninput="filterNews()" />
+      <select id="news-source" onchange="filterNews()">
+        <option value="">All sources</option>
+      </select>
+      <span class="filter-count" id="news-count"></span>
     </div>
+    <div class="card-feed" id="news-list"><div class="state-msg">Loading news...</div></div>
   </div>
+
   <div id="pane-patents" class="pane">
     <div class="placeholder">
       <div class="placeholder-icon">📄</div>
@@ -157,35 +165,45 @@
     </div>
   </div>
 </div>
+
 <script>
-let TRIALS=[],PUBS=[],WATCHLIST=[],watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],WATCHLIST=[],watchlistOnly=false;
 
 async function loadData(){
   try{
-    const[tR,pR,wR]=await Promise.all([fetch('data/trials.json'),fetch('data/publications.json'),fetch('watchlist.json')]);
+    const[tR,pR,nR,wR]=await Promise.all([
+      fetch('data/trials.json'),
+      fetch('data/publications.json'),
+      fetch('data/news.json'),
+      fetch('watchlist.json'),
+    ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
-    TRIALS=tD.studies||[];PUBS=pD.publications||[];
-    WATCHLIST=(wD.companies||[]).map(c=>c.toLowerCase());
+    TRIALS=tD.studies||[];PUBS=pD.publications||[];WATCHLIST=(wD.companies||[]).map(c=>c.toLowerCase());
+
+    // news.json may not exist yet on first run
+    try { const nD=await nR.json(); NEWS=nD.news||[]; } catch(e){ NEWS=[]; }
+
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
-      const d = latest;
-const dateStr = d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-const hours = String(d.getUTCHours()).padStart(2,'0');
-const mins = String(d.getUTCMinutes()).padStart(2,'0');
-document.getElementById('last-updated').textContent = `Last updated: ${dateStr} · ${hours}:${mins} UTC`;
+      const d=latest;
+      const dateStr=d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      const hours=String(d.getUTCHours()).padStart(2,'0');
+      const mins=String(d.getUTCMinutes()).padStart(2,'0');
+      document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${hours}:${mins} UTC`;
     }
-    updateMetrics();filterTrials();renderPubs(PUBS);
+
+    updateMetrics();filterTrials();renderPubs(PUBS);populateNewsSources();filterNews();
   }catch(e){
     console.error('Failed to load data:',e);
     document.getElementById('trial-body').innerHTML='<tr><td colspan="8" class="state-msg">Failed to load data. If running locally, serve via a local server.</td></tr>';
   }
 }
 
-function isWatchlisted(sponsor) {
-  if (!sponsor) return false;
-  const s = sponsor.toLowerCase();
-  return WATCHLIST.some(w => s.includes(w));
+function isWatchlisted(sponsor){
+  if(!sponsor)return false;
+  const s=sponsor.toLowerCase();
+  return WATCHLIST.some(w=>s.includes(w));
 }
 
 function updateMetrics(){
@@ -193,6 +211,7 @@ function updateMetrics(){
   document.getElementById('m-invivo').textContent=TRIALS.filter(t=>t.modality==='In vivo CAR-T').length;
   document.getElementById('m-watchlist').textContent=TRIALS.filter(t=>isWatchlisted(t.sponsor)).length;
   document.getElementById('m-pubs').textContent=PUBS.length;
+  document.getElementById('m-news').textContent=NEWS.length;
 }
 
 function modalityBadge(m){
@@ -294,6 +313,51 @@ function filterPubs(){
     return(!q||text.includes(q))&&matchType;
   });
   renderPubs(filtered);
+}
+
+function populateNewsSources(){
+  const sources=[...new Set(NEWS.map(n=>n.source).filter(Boolean))].sort();
+  const sel=document.getElementById('news-source');
+  sources.forEach(s=>{
+    const opt=document.createElement('option');
+    opt.value=s; opt.textContent=s;
+    sel.appendChild(opt);
+  });
+}
+
+function renderNews(data){
+  const list=document.getElementById('news-list');
+  document.getElementById('news-count').textContent=`${data.length} item${data.length!==1?'s':''}`;
+  if(!data.length){
+    list.innerHTML='<div class="state-msg">No news items found. The news feed will populate after the next pipeline run.</div>';
+    return;
+  }
+  list.innerHTML=data.map(n=>{
+    const sowhat=n.sowhat&&n.sowhat!=='Summary not available'
+      ?`<div class="card-sowhat">${escHtml(n.sowhat)}</div>`
+      :'';
+    const newsUrl=n.url?`<a class="ext" href="${escHtml(n.url)}" target="_blank" rel="noopener">Read &rarr;</a>`:'';
+    return`<div class="card">
+      <div class="card-top">
+        <span class="card-source">${escHtml(n.source||'')}</span>
+        <span class="card-date">${escHtml(n.date||'')}</span>
+        ${newsUrl}
+      </div>
+      <div class="card-title">${escHtml(n.title||'')}</div>
+      ${sowhat}
+      ${n.summary?`<div class="card-body">${escHtml(n.summary)}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+function filterNews(){
+  const q=document.getElementById('news-search').value.toLowerCase();
+  const source=document.getElementById('news-source').value;
+  const filtered=NEWS.filter(n=>{
+    const text=[n.title,n.summary,n.source].join(' ').toLowerCase();
+    return(!q||text.includes(q))&&(!source||n.source===source);
+  });
+  renderNews(filtered);
 }
 
 function escHtml(str){
