@@ -2,14 +2,14 @@
 summarize.py
 ------------
 Reads data/trials.json, data/publications.json, and data/news.json,
-calls the Anthropic API to generate a "so what" one-liner for each new
-item, and writes the result back to the same files.
+calls the Anthropic API to generate:
+  - "so what" one-liners for trials, publications, and news
+  - category labels for publications
+  - asset names for watchlist company trials
 
-Designed to be run AFTER the fetch scripts. Skips items that already have
-a sowhat value, so re-runs are idempotent and API calls are minimised.
+Idempotent — skips items that already have values set.
 
 Requires: ANTHROPIC_API_KEY environment variable
-Install:  pip install anthropic
 """
 
 import json
@@ -24,14 +24,23 @@ import anthropic
 # Configuration
 # ---------------------------------------------------------------------------
 
-DATA_DIR = Path(__file__).parent.parent / "data"
-TRIALS_PATH = DATA_DIR / "trials.json"
-PUBS_PATH   = DATA_DIR / "publications.json"
-NEWS_PATH   = DATA_DIR / "news.json"
+DATA_DIR      = Path(__file__).parent.parent / "data"
+TRIALS_PATH   = DATA_DIR / "trials.json"
+PUBS_PATH     = DATA_DIR / "publications.json"
+NEWS_PATH     = DATA_DIR / "news.json"
+WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
 
-MODEL = "claude-haiku-4-5-20251001"
-MAX_TOKENS = 120
+MODEL            = "claude-haiku-4-5-20251001"
+MAX_TOKENS       = 120
 RATE_LIMIT_DELAY = 0.3
+
+VALID_CATEGORIES = {
+    "Clinical data",
+    "Preclinical data",
+    "Manufacturing / process",
+    "Binder optimization",
+    "Review article",
+}
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
@@ -45,8 +54,6 @@ You are a biotech competitive intelligence analyst specialising in cell therapy.
 
 Given the following clinical trial, write a single punchy sentence (max 20 words)
 that captures the strategic "so what" for someone tracking the in vivo CAR-T space.
-Focus on what makes this trial notable: novel delivery, first-in-class target,
-non-oncology indication, key sponsor, or unusual design.
 
 Rules:
 - Return ONLY the sentence, nothing else
@@ -60,21 +67,52 @@ Phase: {phase}
 Summary: {summary}
 """
 
-PUB_PROMPT = """\
+ASSET_NAME_PROMPT = """\
+Extract the drug/asset name from this clinical trial record.
+The asset name is typically a alphanumeric code like "KLN-1010", "UB-VV111", "CTX131", "CABA-201" etc.
+
+Rules:
+- Return ONLY the asset name, nothing else
+- If multiple assets are listed, return the primary one
+- If no clear asset name exists, return: Not reported
+- Do not return generic terms like "CAR-T cells" or "lentiviral vector"
+
+Title: {title}
+Interventions: {interventions}
+Summary: {summary}
+"""
+
+PUB_SOWHAT_PROMPT = """\
 You are a biotech competitive intelligence analyst specialising in cell therapy.
 
 Given the following publication abstract, write a single punchy sentence (max 20 words)
 capturing the strategic "so what" for someone tracking the in vivo CAR-T space.
-Focus on the key finding and why it matters competitively or clinically.
 
 Rules:
 - Return ONLY the sentence, nothing else
 - No preamble, no sign-off, no offers to help
-- If the abstract is insufficient to draw a conclusion, return exactly: Abstract not available
+- If the abstract is insufficient, return exactly: Abstract not available
 
 Title: {title}
 Journal: {journal}
 Preprint: {preprint}
+Abstract: {abstract}
+"""
+
+PUB_CATEGORY_PROMPT = """\
+Classify the following publication into exactly one of these five categories:
+
+  Clinical data               - Reports human trial results, patient outcomes, safety/efficacy data
+  Preclinical data            - Reports in vitro or animal study results (mouse, NHP, organoids etc.)
+  Manufacturing / process     - Focuses on production methods, delivery vectors, LNP formulation, scale-up
+  Binder optimization         - Focuses on CAR construct design, scFv/nanobody engineering, target binding
+  Review article              - Review, perspective, commentary, or meta-analysis with no new primary data
+
+Rules:
+- Return ONLY the category name, exactly as written above
+- No preamble, no explanation, no punctuation
+
+Title: {title}
 Abstract: {abstract}
 """
 
@@ -83,8 +121,6 @@ You are a biotech competitive intelligence analyst specialising in cell therapy.
 
 Given the following news headline and summary, write a single punchy sentence (max 20 words)
 capturing the strategic "so what" for someone tracking the in vivo CAR-T space.
-Focus on competitive implications: funding, clinical data, partnerships, regulatory events,
-or key hires.
 
 Rules:
 - Return ONLY the sentence, nothing else
@@ -98,14 +134,13 @@ Summary: {summary}
 
 
 # ---------------------------------------------------------------------------
-# Core summarisation helper
+# Core helpers
 # ---------------------------------------------------------------------------
 
-def generate_sowhat(prompt: str) -> str:
+def call_api(prompt: str, max_tokens: int = MAX_TOKENS) -> str:
     try:
         msg = client.messages.create(
-            model=MODEL,
-            max_tokens=MAX_TOKENS,
+            model=MODEL, max_tokens=max_tokens,
             messages=[{"role": "user", "content": prompt}],
         )
         return msg.content[0].text.strip()
@@ -123,56 +158,104 @@ def is_unhelpful(text: str) -> bool:
     return not text or any(p in text.lower() for p in UNHELPFUL_PHRASES)
 
 
+def load_watchlist() -> list[str]:
+    try:
+        data = json.loads(WATCHLIST_PATH.read_text())
+        return [c.lower() for c in data.get("companies", [])]
+    except Exception:
+        return []
+
+
+def is_watchlisted(sponsor: str, watchlist: list[str]) -> bool:
+    if not sponsor:
+        return False
+    s = sponsor.lower()
+    return any(w in s for w in watchlist)
+
+
 # ---------------------------------------------------------------------------
 # Per-source summarisation
 # ---------------------------------------------------------------------------
 
-def summarise_trials(trials_data: dict) -> tuple[dict, int]:
+def summarise_trials(trials_data: dict, watchlist: list[str]) -> tuple[dict, int]:
     updated = 0
     for trial in trials_data.get("studies", []):
-        if trial.get("sowhat"):
+        on_watchlist = is_watchlisted(trial.get("sponsor", ""), watchlist)
+        needs_sowhat = not trial.get("sowhat")
+        needs_asset  = on_watchlist and not trial.get("asset_name")
+
+        if not needs_sowhat and not needs_asset:
             continue
-        prompt = TRIAL_PROMPT.format(
-            title=trial.get("title", ""),
-            sponsor=trial.get("sponsor", ""),
-            modality=trial.get("modality", ""),
-            conditions=", ".join(trial.get("conditions", [])),
-            phase=trial.get("phase", ""),
-            summary=(trial.get("summary", "") or "")[:600],
-        )
-        sowhat = generate_sowhat(prompt)
-        if not is_unhelpful(sowhat):
-            trial["sowhat"] = sowhat
-            updated += 1
-            logging.info(f"  [{trial.get('nct_id')}] {sowhat}")
-        time.sleep(RATE_LIMIT_DELAY)
+
+        if needs_sowhat:
+            prompt = TRIAL_PROMPT.format(
+                title=trial.get("title", ""),
+                sponsor=trial.get("sponsor", ""),
+                modality=trial.get("modality", ""),
+                conditions=", ".join(trial.get("conditions", [])),
+                phase=trial.get("phase", ""),
+                summary=(trial.get("summary", "") or "")[:600],
+            )
+            sowhat = call_api(prompt)
+            if not is_unhelpful(sowhat):
+                trial["sowhat"] = sowhat
+            time.sleep(RATE_LIMIT_DELAY)
+
+        if needs_asset:
+            prompt = ASSET_NAME_PROMPT.format(
+                title=trial.get("title", ""),
+                interventions=", ".join(trial.get("interventions", [])),
+                summary=(trial.get("summary", "") or "")[:400],
+            )
+            asset = call_api(prompt, max_tokens=40)
+            trial["asset_name"] = asset if asset and asset != "Not reported" else None
+            time.sleep(RATE_LIMIT_DELAY)
+
+        updated += 1
+        logging.info(f"  [{trial.get('nct_id')}] {trial.get('sowhat','')} | asset: {trial.get('asset_name','—')}")
+
     return trials_data, updated
 
 
 def summarise_publications(pubs_data: dict) -> tuple[dict, int]:
     updated = 0
     for pub in pubs_data.get("publications", []):
-        if pub.get("sowhat"):
-            continue
         abstract = (pub.get("abstract") or "").strip()
+        needs_sowhat   = not pub.get("sowhat")
+        needs_category = not pub.get("category")
+
+        if not needs_sowhat and not needs_category:
+            continue
+
         if not abstract or len(abstract) < 50:
-            pub["sowhat"] = "Abstract not available"
+            if needs_sowhat:   pub["sowhat"]   = "Abstract not available"
+            if needs_category: pub["category"] = None
             updated += 1
             continue
-        prompt = PUB_PROMPT.format(
-            title=pub.get("title", ""),
-            journal=pub.get("journal", ""),
-            preprint=pub.get("preprint", False),
-            abstract=abstract[:800],
-        )
-        sowhat = generate_sowhat(prompt)
-        if is_unhelpful(sowhat):
-            pub["sowhat"] = "Abstract not available"
-        else:
-            pub["sowhat"] = sowhat
-            updated += 1
-            logging.info(f"  [{pub.get('pmid') or pub.get('doi', '')[:20]}] {sowhat}")
-        time.sleep(RATE_LIMIT_DELAY)
+
+        if needs_sowhat:
+            prompt = PUB_SOWHAT_PROMPT.format(
+                title=pub.get("title", ""),
+                journal=pub.get("journal", ""),
+                preprint=pub.get("preprint", False),
+                abstract=abstract[:800],
+            )
+            sowhat = call_api(prompt)
+            pub["sowhat"] = "Abstract not available" if is_unhelpful(sowhat) else sowhat
+            time.sleep(RATE_LIMIT_DELAY)
+
+        if needs_category:
+            prompt = PUB_CATEGORY_PROMPT.format(
+                title=pub.get("title", ""),
+                abstract=abstract[:800],
+            )
+            result = call_api(prompt, max_tokens=40)
+            pub["category"] = result if result in VALID_CATEGORIES else None
+            time.sleep(RATE_LIMIT_DELAY)
+
+        updated += 1
+        logging.info(f"  [{pub.get('pmid') or pub.get('doi', '')[:20]}] {pub.get('sowhat','')} [{pub.get('category','')}]")
+
     return pubs_data, updated
 
 
@@ -191,7 +274,7 @@ def summarise_news(news_data: dict) -> tuple[dict, int]:
             title=item.get("title", ""),
             summary=summary[:600],
         )
-        sowhat = generate_sowhat(prompt)
+        sowhat = call_api(prompt)
         if is_unhelpful(sowhat):
             item["sowhat"] = "Summary not available"
         else:
@@ -210,12 +293,15 @@ def run():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
     logging.info("Starting AI summarisation pass")
 
+    watchlist = load_watchlist()
+    logging.info(f"Loaded {len(watchlist)} watchlist companies")
+
     if TRIALS_PATH.exists():
         logging.info("Summarising trials...")
         data = json.loads(TRIALS_PATH.read_text())
-        data, n = summarise_trials(data)
+        data, n = summarise_trials(data, watchlist)
         TRIALS_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False))
-        logging.info(f"  Added {n} new trial summaries")
+        logging.info(f"  Processed {n} trials")
     else:
         logging.warning(f"Trials file not found: {TRIALS_PATH}")
 
@@ -224,7 +310,7 @@ def run():
         data = json.loads(PUBS_PATH.read_text())
         data, n = summarise_publications(data)
         PUBS_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False))
-        logging.info(f"  Added {n} new publication summaries")
+        logging.info(f"  Processed {n} publications")
     else:
         logging.warning(f"Publications file not found: {PUBS_PATH}")
 
@@ -233,7 +319,7 @@ def run():
         data = json.loads(NEWS_PATH.read_text())
         data, n = summarise_news(data)
         NEWS_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False))
-        logging.info(f"  Added {n} new news summaries")
+        logging.info(f"  Processed {n} news items")
     else:
         logging.warning(f"News file not found: {NEWS_PATH}")
 
