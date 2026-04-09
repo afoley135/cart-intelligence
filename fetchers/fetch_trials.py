@@ -309,6 +309,16 @@ def run():
         except Exception as e:
             logging.warning(f"Could not preserve existing data: {e}")
 
+    # Exclude trials last updated more than 2 years ago
+    from datetime import timedelta
+    cutoff_date = (datetime.now(timezone.utc) - timedelta(days=730)).strftime("%Y-%m-%d")
+    before_filter = len(all_studies)
+    all_studies = {
+        nct: s for nct, s in all_studies.items()
+        if (s.get("last_updated") or "") >= cutoff_date
+    }
+    logging.info(f"  Excluded {before_filter - len(all_studies)} trials last updated before {cutoff_date}")
+
     studies_list = sorted(
         all_studies.values(),
         key=lambda s: s["last_updated"] or "",
