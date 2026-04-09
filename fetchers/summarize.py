@@ -24,10 +24,11 @@ import anthropic
 # Configuration
 # ---------------------------------------------------------------------------
 
-DATA_DIR      = Path(__file__).parent.parent / "data"
-TRIALS_PATH   = DATA_DIR / "trials.json"
-PUBS_PATH     = DATA_DIR / "publications.json"
-NEWS_PATH     = DATA_DIR / "news.json"
+DATA_DIR        = Path(__file__).parent.parent / "data"
+TRIALS_PATH     = DATA_DIR / "trials.json"
+PUBS_PATH       = DATA_DIR / "publications.json"
+NEWS_PATH       = DATA_DIR / "news.json"
+ABSTRACTS_PATH  = DATA_DIR / "abstracts.json"
 WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
 
 MODEL            = "claude-haiku-4-5-20251001"
