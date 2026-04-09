@@ -325,6 +325,11 @@ def run():
         reverse=True,
     )
 
+    # Safety guard — never overwrite with empty results
+    if not studies_list:
+        logging.error("Fetch returned zero studies — aborting write to protect existing data")
+        return
+
     output = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),
         "count":      len(studies_list),
