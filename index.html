@@ -129,7 +129,7 @@
     /* Slide-out panel */
     .panel-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.25); z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
     .panel-overlay.open { opacity: 1; pointer-events: all; }
-    .panel { position: fixed; top: 0; right: 0; bottom: 0; width: 520px; max-width: 95vw; background: var(--bg); border-left: 0.5px solid var(--border-strong); z-index: 101; transform: translateX(100%); transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; padding: 1.5rem; }
+    .panel { position: fixed; top: 0; right: 0; bottom: 0; width: 680px; max-width: 96vw; background: var(--bg); border-left: 0.5px solid var(--border-strong); z-index: 101; transform: translateX(100%); transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; padding: 1.5rem; }
     .panel.open { transform: translateX(0); }
     .panel-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-secondary); padding: 4px 8px; border-radius: var(--radius-sm); }
     .panel-close:hover { background: var(--bg-secondary); }
@@ -389,7 +389,7 @@ function renderTrials(data){
       <td>${statusBadge(t.status)}</td>
       <td style="font-size:12px;white-space:nowrap;color:var(--text-secondary)">${escHtml(geo(t.countries))}</td>
       <td class="summary-cell"><div class="summary-text">${escHtml(summary||'—')}</div></td>
-      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,10)}</td>
+      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,7)}</td>
     </tr>`;
   }).join('');
 }
