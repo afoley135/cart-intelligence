@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-04-09T20:37:53.456182+00:00",
+  "fetched_at": "2026-04-09T20:58:41.022026+00:00",
   "count": 283,
   "studies": [
     {
@@ -32,7 +32,7 @@
       "url": "https://clinicaltrials.gov/study/NCT06801119",
       "asset_name": "HN2301",
       "sowhat": "Chinese biotech tests cell therapy in autoimmune diseases, signaling CAR-T expansion beyond oncology into inflammatory indications.",
-      "ai_modality": "In vivo CAR-T — LNP"
+      "ai_modality": "Not reported"
     },
     {
       "nct_id": "NCT07319676",
@@ -629,7 +629,7 @@
       "url": "https://clinicaltrials.gov/study/NCT07490951",
       "asset_name": null,
       "sowhat": "Dual-targeting CAR-T expands beyond hematologic malignancies into autoimmune disease, signaling sector-wide redirection.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
+      "ai_modality": "In vivo CAR-T — Viral vector"
     },
     {
       "nct_id": "NCT07485504",
@@ -3050,7 +3050,7 @@
       "url": "https://clinicaltrials.gov/study/NCT06528301",
       "asset_name": "UB-VV111",
       "sowhat": "Umoja's dual-arm rapamycin co-treatment strategy tests immunosuppression timing in relapsed/refractory CD19+ malignancies.",
-      "ai_modality": "Ex vivo CAR-T — Allogeneic"
+      "ai_modality": "Ex vivo CAR-T — Autologous"
     },
     {
       "nct_id": "NCT07324889",
@@ -3456,9 +3456,9 @@
       "start_date": "2024-07-01",
       "last_updated": "2025-12-18",
       "countries": [
-        "Australia",
         "Taiwan",
-        "South Korea"
+        "South Korea",
+        "Australia"
       ],
       "summary": "This is a multicenter, open-label, Phase 1, first-in-human, dose-escalation study designed to assess the safety, tolerability and define the RP2D of MT-303 alone (Module 1) and in combination with Atezo/Bev (Module 2) in participants with advanced hepatocellular carcinoma expressing GPC3.",
       "url": "https://clinicaltrials.gov/study/NCT06478693",
@@ -3493,8 +3493,8 @@
       "start_date": "2025-03-10",
       "last_updated": "2025-12-17",
       "countries": [
-        "Germany",
-        "United States"
+        "United States",
+        "Germany"
       ],
       "summary": "This is a single-arm, open-label, multicenter, ascending dose Phase 1 study evaluating the safety and preliminary efficacy of CTX112 in adult subjects with refractory autoimmune diseases, including active systemic lupus erythematosus (SLE), systemic sclerosis (SSc), or idiopathic inflammatory myopathy (IIM).",
       "url": "https://clinicaltrials.gov/study/NCT06925542",
@@ -3959,7 +3959,7 @@
       "url": "https://clinicaltrials.gov/study/NCT06294236",
       "asset_name": "SC291",
       "sowhat": "Sana pursues in vivo CAR-T for autoimmune diseases, expanding beyond oncology into large patient populations.",
-      "ai_modality": "Ex vivo CAR-T — Allogeneic"
+      "ai_modality": "Not reported"
     },
     {
       "nct_id": "NCT07031713",
@@ -4076,8 +4076,8 @@
       "start_date": "2025-11-17",
       "last_updated": "2025-11-21",
       "countries": [
-        "China",
-        "United States"
+        "United States",
+        "China"
       ],
       "summary": "Brief Summary:\n\nThe purpose of this clinical trial is to evaluate the safety, tolerability, preliminary efficacy, and immunogenicity of EVM14 administered intramuscularly (IM) alone and in combination with pembrolizumab in patients with selected solid tumors.",
       "url": "https://clinicaltrials.gov/study/NCT07095868",
@@ -4365,7 +4365,7 @@
       "url": "https://clinicaltrials.gov/study/NCT07227207",
       "asset_name": "TSRA-196",
       "sowhat": "CAR-T expands beyond oncology into genetic liver-lung disease, validating ex vivo cell therapy for non-cancer protein deficiency.",
-      "ai_modality": "In vivo CAR-T — Viral vector"
+      "ai_modality": "Not reported"
     },
     {
       "nct_id": "NCT06198296",
@@ -4465,11 +4465,11 @@
       "start_date": "2019-07-22",
       "last_updated": "2025-10-24",
       "countries": [
-        "Germany",
-        "Canada",
-        "Australia",
-        "Spain",
         "United States",
+        "Canada",
+        "Spain",
+        "Australia",
+        "Germany",
         "France"
       ],
       "summary": "This is an open-label, multicenter, Phase 1/2 study evaluating the safety and efficacy of CTX110 in subjects with relapsed or refractory B-cell malignancies.",
@@ -4651,18 +4651,18 @@
       "start_date": "2018-11-12",
       "last_updated": "2025-10-07",
       "countries": [
-        "Germany",
-        "Austria",
-        "Netherlands",
-        "Belgium",
-        "Australia",
-        "Spain",
-        "United States",
-        "Norway",
-        "United Kingdom",
         "Italy",
         "Japan",
-        "France"
+        "Norway",
+        "United States",
+        "Netherlands",
+        "Spain",
+        "Austria",
+        "United Kingdom",
+        "Australia",
+        "Germany",
+        "France",
+        "Belgium"
       ],
       "summary": "This is a multi-center, phase II study to determine the efficacy and safety of tisagenlecleucel in adult patients with relapsed or refractory FL.",
       "url": "https://clinicaltrials.gov/study/NCT03568461",
@@ -4854,7 +4854,7 @@
       "url": "https://clinicaltrials.gov/study/NCT05878184",
       "asset_name": "SC291",
       "sowhat": "Sana's in vivo CAR-T candidate SC291 enters clinic against B-cell malignancies; early kinetics data critical for allogeneic cell therapy viability.",
-      "ai_modality": "In vivo CAR-T — Other"
+      "ai_modality": "Ex vivo CAR-T — Allogeneic"
     },
     {
       "nct_id": "NCT06730256",
@@ -5075,10 +5075,10 @@
       "start_date": "2025-12",
       "last_updated": "2025-09-18",
       "countries": [
-        "Germany",
-        "Sweden",
         "Spain",
-        "France"
+        "Sweden",
+        "France",
+        "Germany"
       ],
       "summary": "The purpose of this adaptive Phase 1/2 study is to evaluate the safety, tolerability, pharmacokinetics (PK), and antileukemic activity of CCTx-001 in adult patients with r/r Acute Myeloid Leukemia (AML). CCTx-001 targets IL-1RAP, which is specifically expressed in leukemic cells. In preclinical studies, IL-1RAP-targeted Chimeric antigen receptors (CARs) have demonstrated encouraging activity in both in vitro and in vivo experiments in AML models. Based on these promising preclinical results, it is expected that CCTx-001 could potentially alter the natural course of r/r AML and provide a potential novel treatment option.",
       "url": "https://clinicaltrials.gov/study/NCT06281847",
@@ -6865,7 +6865,7 @@
       "url": "https://clinicaltrials.gov/study/NCT06890065",
       "asset_name": "JY231",
       "sowhat": "Chinese biotech validates in vivo CAR-T safety in relapsed/refractory B-cell malignancies, signaling commercialization intent.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
+      "ai_modality": "Ex vivo CAR-T — Allogeneic"
     },
     {
       "nct_id": "NCT06972576",
@@ -7587,9 +7587,9 @@
       "start_date": "2021-03-17",
       "last_updated": "2025-02-10",
       "countries": [
+        "Belgium",
         "United Kingdom",
-        "Netherlands",
-        "Belgium"
+        "Netherlands"
       ],
       "summary": "The purpose of this study is to evaluate the safety and tolerability of TX200-TR101 and its effects on the donated kidney in living donor kidney transplant recipients. TX200-TR101 is a product made from a kidney transplant recipient's own immune cells, which are genetically modified and designed to help the transplant recipient's body accept their donated kidney and prevent their immune system from rejecting it.",
       "url": "https://clinicaltrials.gov/study/NCT04817774",
@@ -7815,10 +7815,10 @@
       "start_date": "2020-01-22",
       "last_updated": "2025-01-08",
       "countries": [
-        "Canada",
         "United States",
+        "Spain",
         "Australia",
-        "Spain"
+        "Canada"
       ],
       "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX120 in subjects with relapsed or refractory multiple myeloma.",
       "url": "https://clinicaltrials.gov/study/NCT04244656",
@@ -7848,10 +7848,10 @@
       "start_date": "2020-06-16",
       "last_updated": "2025-01-08",
       "countries": [
-        "Canada",
         "United States",
+        "Netherlands",
         "Australia",
-        "Netherlands"
+        "Canada"
       ],
       "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX130 in subjects with relapsed or refractory renal cell carcinoma.",
       "url": "https://clinicaltrials.gov/study/NCT04438083",
@@ -7886,8 +7886,8 @@
       "start_date": "2020-10-23",
       "last_updated": "2025-01-08",
       "countries": [
-        "Canada",
-        "United States"
+        "United States",
+        "Canada"
       ],
       "summary": "A Phase 1b/2, open label, multi-center, clinical study of Chimeric Antigen Receptor T Cells (CAR-T) targeting claudin18.2 in patients with advanced gastric, pancreatic or other specified digestive system cancers",
       "url": "https://clinicaltrials.gov/study/NCT04404595",
@@ -7918,9 +7918,9 @@
       "start_date": "2020-07-31",
       "last_updated": "2025-01-08",
       "countries": [
-        "Canada",
         "United States",
-        "Australia"
+        "Australia",
+        "Canada"
       ],
       "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX130 in subjects with relapsed or refractory T or B cell malignancies.",
       "url": "https://clinicaltrials.gov/study/NCT04502446",
@@ -8322,7 +8322,7 @@
       "url": "https://clinicaltrials.gov/study/NCT06678282",
       "asset_name": "JY231",
       "sowhat": "Genocury's in vivo CAR-T advances beyond ex vivo manufacturing, targeting relapsed/refractory B-cell malignancies with simplified production.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
+      "ai_modality": "Ex vivo CAR-T — Allogeneic"
     },
     {
       "nct_id": "NCT06461624",
