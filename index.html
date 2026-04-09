@@ -99,7 +99,7 @@
     .company-chevron.open { transform: rotate(90deg); }
     .company-body { display: none; }
     .company-body.open { display: block; }
-    .pipeline-tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .pipeline-tbl { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 420px; }
     .pipeline-tbl th { text-align: left; padding: 7px 16px; font-size: 11px; font-weight: 500; color: var(--text-secondary); border-bottom: 0.5px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em; background: var(--bg-secondary); }
     .pipeline-tbl td { padding: 11px 16px; border-bottom: 0.5px solid var(--border); vertical-align: middle; }
     .pipeline-tbl tr:last-child td { border-bottom: none; }
@@ -291,7 +291,7 @@
   <div class="panel-tag">Watchlist company</div>
   <div class="panel-section">
     <div class="panel-section-title">Pipeline</div>
-    <div id="panel-pipeline-tbl"></div>
+    <div id="panel-pipeline-tbl" style="overflow-x:auto;"></div>
   </div>
   <div class="panel-section">
     <div class="panel-section-title">Publications</div>
@@ -432,7 +432,7 @@ function renderTrials(data){
       <td>${statusBadge(t.status)}</td>
       <td style="font-size:12px;white-space:nowrap;color:var(--text-secondary)">${escHtml(geo(t.countries))}</td>
       <td class="summary-cell"><div class="summary-text">${escHtml(summary||'—')}</div></td>
-      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,10)}</td>
+      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,7)}</td>
     </tr>`;
   }).join('');
 }
