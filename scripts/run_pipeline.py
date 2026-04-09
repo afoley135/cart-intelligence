@@ -29,6 +29,7 @@ STEPS = [
     ("Conference abstracts",FETCHERS_DIR / "fetch_abstracts.py"),
     ("News",                FETCHERS_DIR / "fetch_news.py"),
     ("Funding",             FETCHERS_DIR / "fetch_funding.py"),
+    ("Patents",             FETCHERS_DIR / "fetch_patents.py"),
     ("AI summarisation",    FETCHERS_DIR / "summarize.py"),
 ]
 

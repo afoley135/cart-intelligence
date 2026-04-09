@@ -67,6 +67,9 @@
     .b-pink{background:#FBEAF0;color:#993556;} .b-new{background:#FEF3C7;color:#92400E;}
     .b-teal-dark{background:#085041;color:#9FE1CB;} .b-teal-mid{background:#0F6E56;color:#E1F5EE;}
     .b-coral{background:#FAECE7;color:#993C1D;}
+    .b-com    { background:#E1F5EE; color:#0F6E56; }
+    .b-mot    { background:#E6F1FB; color:#185FA5; }
+    .b-mop    { background:#FBEAF0; color:#993556; }
     .b-aacr   { background:#FBEAF0; color:#993556; }
     .b-asgct  { background:#E1F5EE; color:#0F6E56; }
     .b-ash    { background:#E6F1FB; color:#185FA5; }
@@ -179,6 +182,7 @@
     <div class="metric"><div class="metric-label">Publications</div><div class="metric-value" id="m-pubs">—</div><div class="metric-sub">PubMed + bioRxiv</div></div>
     <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
     <div class="metric"><div class="metric-label">Conf. abstracts</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">AACR · ASGCT · ASH</div></div>
+    <div class="metric"><div class="metric-label">Patents</div><div class="metric-value" id="m-patents">—</div><div class="metric-sub">watchlist companies</div></div>
   </div>
   <div class="tabs">
     <div class="tab active" onclick="switchTab('trials')">Clinical trials</div>
@@ -295,11 +299,23 @@
   </div>
 
   <div id="pane-patents" class="pane">
-    <div class="placeholder">
-      <div class="placeholder-icon">📄</div>
-      <h3>Patent tracker coming soon</h3>
-      <p>USPTO and WIPO patent fetching with AI-generated novelty analysis and preclinical data extraction is planned for the next pipeline phase.</p>
+    <div class="filters">
+      <input type="text" id="patent-search" placeholder="Search title, assignee..." oninput="filterPatents()" />
+      <select id="patent-claim" onchange="filterPatents()">
+        <option value="">All claim types</option>
+        <option>Composition of matter</option>
+        <option>Method of treatment</option>
+        <option>Method (process)</option>
+        <option>Composition + Method</option>
+        <option>Other</option>
+      </select>
+      <select id="patent-company" onchange="filterPatents()">
+        <option value="">All companies</option>
+      </select>
+      <span class="filter-count" id="patent-count"></span>
     </div>
+    <div class="sort-label">Sorted by filing date, newest first</div>
+    <div class="card-feed" id="patent-list"><div class="state-msg">Loading patents...</div></div>
   </div>
 </div>
 
@@ -309,13 +325,9 @@
   <button class="panel-close" onclick="closePanel()">✕</button>
   <div class="panel-company" id="panel-name"></div>
   <div class="panel-tag">Watchlist company</div>
-  <div class="panel-section" id="panel-overview-section">
-    <div class="panel-section-title">Overview</div>
-    <div id="panel-overview"></div>
-  </div>
   <div class="panel-section">
     <div class="panel-section-title">Pipeline</div>
-    <div id="panel-pipeline-tbl" style="overflow-x:auto;"></div>
+    <div id="panel-pipeline-tbl"></div>
   </div>
   <div class="panel-section">
     <div class="panel-section-title">Publications</div>
@@ -325,26 +337,23 @@
     <div class="panel-section-title">News</div>
     <div id="panel-news"></div>
   </div>
-  <div class="panel-section">
-    <div class="panel-section-title">Funding</div>
-    <div id="panel-funding"></div>
-  </div>
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},watchlistOnly=false;
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,dR,aR,wR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,aR,ptR,wR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
       fetch('data/dossiers.json').catch(()=>null),
       fetch('data/abstracts.json').catch(()=>null),
+      fetch('data/patents.json').catch(()=>null),
       fetch('watchlist.json'),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
@@ -354,6 +363,7 @@ async function loadData(){
     if(fR){try{const fD=await fR.json();FUNDING=fD.companies||{};}catch(e){FUNDING=[];}}
     if(dR){try{const dD=await dR.json();DOSSIERS=dD.dossiers||{};}catch(e){DOSSIERS={}}}
     if(aR){try{const aD=await aR.json();ABSTRACTS=aD.abstracts||[];}catch(e){ABSTRACTS=[]}}
+    if(ptR){try{const ptD=await ptR.json();PATENTS=ptD.patents||[];}catch(e){PATENTS=[]}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -362,7 +372,7 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);populateNewsSources();filterNews();
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();
   }catch(e){
     console.error('Failed to load data:',e);
     document.getElementById('trial-body').innerHTML='<tr><td colspan="9" class="state-msg">Failed to load data.</td></tr>';
@@ -387,6 +397,7 @@ function updateMetrics(){
   document.getElementById('m-pubs').textContent=PUBS.length;
   document.getElementById('m-news').textContent=NEWS.length;
   document.getElementById('m-abstracts').textContent=ABSTRACTS.length;
+  document.getElementById('m-patents').textContent=PATENTS.length;
 }
 
 function modalityBadge(m){
@@ -756,6 +767,60 @@ function closePanel(){
 }
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});
+
+function claimBadge(c){
+  const map={
+    'Composition of matter':'b-com',
+    'Method of treatment':'b-mot',
+    'Method (process)':'b-mop',
+    'Composition + Method':'b-teal',
+    'Other':'b-gray',
+  };
+  return c?`<span class="badge ${map[c]||'b-gray'}">${escHtml(c)}</span>`:'';
+}
+
+function renderPatents(data){
+  const list=document.getElementById('patent-list');
+  document.getElementById('patent-count').textContent=`${data.length} patent${data.length!==1?'s':''}`;
+  if(!data.length){
+    list.innerHTML='<div class="state-msg">No patents found. Patents will populate after the next pipeline run.</div>';
+    return;
+  }
+  list.innerHTML=data.map((p,i)=>{
+    const url=p.url?`<a class="ext" href="${escHtml(p.url)}" target="_blank">View →</a>`:'';
+    const hasAbstract=p.abstract&&p.abstract.length>50;
+    return`<div class="card">
+      <div class="card-top">
+        <span class="card-source">${escHtml(p.assignee||p.watchlist_company||'')}</span>
+        <span class="card-date">${escHtml(p.filing_date||'')}</span>
+        ${claimBadge(p.claim_type)}
+        ${isNew(p.filing_date)?'<span class="badge b-new">New</span>':''}
+        ${url}
+      </div>
+      <div class="card-title">${escHtml(p.title||'')}</div>
+      ${p.patent_number?`<div style="font-size:12px;color:var(--text-tertiary);margin-bottom:6px">${escHtml(p.patent_number)}${p.application_number?' · App: '+escHtml(p.application_number):''}</div>`:''}
+      ${p.novelty_summary?`<div class="card-sowhat">${escHtml(p.novelty_summary)}</div>`:''}
+      ${hasAbstract?`<button class="abstract-toggle" onclick="toggleAbstract('pt${i}')">Show abstract ↓</button><div class="abstract-text" id="abs-pt${i}">${escHtml(p.abstract)}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+function filterPatents(){
+  const q=document.getElementById('patent-search').value.toLowerCase();
+  const claim=document.getElementById('patent-claim').value;
+  const company=document.getElementById('patent-company').value;
+  const filtered=PATENTS.filter(p=>{
+    const text=[p.title,p.abstract,p.assignee,p.watchlist_company].join(' ').toLowerCase();
+    return(!q||text.includes(q))&&(!claim||p.claim_type===claim)&&(!company||p.watchlist_company===company);
+  });
+  renderPatents(filtered);
+}
+
+function populatePatentCompanies(){
+  const companies=[...new Set(PATENTS.map(p=>p.watchlist_company).filter(Boolean))].sort();
+  const sel=document.getElementById('patent-company');
+  if(sel){companies.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;sel.appendChild(o);});}
+}
 
 function confBadge(c){
   const map={'AACR':'b-aacr','ASGCT':'b-asgct','ASH':'b-ash'};
