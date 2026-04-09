@@ -67,6 +67,9 @@
     .b-pink{background:#FBEAF0;color:#993556;} .b-new{background:#FEF3C7;color:#92400E;}
     .b-teal-dark{background:#085041;color:#9FE1CB;} .b-teal-mid{background:#0F6E56;color:#E1F5EE;}
     .b-coral{background:#FAECE7;color:#993C1D;}
+    .b-aacr   { background:#FBEAF0; color:#993556; }
+    .b-asgct  { background:#E1F5EE; color:#0F6E56; }
+    .b-ash    { background:#E6F1FB; color:#185FA5; }
     a.ext { color: #185FA5; text-decoration: none; font-size: 12px; }
     a.ext:hover { text-decoration: underline; }
     .card-feed { display: flex; flex-direction: column; gap: 10px; }
@@ -99,7 +102,7 @@
     .company-chevron.open { transform: rotate(90deg); }
     .company-body { display: none; }
     .company-body.open { display: block; }
-    .pipeline-tbl { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 420px; }
+    .pipeline-tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
     .pipeline-tbl th { text-align: left; padding: 7px 16px; font-size: 11px; font-weight: 500; color: var(--text-secondary); border-bottom: 0.5px solid var(--border); text-transform: uppercase; letter-spacing: 0.04em; background: var(--bg-secondary); }
     .pipeline-tbl td { padding: 11px 16px; border-bottom: 0.5px solid var(--border); vertical-align: middle; }
     .pipeline-tbl tr:last-child td { border-bottom: none; }
@@ -175,11 +178,13 @@
     <div class="metric"><div class="metric-label">Watchlist trials</div><div class="metric-value" id="m-watchlist">—</div><div class="metric-sub">from competitive set</div></div>
     <div class="metric"><div class="metric-label">Publications</div><div class="metric-value" id="m-pubs">—</div><div class="metric-sub">PubMed + bioRxiv</div></div>
     <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
+    <div class="metric"><div class="metric-label">Conf. abstracts</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">AACR · ASGCT · ASH</div></div>
   </div>
   <div class="tabs">
     <div class="tab active" onclick="switchTab('trials')">Clinical trials</div>
     <div class="tab" onclick="switchTab('pipeline')">Pipeline</div>
     <div class="tab" onclick="switchTab('pubs')">Publications</div>
+    <div class="tab" onclick="switchTab('conferences')">Conferences</div>
     <div class="tab" onclick="switchTab('news')">News</div>
     <div class="tab" onclick="switchTab('patents')">Patents</div>
   </div>
@@ -274,6 +279,21 @@
   </div>
 
   <!-- Patents -->
+  <div id="pane-conferences" class="pane">
+    <div class="filters">
+      <input type="text" id="conf-search" placeholder="Search title, authors, conference..." oninput="filterAbstracts()" />
+      <select id="conf-conference" onchange="filterAbstracts()">
+        <option value="">All conferences</option>
+        <option value="AACR">AACR</option>
+        <option value="ASGCT">ASGCT</option>
+        <option value="ASH">ASH</option>
+      </select>
+      <span class="filter-count" id="conf-count"></span>
+    </div>
+    <div class="sort-label">Sorted by date, newest first</div>
+    <div class="card-feed" id="conf-list"><div class="state-msg">Loading conference abstracts...</div></div>
+  </div>
+
   <div id="pane-patents" class="pane">
     <div class="placeholder">
       <div class="placeholder-icon">📄</div>
@@ -289,13 +309,9 @@
   <button class="panel-close" onclick="closePanel()">✕</button>
   <div class="panel-company" id="panel-name"></div>
   <div class="panel-tag">Watchlist company</div>
-  <div class="panel-section" id="panel-overview-section">
-    <div class="panel-section-title">Overview</div>
-    <div id="panel-overview"></div>
-  </div>
   <div class="panel-section">
     <div class="panel-section-title">Pipeline</div>
-    <div id="panel-pipeline-tbl" style="overflow-x:auto;"></div>
+    <div id="panel-pipeline-tbl"></div>
   </div>
   <div class="panel-section">
     <div class="panel-section-title">Publications</div>
@@ -305,25 +321,22 @@
     <div class="panel-section-title">News</div>
     <div id="panel-news"></div>
   </div>
-  <div class="panel-section">
-    <div class="panel-section-title">Funding</div>
-    <div id="panel-funding"></div>
-  </div>
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},watchlistOnly=false;
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,dR,wR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,aR,wR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
       fetch('data/dossiers.json').catch(()=>null),
+      fetch('data/abstracts.json').catch(()=>null),
       fetch('watchlist.json'),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
@@ -332,6 +345,7 @@ async function loadData(){
     if(nR){try{const nD=await nR.json();NEWS=nD.news||[];}catch(e){NEWS=[];}}
     if(fR){try{const fD=await fR.json();FUNDING=fD.companies||{};}catch(e){FUNDING=[];}}
     if(dR){try{const dD=await dR.json();DOSSIERS=dD.dossiers||{};}catch(e){DOSSIERS={}}}
+    if(aR){try{const aD=await aR.json();ABSTRACTS=aD.abstracts||[];}catch(e){ABSTRACTS=[]}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -340,7 +354,7 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);populateNewsSources();filterNews();
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);populateNewsSources();filterNews();
   }catch(e){
     console.error('Failed to load data:',e);
     document.getElementById('trial-body').innerHTML='<tr><td colspan="9" class="state-msg">Failed to load data.</td></tr>';
@@ -364,6 +378,7 @@ function updateMetrics(){
   document.getElementById('m-watchlist').textContent=TRIALS.filter(t=>isWL(t.sponsor)).length;
   document.getElementById('m-pubs').textContent=PUBS.length;
   document.getElementById('m-news').textContent=NEWS.length;
+  document.getElementById('m-abstracts').textContent=ABSTRACTS.length;
 }
 
 function modalityBadge(m){
@@ -440,7 +455,7 @@ function renderTrials(data){
       <td>${statusBadge(t.status)}</td>
       <td style="font-size:12px;white-space:nowrap;color:var(--text-secondary)">${escHtml(geo(t.countries))}</td>
       <td class="summary-cell"><div class="summary-text">${escHtml(summary||'—')}</div></td>
-      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,7)}</td>
+      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,10)}</td>
     </tr>`;
   }).join('');
 }
@@ -733,6 +748,46 @@ function closePanel(){
 }
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});
+
+function confBadge(c){
+  const map={'AACR':'b-aacr','ASGCT':'b-asgct','ASH':'b-ash'};
+  return c?`<span class="badge ${map[c]||'b-gray'}">${escHtml(c)}</span>`:'';
+}
+
+function renderAbstracts(data){
+  const list=document.getElementById('conf-list');
+  document.getElementById('conf-count').textContent=`${data.length} abstract${data.length!==1?'s':''}`;
+  if(!data.length){
+    list.innerHTML='<div class="state-msg">No conference abstracts found. Abstracts populate from PubMed supplement issues and the ASGCT website after embargo lifts.</div>';
+    return;
+  }
+  list.innerHTML=data.map((p,i)=>{
+    const sowhat=p.sowhat&&p.sowhat!=='Abstract not available'?`<div class="card-sowhat">${escHtml(p.sowhat)}</div>`:'';
+    const url=p.url?`<a class="ext" href="${escHtml(p.url)}" target="_blank">View →</a>`:'';
+    const hasAbstract=p.abstract&&p.abstract.length>50;
+    return`<div class="card">
+      <div class="card-top">
+        <span class="card-source">${escHtml(p.journal||p.conference||'')}</span>
+        <span class="card-date">${formatDate(p.date)}</span>
+        ${confBadge(p.conference)} ${isNew(p.date)?'<span class="badge b-new">New</span>':''} ${url}
+      </div>
+      <div class="card-title">${escHtml(p.title||'')}</div>
+      ${sowhat}
+      ${p.authors?`<div class="card-authors">${escHtml(p.authors)}</div>`:''}
+      ${hasAbstract?`<button class="abstract-toggle" onclick="toggleAbstract('c${i}')">Show abstract ↓</button><div class="abstract-text" id="abs-c${i}">${escHtml(p.abstract)}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+function filterAbstracts(){
+  const q=document.getElementById('conf-search').value.toLowerCase();
+  const conf=document.getElementById('conf-conference').value;
+  const filtered=ABSTRACTS.filter(a=>{
+    const text=[a.title,a.authors,a.journal,a.abstract,a.conference].join(' ').toLowerCase();
+    return(!q||text.includes(q))&&(!conf||a.conference===conf);
+  });
+  renderAbstracts(filtered);
+}
 
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function escAttr(s){return String(s).replace(/'/g,"\\'");}

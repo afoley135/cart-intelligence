@@ -133,6 +133,24 @@ Summary: {summary}
 """
 
 
+ABSTRACT_PROMPT = """\
+You are a biotech competitive intelligence analyst specialising in cell and gene therapy.
+
+Given the following conference abstract, write a single punchy sentence (max 20 words)
+capturing the strategic "so what" for someone tracking the in vivo CAR-T space.
+Focus on the key finding, the presenting company, and why it matters.
+
+Rules:
+- Return ONLY the sentence, nothing else
+- No preamble, no sign-off, no offers to help
+- If the abstract is insufficient, return exactly: Abstract not available
+
+Conference: {conference}
+Title: {title}
+Authors: {authors}
+Abstract: {abstract}
+"""
+
 # ---------------------------------------------------------------------------
 # Core helpers
 # ---------------------------------------------------------------------------
@@ -277,19 +295,39 @@ def summarise_news(news_data: dict) -> tuple[dict, int]:
         sowhat = call_api(prompt)
         if is_unhelpful(sowhat):
             item["sowhat"] = "Summary not available"
-        elif any(s in sowhat.lower() for s in [
-            "irrelevant", "not relevant", "unrelated",
-            "no direct relevance", "does not relate",
-        ]):
-            item["irrelevant"] = True
-            item["sowhat"] = None
-            logging.info(f"  [{item.get('source','')}] FLAGGED IRRELEVANT: {sowhat}")
         else:
             item["sowhat"] = sowhat
             updated += 1
             logging.info(f"  [{item.get('source','')}] {sowhat}")
         time.sleep(RATE_LIMIT_DELAY)
     return news_data, updated
+
+
+def summarise_abstracts(abstracts_data: dict) -> tuple[dict, int]:
+    updated = 0
+    for abstract in abstracts_data.get("abstracts", []):
+        if abstract.get("sowhat"):
+            continue
+        text = (abstract.get("abstract") or "").strip()
+        if not text or len(text) < 50:
+            abstract["sowhat"] = "Abstract not available"
+            updated += 1
+            continue
+        prompt = ABSTRACT_PROMPT.format(
+            conference=abstract.get("conference") or abstract.get("journal",""),
+            title=abstract.get("title",""),
+            authors=abstract.get("authors",""),
+            abstract=text[:800],
+        )
+        sowhat = call_api(prompt)
+        if is_unhelpful(sowhat):
+            abstract["sowhat"] = "Abstract not available"
+        else:
+            abstract["sowhat"] = sowhat
+            updated += 1
+            logging.info(f"  [{abstract.get('conference','')}] {sowhat}")
+        time.sleep(RATE_LIMIT_DELAY)
+    return abstracts_data, updated
 
 
 # ---------------------------------------------------------------------------
@@ -329,6 +367,15 @@ def run():
         logging.info(f"  Processed {n} news items")
     else:
         logging.warning(f"News file not found: {NEWS_PATH}")
+
+    if ABSTRACTS_PATH.exists():
+        logging.info("Summarising conference abstracts...")
+        data = json.loads(ABSTRACTS_PATH.read_text())
+        data, n = summarise_abstracts(data)
+        ABSTRACTS_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+        logging.info(f"  Processed {n} abstracts")
+    else:
+        logging.warning(f"Abstracts file not found: {ABSTRACTS_PATH}")
 
     logging.info("Summarisation complete")
 
