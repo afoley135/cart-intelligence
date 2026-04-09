@@ -119,6 +119,14 @@
     .sdot-pink  { background: #D4537E; }
     .pipeline-empty { padding: 1rem 16px; font-size: 13px; color: var(--text-tertiary); font-style: italic; }
 
+    /* Dossier overview */
+    .dossier-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
+    .dossier-cell { background:var(--bg-secondary); border-radius:var(--radius-md); padding:10px 12px; }
+    .dossier-cell-full { background:var(--bg-secondary); border-radius:var(--radius-md); padding:10px 12px; grid-column:1/-1; }
+    .dossier-label { font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-tertiary); margin-bottom:5px; }
+    .dossier-text { font-size:12px; color:var(--text-secondary); line-height:1.5; }
+    .dossier-generated { font-size:11px; color:var(--text-tertiary); margin-top:8px; }
+
     /* Funding table */
     .funding-table { width:100%; border-collapse:collapse; font-size:12px; margin-top:6px; }
     .funding-table th { text-align:left; padding:5px 8px; font-size:11px; font-weight:500; color:var(--text-secondary); border-bottom:0.5px solid var(--border); text-transform:uppercase; letter-spacing:0.04em; background:var(--bg-secondary); }
@@ -288,17 +296,18 @@
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],WATCHLIST=[],FUNDING={},watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},watchlistOnly=false;
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,wR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,wR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
+      fetch('data/dossiers.json').catch(()=>null),
       fetch('watchlist.json'),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
@@ -306,6 +315,7 @@ async function loadData(){
     WATCHLIST=(wD.companies||[]).map(c=>c.toLowerCase());
     if(nR){try{const nD=await nR.json();NEWS=nD.news||[];}catch(e){NEWS=[];}}
     if(fR){try{const fD=await fR.json();FUNDING=fD.companies||{};}catch(e){FUNDING=[];}}
+    if(dR){try{const dD=await dR.json();DOSSIERS=dD.dossiers||{};}catch(e){DOSSIERS={}}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -585,6 +595,33 @@ function filterNews(){
 function openPanel(sponsor){
   document.getElementById('panel-name').textContent=sponsor;
   const key=sponsor.toLowerCase().split(' ')[0];
+
+  // Overview dossier
+  const overviewEl=document.getElementById('panel-overview');
+  const dossierEntry=DOSSIERS[sponsor]||DOSSIERS[Object.keys(DOSSIERS).find(k=>k.toLowerCase().includes(key))||'']||null;
+  if(dossierEntry&&dossierEntry.dossier){
+    const d=dossierEntry.dossier;
+    const generated=dossierEntry.generated_at?(new Date(dossierEntry.generated_at)).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'';
+    const sections=[
+      {key:'stage_and_modality',     label:'Stage & modality',       full:false},
+      {key:'delivery_approach',      label:'Delivery approach',      full:false},
+      {key:'indications_pursued',    label:'Indications',            full:false},
+      {key:'best_disclosed_data',    label:'Best disclosed data',    full:false},
+      {key:'key_differentiators',    label:'Key differentiators',    full:true},
+      {key:'last_significant_event', label:'Last significant event', full:true},
+    ];
+    const cells=sections.map(s=>`
+      <div class="${s.full?'dossier-cell-full':'dossier-cell'}">
+        <div class="dossier-label">${s.label}</div>
+        <div class="dossier-text">${d[s.key]?escHtml(d[s.key]):'<em style="color:var(--text-tertiary)">Not available</em>'}</div>
+      </div>`).join('');
+    overviewEl.innerHTML=`<div class="dossier-grid">${cells}</div>
+      ${generated?`<div class="dossier-generated">Generated ${generated}</div>`:''}`;
+  } else if(dossierEntry&&!dossierEntry.dossier&&dossierEntry.has_data){
+    overviewEl.innerHTML='<div class="panel-empty">Dossier generation failed — will retry next week.</div>';
+  } else {
+    overviewEl.innerHTML='<div class="panel-empty">Dossier not yet generated. Trigger the weekly dossier workflow to populate.</div>';
+  }
 
   // Pipeline table in panel
   const trials=TRIALS.filter(t=>(t.sponsor||'').toLowerCase().includes(key));
