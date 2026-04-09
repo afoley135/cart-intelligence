@@ -15,9 +15,11 @@ No API key required.
 """
 
 import json
+import os
 import time
 import logging
 import requests
+import anthropic
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -60,6 +62,42 @@ BASE_URL   = "https://clinicaltrials.gov/api/v2/studies"
 PAGE_SIZE  = 100
 OUTPUT_PATH    = Path(__file__).parent.parent / "data" / "trials.json"
 WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
+
+# Claude classification config
+CLASSIFICATION_MODEL = "claude-haiku-4-5-20251001"
+VALID_MODALITIES = {
+    "In vivo CAR-T — LNP",
+    "In vivo CAR-T — Viral vector",
+    "In vivo CAR-T — Other",
+    "Ex vivo CAR-T — Autologous",
+    "Ex vivo CAR-T — Allogeneic",
+    "Bispecific TCE",
+    "CAR-NK",
+    "Not reported",
+}
+
+CLASSIFICATION_PROMPT = """You are a cell therapy expert. Classify this clinical trial into exactly one category.
+
+Categories:
+  In vivo CAR-T — LNP          : CAR-T generated inside the patient using lipid nanoparticle mRNA delivery
+  In vivo CAR-T — Viral vector  : CAR-T generated inside the patient using viral vector (lentiviral, AAV, etc.)
+  In vivo CAR-T — Other         : CAR-T generated inside the patient using other or unspecified delivery
+  Ex vivo CAR-T — Autologous    : CAR-T manufactured outside the body from the patient's own cells
+  Ex vivo CAR-T — Allogeneic    : CAR-T manufactured outside the body from donor cells
+  Bispecific TCE                : Bispecific antibody or T cell engager (not CAR-T)
+  CAR-NK                        : CAR natural killer cell therapy
+  Not reported                  : Insufficient information to classify
+
+Rules:
+- Return ONLY the category name exactly as written above
+- No explanation, no punctuation, nothing else
+
+Title: {title}
+Official title: {official_title}
+Sponsor: {sponsor}
+Interventions: {interventions}
+Summary: {summary}
+"""
 
 IN_VIVO_SIGNALS = [
     "in vivo car",
@@ -254,6 +292,29 @@ def parse_study(raw: dict) -> dict:
 # Main
 # ---------------------------------------------------------------------------
 
+def classify_modality_with_claude(trial: dict) -> str:
+    """Use Claude to classify modality for watchlist company trials."""
+    try:
+        client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        prompt = CLASSIFICATION_PROMPT.format(
+            title=trial.get("title", ""),
+            official_title=trial.get("title", ""),
+            sponsor=trial.get("sponsor", ""),
+            interventions=", ".join(trial.get("interventions", [])[:5]),
+            summary=(trial.get("summary", "") or "")[:600],
+        )
+        msg = client.messages.create(
+            model=CLASSIFICATION_MODEL,
+            max_tokens=30,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        result = msg.content[0].text.strip()
+        return result if result in VALID_MODALITIES else "Not reported"
+    except Exception as e:
+        logging.warning(f"  Claude classification failed: {e}")
+        return trial.get("modality", "Not reported")
+
+
 def run():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
     logging.info("Starting ClinicalTrials.gov fetch")
@@ -309,6 +370,37 @@ def run():
         except Exception as e:
             logging.warning(f"Could not preserve existing data: {e}")
 
+    # Pass 3 — Claude classification for watchlist company trials
+    # Only runs on trials without a cached ai_modality value
+    try:
+        client_check = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY",""))
+        watchlist_lower = [w.lower() for w in watchlist]
+        needs_classification = [
+            nct for nct, s in all_studies.items()
+            if not s.get("ai_modality")
+            and any(w in (s.get("sponsor") or "").lower() for w in watchlist_lower)
+        ]
+        logging.info(f"Pass 3: Claude classification for {len(needs_classification)} watchlist trials")
+        for nct in needs_classification:
+            trial = all_studies[nct]
+            ai_modality = classify_modality_with_claude(trial)
+            all_studies[nct]["ai_modality"] = ai_modality
+            logging.info(f"  {nct} [{trial.get('sponsor','')}]: {ai_modality}")
+            time.sleep(0.2)
+        # Preserve cached ai_modality from previous run for non-watchlist trials
+        if existing_path.exists():
+            try:
+                existing = json.loads(existing_path.read_text())
+                for s in existing.get("studies", []):
+                    nct = s.get("nct_id")
+                    if nct and nct in all_studies and s.get("ai_modality"):
+                        if not all_studies[nct].get("ai_modality"):
+                            all_studies[nct]["ai_modality"] = s["ai_modality"]
+            except Exception:
+                pass
+    except Exception as e:
+        logging.warning(f"Pass 3 skipped (no API key or error): {e}")
+
     # Exclude trials last updated more than 2 years ago
     from datetime import timedelta
     cutoff_date = (datetime.now(timezone.utc) - timedelta(days=730)).strftime("%Y-%m-%d")
@@ -324,11 +416,6 @@ def run():
         key=lambda s: s["last_updated"] or "",
         reverse=True,
     )
-
-    # Safety guard — never overwrite with empty results
-    if not studies_list:
-        logging.error("Fetch returned zero studies — aborting write to protect existing data")
-        return
 
     output = {
         "fetched_at": datetime.now(timezone.utc).isoformat(),

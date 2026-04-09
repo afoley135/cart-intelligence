@@ -65,6 +65,8 @@
     .b-amber{background:#FAEEDA;color:#854F0B;} .b-teal{background:#E1F5EE;color:#0F6E56;}
     .b-gray{background:#F1EFE8;color:#5F5E5A;} .b-purple{background:#EEEDFE;color:#534AB7;}
     .b-pink{background:#FBEAF0;color:#993556;} .b-new{background:#FEF3C7;color:#92400E;}
+    .b-teal-dark{background:#085041;color:#9FE1CB;} .b-teal-mid{background:#0F6E56;color:#E1F5EE;}
+    .b-coral{background:#FAECE7;color:#993C1D;}
     a.ext { color: #185FA5; text-decoration: none; font-size: 12px; }
     a.ext:hover { text-decoration: underline; }
     .card-feed { display: flex; flex-direction: column; gap: 10px; }
@@ -188,7 +190,13 @@
       <input type="text" id="trial-search" placeholder="Search sponsor, condition..." oninput="filterTrials()" />
       <select id="trial-modality" onchange="filterTrials()">
         <option value="">All modalities</option>
-        <option>In vivo CAR-T</option><option>Ex vivo CAR-T</option>
+        <option>In vivo CAR-T — LNP</option>
+        <option>In vivo CAR-T — Viral vector</option>
+        <option>In vivo CAR-T — Other</option>
+        <option value="In vivo CAR-T">Any In vivo CAR-T</option>
+        <option>Ex vivo CAR-T — Autologous</option>
+        <option>Ex vivo CAR-T — Allogeneic</option>
+        <option value="Ex vivo CAR-T">Any Ex vivo CAR-T</option>
         <option>Bispecific TCE</option><option>CAR-NK</option><option>Not reported</option>
       </select>
       <select id="trial-phase" onchange="filterTrials()">
@@ -281,10 +289,6 @@
   <button class="panel-close" onclick="closePanel()">✕</button>
   <div class="panel-company" id="panel-name"></div>
   <div class="panel-tag">Watchlist company</div>
-  <div class="panel-section" id="panel-overview-section">
-    <div class="panel-section-title">Overview</div>
-    <div id="panel-overview"></div>
-  </div>
   <div class="panel-section">
     <div class="panel-section-title">Pipeline</div>
     <div id="panel-pipeline-tbl"></div>
@@ -296,10 +300,6 @@
   <div class="panel-section">
     <div class="panel-section-title">News</div>
     <div id="panel-news"></div>
-  </div>
-  <div class="panel-section">
-    <div class="panel-section-title">Funding</div>
-    <div id="panel-funding"></div>
   </div>
 </div>
 
@@ -352,13 +352,27 @@ function formatDate(str){
 
 function updateMetrics(){
   document.getElementById('m-trials').textContent=TRIALS.length;
-  document.getElementById('m-invivo').textContent=TRIALS.filter(t=>t.modality==='In vivo CAR-T').length;
+  document.getElementById('m-invivo').textContent=TRIALS.filter(t=>(t.ai_modality||t.modality||'').startsWith('In vivo CAR-T')).length;
   document.getElementById('m-watchlist').textContent=TRIALS.filter(t=>isWL(t.sponsor)).length;
   document.getElementById('m-pubs').textContent=PUBS.length;
   document.getElementById('m-news').textContent=NEWS.length;
 }
 
-function modalityBadge(m){const map={'In vivo CAR-T':'b-teal','Ex vivo CAR-T':'b-blue','Bispecific TCE':'b-amber','CAR-NK':'b-purple','Not reported':'b-gray'};return`<span class="badge ${map[m]||'b-gray'}">${m||'Not reported'}</span>`;}
+function modalityBadge(m){
+  const map={
+    'In vivo CAR-T — LNP':           'b-teal',
+    'In vivo CAR-T — Viral vector':   'b-teal-mid',
+    'In vivo CAR-T — Other':          'b-teal-dark',
+    'In vivo CAR-T':                  'b-teal',
+    'Ex vivo CAR-T — Autologous':     'b-blue',
+    'Ex vivo CAR-T — Allogeneic':     'b-purple',
+    'Ex vivo CAR-T':                  'b-blue',
+    'Bispecific TCE':                 'b-amber',
+    'CAR-NK':                         'b-coral',
+    'Not reported':                   'b-gray',
+  };
+  return`<span class="badge ${map[m]||'b-gray'}">${m||'Not reported'}</span>`;
+}
 
 function phaseBadge(phases){
   if(!phases||!phases.length)return'<span class="badge b-gray">N/A</span>';
@@ -412,7 +426,7 @@ function renderTrials(data){
     return`<tr class="${onW?'wrow':''}">
       <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':''}</td>
       <td style="max-width:140px">${sponsorHtml}</td>
-      <td>${modalityBadge(t.modality)}</td>
+      <td>${modalityBadge(t.ai_modality||t.modality)}</td>
       <td style="font-size:12px;max-width:150px">${escHtml(conditions||'—')}</td>
       <td>${phaseBadge(t.phase)}</td>
       <td>${statusBadge(t.status)}</td>
@@ -429,9 +443,13 @@ function filterTrials(){
   const phase=document.getElementById('trial-phase').value;
   const status=document.getElementById('trial-status').value;
   let filtered=TRIALS.filter(t=>{
-    const text=[t.nct_id,t.sponsor,t.modality,...(t.conditions||[])].join(' ').toLowerCase();
+    const text=[t.nct_id,t.sponsor,t.ai_modality||t.modality,...(t.conditions||[])].join(' ').toLowerCase();
     const pa=Array.isArray(t.phase)?t.phase:(t.phase?[t.phase]:[]);
-    return(!q||text.includes(q))&&(!modality||t.modality===modality)&&(!phase||pa.includes(phase))&&(!status||t.status===status);
+    const effectiveModality=t.ai_modality||t.modality||'';
+    const modalityMatch=!modality||effectiveModality===modality||
+      (modality==='In vivo CAR-T'&&effectiveModality.startsWith('In vivo CAR-T'))||
+      (modality==='Ex vivo CAR-T'&&effectiveModality.startsWith('Ex vivo CAR-T'));
+    return(!q||text.includes(q))&&modalityMatch&&(!phase||pa.includes(phase))&&(!status||t.status===status);
   });
   if(watchlistOnly)filtered=filtered.filter(t=>isWL(t.sponsor));
   filtered.sort((a,b)=>{
