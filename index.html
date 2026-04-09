@@ -119,6 +119,14 @@
     .sdot-pink  { background: #D4537E; }
     .pipeline-empty { padding: 1rem 16px; font-size: 13px; color: var(--text-tertiary); font-style: italic; }
 
+    /* Funding table */
+    .funding-table { width:100%; border-collapse:collapse; font-size:12px; margin-top:6px; }
+    .funding-table th { text-align:left; padding:5px 8px; font-size:11px; font-weight:500; color:var(--text-secondary); border-bottom:0.5px solid var(--border); text-transform:uppercase; letter-spacing:0.04em; background:var(--bg-secondary); }
+    .funding-table td { padding:7px 8px; border-bottom:0.5px solid var(--border); color:var(--text); vertical-align:top; }
+    .funding-table tr:last-child td { border-bottom:none; }
+    .funding-total { font-size:13px; font-weight:500; color:var(--text); margin-top:10px; }
+    .funding-total span { color:var(--wa); }
+
     /* Placeholder */
     .placeholder { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 3rem 2rem; text-align: center; }
     .placeholder-icon { font-size: 32px; margin-bottom: 12px; }
@@ -129,7 +137,7 @@
     /* Slide-out panel */
     .panel-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.25); z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
     .panel-overlay.open { opacity: 1; pointer-events: all; }
-    .panel { position: fixed; top: 0; right: 0; bottom: 0; width: 680px; max-width: 96vw; background: var(--bg); border-left: 0.5px solid var(--border-strong); z-index: 101; transform: translateX(100%); transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; padding: 1.5rem; }
+    .panel { position: fixed; top: 0; right: 0; bottom: 0; width: 520px; max-width: 95vw; background: var(--bg); border-left: 0.5px solid var(--border-strong); z-index: 101; transform: translateX(100%); transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; padding: 1.5rem; }
     .panel.open { transform: translateX(0); }
     .panel-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-secondary); padding: 4px 8px; border-radius: var(--radius-sm); }
     .panel-close:hover { background: var(--bg-secondary); }
@@ -280,21 +288,24 @@
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],WATCHLIST=[],watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],WATCHLIST=[],FUNDING={},watchlistOnly=false;
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
 
 async function loadData(){
   try{
-    const[tR,pR,nR,wR]=await Promise.all([
+    const[tR,pR,nR,fR,wR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
-      fetch('data/news.json').catch(()=>null),fetch('watchlist.json'),
+      fetch('data/news.json').catch(()=>null),
+      fetch('data/funding.json').catch(()=>null),
+      fetch('watchlist.json'),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
     TRIALS=tD.studies||[];PUBS=pD.publications||[];
     WATCHLIST=(wD.companies||[]).map(c=>c.toLowerCase());
     if(nR){try{const nD=await nR.json();NEWS=nD.news||[];}catch(e){NEWS=[];}}
+    if(fR){try{const fD=await fR.json();FUNDING=fD.companies||{};}catch(e){FUNDING=[];}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -389,7 +400,7 @@ function renderTrials(data){
       <td>${statusBadge(t.status)}</td>
       <td style="font-size:12px;white-space:nowrap;color:var(--text-secondary)">${escHtml(geo(t.countries))}</td>
       <td class="summary-cell"><div class="summary-text">${escHtml(summary||'—')}</div></td>
-      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,7)}</td>
+      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,10)}</td>
     </tr>`;
   }).join('');
 }
@@ -548,7 +559,7 @@ function renderNews(data){
   const list=document.getElementById('news-list');
   document.getElementById('news-count').textContent=`${data.length} item${data.length!==1?'s':''}`;
   if(!data.length){list.innerHTML='<div class="state-msg">No news items found. The news feed will populate after the next pipeline run.</div>';return;}
-  list.innerHTML = data.filter(n => !n.irrelevant).map(n => {
+  list.innerHTML=data.map(n=>{
     const sowhat=n.sowhat&&n.sowhat!=='Summary not available'?`<div class="card-sowhat">${escHtml(n.sowhat)}</div>`:'';
     const url=n.url?`<a class="ext" href="${escHtml(n.url)}" target="_blank">Read →</a>`:'';
     return`<div class="card">
@@ -616,6 +627,28 @@ function openPanel(sponsor){
       <div class="panel-pub-meta">${escHtml(n.source||'')} · ${escHtml(n.date||'')}</div>
       ${n.sowhat&&n.sowhat!=='Summary not available'?`<div style="font-size:12px;color:#185FA5;margin-top:4px">→ ${escHtml(n.sowhat)}</div>`:''}
     </div>`).join(''):'<div class="panel-empty">No news items matched.</div>';
+
+  // Funding
+  const fundingEl=document.getElementById('panel-funding');
+  const companyFunding=FUNDING[sponsor]||FUNDING[Object.keys(FUNDING).find(k=>k.toLowerCase().includes(key))||'']||null;
+  if(companyFunding&&companyFunding.rounds&&companyFunding.rounds.length){
+    const rounds=companyFunding.rounds;
+    const total=rounds.reduce((sum,r)=>sum+(r.amount_usd||0),0);
+    const rows=rounds.map(r=>`<tr>
+      <td style="white-space:nowrap;color:var(--text-tertiary)">${escHtml(r.date||'—')}</td>
+      <td><span class="badge b-blue">${escHtml(r.round_type||'—')}</span></td>
+      <td style="white-space:nowrap;font-weight:500">${r.amount_usd?'$'+r.amount_usd+'M':'Undisclosed'}</td>
+      <td style="font-size:11px;color:var(--text-secondary);max-width:180px">${escHtml((r.investors||[]).join(', ')||'—')}</td>
+      <td>${r.url?`<a class="ext" href="${escHtml(r.url)}" target="_blank">Source</a>`:''}</td>
+    </tr>`).join('');
+    fundingEl.innerHTML=`<table class="funding-table">
+      <thead><tr><th>Date</th><th>Round</th><th>Amount</th><th>Investors</th><th></th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    ${total>0?`<div class="funding-total" style="margin-top:10px">Total disclosed: <span>$${total}M</span></div>`:''}`;
+  } else {
+    fundingEl.innerHTML='<div class="panel-empty">No funding data found. This may populate after the next pipeline run.</div>';
+  }
 
   document.getElementById('panel-overlay').classList.add('open');
   document.getElementById('company-panel').classList.add('open');

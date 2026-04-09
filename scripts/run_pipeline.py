@@ -7,16 +7,11 @@ Orchestrates the full data pipeline in the correct order:
   1. fetch_trials.py       — ClinicalTrials.gov
   2. fetch_publications.py — PubMed + bioRxiv
   3. fetch_news.py         — NewsAPI + RSS feeds
-  4. summarize.py          — AI "so what" generation (requires ANTHROPIC_API_KEY)
+  4. fetch_funding.py      — Funding rounds via NewsAPI + Claude
+  5. summarize.py          — AI "so what" generation
 
 Run manually:
   python scripts/run_pipeline.py
-
-Or let GitHub Actions call this on a schedule (see .github/workflows/update.yml).
-
-Exit codes:
-  0 — all steps succeeded
-  1 — one or more steps failed (check logs)
 """
 
 import logging
@@ -32,16 +27,14 @@ STEPS = [
     ("ClinicalTrials.gov",  FETCHERS_DIR / "fetch_trials.py"),
     ("PubMed + bioRxiv",    FETCHERS_DIR / "fetch_publications.py"),
     ("News",                FETCHERS_DIR / "fetch_news.py"),
+    ("Funding",             FETCHERS_DIR / "fetch_funding.py"),
     ("AI summarisation",    FETCHERS_DIR / "summarize.py"),
 ]
 
 
 def run_step(name: str, script: Path) -> bool:
     logging.info(f"── Starting: {name}")
-    result = subprocess.run(
-        [sys.executable, str(script)],
-        capture_output=False,
-    )
+    result = subprocess.run([sys.executable, str(script)], capture_output=False)
     if result.returncode == 0:
         logging.info(f"── Done: {name}")
         return True
