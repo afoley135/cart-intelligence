@@ -275,8 +275,15 @@ def summarise_news(news_data: dict) -> tuple[dict, int]:
             summary=summary[:600],
         )
         sowhat = call_api(prompt)
-        if is_unhelpful(sowhat):
+         if is_unhelpful(sowhat):
             item["sowhat"] = "Summary not available"
+        elif any(s in sowhat.lower() for s in [
+            "irrelevant", "not relevant", "unrelated",
+            "no direct relevance", "does not relate",
+        ]):
+            item["irrelevant"] = True
+            item["sowhat"] = None
+            logging.info(f"  [{item.get('source','')}] FLAGGED IRRELEVANT: {sowhat}")
         else:
             item["sowhat"] = sowhat
             updated += 1

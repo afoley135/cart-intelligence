@@ -205,7 +205,22 @@ def run():
 
     logging.info(f"  After keyword pass: {len(all_news)} unique news items")
 
-    # Pass 2 — watchlist company queries via NewsAPI
+    # Relevance signals — article must contain at least one to be included
+    RELEVANCE_SIGNALS = [
+        "car-t", "car t cell", "chimeric antigen receptor",
+        "cell therapy", "gene therapy", "t cell",
+        "lentiviral", "lipid nanoparticle", "in vivo",
+        "immunotherapy", "oncology", "hematol",
+        "clinical trial", "phase 1", "phase 2",
+    ]
+
+    def is_relevant(article: dict) -> bool:
+        text = " ".join([
+            article.get("title", ""),
+            article.get("description", "") or "",
+        ]).lower()
+        return any(s in text for s in RELEVANCE_SIGNALS)
+
     if NEWS_API_KEY:
         watchlist = load_watchlist()
         logging.info(f"Pass 2: watchlist company NewsAPI queries ({len(watchlist)} companies)")
@@ -214,14 +229,15 @@ def run():
         for company in watchlist:
             try:
                 articles = fetch_newsapi(f'"{company}"', from_date)
-                for a in articles:
+                relevant = [a for a in articles if is_relevant(a)]
+                for a in relevant:
                     parsed = parse_newsapi_article(a)
                     url = parsed["url"]
                     if url and url not in all_news:
                         all_news[url] = parsed
                         new_from_watchlist += 1
-                if articles:
-                    logging.info(f"  {company}: {len(articles)} articles")
+                if relevant:
+                    logging.info(f"  {company}: {len(relevant)}/{len(articles)} relevant articles")
                 time.sleep(0.5)
             except requests.RequestException as e:
                 logging.error(f"NewsAPI watchlist query '{company}' failed: {e}")
