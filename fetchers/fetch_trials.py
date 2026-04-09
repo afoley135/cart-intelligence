@@ -295,7 +295,11 @@ def parse_study(raw: dict) -> dict:
 def classify_modality_with_claude(trial: dict) -> str:
     """Use Claude to classify modality for watchlist company trials."""
     try:
-        client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        if not api_key:
+            logging.warning("  ANTHROPIC_API_KEY not set — skipping classification")
+            return trial.get("modality", "Not reported")
+        client = anthropic.Anthropic(api_key=api_key)
         prompt = CLASSIFICATION_PROMPT.format(
             title=trial.get("title", ""),
             official_title=trial.get("title", ""),
@@ -371,9 +375,8 @@ def run():
             logging.warning(f"Could not preserve existing data: {e}")
 
     # Pass 3 — Claude classification for watchlist company trials
-    # Only runs on trials without a cached ai_modality value
-    try:
-        client_check = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY",""))
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if api_key:
         watchlist_lower = [w.lower() for w in watchlist]
         needs_classification = [
             nct for nct, s in all_studies.items()
@@ -387,19 +390,20 @@ def run():
             all_studies[nct]["ai_modality"] = ai_modality
             logging.info(f"  {nct} [{trial.get('sponsor','')}]: {ai_modality}")
             time.sleep(0.2)
-        # Preserve cached ai_modality from previous run for non-watchlist trials
-        if existing_path.exists():
-            try:
-                existing = json.loads(existing_path.read_text())
-                for s in existing.get("studies", []):
-                    nct = s.get("nct_id")
-                    if nct and nct in all_studies and s.get("ai_modality"):
-                        if not all_studies[nct].get("ai_modality"):
-                            all_studies[nct]["ai_modality"] = s["ai_modality"]
-            except Exception:
-                pass
-    except Exception as e:
-        logging.warning(f"Pass 3 skipped (no API key or error): {e}")
+    else:
+        logging.warning("Pass 3 skipped: ANTHROPIC_API_KEY not set")
+
+    # Preserve cached ai_modality values from previous run
+    if OUTPUT_PATH.exists():
+        try:
+            existing_data = json.loads(OUTPUT_PATH.read_text())
+            for s in existing_data.get("studies", []):
+                nct = s.get("nct_id")
+                if nct and nct in all_studies and s.get("ai_modality"):
+                    if not all_studies[nct].get("ai_modality"):
+                        all_studies[nct]["ai_modality"] = s["ai_modality"]
+        except Exception as e:
+            logging.warning(f"Could not preserve ai_modality cache: {e}")
 
     # Exclude trials last updated more than 2 years ago
     from datetime import timedelta
