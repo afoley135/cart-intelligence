@@ -545,10 +545,10 @@ function populateNewsSources(){
 }
 
 function renderNews(data){
-  list.innerHTML = data.filter(n => !n.irrelevant).map(n => {;
+  const list=document.getElementById('news-list');
   document.getElementById('news-count').textContent=`${data.length} item${data.length!==1?'s':''}`;
   if(!data.length){list.innerHTML='<div class="state-msg">No news items found. The news feed will populate after the next pipeline run.</div>';return;}
-  list.innerHTML = data.filter(n => !n.irrelevant).map(n => {
+  list.innerHTML=data.map(n=>{
     const sowhat=n.sowhat&&n.sowhat!=='Summary not available'?`<div class="card-sowhat">${escHtml(n.sowhat)}</div>`:'';
     const url=n.url?`<a class="ext" href="${escHtml(n.url)}" target="_blank">Read →</a>`:'';
     return`<div class="card">
