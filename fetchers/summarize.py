@@ -275,7 +275,7 @@ def summarise_news(news_data: dict) -> tuple[dict, int]:
             summary=summary[:600],
         )
         sowhat = call_api(prompt)
-         if is_unhelpful(sowhat):
+        if is_unhelpful(sowhat):
             item["sowhat"] = "Summary not available"
         elif any(s in sowhat.lower() for s in [
             "irrelevant", "not relevant", "unrelated",

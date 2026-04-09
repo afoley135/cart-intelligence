@@ -46,7 +46,6 @@ NEWSAPI_QUERIES = [
 
 RSS_FEEDS = [
     {"name": "BioPharma Dive",  "url": "https://www.biopharmadive.com/feeds/news/"},
-    {"name": "Fierce Biotech",  "url": "https://www.fiercebiotech.com/rss/cell-gene"},
     {"name": "STAT News",       "url": "https://www.statnews.com/feed/"},
     {"name": "Endpoints News",  "url": "https://endpts.com/feed/"},
 ]
