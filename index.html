@@ -568,7 +568,8 @@ function renderPipeline(watchlist){
   const companies=watchlist
     .map(w=>w.split(' ').map(wd=>wd.charAt(0).toUpperCase()+wd.slice(1)).join(' '))
     .filter(c=>getCompanyTrials(c).length>0)
-    .filter(c=>!ql||c.toLowerCase().includes(ql)||getCompanyTrials(c).some(t=>(t.asset_name||'').toLowerCase().includes(ql)));
+    .filter(c=>!ql||c.toLowerCase().includes(ql)||getCompanyTrials(c).some(t=>(t.asset_name||'').toLowerCase().includes(ql)))
+    .sort((a,b)=>a.localeCompare(b));
 
   document.getElementById('pipeline-count').textContent=`${companies.length} compan${companies.length!==1?'ies':'y'} with trials`;
 
@@ -618,11 +619,13 @@ function filterPubs(){
   const q=document.getElementById('pub-search').value.toLowerCase();
   const type=document.getElementById('pub-type').value;
   const cat=document.getElementById('pub-category').value;
-  renderPubs(PUBS.filter(p=>{
+  const filtered=PUBS.filter(p=>{
     const text=[p.title,p.authors,p.journal,p.abstract].join(' ').toLowerCase();
     const mt=type===''?true:type==='true'?p.preprint:!p.preprint;
     return(!q||text.includes(q))&&mt&&(!cat||p.category===cat);
-  }));
+  });
+  filtered.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  renderPubs(filtered);
 }
 
 // ── News ──────────────────────────────────────────────────────────────────────
