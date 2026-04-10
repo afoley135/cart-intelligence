@@ -1,31 +1,31 @@
 """
 fetch_patents.py
 ----------------
-Monitors patent activity for watchlist companies using:
-  1. Google News RSS — searches for patent filings, grants, and IP news
-     per watchlist company (no network restrictions, no API key needed)
-  2. Google Patents RSS — searches Google Patents directly for new filings
-     by assignee name
+Fetches patent filings for watchlist companies using the EPO Open Patent
+Services (OPS) API v3.2 — free, covers US, EP, PCT and 50+ jurisdictions.
 
-For each patent item found, passes title + snippet to Claude for:
-  - Relevance assessment (is this a CAR-T / gene therapy patent?)
-  - Claim type classification where determinable
-  - Novelty summary
+Two search passes per company:
+  1. Assignee name search — finds patents filed under the company name
+  2. Applicant name search — finds patent applications (pre-grant)
+
+For each new patent, calls Claude to:
+  - Classify claim type
+  - Summarise novelty and competitive relevance
 
 Writes structured JSON to data/patents.json.
 
-Requires: ANTHROPIC_API_KEY environment variable
+Requires: EPO_OPS_KEY, EPO_OPS_SECRET, ANTHROPIC_API_KEY env vars
+API docs: https://developers.epo.org/ops-v3-2/apis
 """
 
+import base64
 import json
 import logging
 import os
-import re
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from urllib.parse import quote_plus
 
 import anthropic
 import requests
@@ -37,201 +37,231 @@ import requests
 OUTPUT_PATH    = Path(__file__).parent.parent / "data" / "patents.json"
 WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
 
-LOOKBACK_DAYS     = 365 * 5   # 5 years for Google Patents RSS
-NEWS_LOOKBACK_DAYS = 90        # 90 days for news-based patent monitoring
+LOOKBACK_YEARS = 5
+MODEL          = "claude-haiku-4-5-20251001"
 
-MODEL = "claude-haiku-4-5-20251001"
-
+EPO_OPS_KEY    = os.environ.get("EPO_OPS_KEY", "")
+EPO_OPS_SECRET = os.environ.get("EPO_OPS_SECRET", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+
+EPO_AUTH_URL   = "https://ops.epo.org/3.2/auth/accesstoken"
+EPO_SEARCH_URL = "https://ops.epo.org/3.2/rest-services/published-data/search"
+
+# CQL date filter — 5 years back
+YEAR_FROM = (datetime.now(timezone.utc) - timedelta(days=365 * LOOKBACK_YEARS)).year
 
 PATENT_ANALYSIS_PROMPT = """\
 You are a biotech patent analyst specialising in cell and gene therapy.
 
-Given the following patent-related item, provide a structured analysis.
+Given the following patent, provide a structured analysis.
 Return ONLY a valid JSON object with these exact keys — no preamble, no markdown:
 
   "claim_type": one of: "Composition of matter" | "Method of treatment" | "Method (process)" | "Composition + Method" | "Other" | "Unknown"
-  "novelty_summary": 1-2 sentences on what appears novel and its relevance to in vivo CAR-T (or null if insufficient information)
+  "novelty_summary": 2-3 sentences on what is novel and its competitive significance for in vivo CAR-T (or null if insufficient information)
   "relevant": true or false — is this relevant to CAR-T, gene therapy, T cell engineering, or related delivery technology?
 
 Title: {title}
-Summary: {summary}
-Assignee/Company: {assignee}
+Abstract: {abstract}
+Assignee: {assignee}
 """
 
 VALID_CLAIM_TYPES = {
-    "Composition of matter",
-    "Method of treatment",
-    "Method (process)",
-    "Composition + Method",
-    "Other",
-    "Unknown",
+    "Composition of matter", "Method of treatment", "Method (process)",
+    "Composition + Method", "Other", "Unknown",
+}
+
+# EPO OPS XML namespaces
+NS = {
+    "ops":  "http://ops.epo.org",
+    "epo":  "http://www.epo.org/exchange",
+    "exc":  "http://www.epo.org/exchange",
 }
 
 
 # ---------------------------------------------------------------------------
-# Helpers
+# EPO OPS authentication
 # ---------------------------------------------------------------------------
 
-def load_watchlist() -> list[str]:
-    try:
-        return json.loads(WATCHLIST_PATH.read_text()).get("companies", [])
-    except Exception as e:
-        logging.warning(f"Could not load watchlist: {e}")
-        return []
+_access_token: str = ""
+_token_expiry: float = 0.0
 
 
-def google_news_rss_url(query: str) -> str:
-    encoded = quote_plus(query)
-    return f"https://news.google.com/rss/search?q={encoded}&hl=en-US&gl=US&ceid=US:en"
+def get_access_token() -> str:
+    global _access_token, _token_expiry
+    if _access_token and time.time() < _token_expiry - 60:
+        return _access_token
 
-
-def google_patents_rss_url(assignee: str) -> str:
-    """Google Patents search RSS for a specific assignee."""
-    query = quote_plus(f'assignee:"{assignee}"')
-    return f"https://patents.google.com/xhr/query?url=assignee%3D%22{quote_plus(assignee)}%22&exp=&download=true"
+    credentials = base64.b64encode(f"{EPO_OPS_KEY}:{EPO_OPS_SECRET}".encode()).decode()
+    headers = {
+        "Authorization": f"Basic {credentials}",
+        "Content-Type":  "application/x-www-form-urlencoded",
+    }
+    resp = requests.post(
+        EPO_AUTH_URL,
+        data="grant_type=client_credentials",
+        headers=headers,
+        timeout=30,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    _access_token = data["access_token"]
+    _token_expiry = time.time() + int(data.get("expires_in", 1200))
+    logging.info("  EPO OPS token acquired")
+    return _access_token
 
 
 # ---------------------------------------------------------------------------
-# Google News RSS patent monitoring
+# EPO OPS search
 # ---------------------------------------------------------------------------
 
-def fetch_patent_news(company: str, lookback_days: int) -> list[dict]:
-    """Fetch patent-related news for a company via Google News RSS."""
-    cutoff  = datetime.now(timezone.utc) - timedelta(days=lookback_days)
+def search_epo(cql_query: str, start: int = 1, count: int = 25) -> dict:
+    """Run a CQL query against EPO OPS published-data search."""
+    token = get_access_token()
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept":        "application/xml",
+        "X-OPS-Range":   f"{start}-{start + count - 1}",
+    }
+    params = {"q": cql_query, "Range": f"{start}-{start + count - 1}"}
+    resp = requests.get(EPO_SEARCH_URL, params=params, headers=headers, timeout=30)
+
+    # Handle quota / throttle
+    if resp.status_code == 429:
+        logging.warning("  EPO OPS rate limit hit — sleeping 10s")
+        time.sleep(10)
+        return search_epo(cql_query, start, count)
+
+    if resp.status_code == 404:
+        return {}  # No results
+
+    resp.raise_for_status()
+    return {"xml": resp.text, "total": int(resp.headers.get("X-OPS-Range-total", 0))}
+
+
+def fetch_all_for_company(company: str) -> list[dict]:
+    """Fetch all patents for a company via assignee + applicant CQL queries."""
     results = []
+    seen_ids = set()
 
-    # Search queries targeting patent activity
     queries = [
-        f'"{company}" patent',
-        f'"{company}" patent filing',
-        f'"{company}" granted patent',
-        f'"{company}" intellectual property',
+        f'pa="{company}" AND pd>={YEAR_FROM}',   # applicant (pre-grant applications)
+        f'pa="{company.upper()}" AND pd>={YEAR_FROM}',  # uppercase variant
     ]
 
-    seen = set()
-    headers = {"User-Agent": "Mozilla/5.0 (compatible; cart-intelligence-bot/1.0)"}
-
-    for query in queries[:2]:  # limit to 2 queries per company to stay within rate limits
+    for cql in queries:
         try:
-            url  = google_news_rss_url(query)
-            resp = requests.get(url, headers=headers, timeout=30)
-            resp.raise_for_status()
-            root = ET.fromstring(resp.content)
+            start = 1
+            while True:
+                data = search_epo(cql, start=start, count=25)
+                if not data or "xml" not in data:
+                    break
 
-            for item in root.findall(".//item"):
-                title       = (item.findtext("title") or "").strip()
-                link        = (item.findtext("link") or "").strip()
-                description = (item.findtext("description") or "").strip()
-                pub_date_str = (item.findtext("pubDate") or "").strip()
-                source_el   = item.find("{https://news.google.com/rss}source")
-                source_name = source_el.text if source_el is not None else "Google News"
+                parsed = parse_epo_xml(data["xml"], company)
+                for p in parsed:
+                    pid = p.get("id")
+                    if pid and pid not in seen_ids:
+                        seen_ids.add(pid)
+                        results.append(p)
 
-                if link in seen:
-                    continue
-                seen.add(link)
+                total = data.get("total", 0)
+                if start + 25 > total or start > 100:  # cap at 100 per query
+                    break
+                start += 25
+                time.sleep(0.5)
 
-                date_str = ""
-                if pub_date_str:
-                    try:
-                        from email.utils import parsedate_to_datetime
-                        pub_dt = parsedate_to_datetime(pub_date_str)
-                        if pub_dt.tzinfo is None:
-                            pub_dt = pub_dt.replace(tzinfo=timezone.utc)
-                        if pub_dt < cutoff:
-                            continue
-                        date_str = pub_dt.strftime("%Y-%m-%d")
-                    except Exception:
-                        pass
-
-                # Basic relevance filter — must mention patent
-                combined = (title + " " + description).lower()
-                if "patent" not in combined and "ip " not in combined and "intellectual property" not in combined:
-                    continue
-
-                results.append({
-                    "id":               link,
-                    "title":            title,
-                    "abstract":         re.sub(r'<[^>]+>', '', description)[:500],
-                    "assignee":         company,
-                    "watchlist_company": company,
-                    "filing_date":      date_str,
-                    "patent_number":    None,
-                    "application_number": None,
-                    "source":           source_name,
-                    "url":              link,
-                    "data_type":        "news",
-                    "claim_type":       None,
-                    "novelty_summary":  None,
-                    "relevant":         None,
-                })
-
-            time.sleep(0.4)
-
+        except requests.HTTPError as e:
+            if e.response is not None and e.response.status_code == 404:
+                pass  # no results for this query
+            else:
+                logging.warning(f"  EPO search failed for '{company}': {e}")
+            break
         except Exception as e:
-            logging.warning(f"  Google News patent fetch failed for '{company}' query '{query}': {e}")
+            logging.warning(f"  EPO search failed for '{company}': {e}")
+            break
 
     return results
 
 
-# ---------------------------------------------------------------------------
-# Google Patents RSS
-# ---------------------------------------------------------------------------
-
-def fetch_google_patents(company: str) -> list[dict]:
-    """
-    Fetch recent patent filings from Google Patents for a company.
-    Uses the Google Patents search page with assignee filter.
-    """
+def parse_epo_xml(xml_text: str, watchlist_company: str) -> list[dict]:
+    """Parse EPO OPS search result XML into structured dicts."""
     results = []
-    headers = {"User-Agent": "Mozilla/5.0 (compatible; cart-intelligence-bot/1.0)"}
-
     try:
-        # Google Patents supports a search URL that returns an atom/RSS feed
-        encoded_assignee = quote_plus(f'assignee="{company}"')
-        url = f"https://patents.google.com/xhr/query?url={encoded_assignee}&exp=&download=true"
-        resp = requests.get(url, headers=headers, timeout=30)
+        root = ET.fromstring(xml_text)
+    except ET.ParseError as e:
+        logging.warning(f"  XML parse error: {e}")
+        return results
 
-        if resp.status_code != 200:
-            logging.warning(f"  Google Patents returned {resp.status_code} for '{company}'")
-            return []
+    # Find all exchange-documents
+    for doc in root.iter("{http://www.epo.org/exchange}exchange-document"):
+        try:
+            country    = doc.get("country", "")
+            doc_number = doc.get("doc-number", "")
+            kind       = doc.get("kind", "")
+            pub_date   = doc.get("date", "")
 
-        # Parse the response — Google Patents returns JSON
-        data = resp.json()
-        hits = data.get("results", {}).get("cluster", [])
+            patent_id = f"{country}{doc_number}.{kind}"
 
-        for cluster in hits[:20]:
-            for result in cluster.get("result", [])[:1]:
-                patent = result.get("patent", {})
-                title   = patent.get("title", "")
-                pat_num = patent.get("publication_number", "")
-                filing  = patent.get("filing_date", "")
-                abstract= patent.get("abstract", "") or ""
-                assignees = [a.get("name","") for a in patent.get("assignee", [])]
-                assignee_str = "; ".join(assignees[:2]) or company
+            # Title
+            title = ""
+            for t in doc.iter("{http://www.epo.org/exchange}invention-title"):
+                if t.get("{http://www.w3.org/XML/1998/namespace}lang", "").lower() in ("en", ""):
+                    title = (t.text or "").strip()
+                    if title:
+                        break
 
-                if not title:
-                    continue
+            # Abstract
+            abstract = ""
+            for ab in doc.iter("{http://www.epo.org/exchange}abstract"):
+                if ab.get("{http://www.w3.org/XML/1998/namespace}lang", "").lower() in ("en", ""):
+                    texts = [p.text or "" for p in ab.iter("{http://www.epo.org/exchange}p")]
+                    abstract = " ".join(texts).strip()[:1000]
+                    if abstract:
+                        break
 
-                results.append({
-                    "id":               pat_num or title[:60],
-                    "title":            title,
-                    "abstract":         abstract[:500],
-                    "assignee":         assignee_str,
-                    "watchlist_company": company,
-                    "filing_date":      filing[:10] if filing else "",
-                    "patent_number":    pat_num,
-                    "application_number": patent.get("application_number",""),
-                    "source":           "Google Patents",
-                    "url":              f"https://patents.google.com/patent/{pat_num}" if pat_num else "",
-                    "data_type":        "patent",
-                    "claim_type":       None,
-                    "novelty_summary":  None,
-                    "relevant":         None,
-                })
+            # Applicants/assignees
+            assignees = []
+            for party in doc.iter("{http://www.epo.org/exchange}applicant"):
+                name_el = party.find(".//{http://www.epo.org/exchange}name")
+                if name_el is not None and name_el.text:
+                    assignees.append(name_el.text.strip())
 
-    except Exception as e:
-        logging.warning(f"  Google Patents fetch failed for '{company}': {e}")
+            assignee_str = "; ".join(assignees[:3]) or watchlist_company
+
+            # Filing date
+            filing_date = ""
+            for fd in doc.iter("{http://www.epo.org/exchange}filing-date"):
+                filing_date = (fd.text or "").strip()
+                if filing_date and len(filing_date) == 8:
+                    filing_date = f"{filing_date[:4]}-{filing_date[4:6]}-{filing_date[6:]}"
+                break
+
+            if not title:
+                continue
+
+            url = ""
+            if country and doc_number:
+                url = f"https://patents.google.com/patent/{country}{doc_number}{kind}"
+
+            results.append({
+                "id":               patent_id,
+                "title":            title,
+                "abstract":         abstract,
+                "assignee":         assignee_str,
+                "watchlist_company": watchlist_company,
+                "filing_date":      filing_date or pub_date[:4] if pub_date else "",
+                "patent_number":    f"{country}{doc_number}{kind}",
+                "application_number": doc_number,
+                "source":           "EPO OPS",
+                "url":              url,
+                "data_type":        "patent",
+                "claim_type":       None,
+                "novelty_summary":  None,
+                "relevant":         None,
+            })
+
+        except Exception as e:
+            logging.warning(f"  Error parsing patent doc: {e}")
+            continue
 
     return results
 
@@ -246,13 +276,13 @@ def analyse_patent(patent: dict) -> dict:
     try:
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         prompt = PATENT_ANALYSIS_PROMPT.format(
-            title=patent.get("title",""),
-            summary=(patent.get("abstract","") or "")[:600],
-            assignee=patent.get("assignee",""),
+            title=patent.get("title", ""),
+            abstract=(patent.get("abstract", "") or "")[:800],
+            assignee=patent.get("assignee", ""),
         )
         msg = client.messages.create(
-            model=MODEL, max_tokens=250,
-            messages=[{"role":"user","content":prompt}],
+            model=MODEL, max_tokens=300,
+            messages=[{"role": "user", "content": prompt}],
         )
         raw = msg.content[0].text.strip()
         if raw.startswith("```"):
@@ -263,6 +293,7 @@ def analyse_patent(patent: dict) -> dict:
         patent["claim_type"]      = result.get("claim_type") if result.get("claim_type") in VALID_CLAIM_TYPES else "Unknown"
         patent["novelty_summary"] = result.get("novelty_summary")
         patent["relevant"]        = result.get("relevant", True)
+        logging.info(f"    [{patent['claim_type']}] {patent['title'][:60]}")
     except Exception as e:
         logging.warning(f"  Claude analysis failed: {e}")
     return patent
@@ -274,10 +305,14 @@ def analyse_patent(patent: dict) -> dict:
 
 def run():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
-    logging.info("Starting patent fetch")
+    logging.info("Starting patent fetch via EPO OPS")
+
+    if not EPO_OPS_KEY or not EPO_OPS_SECRET:
+        logging.error("EPO_OPS_KEY and EPO_OPS_SECRET not set — aborting")
+        return
 
     watchlist = load_watchlist()
-    logging.info(f"Processing {len(watchlist)} watchlist companies")
+    logging.info(f"Processing {len(watchlist)} watchlist companies, from {YEAR_FROM}")
 
     # Load existing to preserve Claude analysis
     all_patents: dict[str, dict] = {}
@@ -288,37 +323,34 @@ def run():
                 pid = p.get("id")
                 if pid:
                     all_patents[pid] = p
-            logging.info(f"  Loaded {len(all_patents)} existing entries")
+            logging.info(f"  Loaded {len(all_patents)} existing patents")
         except Exception as e:
             logging.warning(f"Could not load existing patents: {e}")
 
     new_count = 0
 
     for company in watchlist:
-        logging.info(f"  {company}")
+        logging.info(f"  Searching: {company}")
+        try:
+            patents = fetch_all_for_company(company)
+            logging.info(f"    Found {len(patents)} patents")
 
-        # Source 1 — Google News patent monitoring
-        news_items = fetch_patent_news(company, NEWS_LOOKBACK_DAYS)
-        logging.info(f"    News: {len(news_items)} patent-related items")
+            for patent in patents:
+                pid = patent["id"]
+                if pid in all_patents:
+                    continue
+                if ANTHROPIC_API_KEY:
+                    patent = analyse_patent(patent)
+                    time.sleep(0.3)
+                if patent.get("relevant") is not False:
+                    all_patents[pid] = patent
+                    new_count += 1
 
-        # Source 2 — Google Patents direct search
-        patent_items = fetch_google_patents(company)
-        logging.info(f"    Patents: {len(patent_items)} filings")
+            time.sleep(1.0)  # respect EPO rate limits
+        except Exception as e:
+            logging.error(f"  Failed for {company}: {e}")
 
-        for item in news_items + patent_items:
-            pid = item["id"]
-            if pid in all_patents:
-                continue
-            if ANTHROPIC_API_KEY:
-                item = analyse_patent(item)
-                time.sleep(0.25)
-            if item.get("relevant") is not False:
-                all_patents[pid] = item
-                new_count += 1
-
-        time.sleep(0.5)
-
-    logging.info(f"  Added {new_count} new entries")
+    logging.info(f"  Added {new_count} new patents")
 
     patents_list = sorted(
         all_patents.values(),
@@ -334,7 +366,15 @@ def run():
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(output, indent=2, ensure_ascii=False))
-    logging.info(f"Wrote {len(patents_list)} patent entries to {OUTPUT_PATH}")
+    logging.info(f"Wrote {len(patents_list)} patents to {OUTPUT_PATH}")
+
+
+def load_watchlist() -> list[str]:
+    try:
+        return json.loads(WATCHLIST_PATH.read_text()).get("companies", [])
+    except Exception as e:
+        logging.warning(f"Could not load watchlist: {e}")
+        return []
 
 
 if __name__ == "__main__":
