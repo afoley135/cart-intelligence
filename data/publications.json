@@ -1,7 +1,22 @@
 {
-  "fetched_at": "2026-04-10T19:40:06.855465+00:00",
-  "count": 17,
+  "fetched_at": "2026-04-13T07:53:18.013503+00:00",
+  "count": 16,
   "publications": [
+    {
+      "source": "pubmed",
+      "pmid": "41679521",
+      "title": "Engineering viral vectors for in vivo CAR-T generation: Advances, challenges, and opportunities.",
+      "journal": "Critical reviews in oncology/hematology",
+      "authors": "Yang P, Ma Z, Liu G, Shen Y, Bai Z et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T cell therapy has revolutionized the treatment of hematological malignancies but remains constrained by complex, individualized ex vivo manufacturing, limiting its accessibility and scalability. Direct in vivo generation of CAR-T cells within the patient offers a transformative approach to overcome these bottlenecks. However, the viral vector systems that enable this process have received comparatively limited attention in existing literature, where most reviews emphasize non-viral technologies. This review focuses on viral vectors as the pivotal enablers of in vivo CAR-T therapy. We summarize major directions in vector innovation, including engineering strategies to enhance tropism and safety, clinical applications across diverse disease settings, and the intrinsic trade-offs that shape translational outcomes. Current challenges are considered in the context of emerging technologies designed to improve precision, controllability, and clinical feasibility. By integrating these perspectives, this review outlines how viral vector-mediated in vivo CAR-T platforms may evolve toward more accessible, programmable, and safer next-generation cell therapies.",
+      "date": "2026-May",
+      "doi": "10.1016/j.critrevonc.2026.105209",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41679521/",
+      "sowhat": "Viral vectors enable scalable in vivo CAR-T manufacturing, bypassing complex ex vivo production bottlenecks.",
+      "category": "Review article"
+    },
     {
       "source": "pubmed",
       "pmid": "41916191",
@@ -15,21 +30,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41916191/",
       "sowhat": "Non-viral mRNA delivery could accelerate CAR-T manufacturing and enable safer in vivo engineering approaches.",
-      "category": "Review article"
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41898300",
-      "title": "Targeting T-Cells for Cancer Treatment: Current Clinical Strategies and Challenges.",
-      "journal": "Biomedicines",
-      "authors": "Rotte A, Sopjani M, Bhandaru M",
-      "abstract": "Modulation of immune response to target tumor cells has been shown to be a successful strategy for cancer treatment. Over the past years immunotherapy has been integrated into cancer treatment and PD-1 blockers have become the backbone of treatment regimens for multiple cancer types. Several classes of immunotherapies, such as immune checkpoint blockers, bispecific antibodies, chimeric antigen receptor (CAR) T-cells, and tumor-infiltrating lymphocytes (TILs), were approved by the US FDA in the last decade and many more are in clinical trials. Research on redirecting effector T-cells to treat cancer has been aimed at addressing the limited responses in solid tumors, emergence of resistance, treatment-limiting adverse events and logistical challenges. Bispecific immune checkpoint blockers, developed to simplify the combination therapies; bispecific T-cell engagers, developed to connect the effector T-cells with tumor cells; and the next generation of CAR T-cells and the next generation of TIL therapies, developed to improve efficacy in solid tumors, are currently under clinical evaluation. This narrative review aims to summarize the current status of T-cell-directed immunotherapy, describing the brief history of development, clinical success, challenges and latest advancements that are under clinical evaluation. Evolution of monoclonal antibodies to bispecific antibodies and bispecific T-cell engagers, the latest advances in adoptive cell therapies, including the optimization of CAR T-cells for solid tumors, allogenic, universal CAR T-cells and in vivo CAR T-cell therapies are discussed in the review along with the key challenges of the therapies, such as primary and acquired resistance, limited efficacy in solid tumors, manufacturing and logistical challenges, and treatment-related toxicities.",
-      "date": "2026-Mar",
-      "doi": "10.1136/jitc-2023-008735",
-      "mesh_terms": [],
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41898300/",
-      "sowhat": "CAR-T and emerging T-cell therapies address solid tumor limitations, resistance, and toxicity challenges.",
       "category": "Review article"
     },
     {
@@ -121,21 +121,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41692627/",
       "sowhat": "Abstract not available",
       "category": null
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41679305",
-      "title": "Toward precision immunotherapy: In vivo gene editing of T, NK, and myeloid cells.",
-      "journal": "Med (New York, N.Y.)",
-      "authors": "Nguyen KH, Das S, Matosevic S",
-      "abstract": "The clinical success of cell-based immunotherapies has revolutionized treatment of cancer and other diseases by enabling precise and durable tumor targeting. However, while traditional ex vivo engineering of immune cells has demonstrated promise, these approaches are constrained by logistical, economic, and manufacturing challenges that hinder broad clinical adoption. In vivo immune engineering, which directly reprograms immune cells within the patient's body, is emerging as an attractive alternative to overcome these limitations and directly reshape the tumor microenvironment (TME) in situ and restore antitumor immunity. This review surveys current approaches to overcoming them through in vivo delivery platforms and therapeutic constructs to achieve direct in vivo gene editing. We further discuss key safety and efficacy considerations, such as biodistribution, gene expression control, immunogenicity, and tumorigenicity. Finally, we examine early clinical efforts and translational hurdles in bringing in vivo immune engineering strategies to the bedside.",
-      "date": "2026-Mar",
-      "doi": "10.1016/j.medj.2025.100992",
-      "mesh_terms": [],
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41679305/",
-      "sowhat": "In vivo immune cell engineering offers manufacturing-free alternative to ex vivo CAR-T with direct TME reprogramming.",
-      "category": "Review article"
     },
     {
       "source": "pubmed",

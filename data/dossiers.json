@@ -1,284 +1,277 @@
 {
-  "generated_at": "2026-04-09T18:04:43.631999+00:00",
+  "generated_at": "2026-04-13T09:02:08.880772+00:00",
   "count": 28,
   "dossiers": {
     "Create Medicines": {
       "company": "Create Medicines",
-      "generated_at": "2026-04-09T18:02:59.871239+00:00",
+      "generated_at": "2026-04-13T08:59:58.192897+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": null,
-        "best_disclosed_data": null,
-        "indications_pursued": "Cancer therapy based on single news mention of CAR-T cells for cancer treatment.",
-        "delivery_approach": null,
-        "key_differentiators": "Claims to have developed a method for creating longer lasting CAR-T cells according to one news report.",
-        "last_significant_event": "News report from March 13, 2026 describing a new method for longer lasting CAR-T cells for cancer therapy."
+        "stage_and_modality": "Preclinical stage company developing in vivo CAR-T cell manufacturing using CRISPR-based approaches.",
+        "best_disclosed_data": "Demonstrated successful in vivo CAR-T cell generation in mouse models through direct CRISPR injection.",
+        "indications_pursued": "Cancer indications, though specific tumor types have not been disclosed.",
+        "delivery_approach": "Direct CRISPR injection system to manufacture CAR-T cells in vivo, eliminating ex vivo cell processing requirements.",
+        "key_differentiators": "In vivo manufacturing approach that could eliminate costly ex vivo processing steps required by traditional CAR-T therapies. This direct injection method represents a potential transformation of cell therapy economics.",
+        "last_significant_event": "March 2026 publication in Nature demonstrating successful in vivo CAR-T manufacturing in mouse models via CRISPR injection."
       }
     },
     "Tessera Therapeutics": {
       "company": "Tessera Therapeutics",
-      "generated_at": "2026-04-09T18:03:05.197087+00:00",
+      "generated_at": "2026-04-13T09:00:03.934820+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Phase 1/2 clinical stage company with in vivo gene therapy approach targeting genetic diseases.",
-        "best_disclosed_data": "TSRA-196 is in Phase 1/2 clinical development for Alpha-1 Antitrypsin Deficiency in patients with PiZZ genotype and associated lung/liver disease.",
-        "indications_pursued": "Alpha-1 Antitrypsin Deficiency (AATD) targeting patients with PiZZ genotype presenting with lung and/or liver manifestations.",
-        "delivery_approach": null,
-        "key_differentiators": null,
-        "last_significant_event": "Initiation of Phase 1/2 clinical trial (NCT07227207) for TSRA-196 in Alpha-1 Antitrypsin Deficiency."
+        "stage_and_modality": "Phase 1/2 clinical stage company developing in vivo gene writing approaches for genetic diseases and infectious diseases.",
+        "best_disclosed_data": "Phase 1/2 trial (NCT07227207) for TSRA-196 in Alpha-1 Antitrypsin Deficiency patients with PiZZ genotype, though trial is not yet recruiting.",
+        "indications_pursued": "Alpha-1 Antitrypsin Deficiency (AATD) with lung and/or liver disease manifestations and HIV as a potential cure target.",
+        "delivery_approach": "In vivo gene writing platform technology that eliminates the need for ex vivo cell manufacturing.",
+        "key_differentiators": "Gene writing technology platform that enables direct in vivo genetic modifications, offering scalable treatment approach without ex vivo cell processing requirements.",
+        "last_significant_event": "Received Gates Foundation grant in March 2026 to advance in vivo gene writing approaches for potential HIV cure applications."
       }
     },
     "Nanocell Therapeutics": {
       "company": "Nanocell Therapeutics",
-      "generated_at": "2026-04-09T18:03:06.197825+00:00",
+      "generated_at": "2026-04-13T09:00:04.935568+00:00",
       "has_data": false,
       "dossier": null
     },
     "Averna Therapeutics": {
       "company": "Averna Therapeutics",
-      "generated_at": "2026-04-09T18:03:06.198203+00:00",
+      "generated_at": "2026-04-13T09:00:04.936001+00:00",
       "has_data": false,
       "dossier": null
     },
     "Addition Therapeutics": {
       "company": "Addition Therapeutics",
-      "generated_at": "2026-04-09T18:03:06.198538+00:00",
+      "generated_at": "2026-04-13T09:00:04.936444+00:00",
       "has_data": false,
       "dossier": null
     },
     "Typewriter Therapeutics": {
       "company": "Typewriter Therapeutics",
-      "generated_at": "2026-04-09T18:03:06.198858+00:00",
+      "generated_at": "2026-04-13T09:00:04.936870+00:00",
       "has_data": false,
       "dossier": null
     },
     "Umoja Biopharma": {
       "company": "Umoja Biopharma",
-      "generated_at": "2026-04-09T18:03:11.405422+00:00",
+      "generated_at": "2026-04-13T09:00:14.519874+00:00",
       "has_data": true,
       "dossier": {
         "stage_and_modality": "Phase 1 clinical stage company developing in vivo CAR-T therapy using viral vector delivery approach.",
-        "best_disclosed_data": "Currently recruiting patients in Phase 1 dose-escalation study (NCT06528301) for lead asset UB-VV111, evaluating safety and antitumor activity.",
-        "indications_pursued": "Targeting hematologic malignancies including relapsed/refractory large B-cell lymphoma and chronic lymphocytic leukemia.",
-        "delivery_approach": "Viral vector-based in vivo delivery platform, as indicated by the UB-VV111 asset nomenclature.",
+        "best_disclosed_data": "Currently recruiting patients in Phase 1 dose-escalation study (NCT06528301) evaluating UB-VV111 in relapsed/refractory large B-cell lymphoma and chronic lymphocytic leukemia.",
+        "indications_pursued": "Targeting B-cell hematologic malignancies including large B-cell lymphoma and chronic lymphocytic leukemia in relapsed/refractory setting.",
+        "delivery_approach": "Viral vector-based in vivo delivery platform, as indicated by the UB-VV111 asset nomenclature suggesting viral vector technology.",
         "key_differentiators": null,
-        "last_significant_event": "Initiation of Phase 1 clinical trial NCT06528301 for UB-VV111 in B-cell lymphomas, currently in recruiting status."
+        "last_significant_event": "Initiation of Phase 1 clinical trial NCT06528301 for UB-VV111, currently in recruiting status."
       }
     },
     "Interius BioTherapeutics": {
       "company": "Interius BioTherapeutics",
-      "generated_at": "2026-04-09T18:03:12.406215+00:00",
+      "generated_at": "2026-04-13T09:00:15.520618+00:00",
       "has_data": false,
       "dossier": null
     },
     "Capstan Therapeutics": {
       "company": "Capstan Therapeutics",
-      "generated_at": "2026-04-09T18:03:17.277544+00:00",
+      "generated_at": "2026-04-13T09:00:21.224625+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Phase 1 clinical stage with asset CPTX2309 currently recruiting in healthy volunteers and rheumatoid arthritis patients.",
+        "stage_and_modality": "Phase 1 clinical stage company with asset CPTX2309 in healthy volunteers and rheumatoid arthritis patients.",
         "best_disclosed_data": null,
-        "indications_pursued": "Rheumatoid arthritis and systemic lupus erythematosus, focusing on moderate to severe disease presentations.",
+        "indications_pursued": "Rheumatoid arthritis and systemic lupus erythematosus, focusing on moderate to severe disease.",
         "delivery_approach": null,
         "key_differentiators": null,
-        "last_significant_event": "Initiation of Phase 1 clinical trial NCT06917742 for CPTX2309 in rheumatoid arthritis and systemic lupus erythematosus patients."
+        "last_significant_event": "Initiation of Phase 1 trial NCT06917742 for CPTX2309 in healthy volunteers and rheumatoid arthritis patients, currently recruiting."
       }
     },
     "Orbital Therapeutics": {
       "company": "Orbital Therapeutics",
-      "generated_at": "2026-04-09T18:03:18.278334+00:00",
+      "generated_at": "2026-04-13T09:00:22.225313+00:00",
       "has_data": false,
       "dossier": null
     },
     "EsoBiotec": {
       "company": "EsoBiotec",
-      "generated_at": "2026-04-09T18:03:18.278685+00:00",
+      "generated_at": "2026-04-13T09:00:22.225773+00:00",
       "has_data": false,
       "dossier": null
     },
     "Kelonia Therapeutics": {
       "company": "Kelonia Therapeutics",
-      "generated_at": "2026-04-09T18:03:24.964839+00:00",
+      "generated_at": "2026-04-13T09:00:30.189952+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Phase 1 clinical stage with in vivo CAR-T approach targeting relapsed/refractory multiple myeloma.",
-        "best_disclosed_data": "Currently recruiting for Phase 1 trial of KLN-1010 evaluating safety, tolerability, and recommended Phase 2 dose.",
-        "indications_pursued": "Multiple myeloma in relapse and refractory settings.",
-        "delivery_approach": "In vivo CAR-T delivery platform with lead asset KLN-1010.",
+        "stage_and_modality": "Phase 1 clinical stage company developing in vivo CAR-T therapies. Currently recruiting patients for their lead program KLN-1010.",
+        "best_disclosed_data": "No disclosed efficacy or safety data available. The company is currently conducting a Phase 1 dose-escalation trial to determine safety, tolerability, and recommended Phase 2 dose.",
+        "indications_pursued": "Targeting relapsed or refractory multiple myeloma. Focus appears to be on hematological malignancies based on current pipeline.",
+        "delivery_approach": "In vivo CAR-T delivery platform, though specific delivery mechanism not disclosed in available data.",
         "key_differentiators": null,
         "last_significant_event": "Initiation of Phase 1 clinical trial NCT07075185 for KLN-1010 in relapsed/refractory multiple myeloma, currently recruiting patients."
       }
     },
     "Genocury": {
       "company": "Genocury",
-      "generated_at": "2026-04-09T18:03:34.557063+00:00",
+      "generated_at": "2026-04-13T09:00:40.482039+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Early-phase clinical development with in vivo CAR-T delivery platform. Company has 4 clinical trials, with one in Early Phase 1 and three others recruiting or not yet recruiting.",
-        "best_disclosed_data": null,
-        "indications_pursued": "Hematological malignancies including relapsed/refractory multiple myeloma, B-cell acute lymphoblastic leukemia, and B-cell non-Hodgkin lymphoma. Also pursuing refractory autoimmune diseases targeting CD19/BCMA.",
-        "delivery_approach": "In vivo CAR-T injection platform with lead assets JY231 for B-cell malignancies and JY232 for multiple myeloma. Dual CD19/BCMA targeting approach for autoimmune indications.",
-        "key_differentiators": null,
-        "last_significant_event": "Initiation of recruiting for multiple clinical trials including NCT07336823 (JY232 for multiple myeloma) in Early Phase 1 and NCT06890065/NCT06678282 (JY231 for B-cell malignancies)."
+        "stage_and_modality": "Early clinical stage company developing in vivo CAR-T therapies with multiple Phase 1 trials recruiting. The company has at least two disclosed assets (JY231 and JY232) in clinical development.",
+        "best_disclosed_data": "No clinical data has been disclosed yet. All trials are in early Phase 1 or recruiting stage focusing on safety, tolerability and initial efficacy assessments.",
+        "indications_pursued": "Hematological malignancies including relapsed/refractory B-cell lymphomas, B-ALL, and multiple myeloma. Also pursuing refractory autoimmune diseases targeting CD19/BCMA.",
+        "delivery_approach": "Injectable in vivo CAR-T platform with assets JY231 targeting CD19 for B-cell malignancies and JY232 targeting BCMA for multiple myeloma.",
+        "key_differentiators": "Dual-target approach with CD19/BCMA combination therapy for autoimmune diseases represents a distinctive positioning. All trials are investigator-initiated single-center studies suggesting early-stage development model.",
+        "last_significant_event": "Initiation of recruiting for multiple Phase 1 trials, with the most recent being NCT07490951 for autoimmune diseases though not yet recruiting."
       }
     },
     "MagicRNA": {
       "company": "MagicRNA",
-      "generated_at": "2026-04-09T18:03:40.596017+00:00",
+      "generated_at": "2026-04-13T09:00:52.795776+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Clinical stage company with asset HN2301 in recruiting Phase trials for autoimmune diseases.",
-        "best_disclosed_data": "Limited clinical data available as trials are investigator-initiated with no reported results disclosed.",
-        "indications_pursued": "Autoimmune diseases including systemic lupus erythematosus, scleroderma, and refractory myasthenia gravis.",
+        "stage_and_modality": "Phase 1 clinical development with HN2301 asset for autoimmune diseases. One active recruiting trial and one terminated trial identified.",
+        "best_disclosed_data": "Limited clinical data disclosure with one Phase 1 trial recruiting for systemic lupus erythematosus and scleroderma. Myasthenia gravis trial was terminated with no reported outcomes.",
+        "indications_pursued": "Autoimmune diseases including systemic lupus erythematosus, scleroderma, and refractory myasthenia gravis. Focus appears to be on autoimmune disease applications rather than oncology.",
         "delivery_approach": null,
         "key_differentiators": null,
-        "last_significant_event": "Termination of myasthenia gravis trial (NCT06965309) while maintaining active recruitment in lupus/scleroderma study."
+        "last_significant_event": "Termination of refractory myasthenia gravis trial (NCT06965309) for HN2301 with no reported data or reasons disclosed."
       }
     },
     "Integra Therapeutics": {
       "company": "Integra Therapeutics",
-      "generated_at": "2026-04-09T18:03:45.430926+00:00",
+      "generated_at": "2026-04-13T09:00:56.797664+00:00",
       "has_data": true,
-      "dossier": {
-        "stage_and_modality": null,
-        "best_disclosed_data": null,
-        "indications_pursued": null,
-        "delivery_approach": null,
-        "key_differentiators": null,
-        "last_significant_event": null
-      }
+      "dossier": null
     },
     "Seamless Therapeutics": {
       "company": "Seamless Therapeutics",
-      "generated_at": "2026-04-09T18:03:46.431702+00:00",
+      "generated_at": "2026-04-13T09:00:57.798281+00:00",
       "has_data": false,
       "dossier": null
     },
     "T-CURX": {
       "company": "T-CURX",
-      "generated_at": "2026-04-09T18:03:46.432071+00:00",
+      "generated_at": "2026-04-13T09:00:57.798703+00:00",
       "has_data": false,
       "dossier": null
     },
     "Azalea Therapeutics": {
       "company": "Azalea Therapeutics",
-      "generated_at": "2026-04-09T18:03:50.448478+00:00",
+      "generated_at": "2026-04-13T09:01:04.467131+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Preclinical stage developing in vivo CAR-T therapy approaches",
-        "best_disclosed_data": "Demonstrated tumor clearance in mouse models according to recent reporting",
+        "stage_and_modality": "Preclinical stage developing in vivo CAR-T cell engineering technology using site-specific TRAC integration.",
+        "best_disclosed_data": "Nature publication demonstrating in vivo site-specific TRAC-CAR T cell engineering with tumor clearance in mouse models.",
         "indications_pursued": null,
-        "delivery_approach": null,
-        "key_differentiators": null,
-        "last_significant_event": "March 2026 news coverage highlighting preclinical tumor clearance results in mouse studies"
+        "delivery_approach": "In vivo site-specific TRAC integration technology that eliminates the need for ex vivo manufacturing.",
+        "key_differentiators": "Site-specific TRAC integration approach that enables durable CAR-T efficacy while avoiding traditional ex vivo manufacturing complexity.",
+        "last_significant_event": "Nature publication highlighting in vivo site-specific TRAC-CAR T cell engineering technology reported on March 18, 2026."
       }
     },
     "Ensoma": {
       "company": "Ensoma",
-      "generated_at": "2026-04-09T18:03:57.060838+00:00",
+      "generated_at": "2026-04-13T09:01:11.914557+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Phase 1/2 clinical stage with EN-374 treatment regimen for X-linked chronic granulomatous disease currently recruiting patients.",
+        "stage_and_modality": "Phase 1/2 clinical stage with EN-374 for X-linked chronic granulomatous disease currently recruiting patients.",
         "best_disclosed_data": null,
-        "indications_pursued": "X-linked chronic granulomatous disease with EN-374, and previously pursued sickle cell disease and stem cell mobilization with MGTA-145.",
+        "indications_pursued": "Primary focus on X-linked chronic granulomatous disease with EN-374, plus broader chronic granulomatous disease research activities.",
         "delivery_approach": null,
         "key_differentiators": null,
-        "last_significant_event": "Initiation of Phase 1/2 trial NCT06876363 for EN-374 in X-linked chronic granulomatous disease, currently recruiting participants."
+        "last_significant_event": "Initiated Phase 1/2 clinical trial NCT06876363 for EN-374 in X-linked chronic granulomatous disease, currently recruiting participants."
       }
     },
     "Sana Biotechnology": {
       "company": "Sana Biotechnology",
-      "generated_at": "2026-04-09T18:04:04.424723+00:00",
+      "generated_at": "2026-04-13T09:01:19.933294+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Phase 1 clinical stage with multiple in vivo CAR-T programs including SC262 and SC291 assets.",
+        "stage_and_modality": "Phase 1 clinical stage with multiple assets (SC262, SC291) in active trials across oncology and autoimmune indications.",
         "best_disclosed_data": null,
-        "indications_pursued": "Hematologic malignancies including Non-Hodgkin's Lymphoma, Large B-cell Lymphoma, and Chronic Lymphocytic Leukemia, plus autoimmune diseases including Systemic Lupus Erythematosus.",
+        "indications_pursued": "Oncology indications including Non-Hodgkin's lymphoma, large B-cell lymphoma, and chronic lymphocytic leukemia, plus autoimmune diseases including systemic lupus erythematosus.",
         "delivery_approach": null,
-        "key_differentiators": "Dual application platform with SC291 being tested in both hematologic malignancies and severe autoimmune diseases.",
-        "last_significant_event": "Three Phase 1 trials are active but not recruiting, with SC262-101 and SC291-102 studies ongoing as of 2024."
+        "key_differentiators": "Developing distinct assets for both oncology (SC262) and autoimmune diseases (SC291), suggesting a dual-application platform approach.",
+        "last_significant_event": "Three Phase 1 trials currently active but not recruiting as of 2024, evaluating safety, tolerability, and preliminary efficacy across multiple indications."
       }
     },
     "Aera Therapeutics": {
       "company": "Aera Therapeutics",
-      "generated_at": "2026-04-09T18:04:05.425446+00:00",
+      "generated_at": "2026-04-13T09:01:20.934094+00:00",
       "has_data": false,
       "dossier": null
     },
     "Everest Medicines": {
       "company": "Everest Medicines",
-      "generated_at": "2026-04-09T18:04:11.176753+00:00",
+      "generated_at": "2026-04-13T09:01:29.798082+00:00",
       "has_data": true,
       "dossier": {
         "stage_and_modality": "Phase 1/2 development with intramuscular delivery approach for EVM14 in solid tumors.",
         "best_disclosed_data": null,
         "indications_pursued": "Selected solid tumors (EVM14), primary membranous nephropathy (EVER001), and primary IgA nephropathy (Nefecon).",
-        "delivery_approach": "Intramuscular administration for EVM14, with oral delivery for BTK inhibitor EVER001.",
-        "key_differentiators": "EVM14 designed for combination with pembrolizumab; EVER001 is a highly selective, oral, reversible covalent BTK inhibitor with high kinase selectivity.",
-        "last_significant_event": "Initiation of Phase 1/2 trial NCT07095868 for EVM14 in selected solid tumors with intramuscular delivery."
+        "delivery_approach": "Intramuscular administration for EVM14; oral delivery for BTK inhibitor EVER001.",
+        "key_differentiators": "EVM14 represents an intramuscular approach for solid tumors, while EVER001 is a highly selective oral covalent BTK inhibitor for proteinuric glomerular diseases.",
+        "last_significant_event": "Initiation of Phase 1/2 trial for EVM14 in selected solid tumors with intramuscular dosing alone and in combination with pembrolizumab."
       }
     },
     "Orna Therapeutics": {
       "company": "Orna Therapeutics",
-      "generated_at": "2026-04-09T18:04:20.074312+00:00",
+      "generated_at": "2026-04-13T09:01:38.151954+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Phase 1 clinical stage company developing in vivo CAR-T therapies using circular RNA delivered via lipid nanoparticles. Currently has two Phase 1 trials recruiting, including one testing CD19 CAR-T for autoimmune diseases.",
-        "best_disclosed_data": "Limited disclosed data available, with Phase 1 trials recently initiated for ORN252 in healthy volunteers and TI-0032-III in autoimmune patients. No efficacy or safety data publicly reported yet.",
-        "indications_pursued": "Targeting autoimmune diseases including systemic lupus erythematosus and Sjogren's syndrome. Also conducting healthy volunteer studies suggesting broader therapeutic development.",
-        "delivery_approach": "Uses lipid nanoparticles to deliver circular RNA encoding CD19 chimeric antigen receptor directly to T cells in vivo. Platform appears designed for targeted LNP delivery to specific cell types.",
-        "key_differentiators": "Employs circular RNA rather than traditional mRNA for CAR expression, potentially offering improved stability and duration. Focuses on autoimmune applications of CAR-T rather than oncology.",
-        "last_significant_event": "Initiation of two Phase 1 clinical trials in 2024, including first-in-human study of in vivo CD19 CAR-T therapy for autoimmune diseases."
+        "stage_and_modality": "Phase 1 clinical stage company developing in vivo CAR-T therapy using circular RNA delivered via lipid nanoparticles.",
+        "best_disclosed_data": "Currently recruiting patients for Phase 1 dose escalation study of TI-0032-III in relapsed/refractory autoimmune diseases.",
+        "indications_pursued": "Autoimmune diseases including systemic lupus erythematosus (SLE) and Sjogren's syndrome.",
+        "delivery_approach": "Lipid nanoparticles (LNPs) targeting T cells that deliver circular RNA encoding CD19 chimeric antigen receptor.",
+        "key_differentiators": "Uses circular RNA platform for in vivo CAR-T generation rather than traditional ex vivo CAR-T manufacturing approaches.",
+        "last_significant_event": "Initiated Phase 1 clinical trial (NCT07413341) for TI-0032-III in autoimmune diseases."
       }
     },
     "Oricell Therapeutics": {
       "company": "Oricell Therapeutics",
-      "generated_at": "2026-04-09T18:04:27.738082+00:00",
+      "generated_at": "2026-04-13T09:01:45.540677+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Phase 1/2 clinical stage company developing CAR-T cell therapy products. Two active recruiting trials for OriCAR-017 in multiple myeloma.",
-        "best_disclosed_data": "No clinical data disclosed yet as trials are in recruiting status. Both Phase 1 trials are evaluating safety, pharmacokinetics, and preliminary efficacy.",
-        "indications_pursued": "Relapsed/refractory multiple myeloma with focus on plasma cell neoplasms. Both clinical trials target the same indication.",
-        "delivery_approach": "Anti-GPRC5D CAR-T cell product delivered as cell therapy. Appears to be traditional ex vivo engineered CAR-T approach rather than in vivo delivery.",
-        "key_differentiators": "Targets GPRC5D antigen for multiple myeloma treatment. Limited data available to assess differentiation versus other GPRC5D-targeting approaches.",
-        "last_significant_event": "Initiation of first US clinical study (NCT06271252) for OriCAR-017 in relapsed/refractory multiple myeloma patients."
+        "stage_and_modality": "Phase 1/2 clinical stage company developing ex vivo CAR-T cell therapies, not in vivo approaches",
+        "best_disclosed_data": "Two Phase 1 trials recruiting patients with relapsed/refractory multiple myeloma using OriCAR-017, an anti-GPRC5D CAR-T product",
+        "indications_pursued": "Relapsed/refractory multiple myeloma and solid tumors based on pipeline expansion plans",
+        "delivery_approach": "Traditional ex vivo CAR-T cell manufacturing and infusion approach targeting GPRC5D",
+        "key_differentiators": "Anti-GPRC5D targeting approach for multiple myeloma with planned expansion into solid tumor CAR-T therapies",
+        "last_significant_event": "$110 million pre-IPO financing round closed in April 2026 to advance solid tumor CAR-T pipeline"
       }
     },
     "IASO Bio": {
       "company": "IASO Bio",
-      "generated_at": "2026-04-09T18:04:28.738792+00:00",
+      "generated_at": "2026-04-13T09:01:46.541423+00:00",
       "has_data": false,
       "dossier": null
     },
     "CARsgen Therapeutics": {
       "company": "CARsgen Therapeutics",
-      "generated_at": "2026-04-09T18:04:36.091500+00:00",
+      "generated_at": "2026-04-13T09:01:58.186165+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Multiple Phase 1/2 trials with ex vivo CAR-T therapies across solid tumors and hematologic malignancies. The company has at least one commercially available product (zevor-cel) requiring long-term follow-up studies.",
-        "best_disclosed_data": "Advanced gastric/pancreatic cancer trials (CT041 targeting claudin18.2) have progressed to active but not recruiting status in Phase 1b/2 studies. Post-marketing Phase IV study initiated for zevor-cel in relapsed/refractory multiple myeloma.",
-        "indications_pursued": "Solid tumors including gastric adenocarcinoma, pancreatic cancer, and hepatocellular carcinoma, plus hematologic malignancies including relapsed/refractory multiple myeloma.",
-        "delivery_approach": "Ex vivo autologous CAR-T cell manufacturing and infusion approach across multiple asset programs.",
-        "key_differentiators": "Claudin18.2 targeting platform (CT041) for solid tumors and multiple distinct CAR-T assets (CT011, CT041, CABA-201/zevor-cel) across different indications.",
-        "last_significant_event": "Initiation of CT011 Phase 1b trial for hepatocellular carcinoma post-surgical resection (NCT06560827, recruiting status as of trial registry)."
+        "stage_and_modality": "CARsgen operates in ex vivo CAR-T cell therapy with multiple assets in Phase 1/2 clinical trials. The company has at least one commercially available CAR-T product (zevor-cel) with post-marketing studies underway.",
+        "best_disclosed_data": "CT041 targeting claudin18.2 has progressed to Phase 1b/2 trials in gastric adenocarcinoma and pancreatic cancer with active enrollment status. Zevor-cel for relapsed/refractory multiple myeloma has achieved commercial approval and is in post-marketing Phase IV studies.",
+        "indications_pursued": "The company targets solid tumors including gastric adenocarcinoma, pancreatic cancer, and hepatocellular carcinoma, as well as hematologic malignancies specifically relapsed/refractory multiple myeloma.",
+        "delivery_approach": "CARsgen uses ex vivo CAR-T cell manufacturing approach where patient T cells are extracted, genetically modified, expanded, and reinfused as autologous CAR-T cell products.",
+        "key_differentiators": "The company has successfully commercialized at least one CAR-T product (zevor-cel) and demonstrates dual focus on both solid tumor and hematologic applications. Their CT041 asset specifically targets claudin18.2, a solid tumor antigen.",
+        "last_significant_event": "Initiation of CT011 Phase 1b trial for hepatocellular carcinoma patients at risk of recurrence after surgical resection (NCT06560827, currently recruiting)."
       }
     },
     "Immunofoco": {
       "company": "Immunofoco",
-      "generated_at": "2026-04-09T18:04:42.631213+00:00",
+      "generated_at": "2026-04-13T09:02:07.879913+00:00",
       "has_data": true,
       "dossier": {
-        "stage_and_modality": "Early-stage company with assets in Phase I (IMV101, IMV102) and Phase III (IMC002) development. No clear indication of in vivo delivery approach from available data.",
-        "best_disclosed_data": "Phase III trial (NCT07103668) for IMC002 in CLDN18.2-positive gastric adenocarcinoma represents most advanced program. No efficacy data disclosed for any assets.",
-        "indications_pursued": "Targeting hematologic malignancies including relapsed/refractory B-cell non-Hodgkin lymphoma and multiple myeloma. Also pursuing solid tumors with CLDN18.2-positive gastric adenocarcinoma.",
+        "stage_and_modality": "Early Phase 1 to Phase 3 development with three active recruiting trials testing in vivo cell therapy approaches across hematologic malignancies and solid tumors.",
+        "best_disclosed_data": "Phase 3 trial (NCT07103668) evaluating IMC002 in CLDN18.2-positive gastric adenocarcinoma represents the most advanced program, comparing objective response rate and progression-free survival versus investigator's choice of treatment.",
+        "indications_pursued": "Hematologic malignancies including relapsed/refractory B-cell non-Hodgkin lymphoma and multiple myeloma, plus solid tumors specifically CLDN18.2-positive gastric adenocarcinoma.",
         "delivery_approach": null,
-        "key_differentiators": null,
-        "last_significant_event": "Three clinical trials currently recruiting across different indications, with Phase III trial for IMC002 in gastric cancer being most advanced."
+        "key_differentiators": "Portfolio spans both hematologic and solid tumor indications with targeting of CLDN18.2 in gastric cancer representing a differentiated solid tumor approach.",
+        "last_significant_event": "Initiation of three clinical trials currently in recruiting status across their pipeline assets IMV101, IMV102, and IMC002."
       }
     },
     "EXUMA Biotech": {
       "company": "EXUMA Biotech",
-      "generated_at": "2026-04-09T18:04:43.631977+00:00",
+      "generated_at": "2026-04-13T09:02:08.880749+00:00",
       "has_data": false,
       "dossier": null
     }
