@@ -143,9 +143,12 @@ def fetch_all_for_company(company: str) -> list[dict]:
     results = []
     seen_ids = set()
 
+    # EPO CQL uses pa= for applicant name, pd= for publication date
+    # Date format must be YYYYMMDD or just YYYY
+    company_base = company.split()[0]  # first word for broader matching
     queries = [
-        f'pa="{company}" AND pd>={YEAR_FROM}',   # applicant (pre-grant applications)
-        f'pa="{company.upper()}" AND pd>={YEAR_FROM}',  # uppercase variant
+        f'pa="{company}" AND pd>={YEAR_FROM}0101',
+        f'pa="{company_base}" AND pd>={YEAR_FROM}0101',
     ]
 
     for cql in queries:
