@@ -277,6 +277,11 @@
     <div class="filters">
       <input type="text" id="news-search" placeholder="Search headline, source..." oninput="filterNews()" />
       <select id="news-source" onchange="filterNews()"><option value="">All sources</option></select>
+      <select id="news-type" onchange="filterNews()">
+        <option value="">All types</option>
+        <option value="news">News</option>
+        <option value="funding">Funding</option>
+      </select>
       <span class="filter-count" id="news-count"></span>
     </div>
     <div class="card-feed" id="news-list"><div class="state-msg">Loading news...</div></div>
@@ -325,13 +330,9 @@
   <button class="panel-close" onclick="closePanel()">✕</button>
   <div class="panel-company" id="panel-name"></div>
   <div class="panel-tag">Watchlist company</div>
-  <div class="panel-section" id="panel-overview-section">
-    <div class="panel-section-title">Overview</div>
-    <div id="panel-overview"></div>
-  </div>
   <div class="panel-section">
     <div class="panel-section-title">Pipeline</div>
-    <div id="panel-pipeline-tbl" style="overflow-x:auto;"></div>
+    <div id="panel-pipeline-tbl"></div>
   </div>
   <div class="panel-section">
     <div class="panel-section-title">Publications</div>
@@ -340,10 +341,6 @@
   <div class="panel-section">
     <div class="panel-section-title">News</div>
     <div id="panel-news"></div>
-  </div>
-  <div class="panel-section">
-    <div class="panel-section-title">Funding</div>
-    <div id="panel-funding"></div>
   </div>
 </div>
 
@@ -576,8 +573,7 @@ function renderPipeline(watchlist){
   const companies=watchlist
     .map(w=>w.split(' ').map(wd=>wd.charAt(0).toUpperCase()+wd.slice(1)).join(' '))
     .filter(c=>getCompanyTrials(c).length>0)
-    .filter(c=>!ql||c.toLowerCase().includes(ql)||getCompanyTrials(c).some(t=>(t.asset_name||'').toLowerCase().includes(ql)))
-    .sort((a,b)=>a.localeCompare(b));
+    .filter(c=>!ql||c.toLowerCase().includes(ql)||getCompanyTrials(c).some(t=>(t.asset_name||'').toLowerCase().includes(ql)));
 
   document.getElementById('pipeline-count').textContent=`${companies.length} compan${companies.length!==1?'ies':'y'} with trials`;
 
@@ -627,13 +623,11 @@ function filterPubs(){
   const q=document.getElementById('pub-search').value.toLowerCase();
   const type=document.getElementById('pub-type').value;
   const cat=document.getElementById('pub-category').value;
-  const filtered=PUBS.filter(p=>{
+  renderPubs(PUBS.filter(p=>{
     const text=[p.title,p.authors,p.journal,p.abstract].join(' ').toLowerCase();
     const mt=type===''?true:type==='true'?p.preprint:!p.preprint;
     return(!q||text.includes(q))&&mt&&(!cat||p.category===cat);
-  });
-  filtered.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-  renderPubs(filtered);
+  }));
 }
 
 // ── News ──────────────────────────────────────────────────────────────────────
@@ -663,9 +657,10 @@ function renderNews(data){
 function filterNews(){
   const q=document.getElementById('news-search').value.toLowerCase();
   const src=document.getElementById('news-source').value;
+  const typ=document.getElementById('news-type').value;
   renderNews(NEWS.filter(n=>{
     const text=[n.title,n.summary,n.source].join(' ').toLowerCase();
-    return(!q||text.includes(q))&&(!src||n.source===src);
+    return(!q||text.includes(q))&&(!src||n.source===src)&&(!typ||n.item_type===typ);
   }));
 }
 

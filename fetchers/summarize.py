@@ -24,11 +24,10 @@ import anthropic
 # Configuration
 # ---------------------------------------------------------------------------
 
-DATA_DIR        = Path(__file__).parent.parent / "data"
-TRIALS_PATH     = DATA_DIR / "trials.json"
-PUBS_PATH       = DATA_DIR / "publications.json"
-NEWS_PATH       = DATA_DIR / "news.json"
-ABSTRACTS_PATH  = DATA_DIR / "abstracts.json"
+DATA_DIR      = Path(__file__).parent.parent / "data"
+TRIALS_PATH   = DATA_DIR / "trials.json"
+PUBS_PATH     = DATA_DIR / "publications.json"
+NEWS_PATH     = DATA_DIR / "news.json"
 WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
 
 MODEL            = "claude-haiku-4-5-20251001"
@@ -120,13 +119,13 @@ Abstract: {abstract}
 NEWS_PROMPT = """\
 You are a biotech competitive intelligence analyst specialising in cell therapy.
 
-Given the following news headline and summary, write a single punchy sentence (max 20 words)
-capturing the strategic "so what" for someone tracking the in vivo CAR-T space.
+Given the following news headline and summary, return a JSON object with two fields:
+  "sowhat": a single punchy sentence (max 20 words) capturing the strategic significance
+            for someone tracking in vivo CAR-T. If insufficient info, use: "Summary not available"
+  "item_type": classify as "funding" if this is primarily about a financing round,
+               investment, or grant. Otherwise classify as "news".
 
-Rules:
-- Return ONLY the sentence, nothing else
-- No preamble, no sign-off, no offers to help
-- If the summary is insufficient, return exactly: Summary not available
+Return ONLY valid JSON, no preamble, no markdown.
 
 Source: {source}
 Title: {title}
