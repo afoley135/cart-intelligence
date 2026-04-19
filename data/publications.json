@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-04-18T07:00:29.245836+00:00",
-  "count": 18,
+  "fetched_at": "2026-04-19T07:11:42.196621+00:00",
+  "count": 17,
   "publications": [
     {
       "source": "pubmed",
@@ -76,21 +76,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41882403/",
       "sowhat": "Abstract not available",
       "category": null
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41857667",
-      "title": "Novel non-viral in vivo CAR-T therapies: latest updates from the 2025 ASH annual meeting.",
-      "journal": "Experimental hematology & oncology",
-      "authors": "Xue B, Liu Y, Liang A, Zhang W",
-      "abstract": "The field of chimeric antigen receptor (CAR)-T cell therapy is undergoing a paradigm shift from complex ex vivo manufacturing to direct in vivo generation of CAR-T cells. This innovative approach leverages non-viral delivery platforms to reprogram a patient's own immune cells in situ, promising to overcome critical barriers of cost, scalability, and accessibility. The 2025 American Society of Hematology (ASH) Annual Meeting served as a showcase for groundbreaking preclinical data across a diverse array of non-viral technologies, including advanced lipid nanoparticles (LNPs), virus-like particles (VLPs), and polymeric nanoparticles. This correspondence summarizes the latest reports on these platforms, highlighting their potential to revolutionize the treatment of both autoimmune diseases and hematological malignancies.",
-      "date": "2026-Mar",
-      "doi": "10.1182/blood-2025-2543",
-      "mesh_terms": [],
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41857667/",
-      "sowhat": "Non-viral in vivo CAR-T generation via LNPs and VLPs could eliminate manufacturing complexity, dramatically improving cost and accessibility.",
-      "category": "Review article"
     },
     {
       "source": "pubmed",
@@ -190,11 +175,11 @@
       "authors": "Hashiba K, Fukasaka M, Okuma C, Kobayashi-Ooka Y, Kajiwara K et al.",
       "abstract": "Expanding the therapeutic scope of mRNA requires delivery systems with precise cell selectivity. Antibody-functionalized lipid nanoparticles (LNPs) enable programmable targeting, but quantitative rules linking surface avidity to delivery remain unresolved. Here, we establish a single-domain antibody (VHH)-LNP platform with controlled orientation and tunable ligand density, combined with an antigen-specific ligand binding fluorescence assay using single-particle nanoflow cytometry to quantify only functional ligands. Using this system, we show that CD8-targeted LNPs exhibit a bell-shaped dependence of delivery efficiency on ligand density, revealing an optimal avidity of ∼0.1 VHH per 100 nm2. Mechanistically, excessive ligand density induces receptor degradation, while optimal avidity balances multivalent engagement with receptor preservation. Optimized LNPs achieve selective mRNA expression in CD8+ T cells and enable in vivo CAR-T generation, resulting in dose-dependent B cell depletion at 10-30 μg/kg. Surface avidity thus emerges as a quantitative design parameter, transforming antibody-decorated LNP engineering from empirical to rule-based design.",
       "date": "2026-Apr",
-      "doi": "10.1021/acs.nanolett.5c06525",
+      "doi": "10.1016/j.ymthe.2022.02.001",
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41834375/",
-      "sowhat": "Optimal antibody density on LNPs improves mRNA delivery by balancing cell targeting avidity against receptor degradation.",
+      "sowhat": "Optimal antibody density on LNPs enables selective mRNA delivery by balancing avidity against receptor saturation and degradation.",
       "category": "Manufacturing / process"
     },
     {
