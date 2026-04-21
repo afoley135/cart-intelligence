@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-04-13T13:26:01.169542+00:00",
+  "fetched_at": "2026-04-21T07:27:37.967414+00:00",
   "count": 41,
   "abstracts": [
     {
@@ -102,34 +102,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "41834375",
-      "title": "Balancing Multivalent Avidity and Receptor Availability Governs mRNA Delivery by Antibody-Functionalized Lipid Nanoparticles.",
-      "journal": "Nano letters",
-      "authors": "Hashiba K, Fukasaka M, Okuma C, Kobayashi-Ooka Y, Kajiwara K et al.",
-      "abstract": "Expanding the therapeutic scope of mRNA requires delivery systems with precise cell selectivity. Antibody-functionalized lipid nanoparticles (LNPs) enable programmable targeting, but quantitative rules linking surface avidity to delivery remain unresolved. Here, we establish a single-domain antibody (VHH)-LNP platform with controlled orientation and tunable ligand density, combined with an antigen-specific ligand binding fluorescence assay using single-particle nanoflow cytometry to quantify only functional ligands. Using this system, we show that CD8-targeted LNPs exhibit a bell-shaped dependence of delivery efficiency on ligand density, revealing an optimal avidity of ∼0.1 VHH per 100 nm2. Mechanistically, excessive ligand density induces receptor degradation, while optimal avidity balances multivalent engagement with receptor preservation. Optimized LNPs achieve selective mRNA expression in CD8+ T cells and enable in vivo CAR-T generation, resulting in dose-dependent B cell depletion at 10-30 μg/kg. Surface avidity thus emerges as a quantitative design parameter, transforming antibody-decorated LNP engineering from empirical to rule-based design.",
-      "date": "2026-Mar",
-      "doi": "10.1021/acs.nanolett.5c06525",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41834375/",
-      "sowhat": "Controlled antibody density on LNPs reveals optimal targeting window; excessive ligands paradoxically reduce CD8 cell delivery via receptor degradation."
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41807826",
-      "title": "B cell depletion in autoimmune disease: in vivo CAR-T or T cell engagers?",
-      "journal": "Nature biotechnology",
-      "authors": "Senior M, Grieshaber-Bouyer R",
-      "abstract": "",
-      "date": "2026-Mar",
-      "doi": "10.1172/jci.insight.172914",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41807826/",
-      "sowhat": "Abstract not available"
-    },
-    {
-      "source": "pubmed",
       "pmid": "41692627",
       "title": "In vivo CAR-T: a paradigm shift in adoptive cell therapy from bench to beside.",
       "journal": "Science bulletin",
@@ -155,20 +127,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41679305/",
       "sowhat": "In vivo immune cell editing bypasses ex vivo manufacturing bottlenecks, enabling direct TME reprogramming for broader CAR-T accessibility."
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41490421",
-      "title": "Optimizing In Vivo CAR-T Cell Engineering for Cancer Immunotherapy.",
-      "journal": "Cancer research",
-      "authors": "Wang R, Yu J, Caligiuri MA, Ma S",
-      "abstract": "Chimeric antigen receptor (CAR)-T cell therapy enables potent, antigen-specific immune responses and has demonstrated success in treating hematologic malignancies. However, conventional ex vivo CAR-T manufacturing remains costly, individualized, and logistically complex, posing significant barriers to accessibility and scalability. In vivo CAR-T cell engineering offers a transformative alternative by reprogramming endogenous T cells within the patient, bypassing the need for cell harvesting and expansion. This review focuses on current in vivo CAR-T delivery strategies, including viral vectors (such as lentiviruses, γ-retroviruses, adeno-associated viruses, and viral-like particles) and non-viral systems (such as lipid nanoparticles and polymer-based carriers), with a focus on how these platforms are engineered to achieve efficient, specific, and safe CAR transgene transfer. We also discuss the design principles of vector tropism, membrane modifications, and targeting ligands, as well as translational studies in both preclinical and clinical settings. Finally, the review explores delivery-related challenges and future perspectives for optimizing vector stability, enhancing T cell targeting, and reducing immunogenicity to advance in vivo CAR-T therapy toward broader clinical applications.",
-      "date": "2026-Jan",
-      "doi": "10.1158/0008-5472.CAN-25-3748",
-      "conference": "AACR",
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41490421/",
-      "sowhat": "In vivo CAR-T engineering bypasses costly ex vivo manufacturing by reprogramming patient T cells directly, dramatically improving scalability and accessibility."
     },
     {
       "source": "pubmed",
@@ -340,6 +298,20 @@
     },
     {
       "source": "pubmed",
+      "pmid": "41490421",
+      "title": "Optimizing In Vivo CAR T-cell Engineering for Cancer Immunotherapy.",
+      "journal": "Cancer research",
+      "authors": "Wang R, Yu J, Caligiuri MA, Ma S",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy enables potent, antigen-specific immune responses and has demonstrated success in treating hematologic malignancies. However, conventional ex vivo CAR T manufacturing remains costly, individualized, and logistically complex, posing significant barriers to accessibility and scalability. In vivo CAR T-cell engineering offers a transformative alternative by reprogramming endogenous T cells within the patient, bypassing the need for cell harvesting and expansion. This review focuses on current in vivo CAR T delivery strategies, including viral vectors (such as lentiviruses, γ-retroviruses, adeno-associated viruses, and viral-like particles) and nonviral systems (such as lipid nanoparticles and polymer-based carriers), with a focus on how these platforms are engineered to achieve efficient, specific, and safe CAR transgene transfer. We also discuss the design principles of vector tropism, membrane modifications, and targeting ligands, as well as translational studies in both preclinical and clinical settings. Finally, the review explores delivery-related challenges and future perspectives for optimizing vector stability, enhancing T-cell targeting, and reducing immunogenicity to advance in vivo CAR T therapy toward broader clinical applications.",
+      "date": "2026-Apr",
+      "doi": "10.1158/0008-5472.CAN-25-3748",
+      "conference": "AACR",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41490421/",
+      "sowhat": "In vivo CAR-T engineering bypasses costly ex vivo manufacturing by reprogramming patient T cells directly, dramatically improving scalability and accessibility."
+    },
+    {
+      "source": "pubmed",
       "pmid": "41957634",
       "title": "In vivo CAR-T cell therapy: latest updates from 2025 ASH annual meeting.",
       "journal": "Journal of hematology & oncology",
@@ -410,6 +382,20 @@
     },
     {
       "source": "pubmed",
+      "pmid": "41834375",
+      "title": "Balancing Multivalent Avidity and Receptor Availability Governs mRNA Delivery by Antibody-Functionalized Lipid Nanoparticles.",
+      "journal": "Nano letters",
+      "authors": "Hashiba K, Fukasaka M, Okuma C, Kobayashi-Ooka Y, Kajiwara K et al.",
+      "abstract": "Expanding the therapeutic scope of mRNA requires delivery systems with precise cell selectivity. Antibody-functionalized lipid nanoparticles (LNPs) enable programmable targeting, but quantitative rules linking surface avidity to delivery remain unresolved. Here, we establish a single-domain antibody (VHH)-LNP platform with controlled orientation and tunable ligand density, combined with an antigen-specific ligand binding fluorescence assay using single-particle nanoflow cytometry to quantify only functional ligands. Using this system, we show that CD8-targeted LNPs exhibit a bell-shaped dependence of delivery efficiency on ligand density, revealing an optimal avidity of ∼0.1 VHH per 100 nm2. Mechanistically, excessive ligand density induces receptor degradation, while optimal avidity balances multivalent engagement with receptor preservation. Optimized LNPs achieve selective mRNA expression in CD8+ T cells and enable in vivo CAR-T generation, resulting in dose-dependent B cell depletion at 10-30 μg/kg. Surface avidity thus emerges as a quantitative design parameter, transforming antibody-decorated LNP engineering from empirical to rule-based design.",
+      "date": "2026-Apr",
+      "doi": "10.1016/j.ymthe.2022.02.001",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41834375/",
+      "sowhat": "Optimal antibody density on LNPs balances targeting avidity and receptor preservation, critical for efficient in vivo CAR-T cell engineering delivery."
+    },
+    {
+      "source": "pubmed",
       "pmid": "41813993",
       "title": "In vivo CAR-T cells target fibrogenic cells in MASH.",
       "journal": "Nature reviews. Drug discovery",
@@ -420,6 +406,20 @@
       "conference": "ASH",
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41813993/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41807826",
+      "title": "B cell depletion in autoimmune disease: in vivo CAR-T or T cell engagers?",
+      "journal": "Nature biotechnology",
+      "authors": "Senior M, Grieshaber-Bouyer R",
+      "abstract": "",
+      "date": "2026-Apr",
+      "doi": "10.1172/jci.insight.172914",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41807826/",
       "sowhat": "Abstract not available"
     },
     {
