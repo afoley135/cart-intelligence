@@ -108,7 +108,7 @@ def get_company_pubs(company: str, all_pubs: list) -> list:
 def get_company_news(company: str, all_news: list) -> list:
     key = company.lower().split()[0]
     return [n for n in all_news if key in " ".join([
-        n.get("title",""), n.get("summary","")
+        n.get("title") or "", n.get("summary") or ""
     ]).lower()]
 
 
