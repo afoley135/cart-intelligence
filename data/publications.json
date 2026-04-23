@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-04-22T07:23:32.034615+00:00",
-  "count": 18,
+  "fetched_at": "2026-04-23T07:26:14.233634+00:00",
+  "count": 19,
   "publications": [
     {
       "source": "pubmed",
@@ -61,6 +61,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41692627/",
       "sowhat": "Abstract not available",
       "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42020353",
+      "title": "Preventing trogocytosis by cathepsin B inhibition augments CAR T-cell function.",
+      "journal": "Signal transduction and targeted therapy",
+      "authors": "Dietze KA, Nguyen K, Pathni A, Fazekas F, Sun W et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has shown remarkable efficacy in cancer treatment. Nevertheless, most patients receiving CAR T cells relapse within 5 years of treatment. CAR-mediated trogocytosis (CMT) is a potential tumor escape mechanism in which cell surface proteins transfer from tumor cells to CAR T cells. CMT results in the emergence of antigen-negative tumor cells, which can evade future CAR detection, and antigen-positive CAR T cells, which have been suggested to cause CAR T-cell fratricide and exhaustion. Whether CMT indeed causes CAR T-cell dysfunction and the molecular mechanisms conferring CMT remain unknown. Using a selective degrader of trogocytosed antigen in CAR T cells, we show that the presence of trogocytosed antigen on the CAR T-cell surface directly causes CAR T-cell fratricide and exhaustion. By performing small molecule screening using a custom high-throughput CMT screening assay, we found that the cysteine protease cathepsin B is essential for CMT and that inhibition of cathepsin B is sufficient to prevent CAR T-cell fratricide and exhaustion, leading to improved long-term in vitro and in vivo CAR T-cell persistence and in vitro antitumor activity. Our data demonstrate that it is feasible to separate CMT from cytotoxic activity, that CAR T-cell persistence, a key factor associated with clinical CAR T-cell efficacy, is directly linked to cathepsin B activity in CAR T cells, and that it is possible to improve CAR T-cell function through selective inhibition of CMT.",
+      "date": "2026-Apr",
+      "doi": "10.18632/oncotarget.25359",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42020353/",
+      "sowhat": "Blocking cathepsin B prevents trogocytosis-driven CAR-T exhaustion, potentially improving long-term anti-tumor persistence.",
+      "category": "Clinical data"
     },
     {
       "source": "pubmed",
