@@ -1,7 +1,69 @@
 {
-  "fetched_at": "2026-04-27T08:10:12.692385+00:00",
+  "fetched_at": "2026-04-27T20:47:53.206786+00:00",
   "count": 288,
   "studies": [
+    {
+      "nct_id": "NCT03829540",
+      "title": "CD4CAR for CD4+ Leukemia and Lymphoma",
+      "sponsor": "Huda Salman",
+      "modality": "Not reported",
+      "conditions": [
+        "T-cell Lymphoma",
+        "T-cell Leukemia"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "CD4CAR"
+      ],
+      "primary_outcomes": [
+        "Number of participants with treatment-related adverse events as assessed by CTCAE v5.0"
+      ],
+      "enrollment": 20,
+      "start_date": "2020-07-09",
+      "last_updated": "2026-04-27",
+      "countries": [
+        "United States"
+      ],
+      "summary": "This study is designed as a single arm open label Phase I, 3x3, multicenter study of CD4-directed chimeric antigen receptor engineered T-cells (CD4CAR) in patients with relapsed or refractory T-cell leukemia and lymphoma. Specifically, the study will evaluate the safety and feasibility of CD4CAR T-cells. Funding Source - FDA OOPD",
+      "url": "https://clinicaltrials.gov/study/NCT03829540",
+      "asset_name": null,
+      "sowhat": "CD4CAR targets T-cell malignancies by engineering T-cells against CD4, addressing treatment-resistant hematologic cancers."
+    },
+    {
+      "nct_id": "NCT06876363",
+      "title": "Study of EN-374 Gene Therapy in Participants With X-Linked Chronic Granulomatous Disease",
+      "sponsor": "Ensoma",
+      "modality": "Not reported",
+      "conditions": [
+        "X-Linked Chronic Granulomatous Disease"
+      ],
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "EN-374"
+      ],
+      "primary_outcomes": [
+        "Safety of EN-374"
+      ],
+      "enrollment": 15,
+      "start_date": "2025-08-05",
+      "last_updated": "2026-04-27",
+      "countries": [
+        "United Kingdom",
+        "United States"
+      ],
+      "summary": "The goal of this clinical trial is to evaluate the safety and potential efficacy of the EN-374 treatment regimen and identify a dose level for further evaluation in participants with x-linked chronic granulomatous disease.\n\nThe main questions it aims to answer are:\n\n* safety of the EN-374 treatment regimen\n* effect of the EN-374 treatment regimen on the production of functional neutrophils with NADPH oxidase activity",
+      "url": "https://clinicaltrials.gov/study/NCT06876363",
+      "asset_name": "EN-374",
+      "sowhat": "Ensoma targets rare monogenic disease with ex vivo gene therapy, sidestepping in vivo CAR-T complexity.",
+      "ai_modality": "Not reported"
+    },
     {
       "nct_id": "NCT07549698",
       "title": "Safety and Preliminary Efficacy of CTX112 in Adult Participants With Relapsed/Refractory Hematologic Autoimmune Disease",
@@ -78,6 +140,43 @@
       "ai_modality": "Not reported"
     },
     {
+      "nct_id": "NCT07389499",
+      "title": "A Clinical Study Evaluating the Safety and Efficacy of GT719 Universal Cell Injection in the Treatment of Immune-mediated Kidney Diseases",
+      "sponsor": "Grit Biotechnology",
+      "modality": "Not reported",
+      "conditions": [
+        "IgA Nephropathy (IgAN)",
+        "Membranous Nephropathy",
+        "ANCA-associated Vasculitis (AAV)/ANCA-associated Glomerulonephritis (AAGN)",
+        "Refractory Podocytopathy",
+        "Proliferative Glomerulonephritis With Monoclonal Immunoglobulin Deposits"
+      ],
+      "phase": [
+        "EARLY_PHASE1"
+      ],
+      "status": "NOT_YET_RECRUITING",
+      "interventions": [
+        "CD19-targeted iNKT Cell Injection"
+      ],
+      "primary_outcomes": [
+        "Safety and Tolerability: Evaluate the incidence, correlation with the investigational product, severity, and other relevant aspects of adverse events (AEs) and serious adverse events (SAEs) occurring in participants during the trial",
+        "Changes in vital signs before and after treatment",
+        "Changes in clinical symptoms before and after treatment",
+        "Changes in laboratory tests before and after treatment",
+        "Changes in electrocardiograms before and after treatment"
+      ],
+      "enrollment": 30,
+      "start_date": "2026-05-30",
+      "last_updated": "2026-04-23",
+      "countries": [
+        "China"
+      ],
+      "summary": "This study is a single-arm, open-label, dose-escalation and dose-expansion clinical trial, divided into two phases: the first phase is the dose-escalation phase, and the second phase is the dose-expansion phase. In the dose-escalation phase, approximately 9-18 adult participants with immune-mediated kidney diseases are planned to be enrolled and treated with GT719 universal cell injection. The objectives of this phase are to evaluate the safety and tolerability of the product, determine the recommended dose (RD) for subsequent studies, conduct a preliminary assessment of its clinical efficacy, and investigate the pharmacokinetic and pharmacodynamic characteristics. Upon completion of the dose-escalation phase, after evaluation by investigators and collaborators, an appropriate dose will be selected for the dose-expansion phase. An additional 12 participants will be enrolled to fully assess the safety and efficacy of the product.",
+      "url": "https://clinicaltrials.gov/study/NCT07389499",
+      "asset_name": null,
+      "sowhat": "CAR-T expands beyond oncology into autoimmune kidney disease with universal cell approach."
+    },
+    {
       "nct_id": "NCT07538713",
       "title": "Functionally Optimized CD33 CAR-T Cell Therapy Targeting Recurrent/Refractory Acute Myeloid Leukemia",
       "sponsor": "Qi deng",
@@ -137,43 +236,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07548697",
       "asset_name": null,
       "sowhat": "Chinese CAR-T candidate CT1182 enters first-in-human testing for relapsed/refractory B-cell lymphoma."
-    },
-    {
-      "nct_id": "NCT07389499",
-      "title": "A Clinical Study Evaluating the Safety and Efficacy of GT719 Universal Cell Injection in the Treatment of Immune-mediated Kidney Diseases",
-      "sponsor": "Grit Biotechnology",
-      "modality": "Not reported",
-      "conditions": [
-        "IgA Nephropathy (IgAN)",
-        "Membranous Nephropathy",
-        "ANCA-associated Vasculitis (AAV)/ANCA-associated Glomerulonephritis (AAGN)",
-        "Refractory Podocytopathy",
-        "Proliferative Glomerulonephritis With Monoclonal Immunoglobulin Deposits"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "CD19-targeted iNKT Cell Injection"
-      ],
-      "primary_outcomes": [
-        "Safety and Tolerability: Evaluate the incidence, correlation with the investigational product, severity, and other relevant aspects of adverse events (AEs) and serious adverse events (SAEs) occurring in participants during the trial",
-        "Changes in vital signs before and after treatment",
-        "Changes in clinical symptoms before and after treatment",
-        "Changes in laboratory tests before and after treatment",
-        "Changes in electrocardiograms before and after treatment"
-      ],
-      "enrollment": 30,
-      "start_date": "2026-05-30",
-      "last_updated": "2026-04-23",
-      "countries": [
-        "China"
-      ],
-      "summary": "This study is a single-arm, open-label, dose-escalation and dose-expansion clinical trial, divided into two phases: the first phase is the dose-escalation phase, and the second phase is the dose-expansion phase. In the dose-escalation phase, approximately 9-18 adult participants with immune-mediated kidney diseases are planned to be enrolled and treated with GT719 universal cell injection. The objectives of this phase are to evaluate the safety and tolerability of the product, determine the recommended dose (RD) for subsequent studies, conduct a preliminary assessment of its clinical efficacy, and investigate the pharmacokinetic and pharmacodynamic characteristics. Upon completion of the dose-escalation phase, after evaluation by investigators and collaborators, an appropriate dose will be selected for the dose-expansion phase. An additional 12 participants will be enrolled to fully assess the safety and efficacy of the product.",
-      "url": "https://clinicaltrials.gov/study/NCT07389499",
-      "asset_name": null,
-      "sowhat": "CAR-T expands beyond oncology into autoimmune kidney disease with universal cell approach."
     },
     {
       "nct_id": "NCT01953900",
@@ -269,6 +331,35 @@
       "sowhat": "Novel kappa-restricted CAR-T targets underexplored myeloma antigen subset with potential differentiation opportunity."
     },
     {
+      "nct_id": "NCT07539688",
+      "title": "Phase I Clinical Study on the Safety and Efficacy of CY-219 CAR-T Cell Injection in the Treatment of Relapsed/Refractory B-Cell Lymphoma",
+      "sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
+      "modality": "Not reported",
+      "conditions": [
+        "Relapsed/Refractory B-cell Lymphoma",
+        "Diffuse Large B-cell Lymphoma",
+        "Inert B-cell Lymphoma Transformed Into Large B-cell Lymphoma (Excluding Richter Transformation, THRLBCL, and BL)"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "NOT_YET_RECRUITING",
+      "interventions": [
+        "CY-219 CAR-T"
+      ],
+      "primary_outcomes": [
+        "Safety indicators"
+      ],
+      "enrollment": 18,
+      "start_date": "2026-05-01",
+      "last_updated": "2026-04-20",
+      "countries": [],
+      "summary": "This study is an open-label, single-arm, prospective clinical trial involving patients with relapsed/refractory B-cell lymphoma, aimed at evaluating the safety and efficacy of CAR-T cell infusion.",
+      "url": "https://clinicaltrials.gov/study/NCT07539688",
+      "asset_name": null,
+      "sowhat": "Chinese institution advancing CAR-T for relapsed/refractory B-cell lymphoma, signaling competitive activity in underserved DLBCL segment."
+    },
+    {
       "nct_id": "NCT07539233",
       "title": "A Clinical Study to Evaluate the Safety and Preliminary Efficacy of QI-019B in Patients With Relapsed/Refractory Multiple Myeloma.",
       "sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
@@ -297,35 +388,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07539233",
       "asset_name": null,
       "sowhat": "Chinese CAR-T developer advances early-stage multiple myeloma program, signaling competitive activity in Asian markets."
-    },
-    {
-      "nct_id": "NCT07539688",
-      "title": "Phase I Clinical Study on the Safety and Efficacy of CY-219 CAR-T Cell Injection in the Treatment of Relapsed/Refractory B-Cell Lymphoma",
-      "sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed/Refractory B-cell Lymphoma",
-        "Diffuse Large B-cell Lymphoma",
-        "Inert B-cell Lymphoma Transformed Into Large B-cell Lymphoma (Excluding Richter Transformation, THRLBCL, and BL)"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "CY-219 CAR-T"
-      ],
-      "primary_outcomes": [
-        "Safety indicators"
-      ],
-      "enrollment": 18,
-      "start_date": "2026-05-01",
-      "last_updated": "2026-04-20",
-      "countries": [],
-      "summary": "This study is an open-label, single-arm, prospective clinical trial involving patients with relapsed/refractory B-cell lymphoma, aimed at evaluating the safety and efficacy of CAR-T cell infusion.",
-      "url": "https://clinicaltrials.gov/study/NCT07539688",
-      "asset_name": null,
-      "sowhat": "Chinese institution advancing CAR-T for relapsed/refractory B-cell lymphoma, signaling competitive activity in underserved DLBCL segment."
     },
     {
       "nct_id": "NCT07537049",
@@ -357,38 +419,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07537049",
       "asset_name": null,
       "sowhat": "China advances domestic CAR-T manufacturing capability in competitive multiple myeloma indication with dose-escalation study."
-    },
-    {
-      "nct_id": "NCT06378190",
-      "title": "Treatment of Relapsed or Refractory B-cell Lymphoma With Chimeric Antigen Receptor (CAR) T-cell Therapy Produced by a New Technology",
-      "sponsor": "Instituto de Investigación Biomédica de Salamanca",
-      "modality": "Not reported",
-      "conditions": [
-        "Refractory B-Cell Lymphoma",
-        "B-cell Lymphoma Recurrent"
-      ],
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CAR-T cells therapy"
-      ],
-      "primary_outcomes": [
-        "Maximum tolerated dose (MTD)",
-        "Efficiency"
-      ],
-      "enrollment": 27,
-      "start_date": "2024-03-11",
-      "last_updated": "2026-04-16",
-      "countries": [
-        "Spain"
-      ],
-      "summary": "The goal of this clinical trial is to to evaluate the safety and efficacy of TranspoCART19 in patients with relapsed/refractory B-lymphoma. The main questions it aims to answer are:\n\nMaximum tolerated dose (MTD) Response rates Participants will be treated with the investigational medicinal product and will be followed for 36 months.",
-      "url": "https://clinicaltrials.gov/study/NCT06378190",
-      "asset_name": null,
-      "sowhat": "Novel manufacturing technology demonstrates CAR-T efficacy in relapsed/refractory B-cell lymphoma, challenging established production methods."
     },
     {
       "nct_id": "NCT00466531",
@@ -423,6 +453,38 @@
       "sowhat": "CAR-T targeting CD19 in relapsed/refractory CLL demonstrates foundational safety and efficacy in early-stage development."
     },
     {
+      "nct_id": "NCT06378190",
+      "title": "Treatment of Relapsed or Refractory B-cell Lymphoma With Chimeric Antigen Receptor (CAR) T-cell Therapy Produced by a New Technology",
+      "sponsor": "Instituto de Investigación Biomédica de Salamanca",
+      "modality": "Not reported",
+      "conditions": [
+        "Refractory B-Cell Lymphoma",
+        "B-cell Lymphoma Recurrent"
+      ],
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "CAR-T cells therapy"
+      ],
+      "primary_outcomes": [
+        "Maximum tolerated dose (MTD)",
+        "Efficiency"
+      ],
+      "enrollment": 27,
+      "start_date": "2024-03-11",
+      "last_updated": "2026-04-16",
+      "countries": [
+        "Spain"
+      ],
+      "summary": "The goal of this clinical trial is to to evaluate the safety and efficacy of TranspoCART19 in patients with relapsed/refractory B-lymphoma. The main questions it aims to answer are:\n\nMaximum tolerated dose (MTD) Response rates Participants will be treated with the investigational medicinal product and will be followed for 36 months.",
+      "url": "https://clinicaltrials.gov/study/NCT06378190",
+      "asset_name": null,
+      "sowhat": "Novel manufacturing technology demonstrates CAR-T efficacy in relapsed/refractory B-cell lymphoma, challenging established production methods."
+    },
+    {
       "nct_id": "NCT07439796",
       "title": "A Study of ORN252 in Healthy Participants",
       "sponsor": "Orna Therapeutics, Inc.",
@@ -450,7 +512,7 @@
       "url": "https://clinicaltrials.gov/study/NCT07439796",
       "asset_name": "ORN252",
       "sowhat": "Orna advances in vivo CAR-T manufacturing with first-in-human safety data for ORN252.",
-      "ai_modality": "In vivo CAR-T — LNP"
+      "ai_modality": "In vivo CAR-T — Other"
     },
     {
       "nct_id": "NCT06968195",
@@ -704,6 +766,36 @@
       "sowhat": "Non-ablative conditioning enables dose escalation in HIV CAR-T, validating lymphodepletion strategy beyond oncology."
     },
     {
+      "nct_id": "NCT07511426",
+      "title": "U96-CAR-T-Cells For R/R B-ALL",
+      "sponsor": "The First Affiliated Hospital of Soochow University",
+      "modality": "In vivo CAR-T",
+      "conditions": [
+        "Relapsed or Refractory B Cell Leukemia and Lymphoma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "U96"
+      ],
+      "primary_outcomes": [
+        "Dose-limiting toxicity (DLT)",
+        "Adverse Event (AE）"
+      ],
+      "enrollment": 30,
+      "start_date": "2026-03-30",
+      "last_updated": "2026-04-06",
+      "countries": [
+        "China"
+      ],
+      "summary": "This study is a single-arm, open-label clinical investigation to evaluate the tolerance, safety and preliminary efficacy of CAR-T (U96) in the treatment of relapsed/refractory B-cell tumors. The study will be conducted in two disease types, acute B-lymphoblastic leukemia and B-cell lymphoma, with a dose escalation plan using the \"3+3\" method. Each dose group is planned to enroll 3 to 6 patients, with a total of approximately 30 to 48 patients to be enrolled in the entire study. After signing the informed consent form, patients will undergo screening tests. If they meet the inclusion and exclusion criteria, they will be enrolled in the study. After receiving U96 treatment, patients will be followed up. It is recommended that they stay in the hospital for at least 14 days after administration. Safety and efficacy follow-ups will be conducted at 28 days and 3, 6, 12, 18, and 24 months after treatment. The follow-up period after treatment will last for 2 years, with a long-term follow-up of 15 years to assess the efficacy and safety until the end of the study or the patient withdraws from the study. For patients who have received U96 treatment, even if they withdraw from the study early, the investigators should still conduct long-term safety follow-ups according to the protocol to evaluate the long-term safety of the product.",
+      "url": "https://clinicaltrials.gov/study/NCT07511426",
+      "asset_name": null,
+      "sowhat": "Chinese academic center advances in vivo CAR-T for relapsed/refractory B-ALL with novel U96 construct."
+    },
+    {
       "nct_id": "NCT04622423",
       "title": "Advanced Therapies for Liver Metastases",
       "sponsor": "IRCCS San Raffaele",
@@ -733,36 +825,6 @@
       "url": "https://clinicaltrials.gov/study/NCT04622423",
       "asset_name": null,
       "sowhat": "Immune and cell therapies target tolerogenic liver microenvironment to overcome metastatic PDAC/CRC resistance."
-    },
-    {
-      "nct_id": "NCT07511426",
-      "title": "U96-CAR-T-Cells For R/R B-ALL",
-      "sponsor": "The First Affiliated Hospital of Soochow University",
-      "modality": "In vivo CAR-T",
-      "conditions": [
-        "Relapsed or Refractory B Cell Leukemia and Lymphoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "U96"
-      ],
-      "primary_outcomes": [
-        "Dose-limiting toxicity (DLT)",
-        "Adverse Event (AE）"
-      ],
-      "enrollment": 30,
-      "start_date": "2026-03-30",
-      "last_updated": "2026-04-06",
-      "countries": [
-        "China"
-      ],
-      "summary": "This study is a single-arm, open-label clinical investigation to evaluate the tolerance, safety and preliminary efficacy of CAR-T (U96) in the treatment of relapsed/refractory B-cell tumors. The study will be conducted in two disease types, acute B-lymphoblastic leukemia and B-cell lymphoma, with a dose escalation plan using the \"3+3\" method. Each dose group is planned to enroll 3 to 6 patients, with a total of approximately 30 to 48 patients to be enrolled in the entire study. After signing the informed consent form, patients will undergo screening tests. If they meet the inclusion and exclusion criteria, they will be enrolled in the study. After receiving U96 treatment, patients will be followed up. It is recommended that they stay in the hospital for at least 14 days after administration. Safety and efficacy follow-ups will be conducted at 28 days and 3, 6, 12, 18, and 24 months after treatment. The follow-up period after treatment will last for 2 years, with a long-term follow-up of 15 years to assess the efficacy and safety until the end of the study or the patient withdraws from the study. For patients who have received U96 treatment, even if they withdraw from the study early, the investigators should still conduct long-term safety follow-ups according to the protocol to evaluate the long-term safety of the product.",
-      "url": "https://clinicaltrials.gov/study/NCT07511426",
-      "asset_name": null,
-      "sowhat": "Chinese academic center advances in vivo CAR-T for relapsed/refractory B-ALL with novel U96 construct."
     },
     {
       "nct_id": "NCT04715191",
@@ -905,36 +967,40 @@
       "ai_modality": "Not reported"
     },
     {
-      "nct_id": "NCT06876363",
-      "title": "Study of EN-374 Gene Therapy in Participants With X-Linked Chronic Granulomatous Disease",
-      "sponsor": "Ensoma",
+      "nct_id": "NCT04318678",
+      "title": "CD123-Directed T-Cell Therapy for Acute Myelogenous Leukemia (CATCHAML)",
+      "sponsor": "St. Jude Children's Research Hospital",
       "modality": "Not reported",
       "conditions": [
-        "X-Linked Chronic Granulomatous Disease"
+        "AML/MDS",
+        "B-ALL",
+        "T-ALL",
+        "BPDCN"
       ],
       "phase": [
-        "PHASE1",
-        "PHASE2"
+        "PHASE1"
       ],
       "status": "RECRUITING",
       "interventions": [
-        "EN-374"
+        "CD123-CAR T",
+        "Cyclophosphamide",
+        "Fludarabine",
+        "Mesna",
+        "Rituximab"
       ],
       "primary_outcomes": [
-        "Safety of EN-374"
+        "Maximum tolerated dose of CD123-CAR T cells (CATCHAML)"
       ],
-      "enrollment": 15,
-      "start_date": "2025-08-05",
-      "last_updated": "2026-03-31",
+      "enrollment": 108,
+      "start_date": "2020-07-29",
+      "last_updated": "2026-03-30",
       "countries": [
-        "United States",
-        "United Kingdom"
+        "United States"
       ],
-      "summary": "The goal of this clinical trial is to evaluate the safety and potential efficacy of the EN-374 treatment regimen and identify a dose level for further evaluation in participants with x-linked chronic granulomatous disease.\n\nThe main questions it aims to answer are:\n\n* safety of the EN-374 treatment regimen\n* effect of the EN-374 treatment regimen on the production of functional neutrophils with NADPH oxidase activity",
-      "url": "https://clinicaltrials.gov/study/NCT06876363",
-      "asset_name": "EN-374",
-      "sowhat": "Ensoma targets rare monogenic disease with ex vivo gene therapy, sidestepping in vivo CAR-T complexity.",
-      "ai_modality": "Not reported"
+      "summary": "The CD123-CAR T-cell therapy is a new treatment that is being investigated for treatment of AML/myelodysplastic syndrome (MDS), T- or B- acute lymphoblastic leukemia (ALL) or blastic plasmacytoid dendritic cell neoplasia (BPDCN). The purpose of this study is to find the maximum (highest) dose of CD123-CAR T cells that is safe to give to these patients. This would include studying the side effects of the chemotherapy, as well as the CD123-CAR T-cell product on the recipient's body, disease and overall survival.\n\nPrimary Objective:\n\n* To determine the safety of one intravenous infusion of escalating doses of autologous, CD123-CAR T cells in patients (≤21 years) with recurrent/refractory CD123+ disease (AML/MDS, B-ALL, T-ALL or BPDCN) after lymphodepleting chemotherapy.\n* To determine the safety of an intravenous infusion of escalating doses of donor derived, CD123-CAR T cells in patients (≤21 years) with recurrent/refractory CD123+ disease (AML/MDS, B-ALL, T-ALL, BPDCN or MPAL) after lymphodepleting chemotherapy.\n\nSecondary Objectives\n\n\\- To evaluate the antileukemia activity of CD123-CAR T cells.\n\nExploratory Objectives\n\n* To assess the immunophenotype, clonal structure and endogenous repertoire of CD123-CAR T cells and unmodified T cells\n* To characterize the cytokine profile in the peripheral blood and CSF after treatment with CD123-CAR T cells\n* To characterize tumor cells post CD123-CAR T-cell therapy\n* To compare in vivo properties of donor-derived versus autologous CD123- CAR T cells",
+      "url": "https://clinicaltrials.gov/study/NCT04318678",
+      "asset_name": null,
+      "sowhat": "CD123-CAR T targets high-risk hematologic malignancies; demonstrates multi-indication potential beyond standard AML focus."
     },
     {
       "nct_id": "NCT07500805",
@@ -1002,42 +1068,6 @@
       "sowhat": "Turkey advances anti-CD19 CAR-T development for relapsed/refractory B-cell malignancies in Phase 2-3 trial."
     },
     {
-      "nct_id": "NCT04318678",
-      "title": "CD123-Directed T-Cell Therapy for Acute Myelogenous Leukemia (CATCHAML)",
-      "sponsor": "St. Jude Children's Research Hospital",
-      "modality": "Not reported",
-      "conditions": [
-        "AML/MDS",
-        "B-ALL",
-        "T-ALL",
-        "BPDCN"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CD123-CAR T",
-        "Cyclophosphamide",
-        "Fludarabine",
-        "Mesna",
-        "Rituximab"
-      ],
-      "primary_outcomes": [
-        "Maximum tolerated dose of CD123-CAR T cells (CATCHAML)"
-      ],
-      "enrollment": 108,
-      "start_date": "2020-07-29",
-      "last_updated": "2026-03-30",
-      "countries": [
-        "United States"
-      ],
-      "summary": "The CD123-CAR T-cell therapy is a new treatment that is being investigated for treatment of AML/myelodysplastic syndrome (MDS), T- or B- acute lymphoblastic leukemia (ALL) or blastic plasmacytoid dendritic cell neoplasia (BPDCN). The purpose of this study is to find the maximum (highest) dose of CD123-CAR T cells that is safe to give to these patients. This would include studying the side effects of the chemotherapy, as well as the CD123-CAR T-cell product on the recipient's body, disease and overall survival.\n\nPrimary Objective:\n\n* To determine the safety of one intravenous infusion of escalating doses of autologous, CD123-CAR T cells in patients (≤21 years) with recurrent/refractory CD123+ disease (AML/MDS, B-ALL, T-ALL or BPDCN) after lymphodepleting chemotherapy.\n* To determine the safety of an intravenous infusion of escalating doses of donor derived, CD123-CAR T cells in patients (≤21 years) with recurrent/refractory CD123+ disease (AML/MDS, B-ALL, T-ALL, BPDCN or MPAL) after lymphodepleting chemotherapy.\n\nSecondary Objectives\n\n\\- To evaluate the antileukemia activity of CD123-CAR T cells.\n\nExploratory Objectives\n\n* To assess the immunophenotype, clonal structure and endogenous repertoire of CD123-CAR T cells and unmodified T cells\n* To characterize the cytokine profile in the peripheral blood and CSF after treatment with CD123-CAR T cells\n* To characterize tumor cells post CD123-CAR T-cell therapy\n* To compare in vivo properties of donor-derived versus autologous CD123- CAR T cells",
-      "url": "https://clinicaltrials.gov/study/NCT04318678",
-      "asset_name": null,
-      "sowhat": "CD123-CAR T targets high-risk hematologic malignancies; demonstrates multi-indication potential beyond standard AML focus."
-    },
-    {
       "nct_id": "NCT07376642",
       "title": "A Phase I/IIa, Open-label, Single-center, Dose-escalation and Dose-expansion Study to Evaluate the Safety, Tolerability, and Preliminary Efficacy of IMV101 as a Single Agent in Subjects With Relapsed/Refractory B-cell Non-Hodgkin Lymphoma",
       "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
@@ -1095,7 +1125,7 @@
       "url": "https://clinicaltrials.gov/study/NCT07493135",
       "asset_name": "IMV102",
       "sowhat": "Chinese biotech enters competitive MM CAR-T space with early-phase candidate IMV102 safety/efficacy study.",
-      "ai_modality": "Not reported"
+      "ai_modality": "Ex vivo CAR-T — Autologous"
     },
     {
       "nct_id": "NCT03721068",
@@ -1559,6 +1589,31 @@
       "sowhat": "AlphaNa enters autoimmune space with novel mechanism; early validation could unlock large underserved patient population."
     },
     {
+      "nct_id": "NCT07321808",
+      "title": "Immunogenicity, Efficacy and Safety of Recombinant Herpes Zoster Vaccine in Frail Patients",
+      "sponsor": "Fondazione IRCCS Policlinico San Matteo di Pavia",
+      "modality": "Not reported",
+      "conditions": [
+        "Immunocompromised Patients"
+      ],
+      "phase": [],
+      "status": "RECRUITING",
+      "interventions": [],
+      "primary_outcomes": [
+        "To define the overall rate of humoral responders patients after the second dose of RZV administration."
+      ],
+      "enrollment": 300,
+      "start_date": "2023-05-16",
+      "last_updated": "2026-03-05",
+      "countries": [
+        "Italy"
+      ],
+      "summary": "Herpes zoster (HZ) is a serious health problem whose incidence and severity increase with the decline of cell-mediated immunity (CMI) because of age and immunocompromised (IC) status. Subclinical reactivation are described and may boost the adaptive specific immunity. T cells play a major role in preventing reactivation of Varicella Zoster virus (VZV), with a contribution of both CD4 and CD8 T cells. Accordingly, the suppression of VZV-specific T cells preceded the occurrence of HZ. Moreover, several observations support a role of B cells in contributing to the overall protection against HZ as patients with primary antibody deficiency, common variable immunodeficiency, or patients treated with B-cell depleting therapies or Janus Kinase inhibitors (JAKis) show a higher risk of HZ. The functional effectiveness of CMI can be significantly affected by different diseases (e.g. cancer and immune-mediated inflammatory diseases, IMIDs) and/or by ongoing immune-targeted therapy, giving these patients at high risk for VZV reactivation. The new recombinant zoster vaccine (RZV) reduces the risk of HZ, and vaccination is encouraged in IC individuals, including those with cancer and IMIDs. Despite the efficacy and safety of RZV in healthy adults, data on IC patients are scarce. In particular, the immunogenicity of the new vaccine in frail subjects is not fully understood. On the one hand, immunosuppressive treatments can compromise the residual immunity to VZV but also the response to RZ . Several therapies are known to affect B cell response such as Rituximab or CAR T cells; other treatments reduce the T cell functionality, such as T-cell inhibitors (Cytotoxic T-lymphocyte Antigen 4-Immunoglobulin, CTLA4-Ig; abatacept), the JAK is, as well as by chemotherapy. To date, the vaccination is not approved in paediatric patients. However, the investigation of the VZV-specific immunological profile in frail paediatric patients could represent a valuable tool for understanding the potential vaccination strategies in these categories.\n\nThe study and definition of an immune profile associated with a high risk of viral in RZV vaccinated patients with IC can be useful for identifying patients' candidates for preventive antiviral treatments.\n\nThis is an observational multicentric prospective cohort study. The general objective is to assess the immunogenicity of RZV vaccination in terms of the induction of humoral and cell-mediated immune responses in selected frail (altered immunocompetence) populations, including rheumatologic, oncologic, neurologic and hematologic patients.\n\nPrimary Objective: To define the overall rate of humoral responders patients after the second dose of RZV administration.\n\nPrimary Endpoint: The rate of \"humoral responders\" will be defined as the percentage of patients showing ≥ 4 times of gE-specific IgG response (IU/mL) after the second dose (T1m) respect to baseline (T0) Secondary Objective 2.1: To define the overall increase of humoral response after the second dose of RZV administration.\n\nSecondary Objective 2.2: To characterize the immunogenicity induced by RZV vaccine in the different study cohorts (rheumatologic, oncologic, neurologic and hematologic patients) Secondary Objective 2.3: To evaluate the kinetics of humoral response during the first year after the vaccination Secondary Objective 2.4: To characterize gE-specific T cell mediated response elicited by RZV vaccination in overall patients Secondary Objective 2.5: Evaluation of the incidence of adverse reactions (AR) to the RZV vaccine, local and systemic, solicited and unsolicited, within the period of four weeks after the second dose of RZV.\n\nSecondary Objective 2.6: Evaluation of the incidence of reactivation of VZV cases after the second dose of RZV.",
+      "url": "https://clinicaltrials.gov/study/NCT07321808",
+      "asset_name": null,
+      "sowhat": "Not relevant to in vivo CAR-T space; herpes zoster vaccine trial unrelated to engineered cell therapy."
+    },
+    {
       "nct_id": "NCT05801913",
       "title": "Genetically Modified T-cells (CMV-Specific CD19-CAR T-cells) Plus a Vaccine (CMV-MVA Triplex) for the Treatment of Intermediate or High Grade B-Cell Non-Hodgkin Lymphoma",
       "sponsor": "City of Hope Medical Center",
@@ -1599,31 +1654,6 @@
       "url": "https://clinicaltrials.gov/study/NCT05801913",
       "asset_name": null,
       "sowhat": "CMV-targeting CAR-T with MVA vaccine boost tackles relapsed/refractory B-NHL persistence through dual immune activation."
-    },
-    {
-      "nct_id": "NCT07321808",
-      "title": "Immunogenicity, Efficacy and Safety of Recombinant Herpes Zoster Vaccine in Frail Patients",
-      "sponsor": "Fondazione IRCCS Policlinico San Matteo di Pavia",
-      "modality": "Not reported",
-      "conditions": [
-        "Immunocompromised Patients"
-      ],
-      "phase": [],
-      "status": "RECRUITING",
-      "interventions": [],
-      "primary_outcomes": [
-        "To define the overall rate of humoral responders patients after the second dose of RZV administration."
-      ],
-      "enrollment": 300,
-      "start_date": "2023-05-16",
-      "last_updated": "2026-03-05",
-      "countries": [
-        "Italy"
-      ],
-      "summary": "Herpes zoster (HZ) is a serious health problem whose incidence and severity increase with the decline of cell-mediated immunity (CMI) because of age and immunocompromised (IC) status. Subclinical reactivation are described and may boost the adaptive specific immunity. T cells play a major role in preventing reactivation of Varicella Zoster virus (VZV), with a contribution of both CD4 and CD8 T cells. Accordingly, the suppression of VZV-specific T cells preceded the occurrence of HZ. Moreover, several observations support a role of B cells in contributing to the overall protection against HZ as patients with primary antibody deficiency, common variable immunodeficiency, or patients treated with B-cell depleting therapies or Janus Kinase inhibitors (JAKis) show a higher risk of HZ. The functional effectiveness of CMI can be significantly affected by different diseases (e.g. cancer and immune-mediated inflammatory diseases, IMIDs) and/or by ongoing immune-targeted therapy, giving these patients at high risk for VZV reactivation. The new recombinant zoster vaccine (RZV) reduces the risk of HZ, and vaccination is encouraged in IC individuals, including those with cancer and IMIDs. Despite the efficacy and safety of RZV in healthy adults, data on IC patients are scarce. In particular, the immunogenicity of the new vaccine in frail subjects is not fully understood. On the one hand, immunosuppressive treatments can compromise the residual immunity to VZV but also the response to RZ . Several therapies are known to affect B cell response such as Rituximab or CAR T cells; other treatments reduce the T cell functionality, such as T-cell inhibitors (Cytotoxic T-lymphocyte Antigen 4-Immunoglobulin, CTLA4-Ig; abatacept), the JAK is, as well as by chemotherapy. To date, the vaccination is not approved in paediatric patients. However, the investigation of the VZV-specific immunological profile in frail paediatric patients could represent a valuable tool for understanding the potential vaccination strategies in these categories.\n\nThe study and definition of an immune profile associated with a high risk of viral in RZV vaccinated patients with IC can be useful for identifying patients' candidates for preventive antiviral treatments.\n\nThis is an observational multicentric prospective cohort study. The general objective is to assess the immunogenicity of RZV vaccination in terms of the induction of humoral and cell-mediated immune responses in selected frail (altered immunocompetence) populations, including rheumatologic, oncologic, neurologic and hematologic patients.\n\nPrimary Objective: To define the overall rate of humoral responders patients after the second dose of RZV administration.\n\nPrimary Endpoint: The rate of \"humoral responders\" will be defined as the percentage of patients showing ≥ 4 times of gE-specific IgG response (IU/mL) after the second dose (T1m) respect to baseline (T0) Secondary Objective 2.1: To define the overall increase of humoral response after the second dose of RZV administration.\n\nSecondary Objective 2.2: To characterize the immunogenicity induced by RZV vaccine in the different study cohorts (rheumatologic, oncologic, neurologic and hematologic patients) Secondary Objective 2.3: To evaluate the kinetics of humoral response during the first year after the vaccination Secondary Objective 2.4: To characterize gE-specific T cell mediated response elicited by RZV vaccination in overall patients Secondary Objective 2.5: Evaluation of the incidence of adverse reactions (AR) to the RZV vaccine, local and systemic, solicited and unsolicited, within the period of four weeks after the second dose of RZV.\n\nSecondary Objective 2.6: Evaluation of the incidence of reactivation of VZV cases after the second dose of RZV.",
-      "url": "https://clinicaltrials.gov/study/NCT07321808",
-      "asset_name": null,
-      "sowhat": "Not relevant to in vivo CAR-T space; herpes zoster vaccine trial unrelated to engineered cell therapy."
     },
     {
       "nct_id": "NCT05032820",
@@ -1705,8 +1735,8 @@
       "start_date": "2024-11-18",
       "last_updated": "2026-03-03",
       "countries": [
-        "United States",
-        "United Kingdom"
+        "United Kingdom",
+        "United States"
       ],
       "summary": "This research study is designed to assess the prevalence of specific antibodies and inflammatory cytokines in adult and pediatric participants with CGD.",
       "url": "https://clinicaltrials.gov/study/NCT06605378",
@@ -2061,43 +2091,6 @@
       "sowhat": "Chinese BCMA CAR-T shows early safety/efficacy in r/r MM, intensifying competition against established Western programs."
     },
     {
-      "nct_id": "NCT06623396",
-      "title": "A Study of Mesothelin-Targeted CAR T-Cell Therapy in People With Esophagogastric Cancer",
-      "sponsor": "Memorial Sloan Kettering Cancer Center",
-      "modality": "Ex vivo CAR-T",
-      "conditions": [
-        "Mesothelin Positive",
-        "Mesothelin-Expressing Tumors",
-        "Esophageal Adenocarcinoma",
-        "Esophageal Adenocarcinomas",
-        "Esophagogastric Adenocarcinoma",
-        "Peritoneal Carcinomatosis",
-        "Breast Neoplasms",
-        "Diabetes Mellitus"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "M28z1XXPD1DNR CAR"
-      ],
-      "primary_outcomes": [
-        "Number of treatment-emergent adverse events",
-        "Maximum Tolerated Dose of M28z1XXPD1DNR CAR T cells"
-      ],
-      "enrollment": 18,
-      "start_date": "2024-09-30",
-      "last_updated": "2026-02-11",
-      "countries": [
-        "United States"
-      ],
-      "summary": "Participants will have a sample of their white blood cells, called T cells, collected using a procedure called leukapheresis. The collected T cells will be sent to a laboratory at Memorial Sloan Kettering to be changed (modified) to become MSLN-targeted CAR T cells, the CAR T-cell therapy that participants will receive during the study. Participant study therapy will take about 3-4 weeks.",
-      "url": "https://clinicaltrials.gov/study/NCT06623396",
-      "asset_name": null,
-      "sowhat": "Mesothelin CAR-T expands beyond hematologic malignancies into solid tumors with potential multi-indication applicability."
-    },
-    {
       "nct_id": "NCT04067414",
       "title": "Exploratory Study of CD19-targeted Chimeric Antigen Receptor T Cells(BZ019) for Relapsed and Refractory B-cell Lymphoma",
       "sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
@@ -2160,33 +2153,41 @@
       "sowhat": "Chinese institute validates CD19 CAR-T dosing strategy in relapsed/refractory NHL patients via split-dose administration."
     },
     {
-      "nct_id": "NCT07398963",
-      "title": "Clinical Study of Oncolytic Vaccinia VIrus Delivering Targeted CD19 in Vivo CAR-T/M Therapy for Refractory/Relapsed B-cell Lymphoma",
-      "sponsor": "Second Affiliated Hospital, School of Medicine, Zhejiang University",
-      "modality": "In vivo CAR-T",
+      "nct_id": "NCT06623396",
+      "title": "A Study of Mesothelin-Targeted CAR T-Cell Therapy in People With Esophagogastric Cancer",
+      "sponsor": "Memorial Sloan Kettering Cancer Center",
+      "modality": "Ex vivo CAR-T",
       "conditions": [
-        "Refractory/Relapsed B-cell Lymphoma"
+        "Mesothelin Positive",
+        "Mesothelin-Expressing Tumors",
+        "Esophageal Adenocarcinoma",
+        "Esophageal Adenocarcinomas",
+        "Esophagogastric Adenocarcinoma",
+        "Peritoneal Carcinomatosis",
+        "Breast Neoplasms",
+        "Diabetes Mellitus"
       ],
       "phase": [
         "PHASE1"
       ],
       "status": "RECRUITING",
       "interventions": [
-        "CD19-CAR novel oncolytic vaccinia virus"
+        "M28z1XXPD1DNR CAR"
       ],
       "primary_outcomes": [
-        "Incidence of dose limiting toxicity (DLTs)"
+        "Number of treatment-emergent adverse events",
+        "Maximum Tolerated Dose of M28z1XXPD1DNR CAR T cells"
       ],
-      "enrollment": 48,
-      "start_date": "2026-02",
-      "last_updated": "2026-02-10",
+      "enrollment": 18,
+      "start_date": "2024-09-30",
+      "last_updated": "2026-02-11",
       "countries": [
-        "China"
+        "United States"
       ],
-      "summary": "To study the safety and effectiveness of oncolytic Vaccinia VIrus-Delivered Targeted CD19 In Vivo CAR-T/M Therapy for Refractory/Relapsed B-Cell Lymphoma",
-      "url": "https://clinicaltrials.gov/study/NCT07398963",
+      "summary": "Participants will have a sample of their white blood cells, called T cells, collected using a procedure called leukapheresis. The collected T cells will be sent to a laboratory at Memorial Sloan Kettering to be changed (modified) to become MSLN-targeted CAR T cells, the CAR T-cell therapy that participants will receive during the study. Participant study therapy will take about 3-4 weeks.",
+      "url": "https://clinicaltrials.gov/study/NCT06623396",
       "asset_name": null,
-      "sowhat": "Viral vector delivery of in vivo CAR-T offers potential manufacturing simplification for difficult-to-treat lymphomas."
+      "sowhat": "Mesothelin CAR-T expands beyond hematologic malignancies into solid tumors with potential multi-indication applicability."
     },
     {
       "nct_id": "NCT07399769",
@@ -2217,6 +2218,35 @@
       "url": "https://clinicaltrials.gov/study/NCT07399769",
       "asset_name": null,
       "sowhat": "MSLN CAR-T advances solid tumor treatment, tracking in vivo persistence and expansion correlations with clinical outcomes."
+    },
+    {
+      "nct_id": "NCT07398963",
+      "title": "Clinical Study of Oncolytic Vaccinia VIrus Delivering Targeted CD19 in Vivo CAR-T/M Therapy for Refractory/Relapsed B-cell Lymphoma",
+      "sponsor": "Second Affiliated Hospital, School of Medicine, Zhejiang University",
+      "modality": "In vivo CAR-T",
+      "conditions": [
+        "Refractory/Relapsed B-cell Lymphoma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "CD19-CAR novel oncolytic vaccinia virus"
+      ],
+      "primary_outcomes": [
+        "Incidence of dose limiting toxicity (DLTs)"
+      ],
+      "enrollment": 48,
+      "start_date": "2026-02",
+      "last_updated": "2026-02-10",
+      "countries": [
+        "China"
+      ],
+      "summary": "To study the safety and effectiveness of oncolytic Vaccinia VIrus-Delivered Targeted CD19 In Vivo CAR-T/M Therapy for Refractory/Relapsed B-Cell Lymphoma",
+      "url": "https://clinicaltrials.gov/study/NCT07398963",
+      "asset_name": null,
+      "sowhat": "Viral vector delivery of in vivo CAR-T offers potential manufacturing simplification for difficult-to-treat lymphomas."
     },
     {
       "nct_id": "NCT07395479",
@@ -2250,36 +2280,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07395479",
       "asset_name": null,
       "sowhat": "China's multi-antigen in vivo CAR-T platform targets validated hematologic and solid tumor antigens simultaneously."
-    },
-    {
-      "nct_id": "NCT01192464",
-      "title": "EBV CTLs Expressing CD30 Chimeric Receptors For CD 30+ Lymphoma",
-      "sponsor": "Baylor College of Medicine",
-      "modality": "Ex vivo CAR-T",
-      "conditions": [
-        "Hodgkin's Lymphoma",
-        "Non-Hodgkin's Lymphoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "autologous CAR.CD30 EBV specific-CTLs"
-      ],
-      "primary_outcomes": [
-        "To evaluate the safety of escalating doses of autologous EBV-specific cytotoxic T-lymphocytes (CTLs),"
-      ],
-      "enrollment": 18,
-      "start_date": "2011-05-10",
-      "last_updated": "2026-02-06",
-      "countries": [
-        "United States"
-      ],
-      "summary": "The body has different ways of fighting infection and disease. No single way seems perfect for fighting cancer. This research study combines two different ways of fighting disease: antibodies and T cells. Antibodies are proteins the protect the body from diseases caused by germs or toxic substances. They work by binding those germs or substances, which stops them from growing and causing bad effects. T cells, also called T lymphocytes, are special infection-fighting blood cells that can kill other cells, including tumor cells or cells that are infected with germs. Both antibodies and T cells have been used to treat patients with cancers: they both have been shown promise, but have not been strong enough to cure most patients. This study combines the two methods.\n\nWe have found from previous research that we can put a new gene into T cells that will make them recognize cancer cells and kill them. We now want to see if we can attach a new gene to T cells that will help them do a better job at recognizing and killing lymphoma cells.\n\nThe new gene we will put in T cells makes an antibody called anti-CD30. The antibody alone has not been strong enough to cure most patients. For this study, the anti-CD30 antibody has been changed so that instead of floating free in the blood it is now joined to the T cells. When an antibody is joined to a T cell in this way it is called a chimeric receptor. These chimeric receptor-T cells seem to kill some of the tumor, but they don't last very long and so their chances of fighting the cancer are unknown.\n\nWe have found that T cells that are also trained to recognize the EBV virus (that causes infectious mononucleosis) can stay in the blood stream for many years. These are called EBV specific Cytotoxic T Lymphocytes.\n\nBy joining the anti-CD30 antibody to the EBV CTLs, we believe that we will also be able to make a cell that can last a long time in the body and recognize and kill lymphoma cells. We call the final cells CD30 chimeric receptor EBV CTLs. T\n\nWe hope that these new cells may be able to work longer and target and kill lymphoma cells. However, we do not know that yet.",
-      "url": "https://clinicaltrials.gov/study/NCT01192464",
-      "asset_name": null,
-      "sowhat": "EBV-derived CTLs with CD30 CAR overcome lymphoma's immune evasion while leveraging natural viral-specific targeting advantage."
     },
     {
       "nct_id": "NCT07394205",
@@ -2349,6 +2349,71 @@
       "sowhat": "ROR1-targeted CAR-T expands into solid tumors; early signal could reshape in vivo positioning beyond hematologic cancers."
     },
     {
+      "nct_id": "NCT01192464",
+      "title": "EBV CTLs Expressing CD30 Chimeric Receptors For CD 30+ Lymphoma",
+      "sponsor": "Baylor College of Medicine",
+      "modality": "Ex vivo CAR-T",
+      "conditions": [
+        "Hodgkin's Lymphoma",
+        "Non-Hodgkin's Lymphoma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "ACTIVE_NOT_RECRUITING",
+      "interventions": [
+        "autologous CAR.CD30 EBV specific-CTLs"
+      ],
+      "primary_outcomes": [
+        "To evaluate the safety of escalating doses of autologous EBV-specific cytotoxic T-lymphocytes (CTLs),"
+      ],
+      "enrollment": 18,
+      "start_date": "2011-05-10",
+      "last_updated": "2026-02-06",
+      "countries": [
+        "United States"
+      ],
+      "summary": "The body has different ways of fighting infection and disease. No single way seems perfect for fighting cancer. This research study combines two different ways of fighting disease: antibodies and T cells. Antibodies are proteins the protect the body from diseases caused by germs or toxic substances. They work by binding those germs or substances, which stops them from growing and causing bad effects. T cells, also called T lymphocytes, are special infection-fighting blood cells that can kill other cells, including tumor cells or cells that are infected with germs. Both antibodies and T cells have been used to treat patients with cancers: they both have been shown promise, but have not been strong enough to cure most patients. This study combines the two methods.\n\nWe have found from previous research that we can put a new gene into T cells that will make them recognize cancer cells and kill them. We now want to see if we can attach a new gene to T cells that will help them do a better job at recognizing and killing lymphoma cells.\n\nThe new gene we will put in T cells makes an antibody called anti-CD30. The antibody alone has not been strong enough to cure most patients. For this study, the anti-CD30 antibody has been changed so that instead of floating free in the blood it is now joined to the T cells. When an antibody is joined to a T cell in this way it is called a chimeric receptor. These chimeric receptor-T cells seem to kill some of the tumor, but they don't last very long and so their chances of fighting the cancer are unknown.\n\nWe have found that T cells that are also trained to recognize the EBV virus (that causes infectious mononucleosis) can stay in the blood stream for many years. These are called EBV specific Cytotoxic T Lymphocytes.\n\nBy joining the anti-CD30 antibody to the EBV CTLs, we believe that we will also be able to make a cell that can last a long time in the body and recognize and kill lymphoma cells. We call the final cells CD30 chimeric receptor EBV CTLs. T\n\nWe hope that these new cells may be able to work longer and target and kill lymphoma cells. However, we do not know that yet.",
+      "url": "https://clinicaltrials.gov/study/NCT01192464",
+      "asset_name": null,
+      "sowhat": "EBV-derived CTLs with CD30 CAR overcome lymphoma's immune evasion while leveraging natural viral-specific targeting advantage."
+    },
+    {
+      "nct_id": "NCT07211737",
+      "title": "NKG2D.Zeta-NK Cell Conditioning With C7R.GD2.CAR-T Cells for Patients With Relapsed or Refractory Osteosarcoma or Neuroblastoma",
+      "sponsor": "Baylor College of Medicine",
+      "modality": "Not reported",
+      "conditions": [
+        "Relapsed Neuroblastoma",
+        "Refractory Neuroblastoma",
+        "Relapsed Osteosarcoma",
+        "Refractory Osteosarcoma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "NOT_YET_RECRUITING",
+      "interventions": [
+        "i15.NKG2D.zeta NK cells and C7R.GD2.CARTs cells",
+        "i15.NKG2D.zeta NK cells and C7R.GD2.CARTs cells",
+        "i15.NKG2D.zeta NK cells and C7R.GD2.CARTs cells"
+      ],
+      "primary_outcomes": [
+        "Dose-limiting toxicity (DLT) rate",
+        "Maximum tolerated dose (MTD) of i15.NKG2D.zeta-NK cells when given in combination with C7R.GD2.CAR-T cells"
+      ],
+      "enrollment": 27,
+      "start_date": "2026-05",
+      "last_updated": "2026-02-06",
+      "countries": [
+        "United States"
+      ],
+      "summary": "The purpose of this study is to find the largest safe dose of i15.NKG2D.zeta-NK cells in combination with C7R.GD2.CAR-T cells, and additionally to evaluate how long they can be detected in patients' blood and what affect they have on patients' cancer.\n\nPatients eligible for this study have neuroblastoma or osteosarcoma that expresses a substance on the cancer cells called GD2. This cancer has either come back after treatment or did not respond to the standard or other investigational treatments or therapies used to treat it. There is no standard treatment for these types of advanced cancers at this time. This is a gene transfer research study using special immune cells called NK cells and T cells. NK cells and T cells are types of white blood cell that help the body fight infection.\n\nThe body has different ways of fighting infection and disease. No single way seems perfect for fighting cancers. This research study combines two different ways of fighting cancer: NK cells and T cells. T cells are special infection-fighting blood cells that can kill cells infected with viruses and tumor cells. NK cells, another kind of infection-fighting cell, can recognize a wide range of cells in distress, including tumor cells and cells that help protect tumor cells in the cancer environment. Both NK cells and T cells have been used individually to treat patients with cancers. They have shown promise, but have not been strong enough individually to cure most patients.\n\nInvestigators have found from previous research that we can put a new gene into T cells that will make them recognize GD2, a substance found on almost all neuroblastoma and osteosarcoma cells. We can also put a new gene into NK cells that help them fight the tumor environment. Investigators know that T cells and NK cells need substances called cytokines to survive but the cells do not get enough cytokines after infusion into the body; therefore, the investigators have added the genes C7R and IL15 into the T and NK cells, respectively, to give each cell a constant supply of cytokine that helps them to survive longer.\n\nThe C7R.GD2.CAR-T cells and i15.NKG2D.zeta-NK cells are investigational products not approved by the Food and Drug Administration.",
+      "url": "https://clinicaltrials.gov/study/NCT07211737",
+      "asset_name": null,
+      "sowhat": "Baylor explores dual NK/CAR-T immunotherapy combining NKG2D conditioning with GD2-targeting for solid tumors."
+    },
+    {
       "nct_id": "NCT03740256",
       "title": "Binary Oncolytic Adenovirus in Combination With HER2-Specific Autologous CAR VST, Advanced HER2 Positive Solid Tumors",
       "sponsor": "Baylor College of Medicine",
@@ -2385,41 +2450,6 @@
       "url": "https://clinicaltrials.gov/study/NCT03740256",
       "asset_name": null,
       "sowhat": "Oncolytic virus priming combined with HER2 CAR-T targets broad solid tumor landscape beyond hematologic malignancies."
-    },
-    {
-      "nct_id": "NCT07211737",
-      "title": "NKG2D.Zeta-NK Cell Conditioning With C7R.GD2.CAR-T Cells for Patients With Relapsed or Refractory Osteosarcoma or Neuroblastoma",
-      "sponsor": "Baylor College of Medicine",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed Neuroblastoma",
-        "Refractory Neuroblastoma",
-        "Relapsed Osteosarcoma",
-        "Refractory Osteosarcoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "i15.NKG2D.zeta NK cells and C7R.GD2.CARTs cells",
-        "i15.NKG2D.zeta NK cells and C7R.GD2.CARTs cells",
-        "i15.NKG2D.zeta NK cells and C7R.GD2.CARTs cells"
-      ],
-      "primary_outcomes": [
-        "Dose-limiting toxicity (DLT) rate",
-        "Maximum tolerated dose (MTD) of i15.NKG2D.zeta-NK cells when given in combination with C7R.GD2.CAR-T cells"
-      ],
-      "enrollment": 27,
-      "start_date": "2026-05",
-      "last_updated": "2026-02-06",
-      "countries": [
-        "United States"
-      ],
-      "summary": "The purpose of this study is to find the largest safe dose of i15.NKG2D.zeta-NK cells in combination with C7R.GD2.CAR-T cells, and additionally to evaluate how long they can be detected in patients' blood and what affect they have on patients' cancer.\n\nPatients eligible for this study have neuroblastoma or osteosarcoma that expresses a substance on the cancer cells called GD2. This cancer has either come back after treatment or did not respond to the standard or other investigational treatments or therapies used to treat it. There is no standard treatment for these types of advanced cancers at this time. This is a gene transfer research study using special immune cells called NK cells and T cells. NK cells and T cells are types of white blood cell that help the body fight infection.\n\nThe body has different ways of fighting infection and disease. No single way seems perfect for fighting cancers. This research study combines two different ways of fighting cancer: NK cells and T cells. T cells are special infection-fighting blood cells that can kill cells infected with viruses and tumor cells. NK cells, another kind of infection-fighting cell, can recognize a wide range of cells in distress, including tumor cells and cells that help protect tumor cells in the cancer environment. Both NK cells and T cells have been used individually to treat patients with cancers. They have shown promise, but have not been strong enough individually to cure most patients.\n\nInvestigators have found from previous research that we can put a new gene into T cells that will make them recognize GD2, a substance found on almost all neuroblastoma and osteosarcoma cells. We can also put a new gene into NK cells that help them fight the tumor environment. Investigators know that T cells and NK cells need substances called cytokines to survive but the cells do not get enough cytokines after infusion into the body; therefore, the investigators have added the genes C7R and IL15 into the T and NK cells, respectively, to give each cell a constant supply of cytokine that helps them to survive longer.\n\nThe C7R.GD2.CAR-T cells and i15.NKG2D.zeta-NK cells are investigational products not approved by the Food and Drug Administration.",
-      "url": "https://clinicaltrials.gov/study/NCT07211737",
-      "asset_name": null,
-      "sowhat": "Baylor explores dual NK/CAR-T immunotherapy combining NKG2D conditioning with GD2-targeting for solid tumors."
     },
     {
       "nct_id": "NCT07388212",
@@ -2483,6 +2513,35 @@
       "sowhat": "GD2-CAR-T expands checkpoint-refractory lung cancer addressability beyond current immunotherapy-responsive patient populations."
     },
     {
+      "nct_id": "NCT05460533",
+      "title": "A Second Infusion (Early Reinfusion) of Tisagenlecleucel in Children and Young Adults With B-Cell Acute Lymphoblastic Leukemia(B-ALL)",
+      "sponsor": "Memorial Sloan Kettering Cancer Center",
+      "modality": "Not reported",
+      "conditions": [
+        "B-cell Acute Lymphoblastic Leukemia"
+      ],
+      "phase": [
+        "PHASE2"
+      ],
+      "status": "ACTIVE_NOT_RECRUITING",
+      "interventions": [
+        "Tisagenlecleucel"
+      ],
+      "primary_outcomes": [
+        "decrease the loss of peripheral BCA rate"
+      ],
+      "enrollment": 30,
+      "start_date": "2022-07-12",
+      "last_updated": "2026-02-04",
+      "countries": [
+        "United States"
+      ],
+      "summary": "The researchers are doing this study to see if early reinfusion of tisagenlecleucel can keep participants in B-CEll ApLasia at 6 months after their first infusion. The researchers will also look at the safety of early reinfusion and how effective it is at treating B-ALL.",
+      "url": "https://clinicaltrials.gov/study/NCT05460533",
+      "asset_name": null,
+      "sowhat": "Early CAR-T reinfusion strategy addresses durability gap in pediatric B-ALL remission maintenance."
+    },
+    {
       "nct_id": "NCT05660369",
       "title": "CARv3-TEAM-E T Cells in Glioblastoma",
       "sponsor": "Marcela V. Maus, M.D.,Ph.D.",
@@ -2514,35 +2573,6 @@
       "url": "https://clinicaltrials.gov/study/NCT05660369",
       "asset_name": null,
       "sowhat": "CARv3-TEAM-E demonstrates CAR-T feasibility in solid tumors, signaling industry pivot toward CNS malignancies beyond hematologic cancers."
-    },
-    {
-      "nct_id": "NCT05460533",
-      "title": "A Second Infusion (Early Reinfusion) of Tisagenlecleucel in Children and Young Adults With B-Cell Acute Lymphoblastic Leukemia(B-ALL)",
-      "sponsor": "Memorial Sloan Kettering Cancer Center",
-      "modality": "Not reported",
-      "conditions": [
-        "B-cell Acute Lymphoblastic Leukemia"
-      ],
-      "phase": [
-        "PHASE2"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "Tisagenlecleucel"
-      ],
-      "primary_outcomes": [
-        "decrease the loss of peripheral BCA rate"
-      ],
-      "enrollment": 30,
-      "start_date": "2022-07-12",
-      "last_updated": "2026-02-04",
-      "countries": [
-        "United States"
-      ],
-      "summary": "The researchers are doing this study to see if early reinfusion of tisagenlecleucel can keep participants in B-CEll ApLasia at 6 months after their first infusion. The researchers will also look at the safety of early reinfusion and how effective it is at treating B-ALL.",
-      "url": "https://clinicaltrials.gov/study/NCT05460533",
-      "asset_name": null,
-      "sowhat": "Early CAR-T reinfusion strategy addresses durability gap in pediatric B-ALL remission maintenance."
     },
     {
       "nct_id": "NCT07383233",
@@ -2670,35 +2700,6 @@
       "sowhat": "HER2 CAR-T demonstrates solid tumor potential in sarcoma, expanding beyond hematologic malignancies."
     },
     {
-      "nct_id": "NCT07362602",
-      "title": "Exploratory Study on in Vivo CAR-T Therapy Targeting CD20 for the Treatment of Hematological Malignancies",
-      "sponsor": "The 923rd Hospital of Joint Logistics Support Force of People's Liberation Army",
-      "modality": "In vivo CAR-T",
-      "conditions": [
-        "Hematological Malignancies"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "In vivo CAR-T drug targeting CD20 based on mRNA-LNP"
-      ],
-      "primary_outcomes": [
-        "Dose limiting toxicity (DLT)",
-        "The incidence of adverse effects",
-        "Maximum tolerated dose (MTD) or optimal biological dose (OBD)"
-      ],
-      "enrollment": 47,
-      "start_date": "2026-01-26",
-      "last_updated": "2026-01-23",
-      "countries": [],
-      "summary": "Malignant hematological tumors mainly derived from adult B cells are mainly acute lymphoblastic leukemia (ALL) and non Hodgkin lymphoma (NHL). Overall, although existing therapies have significantly improved the survival rates of most patients, the treatment of relapsed/refractory patients still faces significant challenges. CD20 is a transmembrane protein highly expressed on the surface of B cells, almost penetrating the precursor, mature, and activated stages of B cells, but lacking in plasma cells, making it an ideal target for B cell malignancies.\n\nIn recent years, the breakthrough development of in vivo CAR-T therapy has overturned the traditional paradigm of in vitro CAR-T technology. The core principle is to directly deliver the gene encoding chimeric antigen receptor (CAR) to T cells in the patient's body through gene delivery vectors, without the need for in vitro isolation, modification, and amplification processes, and to complete the gene reprogramming of T cells in vivo. At present, the mainstream carrier technologies for CAR-T therapy in vivo are divided into two categories: lentiviral carriers and lipid nanoparticle (LNP) carriers. LNP carriers have significantly broken through the clinical bottlenecks of traditional CAR-T in terms of cost and accessibility, safety, and timeliness.\n\nThis experimental drug is a CD20 based messenger ribonucleic acid (mRNA) therapeutic drug, which is an injection formed by loading mRNA onto lipid nanoparticles (LNP). It has shown efficient B-cell clearance activity and good safety in non clinical settings, supporting further clinical exploration in B-cell hematological malignancies. It is expected to provide an innovative, safe, and accessible immunotherapy for B-cell hematological malignancies and bring better clinical benefits to more patients with B-cell hematological malignancies.",
-      "url": "https://clinicaltrials.gov/study/NCT07362602",
-      "asset_name": null,
-      "sowhat": "China's military advances in vivo CAR-T for B-cell malignancies, challenging ex vivo manufacturing dominance."
-    },
-    {
       "nct_id": "NCT07322718",
       "title": "Safety and Efficacy Study of RXIM002 in Severe, Relapsed or Refractory Autoimmune Diseases",
       "sponsor": "Ruijin Hospital",
@@ -2732,6 +2733,35 @@
       "sowhat": "Circular RNA in vivo CAR-T enters clinic for autoimmune; validates non-viral manufacturing platform."
     },
     {
+      "nct_id": "NCT07362602",
+      "title": "Exploratory Study on in Vivo CAR-T Therapy Targeting CD20 for the Treatment of Hematological Malignancies",
+      "sponsor": "The 923rd Hospital of Joint Logistics Support Force of People's Liberation Army",
+      "modality": "In vivo CAR-T",
+      "conditions": [
+        "Hematological Malignancies"
+      ],
+      "phase": [
+        "EARLY_PHASE1"
+      ],
+      "status": "NOT_YET_RECRUITING",
+      "interventions": [
+        "In vivo CAR-T drug targeting CD20 based on mRNA-LNP"
+      ],
+      "primary_outcomes": [
+        "Dose limiting toxicity (DLT)",
+        "The incidence of adverse effects",
+        "Maximum tolerated dose (MTD) or optimal biological dose (OBD)"
+      ],
+      "enrollment": 47,
+      "start_date": "2026-01-26",
+      "last_updated": "2026-01-23",
+      "countries": [],
+      "summary": "Malignant hematological tumors mainly derived from adult B cells are mainly acute lymphoblastic leukemia (ALL) and non Hodgkin lymphoma (NHL). Overall, although existing therapies have significantly improved the survival rates of most patients, the treatment of relapsed/refractory patients still faces significant challenges. CD20 is a transmembrane protein highly expressed on the surface of B cells, almost penetrating the precursor, mature, and activated stages of B cells, but lacking in plasma cells, making it an ideal target for B cell malignancies.\n\nIn recent years, the breakthrough development of in vivo CAR-T therapy has overturned the traditional paradigm of in vitro CAR-T technology. The core principle is to directly deliver the gene encoding chimeric antigen receptor (CAR) to T cells in the patient's body through gene delivery vectors, without the need for in vitro isolation, modification, and amplification processes, and to complete the gene reprogramming of T cells in vivo. At present, the mainstream carrier technologies for CAR-T therapy in vivo are divided into two categories: lentiviral carriers and lipid nanoparticle (LNP) carriers. LNP carriers have significantly broken through the clinical bottlenecks of traditional CAR-T in terms of cost and accessibility, safety, and timeliness.\n\nThis experimental drug is a CD20 based messenger ribonucleic acid (mRNA) therapeutic drug, which is an injection formed by loading mRNA onto lipid nanoparticles (LNP). It has shown efficient B-cell clearance activity and good safety in non clinical settings, supporting further clinical exploration in B-cell hematological malignancies. It is expected to provide an innovative, safe, and accessible immunotherapy for B-cell hematological malignancies and bring better clinical benefits to more patients with B-cell hematological malignancies.",
+      "url": "https://clinicaltrials.gov/study/NCT07362602",
+      "asset_name": null,
+      "sowhat": "China's military advances in vivo CAR-T for B-cell malignancies, challenging ex vivo manufacturing dominance."
+    },
+    {
       "nct_id": "NCT07362758",
       "title": "Exploratory Study on mRNA Therapy Targeting CD19 for the Treatment of Refractory Autoimmune Diseases",
       "sponsor": "Xinqiao Hospital of Chongqing",
@@ -2758,6 +2788,40 @@
       "url": "https://clinicaltrials.gov/study/NCT07362758",
       "asset_name": null,
       "sowhat": "In vivo CAR-T expands beyond oncology into autoimmune diseases, targeting B cells via CD19 mRNA approach."
+    },
+    {
+      "nct_id": "NCT07361094",
+      "title": "Autologous CD19/BCMA Dual-Target CAR-T for Relapsed/Refractory Autoimmune Diseases",
+      "sponsor": "Beijing Boren Hospital",
+      "modality": "Not reported",
+      "conditions": [
+        "Relapsed/Refractory Systemic Lupus Erythematosus",
+        "Relapsed/Refractory Systemic Sclerosis",
+        "Relapsed/Refractory Idiopathic Inflammatory Myopathies",
+        "Relapsed/Refractory sjögren's Syndrome",
+        "Relapsed/Refractory Autoimmune Hemolytic Anemia",
+        "Relapsed/Refractory Multiple Sclerosis"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "Autologous CD19-BCMA Dual-Target CAR T-Cell Therapy"
+      ],
+      "primary_outcomes": [
+        "Number and percentage of participants with adverse events (AEs), serious adverse events (SAEs), laboratory abnormalities, and adverse events of special interest (AESIs: CRS and ICANS), graded per CTCAE v5.0 and ASTCT 2019 criteria"
+      ],
+      "enrollment": 12,
+      "start_date": "2025-11-06",
+      "last_updated": "2026-01-22",
+      "countries": [
+        "China"
+      ],
+      "summary": "Autoimmune diseases occur when the immune system mistakenly attacks the body's own tissues, leading to chronic inflammation and damage to organs such as the kidneys, lungs, muscles, nerves, or blood cells. Although many treatments are available, some patients do not respond adequately or experience repeated disease flares despite long-term therapy. New treatment approaches are therefore needed for patients with relapsed or refractory autoimmune diseases. This study is an exploratory clinical trial designed to evaluate the safety and potential benefits of a novel cell-based therapy called autologous CD19-BCMA dual-target CAR T-cell therapy. This treatment uses a patient's own immune cells, which are collected from the blood, modified in the laboratory to recognize specific immune cells involved in autoimmune disease, and then infused back into the patient. The study includes adult patients with certain relapsed or refractory autoimmune diseases, such as systemic lupus erythematosus, systemic sclerosis, inflammatory muscle diseases, Sjögren's syndrome, autoimmune hemolytic anemia, and multiple sclerosis. After cell collection and preparative treatment, participants will receive a single infusion of the investigational CAR T-cell therapy and will be closely monitored for safety. The main purpose of this study is to better understand the safety of this treatment, including possible side effects. The study will also explore how the disease responds to treatment over time. Participants will be followed for up to two years after treatment to assess safety and clinical outcomes. The results of this study may help researchers better understand whether this type of cell therapy could be a feasible treatment option for patients with difficult-to-treat autoimmune diseases in the future.",
+      "url": "https://clinicaltrials.gov/study/NCT07361094",
+      "asset_name": null,
+      "sowhat": "Dual-target CAR-T expands beyond hematologic malignancies into autoimmune disease, validating B-cell depletion strategy."
     },
     {
       "nct_id": "NCT07359014",
@@ -2818,70 +2882,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07039201",
       "asset_name": null,
       "sowhat": "GPC3-targeted cell therapy enters HCC space, expanding CAR-T beyond hematologic malignancies into solid tumors."
-    },
-    {
-      "nct_id": "NCT07361094",
-      "title": "Autologous CD19/BCMA Dual-Target CAR-T for Relapsed/Refractory Autoimmune Diseases",
-      "sponsor": "Beijing Boren Hospital",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed/Refractory Systemic Lupus Erythematosus",
-        "Relapsed/Refractory Systemic Sclerosis",
-        "Relapsed/Refractory Idiopathic Inflammatory Myopathies",
-        "Relapsed/Refractory sjögren's Syndrome",
-        "Relapsed/Refractory Autoimmune Hemolytic Anemia",
-        "Relapsed/Refractory Multiple Sclerosis"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "Autologous CD19-BCMA Dual-Target CAR T-Cell Therapy"
-      ],
-      "primary_outcomes": [
-        "Number and percentage of participants with adverse events (AEs), serious adverse events (SAEs), laboratory abnormalities, and adverse events of special interest (AESIs: CRS and ICANS), graded per CTCAE v5.0 and ASTCT 2019 criteria"
-      ],
-      "enrollment": 12,
-      "start_date": "2025-11-06",
-      "last_updated": "2026-01-22",
-      "countries": [
-        "China"
-      ],
-      "summary": "Autoimmune diseases occur when the immune system mistakenly attacks the body's own tissues, leading to chronic inflammation and damage to organs such as the kidneys, lungs, muscles, nerves, or blood cells. Although many treatments are available, some patients do not respond adequately or experience repeated disease flares despite long-term therapy. New treatment approaches are therefore needed for patients with relapsed or refractory autoimmune diseases. This study is an exploratory clinical trial designed to evaluate the safety and potential benefits of a novel cell-based therapy called autologous CD19-BCMA dual-target CAR T-cell therapy. This treatment uses a patient's own immune cells, which are collected from the blood, modified in the laboratory to recognize specific immune cells involved in autoimmune disease, and then infused back into the patient. The study includes adult patients with certain relapsed or refractory autoimmune diseases, such as systemic lupus erythematosus, systemic sclerosis, inflammatory muscle diseases, Sjögren's syndrome, autoimmune hemolytic anemia, and multiple sclerosis. After cell collection and preparative treatment, participants will receive a single infusion of the investigational CAR T-cell therapy and will be closely monitored for safety. The main purpose of this study is to better understand the safety of this treatment, including possible side effects. The study will also explore how the disease responds to treatment over time. Participants will be followed for up to two years after treatment to assess safety and clinical outcomes. The results of this study may help researchers better understand whether this type of cell therapy could be a feasible treatment option for patients with difficult-to-treat autoimmune diseases in the future.",
-      "url": "https://clinicaltrials.gov/study/NCT07361094",
-      "asset_name": null,
-      "sowhat": "Dual-target CAR-T expands beyond hematologic malignancies into autoimmune disease, validating B-cell depletion strategy."
-    },
-    {
-      "nct_id": "NCT03829540",
-      "title": "CD4CAR for CD4+ Leukemia and Lymphoma",
-      "sponsor": "Huda Salman",
-      "modality": "Not reported",
-      "conditions": [
-        "T-cell Lymphoma",
-        "T-cell Leukemia"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CD4CAR"
-      ],
-      "primary_outcomes": [
-        "Number of participants with treatment-related adverse events as assessed by CTCAE v5.0"
-      ],
-      "enrollment": 20,
-      "start_date": "2020-07-09",
-      "last_updated": "2026-01-22",
-      "countries": [
-        "United States"
-      ],
-      "summary": "This study is designed as a single arm open label Phase I, 3x3, multicenter study of CD4-directed chimeric antigen receptor engineered T-cells (CD4CAR) in patients with relapsed or refractory T-cell leukemia and lymphoma. Specifically, the study will evaluate the safety and feasibility of CD4CAR T-cells. Funding Source - FDA OOPD",
-      "url": "https://clinicaltrials.gov/study/NCT03829540",
-      "asset_name": null,
-      "sowhat": "CD4CAR targets T-cell malignancies by engineering T-cells against CD4, addressing treatment-resistant hematologic cancers."
     },
     {
       "nct_id": "NCT04377932",
@@ -3203,36 +3203,6 @@
       "ai_modality": "Not reported"
     },
     {
-      "nct_id": "NCT07333430",
-      "title": "Study of Naive HBI0101 CAR-T Therapy in Relapsed/Refractory Multiple Myeloma",
-      "sponsor": "Hadassah Medical Organization",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed/Refractory Multiple Myeloma (MM)"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "Naive HBI0101 CAR-T"
-      ],
-      "primary_outcomes": [
-        "Determine the Maximum Tolerated Dose (MTD)",
-        "Evaluate safety of Naïve HBI0101 CART in Parts 1a and 1b"
-      ],
-      "enrollment": 60,
-      "start_date": "2026-01-15",
-      "last_updated": "2026-01-12",
-      "countries": [
-        "Israel"
-      ],
-      "summary": "A Phase 1a/1b Open-Label Study with Dose Escalation and Expansion Phases to Evaluate Safety and Preliminary Efficacy of Naïve HBI0101 CART Therapy for the Treatment of Relapsed/Refractory Multiple Myeloma.",
-      "url": "https://clinicaltrials.gov/study/NCT07333430",
-      "asset_name": null,
-      "sowhat": "Naive CAR-T approach targets heavily pretreated myeloma, testing alternative to exhausted T-cell engineering strategies."
-    },
-    {
       "nct_id": "NCT07333573",
       "title": "A Hypoxia-Inducible CAR-T Cell Targeting AXL and CD73 for Advanced Gastric Cancer",
       "sponsor": "Shanghai Zhongshan Hospital",
@@ -3263,6 +3233,36 @@
       "url": "https://clinicaltrials.gov/study/NCT07333573",
       "asset_name": null,
       "sowhat": "Hypoxia-engineered bispecific CAR-T expands addressable solid tumor market beyond hematologic malignancies."
+    },
+    {
+      "nct_id": "NCT07333430",
+      "title": "Study of Naive HBI0101 CAR-T Therapy in Relapsed/Refractory Multiple Myeloma",
+      "sponsor": "Hadassah Medical Organization",
+      "modality": "Not reported",
+      "conditions": [
+        "Relapsed/Refractory Multiple Myeloma (MM)"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "Naive HBI0101 CAR-T"
+      ],
+      "primary_outcomes": [
+        "Determine the Maximum Tolerated Dose (MTD)",
+        "Evaluate safety of Naïve HBI0101 CART in Parts 1a and 1b"
+      ],
+      "enrollment": 60,
+      "start_date": "2026-01-15",
+      "last_updated": "2026-01-12",
+      "countries": [
+        "Israel"
+      ],
+      "summary": "A Phase 1a/1b Open-Label Study with Dose Escalation and Expansion Phases to Evaluate Safety and Preliminary Efficacy of Naïve HBI0101 CART Therapy for the Treatment of Relapsed/Refractory Multiple Myeloma.",
+      "url": "https://clinicaltrials.gov/study/NCT07333430",
+      "asset_name": null,
+      "sowhat": "Naive CAR-T approach targets heavily pretreated myeloma, testing alternative to exhausted T-cell engineering strategies."
     },
     {
       "nct_id": "NCT07332663",
@@ -3725,9 +3725,9 @@
       "start_date": "2021-12-07",
       "last_updated": "2025-12-24",
       "countries": [
-        "Chile",
+        "Spain",
         "Argentina",
-        "Spain"
+        "Chile"
       ],
       "summary": "This is a phase 2 multi-cohort, un-controlled, non-randomized, open-label, multi-center study that assessed the antitumor activity and safety of non-alpha interleukin (IL-2) SAR444245 with or without other anticancer therapies in participants aged 12 years and older with relapsed or refractory B cell lymphoma. This study was structured as a master protocol with separate sub studies designed to investigate the use of SAR444245 either with or without other anticancer therapies for the treatment of relapsed or refractory B cell lymphoma.\n\nSubstudy 1-Cohort A aimed to establish safety and preliminary anti-tumor activity for non-alpha interleukin (IL-2) SAR444245 combined with the anti-PD1 antibody, pembrolizumab in trial participants with classic Hodgkin lymphoma (cHL) who are anti-PD-(L)1-naive and have received at least 2 or 3 lines of systemic therapy.\n\nSubstudy 3-Cohort C1 aims to establish safety and preliminary anti-tumor activity for SAR444245 as monotherapy in trial participants with diffuse large B-cell lymphoma (DLBCL). Trial participants in this study must have received at least 2 lines of systemic therapy and have either stable or progressive disease 1-3 months post Health Authority approved Chimeric Antigen Receptor T-cell (CAR-T) treatment when given as last systemic treatment prior to study enrollment.",
       "url": "https://clinicaltrials.gov/study/NCT05179603",
@@ -3762,8 +3762,8 @@
       "start_date": "2024-07-01",
       "last_updated": "2025-12-18",
       "countries": [
-        "Taiwan",
         "Australia",
+        "Taiwan",
         "South Korea"
       ],
       "summary": "This is a multicenter, open-label, Phase 1, first-in-human, dose-escalation study designed to assess the safety, tolerability and define the RP2D of MT-303 alone (Module 1) and in combination with Atezo/Bev (Module 2) in participants with advanced hepatocellular carcinoma expressing GPC3.",
@@ -4005,39 +4005,6 @@
       "sowhat": "CD7-CAR-T expands autologous CAR-T into pediatric T-ALL, addressing self-antigen challenge in hard-to-treat population."
     },
     {
-      "nct_id": "NCT07259070",
-      "title": "Multicenter, Single-Arm Exploratory Phase I Clinical Study (Assessment of Safety and Efficacy) of Fully Human BAFF-R Chimeric Antigen Receptor T-Cell Injection in Relapsed/Refractory BAFF-R-Positive B-Cell Lymphoma",
-      "sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
-      "modality": "Not reported",
-      "conditions": [
-        "DLBCL",
-        "CLL",
-        "FL",
-        "MCL",
-        "WM",
-        "MZL"
-      ],
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "BAFF-R CAR-T"
-      ],
-      "primary_outcomes": [
-        "Evaluation of the Safety of BAFF-R Chimeric Antigen Receptor T-Cell Injection (BAFF-R CAR-T) in Subjects with Relapsed and Refractory BAFF-R-Positive B-Cell Lymphoma, and Exploration of the Maximum Tolerated Dose (MTD)"
-      ],
-      "enrollment": 20,
-      "start_date": "2025-11-29",
-      "last_updated": "2025-12-02",
-      "countries": [],
-      "summary": "The aim of this study is to analyze the safety of BAFF-R Chimeric Antigen Receptor T-Cell Injection (BAFF-R CAR-T) in participants with relapsed/refractory BAFF-R-positive B-cell lymphoma and explore the Maximum Tolerated Dose (MTD).\n\nThe secondary objective of this study is to explore the efficacy of BAFF-R CAR-T in participants with relapsed/refractory BAFF-R-positive B-cell lymphoma.\n\nThe study also aims to explore the pharmacokinetic characteristics of BAFF-R CAR-T in vivo and the impact of BAFF-R CAR-T on lymphocyte subsets in vivo.",
-      "url": "https://clinicaltrials.gov/study/NCT07259070",
-      "asset_name": null,
-      "sowhat": "Chinese program validates BAFF-R as viable CAR-T target across multiple relapsed/refractory B-cell malignancies."
-    },
-    {
       "nct_id": "NCT04787263",
       "title": "CD19-CAR_Lenti T Cells in Pediatric Patients Affected by Relapsed/Refractory CD19+ ALL and DLBCL or PML",
       "sponsor": "Bambino Gesù Hospital and Research Institute",
@@ -4070,6 +4037,39 @@
       "url": "https://clinicaltrials.gov/study/NCT04787263",
       "asset_name": null,
       "sowhat": "Italian hospital validates lentiviral CD19-CAR-T manufacturing in pediatric relapsed/refractory hematologic malignancies."
+    },
+    {
+      "nct_id": "NCT07259070",
+      "title": "Multicenter, Single-Arm Exploratory Phase I Clinical Study (Assessment of Safety and Efficacy) of Fully Human BAFF-R Chimeric Antigen Receptor T-Cell Injection in Relapsed/Refractory BAFF-R-Positive B-Cell Lymphoma",
+      "sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
+      "modality": "Not reported",
+      "conditions": [
+        "DLBCL",
+        "CLL",
+        "FL",
+        "MCL",
+        "WM",
+        "MZL"
+      ],
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "status": "NOT_YET_RECRUITING",
+      "interventions": [
+        "BAFF-R CAR-T"
+      ],
+      "primary_outcomes": [
+        "Evaluation of the Safety of BAFF-R Chimeric Antigen Receptor T-Cell Injection (BAFF-R CAR-T) in Subjects with Relapsed and Refractory BAFF-R-Positive B-Cell Lymphoma, and Exploration of the Maximum Tolerated Dose (MTD)"
+      ],
+      "enrollment": 20,
+      "start_date": "2025-11-29",
+      "last_updated": "2025-12-02",
+      "countries": [],
+      "summary": "The aim of this study is to analyze the safety of BAFF-R Chimeric Antigen Receptor T-Cell Injection (BAFF-R CAR-T) in participants with relapsed/refractory BAFF-R-positive B-cell lymphoma and explore the Maximum Tolerated Dose (MTD).\n\nThe secondary objective of this study is to explore the efficacy of BAFF-R CAR-T in participants with relapsed/refractory BAFF-R-positive B-cell lymphoma.\n\nThe study also aims to explore the pharmacokinetic characteristics of BAFF-R CAR-T in vivo and the impact of BAFF-R CAR-T on lymphocyte subsets in vivo.",
+      "url": "https://clinicaltrials.gov/study/NCT07259070",
+      "asset_name": null,
+      "sowhat": "Chinese program validates BAFF-R as viable CAR-T target across multiple relapsed/refractory B-cell malignancies."
     },
     {
       "nct_id": "NCT06659588",
@@ -4132,7 +4132,39 @@
       "url": "https://clinicaltrials.gov/study/NCT06285422",
       "asset_name": "SC262",
       "sowhat": "Sana advances in vivo CAR-T candidate SC262 into lymphoma, potentially avoiding ex vivo manufacturing bottlenecks.",
-      "ai_modality": "In vivo CAR-T — Other"
+      "ai_modality": "Ex vivo CAR-T — Allogeneic"
+    },
+    {
+      "nct_id": "NCT07250386",
+      "title": "A Study of CEA-Targeted CAR-T Therapy in Patients With CEA-Positive Advanced Solid Tumors",
+      "sponsor": "Second Affiliated Hospital, School of Medicine, Zhejiang University",
+      "modality": "Not reported",
+      "conditions": [
+        "NSCLC (Advanced Non-small Cell Lung Cancer)",
+        "Breast Cancer"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "CEA-targeted CAR-T (Intravenous)",
+        "CEA-targeted CAR-T (Intrapleural)"
+      ],
+      "primary_outcomes": [
+        "To evaluate the safety of CAR-T cell preparations in the treatment of CEA-positive advanced malignancies [Safety and Tolerability]",
+        "Obtained the recommended dose and infusion regimen of CAR-T cells for the treatment of patients with CEA-positive advanced malignancies [Safety and Tolerability]"
+      ],
+      "enrollment": 48,
+      "start_date": "2025-10-13",
+      "last_updated": "2025-11-26",
+      "countries": [
+        "China"
+      ],
+      "summary": "This study is a single-arm, open-label, dose-escalating + dose-expansion clinical study, aiming to evaluate the safety and efficacy of CEA-targeted CAR-T cell preparations, and to preliminarily observe the study drug in CEA-positive advanced malignant tumors. The pharmacokinetic characteristics of CAR-T cell preparations for the treatment of patients with CEA-positive advanced malignancies were obtained and the recommended dose and infusion schedule.",
+      "url": "https://clinicaltrials.gov/study/NCT07250386",
+      "asset_name": null,
+      "sowhat": "CEA-CAR-T advances into solid tumors; Chinese sponsor targets lung cancer and breast cancer efficacy signals."
     },
     {
       "nct_id": "NCT05795595",
@@ -4168,38 +4200,6 @@
       "url": "https://clinicaltrials.gov/study/NCT05795595",
       "asset_name": null,
       "sowhat": "CRISPR expands CAR-T beyond hematologic malignancies into solid tumors using enhanced engineered cells."
-    },
-    {
-      "nct_id": "NCT07250386",
-      "title": "A Study of CEA-Targeted CAR-T Therapy in Patients With CEA-Positive Advanced Solid Tumors",
-      "sponsor": "Second Affiliated Hospital, School of Medicine, Zhejiang University",
-      "modality": "Not reported",
-      "conditions": [
-        "NSCLC (Advanced Non-small Cell Lung Cancer)",
-        "Breast Cancer"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CEA-targeted CAR-T (Intravenous)",
-        "CEA-targeted CAR-T (Intrapleural)"
-      ],
-      "primary_outcomes": [
-        "To evaluate the safety of CAR-T cell preparations in the treatment of CEA-positive advanced malignancies [Safety and Tolerability]",
-        "Obtained the recommended dose and infusion regimen of CAR-T cells for the treatment of patients with CEA-positive advanced malignancies [Safety and Tolerability]"
-      ],
-      "enrollment": 48,
-      "start_date": "2025-10-13",
-      "last_updated": "2025-11-26",
-      "countries": [
-        "China"
-      ],
-      "summary": "This study is a single-arm, open-label, dose-escalating + dose-expansion clinical study, aiming to evaluate the safety and efficacy of CEA-targeted CAR-T cell preparations, and to preliminarily observe the study drug in CEA-positive advanced malignant tumors. The pharmacokinetic characteristics of CAR-T cell preparations for the treatment of patients with CEA-positive advanced malignancies were obtained and the recommended dose and infusion schedule.",
-      "url": "https://clinicaltrials.gov/study/NCT07250386",
-      "asset_name": null,
-      "sowhat": "CEA-CAR-T advances into solid tumors; Chinese sponsor targets lung cancer and breast cancer efficacy signals."
     },
     {
       "nct_id": "NCT05741359",
@@ -4382,8 +4382,8 @@
       "start_date": "2025-11-17",
       "last_updated": "2025-11-21",
       "countries": [
-        "United States",
-        "China"
+        "China",
+        "United States"
       ],
       "summary": "Brief Summary:\n\nThe purpose of this clinical trial is to evaluate the safety, tolerability, preliminary efficacy, and immunogenicity of EVM14 administered intramuscularly (IM) alone and in combination with pembrolizumab in patients with selected solid tumors.",
       "url": "https://clinicaltrials.gov/study/NCT07095868",
@@ -4422,6 +4422,36 @@
       "url": "https://clinicaltrials.gov/study/NCT07239323",
       "asset_name": null,
       "sowhat": "Chinese biotech advances in vivo CAR-T into Phase 1 across multiple hematologic malignancies, challenging ex vivo dominance."
+    },
+    {
+      "nct_id": "NCT05312411",
+      "title": "A Phase I Feasibility And Safety Study of Fluorescein-Specific (FITC-E2) CAR T Cells In Combination With Parenterally Administered Folate-Fluorescein (UB-TT170) For Osteogenic Sarcoma",
+      "sponsor": "Seattle Children's Hospital",
+      "modality": "Not reported",
+      "conditions": [
+        "Osteosarcoma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "ACTIVE_NOT_RECRUITING",
+      "interventions": [
+        "SCRI-E2CAR_EGFRtv1",
+        "UB_TT170"
+      ],
+      "primary_outcomes": [
+        "Adverse events associated with ex-vivo expanded autologous T cells genetically modified to express an antiFL(FITC-E2) CAR administered with UB-TT170 will be assessed"
+      ],
+      "enrollment": 21,
+      "start_date": "2022-05-20",
+      "last_updated": "2025-11-20",
+      "countries": [
+        "United States"
+      ],
+      "summary": "The purpose of this study is to see if a new treatment could help patients who have osteosarcoma that does not go away with treatment (is refractory) or comes back after treatment (is recurrent).This study is testing a combination of study therapies, UB-TT170 and genetically modified chimeric antigen receptor T lymphocyte (CAR T) cells, which work together in a way that is different from chemotherapy.\n\nIn this study, researchers will take some of your blood and remove the T cells in a process called \"apheresis\". Then the T cells are taken to a lab and changed to CAR T cells that recognize the flags from UB-TT170. Once researchers think they have grown enough CAR T cells, called antiFL(FITC-E2) CAR T cells, to fight your cancer, you may get some chemotherapy to make room in your body for the new cells and then have those cells put back in your body.\n\nA few days after the you get your CAR T cell infusion you will start to get infusions of UB-TT170, with the dose slowly increasing for the first few infusions until you have reached a maximum dose that you will get on a regular schedule. The UB-TT170 will attach to your tumor cells and flag them so that they attract the CAR T cells. When the CAR T cells see the labeled tumor cells they can kill the tumor cells.\n\nThe active part of the study lasts about 8 months, and if you get the CAR T cell infusion you will be in long-term follow-up for 15 years.",
+      "url": "https://clinicaltrials.gov/study/NCT05312411",
+      "asset_name": null,
+      "sowhat": "Novel dual-component CAR-T approach using fluorescein targeting offers non-chemotherapy alternative for refractory osteosarcoma."
     },
     {
       "nct_id": "NCT04483778",
@@ -4477,36 +4507,6 @@
       "url": "https://clinicaltrials.gov/study/NCT04483778",
       "asset_name": null,
       "sowhat": "B7H3 CAR-T expands solid tumor pipeline beyond hematologic malignancies in pediatric population."
-    },
-    {
-      "nct_id": "NCT05312411",
-      "title": "A Phase I Feasibility And Safety Study of Fluorescein-Specific (FITC-E2) CAR T Cells In Combination With Parenterally Administered Folate-Fluorescein (UB-TT170) For Osteogenic Sarcoma",
-      "sponsor": "Seattle Children's Hospital",
-      "modality": "Not reported",
-      "conditions": [
-        "Osteosarcoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "SCRI-E2CAR_EGFRtv1",
-        "UB_TT170"
-      ],
-      "primary_outcomes": [
-        "Adverse events associated with ex-vivo expanded autologous T cells genetically modified to express an antiFL(FITC-E2) CAR administered with UB-TT170 will be assessed"
-      ],
-      "enrollment": 21,
-      "start_date": "2022-05-20",
-      "last_updated": "2025-11-20",
-      "countries": [
-        "United States"
-      ],
-      "summary": "The purpose of this study is to see if a new treatment could help patients who have osteosarcoma that does not go away with treatment (is refractory) or comes back after treatment (is recurrent).This study is testing a combination of study therapies, UB-TT170 and genetically modified chimeric antigen receptor T lymphocyte (CAR T) cells, which work together in a way that is different from chemotherapy.\n\nIn this study, researchers will take some of your blood and remove the T cells in a process called \"apheresis\". Then the T cells are taken to a lab and changed to CAR T cells that recognize the flags from UB-TT170. Once researchers think they have grown enough CAR T cells, called antiFL(FITC-E2) CAR T cells, to fight your cancer, you may get some chemotherapy to make room in your body for the new cells and then have those cells put back in your body.\n\nA few days after the you get your CAR T cell infusion you will start to get infusions of UB-TT170, with the dose slowly increasing for the first few infusions until you have reached a maximum dose that you will get on a regular schedule. The UB-TT170 will attach to your tumor cells and flag them so that they attract the CAR T cells. When the CAR T cells see the labeled tumor cells they can kill the tumor cells.\n\nThe active part of the study lasts about 8 months, and if you get the CAR T cell infusion you will be in long-term follow-up for 15 years.",
-      "url": "https://clinicaltrials.gov/study/NCT05312411",
-      "asset_name": null,
-      "sowhat": "Novel dual-component CAR-T approach using fluorescein targeting offers non-chemotherapy alternative for refractory osteosarcoma."
     },
     {
       "nct_id": "NCT07233018",
@@ -4736,12 +4736,12 @@
       "start_date": "2019-07-22",
       "last_updated": "2025-10-24",
       "countries": [
-        "Canada",
         "France",
-        "Germany",
         "Spain",
+        "Germany",
         "United States",
-        "Australia"
+        "Australia",
+        "Canada"
       ],
       "summary": "This is an open-label, multicenter, Phase 1/2 study evaluating the safety and efficacy of CTX110 in subjects with relapsed or refractory B-cell malignancies.",
       "url": "https://clinicaltrials.gov/study/NCT04035434",
@@ -4923,17 +4923,17 @@
       "last_updated": "2025-10-07",
       "countries": [
         "France",
-        "Italy",
-        "Japan",
-        "Norway",
-        "Netherlands",
-        "Germany",
         "Spain",
-        "United States",
+        "Japan",
+        "Germany",
         "Belgium",
+        "Netherlands",
         "United Kingdom",
-        "Austria",
-        "Australia"
+        "United States",
+        "Italy",
+        "Norway",
+        "Australia",
+        "Austria"
       ],
       "summary": "This is a multi-center, phase II study to determine the efficacy and safety of tisagenlecleucel in adult patients with relapsed or refractory FL.",
       "url": "https://clinicaltrials.gov/study/NCT03568461",
@@ -4994,43 +4994,6 @@
       "url": "https://clinicaltrials.gov/study/NCT01815749",
       "asset_name": null,
       "sowhat": "City of Hope combines CAR-T with stem cell transplant to tackle relapsed/refractory NHL across diverse B-cell subtypes."
-    },
-    {
-      "nct_id": "NCT07181720",
-      "title": "CD70-Targeted CAR-T Therapy in CD70-Positive Advanced Solid Tumors",
-      "sponsor": "Chongqing Precision Biotech Co., Ltd",
-      "modality": "Not reported",
-      "conditions": [
-        "Renal Cell Carcinoma (RCC)",
-        "Lung Cancer",
-        "Anaplastic Thyroid Carcinomas",
-        "Ovarian Cancer",
-        "Cervical Cancer",
-        "Thymic Carcinoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CD70-targeted CAR-T cells",
-        "CD70-targeted CAR-T cells",
-        "CD70-targeted CAR-T cells"
-      ],
-      "primary_outcomes": [
-        "To evaluate the safety of CAR-T cell preparations in the treatment of CD70-positive advanced malignancies [Safety and Tolerability]",
-        "Obtained the recommended dose and infusion regimen of CAR-T cells for the treatment of patients with CD70-positive advanced malignancies [Safety and Tolerability]"
-      ],
-      "enrollment": 90,
-      "start_date": "2025-09-12",
-      "last_updated": "2025-10-02",
-      "countries": [
-        "China"
-      ],
-      "summary": "This study is a single-arm, open-label, dose-escalating + dose-expansion clinical study, aiming to evaluate the safety and efficacy of CD70-targeted CAR-T cell preparations, and to preliminarily observe the study drug in CD70-positive advanced malignant tumors. The pharmacokinetic characteristics of CAR-T cell preparations for the treatment of patients with CD70-positive advanced malignancies were obtained and the recommended dose and infusion schedule.",
-      "url": "https://clinicaltrials.gov/study/NCT07181720",
-      "asset_name": null,
-      "sowhat": "Chinese biotech expands solid tumor CAR-T beyond hematologic malignancies with CD70 targeting strategy."
     },
     {
       "nct_id": "NCT07204496",
@@ -5094,6 +5057,43 @@
       "url": "https://clinicaltrials.gov/study/NCT07179692",
       "asset_name": null,
       "sowhat": "Chinese biotech advances CEA CAR-T into solid tumors; dose escalation data could validate pan-cancer solid tumor approach."
+    },
+    {
+      "nct_id": "NCT07181720",
+      "title": "CD70-Targeted CAR-T Therapy in CD70-Positive Advanced Solid Tumors",
+      "sponsor": "Chongqing Precision Biotech Co., Ltd",
+      "modality": "Not reported",
+      "conditions": [
+        "Renal Cell Carcinoma (RCC)",
+        "Lung Cancer",
+        "Anaplastic Thyroid Carcinomas",
+        "Ovarian Cancer",
+        "Cervical Cancer",
+        "Thymic Carcinoma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "CD70-targeted CAR-T cells",
+        "CD70-targeted CAR-T cells",
+        "CD70-targeted CAR-T cells"
+      ],
+      "primary_outcomes": [
+        "To evaluate the safety of CAR-T cell preparations in the treatment of CD70-positive advanced malignancies [Safety and Tolerability]",
+        "Obtained the recommended dose and infusion regimen of CAR-T cells for the treatment of patients with CD70-positive advanced malignancies [Safety and Tolerability]"
+      ],
+      "enrollment": 90,
+      "start_date": "2025-09-12",
+      "last_updated": "2025-10-02",
+      "countries": [
+        "China"
+      ],
+      "summary": "This study is a single-arm, open-label, dose-escalating + dose-expansion clinical study, aiming to evaluate the safety and efficacy of CD70-targeted CAR-T cell preparations, and to preliminarily observe the study drug in CD70-positive advanced malignant tumors. The pharmacokinetic characteristics of CAR-T cell preparations for the treatment of patients with CD70-positive advanced malignancies were obtained and the recommended dose and infusion schedule.",
+      "url": "https://clinicaltrials.gov/study/NCT07181720",
+      "asset_name": null,
+      "sowhat": "Chinese biotech expands solid tumor CAR-T beyond hematologic malignancies with CD70 targeting strategy."
     },
     {
       "nct_id": "NCT05878184",
@@ -5346,10 +5346,10 @@
       "start_date": "2025-12",
       "last_updated": "2025-09-18",
       "countries": [
-        "Germany",
         "France",
-        "Spain",
-        "Sweden"
+        "Germany",
+        "Sweden",
+        "Spain"
       ],
       "summary": "The purpose of this adaptive Phase 1/2 study is to evaluate the safety, tolerability, pharmacokinetics (PK), and antileukemic activity of CCTx-001 in adult patients with r/r Acute Myeloid Leukemia (AML). CCTx-001 targets IL-1RAP, which is specifically expressed in leukemic cells. In preclinical studies, IL-1RAP-targeted Chimeric antigen receptors (CARs) have demonstrated encouraging activity in both in vitro and in vivo experiments in AML models. Based on these promising preclinical results, it is expected that CCTx-001 could potentially alter the natural course of r/r AML and provide a potential novel treatment option.",
       "url": "https://clinicaltrials.gov/study/NCT06281847",
@@ -5856,8 +5856,8 @@
       "start_date": "2018-08-02",
       "last_updated": "2025-08-07",
       "countries": [
-        "United States",
-        "United Kingdom"
+        "United Kingdom",
+        "United States"
       ],
       "summary": "Long-term follow-up of patients exposed to an AUTO CAR T cell therapy for up to 15 years following their first AUTO CAR T cell therapy infusion.",
       "url": "https://clinicaltrials.gov/study/NCT03628612",
@@ -5966,37 +5966,6 @@
       "sowhat": "CAR-T sandwich strategy targets high-risk MM, positioning cell therapy as frontline option for p53-mutant patients."
     },
     {
-      "nct_id": "NCT06992934",
-      "title": "Immunological Impact of a Post Cell Therapy Treatment With FLT3 Inhibitors",
-      "sponsor": "Centre Hospitalier Universitaire de Nice",
-      "modality": "Ex vivo CAR-T",
-      "conditions": [
-        "Hematological Malignancies"
-      ],
-      "phase": [
-        "NA"
-      ],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "Gilteritinib"
-      ],
-      "primary_outcomes": [
-        "Assess the off-target effects of Gilteritinib on the phenotype of immunity cells",
-        "Assess the off-target effects of Gilteritinib on the function of immunity cells",
-        "Assess the off-target effects of Gilteritinib on the metabolism of immunity cells"
-      ],
-      "enrollment": 10,
-      "start_date": "2025-08",
-      "last_updated": "2025-08-03",
-      "countries": [
-        "France"
-      ],
-      "summary": "Allogeneic hematopoietic stem cell transplantation (aHSCT) is the only curative option for many hematological maligancies. The main cause of death following HSCT is the relapse of the original disease.\n\nFew strategies have been developed to prevent relapse after bone marrow transplantation. New prophylactic strategies are needed to decrease the relapse incidence without increasing the non-relapse mortality in the post-transplant area. Several drugs are currently being explored as maintenance in several AML subgroups such as FLT3 ITD/mutated AML.\n\nA specific group of AML patients display the FMS-like tyrosine kinase 3 (FLT3) internal tandem duplication (ITD) or mutation. These recurrent genetic abnormalities account for 30-35% of all AML patients. Because FLT3 is a tyrosine kinase, it can be targeted using tyrosine kinase inhibitors (TKI). Originally limited to first generation sorafenib and Midostaurin, the FLT3 TKI now include second generation Gilteritinib, crenolanib and quizartinib13. Because many FLT3 AML patients would relapse after aHSCT, the use of sorafenib, the only FLT3 TKI available at that time, in a post-transplant setting started to be evaluated.\n\nSorafenib is a multi-kinase inhibitor that not only inhibit FLT3 but also the RAS, RAF, KIT, and the VEGF and platelet-derived growth factor receptor. Several retrospective trials reported the safety and efficiency of a sorafenib maintenance.\n\nIn recent years, a mounting piece of evidence suggests that sorafenib may have an impact on several immune cells as T cell populations, dendritic cells, macrophages and myeloid-derived immunosuppressor cells (MDSC). Other more potent and more specific FLT3 inhibitors are currently under investigation both in combination with chemotherapy before transplantation and as post transplantation maintenance. In this line, crenolanib and Gilteritinib are two potent and more specific TKI that proved more effective than sorafenib in the treatment of FLT3 ITD/TKD relapsed, refractory AML patients. These drugs demonstrated a higher response rate in R/R patients. These two drugs are part of the future standard of care in FLT3 AML but their immunological impact has never been studied.\n\nAt a time where cellular therapies (allogeneic stem cell transplantation but also CAR T cells) and targeted therapies are becoming the central point of cancer treatment, it appears mandatory to better understand the interactions between the two. The goal of our research project which covers fundamental and clinical aspects of AML post-transplant treatments is devoted to a better understanding of the impact of Gilteritinib on the immune cells in order to rationalize their use after aHSCT. A better characterization of the action of these drugs on the immune system is urgently needed to develop new prophylactic strategies which could decrease the relapse incidence without increasing the non-relapse mortality in the post-transplant area. This program is proposed for a period of 3 years, time necessary to perform all the in vitro and ex vivo approaches and to recruit a sufficient number of patients eligible for aHSCT.",
-      "url": "https://clinicaltrials.gov/study/NCT06992934",
-      "asset_name": null,
-      "sowhat": "FLT3 inhibitors as post-CAR-T maintenance may reduce relapse without increasing non-relapse mortality in AML."
-    },
-    {
       "nct_id": "NCT05860036",
       "title": "A Study of VRd-based Regimen Followed by BCMA CAR-T Therapy in Transplant-Ineligible Patients With New-diagnosed Multiple Myeloma",
       "sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
@@ -6026,6 +5995,37 @@
       "url": "https://clinicaltrials.gov/study/NCT05860036",
       "asset_name": null,
       "sowhat": "China advances BCMA CAR-T competitiveness in frontline MM, targeting underserved transplant-ineligible population."
+    },
+    {
+      "nct_id": "NCT06992934",
+      "title": "Immunological Impact of a Post Cell Therapy Treatment With FLT3 Inhibitors",
+      "sponsor": "Centre Hospitalier Universitaire de Nice",
+      "modality": "Ex vivo CAR-T",
+      "conditions": [
+        "Hematological Malignancies"
+      ],
+      "phase": [
+        "NA"
+      ],
+      "status": "NOT_YET_RECRUITING",
+      "interventions": [
+        "Gilteritinib"
+      ],
+      "primary_outcomes": [
+        "Assess the off-target effects of Gilteritinib on the phenotype of immunity cells",
+        "Assess the off-target effects of Gilteritinib on the function of immunity cells",
+        "Assess the off-target effects of Gilteritinib on the metabolism of immunity cells"
+      ],
+      "enrollment": 10,
+      "start_date": "2025-08",
+      "last_updated": "2025-08-03",
+      "countries": [
+        "France"
+      ],
+      "summary": "Allogeneic hematopoietic stem cell transplantation (aHSCT) is the only curative option for many hematological maligancies. The main cause of death following HSCT is the relapse of the original disease.\n\nFew strategies have been developed to prevent relapse after bone marrow transplantation. New prophylactic strategies are needed to decrease the relapse incidence without increasing the non-relapse mortality in the post-transplant area. Several drugs are currently being explored as maintenance in several AML subgroups such as FLT3 ITD/mutated AML.\n\nA specific group of AML patients display the FMS-like tyrosine kinase 3 (FLT3) internal tandem duplication (ITD) or mutation. These recurrent genetic abnormalities account for 30-35% of all AML patients. Because FLT3 is a tyrosine kinase, it can be targeted using tyrosine kinase inhibitors (TKI). Originally limited to first generation sorafenib and Midostaurin, the FLT3 TKI now include second generation Gilteritinib, crenolanib and quizartinib13. Because many FLT3 AML patients would relapse after aHSCT, the use of sorafenib, the only FLT3 TKI available at that time, in a post-transplant setting started to be evaluated.\n\nSorafenib is a multi-kinase inhibitor that not only inhibit FLT3 but also the RAS, RAF, KIT, and the VEGF and platelet-derived growth factor receptor. Several retrospective trials reported the safety and efficiency of a sorafenib maintenance.\n\nIn recent years, a mounting piece of evidence suggests that sorafenib may have an impact on several immune cells as T cell populations, dendritic cells, macrophages and myeloid-derived immunosuppressor cells (MDSC). Other more potent and more specific FLT3 inhibitors are currently under investigation both in combination with chemotherapy before transplantation and as post transplantation maintenance. In this line, crenolanib and Gilteritinib are two potent and more specific TKI that proved more effective than sorafenib in the treatment of FLT3 ITD/TKD relapsed, refractory AML patients. These drugs demonstrated a higher response rate in R/R patients. These two drugs are part of the future standard of care in FLT3 AML but their immunological impact has never been studied.\n\nAt a time where cellular therapies (allogeneic stem cell transplantation but also CAR T cells) and targeted therapies are becoming the central point of cancer treatment, it appears mandatory to better understand the interactions between the two. The goal of our research project which covers fundamental and clinical aspects of AML post-transplant treatments is devoted to a better understanding of the impact of Gilteritinib on the immune cells in order to rationalize their use after aHSCT. A better characterization of the action of these drugs on the immune system is urgently needed to develop new prophylactic strategies which could decrease the relapse incidence without increasing the non-relapse mortality in the post-transplant area. This program is proposed for a period of 3 years, time necessary to perform all the in vitro and ex vivo approaches and to recruit a sufficient number of patients eligible for aHSCT.",
+      "url": "https://clinicaltrials.gov/study/NCT06992934",
+      "asset_name": null,
+      "sowhat": "FLT3 inhibitors as post-CAR-T maintenance may reduce relapse without increasing non-relapse mortality in AML."
     },
     {
       "nct_id": "NCT05979363",
@@ -6419,43 +6419,6 @@
       "sowhat": "Early CAR-T consolidation in newly-diagnosed myeloma could shift treatment paradigm from salvage to frontline positioning."
     },
     {
-      "nct_id": "NCT07008885",
-      "title": "BCOR and ZC3H12 Genes Knock-out CD19-targeting CAR-T Cell Therapy in r/r B-ALL",
-      "sponsor": "Chinese PLA General Hospital",
-      "modality": "Not reported",
-      "conditions": [
-        "Acute Lymphocytic Leukemia"
-      ],
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CAR19TIF cells",
-        "Fludarabine",
-        "Cyclophosphamide"
-      ],
-      "primary_outcomes": [
-        "Phase 1: Incidence of Adverse Events (AEs)",
-        "Phase 1:Incidence of Incidence of Dose-Limiting Toxicities (DLTs)",
-        "Phase 1:RP2D",
-        "Phase 2:Objective response rate (ORR)",
-        "Phase 2:Overall Survival (OS)",
-        "Phase 2: Progression Free Survival (PFS)"
-      ],
-      "enrollment": 30,
-      "start_date": "2025-06-20",
-      "last_updated": "2025-06-25",
-      "countries": [
-        "China"
-      ],
-      "summary": "In this single-center, single-arm, prospective, Phase 1/2 study, the safety and efficacy of autologous BCOR and ZC3H12 genes knock-out CD19-targeting chimeric antigen receptor (CAR) T-cell therapy will be evaluated in patients with refractory/relapsed (r/r) B-cell acute lymphoblastic leukaemia (B-ALL).\n\nIn phase 1, 3 eligible patients will be enrolled and receive BCOR and ZC3H12 genes knock-out CD19 CAR T cell therapy at a initial dose of 5×10\\^5 cells/kg. Based on the results, . Subsequently an additional 3-15 patients will be enrolled in a \"3+3\" dose-escalation/decline design to adjust the dose of BCOR and ZC3H12 genes knock-out CD19 CAR T cells to achieve optimal safety and efficacy. The recommended Phase 2 dose (RP2D) will then be established. 10 to 12 subjects will be enrolled and receive BCOR and ZC3H12 genes knock-out CD19 CAR T cell infusion at dose of RP2D.",
-      "url": "https://clinicaltrials.gov/study/NCT07008885",
-      "asset_name": null,
-      "sowhat": "Dual gene knockout strategy aims to enhance CAR-T persistence and reduce exhaustion in relapsed B-ALL."
-    },
-    {
       "nct_id": "NCT07009002",
       "title": "BCOR and ZC3H12 Genes Knock-out CD19-targeting CAR-T Cell Therapy in r/r B Cell Lymphoma",
       "sponsor": "Chinese PLA General Hospital",
@@ -6493,6 +6456,43 @@
       "url": "https://clinicaltrials.gov/study/NCT07009002",
       "asset_name": null,
       "sowhat": "Dual gene knockout CAR-T targets exhaustion and proliferation limits, positioning next-generation cellular persistence."
+    },
+    {
+      "nct_id": "NCT07008885",
+      "title": "BCOR and ZC3H12 Genes Knock-out CD19-targeting CAR-T Cell Therapy in r/r B-ALL",
+      "sponsor": "Chinese PLA General Hospital",
+      "modality": "Not reported",
+      "conditions": [
+        "Acute Lymphocytic Leukemia"
+      ],
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "CAR19TIF cells",
+        "Fludarabine",
+        "Cyclophosphamide"
+      ],
+      "primary_outcomes": [
+        "Phase 1: Incidence of Adverse Events (AEs)",
+        "Phase 1:Incidence of Incidence of Dose-Limiting Toxicities (DLTs)",
+        "Phase 1:RP2D",
+        "Phase 2:Objective response rate (ORR)",
+        "Phase 2:Overall Survival (OS)",
+        "Phase 2: Progression Free Survival (PFS)"
+      ],
+      "enrollment": 30,
+      "start_date": "2025-06-20",
+      "last_updated": "2025-06-25",
+      "countries": [
+        "China"
+      ],
+      "summary": "In this single-center, single-arm, prospective, Phase 1/2 study, the safety and efficacy of autologous BCOR and ZC3H12 genes knock-out CD19-targeting chimeric antigen receptor (CAR) T-cell therapy will be evaluated in patients with refractory/relapsed (r/r) B-cell acute lymphoblastic leukaemia (B-ALL).\n\nIn phase 1, 3 eligible patients will be enrolled and receive BCOR and ZC3H12 genes knock-out CD19 CAR T cell therapy at a initial dose of 5×10\\^5 cells/kg. Based on the results, . Subsequently an additional 3-15 patients will be enrolled in a \"3+3\" dose-escalation/decline design to adjust the dose of BCOR and ZC3H12 genes knock-out CD19 CAR T cells to achieve optimal safety and efficacy. The recommended Phase 2 dose (RP2D) will then be established. 10 to 12 subjects will be enrolled and receive BCOR and ZC3H12 genes knock-out CD19 CAR T cell infusion at dose of RP2D.",
+      "url": "https://clinicaltrials.gov/study/NCT07008885",
+      "asset_name": null,
+      "sowhat": "Dual gene knockout strategy aims to enhance CAR-T persistence and reduce exhaustion in relapsed B-ALL."
     },
     {
       "nct_id": "NCT07033299",
@@ -7040,69 +7040,6 @@
       "sowhat": "CAR-T moves beyond cancer into autoimmune disease, targeting B cells in SLE, vasculitis, and connective tissue disorders."
     },
     {
-      "nct_id": "NCT06972576",
-      "title": "Clinical Study of Combined EphA2-targeted CAR-DC and CAR-T Cell Therapy for Non-small Cell Lung Cancer",
-      "sponsor": "Second Affiliated Hospital, School of Medicine, Zhejiang University",
-      "modality": "Not reported",
-      "conditions": [
-        "Non-Small Cell Lung Cancer"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "EphA2-targeted CAR-T Cells",
-        "EphA2-targeted CAR-DCs"
-      ],
-      "primary_outcomes": [
-        "Safety: Incidence and severity of adverse events",
-        "Efficacy: Remission Rate"
-      ],
-      "enrollment": 18,
-      "start_date": "2025-05-09",
-      "last_updated": "2025-05-15",
-      "countries": [
-        "China"
-      ],
-      "summary": "This is an open-label, single-arm clinical study designed to evaluate the safety and preliminary efficacy of EphA2-targeted CAR-DC combined with CAR-T cell therapy in patients with non-small cell lung cancer.",
-      "url": "https://clinicaltrials.gov/study/NCT06972576",
-      "asset_name": null,
-      "sowhat": "Dual CAR approach combines dendritic cells and T cells to overcome solid tumor CAR-T resistance in lung cancer."
-    },
-    {
-      "nct_id": "NCT06890065",
-      "title": "JY231(JY231) Injection for the Treatment of Relapsed/Refractory B Cell Lymphoma/ Leukemia",
-      "sponsor": "Shenzhen Genocury Biotech Co., Ltd.",
-      "modality": "In vivo CAR-T",
-      "conditions": [
-        "B Acute Lymphoblastic Leukemia",
-        "B-Non Hodgkin Lymphoma"
-      ],
-      "phase": [
-        "NA"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "JY231 Injection"
-      ],
-      "primary_outcomes": [
-        "Incidence of adverse events(AE) after infusion",
-        "Maximal Tolerated Dose(MTD)"
-      ],
-      "enrollment": 20,
-      "start_date": "2025-03-01",
-      "last_updated": "2025-05-15",
-      "countries": [
-        "China"
-      ],
-      "summary": "This study is an investigator-initiated single center, single arm clinical study with a target population of patients with relapsed or refractory B cell lymphoma /leukemia. It is an early exploratory clinical study of the safety, tolerability and initial efficacy of JY231 injection in the treatment of relapsed or refractory B cell lymphoma / leukemia.",
-      "url": "https://clinicaltrials.gov/study/NCT06890065",
-      "asset_name": "JY231",
-      "sowhat": "Chinese biotech validates in vivo CAR-T safety in relapsed/refractory B-cell malignancies, signaling commercialization intent.",
-      "ai_modality": "Ex vivo CAR-T — Allogeneic"
-    },
-    {
       "nct_id": "NCT02663297",
       "title": "Administration of T Lymphocytes for Prevention of Relapse of Lymphomas",
       "sponsor": "UNC Lineberger Comprehensive Cancer Center",
@@ -7138,6 +7075,69 @@
       "url": "https://clinicaltrials.gov/study/NCT02663297",
       "asset_name": null,
       "sowhat": "Early lymphoma immunotherapy combining antibodies and T cells predates modern CAR-T engineering approaches."
+    },
+    {
+      "nct_id": "NCT06890065",
+      "title": "JY231(JY231) Injection for the Treatment of Relapsed/Refractory B Cell Lymphoma/ Leukemia",
+      "sponsor": "Shenzhen Genocury Biotech Co., Ltd.",
+      "modality": "In vivo CAR-T",
+      "conditions": [
+        "B Acute Lymphoblastic Leukemia",
+        "B-Non Hodgkin Lymphoma"
+      ],
+      "phase": [
+        "NA"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "JY231 Injection"
+      ],
+      "primary_outcomes": [
+        "Incidence of adverse events(AE) after infusion",
+        "Maximal Tolerated Dose(MTD)"
+      ],
+      "enrollment": 20,
+      "start_date": "2025-03-01",
+      "last_updated": "2025-05-15",
+      "countries": [
+        "China"
+      ],
+      "summary": "This study is an investigator-initiated single center, single arm clinical study with a target population of patients with relapsed or refractory B cell lymphoma /leukemia. It is an early exploratory clinical study of the safety, tolerability and initial efficacy of JY231 injection in the treatment of relapsed or refractory B cell lymphoma / leukemia.",
+      "url": "https://clinicaltrials.gov/study/NCT06890065",
+      "asset_name": "JY231",
+      "sowhat": "Chinese biotech validates in vivo CAR-T safety in relapsed/refractory B-cell malignancies, signaling commercialization intent.",
+      "ai_modality": "Ex vivo CAR-T — Autologous"
+    },
+    {
+      "nct_id": "NCT06972576",
+      "title": "Clinical Study of Combined EphA2-targeted CAR-DC and CAR-T Cell Therapy for Non-small Cell Lung Cancer",
+      "sponsor": "Second Affiliated Hospital, School of Medicine, Zhejiang University",
+      "modality": "Not reported",
+      "conditions": [
+        "Non-Small Cell Lung Cancer"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "EphA2-targeted CAR-T Cells",
+        "EphA2-targeted CAR-DCs"
+      ],
+      "primary_outcomes": [
+        "Safety: Incidence and severity of adverse events",
+        "Efficacy: Remission Rate"
+      ],
+      "enrollment": 18,
+      "start_date": "2025-05-09",
+      "last_updated": "2025-05-15",
+      "countries": [
+        "China"
+      ],
+      "summary": "This is an open-label, single-arm clinical study designed to evaluate the safety and preliminary efficacy of EphA2-targeted CAR-DC combined with CAR-T cell therapy in patients with non-small cell lung cancer.",
+      "url": "https://clinicaltrials.gov/study/NCT06972576",
+      "asset_name": null,
+      "sowhat": "Dual CAR approach combines dendritic cells and T cells to overcome solid tumor CAR-T resistance in lung cancer."
     },
     {
       "nct_id": "NCT06971380",
@@ -7315,6 +7315,36 @@
       "sowhat": "Chinese institution pursues broad hematologic CAR-T approach, testing safety and efficacy across multiple aggressive blood cancers."
     },
     {
+      "nct_id": "NCT06903117",
+      "title": "Anti-CEA CAR-T for Advanced CEA-Positive Lung Carcinoma",
+      "sponsor": "Chongqing Precision Biotech Co., Ltd",
+      "modality": "Not reported",
+      "conditions": [
+        "Advanced Lung Cancer"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "Targeted CEA CAR-T",
+        "Targeted CEA CAR-T"
+      ],
+      "primary_outcomes": [
+        "To evaluate the safety and tolerability of CAR T cell preparations in the treatment of CEA positive advanced lung cancer【safety】"
+      ],
+      "enrollment": 60,
+      "start_date": "2025-03-24",
+      "last_updated": "2025-04-03",
+      "countries": [
+        "China"
+      ],
+      "summary": "Lung cancer is the leading cause of morbidity and mortality in the world, of which 80%-85% are non-small cell lung cancer (NSCLC). Most patients with NSCLC are at the advanced stage of diagnosis and have a poor prognosis. The 5-year survival rate of stage III patients is about 15%, the 5-year survival rate of stage IV patients is less than 5%, and the median survival time is only 7 months.\n\nCEACAM5 (CEA), also known as CD66e, is a classic tumor marker that has been used as a marker for many types of tumors for 50 years. It is mainly expressed in lung cancer, esophageal cancer, bile duct cancer, colorectal cancer, gastric cancer and other tumor types.\n\nIn previous CAR-T-related clinical trials targeting CEA, the research team found that CAR-T cell preparations had a certain killing effect on CEA positive tumor cells. At the same time, CAR-T cell preparations cannot be sustained for a long time in the body, which is also a key factor restricting the anti-tumor effect of CAR-T cells in the body. To solve this problem, the killing ability and survival ability of CAR-T cell preparations on tumor cells in vitro and in vivo were improved by optimizing CAR structure and improving culture mode.",
+      "url": "https://clinicaltrials.gov/study/NCT06903117",
+      "asset_name": null,
+      "sowhat": "Anti-CEA CAR-T targeting solid lung tumors signals emerging competition in previously underdeveloped solid tumor CAR-T space."
+    },
+    {
       "nct_id": "NCT06909474",
       "title": "Clinical Trial of CD5-targeted CAR-NK Therapy for Relapse/Refractory T-Cell Hematologic Malignancies",
       "sponsor": "Chongqing Precision Biotech Co., Ltd",
@@ -7346,36 +7376,6 @@
       "url": "https://clinicaltrials.gov/study/NCT06909474",
       "asset_name": null,
       "sowhat": "CAR-NK expands beyond B-cell focus into T-cell malignancies, challenging CAR-T market dominance."
-    },
-    {
-      "nct_id": "NCT06903117",
-      "title": "Anti-CEA CAR-T for Advanced CEA-Positive Lung Carcinoma",
-      "sponsor": "Chongqing Precision Biotech Co., Ltd",
-      "modality": "Not reported",
-      "conditions": [
-        "Advanced Lung Cancer"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "Targeted CEA CAR-T",
-        "Targeted CEA CAR-T"
-      ],
-      "primary_outcomes": [
-        "To evaluate the safety and tolerability of CAR T cell preparations in the treatment of CEA positive advanced lung cancer【safety】"
-      ],
-      "enrollment": 60,
-      "start_date": "2025-03-24",
-      "last_updated": "2025-04-03",
-      "countries": [
-        "China"
-      ],
-      "summary": "Lung cancer is the leading cause of morbidity and mortality in the world, of which 80%-85% are non-small cell lung cancer (NSCLC). Most patients with NSCLC are at the advanced stage of diagnosis and have a poor prognosis. The 5-year survival rate of stage III patients is about 15%, the 5-year survival rate of stage IV patients is less than 5%, and the median survival time is only 7 months.\n\nCEACAM5 (CEA), also known as CD66e, is a classic tumor marker that has been used as a marker for many types of tumors for 50 years. It is mainly expressed in lung cancer, esophageal cancer, bile duct cancer, colorectal cancer, gastric cancer and other tumor types.\n\nIn previous CAR-T-related clinical trials targeting CEA, the research team found that CAR-T cell preparations had a certain killing effect on CEA positive tumor cells. At the same time, CAR-T cell preparations cannot be sustained for a long time in the body, which is also a key factor restricting the anti-tumor effect of CAR-T cells in the body. To solve this problem, the killing ability and survival ability of CAR-T cell preparations on tumor cells in vitro and in vivo were improved by optimizing CAR structure and improving culture mode.",
-      "url": "https://clinicaltrials.gov/study/NCT06903117",
-      "asset_name": null,
-      "sowhat": "Anti-CEA CAR-T targeting solid lung tumors signals emerging competition in previously underdeveloped solid tumor CAR-T space."
     },
     {
       "nct_id": "NCT06904729",
@@ -7806,6 +7806,41 @@
       "sowhat": "Sangamo pivots CAR-T toward immunotolerance in transplant, positioning engineered Tregs as rejection prevention alternative."
     },
     {
+      "nct_id": "NCT05298995",
+      "title": "GD2-CAR T Cells for Pediatric Brain Tumours",
+      "sponsor": "Bambino Gesù Hospital and Research Institute",
+      "modality": "Ex vivo CAR-T",
+      "conditions": [
+        "Brain Tumor, Pediatric",
+        "Medulloblastoma, Childhood",
+        "Embryonal Tumor",
+        "High Grade Glioma",
+        "Diffuse Midline Glioma",
+        "Diffuse Intrinsic Pontine Glioma",
+        "Brain Tumor Adult"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "RECRUITING",
+      "interventions": [
+        "GD2-CART01 (iC9-GD2-CAR T-cells)"
+      ],
+      "primary_outcomes": [
+        "Safety and definition of the MTD/RD"
+      ],
+      "enrollment": 54,
+      "start_date": "2023-11-09",
+      "last_updated": "2025-02-05",
+      "countries": [
+        "Italy"
+      ],
+      "summary": "The purpose of this study is to test the safety and efficacy of iC9-GD2-CAR T-cells, a third generation (4.1BB-CD28) CAR T cell treatment targeting GD2 in paediatric or young adult patients affected by relapsed/refractory malignant central nervous system (CNS) tumors. In order to improve the safety of the approach, the suicide gene inducible Caspase 9 (iC9) has been included.",
+      "url": "https://clinicaltrials.gov/study/NCT05298995",
+      "asset_name": null,
+      "sowhat": "GD2-CAR T with inducible safety switch targets CNS tumors, addressing brain malignancy unmet need with controllable cell therapy."
+    },
+    {
       "nct_id": "NCT03373071",
       "title": "Anti-CD19 CAR T Cells in Pediatric Patients Affected by Relapsed/Refractory CD19+ ALL and NHL",
       "sponsor": "Bambino Gesù Hospital and Research Institute",
@@ -7872,41 +7907,6 @@
       "url": "https://clinicaltrials.gov/study/NCT03373097",
       "asset_name": null,
       "sowhat": "GD2-targeting CAR-T expands beyond neuroblastoma into broader solid tumor indications, challenging the ex vivo CAR-T market."
-    },
-    {
-      "nct_id": "NCT05298995",
-      "title": "GD2-CAR T Cells for Pediatric Brain Tumours",
-      "sponsor": "Bambino Gesù Hospital and Research Institute",
-      "modality": "Ex vivo CAR-T",
-      "conditions": [
-        "Brain Tumor, Pediatric",
-        "Medulloblastoma, Childhood",
-        "Embryonal Tumor",
-        "High Grade Glioma",
-        "Diffuse Midline Glioma",
-        "Diffuse Intrinsic Pontine Glioma",
-        "Brain Tumor Adult"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "GD2-CART01 (iC9-GD2-CAR T-cells)"
-      ],
-      "primary_outcomes": [
-        "Safety and definition of the MTD/RD"
-      ],
-      "enrollment": 54,
-      "start_date": "2023-11-09",
-      "last_updated": "2025-02-05",
-      "countries": [
-        "Italy"
-      ],
-      "summary": "The purpose of this study is to test the safety and efficacy of iC9-GD2-CAR T-cells, a third generation (4.1BB-CD28) CAR T cell treatment targeting GD2 in paediatric or young adult patients affected by relapsed/refractory malignant central nervous system (CNS) tumors. In order to improve the safety of the approach, the suicide gene inducible Caspase 9 (iC9) has been included.",
-      "url": "https://clinicaltrials.gov/study/NCT05298995",
-      "asset_name": null,
-      "sowhat": "GD2-CAR T with inducible safety switch targets CNS tumors, addressing brain malignancy unmet need with controllable cell therapy."
     },
     {
       "nct_id": "NCT04890236",
@@ -8002,6 +8002,104 @@
       "sowhat": "CEA CAR-T targeting solid tumors advances beyond hematologic malignancies into lung cancer immunotherapy."
     },
     {
+      "nct_id": "NCT04244656",
+      "title": "A Safety and Efficacy Study Evaluating CTX120 in Subjects With Relapsed or Refractory Multiple Myeloma",
+      "sponsor": "CRISPR Therapeutics AG",
+      "modality": "Not reported",
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "TERMINATED",
+      "interventions": [
+        "CTX120"
+      ],
+      "primary_outcomes": [
+        "Part A (dose escalation): Incidence of adverse events",
+        "Part B (cohort expansion): Objective response rate"
+      ],
+      "enrollment": 26,
+      "start_date": "2020-01-22",
+      "last_updated": "2025-01-08",
+      "countries": [
+        "Spain",
+        "Australia",
+        "Canada",
+        "United States"
+      ],
+      "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX120 in subjects with relapsed or refractory multiple myeloma.",
+      "url": "https://clinicaltrials.gov/study/NCT04244656",
+      "asset_name": null,
+      "sowhat": "CRISPR enters in vivo CAR-T race targeting multiple myeloma with novel CTX120 candidate."
+    },
+    {
+      "nct_id": "NCT04502446",
+      "title": "A Safety and Efficacy Study Evaluating CTX130 in Subjects With Relapsed or Refractory T or B Cell Malignancies (COBALT-LYM)",
+      "sponsor": "CRISPR Therapeutics AG",
+      "modality": "Not reported",
+      "conditions": [
+        "T Cell Lymphoma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "TERMINATED",
+      "interventions": [
+        "CTX130"
+      ],
+      "primary_outcomes": [
+        "Part A (dose escalation)",
+        "Part B (cohort expansion)"
+      ],
+      "enrollment": 49,
+      "start_date": "2020-07-31",
+      "last_updated": "2025-01-08",
+      "countries": [
+        "Australia",
+        "Canada",
+        "United States"
+      ],
+      "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX130 in subjects with relapsed or refractory T or B cell malignancies.",
+      "url": "https://clinicaltrials.gov/study/NCT04502446",
+      "asset_name": null,
+      "sowhat": "CRISPR advances in vivo CAR-T with CTX130, targeting relapsed/refractory lymphomas without ex vivo engineering."
+    },
+    {
+      "nct_id": "NCT04438083",
+      "title": "A Safety and Efficacy Study Evaluating CTX130 in Subjects With Relapsed or Refractory Renal Cell Carcinoma (COBALT-RCC)",
+      "sponsor": "CRISPR Therapeutics AG",
+      "modality": "Not reported",
+      "conditions": [
+        "Renal Cell Carcinoma"
+      ],
+      "phase": [
+        "PHASE1"
+      ],
+      "status": "TERMINATED",
+      "interventions": [
+        "CTX130"
+      ],
+      "primary_outcomes": [
+        "Part A (dose escalation): Incidence of adverse events",
+        "Part B (cohort expansion): Objective response rate"
+      ],
+      "enrollment": 19,
+      "start_date": "2020-06-16",
+      "last_updated": "2025-01-08",
+      "countries": [
+        "Australia",
+        "Netherlands",
+        "Canada",
+        "United States"
+      ],
+      "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX130 in subjects with relapsed or refractory renal cell carcinoma.",
+      "url": "https://clinicaltrials.gov/study/NCT04438083",
+      "asset_name": null,
+      "sowhat": "CRISPR expands in vivo CAR-T beyond hematologic malignancies into solid tumors with CTX130 RCC trial."
+    },
+    {
       "nct_id": "NCT04404595",
       "title": "Claudin18.2 CAR-T (CT041) in Patients With Gastric, Pancreatic Cancer, or Other Specified Digestive Cancers",
       "sponsor": "CARsgen Therapeutics Co., Ltd.",
@@ -8037,104 +8135,6 @@
       "asset_name": "CT041",
       "sowhat": "CARsgen's claudin18.2 CAR-T expands solid tumor addressability beyond hematologic malignancies into hard-to-treat GI cancers.",
       "ai_modality": "Ex vivo CAR-T — Autologous"
-    },
-    {
-      "nct_id": "NCT04438083",
-      "title": "A Safety and Efficacy Study Evaluating CTX130 in Subjects With Relapsed or Refractory Renal Cell Carcinoma (COBALT-RCC)",
-      "sponsor": "CRISPR Therapeutics AG",
-      "modality": "Not reported",
-      "conditions": [
-        "Renal Cell Carcinoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "TERMINATED",
-      "interventions": [
-        "CTX130"
-      ],
-      "primary_outcomes": [
-        "Part A (dose escalation): Incidence of adverse events",
-        "Part B (cohort expansion): Objective response rate"
-      ],
-      "enrollment": 19,
-      "start_date": "2020-06-16",
-      "last_updated": "2025-01-08",
-      "countries": [
-        "Canada",
-        "Australia",
-        "United States",
-        "Netherlands"
-      ],
-      "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX130 in subjects with relapsed or refractory renal cell carcinoma.",
-      "url": "https://clinicaltrials.gov/study/NCT04438083",
-      "asset_name": null,
-      "sowhat": "CRISPR expands in vivo CAR-T beyond hematologic malignancies into solid tumors with CTX130 RCC trial."
-    },
-    {
-      "nct_id": "NCT04502446",
-      "title": "A Safety and Efficacy Study Evaluating CTX130 in Subjects With Relapsed or Refractory T or B Cell Malignancies (COBALT-LYM)",
-      "sponsor": "CRISPR Therapeutics AG",
-      "modality": "Not reported",
-      "conditions": [
-        "T Cell Lymphoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "TERMINATED",
-      "interventions": [
-        "CTX130"
-      ],
-      "primary_outcomes": [
-        "Part A (dose escalation)",
-        "Part B (cohort expansion)"
-      ],
-      "enrollment": 49,
-      "start_date": "2020-07-31",
-      "last_updated": "2025-01-08",
-      "countries": [
-        "Canada",
-        "Australia",
-        "United States"
-      ],
-      "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX130 in subjects with relapsed or refractory T or B cell malignancies.",
-      "url": "https://clinicaltrials.gov/study/NCT04502446",
-      "asset_name": null,
-      "sowhat": "CRISPR advances in vivo CAR-T with CTX130, targeting relapsed/refractory lymphomas without ex vivo engineering."
-    },
-    {
-      "nct_id": "NCT04244656",
-      "title": "A Safety and Efficacy Study Evaluating CTX120 in Subjects With Relapsed or Refractory Multiple Myeloma",
-      "sponsor": "CRISPR Therapeutics AG",
-      "modality": "Not reported",
-      "conditions": [
-        "Multiple Myeloma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "TERMINATED",
-      "interventions": [
-        "CTX120"
-      ],
-      "primary_outcomes": [
-        "Part A (dose escalation): Incidence of adverse events",
-        "Part B (cohort expansion): Objective response rate"
-      ],
-      "enrollment": 26,
-      "start_date": "2020-01-22",
-      "last_updated": "2025-01-08",
-      "countries": [
-        "Canada",
-        "Australia",
-        "Spain",
-        "United States"
-      ],
-      "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX120 in subjects with relapsed or refractory multiple myeloma.",
-      "url": "https://clinicaltrials.gov/study/NCT04244656",
-      "asset_name": null,
-      "sowhat": "CRISPR enters in vivo CAR-T race targeting multiple myeloma with novel CTX120 candidate."
     },
     {
       "nct_id": "NCT05838131",
