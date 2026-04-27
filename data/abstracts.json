@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-04-21T07:27:37.967414+00:00",
-  "count": 41,
+  "fetched_at": "2026-04-27T08:10:57.609720+00:00",
+  "count": 44,
   "abstracts": [
     {
       "source": "pubmed",
@@ -57,34 +57,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41887986/",
       "sowhat": "In vivo CAR-T engineering promises simplified manufacturing and lower costs, but long-term efficacy and optimal delivery methods remain unresolved."
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41882404",
-      "title": "In vivo generation of anti-BCMA CAR-T cells in relapsed or refractory multiple myeloma: a phase 1 study.",
-      "journal": "Nature medicine",
-      "authors": "An N, Wang D, Zhang P, Zhang J, Parone P et al.",
-      "abstract": "In vivo chimeric antigen receptor (CAR)-T cell generation can bypass ex vivo manufacturing and lymphodepletion, potentially simplifying and accelerating access to cellular therapy; preliminary clinical experience supports feasibility and suggests preliminary efficacy. This phase 1, single-arm, open-label trial evaluated the safety and tolerability of ESO-T01, a nanobody-directed, immune-shielded lentiviral vector encoding a humanized anti-B cell maturation antigen (BCMA) CAR, in adults with relapsed or refractory multiple myeloma. ESO-T01 was administered as a single intravenous infusion of 0.2 × 109 transduction units without leukapheresis, ex vivo manufacturing or lymphodepleting chemotherapy. Five heavily pretreated male patients (median three prior lines) were consecutively enrolled and followed for a median of 6.0 months. The trial was stopped early in 2025, and no further enrollment was performed. The primary endpoint was safety and tolerability, and secondary endpoints included efficacy, pharmacokinetics and pharmacodynamics of ESO-T01. No dose-limiting toxicities occurred. All patients developed grade 3 or higher adverse events. Cytokine release syndrome occurred in four patients (three grade 3 and one grade 2) and was managed with corticosteroids, tocilizumab, or supportive care. The most frequent toxicities were transient cytopenias and reversible hepatic enzyme elevations, and three patients experienced grade 2 infections. One patient developed grade 1 immune effector cell-associated neurotoxicity and died from extramedullary lesion-related spinal cord compression. Preliminary antimyeloma activity was observed: four of five patients achieved objective responses, including three stringent complete remissions, with minimal residual disease negativity (10-5) in all evaluable responders (4/4) by day 60. These findings provide preliminary evidence on the feasibility and safety of in vivo CAR-T generation using an immune-shielded vector. ClinicalTrials.gov registration: NCT06791681 .",
-      "date": "2026-Mar",
-      "doi": "10.1016/j.bbmt.2018.12.758",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41882404/",
-      "sowhat": "ESO-T01 demonstrates in vivo CAR-T generation without leukapheresis or chemotherapy, eliminating manufacturing bottlenecks in myeloma."
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41882403",
-      "title": "Engineering in vivo CAR-T cells.",
-      "journal": "Nature medicine",
-      "authors": "Greco B, Doglio M, Casucci M",
-      "abstract": "",
-      "date": "2026-Mar",
-      "doi": "10.1038/s41587-020-0462-y",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41882403/",
-      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
@@ -312,6 +284,48 @@
     },
     {
       "source": "pubmed",
+      "pmid": "42021304",
+      "title": "Advances in multiple myeloma: key updates from the ASH 2025 meeting.",
+      "journal": "Journal of hematology & oncology",
+      "authors": "Naing PT, Baljevic M",
+      "abstract": "The therapeutic landscape of multiple myeloma (MM) is undergoing rapid transformation with the expansion of immune-based strategies. This editorial summarizes key MM abstracts presented at the American Society of Hematology (ASH) 2025 meeting, highlighting how bispecific antibodies (BsAbs), minimal residual disease (MRD)-adaptive approaches, and next-generation immune platforms are reshaping treatment across all MM disease stages. In newly diagnosed MM (NDMM), minimal residual disease (MRD)-adaptive consolidation with linvoseltamab in IMMUNOPLANT converted persistent MRD positivity to MRD negativity in all evaluable patients, supporting biologically guided treatment intensification. In transplant-ineligible (TIE) NDMM patients, TecLille showed that antibody-only therapy achieved deep responses with manageable infection risks. In early relapsed/refractory MM (RRMM), the pioneering phase III MajesTEC-3 trial demonstrated significant progression-free survival (PFS) and overall survival (OS) benefits with BsAb teclistamab plus daratumumab compared to other standard triplets, with response rates approaching those historically observed with chimeric antigen receptor (CAR) T cell therapy. A novel rational BsAb combination of BsAb elranatamab anda cereblon E3 ligase modulatory drug (CELMoD) iberdomide in MagnetisMM-30 showed promising synergy despite cytopenias and updates to combination BsAb targeting in RedirecTT-1 demonstrated major activity in difficult to treat extramedullary myeloma (EMM). First-in-human inMMyCAR data showcased the forefront of engineered immune strategies, by introducing an in vivo CAR-T product as a proof-of-concept platform, with tremendous potential to streamline the access to therapy. Collectively, these studies signal a shift toward earlier and adaptive immunotherapy in all phases of MM disease, while underscoring the importance of infection mitigation and long-term safety evaluation.",
+      "date": "2026-Apr",
+      "doi": "10.1038/s41375-019-0620-8",
+      "conference": "ASH",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42021304/",
+      "sowhat": "Linvoseltamab's MRD-adaptive approach converts myeloma patients to MRD-negative status, validating biologically-guided intensification strategy."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42020353",
+      "title": "Preventing trogocytosis by cathepsin B inhibition augments CAR T-cell function.",
+      "journal": "Signal transduction and targeted therapy",
+      "authors": "Dietze KA, Nguyen K, Pathni A, Fazekas F, Sun W et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has shown remarkable efficacy in cancer treatment. Nevertheless, most patients receiving CAR T cells relapse within 5 years of treatment. CAR-mediated trogocytosis (CMT) is a potential tumor escape mechanism in which cell surface proteins transfer from tumor cells to CAR T cells. CMT results in the emergence of antigen-negative tumor cells, which can evade future CAR detection, and antigen-positive CAR T cells, which have been suggested to cause CAR T-cell fratricide and exhaustion. Whether CMT indeed causes CAR T-cell dysfunction and the molecular mechanisms conferring CMT remain unknown. Using a selective degrader of trogocytosed antigen in CAR T cells, we show that the presence of trogocytosed antigen on the CAR T-cell surface directly causes CAR T-cell fratricide and exhaustion. By performing small molecule screening using a custom high-throughput CMT screening assay, we found that the cysteine protease cathepsin B is essential for CMT and that inhibition of cathepsin B is sufficient to prevent CAR T-cell fratricide and exhaustion, leading to improved long-term in vitro and in vivo CAR T-cell persistence and in vitro antitumor activity. Our data demonstrate that it is feasible to separate CMT from cytotoxic activity, that CAR T-cell persistence, a key factor associated with clinical CAR T-cell efficacy, is directly linked to cathepsin B activity in CAR T cells, and that it is possible to improve CAR T-cell function through selective inhibition of CMT.",
+      "date": "2026-Apr",
+      "doi": "10.18632/oncotarget.25359",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42020353/",
+      "sowhat": "Cathepsin B inhibition blocks trogocytosis-induced CAR-T exhaustion, addressing major relapse mechanism in solid tumors."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42013999",
+      "title": "Next-generation in vivo CAR-T expansion strategies: Unlocking durable anti-tumor responses in solid tumors.",
+      "journal": "Critical reviews in oncology/hematology",
+      "authors": "Sun Z, Wei L, Pan X, Yan W, Wang T et al.",
+      "abstract": "The efficacy of chimeric antigen receptor T (CAR-T) cell therapy is directly associated with the abundance of functionally active anti-tumor CAR-T cells. However, the complexity of CAR-T manufacturing limits clinical accessibility and increases the risk of disease progression during treatment preparation. To improve CAR-T production, multiple strategies have been developed to expand CAR-T cells either in vitro or in vivo, including genetic engineering, vaccine platforms, cytokine stimulation, and the application of nanoparticles, engineered bacteria, and their outer membrane vesicles (OMVs). With the advancement of in vivo CAR-T approaches, the development of biocompatible materials that enable safe and effective in vivo expansion has become increasingly important. This review systematically examines the challenges associated with in vivo CAR-T cell expansion in solid tumors, comprehensively summarizes the mechanisms, advantages, and limitations of current expansion platforms, and discusses their translational potential, providing practical insights to guide the development of in vivo CAR-T therapies.",
+      "date": "2026-Apr",
+      "doi": "10.1016/j.critrevonc.2026.105342",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42013999/",
+      "sowhat": "In vivo CAR-T expansion using biocompatible materials and engineered bacteria offers manufacturing-free alternative for solid tumor treatment."
+    },
+    {
+      "source": "pubmed",
       "pmid": "41957634",
       "title": "In vivo CAR-T cell therapy: latest updates from 2025 ASH annual meeting.",
       "journal": "Journal of hematology & oncology",
@@ -379,6 +393,34 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41928252/",
       "sowhat": "In vivo CAR-T generation bypasses costly ex vivo manufacturing, preserving T-cell fitness and expanding patient access to immunotherapy."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41882404",
+      "title": "In vivo generation of anti-BCMA CAR-T cells in relapsed or refractory multiple myeloma: a phase 1 study.",
+      "journal": "Nature medicine",
+      "authors": "An N, Wang D, Zhang P, Zhang J, Parone P et al.",
+      "abstract": "In vivo chimeric antigen receptor (CAR)-T cell generation can bypass ex vivo manufacturing and lymphodepletion, potentially simplifying and accelerating access to cellular therapy; preliminary clinical experience supports feasibility and suggests preliminary efficacy. This phase 1, single-arm, open-label trial evaluated the safety and tolerability of ESO-T01, a nanobody-directed, immune-shielded lentiviral vector encoding a humanized anti-B cell maturation antigen (BCMA) CAR, in adults with relapsed or refractory multiple myeloma. ESO-T01 was administered as a single intravenous infusion of 0.2 × 109 transduction units without leukapheresis, ex vivo manufacturing or lymphodepleting chemotherapy. Five heavily pretreated male patients (median three prior lines) were consecutively enrolled and followed for a median of 6.0 months. The trial was stopped early in 2025, and no further enrollment was performed. The primary endpoint was safety and tolerability, and secondary endpoints included efficacy, pharmacokinetics and pharmacodynamics of ESO-T01. No dose-limiting toxicities occurred. All patients developed grade 3 or higher adverse events. Cytokine release syndrome occurred in four patients (three grade 3 and one grade 2) and was managed with corticosteroids, tocilizumab, or supportive care. The most frequent toxicities were transient cytopenias and reversible hepatic enzyme elevations, and three patients experienced grade 2 infections. One patient developed grade 1 immune effector cell-associated neurotoxicity and died from extramedullary lesion-related spinal cord compression. Preliminary antimyeloma activity was observed: four of five patients achieved objective responses, including three stringent complete remissions, with minimal residual disease negativity (10-5) in all evaluable responders (4/4) by day 60. These findings provide preliminary evidence on the feasibility and safety of in vivo CAR-T generation using an immune-shielded vector. ClinicalTrials.gov registration: NCT06791681 .",
+      "date": "2026-Apr",
+      "doi": "10.1016/j.bbmt.2018.12.758",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41882404/",
+      "sowhat": "ESO-T01 demonstrates in vivo CAR-T generation without leukapheresis or chemotherapy, eliminating manufacturing bottlenecks in myeloma."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41882403",
+      "title": "Engineering in vivo CAR-T cells.",
+      "journal": "Nature medicine",
+      "authors": "Greco B, Doglio M, Casucci M",
+      "abstract": "",
+      "date": "2026-Apr",
+      "doi": "10.1038/s41587-020-0462-y",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41882403/",
+      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
