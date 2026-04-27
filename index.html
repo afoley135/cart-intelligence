@@ -182,6 +182,7 @@
     <div class="metric"><div class="metric-label">Publications</div><div class="metric-value" id="m-pubs">—</div><div class="metric-sub">PubMed + bioRxiv</div></div>
     <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
     <div class="metric"><div class="metric-label">Conf. abstracts</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">AACR · ASGCT · ASH</div></div>
+    <div class="metric"><div class="metric-label">Site changes</div><div class="metric-value" id="m-changes">—</div><div class="metric-sub">watchlist pages</div></div>
     <div class="metric"><div class="metric-label">Patents</div><div class="metric-value" id="m-patents">—</div><div class="metric-sub">watchlist companies</div></div>
   </div>
   <div class="tabs">
@@ -191,6 +192,7 @@
     <div class="tab" onclick="switchTab('conferences')">Conferences</div>
     <div class="tab" onclick="switchTab('news')">News</div>
     <div class="tab" onclick="switchTab('patents')">Patents</div>
+    <div class="tab" onclick="switchTab('changes')">Changes <span id="changes-badge" style="display:none;background:#FEF3C7;color:#92400E;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;"></span></div>
   </div>
 
   <!-- Trials -->
@@ -324,6 +326,21 @@
   </div>
 </div>
 
+  <div id="pane-changes" class="pane">
+  <div class="filters">
+    <input type="text" id="changes-search" placeholder="Search company, page type..." oninput="filterChanges()" />
+    <select id="changes-magnitude" onchange="filterChanges()">
+      <option value="">All magnitudes</option>
+      <option value="major">Major</option>
+      <option value="moderate">Moderate</option>
+      <option value="minor">Minor</option>
+    </select>
+    <span class="filter-count" id="changes-count"></span>
+  </div>
+  <div class="sort-label">Unreviewed changes, newest first. Visit the flagged page to confirm what changed.</div>
+  <div class="card-feed" id="changes-list"><div class="state-msg">Loading changes...</div></div>
+</div>
+
 <!-- Slide-out panel -->
 <div class="panel-overlay" id="panel-overlay" onclick="closePanel()"></div>
 <div class="panel" id="company-panel">
@@ -345,14 +362,14 @@
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],watchlistOnly=false;
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,dR,aR,ptR,wR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
@@ -360,6 +377,7 @@ async function loadData(){
       fetch('data/abstracts.json').catch(()=>null),
       fetch('data/patents.json').catch(()=>null),
       fetch('watchlist.json'),
+      fetch('data/website_changes.json').catch(()=>null),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
     TRIALS=tD.studies||[];PUBS=pD.publications||[];
@@ -369,6 +387,7 @@ async function loadData(){
     if(dR){try{const dD=await dR.json();DOSSIERS=dD.dossiers||{};}catch(e){DOSSIERS={}}}
     if(aR){try{const aD=await aR.json();ABSTRACTS=aD.abstracts||[];}catch(e){ABSTRACTS=[]}}
     if(ptR){try{const ptD=await ptR.json();PATENTS=ptD.patents||[];}catch(e){PATENTS=[]}}
+    if(chR){try{const chD=await chR.json();CHANGES=(chD.changes||[]).filter(c=>!c.reviewed);}catch(e){CHANGES=[];}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -377,7 +396,7 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);renderChanges(CHANGES);populatePatentCompanies();populateNewsSources();filterNews();
   }catch(e){
     console.error('Failed to load data:',e);
     document.getElementById('trial-body').innerHTML='<tr><td colspan="9" class="state-msg">Failed to load data.</td></tr>';
@@ -397,7 +416,7 @@ function formatDate(str){
 
 function updateMetrics(){
   document.getElementById('m-trials').textContent=TRIALS.length;
-  document.getElementById('m-invivo').textContent=TRIALS.filter(t=>(t.ai_modality||t.modality||'').startsWith('In vivo CAR-T')).length;
+  document.getElementById('m-invivo').textContent=TRIALS.filter(t=>(t.profile_modality||t.ai_modality||t.modality||'').startsWith('In vivo CAR-T')).length;
   document.getElementById('m-watchlist').textContent=TRIALS.filter(t=>isWL(t.sponsor)).length;
   document.getElementById('m-pubs').textContent=PUBS.length;
   document.getElementById('m-news').textContent=NEWS.length;
@@ -473,7 +492,7 @@ function renderTrials(data){
     return`<tr class="${onW?'wrow':''}">
       <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':''}</td>
       <td style="max-width:140px">${sponsorHtml}</td>
-      <td>${modalityBadge(t.ai_modality||t.modality)}</td>
+      <td>${modalityBadge(t.profile_modality||t.ai_modality||t.modality)}</td>
       <td style="font-size:12px;max-width:150px">${escHtml(conditions||'—')}</td>
       <td>${phaseBadge(t.phase)}</td>
       <td>${statusBadge(t.status)}</td>
@@ -490,9 +509,9 @@ function filterTrials(){
   const phase=document.getElementById('trial-phase').value;
   const status=document.getElementById('trial-status').value;
   let filtered=TRIALS.filter(t=>{
-    const text=[t.nct_id,t.sponsor,t.ai_modality||t.modality,...(t.conditions||[])].join(' ').toLowerCase();
+    const text=[t.nct_id,t.sponsor,t.profile_modality||t.ai_modality||t.modality,...(t.conditions||[])].join(' ').toLowerCase();
     const pa=Array.isArray(t.phase)?t.phase:(t.phase?[t.phase]:[]);
-    const effectiveModality=t.ai_modality||t.modality||'';
+    const effectiveModality=t.profile_modality||t.ai_modality||t.modality||'';
     const modalityMatch=!modality||effectiveModality===modality||
       (modality==='In vivo CAR-T'&&effectiveModality.startsWith('In vivo CAR-T'))||
       (modality==='Ex vivo CAR-T'&&effectiveModality.startsWith('Ex vivo CAR-T'));
@@ -876,6 +895,43 @@ function switchTab(name){
   document.querySelectorAll('.pane').forEach(p=>p.classList.remove('active'));
   document.querySelector(`[onclick="switchTab('${name}')"]`).classList.add('active');
   document.getElementById(`pane-${name}`).classList.add('active');
+}
+
+function renderChanges(data){
+  const list=document.getElementById('changes-list');
+  document.getElementById('changes-count').textContent=`${data.length} change${data.length!==1?'s':''}`;
+  const badge=document.getElementById('changes-badge');
+  if(data.length){badge.textContent=data.length;badge.style.display='inline';}
+  else{badge.style.display='none';}
+  if(!data.length){list.innerHTML='<div class="state-msg">No unreviewed changes. The monitor runs daily and flags page updates for review here.</div>';return;}
+  list.innerHTML=data.map((c,i)=>{
+    const magCls={'major':'b-pink','moderate':'b-amber','minor':'b-gray'}[c.change_magnitude]||'b-gray';
+    const added=(c.signals_added||[]).map(s=>`<div style="font-size:12px;color:#1D9E75;margin-top:3px">+ ${escHtml(s.slice(0,180))}</div>`).join('');
+    const removed=(c.signals_removed||[]).map(s=>`<div style="font-size:12px;color:#D4537E;margin-top:3px">- ${escHtml(s.slice(0,180))}</div>`).join('');
+    return`<div class="card" id="chg-${i}">
+      <div class="card-top">
+        <span class="card-source">${escHtml(c.company)}</span>
+        <span class="card-date">${(c.detected_at||'').slice(0,10)}</span>
+        <span class="badge ${magCls}">${escHtml(c.change_magnitude)}</span>
+        <span class="badge b-gray">${escHtml(c.page_type.replace('_page','').replace('_',' '))}</span>
+        ${c.url?`<a class="ext" href="${escHtml(c.url)}" target="_blank">View page →</a>`:''}
+      </div>
+      <div class="card-title">${escHtml(c.company)} — ${escHtml(c.page_type.replace('_page','').replace('_',' '))} page changed</div>
+      <div style="font-size:12px;color:var(--text-tertiary);margin:4px 0 8px">
+        ${c.word_count_delta!=null?`Word count: ${c.word_count_old} → ${c.word_count_new} (${c.word_count_delta>0?'+':''}${c.word_count_delta})`:''}
+      </div>
+      ${added}${removed}
+    </div>`;
+  }).join('');
+}
+
+function filterChanges(){
+  const q=document.getElementById('changes-search').value.toLowerCase();
+  const mag=document.getElementById('changes-magnitude').value;
+  renderChanges(CHANGES.filter(c=>{
+    const text=[c.company,c.page_type].join(' ').toLowerCase();
+    return(!q||text.includes(q))&&(!mag||c.change_magnitude===mag);
+  }));
 }
 
 loadData();
