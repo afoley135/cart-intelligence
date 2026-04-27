@@ -4,11 +4,13 @@ run_pipeline.py
 ---------------
 Orchestrates the full data pipeline in the correct order:
 
-  1. fetch_trials.py       — ClinicalTrials.gov
-  2. fetch_publications.py — PubMed + bioRxiv
-  3. fetch_news.py         — NewsAPI + RSS feeds
-  4. fetch_funding.py      — Funding rounds via NewsAPI + Claude
-  5. summarize.py          — AI "so what" generation
+  1. website_monitor.py      — Watchlist company website change detection
+  2. fetch_trials.py         — ClinicalTrials.gov
+  3. fetch_publications.py   — PubMed + bioRxiv
+  4. fetch_abstracts.py      — Conference abstracts
+  5. fetch_news.py           — NewsAPI + RSS feeds
+  6. fetch_patents.py        — EPO OPS patents
+  7. summarize.py            — AI "so what" generation
 
 Run manually:
   python scripts/run_pipeline.py
@@ -24,12 +26,13 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 FETCHERS_DIR = Path(__file__).parent.parent / "fetchers"
 
 STEPS = [
-    ("ClinicalTrials.gov",  FETCHERS_DIR / "fetch_trials.py"),
-    ("PubMed + bioRxiv",    FETCHERS_DIR / "fetch_publications.py"),
-    ("Conference abstracts",FETCHERS_DIR / "fetch_abstracts.py"),
-    ("News + Funding",      FETCHERS_DIR / "fetch_news.py"),
-    ("Patents",             FETCHERS_DIR / "fetch_patents.py"),
-    ("AI summarisation",    FETCHERS_DIR / "summarize.py"),
+    ("Website monitoring",      FETCHERS_DIR / "website_monitor.py"),
+    ("ClinicalTrials.gov",      FETCHERS_DIR / "fetch_trials.py"),
+    ("PubMed + bioRxiv",        FETCHERS_DIR / "fetch_publications.py"),
+    ("Conference abstracts",    FETCHERS_DIR / "fetch_abstracts.py"),
+    ("News + Funding",          FETCHERS_DIR / "fetch_news.py"),
+    ("Patents",                 FETCHERS_DIR / "fetch_patents.py"),
+    ("AI summarisation",        FETCHERS_DIR / "summarize.py"),
 ]
 
 
