@@ -182,8 +182,8 @@
     <div class="metric"><div class="metric-label">Publications</div><div class="metric-value" id="m-pubs">—</div><div class="metric-sub">PubMed + bioRxiv</div></div>
     <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
     <div class="metric"><div class="metric-label">Conf. abstracts</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">AACR · ASGCT · ASH</div></div>
-    <div class="metric"><div class="metric-label">Site changes</div><div class="metric-value" id="m-changes">—</div><div class="metric-sub">watchlist pages</div></div>
     <div class="metric"><div class="metric-label">Patents</div><div class="metric-value" id="m-patents">—</div><div class="metric-sub">watchlist companies</div></div>
+    <div class="metric"><div class="metric-label">Site changes</div><div class="metric-value" id="m-changes">—</div><div class="metric-sub">watchlist pages</div></div>
   </div>
   <div class="tabs">
     <div class="tab active" onclick="switchTab('trials')">Clinical trials</div>
@@ -192,7 +192,7 @@
     <div class="tab" onclick="switchTab('conferences')">Conferences</div>
     <div class="tab" onclick="switchTab('news')">News</div>
     <div class="tab" onclick="switchTab('patents')">Patents</div>
-    <div class="tab" onclick="switchTab('changes')">Changes <span id="changes-badge" style="display:none;background:#FEF3C7;color:#92400E;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;"></span></div>
+    <div class="tab" onclick="switchTab('changes')">Changes <span id="changes-badge" style="display:none;background:#FEF3C7;color:#92400E;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;vertical-align:middle;"></span></div>
   </div>
 
   <!-- Trials -->
@@ -324,21 +324,22 @@
     <div class="sort-label">Sorted by filing date, newest first</div>
     <div class="card-feed" id="patent-list"><div class="state-msg">Loading patents...</div></div>
   </div>
-</div>
 
+  <!-- Changes -->
   <div id="pane-changes" class="pane">
-  <div class="filters">
-    <input type="text" id="changes-search" placeholder="Search company, page type..." oninput="filterChanges()" />
-    <select id="changes-magnitude" onchange="filterChanges()">
-      <option value="">All magnitudes</option>
-      <option value="major">Major</option>
-      <option value="moderate">Moderate</option>
-      <option value="minor">Minor</option>
-    </select>
-    <span class="filter-count" id="changes-count"></span>
+    <div class="filters">
+      <input type="text" id="changes-search" placeholder="Search company, page type..." oninput="filterChanges()" />
+      <select id="changes-magnitude" onchange="filterChanges()">
+        <option value="">All magnitudes</option>
+        <option value="major">Major</option>
+        <option value="moderate">Moderate</option>
+        <option value="minor">Minor</option>
+      </select>
+      <span class="filter-count" id="changes-count"></span>
+    </div>
+    <div class="sort-label">Unreviewed changes, newest first. Visit the flagged page to confirm what changed.</div>
+    <div class="card-feed" id="changes-list"><div class="state-msg">Loading changes...</div></div>
   </div>
-  <div class="sort-label">Unreviewed changes, newest first. Visit the flagged page to confirm what changed.</div>
-  <div class="card-feed" id="changes-list"><div class="state-msg">Loading changes...</div></div>
 </div>
 
 <!-- Slide-out panel -->
@@ -396,7 +397,7 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);renderChanges(CHANGES);populatePatentCompanies();populateNewsSources();filterNews();
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);
   }catch(e){
     console.error('Failed to load data:',e);
     document.getElementById('trial-body').innerHTML='<tr><td colspan="9" class="state-msg">Failed to load data.</td></tr>';
@@ -422,6 +423,7 @@ function updateMetrics(){
   document.getElementById('m-news').textContent=NEWS.length;
   document.getElementById('m-abstracts').textContent=ABSTRACTS.length;
   document.getElementById('m-patents').textContent=PATENTS.length;
+  document.getElementById('m-changes').textContent=CHANGES.length;
 }
 
 function modalityBadge(m){
@@ -899,34 +901,34 @@ function switchTab(name){
 
 function renderChanges(data){
   const list=document.getElementById('changes-list');
-  document.getElementById('changes-count').textContent=`${data.length} change${data.length!==1?'s':''}`;
+  const count=document.getElementById('changes-count');
   const badge=document.getElementById('changes-badge');
-  if(data.length){badge.textContent=data.length;badge.style.display='inline';}
-  else{badge.style.display='none';}
+  if(count)count.textContent=`${data.length} change${data.length!==1?'s':''}`;
+  if(badge){if(data.length){badge.textContent=data.length;badge.style.display='inline';}else{badge.style.display='none';}}
+  if(!list)return;
   if(!data.length){list.innerHTML='<div class="state-msg">No unreviewed changes. The monitor runs daily and flags page updates for review here.</div>';return;}
   list.innerHTML=data.map((c,i)=>{
     const magCls={'major':'b-pink','moderate':'b-amber','minor':'b-gray'}[c.change_magnitude]||'b-gray';
-    const added=(c.signals_added||[]).map(s=>`<div style="font-size:12px;color:#1D9E75;margin-top:3px">+ ${escHtml(s.slice(0,180))}</div>`).join('');
-    const removed=(c.signals_removed||[]).map(s=>`<div style="font-size:12px;color:#D4537E;margin-top:3px">- ${escHtml(s.slice(0,180))}</div>`).join('');
-    return`<div class="card" id="chg-${i}">
+    const pageLabel=(c.page_type||'').replace('_page','').replace('_',' ');
+    const added=(c.signals_added||[]).map(s=>`<div style="font-size:12px;color:#1D9E75;margin-top:4px;line-height:1.4">+ ${escHtml(s.slice(0,180))}</div>`).join('');
+    const removed=(c.signals_removed||[]).map(s=>`<div style="font-size:12px;color:#D4537E;margin-top:4px;line-height:1.4">- ${escHtml(s.slice(0,180))}</div>`).join('');
+    return`<div class="card">
       <div class="card-top">
-        <span class="card-source">${escHtml(c.company)}</span>
+        <span class="card-source">${escHtml(c.company||'')}</span>
         <span class="card-date">${(c.detected_at||'').slice(0,10)}</span>
-        <span class="badge ${magCls}">${escHtml(c.change_magnitude)}</span>
-        <span class="badge b-gray">${escHtml(c.page_type.replace('_page','').replace('_',' '))}</span>
+        <span class="badge ${magCls}">${escHtml(c.change_magnitude||'')}</span>
+        <span class="badge b-gray">${escHtml(pageLabel)}</span>
         ${c.url?`<a class="ext" href="${escHtml(c.url)}" target="_blank">View page →</a>`:''}
       </div>
-      <div class="card-title">${escHtml(c.company)} — ${escHtml(c.page_type.replace('_page','').replace('_',' '))} page changed</div>
-      <div style="font-size:12px;color:var(--text-tertiary);margin:4px 0 8px">
-        ${c.word_count_delta!=null?`Word count: ${c.word_count_old} → ${c.word_count_new} (${c.word_count_delta>0?'+':''}${c.word_count_delta})`:''}
-      </div>
+      <div class="card-title">${escHtml(c.company||'')} — ${escHtml(pageLabel)} page changed</div>
+      ${c.word_count_delta!=null?`<div style="font-size:12px;color:var(--text-tertiary);margin:4px 0 8px">Word count: ${c.word_count_old} → ${c.word_count_new} (${c.word_count_delta>0?'+':''}${c.word_count_delta})</div>`:''}
       ${added}${removed}
     </div>`;
   }).join('');
 }
 
 function filterChanges(){
-  const q=document.getElementById('changes-search').value.toLowerCase();
+  const q=(document.getElementById('changes-search').value||'').toLowerCase();
   const mag=document.getElementById('changes-magnitude').value;
   renderChanges(CHANGES.filter(c=>{
     const text=[c.company,c.page_type].join(' ').toLowerCase();
