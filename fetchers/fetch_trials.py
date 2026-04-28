@@ -23,6 +23,13 @@ import anthropic
 from datetime import datetime, timezone
 from pathlib import Path
 
+try:
+    from modality_resolver import apply_profile_modalities
+    _PROFILES_AVAILABLE = True
+except ImportError:
+    logging.warning("modality_resolver not found — profile modality overrides disabled")
+    _PROFILES_AVAILABLE = False
+
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
@@ -415,8 +422,16 @@ def run():
     }
     logging.info(f"  Excluded {before_filter - len(all_studies)} trials last updated before {cutoff_date}")
 
+    # Pass 4 — apply confirmed modalities from company_profiles.json
+    studies_list = list(all_studies.values())
+    if _PROFILES_AVAILABLE:
+        studies_list, override_count = apply_profile_modalities(studies_list)
+        logging.info(f"Pass 4: Applied profile_modality to {override_count} trials")
+    else:
+        logging.warning("Pass 4 skipped: modality_resolver not available")
+
     studies_list = sorted(
-        all_studies.values(),
+        studies_list,
         key=lambda s: s["last_updated"] or "",
         reverse=True,
     )
