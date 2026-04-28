@@ -4,9 +4,11 @@ fetch_patents.py
 Fetches patent filings for watchlist companies using the EPO Open Patent
 Services (OPS) API v3.2 — free, covers US, EP, PCT and 50+ jurisdictions.
 
-Two search passes per company:
-  1. Assignee name search — finds patents filed under the company name
-  2. Applicant name search — finds patent applications (pre-grant)
+Three search passes per company:
+  1. Applicant wildcard search — pa="CompanyName*" (right-truncated)
+  2. Full exact name — pa="Full Company Name" (catches exact registered names)
+  3. Title/abstract keyword — ta="Company Name" (fallback for filings under
+     parent entities or slightly different legal names)
 
 For each new patent, calls Claude to:
   - Classify claim type
@@ -117,12 +119,14 @@ def get_access_token() -> str:
 def search_epo(cql_query: str, start: int = 1, count: int = 25) -> dict:
     """Run a CQL query against EPO OPS published-data search."""
     token = get_access_token()
+    range_header = f"{start}-{start + count - 1}"
     headers = {
         "Authorization": f"Bearer {token}",
         "Accept":        "application/xml",
-        "X-OPS-Range":   f"{start}-{start + count - 1}",
+        "X-OPS-Range":   range_header,
     }
-    params = {"q": cql_query, "Range": f"{start}-{start + count - 1}"}
+    # Range goes only in the header, not as a query param — duplicate causes issues
+    params = {"q": cql_query}
     resp = requests.get(EPO_SEARCH_URL, params=params, headers=headers, timeout=30)
 
     # Handle quota / throttle
@@ -138,49 +142,97 @@ def search_epo(cql_query: str, start: int = 1, count: int = 25) -> dict:
     return {"xml": resp.text, "total": int(resp.headers.get("X-OPS-Range-total", 0))}
 
 
+def _run_query(cql: str, company: str, seen_ids: set, results: list) -> None:
+    """
+    Execute a single CQL query with pagination, appending new results.
+    Errors are caught and logged per-query so other queries still run.
+    """
+    try:
+        start = 1
+        while True:
+            data = search_epo(cql, start=start, count=25)
+            if not data or "xml" not in data:
+                break
+
+            parsed = parse_epo_xml(data["xml"], company)
+            for p in parsed:
+                pid = p.get("id")
+                if pid and pid not in seen_ids:
+                    seen_ids.add(pid)
+                    results.append(p)
+
+            total = data.get("total", 0)
+            if start + 25 > total or start > 100:  # cap at 100 per query
+                break
+            start += 25
+            time.sleep(0.5)
+
+    except requests.HTTPError as e:
+        status = e.response.status_code if e.response is not None else "?"
+        if status != 404:
+            logging.warning(f"  EPO search failed for query '{cql[:60]}': HTTP {status}")
+        # Do NOT break/re-raise — let subsequent queries run
+    except Exception as e:
+        logging.warning(f"  EPO search failed for query '{cql[:60]}': {e}")
+
+
+def build_queries(company: str) -> list[str]:
+    """
+    Build an ordered list of CQL queries for a company.
+
+    Strategy:
+      1. Wildcard on first significant word(s) — most permissive, catches
+         variant spellings and subsidiary names.
+      2. Exact full name — catches filings under precise legal entity name.
+      3. Title/abstract keyword — catches filings where the company is
+         mentioned in the title/abstract but filed under a parent entity.
+         Scoped to cell-therapy IPC classes to reduce noise.
+
+    EPO CQL notes:
+      - * is right-truncation wildcard (pa= and ta= fields only)
+      - Phrases must be double-quoted
+      - Date format: YYYYMMDD or YYYY
+    """
+    # Build a 1-2 word stem that's distinctive enough not to over-match
+    words = company.split()
+    # Use up to 2 words, but skip generic trailing words
+    GENERIC = {"therapeutics", "biosciences", "biotech", "biotherapeutics",
+               "medicines", "biopharma", "pharma", "biologics", "labs",
+               "laboratory", "laboratories", "inc", "llc", "ltd", "gmbh"}
+    stem_words = []
+    for w in words:
+        if w.lower() not in GENERIC:
+            stem_words.append(w)
+        if len(stem_words) == 2:
+            break
+    stem = " ".join(stem_words) if stem_words else words[0]
+
+    date_filter = f"pd>={YEAR_FROM}0101"
+
+    queries = []
+
+    # 1. Wildcard on distinctive stem
+    queries.append(f'pa="{stem}*" AND {date_filter}')
+
+    # 2. Exact full name (only if different from the stem query)
+    if len(words) > len(stem_words):
+        queries.append(f'pa="{company}" AND {date_filter}')
+
+    # 3. Title/abstract fallback scoped to A61 (human medicine) and C12N (micro-organisms/genetics)
+    #    This catches filings mentioning the company but assigned to a parent
+    queries.append(f'ta="{stem}" AND (ic=A61 OR ic=C12N) AND {date_filter}')
+
+    return queries
+
+
 def fetch_all_for_company(company: str) -> list[dict]:
-    """Fetch all patents for a company via assignee + applicant CQL queries."""
-    results = []
-    seen_ids = set()
+    """Fetch all patents for a company via multiple CQL strategies."""
+    results: list[dict] = []
+    seen_ids: set[str] = set()
 
-    # EPO CQL uses pa= for applicant name, pd= for publication date
-    # Date format must be YYYYMMDD or just YYYY
-    company_base = company.split()[0]  # first word for broader matching
-    queries = [
-        f'pa="{company}" AND pd>={YEAR_FROM}0101',
-        f'pa="{company_base}" AND pd>={YEAR_FROM}0101',
-    ]
-
-    for cql in queries:
-        try:
-            start = 1
-            while True:
-                data = search_epo(cql, start=start, count=25)
-                if not data or "xml" not in data:
-                    break
-
-                parsed = parse_epo_xml(data["xml"], company)
-                for p in parsed:
-                    pid = p.get("id")
-                    if pid and pid not in seen_ids:
-                        seen_ids.add(pid)
-                        results.append(p)
-
-                total = data.get("total", 0)
-                if start + 25 > total or start > 100:  # cap at 100 per query
-                    break
-                start += 25
-                time.sleep(0.5)
-
-        except requests.HTTPError as e:
-            if e.response is not None and e.response.status_code == 404:
-                pass  # no results for this query
-            else:
-                logging.warning(f"  EPO search failed for '{company}': {e}")
-            break
-        except Exception as e:
-            logging.warning(f"  EPO search failed for '{company}': {e}")
-            break
+    for cql in build_queries(company):
+        _run_query(cql, company, seen_ids, results)
+        time.sleep(0.5)
 
     return results
 
@@ -246,20 +298,20 @@ def parse_epo_xml(xml_text: str, watchlist_company: str) -> list[dict]:
                 url = f"https://patents.google.com/patent/{country}{doc_number}{kind}"
 
             results.append({
-                "id":               patent_id,
-                "title":            title,
-                "abstract":         abstract,
-                "assignee":         assignee_str,
+                "id":                patent_id,
+                "title":             title,
+                "abstract":          abstract,
+                "assignee":          assignee_str,
                 "watchlist_company": watchlist_company,
-                "filing_date":      filing_date or pub_date[:4] if pub_date else "",
-                "patent_number":    f"{country}{doc_number}{kind}",
+                "filing_date":       filing_date or (pub_date[:4] if pub_date else ""),
+                "patent_number":     f"{country}{doc_number}{kind}",
                 "application_number": doc_number,
-                "source":           "EPO OPS",
-                "url":              url,
-                "data_type":        "patent",
-                "claim_type":       None,
-                "novelty_summary":  None,
-                "relevant":         None,
+                "source":            "EPO OPS",
+                "url":               url,
+                "data_type":         "patent",
+                "claim_type":        None,
+                "novelty_summary":   None,
+                "relevant":          None,
             })
 
         except Exception as e:
@@ -336,7 +388,7 @@ def run():
         logging.info(f"  Searching: {company}")
         try:
             patents = fetch_all_for_company(company)
-            logging.info(f"    Found {len(patents)} patents")
+            logging.info(f"    Found {len(patents)} raw results")
 
             for patent in patents:
                 pid = patent["id"]
@@ -349,7 +401,7 @@ def run():
                     all_patents[pid] = patent
                     new_count += 1
 
-            time.sleep(1.0)  # respect EPO rate limits
+            time.sleep(1.5)  # respect EPO rate limits between companies
         except Exception as e:
             logging.error(f"  Failed for {company}: {e}")
 
