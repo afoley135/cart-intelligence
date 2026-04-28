@@ -10,6 +10,13 @@ Two fetch passes:
 
 Results are deduplicated by NCT ID.
 
+Change detection:
+  Before overwriting trials.json, diffs the previous state on fields that
+  matter: status, phase, enrollment, start_date, title.
+  Writes new and changed watchlist-company trials to data/trial_changes.json.
+  The email generator reads trial_changes.json; the dashboard Changes tab
+  reads website_changes.json (separate).
+
 API docs: https://clinicaltrials.gov/data-api/api
 No API key required.
 """
@@ -22,13 +29,6 @@ import requests
 import anthropic
 from datetime import datetime, timezone
 from pathlib import Path
-
-try:
-    from modality_resolver import apply_profile_modalities
-    _PROFILES_AVAILABLE = True
-except ImportError:
-    logging.warning("modality_resolver not found — profile modality overrides disabled")
-    _PROFILES_AVAILABLE = False
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -59,16 +59,22 @@ FIELDS = [
     "PrimaryOutcomeMeasure",
     "StartDate",
     "LastUpdatePostDate",
+    "FirstPostDate",
     "LocationCountry",
     "EnrollmentCount",
     "BriefSummary",
     "StudyType",
 ]
 
-BASE_URL   = "https://clinicaltrials.gov/api/v2/studies"
-PAGE_SIZE  = 100
+BASE_URL       = "https://clinicaltrials.gov/api/v2/studies"
+PAGE_SIZE      = 100
 OUTPUT_PATH    = Path(__file__).parent.parent / "data" / "trials.json"
+CHANGES_PATH   = Path(__file__).parent.parent / "data" / "trial_changes.json"
 WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
+
+# Fields we diff between runs to detect meaningful changes
+# (last_updated alone isn't enough — CT.gov updates it for minor admin changes)
+DIFF_FIELDS = ["status", "phase", "enrollment", "start_date", "title"]
 
 # Claude classification config
 CLASSIFICATION_MODEL = "claude-haiku-4-5-20251001"
@@ -107,43 +113,20 @@ Summary: {summary}
 """
 
 IN_VIVO_SIGNALS = [
-    "in vivo car",
-    "in vivo chimeric antigen receptor",
-    "in vivo generated car",
-    "in vivo t cell",
-    "in vivo gene therapy to generate",
-    "in vivo generation of car",
-    "in vivo programming",
-    "in vivo reprogramming",
-    "lentiviral vector car",
-    "lipid nanoparticle car",
-    "lnp-delivered car",
-    "non-viral car",
+    "in vivo car", "in vivo chimeric antigen receptor", "in vivo generated car",
+    "in vivo t cell", "in vivo gene therapy to generate", "in vivo generation of car",
+    "in vivo programming", "in vivo reprogramming", "lentiviral vector car",
+    "lipid nanoparticle car", "lnp-delivered car", "non-viral car",
     "systemic car delivery",
 ]
 
 EX_VIVO_SIGNALS = [
-    "ex vivo",
-    "leukapheresis",
-    "autologous car",
-    "allogeneic car",
-    "manufactured car",
-    "cell manufacturing",
+    "ex vivo", "leukapheresis", "autologous car", "allogeneic car",
+    "manufactured car", "cell manufacturing",
 ]
 
-BISPECIFIC_SIGNALS = [
-    "bispecific",
-    "t cell engager",
-    " tce ",
-    "bite ",
-    "duobody",
-]
-
-CAR_NK_SIGNALS = [
-    "car-nk",
-    "car nk cell",
-    "natural killer car",
-]
+BISPECIFIC_SIGNALS = ["bispecific", "t cell engager", " tce ", "bite ", "duobody"]
+CAR_NK_SIGNALS     = ["car-nk", "car nk cell", "natural killer car"]
 
 
 # ---------------------------------------------------------------------------
@@ -157,6 +140,13 @@ def load_watchlist() -> list[str]:
     except Exception as e:
         logging.warning(f"Could not load watchlist: {e}")
         return []
+
+
+def is_watchlisted(sponsor: str, watchlist_lower: list[str]) -> bool:
+    if not sponsor:
+        return False
+    s = sponsor.lower()
+    return any(w in s for w in watchlist_lower)
 
 
 # ---------------------------------------------------------------------------
@@ -187,7 +177,6 @@ def fetch_page(params: dict) -> dict:
 
 
 def fetch_by_query(query: str) -> list[dict]:
-    """Fetch by keyword query term."""
     studies, page_token, page = [], None, 1
     while True:
         logging.info(f"  Keyword '{query}' — page {page}")
@@ -210,7 +199,6 @@ def fetch_by_query(query: str) -> list[dict]:
 
 
 def fetch_by_sponsor(sponsor: str) -> list[dict]:
-    """Fetch all trials for a specific sponsor name."""
     studies, page_token, page = [], None, 1
     while True:
         params = {
@@ -236,14 +224,14 @@ def fetch_by_sponsor(sponsor: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 def parse_study(raw: dict) -> dict:
-    proto       = raw.get("protocolSection", {})
-    id_mod      = proto.get("identificationModule", {})
-    status_mod  = proto.get("statusModule", {})
-    sponsor_mod = proto.get("sponsorCollaboratorsModule", {})
-    desc_mod    = proto.get("descriptionModule", {})
-    design_mod  = proto.get("designModule", {})
-    cond_mod    = proto.get("conditionsModule", {})
-    interv_mod  = proto.get("armsInterventionsModule", {})
+    proto        = raw.get("protocolSection", {})
+    id_mod       = proto.get("identificationModule", {})
+    status_mod   = proto.get("statusModule", {})
+    sponsor_mod  = proto.get("sponsorCollaboratorsModule", {})
+    desc_mod     = proto.get("descriptionModule", {})
+    design_mod   = proto.get("designModule", {})
+    cond_mod     = proto.get("conditionsModule", {})
+    interv_mod   = proto.get("armsInterventionsModule", {})
     contacts_mod = proto.get("contactsLocationsModule", {})
 
     brief_title    = id_mod.get("briefTitle", "") or ""
@@ -259,11 +247,12 @@ def parse_study(raw: dict) -> dict:
     enrollment     = design_mod.get("enrollmentInfo", {}).get("count", "")
     last_updated   = status_mod.get("lastUpdatePostDateStruct", {}).get("date", "")
     start_date     = status_mod.get("startDateStruct", {}).get("date", "")
+    first_posted   = status_mod.get("firstPostDateStruct", {}).get("date", "")
     nct_id         = id_mod.get("nctId", "")
 
-    interventions = [i.get("name", "") for i in interv_mod.get("interventions", [])]
+    interventions    = [i.get("name", "") for i in interv_mod.get("interventions", [])]
     primary_outcomes = [o.get("measure", "") for o in proto.get("outcomesModule", {}).get("primaryOutcomes", [])]
-    countries = list({
+    countries        = list({
         loc.get("country", "") for loc in contacts_mod.get("locations", [])
         if loc.get("country")
     })
@@ -275,36 +264,164 @@ def parse_study(raw: dict) -> dict:
     )
 
     return {
-        "nct_id":          nct_id,
-        "title":           title,
-        "sponsor":         sponsor,
-        "modality":        modality,
-        "conditions":      conditions,
-        "phase":           phases,
-        "status":          status,
-        "interventions":   interventions,
+        "nct_id":           nct_id,
+        "title":            title,
+        "sponsor":          sponsor,
+        "modality":         modality,
+        "conditions":       conditions,
+        "phase":            phases,
+        "status":           status,
+        "interventions":    interventions,
         "primary_outcomes": primary_outcomes,
-        "enrollment":      enrollment,
-        "start_date":      start_date,
-        "last_updated":    last_updated,
-        "countries":       countries,
-        "summary":         summary,
-        "url":             f"https://clinicaltrials.gov/study/{nct_id}",
-        "asset_name":      None,
-        "sowhat":          None,
+        "enrollment":       enrollment,
+        "start_date":       start_date,
+        "first_posted":     first_posted,
+        "last_updated":     last_updated,
+        "countries":        countries,
+        "summary":          summary,
+        "url":              f"https://clinicaltrials.gov/study/{nct_id}",
+        "asset_name":       None,
+        "sowhat":           None,
     }
 
 
 # ---------------------------------------------------------------------------
-# Main
+# Change detection
+# ---------------------------------------------------------------------------
+
+def snapshot_trial(trial: dict) -> dict:
+    """Extract only the fields we care about diffing."""
+    return {
+        "status":     trial.get("status", ""),
+        "phase":      trial.get("phase", []),
+        "enrollment": trial.get("enrollment", ""),
+        "start_date": trial.get("start_date", ""),
+        "title":      trial.get("title", ""),
+    }
+
+
+def diff_trials(
+    new_studies: dict[str, dict],
+    old_studies: dict[str, dict],
+    watchlist_lower: list[str],
+) -> list[dict]:
+    """
+    Compare new vs old trial state for watchlist companies only.
+    Returns a list of change records for trial_changes.json.
+
+    Change types:
+      - new_trial       : NCT ID not seen before
+      - status_change   : OverallStatus changed (highest signal)
+      - phase_change    : Phase changed
+      - enrollment_change: Enrollment count changed
+      - start_date_set  : Start date newly populated
+    """
+    changes = []
+    detected_at = datetime.now(timezone.utc).isoformat()
+
+    for nct_id, trial in new_studies.items():
+        if not is_watchlisted(trial.get("sponsor", ""), watchlist_lower):
+            continue
+
+        old = old_studies.get(nct_id)
+
+        if old is None:
+            # Brand new trial
+            changes.append({
+                "nct_id":      nct_id,
+                "change_type": "new_trial",
+                "sponsor":     trial.get("sponsor", ""),
+                "title":       trial.get("title", ""),
+                "asset_name":  trial.get("asset_name"),
+                "status":      trial.get("status", ""),
+                "phase":       trial.get("phase", []),
+                "conditions":  trial.get("conditions", []),
+                "url":         trial.get("url", ""),
+                "detected_at": detected_at,
+                "reviewed":    False,
+            })
+            continue
+
+        # Existing trial — diff meaningful fields
+        old_snap = snapshot_trial(old)
+        new_snap = snapshot_trial(trial)
+
+        if old_snap["status"] != new_snap["status"]:
+            changes.append({
+                "nct_id":      nct_id,
+                "change_type": "status_change",
+                "sponsor":     trial.get("sponsor", ""),
+                "title":       trial.get("title", ""),
+                "asset_name":  trial.get("asset_name") or old.get("asset_name"),
+                "status_old":  old_snap["status"],
+                "status_new":  new_snap["status"],
+                "url":         trial.get("url", ""),
+                "detected_at": detected_at,
+                "reviewed":    False,
+            })
+
+        if old_snap["phase"] != new_snap["phase"] and new_snap["phase"]:
+            changes.append({
+                "nct_id":      nct_id,
+                "change_type": "phase_change",
+                "sponsor":     trial.get("sponsor", ""),
+                "title":       trial.get("title", ""),
+                "asset_name":  trial.get("asset_name") or old.get("asset_name"),
+                "phase_old":   old_snap["phase"],
+                "phase_new":   new_snap["phase"],
+                "url":         trial.get("url", ""),
+                "detected_at": detected_at,
+                "reviewed":    False,
+            })
+
+        if (
+            not old_snap["start_date"]
+            and new_snap["start_date"]
+        ):
+            changes.append({
+                "nct_id":      nct_id,
+                "change_type": "start_date_set",
+                "sponsor":     trial.get("sponsor", ""),
+                "title":       trial.get("title", ""),
+                "asset_name":  trial.get("asset_name") or old.get("asset_name"),
+                "start_date":  new_snap["start_date"],
+                "status":      new_snap["status"],
+                "url":         trial.get("url", ""),
+                "detected_at": detected_at,
+                "reviewed":    False,
+            })
+
+    return changes
+
+
+def load_existing_changes() -> list[dict]:
+    try:
+        if CHANGES_PATH.exists():
+            return json.loads(CHANGES_PATH.read_text()).get("changes", [])
+    except Exception as e:
+        logging.warning(f"Could not load existing trial changes: {e}")
+    return []
+
+
+def save_changes(all_changes: list[dict]) -> None:
+    output = {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "count":      len(all_changes),
+        "changes":    all_changes,
+    }
+    CHANGES_PATH.parent.mkdir(parents=True, exist_ok=True)
+    CHANGES_PATH.write_text(json.dumps(output, indent=2, ensure_ascii=False))
+    logging.info(f"Wrote {len(all_changes)} trial changes to {CHANGES_PATH}")
+
+
+# ---------------------------------------------------------------------------
+# Claude classification
 # ---------------------------------------------------------------------------
 
 def classify_modality_with_claude(trial: dict) -> str:
-    """Use Claude to classify modality for watchlist company trials."""
     try:
         api_key = os.environ.get("ANTHROPIC_API_KEY", "")
         if not api_key:
-            logging.warning("  ANTHROPIC_API_KEY not set — skipping classification")
             return trial.get("modality", "Not reported")
         client = anthropic.Anthropic(api_key=api_key)
         prompt = CLASSIFICATION_PROMPT.format(
@@ -325,6 +442,10 @@ def classify_modality_with_claude(trial: dict) -> str:
         logging.warning(f"  Claude classification failed: {e}")
         return trial.get("modality", "Not reported")
 
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
 def run():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
@@ -347,6 +468,7 @@ def run():
 
     # Pass 2 — watchlist sponsor queries
     watchlist = load_watchlist()
+    watchlist_lower = [w.lower() for w in watchlist]
     logging.info(f"Pass 2: watchlist sponsor queries ({len(watchlist)} companies)")
     new_from_watchlist = 0
     for company in watchlist:
@@ -366,29 +488,34 @@ def run():
 
     logging.info(f"  {new_from_watchlist} new trials added from watchlist pass")
 
-    # Preserve existing sowhat and asset_name from previous run
-    existing_path = OUTPUT_PATH
-    if existing_path.exists():
+    # Load previous state BEFORE overwriting — used for both preservation and diffing
+    old_studies: dict[str, dict] = {}
+    if OUTPUT_PATH.exists():
         try:
-            existing = json.loads(existing_path.read_text())
+            existing = json.loads(OUTPUT_PATH.read_text())
             for s in existing.get("studies", []):
                 nct = s.get("nct_id")
-                if nct and nct in all_studies:
-                    if s.get("sowhat"):
-                        all_studies[nct]["sowhat"] = s["sowhat"]
-                    if s.get("asset_name"):
-                        all_studies[nct]["asset_name"] = s["asset_name"]
+                if nct:
+                    old_studies[nct] = s
+            logging.info(f"  Loaded {len(old_studies)} existing trials for diffing")
         except Exception as e:
-            logging.warning(f"Could not preserve existing data: {e}")
+            logging.warning(f"Could not load existing trials: {e}")
+
+    # Preserve sowhat, asset_name from previous run
+    for nct, old in old_studies.items():
+        if nct in all_studies:
+            if old.get("sowhat"):
+                all_studies[nct]["sowhat"] = old["sowhat"]
+            if old.get("asset_name"):
+                all_studies[nct]["asset_name"] = old["asset_name"]
 
     # Pass 3 — Claude classification for watchlist company trials
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if api_key:
-        watchlist_lower = [w.lower() for w in watchlist]
         needs_classification = [
             nct for nct, s in all_studies.items()
             if not s.get("ai_modality")
-            and any(w in (s.get("sponsor") or "").lower() for w in watchlist_lower)
+            and is_watchlisted(s.get("sponsor", ""), watchlist_lower)
         ]
         logging.info(f"Pass 3: Claude classification for {len(needs_classification)} watchlist trials")
         for nct in needs_classification:
@@ -400,17 +527,41 @@ def run():
     else:
         logging.warning("Pass 3 skipped: ANTHROPIC_API_KEY not set")
 
-    # Preserve cached ai_modality values from previous run
-    if OUTPUT_PATH.exists():
-        try:
-            existing_data = json.loads(OUTPUT_PATH.read_text())
-            for s in existing_data.get("studies", []):
-                nct = s.get("nct_id")
-                if nct and nct in all_studies and s.get("ai_modality"):
-                    if not all_studies[nct].get("ai_modality"):
-                        all_studies[nct]["ai_modality"] = s["ai_modality"]
-        except Exception as e:
-            logging.warning(f"Could not preserve ai_modality cache: {e}")
+    # Preserve cached ai_modality from previous run
+    for nct, old in old_studies.items():
+        if nct in all_studies and old.get("ai_modality"):
+            if not all_studies[nct].get("ai_modality"):
+                all_studies[nct]["ai_modality"] = old["ai_modality"]
+
+    # ── Change detection ──────────────────────────────────────────────────────
+    logging.info("Detecting trial changes for watchlist companies...")
+    new_changes = diff_trials(all_studies, old_studies, watchlist_lower)
+    logging.info(f"  {len(new_changes)} new changes detected")
+    for c in new_changes:
+        if c["change_type"] == "new_trial":
+            logging.info(f"  NEW: [{c['sponsor']}] {c['title'][:60]}")
+        elif c["change_type"] == "status_change":
+            logging.info(f"  STATUS: [{c['sponsor']}] {c['status_old']} → {c['status_new']}")
+        elif c["change_type"] == "phase_change":
+            logging.info(f"  PHASE: [{c['sponsor']}] {c['phase_old']} → {c['phase_new']}")
+        elif c["change_type"] == "start_date_set":
+            logging.info(f"  START DATE: [{c['sponsor']}] {c['start_date']}")
+
+    # Merge with existing unreviewed changes (keep history)
+    existing_changes = load_existing_changes()
+    # Avoid duplicating: drop old entries for the same nct_id + change_type
+    # that were detected today (idempotent re-runs)
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    new_keys = {(c["nct_id"], c["change_type"]) for c in new_changes}
+    filtered_existing = [
+        c for c in existing_changes
+        if not (
+            (c["nct_id"], c["change_type"]) in new_keys
+            and c.get("detected_at", "")[:10] == today
+        )
+    ]
+    all_changes = filtered_existing + new_changes
+    save_changes(all_changes)
 
     # Exclude trials last updated more than 2 years ago
     from datetime import timedelta
@@ -420,18 +571,10 @@ def run():
         nct: s for nct, s in all_studies.items()
         if (s.get("last_updated") or "") >= cutoff_date
     }
-    logging.info(f"  Excluded {before_filter - len(all_studies)} trials last updated before {cutoff_date}")
-
-    # Pass 4 — apply confirmed modalities from company_profiles.json
-    studies_list = list(all_studies.values())
-    if _PROFILES_AVAILABLE:
-        studies_list, override_count = apply_profile_modalities(studies_list)
-        logging.info(f"Pass 4: Applied profile_modality to {override_count} trials")
-    else:
-        logging.warning("Pass 4 skipped: modality_resolver not available")
+    logging.info(f"  Excluded {before_filter - len(all_studies)} trials updated before {cutoff_date}")
 
     studies_list = sorted(
-        studies_list,
+        all_studies.values(),
         key=lambda s: s["last_updated"] or "",
         reverse=True,
     )
