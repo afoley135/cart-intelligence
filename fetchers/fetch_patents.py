@@ -391,14 +391,11 @@ def build_queries(company: str) -> list[str]:
 # ---------------------------------------------------------------------------
 
 def fetch_all_for_company(company: str) -> list[dict]:
-    """Fetch patents for a company via exact applicant name CQL query only."""
+    """Fetch patents for a company using built queries with assignee validation to filter noise."""
     results = []
     seen_ids = set()
 
-    # Exact name only — the broad first-word query produces too many false positives
-    queries = [
-        f'pa="{company}" AND pd>={YEAR_FROM}0101',
-    ]
+    queries = build_queries(company)
 
     for cql in queries:
         try:
