@@ -204,6 +204,18 @@ def run():
 
     all_pubs: dict[str, dict] = {}
 
+    # ── Load existing publications first (preserves full history) ─────────────
+    if OUTPUT_PATH.exists():
+        try:
+            existing = json.loads(OUTPUT_PATH.read_text())
+            for p in existing.get("publications", []):
+                key = p.get("doi") or f"pmid:{p.get('pmid')}"
+                if key:
+                    all_pubs[key] = p
+            logging.info(f"  Loaded {len(all_pubs)} existing publications")
+        except Exception as e:
+            logging.warning(f"Could not load existing publications: {e}")
+
     # Pass 1 — keyword queries
     logging.info("Pass 1: PubMed keyword query")
     try:
@@ -257,20 +269,6 @@ def run():
             logging.error(f"PubMed watchlist query '{company}' failed: {e}")
 
     logging.info(f"  {new_from_watchlist} new publications added from watchlist pass")
-
-    # Preserve existing sowhat and category
-    if OUTPUT_PATH.exists():
-        try:
-            existing = json.loads(OUTPUT_PATH.read_text())
-            for p in existing.get("publications", []):
-                key = p.get("doi") or f"pmid:{p.get('pmid')}"
-                if key in all_pubs:
-                    if p.get("sowhat"):
-                        all_pubs[key]["sowhat"] = p["sowhat"]
-                    if p.get("category"):
-                        all_pubs[key]["category"] = p["category"]
-        except Exception as e:
-            logging.warning(f"Could not preserve existing pub data: {e}")
 
     pubs_list = sorted(all_pubs.values(), key=lambda p: p["date"] or "", reverse=True)
 
