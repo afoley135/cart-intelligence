@@ -59,7 +59,6 @@ FIELDS = [
     "PrimaryOutcomeMeasure",
     "StartDate",
     "LastUpdatePostDate",
-    "FirstPostDate",
     "LocationCountry",
     "EnrollmentCount",
     "BriefSummary",
