@@ -391,34 +391,53 @@ def build_queries(company: str) -> list[str]:
 # ---------------------------------------------------------------------------
 
 def fetch_all_for_company(company: str) -> list[dict]:
-    all_refs: list[tuple] = []
-    seen_ids: set[str] = set()
+    """Fetch patents for a company via exact applicant name CQL query only."""
+    results = []
+    seen_ids = set()
 
-    for cql in build_queries(company):
-        refs = collect_refs(cql)
-        for ref in refs:
-            key = f"{ref[0]}{ref[1]}.{ref[2]}"
-            if key not in seen_ids:
-                seen_ids.add(key)
-                all_refs.append(ref)
-        time.sleep(0.5)
+    # Exact name only — the broad first-word query produces too many false positives
+    queries = [
+        f'pa="{company}" AND pd>={YEAR_FROM}0101',
+    ]
 
-    if not all_refs:
-        return []
+    for cql in queries:
+        try:
+            start = 1
+            while True:
+                data = search_epo(cql, start=start, count=25)
+                if not data or "xml" not in data:
+                    break
 
-    logging.info(f"    {len(all_refs)} unique refs — fetching biblio in batches")
+                parsed = parse_epo_xml(data["xml"], company)
+                company_tokens = [t.lower() for t in company.split() if len(t) > 3]
+                for p in parsed:
+                    pid = p.get("id")
+                    if pid and pid not in seen_ids:
+                        # Validate assignee — skip patents not plausibly owned by this company
+                        assignee = (p.get("assignee") or "").lower()
+                        if company_tokens and not any(t in assignee for t in company_tokens):
+                            logging.debug(f"  Skipping unrelated assignee: {p.get('assignee','')[:60]}")
+                            continue
+                        seen_ids.add(pid)
+                        results.append(p)
 
-    # Fetch biblio in batches of 10
-    patents = []
-    for i in range(0, len(all_refs), 10):
-        batch = all_refs[i:i + 10]
-        results = fetch_biblio_batch(batch)
-        for p in results:
-            p["watchlist_company"] = company
-        patents.extend(results)
-        time.sleep(1.0)
+                total = data.get("total", 0)
+                if start + 25 > total or start > 100:
+                    break
+                start += 25
+                time.sleep(0.5)
 
-    return patents
+        except requests.HTTPError as e:
+            if e.response is not None and e.response.status_code == 404:
+                pass
+            else:
+                logging.warning(f"  EPO search failed for '{company}': {e}")
+            break
+        except Exception as e:
+            logging.warning(f"  EPO search failed for '{company}': {e}")
+            break
+
+    return results
 
 
 # ---------------------------------------------------------------------------
