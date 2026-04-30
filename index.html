@@ -327,7 +327,11 @@
 
   <!-- Changes -->
   <div id="pane-changes" class="pane">
-    <div class="filters">
+    <div style="font-size:11px;font-weight:600;color:#1D9E75;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #1D9E75;">Trial activity — watchlist companies</div>
+    <div class="sort-label" style="margin-bottom:10px;">New registrations and status changes for watchlist companies, unreviewed.</div>
+    <div class="card-feed" id="trial-changes-list"><div class="state-msg">Loading trial changes...</div></div>
+    <div style="font-size:11px;font-weight:600;color:#5f5e5a;text-transform:uppercase;letter-spacing:0.08em;margin:24px 0 10px;padding-bottom:8px;border-bottom:2px solid #e8e7e2;">Competitor website changes</div>
+    <div class="filters" style="margin-bottom:8px;">
       <input type="text" id="changes-search" placeholder="Search company, page type..." oninput="filterChanges()" />
       <select id="changes-magnitude" onchange="filterChanges()">
         <option value="">All magnitudes</option>
@@ -349,8 +353,12 @@
   <div class="panel-company" id="panel-name"></div>
   <div class="panel-tag">Watchlist company</div>
   <div class="panel-section">
+    <div class="panel-section-title">Overview</div>
+    <div id="panel-overview"></div>
+  </div>
+  <div class="panel-section">
     <div class="panel-section-title">Pipeline</div>
-    <div id="panel-pipeline-tbl"></div>
+    <div id="panel-pipeline-tbl" style="overflow-x:auto;"></div>
   </div>
   <div class="panel-section">
     <div class="panel-section-title">Publications</div>
@@ -360,17 +368,21 @@
     <div class="panel-section-title">News</div>
     <div id="panel-news"></div>
   </div>
+  <div class="panel-section">
+    <div class="panel-section-title">Funding</div>
+    <div id="panel-funding"></div>
+  </div>
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],TRIAL_CHANGES=[],TC_MAP={},watchlistOnly=false;
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR,tcR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
@@ -379,6 +391,7 @@ async function loadData(){
       fetch('data/patents.json').catch(()=>null),
       fetch('watchlist.json'),
       fetch('data/website_changes.json').catch(()=>null),
+      fetch('data/trial_changes.json').catch(()=>null),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
     TRIALS=tD.studies||[];PUBS=pD.publications||[];
@@ -389,6 +402,7 @@ async function loadData(){
     if(aR){try{const aD=await aR.json();ABSTRACTS=aD.abstracts||[];}catch(e){ABSTRACTS=[]}}
     if(ptR){try{const ptD=await ptR.json();PATENTS=ptD.patents||[];}catch(e){PATENTS=[]}}
     if(chR){try{const chD=await chR.json();CHANGES=(chD.changes||[]).filter(c=>!c.reviewed);}catch(e){CHANGES=[];}}
+    if(tcR){try{const tcD=await tcR.json();TRIAL_CHANGES=(tcD.changes||[]).filter(c=>!c.reviewed);TC_MAP={};TRIAL_CHANGES.forEach(c=>{if(!TC_MAP[c.nct_id])TC_MAP[c.nct_id]=[];TC_MAP[c.nct_id].push(c);});}catch(e){TRIAL_CHANGES=[];TC_MAP={};}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -397,7 +411,7 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);renderTrialChanges(TRIAL_CHANGES);
   }catch(e){
     console.error('Failed to load data:',e);
     document.getElementById('trial-body').innerHTML='<tr><td colspan="9" class="state-msg">Failed to load data.</td></tr>';
@@ -477,6 +491,30 @@ function statusDot(s){
 
 // ── Trials ───────────────────────────────────────────────────────────────────
 
+function trialChangeBadge(t){
+  const changes=TC_MAP[t.nct_id];
+  if(changes&&changes.length){
+    const priority=['new_trial','status_change','phase_change','start_date_set'];
+    const c=changes.sort((a,b)=>priority.indexOf(a.change_type)-priority.indexOf(b.change_type))[0];
+    const labels={
+      new_trial:'New listing',
+      status_change:`Now ${(c.status_new||'').replace(/_/g,' ').toLowerCase().replace(/\b\w/g,l=>l.toUpperCase())}`,
+      phase_change:'Phase updated',
+      start_date_set:'Start date set',
+    };
+    const tooltips={
+      new_trial:`First registered: ${(t.first_posted||'').slice(0,10)||'recently'}`,
+      status_change:`${(c.status_old||'').replace(/_/g,' ')} → ${(c.status_new||'').replace(/_/g,' ')}`,
+      phase_change:`${(c.phase_old||[]).join('/')} → ${(c.phase_new||[]).join('/')}`,
+      start_date_set:`Trial start: ${c.start_date||''}`,
+    };
+    const label=labels[c.change_type]||'Updated';
+    const tip=tooltips[c.change_type]||'';
+    return`<span class="badge b-new" style="margin-left:4px;cursor:default;" title="${escAttr(tip)}">${escHtml(label)}</span>`;
+  }
+  return isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':'';
+}
+
 function renderTrials(data){
   const tbody=document.getElementById('trial-body');
   document.getElementById('trial-count').textContent=`${data.length} trial${data.length!==1?'s':''}`;
@@ -492,7 +530,7 @@ function renderTrials(data){
     const summary=(t.sowhat||t.summary||'').trim();
     const sponsorHtml=onW?`<span class="sponsor-link wl" onclick="openPanel('${escAttr(t.sponsor)}')">${escHtml(t.sponsor||'—')}</span>`:`<span style="font-size:12px">${escHtml(t.sponsor||'—')}</span>`;
     return`<tr class="${onW?'wrow':''}">
-      <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':''}</td>
+      <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${trialChangeBadge(t)}</td>
       <td style="max-width:140px">${sponsorHtml}</td>
       <td>${modalityBadge(t.profile_modality||t.ai_modality||t.modality)}</td>
       <td style="font-size:12px;max-width:150px">${escHtml(conditions||'—')}</td>
@@ -899,12 +937,46 @@ function switchTab(name){
   document.getElementById(`pane-${name}`).classList.add('active');
 }
 
+function renderTrialChanges(data){
+  const list=document.getElementById('trial-changes-list');
+  if(!list)return;
+  const relevant=data.filter(c=>['new_trial','status_change'].includes(c.change_type));
+  if(!relevant.length){list.innerHTML='<div class="state-msg">No new trial activity for watchlist companies.</div>';return;}
+  const typeLabels={new_trial:'New listing',status_change:'Status change',phase_change:'Phase updated',start_date_set:'Start date set'};
+  const typeCls={new_trial:'b-teal',status_change:'b-new',phase_change:'b-amber',start_date_set:'b-gray'};
+  list.innerHTML=relevant.map(c=>{
+    const label=typeLabels[c.change_type]||c.change_type;
+    const cls=typeCls[c.change_type]||'b-gray';
+    const asset=c.asset_name?` <span style="color:var(--text-tertiary);font-size:11px;">(${escHtml(c.asset_name)})</span>`:'';
+    let detail='';
+    if(c.change_type==='new_trial'){
+      const phase=(c.phase||[]).join('/').replace(/PHASE/g,'Ph ')||'Phase N/A';
+      const status=(c.status||'').replace(/_/g,' ');
+      const conds=(c.conditions||[]).slice(0,2).join(', ')||'—';
+      detail=`<div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">${escHtml(phase)} · ${escHtml(status)} · ${escHtml(conds)}</div>`;
+    } else if(c.change_type==='status_change'){
+      detail=`<div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">${escHtml((c.status_old||'').replace(/_/g,' '))} → <strong>${escHtml((c.status_new||'').replace(/_/g,' '))}</strong></div>`;
+    }
+    return`<div class="card">
+      <div class="card-top">
+        <span class="card-source">${escHtml(c.sponsor||'')}</span>
+        <span class="card-date">${(c.detected_at||'').slice(0,10)}</span>
+        <span class="badge ${cls}">${escHtml(label)}</span>
+        ${c.url?`<a class="ext" href="${escHtml(c.url)}" target="_blank">${escHtml(c.nct_id||'')} →</a>`:`<span style="font-size:12px;color:var(--text-tertiary)">${escHtml(c.nct_id||'')}</span>`}
+      </div>
+      <div class="card-title">${escHtml(c.title||'—')}${asset}</div>
+      ${detail}
+    </div>`;
+  }).join('');
+}
+
 function renderChanges(data){
   const list=document.getElementById('changes-list');
   const count=document.getElementById('changes-count');
   const badge=document.getElementById('changes-badge');
   if(count)count.textContent=`${data.length} change${data.length!==1?'s':''}`;
-  if(badge){if(data.length){badge.textContent=data.length;badge.style.display='inline';}else{badge.style.display='none';}}
+  const totalChanges=data.length+TRIAL_CHANGES.filter(c=>['new_trial','status_change'].includes(c.change_type)).length;
+  if(badge){if(totalChanges){badge.textContent=totalChanges;badge.style.display='inline';}else{badge.style.display='none';}}
   if(!list)return;
   if(!data.length){list.innerHTML='<div class="state-msg">No unreviewed changes. The monitor runs daily and flags page updates for review here.</div>';return;}
   list.innerHTML=data.map((c,i)=>{
