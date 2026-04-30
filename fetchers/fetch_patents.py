@@ -274,29 +274,38 @@ def parse_biblio_xml(xml_text: str) -> list[dict]:
             pub_date   = doc.get("date", "")
             patent_id  = f"{country}{doc_number}.{kind}"
 
-            # Title — prefer English
+            # Title — prefer English, fall back to first available
             title = ""
-            for t in doc.iter(f"{{{NS_EPO}}}invention-title"):
-                lang = t.get(f"{{{NS_XML}}}lang", "").lower()
-                if lang in ("en", ""):
-                    title = (t.text or "").strip()
-                    if title:
-                        break
+            title_fallback = ""
+            for t in doc.iter("{http://www.epo.org/exchange}invention-title"):
+                lang = t.get("{http://www.w3.org/XML/1998/namespace}lang", "").lower()
+                text = (t.text or "").strip()
+                if not text:
+                    continue
+                if lang == "en":
+                    title = text
+                    break
+                if not title_fallback:
+                    title_fallback = text
             if not title:
-                for t in doc.iter(f"{{{NS_EPO}}}invention-title"):
-                    title = (t.text or "").strip()
-                    if title:
-                        break
+                title = title_fallback
 
-            # Abstract — prefer English
+            # Abstract — prefer English, fall back to first available
             abstract = ""
-            for ab in doc.iter(f"{{{NS_EPO}}}abstract"):
-                lang = ab.get(f"{{{NS_XML}}}lang", "").lower()
-                if lang in ("en", ""):
-                    parts = [p.text or "" for p in ab.iter(f"{{{NS_EPO}}}p")]
-                    abstract = " ".join(parts).strip()[:1000]
-                    if abstract:
-                        break
+            abstract_fallback = ""
+            for ab in doc.iter("{http://www.epo.org/exchange}abstract"):
+                lang = ab.get("{http://www.w3.org/XML/1998/namespace}lang", "").lower()
+                texts = [p.text or "" for p in ab.iter("{http://www.epo.org/exchange}p")]
+                text = " ".join(texts).strip()[:1000]
+                if not text:
+                    continue
+                if lang == "en":
+                    abstract = text
+                    break
+                if not abstract_fallback:
+                    abstract_fallback = text
+            if not abstract:
+                abstract = abstract_fallback
 
             # Assignees / applicants
             assignees = []
