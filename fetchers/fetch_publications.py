@@ -226,8 +226,10 @@ def run():
             time.sleep(0.4)
             for a in pubmed_fetch(pmids):
                 key = a["doi"] or f"pmid:{a['pmid']}"
-                if key not in all_pubs:
-                    all_pubs[key] = a
+                if key in all_pubs:
+                    a["sowhat"] = all_pubs[key].get("sowhat") or a.get("sowhat")
+                    a["category"] = all_pubs[key].get("category") or a.get("category")
+                all_pubs[key] = a
     except requests.RequestException as e:
         logging.error(f"PubMed keyword fetch failed: {e}")
 
@@ -237,8 +239,10 @@ def run():
             preprints = biorxiv_fetch(term, LOOKBACK_DAYS, BIORXIV_MAX)
             for p in preprints:
                 key = p["doi"] or p["title"][:60]
-                if key not in all_pubs:
-                    all_pubs[key] = p
+                if key in all_pubs:
+                    p["sowhat"] = all_pubs[key].get("sowhat") or p.get("sowhat")
+                    p["category"] = all_pubs[key].get("category") or p.get("category")
+                all_pubs[key] = p
             logging.info(f"  '{term}': {len(preprints)} preprints")
             time.sleep(0.5)
         except requests.RequestException as e:
@@ -260,9 +264,12 @@ def run():
                 time.sleep(0.4)
                 for a in pubmed_fetch(pmids):
                     key = a["doi"] or f"pmid:{a['pmid']}"
-                    if key not in all_pubs:
-                        all_pubs[key] = a
+                    if key in all_pubs:
+                        a["sowhat"] = all_pubs[key].get("sowhat") or a.get("sowhat")
+                        a["category"] = all_pubs[key].get("category") or a.get("category")
+                    else:
                         new_from_watchlist += 1
+                    all_pubs[key] = a
                 logging.info(f"  {company}: {len(pmids)} PubMed results")
             time.sleep(0.3)
         except requests.RequestException as e:
