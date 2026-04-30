@@ -198,55 +198,13 @@ def parse_pubmed_abstract(article: ET.Element) -> dict:
 
 def scrape_asgct_abstracts(watchlist: list[str]) -> list[dict]:
     """
-    Scrape ASGCT 2026 abstracts after embargo lifts on April 27.
-    Uses the ASGCT abstract search page with keyword queries.
-    Falls back gracefully if the page structure has changed.
+    ASGCT prohibits automated scraping (ToS). Abstracts will be captured
+    automatically via the Molecular Therapy PubMed supplement after the
+    May 2026 meeting. For immediate access, download the abstract book
+    manually from annualmeeting.asgct.org/abstracts.
     """
-    if not is_past_embargo(ASGCT_EMBARGO_DATE):
-        logging.info(f"  ASGCT abstracts not yet public (embargo: {ASGCT_EMBARGO_DATE})")
-        return []
-
-    results = []
-    headers = {"User-Agent": "Mozilla/5.0 (compatible; cart-intelligence-bot/1.0)"}
-
-    # Search terms to try
-    search_terms = [
-        "in vivo CAR-T",
-        "in vivo CAR T",
-        "lipid nanoparticle CAR",
-        "lentiviral CAR",
-        "non-viral CAR",
-    ] + [company for company in watchlist[:15]]  # top watchlist companies
-
-    seen_titles = set()
-
-    for term in search_terms:
-        try:
-            # ASGCT uses a search parameter in the URL
-            url = f"{ASGCT_ABSTRACT_URL}?q={requests.utils.quote(term)}"
-            resp = requests.get(url, headers=headers, timeout=30)
-
-            if resp.status_code != 200:
-                logging.warning(f"  ASGCT search returned {resp.status_code} for '{term}'")
-                continue
-
-            # Parse abstracts from HTML — look for common abstract card patterns
-            html = resp.text
-            abstracts = parse_asgct_html(html, term)
-
-            for a in abstracts:
-                title_key = a["title"][:60].lower()
-                if title_key not in seen_titles:
-                    seen_titles.add(title_key)
-                    results.append(a)
-
-            logging.info(f"  ASGCT '{term}': {len(abstracts)} abstracts")
-            time.sleep(1.0)  # be polite
-
-        except Exception as e:
-            logging.error(f"  ASGCT scrape failed for '{term}': {e}")
-
-    return results
+    logging.info("  ASGCT scraping disabled (ToS). Abstracts arrive via PubMed Mol Ther supplement post-meeting.")
+    return []
 
 
 def parse_asgct_html(html: str, search_term: str) -> list[dict]:
