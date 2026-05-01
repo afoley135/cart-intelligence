@@ -27,7 +27,7 @@ import time
 import logging
 import requests
 import anthropic
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -70,6 +70,13 @@ PAGE_SIZE      = 100
 OUTPUT_PATH    = Path(__file__).parent.parent / "data" / "trials.json"
 CHANGES_PATH   = Path(__file__).parent.parent / "data" / "trial_changes.json"
 WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
+
+# Only flag a trial as "new" if first_posted is within this many days.
+# Prevents a flood of stale "new" listings after trials.json is reset.
+NEW_TRIAL_LOOKBACK_DAYS = 30
+
+# Changes older than this are pruned from trial_changes.json on each run.
+CHANGE_RETENTION_DAYS = 7
 
 # Fields we diff between runs to detect meaningful changes
 # (last_updated alone isn't enough — CT.gov updates it for minor admin changes)
@@ -325,7 +332,14 @@ def diff_trials(
         old = old_studies.get(nct_id)
 
         if old is None:
-            # Brand new trial
+            # Only flag as new if recently posted — prevents flood after trials.json reset
+            first_posted = trial.get("first_posted", "")
+            cutoff = (datetime.now(timezone.utc) - timedelta(days=NEW_TRIAL_LOOKBACK_DAYS)).strftime("%Y-%m-%d")
+            if first_posted < cutoff:
+                continue  # old trial appearing for first time due to reset — skip
+            # Skip completed trials — not actionable as new listings
+            if trial.get("status", "").upper() == "COMPLETED":
+                continue
             changes.append({
                 "nct_id":      nct_id,
                 "change_type": "new_trial",
@@ -359,7 +373,10 @@ def diff_trials(
                 "reviewed":    False,
             })
 
-        if old_snap["phase"] != new_snap["phase"] and new_snap["phase"]:
+        # Normalise phase lists before comparing — CT.gov sometimes reorders them
+        old_phase = sorted(p.upper() for p in (old_snap["phase"] or []))
+        new_phase = sorted(p.upper() for p in (new_snap["phase"] or []))
+        if old_phase != new_phase and new_phase:
             changes.append({
                 "nct_id":      nct_id,
                 "change_type": "phase_change",
@@ -403,6 +420,13 @@ def load_existing_changes() -> list[dict]:
 
 
 def save_changes(all_changes: list[dict]) -> None:
+    # Prune changes older than CHANGE_RETENTION_DAYS — no manual review needed
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=CHANGE_RETENTION_DAYS)).isoformat()
+    all_changes = [c for c in all_changes if (c.get("detected_at") or "") >= cutoff]
+
+    # Sort newest first for dashboard display
+    all_changes = sorted(all_changes, key=lambda c: c.get("detected_at") or "", reverse=True)
+
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "count":      len(all_changes),
@@ -563,7 +587,6 @@ def run():
     save_changes(all_changes)
 
     # Exclude trials last updated more than 2 years ago
-    from datetime import timedelta
     cutoff_date = (datetime.now(timezone.utc) - timedelta(days=730)).strftime("%Y-%m-%d")
     before_filter = len(all_studies)
     all_studies = {
