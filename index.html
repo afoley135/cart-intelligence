@@ -373,11 +373,19 @@
 let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],PROFILES={},CONF_APPEARANCES={appearances:[],unmatched_conferences:[]},watchlistOnly=false,newsPriorityOnly=true;
 
 const NEWS_PRIORITY_SOURCES = new Set([
+  // Wire services (exact NewsAPI names)
   'PR Newswire','GlobeNewswire','Business Wire','PRN',
+  // Trade outlets (exact Google News RSS source names)
   'BioSpace','Fierce Biotech','Endpoints News','STAT News','Nature',
-  'Fierce Pharma','BioPharma Dive',
+  'Fierce Pharma','BioPharma Dive','FierceBiotech','FiercePharma',
+  'Endpoints','STAT','Nature Medicine','Nature Biotechnology',
 ]);
+// Wire substrings — catch variants like "PR Newswire UK", "PRNewswire"
 const NEWS_PRIORITY_WIRE_SUBSTRINGS = ['newswire','globenewswire','businesswire','business wire','prnewswire'];
+// Outlet substrings — catch domain-style names like "fiercebiotech.com", loose caps variants
+const NEWS_PRIORITY_OUTLET_SUBSTRINGS = ['fierce','biospace','endpoints','statnews','stat news','biopharma dive','biopharmadive'];
+// fetch_source values that are always priority (direct curated RSS feeds)
+const NEWS_PRIORITY_FETCH_SOURCES = new Set(['rss','rss_watchlist']);
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
@@ -574,9 +582,10 @@ function getProfile(companyName){
 }
 
 function isPressRelease(n,companyName){
-  // Match news items that are wire press releases attributed to this company
+  // Match wire-sourced items only (press releases, not trade coverage)
   const src=(n.source||'').toLowerCase();
-  const isWire=NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>src.includes(w))||NEWS_PRIORITY_SOURCES.has(n.source||'');
+  const isWire=NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>src.includes(w))
+    ||['pr newswire','globenewswire','business wire','businesswire','prnewswire'].some(w=>src.includes(w));
   if(!isWire) return false;
   const key=companyName.toLowerCase();
   return [n.title,n.summary].join(' ').toLowerCase().includes(key);
@@ -804,10 +813,17 @@ function renderNews(data){
 }
 
 function isPrioritySource(n){
+  // 1. Curated direct RSS feeds (STAT News, Endpoints) — always priority
+  if(NEWS_PRIORITY_FETCH_SOURCES.has(n.fetch_source||'')) return true;
   const src=n.source||'';
-  if(NEWS_PRIORITY_SOURCES.has(src)) return true;
   const sl=src.toLowerCase();
-  return NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>sl.includes(w));
+  // 2. Exact source name match (NewsAPI and well-formed Google RSS)
+  if(NEWS_PRIORITY_SOURCES.has(src)) return true;
+  // 3. Wire service substring (catches "PR Newswire UK", "PRNewswire", etc.)
+  if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>sl.includes(w))) return true;
+  // 4. Outlet substring (catches "fiercebiotech.com", "fierce biotech", caps variants)
+  if(NEWS_PRIORITY_OUTLET_SUBSTRINGS.some(w=>sl.includes(w))) return true;
+  return false;
 }
 
 function toggleNewsPriority(){
