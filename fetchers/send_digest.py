@@ -42,9 +42,9 @@ TRIALS_CHANGES = DATA_DIR / "trial_changes.json"
 PUBS_PATH      = DATA_DIR / "publications.json"
 NEWS_PATH      = DATA_DIR / "news.json"
 PATENTS_PATH   = DATA_DIR / "patents.json"
-ABSTRACTS_PATH = DATA_DIR / "abstracts.json"
-CONFERENCES_PATH = DATA_DIR / "conferences.json"
-WEBSITE_CHANGES  = DATA_DIR / "website_changes.json"
+ABSTRACTS_PATH        = DATA_DIR / "abstracts.json"
+CONF_APPEARANCES_PATH = DATA_DIR / "conference_appearances.json"
+WEBSITE_CHANGES       = DATA_DIR / "website_changes.json"
 
 MODEL = "claude-haiku-4-5-20251001"
 
@@ -76,12 +76,12 @@ def load(path: Path, key: str) -> list:
     return []
 
 
-def load_conferences() -> list:
+def load_conference_appearances() -> list:
     try:
-        if CONFERENCES_PATH.exists():
-            return json.loads(CONFERENCES_PATH.read_text()).get("conferences", [])
+        if CONF_APPEARANCES_PATH.exists():
+            return json.loads(CONF_APPEARANCES_PATH.read_text()).get("appearances", [])
     except Exception as e:
-        logging.warning(f"Could not load conferences: {e}")
+        logging.warning(f"Could not load conference appearances: {e}")
     return []
 
 
@@ -295,83 +295,113 @@ def build_news_section(news: list) -> tuple[str, str]:
     return html, plain
 
 
-def build_conferences_section(conferences: list) -> str:
+def build_conferences_section(appearances: list) -> str:
     """
-    Show conferences that are currently running, just ended (within 7 days),
-    or upcoming within 60 days. Include embargo-lifted notice where relevant.
+    Show upcoming conferences (next 90 days) with watchlist companies presenting.
+    Grouped by conference, sorted chronologically.
     """
     today = datetime.now(timezone.utc).date()
-    relevant = []
+    cutoff = today + timedelta(days=90)
 
-    for c in conferences:
-        if not c.get("relevant"):
+    # Filter to upcoming appearances with a known conference start date
+    upcoming = []
+    for a in appearances:
+        start_str = a.get("conference_start")
+        if not start_str:
             continue
         try:
-            start = datetime.strptime(c["date_start"], "%Y-%m-%d").date()
-            end_str = c.get("date_end")
-            end   = datetime.strptime(end_str, "%Y-%m-%d").date() if end_str else start
+            start = datetime.strptime(start_str, "%Y-%m-%d").date()
         except Exception:
             continue
+        if today <= start <= cutoff:
+            upcoming.append((start, a))
 
-        days_to_start = (start - today).days
-        days_since_end = (today - end).days
-
-        # Show if: running now, ended within 7 days, or starting within 60 days
-        if -60 <= days_to_start <= 0 or 0 <= days_since_end <= 7:
-            relevant.append((c, days_to_start, days_since_end))
-
-    if not relevant:
+    if not upcoming:
         return ""
 
+    # Group by conference name
+    groups: dict = {}
+    for start, a in sorted(upcoming, key=lambda x: x[0]):
+        key = a.get("conference") or "Unknown"
+        if key not in groups:
+            groups[key] = {"start": start, "meta": a, "items": []}
+        groups[key]["items"].append(a)
+
+    pt_label = {
+        "oral":        ("Oral",        "#E1F5EE", "#0F6E56"),
+        "poster":      ("Poster",      "#E6F1FB", "#185FA5"),
+        "invited":     ("Invited",     "#EDE9FE", "#4C1D95"),
+        "unspecified": ("",            "",        ""),
+    }
+
     cards = []
-    for c, days_to_start, days_since_end in relevant:
-        name     = c.get("name", "")
-        dates    = c.get("dates", "")
-        location = c.get("location", "")
-        abs_url  = c.get("abstract_url") or c.get("materials_url") or ""
-        mat_url  = c.get("materials_url") or ""
-        embargo  = c.get("abstract_embargo_date")
-        notes    = c.get("notes", "")
+    for conf_name, group in groups.items():
+        start     = group["start"]
+        meta      = group["meta"]
+        end_str   = meta.get("conference_end")
+        location  = meta.get("conference_location") or ""
+        days_away = (start - today).days
 
-        if days_to_start > 0:
-            status_text = f"Starts in {days_to_start} days"
-            status_color = "#185FA5"
-        elif days_since_end <= 0:
-            status_text = "Now live"
-            status_color = "#1D9E75"
+        if days_away == 0:
+            timing = "Today"
+        elif days_away == 1:
+            timing = "Tomorrow"
         else:
-            status_text = f"Recently ended"
-            status_color = "#5f5e5a"
+            timing = f"In {days_away} days"
 
-        embargo_note = ""
-        if embargo:
-            try:
-                emb_date = datetime.strptime(embargo, "%Y-%m-%d").date()
-                if today >= emb_date:
-                    embargo_note = f'<div style="font-size:12px;color:#1D9E75;margin-top:4px;">✓ Abstracts now public</div>'
-                else:
-                    days_to_emb = (emb_date - today).days
-                    embargo_note = f'<div style="font-size:12px;color:#9b9a96;margin-top:4px;">Abstracts embargo lifts in {days_to_emb} days ({embargo})</div>'
-            except Exception:
-                pass
+        try:
+            end = datetime.strptime(end_str, "%Y-%m-%d").date() if end_str else start
+            date_range = (
+                f"{start.strftime('%b %-d')}–{end.strftime('%-d, %Y')}"
+                if end != start else start.strftime("%b %-d, %Y")
+            )
+        except Exception:
+            date_range = str(start)
 
-        links = []
-        if abs_url:
-            links.append(f'<a href="{abs_url}" style="color:#185FA5;font-size:12px;text-decoration:none;">Abstracts →</a>')
-        if mat_url and mat_url != abs_url:
-            links.append(f'<a href="{mat_url}" style="color:#185FA5;font-size:12px;text-decoration:none;">Meeting site →</a>')
-        links_html = '<span style="margin:0 8px;color:#e8e7e2;">|</span>'.join(links)
+        # Presenter rows
+        presenter_rows = []
+        for a in group["items"]:
+            company = a.get("company") or "Unknown"
+            pt = a.get("presentation_type") or "unspecified"
+            label, bg, fg = pt_label.get(pt, ("", "", ""))
+            badge = (
+                f'<span style="font-size:11px;font-weight:500;padding:2px 8px;'
+                f'border-radius:20px;background:{bg};color:{fg};margin-left:8px;">'
+                f'{label}</span>'
+            ) if label else ""
+            abstract = a.get("abstract_title") or ""
+            src_url  = a.get("source_url") or ""
+            link = (
+                f' <a href="{src_url}" style="color:#185FA5;font-size:11px;'
+                f'text-decoration:none;margin-left:8px;">Source →</a>'
+            ) if src_url else ""
+            abstract_html = (
+                f'<div style="font-size:12px;color:#5f5e5a;font-style:italic;margin-top:2px;">'
+                f'{abstract}</div>'
+            ) if abstract else ""
+            presenter_rows.append(f"""
+            <div style="padding:8px 0;border-bottom:1px solid #f7f6f3;">
+              <div style="font-size:13px;font-weight:500;color:#1a1a18;">
+                {company}{badge}{link}
+              </div>
+              {abstract_html}
+            </div>""")
 
         cards.append(f"""
-        <div style="padding:12px 0;border-bottom:1px solid #f0efe9;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-            <span style="font-size:14px;font-weight:500;color:#1a1a18;">{name}</span>
-            <span style="font-size:12px;font-weight:500;color:{status_color};">{status_text}</span>
+        <div style="margin-bottom:20px;border:1px solid #e8e7e2;border-radius:8px;overflow:hidden;">
+          <div style="background:#f7f6f3;padding:12px 16px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <div>
+              <span style="font-size:15px;font-weight:600;color:#1a1a18;">{conf_name}</span>
+              <span style="font-size:12px;color:#5f5e5a;margin-left:10px;">{date_range}{' · ' + location if location else ''}</span>
+            </div>
+            <span style="font-size:12px;font-weight:500;color:#185FA5;">{timing}</span>
           </div>
-          <div style="font-size:12px;color:#5f5e5a;margin-bottom:4px;">{dates} · {location}</div>
-          {embargo_note}
-          {f'<div style="font-size:12px;color:#9b9a96;margin-top:4px;">{notes[:100]}</div>' if notes else ''}
-          <div style="margin-top:6px;">{links_html}</div>
+          <div style="padding:0 16px;">
+            {"".join(presenter_rows)}
+          </div>
+          <div style="padding:8px 16px;font-size:12px;color:#9b9a96;">
+            {len(group["items"])} watchlist presenter{"s" if len(group["items"]) != 1 else ""}
+          </div>
         </div>""")
 
     return f'<div>{"".join(cards)}</div>'
@@ -646,14 +676,14 @@ def run():
     patents    = load(PATENTS_PATH, "patents")
     abstracts  = load(ABSTRACTS_PATH, "abstracts")
     web_chgs   = load(WEBSITE_CHANGES, "changes")
-    conferences = load_conferences()
+    appearances = load_conference_appearances()
 
     # Build sections
     trial_html,   trial_items  = build_trial_changes_section(changes)
     pubs_html,    pub_items    = build_publications_section(pubs)
     news_html,    news_plain   = build_news_section(news)
     patents_html, patent_items = build_patents_section(patents)
-    conferences_html           = build_conferences_section(conferences)
+    conferences_html           = build_conferences_section(appearances)
     website_html               = build_website_changes_section(web_chgs)
 
     has_content = any([trial_html, pubs_html, news_html, patents_html, website_html])
