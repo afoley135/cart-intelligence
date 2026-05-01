@@ -817,12 +817,17 @@ function isPrioritySource(n){
   if(NEWS_PRIORITY_FETCH_SOURCES.has(n.fetch_source||'')) return true;
   const src=n.source||'';
   const sl=src.toLowerCase();
-  // 2. Exact source name match (NewsAPI and well-formed Google RSS)
+  // 2. Exact source name match
   if(NEWS_PRIORITY_SOURCES.has(src)) return true;
-  // 3. Wire service substring (catches "PR Newswire UK", "PRNewswire", etc.)
+  // 3. Wire service substring
   if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>sl.includes(w))) return true;
-  // 4. Outlet substring (catches "fiercebiotech.com", "fierce biotech", caps variants)
+  // 4. Outlet substring on source name
   if(NEWS_PRIORITY_OUTLET_SUBSTRINGS.some(w=>sl.includes(w))) return true;
+  // 5. URL domain fallback — for items stored as "Google News" where outlet
+  //    info is only available in the article URL (e.g. fiercebiotech.com)
+  const url=(n.url||'').toLowerCase();
+  if(NEWS_PRIORITY_OUTLET_SUBSTRINGS.some(w=>url.includes(w))) return true;
+  if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>url.includes(w))) return true;
   return false;
 }
 
