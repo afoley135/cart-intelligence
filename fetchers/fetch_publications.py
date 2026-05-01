@@ -124,7 +124,15 @@ def parse_pubmed_article(article: ET.Element) -> dict:
 
     year  = txt(".//PubDate/Year") or txt(".//PubDate/MedlineDate")[:4]
     month = txt(".//PubDate/Month") or ""
-    date_str = f"{year}-{month}" if month else year
+    # Normalise month to zero-padded numeric so dates sort correctly as strings.
+    # PubMed returns abbreviated names ("Apr") rather than numbers ("04").
+    MONTH_MAP = {
+        "Jan": "01", "Feb": "02", "Mar": "03", "Apr": "04",
+        "May": "05", "Jun": "06", "Jul": "07", "Aug": "08",
+        "Sep": "09", "Oct": "10", "Nov": "11", "Dec": "12",
+    }
+    month_num = MONTH_MAP.get(month, month)  # falls back to raw if already numeric
+    date_str = f"{year}-{month_num}" if month_num else year
 
     doi = ""
     for id_el in article.findall(".//ArticleId"):
