@@ -174,6 +174,17 @@ def fetch_google_news_rss(query: str, lookback_days: int) -> list[dict]:
         source_el    = item.find("{https://news.google.com/rss}source")
         source_name  = source_el.text if source_el is not None else "Google News"
 
+        # Fall back to extracting domain from the article URL when Google News
+        # doesn't populate the <source> element with the outlet name
+        if source_name == "Google News" and link:
+            try:
+                from urllib.parse import urlparse
+                domain = urlparse(link).netloc.lower().removeprefix("www.")
+                if domain:
+                    source_name = domain
+            except Exception:
+                pass
+
         date_str = ""
         if pub_date_str:
             try:
