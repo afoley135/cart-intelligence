@@ -671,7 +671,7 @@ def run():
         subject_parts.append(f"{len(trial_items)} trial update{'s' if len(trial_items)!=1 else ''}")
     if has_patents:
         subject_parts.append("new patents")
-    subject_suffix = " · ".join(subject_parts) if subject_parts else "daily update"
+    subject_suffix = " · ".join(subject_parts) if subject_parts else "no updates today"
     subject = f"CAR-T Intel {today_str} — {subject_suffix}"
 
     html = build_email(
@@ -684,10 +684,7 @@ def run():
         website_html=website_html,
     )
 
-    if has_content:
-        send_email(subject, html)
-    else:
-        logging.info("No content to send today — skipping email")
+    send_email(subject, html)
 
 
 if __name__ == "__main__":

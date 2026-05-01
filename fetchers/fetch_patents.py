@@ -71,6 +71,7 @@ Return ONLY a valid JSON object with these exact keys — no preamble, no markdo
   "claim_type": one of: "Composition of matter" | "Method of treatment" | "Method (process)" | "Composition + Method" | "Other" | "Unknown"
   "novelty_summary": 2-3 sentences on what is novel and its competitive significance for in vivo CAR-T (or null if insufficient information)
   "relevant": true or false — is this relevant to CAR-T, gene therapy, T cell engineering, or related delivery technology?
+  "title_en": if the Title below is not in English, provide an accurate English translation; if it is already English return null
 
 Title: {title}
 Abstract: {abstract}
@@ -384,7 +385,7 @@ def analyse_patent(patent: dict) -> dict:
             assignee=patent.get("assignee", ""),
         )
         msg = client.messages.create(
-            model=MODEL, max_tokens=300,
+            model=MODEL, max_tokens=400,
             messages=[{"role": "user", "content": prompt}],
         )
         raw = msg.content[0].text.strip()
@@ -396,6 +397,11 @@ def analyse_patent(patent: dict) -> dict:
         patent["claim_type"]      = result.get("claim_type") if result.get("claim_type") in VALID_CLAIM_TYPES else "Unknown"
         patent["novelty_summary"] = result.get("novelty_summary")
         patent["relevant"]        = result.get("relevant", True)
+        # Apply English translation if title was non-English
+        title_en = (result.get("title_en") or "").strip()
+        if title_en:
+            patent["title_original"] = patent["title"]
+            patent["title"] = title_en
         logging.info(f"    [{patent['claim_type']}] {patent['title'][:60]}")
     except Exception as e:
         logging.warning(f"  Claude analysis failed: {e}")
