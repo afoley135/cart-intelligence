@@ -3,7 +3,7 @@ name: Send daily digest
 on:
   # Runs after the daily pipeline (which runs at 06:00 UTC)
   schedule:
-    - cron: "30 7 * * *"
+    - cron: "0 8 * * *"
   workflow_dispatch:
 
 jobs:
