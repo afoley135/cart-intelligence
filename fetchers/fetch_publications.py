@@ -35,7 +35,7 @@ PUBMED_QUERY = (
     '"lentiviral CAR T in vivo"[tiab] OR '
     '"lipid nanoparticle CAR"[tiab] OR '
     '"non-viral CAR T"[tiab]) '
-    'AND ("last {days} days"[dp])'
+    'AND ("{date_from}"[edat]:"{date_to}"[edat])'
 )
 
 BIORXIV_SEARCH_TERMS = [
@@ -152,13 +152,14 @@ def parse_pubmed_article(article: ET.Element) -> dict:
 # bioRxiv helpers
 # ---------------------------------------------------------------------------
 
-def biorxiv_fetch(term: str, lookback_days: int, max_results: int) -> list[dict]:
+def biorxiv_fetch(term: str, lookback_days: int, max_results: int) -> tuple[list[dict], int]:
     end_date   = datetime.now(timezone.utc).date()
     start_date = end_date - timedelta(days=lookback_days)
     url = f"{BIORXIV_BASE}/details/biorxiv/{start_date.isoformat()}/{end_date.isoformat()}/0/json"
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     collection = resp.json().get("collection", [])
+    raw_count  = len(collection)
     term_lower = term.lower()
     results = []
     for item in collection:
@@ -167,7 +168,7 @@ def biorxiv_fetch(term: str, lookback_days: int, max_results: int) -> list[dict]
             results.append(parse_biorxiv_item(item))
         if len(results) >= max_results:
             break
-    return results
+    return results, raw_count
 
 
 def parse_biorxiv_item(item: dict) -> dict:
@@ -204,6 +205,11 @@ def run():
 
     all_pubs: dict[str, dict] = {}
 
+    # Build explicit date range for PubMed edat filter
+    date_to   = datetime.now(timezone.utc).strftime("%Y/%m/%d")
+    date_from = (datetime.now(timezone.utc) - timedelta(days=LOOKBACK_DAYS)).strftime("%Y/%m/%d")
+    logging.info(f"  Date range: {date_from} -> {date_to}")
+
     # ── Load existing publications first (preserves full history) ─────────────
     if OUTPUT_PATH.exists():
         try:
@@ -219,7 +225,7 @@ def run():
     # Pass 1 — keyword queries
     logging.info("Pass 1: PubMed keyword query")
     try:
-        query = PUBMED_QUERY.format(days=LOOKBACK_DAYS)
+        query = PUBMED_QUERY.format(date_from=date_from, date_to=date_to)
         pmids = pubmed_search(query, PUBMED_MAX)
         logging.info(f"  Found {len(pmids)} PMIDs")
         if pmids:
@@ -236,14 +242,14 @@ def run():
     logging.info("Pass 1: bioRxiv keyword queries")
     for term in BIORXIV_SEARCH_TERMS:
         try:
-            preprints = biorxiv_fetch(term, LOOKBACK_DAYS, BIORXIV_MAX)
+            preprints, raw_count = biorxiv_fetch(term, LOOKBACK_DAYS, BIORXIV_MAX)
             for p in preprints:
                 key = p["doi"] or p["title"][:60]
                 if key in all_pubs:
                     p["sowhat"] = all_pubs[key].get("sowhat") or p.get("sowhat")
                     p["category"] = all_pubs[key].get("category") or p.get("category")
                 all_pubs[key] = p
-            logging.info(f"  '{term}': {len(preprints)} preprints")
+            logging.info(f"  '{term}': {len(preprints)} preprints matched (API returned {raw_count} total in window)")
             time.sleep(0.5)
         except requests.RequestException as e:
             logging.error(f"bioRxiv fetch failed for '{term}': {e}")
@@ -258,7 +264,7 @@ def run():
     for company in watchlist:
         try:
             # Search PubMed for company name in title/abstract
-            company_query = f'"{company}"[tiab] AND ("last {LOOKBACK_DAYS} days"[dp])'
+            company_query = f'"{company}"[tiab] AND ("{date_from}"[edat]:"{date_to}"[edat])'
             pmids = pubmed_search(company_query, 20)
             if pmids:
                 time.sleep(0.4)
