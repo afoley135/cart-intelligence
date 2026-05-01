@@ -1,239 +1,7 @@
 {
-  "updated_at": "2026-05-01T15:33:19.957186+00:00",
-  "count": 27,
+  "updated_at": "2026-05-01T16:07:34.939704+00:00",
+  "count": 51,
   "changes": [
-    {
-      "nct_id": "NCT03884751",
-      "change_type": "new_trial",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "title": "Chimeric Antigen Receptor T Cells Targeting Glypican-3",
-      "asset_name": null,
-      "status": "COMPLETED",
-      "phase": [
-        "PHASE1"
-      ],
-      "conditions": [
-        "Hepatocellular Carcinoma"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT03884751",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT03915184",
-      "change_type": "new_trial",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "title": "Clinical Trial to Evaluate Zevor-cel (CT053) in Patients With Relapsed and/or Refractory Multiple Myeloma (LUMMICAR STUDY 2)",
-      "asset_name": null,
-      "status": "ACTIVE_NOT_RECRUITING",
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "conditions": [
-        "Multiple Myeloma"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT03915184",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT04154670",
-      "change_type": "new_trial",
-      "sponsor": "Ensoma",
-      "title": "Study Assessing PK and Safety of MGTA-145 in Subjects With Normal Estimated GFR and Varying Degrees of Renal Impairment",
-      "asset_name": null,
-      "status": "COMPLETED",
-      "phase": [
-        "PHASE1"
-      ],
-      "conditions": [
-        "Healthy",
-        "Renal Insufficiency"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT04154670",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT03932864",
-      "change_type": "new_trial",
-      "sponsor": "Ensoma",
-      "title": "Study Assessing Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of MGTA-145 in Healthy Volunteers as a Single Agent or in Combination With Plerixafor",
-      "asset_name": null,
-      "status": "COMPLETED",
-      "phase": [
-        "PHASE1"
-      ],
-      "conditions": [
-        "Healthy Volunteers"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT03932864",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT05534035",
-      "change_type": "new_trial",
-      "sponsor": "Everest Medicines (Singapore) Pte. Ltd.",
-      "title": "Booster Superiority Study of PTX-COVID19-B Compared to Vaxzevria® in Adults Aged 18 Years and Older",
-      "asset_name": null,
-      "status": "UNKNOWN",
-      "phase": [
-        "PHASE3"
-      ],
-      "conditions": [
-        "SARS-CoV-2 Infection"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT05534035",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT05534048",
-      "change_type": "new_trial",
-      "sponsor": "Everest Medicines (Singapore) Pte. Ltd.",
-      "title": "Booster Study of PTX-COVID19-B in Adults Aged 18 Years and Older",
-      "asset_name": null,
-      "status": "UNKNOWN",
-      "phase": [
-        "PHASE3"
-      ],
-      "conditions": [
-        "SARS-CoV-2 Infection"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT05534048",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT05652920",
-      "change_type": "new_trial",
-      "sponsor": "OriCell Therapeutics Co., Ltd.",
-      "title": "Ori-C101Chimeric Antigen Receptor (CAR) Modified T Cells for the Treatment of HCC",
-      "asset_name": null,
-      "status": "RECRUITING",
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "conditions": [
-        "Hepatocellular Carcinoma"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT05652920",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT03994913",
-      "change_type": "new_trial",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "title": "Clinical Trial to Evaluate CD19 CAR T (CT032) in Patients With Relapsed and/or Refractory Non-Hodgkin's B Cell Lymphoma",
-      "asset_name": null,
-      "status": "COMPLETED",
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "conditions": [
-        "Refractory B-Cell Non-Hodgkin Lymphoma",
-        "Relapsed B-cell Non-Hodgkin Lymphoma"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT03994913",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT06333509",
-      "change_type": "new_trial",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "title": "Anti-GPRC5D CAR-T Cells (CT071) in Participants With RRMM or RRpPCL",
-      "asset_name": null,
-      "status": "NOT_YET_RECRUITING",
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "conditions": [
-        "Multiple Myeloma",
-        "Primary Plasma Cell Leukemia"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT06333509",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT02876978",
-      "change_type": "new_trial",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "title": "Anti-GPC3 CAR T for Recurrent or Refractory Lung Squamous Cell Carcinoma",
-      "asset_name": null,
-      "status": "UNKNOWN",
-      "phase": [
-        "PHASE1"
-      ],
-      "conditions": [
-        "Lung Squamous Cell Carcinoma"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT02876978",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT03975907",
-      "change_type": "new_trial",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "title": "Clinical Trial to Evaluate CT053 in Patients With Relapsed and/or Refractory Multiple Myeloma (LUMMICAR STUDY 1)",
-      "asset_name": null,
-      "status": "UNKNOWN",
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "conditions": [
-        "Multiple Myeloma"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT03975907",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT05946226",
-      "change_type": "new_trial",
-      "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
-      "title": "A Phase I Trial to Evaluate the Safety of IMC002 in Advanced Digestive System Tumors",
-      "asset_name": null,
-      "status": "UNKNOWN",
-      "phase": [
-        "PHASE1"
-      ],
-      "conditions": [
-        "Advanced Digestive System Tumor"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT05946226",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
-    {
-      "nct_id": "NCT05472857",
-      "change_type": "new_trial",
-      "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
-      "title": "Clinical Study of CLDN18.2-targeting CAR T Cells in Advanced Solid Tumors With Positive CLDN18.2 Expression",
-      "asset_name": null,
-      "status": "UNKNOWN",
-      "phase": [
-        "PHASE1"
-      ],
-      "conditions": [
-        "Gastric Cancer",
-        "Pancreatic Cancer",
-        "Advanced Ovarian Carcinoma",
-        "Gastroesophageal Junction Adenocarcinoma"
-      ],
-      "url": "https://clinicaltrials.gov/study/NCT05472857",
-      "detected_at": "2026-05-01T08:07:46.962530+00:00",
-      "reviewed": false
-    },
     {
       "nct_id": "NCT03884751",
       "change_type": "new_trial",
@@ -481,6 +249,678 @@
       ],
       "url": "https://clinicaltrials.gov/study/NCT07556120",
       "detected_at": "2026-04-30T19:32:56.202109+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT03884751",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Chimeric Antigen Receptor T Cells Targeting Glypican-3",
+      "asset_name": null,
+      "status": "COMPLETED",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Hepatocellular Carcinoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT03884751",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT03915184",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Clinical Trial to Evaluate Zevor-cel (CT053) in Patients With Relapsed and/or Refractory Multiple Myeloma (LUMMICAR STUDY 2)",
+      "asset_name": null,
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT03915184",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT07227207",
+      "change_type": "new_trial",
+      "sponsor": "Tessera Therapeutics, Inc.",
+      "title": "A Study of TSRA-196 in Adults With PiZZ Alpha-1 Antitrypsin Deficiency (AATD)",
+      "asset_name": null,
+      "status": "NOT_YET_RECRUITING",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Alpha-1 Antitrypsin Deficiency (AATD)"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT07227207",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06528301",
+      "change_type": "new_trial",
+      "sponsor": "Umoja Biopharma",
+      "title": "A Phase 1 Study of UB-VV111 With and Without Rapamycin in Relapsed/Refractory CD19+ B-cell Malignancies",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Lymphoma, B-Cell",
+        "Lymphoma, Non-Hodgkin (NHL)",
+        "Lymphoma, Large B-Cell, Diffuse (DLBCL)",
+        "Chronic Lymphocytic Leukemia (CLL)"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06528301",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06917742",
+      "change_type": "new_trial",
+      "sponsor": "Capstan Therapeutics",
+      "title": "A Study of Intravenous CPTX2309 in Healthy Participants and Participants With Moderate to Severe Rheumatoid Arthritis (RA) or Systemic Lupus Erythematosus (SLE)",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Healthy Volunteers",
+        "Rheumatoid Arthritis",
+        "Systemic Lupus Erythematosus"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06917742",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06605378",
+      "change_type": "new_trial",
+      "sponsor": "Ensoma",
+      "title": "Prevalence of Antibodies and Cytokines in Participants With Chronic Granulomatous Disease",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [],
+      "conditions": [
+        "Chronic Granulomatous Disease (CGD)"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06605378",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT04154670",
+      "change_type": "new_trial",
+      "sponsor": "Ensoma",
+      "title": "Study Assessing PK and Safety of MGTA-145 in Subjects With Normal Estimated GFR and Varying Degrees of Renal Impairment",
+      "asset_name": null,
+      "status": "COMPLETED",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Healthy",
+        "Renal Insufficiency"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT04154670",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06876363",
+      "change_type": "new_trial",
+      "sponsor": "Ensoma",
+      "title": "Study of EN-374 Gene Therapy in Participants With X-Linked Chronic Granulomatous Disease",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "X-Linked Chronic Granulomatous Disease"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06876363",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05445128",
+      "change_type": "new_trial",
+      "sponsor": "Ensoma",
+      "title": "Study of MGTA-145 and Plerixafor in Patients With Sickle Cell Disease",
+      "asset_name": null,
+      "status": "TERMINATED",
+      "phase": [
+        "PHASE2"
+      ],
+      "conditions": [
+        "Sickle Cell Disease"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05445128",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT04762875",
+      "change_type": "new_trial",
+      "sponsor": "Ensoma",
+      "title": "MGTA-145 + Plerixafor in the Mobilization of HSCs for Allogeneic Transplant in Hematologic Malignancies",
+      "asset_name": null,
+      "status": "TERMINATED",
+      "phase": [
+        "PHASE2"
+      ],
+      "conditions": [
+        "Related Donors Donating PBSC to a Family Member",
+        "Healthy Donors",
+        "Acute Myelogenous Leukemia",
+        "Acute Lymphoblastic Leukemia",
+        "Myelodysplastic Syndrome"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT04762875",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT03932864",
+      "change_type": "new_trial",
+      "sponsor": "Ensoma",
+      "title": "Study Assessing Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of MGTA-145 in Healthy Volunteers as a Single Agent or in Combination With Plerixafor",
+      "asset_name": null,
+      "status": "COMPLETED",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Healthy Volunteers"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT03932864",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05878184",
+      "change_type": "new_trial",
+      "sponsor": "Sana Biotechnology",
+      "title": "Study Evaluating SC291 in Subjects With r/r B-cell Malignancies (ARDENT)",
+      "asset_name": null,
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Non Hodgkin Lymphoma",
+        "Chronic Lymphocytic Leukemia"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05878184",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06285422",
+      "change_type": "new_trial",
+      "sponsor": "Sana Biotechnology",
+      "title": "Study Evaluating SC262 in Subjects With r/r Non-Hodgkin's Lymphoma (VIVID)",
+      "asset_name": null,
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Non Hodgkin's Lymphoma",
+        "Large B-cell Lymphoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06285422",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06294236",
+      "change_type": "new_trial",
+      "sponsor": "Sana Biotechnology",
+      "title": "Study Evaluating SC291 in Subjects With Severe r/r B-cell Mediated Autoimmune Diseases (GLEAM)",
+      "asset_name": null,
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Lupus Erythematosus",
+        "Systemic Lupus Erythematosus",
+        "SLE (Systemic Lupus)",
+        "Anti-Neutrophil Cytoplasmic Antibody-Associated Vasculitis",
+        "Granulomatous Polyangiitis",
+        "Microscopic Polyangiitis"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06294236",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05800873",
+      "change_type": "new_trial",
+      "sponsor": "Everest Medicines (China) Co.,Ltd.",
+      "title": "Evaluate The Efficacy, Safety, Pharmacokinetics And Pharmacodynamics Of EVER001",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Primary Membranous Nephropathy"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05800873",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05534919",
+      "change_type": "new_trial",
+      "sponsor": "Everest Medicines (Singapore) Pte. Ltd.",
+      "title": "Efficacy and Safety in Chinese Patients with Immunoglobulin a Nephropathy (IgAN) Who Have Completed Study Nef-301",
+      "asset_name": null,
+      "status": "COMPLETED",
+      "phase": [
+        "PHASE3"
+      ],
+      "conditions": [
+        "Primary Immunoglobulin a Nephropathy (IgAN)"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05534919",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05534035",
+      "change_type": "new_trial",
+      "sponsor": "Everest Medicines (Singapore) Pte. Ltd.",
+      "title": "Booster Superiority Study of PTX-COVID19-B Compared to Vaxzevria® in Adults Aged 18 Years and Older",
+      "asset_name": null,
+      "status": "UNKNOWN",
+      "phase": [
+        "PHASE3"
+      ],
+      "conditions": [
+        "SARS-CoV-2 Infection"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05534035",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05534048",
+      "change_type": "new_trial",
+      "sponsor": "Everest Medicines (Singapore) Pte. Ltd.",
+      "title": "Booster Study of PTX-COVID19-B in Adults Aged 18 Years and Older",
+      "asset_name": null,
+      "status": "UNKNOWN",
+      "phase": [
+        "PHASE3"
+      ],
+      "conditions": [
+        "SARS-CoV-2 Infection"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05534048",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT07095868",
+      "change_type": "new_trial",
+      "sponsor": "Everest Medicines (Beijing) Co., Ltd.",
+      "title": "Evaluate the Safety, Tolerability, and Preliminary Efficacy of EVM14 Alone and in Combination in Patients With Selected Solid Tumors",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Selected Types of Solid Tumor"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT07095868",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT07439796",
+      "change_type": "new_trial",
+      "sponsor": "Orna Therapeutics, Inc.",
+      "title": "A Study of ORN252 in Healthy Participants",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Healthy Volunteers - Male and Female"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT07439796",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06271252",
+      "change_type": "new_trial",
+      "sponsor": "OriCell Therapeutics Co., Ltd.",
+      "title": "A Study to Evaluate the Safety, PK/PD of (OriCAR-017) in Subjects With RR/MM - RIGEL Study",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Neoplasms, Plasma Cell",
+        "Neoplasms by Histologic Type",
+        "Neoplasms",
+        "Hemostatic Disorders",
+        "Vascular Diseases",
+        "Cardiovascular Diseases",
+        "Paraproteinemias",
+        "Blood Protein Disorders",
+        "Hematologic Diseases",
+        "Hemorrhagic Disorders",
+        "Lymphoproliferative Disorders",
+        "Immunoproliferative Disorders",
+        "Immune System Diseases",
+        "Multiple Myeloma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06271252",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06182696",
+      "change_type": "new_trial",
+      "sponsor": "OriCell Therapeutics Co., Ltd.",
+      "title": "OriCAR-017 Chimeric Antigen Receptor (CAR) Modified T Cells for the Treatment of R/RMM",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Relapsed and/or Refractory Multiple Myeloma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06182696",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05652920",
+      "change_type": "new_trial",
+      "sponsor": "OriCell Therapeutics Co., Ltd.",
+      "title": "Ori-C101Chimeric Antigen Receptor (CAR) Modified T Cells for the Treatment of HCC",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Hepatocellular Carcinoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05652920",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT03994913",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Clinical Trial to Evaluate CD19 CAR T (CT032) in Patients With Relapsed and/or Refractory Non-Hodgkin's B Cell Lymphoma",
+      "asset_name": null,
+      "status": "COMPLETED",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Refractory B-Cell Non-Hodgkin Lymphoma",
+        "Relapsed B-cell Non-Hodgkin Lymphoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT03994913",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06560827",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "CT011 Autologous CAR-T Cells in Patients With Hepatocellular Carcinoma at Risk of Recurrence After Surgical Resection",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "HCC"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06560827",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06825845",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Long Term Follow-up Observational Study in Patients Treated with Gene-Modified T-Cell Therapy",
+      "asset_name": null,
+      "status": "NOT_YET_RECRUITING",
+      "phase": [],
+      "conditions": [
+        "Relapsed or Refractory Multiple Myeloma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06825845",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT04400383",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Clinical Trial to Evaluate AB011 Injection in Patients With CLDN18.2-positive Advanced Solid Tumors",
+      "asset_name": null,
+      "status": "COMPLETED",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Solid Tumor",
+        "Gastric Cancer",
+        "Pancreatic Adenocarcinoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT04400383",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06659770",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "A Real-World Observational Study: Zevorcabtagene Autoleucel Injection in Patients with Relapsed/Refractory Multiple Myeloma",
+      "asset_name": null,
+      "status": "NOT_YET_RECRUITING",
+      "phase": [],
+      "conditions": [
+        "Relapsed/Refractory Multiple Myeloma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06659770",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05911217",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "A Study to Evaluate the Efficacy and Safety of CT041 After Adjuvant Chemotherapy for Pancreatic Cancer",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Pancreatic Cancer"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05911217",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT04581473",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Study to Evaluate the Efficacy, Safety and Pharmacokinetics of CT041 Autologous CAR T-cell Injection",
+      "asset_name": null,
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Gastric Adenocarcinoma",
+        "Pancreatic Cancer",
+        "Gastroesophageal Junction Adenocarcinoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT04581473",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT06333509",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Anti-GPRC5D CAR-T Cells (CT071) in Participants With RRMM or RRpPCL",
+      "asset_name": null,
+      "status": "NOT_YET_RECRUITING",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Multiple Myeloma",
+        "Primary Plasma Cell Leukemia"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06333509",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT02876978",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Anti-GPC3 CAR T for Recurrent or Refractory Lung Squamous Cell Carcinoma",
+      "asset_name": null,
+      "status": "UNKNOWN",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Lung Squamous Cell Carcinoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT02876978",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT03975907",
+      "change_type": "new_trial",
+      "sponsor": "CARsgen Therapeutics Co., Ltd.",
+      "title": "Clinical Trial to Evaluate CT053 in Patients With Relapsed and/or Refractory Multiple Myeloma (LUMMICAR STUDY 1)",
+      "asset_name": null,
+      "status": "UNKNOWN",
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "conditions": [
+        "Multiple Myeloma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT03975907",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05946226",
+      "change_type": "new_trial",
+      "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
+      "title": "A Phase I Trial to Evaluate the Safety of IMC002 in Advanced Digestive System Tumors",
+      "asset_name": null,
+      "status": "UNKNOWN",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Advanced Digestive System Tumor"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05946226",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT07493135",
+      "change_type": "new_trial",
+      "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
+      "title": "A Study of IMV102 in Patients With Relapsed/Refractory Multiple Myeloma",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "EARLY_PHASE1"
+      ],
+      "conditions": [
+        "Relapsed/Refractory Multiple Myeloma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT07493135",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT05472857",
+      "change_type": "new_trial",
+      "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
+      "title": "Clinical Study of CLDN18.2-targeting CAR T Cells in Advanced Solid Tumors With Positive CLDN18.2 Expression",
+      "asset_name": null,
+      "status": "UNKNOWN",
+      "phase": [
+        "PHASE1"
+      ],
+      "conditions": [
+        "Gastric Cancer",
+        "Pancreatic Cancer",
+        "Advanced Ovarian Carcinoma",
+        "Gastroesophageal Junction Adenocarcinoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05472857",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
+      "reviewed": false
+    },
+    {
+      "nct_id": "NCT07103668",
+      "change_type": "new_trial",
+      "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
+      "title": "A Phase III Randomized Study in CLDN18.2-positive Unresectable Locally Advanced Gastric Cancer Patients",
+      "asset_name": null,
+      "status": "RECRUITING",
+      "phase": [
+        "PHASE3"
+      ],
+      "conditions": [
+        "Gastric Adenocarcinoma"
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT07103668",
+      "detected_at": "2026-05-01T16:07:34.936629+00:00",
       "reviewed": false
     }
   ]
