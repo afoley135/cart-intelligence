@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-01T14:24:18.369605+00:00",
-  "count": 290,
+  "fetched_at": "2026-05-01T15:33:19.958530+00:00",
+  "count": 250,
   "studies": [
     {
       "nct_id": "NCT06696846",
@@ -125,7 +125,7 @@
       ],
       "summary": "This is an open label, single arm study, to evaluate safety, tolerability and preliminary efficacy of HN2301 in patients with Generalized Myasthenia Gravis.",
       "url": "https://clinicaltrials.gov/study/NCT07556120",
-      "asset_name": null,
+      "asset_name": "HN2301",
       "sowhat": "MagicRNA explores non-CAR immunotherapy for autoimmune disease, signaling expansion beyond oncology focus.",
       "ai_modality": "Not reported"
     },
@@ -191,7 +191,7 @@
       "url": "https://clinicaltrials.gov/study/NCT06801119",
       "asset_name": "HN2301",
       "sowhat": "Chinese biotech tests cell therapy in autoimmune diseases, signaling CAR-T expansion beyond oncology into inflammatory indications.",
-      "ai_modality": "In vivo CAR-T — LNP"
+      "ai_modality": "Not reported"
     },
     {
       "nct_id": "NCT04483778",
@@ -314,39 +314,6 @@
       "sowhat": "CD4CAR targets T-cell malignancies by engineering T-cells against CD4, addressing treatment-resistant hematologic cancers."
     },
     {
-      "nct_id": "NCT06876363",
-      "title": "Study of EN-374 Gene Therapy in Participants With X-Linked Chronic Granulomatous Disease",
-      "sponsor": "Ensoma",
-      "modality": "Not reported",
-      "conditions": [
-        "X-Linked Chronic Granulomatous Disease"
-      ],
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "EN-374"
-      ],
-      "primary_outcomes": [
-        "Safety of EN-374"
-      ],
-      "enrollment": 15,
-      "start_date": "2025-08-05",
-      "first_posted": "",
-      "last_updated": "2026-04-27",
-      "countries": [
-        "United States",
-        "United Kingdom"
-      ],
-      "summary": "The goal of this clinical trial is to evaluate the safety and potential efficacy of the EN-374 treatment regimen and identify a dose level for further evaluation in participants with x-linked chronic granulomatous disease.\n\nThe main questions it aims to answer are:\n\n* safety of the EN-374 treatment regimen\n* effect of the EN-374 treatment regimen on the production of functional neutrophils with NADPH oxidase activity",
-      "url": "https://clinicaltrials.gov/study/NCT06876363",
-      "asset_name": "EN-374",
-      "sowhat": "Ensoma targets rare monogenic disease with ex vivo gene therapy, sidestepping in vivo CAR-T complexity.",
-      "ai_modality": "Not reported"
-    },
-    {
       "nct_id": "NCT07549698",
       "title": "Safety and Preliminary Efficacy of CTX112 in Adult Participants With Relapsed/Refractory Hematologic Autoimmune Disease",
       "sponsor": "CRISPR Therapeutics AG",
@@ -414,8 +381,8 @@
       "first_posted": "",
       "last_updated": "2026-04-24",
       "countries": [
-        "United States",
-        "Australia"
+        "Australia",
+        "United States"
       ],
       "summary": "The goal of this clinical trial is to evaluate the safety, tolerability, and recommended Phase 2 Dose (RP2D) of KLN-1010 in patients with relapsed or refractory multiple myeloma.",
       "url": "https://clinicaltrials.gov/study/NCT07075185",
@@ -557,37 +524,6 @@
       "url": "https://clinicaltrials.gov/study/NCT01953900",
       "asset_name": null,
       "sowhat": "Baylor's GD2-CAR-T with VZV cytokine control advances safety strategy for refractory pediatric solid tumors."
-    },
-    {
-      "nct_id": "NCT07059169",
-      "title": "CAR-T Therapy for Refractory Autoimmune Diseases",
-      "sponsor": "LiangZou",
-      "modality": "In vivo CAR-T",
-      "conditions": [
-        "Autoimmune Diseases"
-      ],
-      "phase": [
-        "NA"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "JY231 (JY231 injection)"
-      ],
-      "primary_outcomes": [
-        "Incidence of adverse events(AE) after infusion",
-        "Maximal Tolerated Dose(MTD)"
-      ],
-      "enrollment": 20,
-      "start_date": "2025-08-04",
-      "first_posted": "",
-      "last_updated": "2026-04-22",
-      "countries": [
-        "China"
-      ],
-      "summary": "This study is an investigator-initiated single center, single arm clinical study with a target population of patients with refractory autoimmune diseases. It is an early exploratory clinical study of the safety, tolerability and initial efficacy of CD19 CAR-T in the treatment of refractory autoimmune diseases.",
-      "url": "https://clinicaltrials.gov/study/NCT07059169",
-      "asset_name": null,
-      "sowhat": "In vivo CAR-T moves beyond oncology into autoimmune space, validating B-cell depletion strategy for refractory patients."
     },
     {
       "nct_id": "NCT07539688",
@@ -749,37 +685,6 @@
       "sowhat": "CAR-T targeting CD19 in relapsed/refractory CLL demonstrates foundational safety and efficacy in early-stage development."
     },
     {
-      "nct_id": "NCT07439796",
-      "title": "A Study of ORN252 in Healthy Participants",
-      "sponsor": "Orna Therapeutics, Inc.",
-      "modality": "Not reported",
-      "conditions": [
-        "Healthy Volunteers - Male and Female"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "ORN252"
-      ],
-      "primary_outcomes": [
-        "The incidence and severity of safety, clinical, and laboratory abnormalities in healthy adult participants."
-      ],
-      "enrollment": 20,
-      "start_date": "2026-03-16",
-      "first_posted": "",
-      "last_updated": "2026-04-16",
-      "countries": [
-        "Australia"
-      ],
-      "summary": "The purpose of this study is to assess the safety and tolerability of ORN252 in healthy adult participants.",
-      "url": "https://clinicaltrials.gov/study/NCT07439796",
-      "asset_name": "ORN252",
-      "sowhat": "Orna advances in vivo CAR-T manufacturing with first-in-human safety data for ORN252.",
-      "ai_modality": "In vivo CAR-T — LNP"
-    },
-    {
       "nct_id": "NCT06968195",
       "title": "Autologous CAR T Cells Targeting GPC3 (RPCAR01) for the Treatment of Advanced or Metastatic GPC3 Expressing Hepatocellular Carcinoma",
       "sponsor": "Roswell Park Cancer Institute",
@@ -854,7 +759,7 @@
       ],
       "summary": "This is an open-label, single-arm study designed to evaluate the safety and preliminary efficacy of HN2302 in patients with autoimmune diseases, including systemic lupus erythematosus (SLE) and systemic sclerosis (SSc).",
       "url": "https://clinicaltrials.gov/study/NCT07523282",
-      "asset_name": null,
+      "asset_name": "HN2302",
       "sowhat": "CAR-T expansion into autoimmune disease represents major market opportunity beyond oncology, signaling therapeutic class maturation.",
       "ai_modality": "Not reported"
     },
@@ -1130,8 +1035,8 @@
       "first_posted": "",
       "last_updated": "2026-04-03",
       "countries": [
-        "United States",
-        "Australia"
+        "Australia",
+        "United States"
       ],
       "summary": "This is an open label, multicenter, phase 1/2 dose evaluation and cohort expansion study evaluating the safety and efficacy of CTX131 in subjects with Relapsed/Refractory Hematologic Malignancies",
       "url": "https://clinicaltrials.gov/study/NCT06492304",
@@ -1168,48 +1073,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07508605",
       "asset_name": null,
       "sowhat": "Dual-target CAR/TRuC-T with in vivo persistence monitoring advances China's competitive position in relapsed/refractory B-cell lymphoma."
-    },
-    {
-      "nct_id": "NCT06917742",
-      "title": "A Study of Intravenous CPTX2309 in Healthy Participants and Participants With Moderate to Severe Rheumatoid Arthritis (RA) or Systemic Lupus Erythematosus (SLE)",
-      "sponsor": "Capstan Therapeutics",
-      "modality": "Not reported",
-      "conditions": [
-        "Healthy Volunteers",
-        "Rheumatoid Arthritis",
-        "Systemic Lupus Erythematosus"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CPTX2309",
-        "CPTX2309"
-      ],
-      "primary_outcomes": [
-        "Number of participants with changes in the safety parameters",
-        "Number of participants with clinical laboratory assessment abnormalities",
-        "Number of participants with changes in the vital signs",
-        "Number of participants with changes in the ECG",
-        "Number of participants who develop anti-drug antibodies (ADAs) and Circulating Immune Complex (CIC) formation",
-        "Part A and B: Number of participants with change from baseline in vaccine antibody titers",
-        "Changes in serum cytokine and chemokine levels that are known to be associated with CAR-T cell therapy related toxicity",
-        "Change from baseline in soluble immunoglobulins (Ig)",
-        "Part C and D: Change from baseline in vaccination-induced antibody titers"
-      ],
-      "enrollment": 64,
-      "start_date": "2025-04-09",
-      "first_posted": "",
-      "last_updated": "2026-04-01",
-      "countries": [
-        "Australia"
-      ],
-      "summary": "The purpose of this study is to assess the safety and tolerability of CPTX2309 in healthy adult participants and adult participants with moderate to severe rheumatoid arthritis or systemic lupus erythematosus.",
-      "url": "https://clinicaltrials.gov/study/NCT06917742",
-      "asset_name": "CPTX2309",
-      "sowhat": "CAR-T therapy expanding into autoimmune diseases; validates cell therapy's potential beyond oncology indications.",
-      "ai_modality": "Not reported"
     },
     {
       "nct_id": "NCT07500805",
@@ -1344,37 +1207,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07376642",
       "asset_name": "IMV101",
       "sowhat": "Chinese biotech enters competitive CAR-T lymphoma space with early-stage IMV101 candidate.",
-      "ai_modality": "Not reported"
-    },
-    {
-      "nct_id": "NCT07493135",
-      "title": "A Study of IMV102 in Patients With Relapsed/Refractory Multiple Myeloma",
-      "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed/Refractory Multiple Myeloma"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "IMV102 treatment"
-      ],
-      "primary_outcomes": [
-        "To evaluate the safety of IMV102 injection in patients with relapsed/refractory multiple myeloma"
-      ],
-      "enrollment": 30,
-      "start_date": "2026-03-31",
-      "first_posted": "",
-      "last_updated": "2026-03-30",
-      "countries": [
-        "China"
-      ],
-      "summary": "This is an investigator-initiated, single-center, early-phase clinical study comprising dose escalation and dose expansion phases, designed to evaluate the safety and efficacy of IMV102 in subjects with relapsed/refractory multiple myeloma (RRMM). Eligible subjects will receive an infusion of IMV102 injection. Blood and urine samples will be collected before and after infusion for pharmacokinetic, pharmacodynamic, immunogenicity, and safety assessments.\n\nTumor response will be evaluated according to the International Myeloma Working Group (IMWG) uniform response criteria (2016). Assessments will be performed at baseline, and then at Day 28 post-infusion, Month 2, Month 3, and subsequently every 3 months from Month 3 to Month 24, until the subject completes the 24-month follow-up period, experiences disease progression (PD)/relapse, initiates new anti-tumor therapy, dies, or withdraws from the study, whichever occurs first.",
-      "url": "https://clinicaltrials.gov/study/NCT07493135",
-      "asset_name": "IMV102",
-      "sowhat": "Chinese biotech enters competitive MM CAR-T space with early-phase candidate IMV102 safety/efficacy study.",
       "ai_modality": "Ex vivo CAR-T — Autologous"
     },
     {
@@ -1598,44 +1430,6 @@
       "sowhat": "Dual-engineered CAR-T with IL-8 sensing tackles pediatric brain tumors; validates immunosuppressive microenvironment targeting."
     },
     {
-      "nct_id": "NCT07470151",
-      "title": "Clinical Study of EVM18001 in the Treatment of Refractory Autoimmune Diseases",
-      "sponsor": "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology",
-      "modality": "Not reported",
-      "conditions": [
-        "System Lupus Erythematosus(SLE)",
-        "Scleroderma",
-        "Myasthenia Gravis (MG)"
-      ],
-      "phase": [
-        "NA"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "EVM18001 Injection"
-      ],
-      "primary_outcomes": [
-        "Evaluate the safety/tolerability of EVM18001 in patients with SLE/MG/SSc by rates and severity of AE/SAE.",
-        "Determine the subsequent recommended dose of EVM18001 in patients with SLE/MG/SSc.",
-        "Evaluate the efficacy of EVM18001 in patients with SLE/MG/SSc by proportion of patients get relief during the whole study.",
-        "Evaluate the efficacy of EVM18001 in patients with SLE/MG/SSc by Duration of Response (DOR).",
-        "Cmax of EVM18001 and CAR-T cells.",
-        "AUC0-t of EVM18001 and CAR-T cells.",
-        "Detection of CAR expression on the surface of immune cells in peripheral blood."
-      ],
-      "enrollment": 12,
-      "start_date": "2026-03-12",
-      "first_posted": "",
-      "last_updated": "2026-03-13",
-      "countries": [
-        "China"
-      ],
-      "summary": "A FIH, single arm, open-label, Investigator Initiated Trial (IIT) study to evaluate the safety and tolerability of EVM18001 in the treatment of active refractory autoimmune diseases (SLE, MG, and SSc), and determine the recommended dose for subsequent treatment. At the same time, the PK/PD characteristics of EVM18001 will be evaluated, preliminary efficacy will be observed, and related biomarkers and immunogenicity will be explored.",
-      "url": "https://clinicaltrials.gov/study/NCT07470151",
-      "asset_name": null,
-      "sowhat": "CAR-T expands beyond oncology into autoimmune disease with early safety/efficacy signals across SLE, scleroderma, myasthenia gravis."
-    },
-    {
       "nct_id": "NCT07448298",
       "title": "A Clinical Study of AFN50 in the Treatment of Autoimmune Diseases",
       "sponsor": "Beijing Boren Hospital",
@@ -1664,37 +1458,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07448298",
       "asset_name": null,
       "sowhat": "Emerging competitor testing CAR-T in autoimmune space; signals potential market expansion beyond oncology."
-    },
-    {
-      "nct_id": "NCT06822881",
-      "title": "CT1190B in the Treatment of Patients With Moderate to Severe Refractory Systemic Lupus Erythematosus (SLE) or Refractory/Progressive Systemic Sclerosis (SSc)",
-      "sponsor": "Beijing GoBroad Hospital",
-      "modality": "Not reported",
-      "conditions": [
-        "Systemic Lupus Erythematosus (SLE)",
-        "Systemic Sclerosis (SSc)"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CAR-T Therapy"
-      ],
-      "primary_outcomes": [
-        "The incidence rate and severity of dose limiting toxicity (DLT), adverse events (AE), serious adverse events (SAE), and AESI (adverse events of particular concern)"
-      ],
-      "enrollment": 27,
-      "start_date": "2025-02-20",
-      "first_posted": "",
-      "last_updated": "2026-03-10",
-      "countries": [
-        "China"
-      ],
-      "summary": "A Clinical Study Exploring CT1190B in the treatment of patients with moderate to severe refractory systemic lupus erythematosus (SLE) or refractory/progressive systemic sclerosis (SSc)",
-      "url": "https://clinicaltrials.gov/study/NCT06822881",
-      "asset_name": null,
-      "sowhat": "CAR-T expands into autoimmune space, targeting B cells in refractory lupus and systemic sclerosis."
     },
     {
       "nct_id": "NCT05353530",
@@ -1986,35 +1749,6 @@
       "sowhat": "China advances CD19 CAR-T in relapsed/refractory LBCL, expanding competitive landscape beyond established Western players."
     },
     {
-      "nct_id": "NCT06605378",
-      "title": "Prevalence of Antibodies and Cytokines in Participants With Chronic Granulomatous Disease",
-      "sponsor": "Ensoma",
-      "modality": "Not reported",
-      "conditions": [
-        "Chronic Granulomatous Disease (CGD)"
-      ],
-      "phase": [],
-      "status": "RECRUITING",
-      "interventions": [],
-      "primary_outcomes": [
-        "Total adenoviral-specific antibody (TAb) titer",
-        "Adenoviral-specific neutralizing antibody (NAb) titer"
-      ],
-      "enrollment": 60,
-      "start_date": "2024-11-18",
-      "first_posted": "",
-      "last_updated": "2026-03-03",
-      "countries": [
-        "United States",
-        "United Kingdom"
-      ],
-      "summary": "This research study is designed to assess the prevalence of specific antibodies and inflammatory cytokines in adult and pediatric participants with CGD.",
-      "url": "https://clinicaltrials.gov/study/NCT06605378",
-      "asset_name": null,
-      "sowhat": "Ensoma mapping immune landscape in CGD to inform future in vivo cell therapy efficacy and safety strategies.",
-      "ai_modality": "Not reported"
-    },
-    {
       "nct_id": "NCT05870917",
       "title": "A Study of VRD-based Regimen Combined With CART-ASCT-CART2 Treatment in Patients With Primary Plasma Cell Leukemia",
       "sponsor": "Institute of Hematology & Blood Diseases Hospital, China",
@@ -2243,7 +1977,8 @@
       "summary": "This clinical trial is designed to evaluate the safety, pharmacokinetics, pharmacodynamics, and preliminary efficacy of MT-304 in adults with advanced HER2-expressing solid tumors. The main questions it aims to answer are:\n\n* What is the safety profile of MT-304 when administered alone or with nivolumab?\n* What is the recommended Phase 2 dose (RP2D) of MT-304?\n\nParticipants will:\n\n* Receive MT-304 alone (every 14 days) or with nivolumab (every 28 days).\n* Attend regular clinic visits for assessments and monitoring.\n* Continue treatment until disease progression, unacceptable toxicity, or study discontinuation.",
       "url": "https://clinicaltrials.gov/study/NCT07334119",
       "asset_name": null,
-      "sowhat": "MT-304 targets HER2+ solid tumors, expanding CAR-T beyond hematologic malignancies with checkpoint inhibitor combination potential."
+      "sowhat": "MT-304 targets HER2+ solid tumors, expanding CAR-T beyond hematologic malignancies with checkpoint inhibitor combination potential.",
+      "ai_modality": null
     },
     {
       "nct_id": "NCT07413341",
@@ -3225,81 +2960,6 @@
       "sowhat": "IL-15 armored GPC3-CAR-T expands pediatric solid tumor addressability beyond hematologic malignancies in early development."
     },
     {
-      "nct_id": "NCT07333196",
-      "title": "Tongji NADs Cohort",
-      "sponsor": "Tongji Hospital",
-      "modality": "Not reported",
-      "conditions": [
-        "Multiple Sclerosis",
-        "NMO Spectrum Disorder",
-        "Autoimmune Encephalitis",
-        "Myelin Oligodendrocyte Glycoprotein Antibody-associated Disease",
-        "Autoimmune Nodopathy",
-        "Acute Inflammatory Demyelinating Polyradiculoneuropathy",
-        "Chronic Inflammatory Demyelinating Polyradiculoneuropathy",
-        "Myasthenia Gravis",
-        "Idiopathic Inflammatory Myopathies"
-      ],
-      "phase": [],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "No active interventions"
-      ],
-      "primary_outcomes": [
-        "EDSS Score",
-        "modified Rankin Score",
-        "MMT-8 Score",
-        "QMG Score",
-        "Annual recurrence rate",
-        "Adverse event"
-      ],
-      "enrollment": 1550,
-      "start_date": "2026-03-01",
-      "first_posted": "",
-      "last_updated": "2026-01-21",
-      "countries": [
-        "China"
-      ],
-      "summary": "Neurological Autoimmune Diseases (NADs) are disorders caused by abnormal immune system attacks on neural tissues, affecting multiple systems including the central nervous system, peripheral nervous system, and neuromuscular junctions. This study examines clinically significant NADs such as multiple sclerosis (MS), neuromyelitis optica spectrum disorders (NMOSD), myelin oligodendrocyte glycoprotein G antibody-related diseases (MOGAD), autoimmune encephalitis (AE), immune-mediated peripheral neuropathy (PN), myasthenia gravis (MG), and idiopathic inflammatory myopathy (IIM). While sharing the core pathogenesis of autoimmune response, these diseases exhibit significant heterogeneity in epidemiological patterns, clinical manifestations, therapeutic approaches, and disease progression. This heterogeneity stems from multiple factors: (1) Differences in immune targets: MS primarily involves T-cell-mediated myelin attack, NMOSD is mainly driven by astrocyte damage caused by anti-AQP4 antibodies, MOGAD results from myelin surface loss mediated by antibodies against myelin oligodendrocyte glycoprotein immunoglobulin G, while AE involves synaptic dysfunction due to antibodies against neuronal surface proteins (e.g., anti-NMDA-R antibodies); (2) Genetic-environmental interactions: MS is more prevalent in European and American populations, whereas NMOSD is more aggressive in Asian populations; (3) Variability in treatment response: Some diseases respond well to immunomodulatory therapy, but most still face challenges such as high relapse rates, progressive disability accumulation, and irreversible neurological damage.\n\nWhile randomized controlled trials (RCTs) provide high-quality core evidence for drug registration, their strict inclusion/exclusion criteria, relatively homogeneous patient populations, and short-term observation designs often fail to fully capture the complex disease progression and treatment response patterns in real-world clinical settings. Additionally, long-term RCTs are frequently constrained by economic factors and sustainability challenges. Therefore, conducting comprehensive real-world observational studies (RWS) on NADs-integrating multi-disease cohorts, long-term follow-up data, and diverse clinical practices-holds significant scientific and clinical value for optimizing treatment strategies and improving long-term patient outcomes.",
-      "url": "https://clinicaltrials.gov/study/NCT07333196",
-      "asset_name": null,
-      "sowhat": "Tongji explores cell therapy potential across seven neurological autoimmune diseases, signaling expansion beyond traditional CAR-T oncology applications."
-    },
-    {
-      "nct_id": "NCT07355972",
-      "title": "Safety, Efficacy and Cellular Metabolic Dynamics of CT1195E in Patients With Refractory / Progressive SSC",
-      "sponsor": "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology",
-      "modality": "Not reported",
-      "conditions": [
-        "SSc-Systemic Sclerosis"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CAR-T Therapy"
-      ],
-      "primary_outcomes": [
-        "The maximum tolerable dose (MTD) and / or dose range of CT1195E were evaluated",
-        "severity of dose limiting toxicity (DLT)",
-        "severity of adverse events (AES)",
-        "Incidence of adverse events (AES)",
-        "Incidence of dose limiting toxicity (DLT)"
-      ],
-      "enrollment": 12,
-      "start_date": "2026-01-16",
-      "first_posted": "",
-      "last_updated": "2026-01-21",
-      "countries": [
-        "China"
-      ],
-      "summary": "This study is a single arm, open label, exploratory dose escalation clinical study to evaluate the safety, efficacy, and cellular metabolic dynamics of ct1195e cells in patients with SSc.\n\nThe study was divided into dose escalation phase and dose expansion phase.",
-      "url": "https://clinicaltrials.gov/study/NCT07355972",
-      "asset_name": null,
-      "sowhat": "Early-stage CAR-T exploration into autoimmune systemic sclerosis signals potential expansion beyond hematologic malignancies."
-    },
-    {
       "nct_id": "NCT07349849",
       "title": "Exploratory Study on mRNA Therapeutic Drug Targeting CD19 for the Treatment of Hematologic Malignancies",
       "sponsor": "Xinqiao Hospital of Chongqing",
@@ -3450,40 +3110,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07098364",
       "asset_name": null,
       "sowhat": "Combining IL-18 cytokine with CD19 CAR-T to enhance anti-tumor immunity in heavily pretreated B-cell lymphomas."
-    },
-    {
-      "nct_id": "NCT07339332",
-      "title": "A Clinical Study Exploring the Safety, Efficacy and Cell Metabolic Dynamics of Universal CD19 / 20 Car-t Cell Injection in Moderate to Severe Refractory Systemic Lupus Erythematosus",
-      "sponsor": "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology",
-      "modality": "Not reported",
-      "conditions": [
-        "Systemic Lupus Erythematosus (SLE)"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CAR-T Therapy"
-      ],
-      "primary_outcomes": [
-        "severity of dose limiting toxicity (DLT)",
-        "Incidence of dose limiting toxicity (DLT)",
-        "Evaluate the maximum tolerable dose (MTD) and/or dose range of ct1195E",
-        "severity of adverse events (AES)",
-        "Incidence of adverse events (AES)"
-      ],
-      "enrollment": 12,
-      "start_date": "2026-01-16",
-      "first_posted": "",
-      "last_updated": "2026-01-14",
-      "countries": [
-        "China"
-      ],
-      "summary": "This study is a single arm, open, exploratory dose escalation clinical study to evaluate the safety, efficacy, and cellular metabolic dynamics of ct1195e cells in patients with SLE.",
-      "url": "https://clinicaltrials.gov/study/NCT07339332",
-      "asset_name": null,
-      "sowhat": "CAR-T expansion into autoimmune disease validates dual-targeting approach for treatment-refractory SLE patients."
     },
     {
       "nct_id": "NCT07336823",
@@ -3641,42 +3267,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07309900",
       "asset_name": null,
       "sowhat": "Chinese academic center advances early-stage CAR-T for relapsed/refractory B-cell malignancies via dose-escalation safety study."
-    },
-    {
-      "nct_id": "NCT06528301",
-      "title": "A Phase 1 Study of UB-VV111 With and Without Rapamycin in Relapsed/Refractory CD19+ B-cell Malignancies",
-      "sponsor": "Umoja Biopharma",
-      "modality": "Not reported",
-      "conditions": [
-        "Lymphoma, B-Cell",
-        "Lymphoma, Non-Hodgkin (NHL)",
-        "Lymphoma, Large B-Cell, Diffuse (DLBCL)",
-        "Chronic Lymphocytic Leukemia (CLL)"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "UB-VV111",
-        "rapamycin"
-      ],
-      "primary_outcomes": [
-        "Percentage of participants with common adverse events (AEs)"
-      ],
-      "enrollment": 106,
-      "start_date": "2025-03-10",
-      "first_posted": "",
-      "last_updated": "2026-01-12",
-      "countries": [
-        "United States",
-        "Australia"
-      ],
-      "summary": "This study is a Phase 1 dose-escalation and dose-confirmation study to evaluate the safety and antitumor activity of UB-VV111. The study will enroll patients with relapsed/refractory large B-cell lymphoma (LBCL) and chronic lymphocytic leukemia (CLL).",
-      "url": "https://clinicaltrials.gov/study/NCT06528301",
-      "asset_name": "UB-VV111",
-      "sowhat": "Umoja's dual-arm rapamycin co-treatment strategy tests immunosuppression timing in relapsed/refractory CD19+ malignancies.",
-      "ai_modality": "Ex vivo CAR-T — Allogeneic"
     },
     {
       "nct_id": "NCT07324889",
@@ -4056,9 +3646,9 @@
       "first_posted": "",
       "last_updated": "2025-12-24",
       "countries": [
+        "Chile",
         "Spain",
-        "Argentina",
-        "Chile"
+        "Argentina"
       ],
       "summary": "This is a phase 2 multi-cohort, un-controlled, non-randomized, open-label, multi-center study that assessed the antitumor activity and safety of non-alpha interleukin (IL-2) SAR444245 with or without other anticancer therapies in participants aged 12 years and older with relapsed or refractory B cell lymphoma. This study was structured as a master protocol with separate sub studies designed to investigate the use of SAR444245 either with or without other anticancer therapies for the treatment of relapsed or refractory B cell lymphoma.\n\nSubstudy 1-Cohort A aimed to establish safety and preliminary anti-tumor activity for non-alpha interleukin (IL-2) SAR444245 combined with the anti-PD1 antibody, pembrolizumab in trial participants with classic Hodgkin lymphoma (cHL) who are anti-PD-(L)1-naive and have received at least 2 or 3 lines of systemic therapy.\n\nSubstudy 3-Cohort C1 aims to establish safety and preliminary anti-tumor activity for SAR444245 as monotherapy in trial participants with diffuse large B-cell lymphoma (DLBCL). Trial participants in this study must have received at least 2 lines of systemic therapy and have either stable or progressive disease 1-3 months post Health Authority approved Chimeric Antigen Receptor T-cell (CAR-T) treatment when given as last systemic treatment prior to study enrollment.",
       "url": "https://clinicaltrials.gov/study/NCT05179603",
@@ -4095,8 +3685,8 @@
       "last_updated": "2025-12-18",
       "countries": [
         "Australia",
-        "South Korea",
-        "Taiwan"
+        "Taiwan",
+        "South Korea"
       ],
       "summary": "This is a multicenter, open-label, Phase 1, first-in-human, dose-escalation study designed to assess the safety, tolerability and define the RP2D of MT-303 alone (Module 1) and in combination with Atezo/Bev (Module 2) in participants with advanced hepatocellular carcinoma expressing GPC3.",
       "url": "https://clinicaltrials.gov/study/NCT06478693",
@@ -4132,8 +3722,8 @@
       "first_posted": "",
       "last_updated": "2025-12-17",
       "countries": [
-        "United States",
-        "Germany"
+        "Germany",
+        "United States"
       ],
       "summary": "This is a single-arm, open-label, multicenter, ascending dose Phase 1 study evaluating the safety and preliminary efficacy of CTX112 in adult subjects with refractory autoimmune diseases, including active systemic lupus erythematosus (SLE), systemic sclerosis (SSc), or idiopathic inflammatory myopathy (IIM).",
       "url": "https://clinicaltrials.gov/study/NCT06925542",
@@ -4302,8 +3892,8 @@
       "first_posted": "",
       "last_updated": "2025-12-05",
       "countries": [
-        "United States",
-        "Australia"
+        "Australia",
+        "United States"
       ],
       "summary": "The overarching objective of this study is to use novel precision medicine strategies based on inherited and acquired leukemia-specific genomic features and targeted treatment approaches to improve the cure rate and quality of life of children with acute lymphoblastic leukemia (ALL) and acute lymphoblastic lymphoma (LLy).\n\nPrimary Therapeutic Objectives:\n\n* To improve the event-free survival of provisional standard- or high-risk patients with genetically or immunologically targetable lesions or minimal residual disease (MRD) ≥ 5% at Day 15 or Day 22 or ≥1% at the end of Remission Induction, by the addition of molecular and immunotherapeutic approaches including tyrosine kinase inhibitors or chimeric antigen receptor (CAR) T cell / blinatumomab for refractory B-acute lymphoblastic leukemia (B-ALL) or B-lymphoblastic lymphoma (B-LLy), and the proteasome inhibitor bortezomib for those lacking targetable lesions.\n* To improve overall treatment outcome of T acute lymphoblastic leukemia (T-ALL) and T-lymphoblastic lymphoma (T-LLy) by optimizing pegaspargase and cyclophosphamide treatment and by the addition of new agents in patients with targetable genomic abnormalities (e.g., activated tyrosine kinases or JAK/STAT mutations) or by the addition of bortezomib for those who have a poor early response to treatment but no targetable lesions, and by administering nelarabine to T-ALL and T-LLy patients with leukemia/lymphoma cells in cerebrospinal fluid at diagnosis or MRD ≥0.01% at the end of induction.\n* To determine in a randomized study design whether the incidence and/or severity of acute vincristine-induced peripheral neuropathy can be reduced by decreasing the dosage of vincristine in patients with the high-risk CEP72 TT genotype or by shortening the duration of vincristine therapy in standard/high-risk patients with the CEP72 CC or CT genotype.\n\nSecondary Therapeutic Objectives:\n\n* To estimate the event-free survival and overall survival of children with ALL and to assess the non-inferiority of TOTXVII compared to the historical control given by TOTXVI.\n* To estimate the event-free survival and overall survival of children with LLy when ALL diagnostic and treatment approaches are used.\n* To evaluate the efficacy of blinatumomab in B-ALL patients with end of induction MRD ≥0.01% to \\<1% and those (regardless of MRD level or TOTXVII risk category) with the genetic subtypes of BCR-ABL1, ABL-class fusion, JAK-STAT activating mutation, hypodiploid, iAMP21, ETV6-RUNX1-like, MEF2D, TCF3-HLF, or BCL2/MYC or with Down syndrome, by comparing event-free survival to historical control from TOTXVI.\n* To determine the tolerability of combination therapy with ruxolitinib and Early Intensification therapy in patients with activation of JAK-STAT signaling that can be inhibited by ruxolitinib and Day 15 or Day 22 MRD ≥5%, Day 42 MRD ≥1%, or LLy patients without complete response at the End of Induction and all patients with early T cell precursor leukemia.\n\nBiological Objectives:\n\n* To use data from clinical genomic sequencing of diagnosis, germline/remission and MRD samples to guide therapy, including incorporation of targeted agents and institution of genetic counseling and cancer surveillance.\n* To evaluate and implement deoxyribonucleic acid (DNA) and ribonucleic acid (RNA) sequencing-based methods to monitor levels of MRD in bone marrow, blood, and cerebrospinal fluid.\n* To assess clonal diversity and evolution of pre-leukemic and leukemic populations using DNA variant detection and single-cell genomic analyses in a non-clinical, research setting.\n* To identify germline or somatic genomic variants associated with drug resistance of ALL cells to conventional and newer targeted anti-leukemic agents in a non-clinical, research setting.\n* To compare drug sensitivity of ALL cells from diagnosis to relapse in vitro and in vivo and determine if acquired resistance to specific agents is related to specific somatic genome variants that are not detected or found in only a minor clone at initial diagnosis.\n\nSupportive Care Objectives\n\n* To conduct serial neurocognitive monitoring of patients to investigate the neurocognitive trajectory, mechanisms, and risk factors.\n* To evaluate the impact of low-magnitude high frequency mechanical stimulation on bone mineral density and markers of bone turnover.\n\nThere are several Exploratory Objectives.",
       "url": "https://clinicaltrials.gov/study/NCT03117751",
@@ -4445,38 +4035,6 @@
       "sowhat": "Observational study mapping enteric virus-driven hepatitis risk in primary immunodeficiency patients; no CAR-T relevance."
     },
     {
-      "nct_id": "NCT06285422",
-      "title": "Study Evaluating SC262 in Subjects With r/r Non-Hodgkin's Lymphoma (VIVID)",
-      "sponsor": "Sana Biotechnology",
-      "modality": "Not reported",
-      "conditions": [
-        "Non Hodgkin's Lymphoma",
-        "Large B-cell Lymphoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "SC262"
-      ],
-      "primary_outcomes": [
-        "Evaluate safety and tolerability of SC262"
-      ],
-      "enrollment": 6,
-      "start_date": "2024-04-18",
-      "first_posted": "",
-      "last_updated": "2025-11-28",
-      "countries": [
-        "United States"
-      ],
-      "summary": "SC262-101 is a Phase 1 study to evaluate SC262 safety and tolerability, anti-tumor activity, cellular kinetics, immunogenicity, and exploratory biomarkers.",
-      "url": "https://clinicaltrials.gov/study/NCT06285422",
-      "asset_name": "SC262",
-      "sowhat": "Sana advances in vivo CAR-T candidate SC262 into lymphoma, potentially avoiding ex vivo manufacturing bottlenecks.",
-      "ai_modality": "Not reported"
-    },
-    {
       "nct_id": "NCT07250386",
       "title": "A Study of CEA-Targeted CAR-T Therapy in Patients With CEA-Positive Advanced Solid Tumors",
       "sponsor": "Second Affiliated Hospital, School of Medicine, Zhejiang University",
@@ -4578,73 +4136,6 @@
       "sowhat": "Bioray enters CAR-T competition with modest Phase 1 B-NHL study; limited data on differentiation strategy."
     },
     {
-      "nct_id": "NCT06294236",
-      "title": "Study Evaluating SC291 in Subjects With Severe r/r B-cell Mediated Autoimmune Diseases (GLEAM)",
-      "sponsor": "Sana Biotechnology",
-      "modality": "Not reported",
-      "conditions": [
-        "Lupus Erythematosus",
-        "Systemic Lupus Erythematosus",
-        "SLE (Systemic Lupus)",
-        "Anti-Neutrophil Cytoplasmic Antibody-Associated Vasculitis",
-        "Granulomatous Polyangiitis",
-        "Microscopic Polyangiitis"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "SC291"
-      ],
-      "primary_outcomes": [
-        "Evaluate safety and tolerability of SC291"
-      ],
-      "enrollment": 7,
-      "start_date": "2024-04-29",
-      "first_posted": "",
-      "last_updated": "2025-11-25",
-      "countries": [
-        "United States"
-      ],
-      "summary": "SC291-102 is a Phase 1 study to evaluate SC291 safety and tolerability, preliminary clinical response, cellular kinetics and exploratory assessments for subjects with severe autoimmune diseases.",
-      "url": "https://clinicaltrials.gov/study/NCT06294236",
-      "asset_name": "SC291",
-      "sowhat": "Sana pursues in vivo CAR-T for autoimmune diseases, expanding beyond oncology into large patient populations.",
-      "ai_modality": "In vivo CAR-T — Other"
-    },
-    {
-      "nct_id": "NCT07031713",
-      "title": "Safety, Efficacy and Cellular Metabolic Dynamics of ct1192 in Patients With Moderate to Severe Refractory SLE",
-      "sponsor": "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology",
-      "modality": "Not reported",
-      "conditions": [
-        "Systemic Lupus Erythematosus (SLE)"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CAR-T Therapy"
-      ],
-      "primary_outcomes": [
-        "To evaluate the safety and tolerability of ct1192 in participants with moderate to severe refractory SLE",
-        "Evaluate the maximum tolerable dose (MTD) and/or dose range of ct1192"
-      ],
-      "enrollment": 12,
-      "start_date": "2025-07-11",
-      "first_posted": "",
-      "last_updated": "2025-11-24",
-      "countries": [
-        "China"
-      ],
-      "summary": "A clinical study to explore the safety, efficacy and cell metabolic kinetics of universal CD19/20 car-t cell injection in moderate to severe refractory systemic lupus erythematosus.\n\nThis study is a single arm, open, exploratory dose increasing clinical study, which aims to evaluate the safety, efficacy and cell metabolic dynamics of ct1192 cells in patients with SLE.",
-      "url": "https://clinicaltrials.gov/study/NCT07031713",
-      "asset_name": null,
-      "sowhat": "CAR-T targeting CD19/20 expands autoimmune disease applications beyond hematologic malignancies into refractory SLE."
-    },
-    {
       "nct_id": "NCT07240857",
       "title": "A Clinical Study Evaluating the Safety and Efficacy of Local Injection of ACT#001 Chimeric Antigen Receptor T Cells in the Treatment of Castration-Resistant Prostate Cancer",
       "sponsor": "Zhejiang University",
@@ -4704,42 +4195,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07240974",
       "asset_name": null,
       "sowhat": "Chinese academic center advances early CAR-T candidate against chemotherapy-resistant B-cell malignancies."
-    },
-    {
-      "nct_id": "NCT07095868",
-      "title": "Evaluate the Safety, Tolerability, and Preliminary Efficacy of EVM14 Alone and in Combination in Patients With Selected Solid Tumors",
-      "sponsor": "Everest Medicines (Beijing) Co., Ltd.",
-      "modality": "Not reported",
-      "conditions": [
-        "Selected Types of Solid Tumor"
-      ],
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "EVM14",
-        "Pembrolizumab"
-      ],
-      "primary_outcomes": [
-        "Phase I and Phase IIa: Incidence and severity of adverse events",
-        "Phase I: Incidence of dose-limiting toxicities (DLT)",
-        "Phase IIa tumor type 1: Progression-free survival (PFS)"
-      ],
-      "enrollment": 94,
-      "start_date": "2025-11-17",
-      "first_posted": "",
-      "last_updated": "2025-11-21",
-      "countries": [
-        "United States",
-        "China"
-      ],
-      "summary": "Brief Summary:\n\nThe purpose of this clinical trial is to evaluate the safety, tolerability, preliminary efficacy, and immunogenicity of EVM14 administered intramuscularly (IM) alone and in combination with pembrolizumab in patients with selected solid tumors.",
-      "url": "https://clinicaltrials.gov/study/NCT07095868",
-      "asset_name": "EVM14",
-      "sowhat": "Everest pursues intramuscular CAR-T for solid tumors, combining with checkpoint inhibitor to overcome immunosuppressive microenvironment.",
-      "ai_modality": "Not reported"
     },
     {
       "nct_id": "NCT07239323",
@@ -4869,8 +4324,8 @@
       "first_posted": "",
       "last_updated": "2025-11-14",
       "countries": [
-        "United States",
-        "Australia"
+        "Australia",
+        "United States"
       ],
       "summary": "This is an open-label, multicenter, Phase 1/2 study evaluating the safety and efficacy of CTX112™ in subjects with relapsed or refractory B-cell malignancies.",
       "url": "https://clinicaltrials.gov/study/NCT05643742",
@@ -4906,38 +4361,6 @@
       "url": "https://clinicaltrials.gov/study/NCT05010564",
       "asset_name": null,
       "sowhat": "Trivalent targeting expands CAR-T specificity against relapsed/refractory ALL beyond current dual-antigen approaches."
-    },
-    {
-      "nct_id": "NCT07227207",
-      "title": "A Study of TSRA-196 in Adults With PiZZ Alpha-1 Antitrypsin Deficiency (AATD)",
-      "sponsor": "Tessera Therapeutics, Inc.",
-      "modality": "Not reported",
-      "conditions": [
-        "Alpha-1 Antitrypsin Deficiency (AATD)"
-      ],
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "TSRA-196"
-      ],
-      "primary_outcomes": [
-        "Part 1 (Dose Escalation): Incidence of treatment-emergent adverse events (TEAEs) and serious adverse events (SAEs)",
-        "Part 2 (Dose Expansion): Proportion of participants who have serum levels of total alpha-1 antitrypsin (AAT) greater than or equal to Lower Limit of Normal (LLN) after TSRA-196 treatment",
-        "Part 3 (Single Repeated Dose): Proportion of participants who have serum levels of total alpha-1 antitrypsin (AAT) greater than or equal to Lower Limit of Normal (LLN) after a second dose of TSRA-196"
-      ],
-      "enrollment": 72,
-      "start_date": "2025-12",
-      "first_posted": "",
-      "last_updated": "2025-11-12",
-      "countries": [],
-      "summary": "This is a Phase 1/2, open-label, multi-center, dose escalation (Part 1), dose expansion (Part 2), and single repeat dose (Part 3) study to evaluate the safety, tolerability, efficacy, and PK/PD parameters of TSRA-196 in adults with the PiZZ genotype who have lung and/or liver disease associated with severe alpha-1 antitrypsin deficiency (AATD)",
-      "url": "https://clinicaltrials.gov/study/NCT07227207",
-      "asset_name": "TSRA-196",
-      "sowhat": "CAR-T expands beyond oncology into genetic liver-lung disease, validating ex vivo cell therapy for non-cancer protein deficiency.",
-      "ai_modality": "In vivo CAR-T — Viral vector"
     },
     {
       "nct_id": "NCT06198296",
@@ -5040,140 +4463,17 @@
       "first_posted": "",
       "last_updated": "2025-10-24",
       "countries": [
-        "Canada",
         "Australia",
-        "France",
-        "United States",
+        "Germany",
         "Spain",
-        "Germany"
+        "France",
+        "Canada",
+        "United States"
       ],
       "summary": "This is an open-label, multicenter, Phase 1/2 study evaluating the safety and efficacy of CTX110 in subjects with relapsed or refractory B-cell malignancies.",
       "url": "https://clinicaltrials.gov/study/NCT04035434",
       "asset_name": null,
       "sowhat": "CRISPR's ex vivo CAR-T advances toward potentially differentiated B-cell therapy with established manufacturing scale-up capability."
-    },
-    {
-      "nct_id": "NCT03047369",
-      "title": "The Myelin Disorders Biorepository Project",
-      "sponsor": "Children's Hospital of Philadelphia",
-      "modality": "Not reported",
-      "conditions": [
-        "Leukodystrophy",
-        "White Matter Disease",
-        "Leukoencephalopathies",
-        "4H Syndrome",
-        "Adrenoleukodystrophy",
-        "AMN",
-        "ALD",
-        "ALD Gene Mutation",
-        "ALD (Adrenoleukodystrophy)",
-        "X-linked Adrenoleukodystrophy",
-        "X-ALD",
-        "Adrenomyeloneuropathy",
-        "Aicardi Goutieres Syndrome",
-        "AGS",
-        "Alexander Disease",
-        "Alexanders Leukodystrophy",
-        "AxD",
-        "ADLD",
-        "Canavan Disease",
-        "CTX",
-        "Cerebrotendinous Xanthomatoses",
-        "Krabbe Disease",
-        "GALC Deficiency",
-        "Globoid Leukodystrophy",
-        "TUBB4A-Related Leukodystrophy",
-        "H-ABC - Hypomyelination, Atrophy of Basal Ganglia and Cerebellum",
-        "HBSL",
-        "HBSL - Hypomyelination, Brain Stem, Spinal Cord, Leg Spasticity",
-        "LBSL",
-        "Leukoencephalopathy With Brain Stem and Spinal Cord Involvement and High Lactate Syndrome (Disorder)",
-        "Leukoencephalopathy With Brainstem and Spinal Cord Involvement and Lactate Elevation",
-        "ALSP",
-        "CSF1R Gene Mutation",
-        "HCC - Hypomyelination and Congenital Cataract",
-        "MLC1",
-        "Megalencephalic Leukoencephalopathy With Subcortical Cysts",
-        "MLD",
-        "Metachromatic Leukodystrophy",
-        "PMD",
-        "Pelizaeus-Merzbacher Disease",
-        "PLP1 Null Syndrome",
-        "PLP1 Gene Duplication &#X7C; Blood or Tissue &#X7C; Mutations",
-        "Pelizaeus Merzbacher Like Disease",
-        "Peroxisomal Biogenesis Disorder",
-        "Zellweger Syndrome",
-        "Refsum Disease",
-        "Salla Disease",
-        "Sialic Storage Disease",
-        "Sjögren",
-        "Sjogren-Larsson Syndrome",
-        "Van Der Knapp Disease",
-        "Vanishing White Matter Disease",
-        "Charcot-Marie-Tooth",
-        "CMT",
-        "Mct8 (Slc16A2)-Specific Thyroid Hormone Cell Transporter Deficiency",
-        "Allan-Herndon-Dudley Syndrome",
-        "Cadasil",
-        "Cockayne Syndrome",
-        "Multiple Sulfatase Deficiency",
-        "Gangliosidoses",
-        "GM2 Gangliosidosis",
-        "BPAN",
-        "Labrune Syndrome",
-        "LCC",
-        "Mucopolysaccharidoses",
-        "TBCK-Related Intellectual Disability Syndrome"
-      ],
-      "phase": [],
-      "status": "RECRUITING",
-      "interventions": [],
-      "primary_outcomes": [
-        "Define Novel Homogeneous Groups of Patients with Unclassified Leukodystrophy"
-      ],
-      "enrollment": 12000,
-      "start_date": "2016-12-08",
-      "first_posted": "",
-      "last_updated": "2025-10-23",
-      "countries": [
-        "United States"
-      ],
-      "summary": "The Myelin Disorders Biorepository Project (MDBP) seeks to collect and analyze clinical data and biological samples from leukodystrophy patients worldwide to support ongoing and future research projects. The MDBP is one of the world's largest leukodystrophy biorepositories, having enrolled nearly 2,000 affected individuals since it was launched over a decade ago.\n\nResearchers working in the biorepository hope to use these materials to uncover new genetic etiologies for various leukodystrophies, develop biomarkers for use in future clinical trials, and better understand the natural history of these disorders. The knowledge gained from these efforts may help improve the diagnostic tools and treatment options available to patients in the future.",
-      "url": "https://clinicaltrials.gov/study/NCT03047369",
-      "asset_name": null,
-      "sowhat": "CHOP biorepository of 2,000 leukodystrophy patients enables gene therapy and cell therapy development through biomarker discovery."
-    },
-    {
-      "nct_id": "NCT07103668",
-      "title": "A Phase III Randomized Study in CLDN18.2-positive Unresectable Locally Advanced Gastric Cancer Patients",
-      "sponsor": "Suzhou Immunofoco Biotechnology Co., Ltd",
-      "modality": "Not reported",
-      "conditions": [
-        "Gastric Adenocarcinoma"
-      ],
-      "phase": [
-        "PHASE3"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CAR T cells",
-        "Control"
-      ],
-      "primary_outcomes": [
-        "PFS"
-      ],
-      "enrollment": 150,
-      "start_date": "2025-08-06",
-      "first_posted": "",
-      "last_updated": "2025-10-23",
-      "countries": [
-        "China"
-      ],
-      "summary": "An open-label, randomized, comparative phase II study including patients with CLDN18.2-positive unresectable locally advanced gastric cancer. To evaluate the objective response rate (ORR) and progression-free survival (PFS) of IMC002 compared with investigator's choice of treatment (ICT) as third-line or later therapy in patients with unresectable locally advanced or metastatic gastric or gastroesophageal junction adenocarcinoma with positive CLDN18.2 expression.",
-      "url": "https://clinicaltrials.gov/study/NCT07103668",
-      "asset_name": "IMC002",
-      "sowhat": "CLDN18.2-targeting therapy IMC002 challenges standard-of-care in heavily pretreated gastric cancer beyond CAR-T.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
     },
     {
       "nct_id": "NCT04678336",
@@ -5231,17 +4531,17 @@
       "last_updated": "2025-10-07",
       "countries": [
         "Australia",
-        "France",
-        "United Kingdom",
-        "Japan",
-        "Austria",
-        "United States",
         "Italy",
         "Norway",
-        "Spain",
+        "United Kingdom",
         "Netherlands",
+        "Spain",
+        "Japan",
         "Belgium",
-        "Germany"
+        "France",
+        "Germany",
+        "United States",
+        "Austria"
       ],
       "summary": "This is a multi-center, phase II study to determine the efficacy and safety of tisagenlecleucel in adult patients with relapsed or refractory FL.",
       "url": "https://clinicaltrials.gov/study/NCT03568461",
@@ -5408,71 +4708,6 @@
       "sowhat": "Gamma-delta CAR-T in bladder cancer expands cell therapy beyond alphabeta T cells into solid tumors."
     },
     {
-      "nct_id": "NCT05878184",
-      "title": "Study Evaluating SC291 in Subjects With r/r B-cell Malignancies (ARDENT)",
-      "sponsor": "Sana Biotechnology",
-      "modality": "Not reported",
-      "conditions": [
-        "Non Hodgkin Lymphoma",
-        "Chronic Lymphocytic Leukemia"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "SC291"
-      ],
-      "primary_outcomes": [
-        "Evaluate safety and tolerability of SC291"
-      ],
-      "enrollment": 16,
-      "start_date": "2023-05-02",
-      "first_posted": "",
-      "last_updated": "2025-10-02",
-      "countries": [
-        "United States",
-        "Australia"
-      ],
-      "summary": "SC291-101 is a Phase 1 study to evaluate SC291 safety and tolerability, anti-tumor activity, cellular kinetics, immunogenicity, and exploratory biomarkers.",
-      "url": "https://clinicaltrials.gov/study/NCT05878184",
-      "asset_name": "SC291",
-      "sowhat": "Sana's in vivo CAR-T candidate SC291 enters clinic against B-cell malignancies; early kinetics data critical for allogeneic cell therapy viability.",
-      "ai_modality": "In vivo CAR-T — Other"
-    },
-    {
-      "nct_id": "NCT06730256",
-      "title": "A Study of CT0596 in Relapsed/Refractory Multiple Myeloma and Relapsed/ Refractory Plasma Cell Leukemia",
-      "sponsor": "The First Affiliated Hospital of Soochow University",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed/Refractory Plasma Cell Leukemia",
-        "Relapsed/Refractory Multiple Myeloma"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CAR-T cells Infusion chimeric antigen receptor T cells"
-      ],
-      "primary_outcomes": [
-        "Adverse Events (AE) after CT0596 infusion",
-        "Maximum tolerated dose and/or dose range"
-      ],
-      "enrollment": 24,
-      "start_date": "2025-07-23",
-      "first_posted": "",
-      "last_updated": "2025-10-01",
-      "countries": [
-        "China"
-      ],
-      "summary": "A Clinical Study to Explore the Safety, Efficacy, and Cellular Metabolic Dynamics of CT0596 CAR-T Cell Injection in Patients With Relapsed/Refractory Multiple Myeloma and Plasma Cell Leukemia.",
-      "url": "https://clinicaltrials.gov/study/NCT06730256",
-      "asset_name": null,
-      "sowhat": "Chinese institution advances dual-indication CAR-T for hard-to-treat myeloma, signaling metabolic optimization focus."
-    },
-    {
       "nct_id": "NCT06347718",
       "title": "CAR-T Cells in Systemic B Cell Mediated Autoimmune Disease",
       "sponsor": "Miltenyi Biomedicine GmbH",
@@ -5505,39 +4740,6 @@
       "url": "https://clinicaltrials.gov/study/NCT06347718",
       "asset_name": null,
       "sowhat": "Miltenyi expands CAR-T beyond oncology into autoimmune disease, targeting systemic B-cell disorders with ex vivo engineering."
-    },
-    {
-      "nct_id": "NCT04756648",
-      "title": "Phase I Clinical Trial of CT0180 Cells in the Treatment of Hepatocellular Carcinoma",
-      "sponsor": "Zhejiang University",
-      "modality": "Not reported",
-      "conditions": [
-        "Advanced Hepatocellular Carcinoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "CT0180 Cells"
-      ],
-      "primary_outcomes": [
-        "Dose-Limiting Toxicity（DLT）",
-        "Maximal Tolerable Dose（MTD）",
-        "Adverse Event（AE）",
-        "Adverse Event of Special Interest （ AESI）"
-      ],
-      "enrollment": 21,
-      "start_date": "2021-03-10",
-      "first_posted": "",
-      "last_updated": "2025-09-29",
-      "countries": [
-        "China"
-      ],
-      "summary": "A Phase I Clinical Study ofCT0180 cells in Patients with Advanced Hepatocellular Carcinoma",
-      "url": "https://clinicaltrials.gov/study/NCT04756648",
-      "asset_name": null,
-      "sowhat": "China's academic sector expands CAR-T into solid tumors, testing hepatocellular carcinoma efficacy despite manufacturing opacity."
     },
     {
       "nct_id": "NCT04697940",
@@ -5668,8 +4870,8 @@
       "countries": [
         "Spain",
         "France",
-        "Sweden",
-        "Germany"
+        "Germany",
+        "Sweden"
       ],
       "summary": "The purpose of this adaptive Phase 1/2 study is to evaluate the safety, tolerability, pharmacokinetics (PK), and antileukemic activity of CCTx-001 in adult patients with r/r Acute Myeloid Leukemia (AML). CCTx-001 targets IL-1RAP, which is specifically expressed in leukemic cells. In preclinical studies, IL-1RAP-targeted Chimeric antigen receptors (CARs) have demonstrated encouraging activity in both in vitro and in vivo experiments in AML models. Based on these promising preclinical results, it is expected that CCTx-001 could potentially alter the natural course of r/r AML and provide a potential novel treatment option.",
       "url": "https://clinicaltrials.gov/study/NCT06281847",
@@ -6192,8 +5394,8 @@
       "first_posted": "",
       "last_updated": "2025-08-07",
       "countries": [
-        "United States",
-        "United Kingdom"
+        "United Kingdom",
+        "United States"
       ],
       "summary": "Long-term follow-up of patients exposed to an AUTO CAR T cell therapy for up to 15 years following their first AUTO CAR T cell therapy infusion.",
       "url": "https://clinicaltrials.gov/study/NCT03628612",
@@ -6498,42 +5700,6 @@
       "url": "https://clinicaltrials.gov/study/NCT07085676",
       "asset_name": null,
       "sowhat": "CAR-T targeting BCMA expands autoimmune indication portfolio beyond oncology into systemic diseases."
-    },
-    {
-      "nct_id": "NCT05445128",
-      "title": "Study of MGTA-145 and Plerixafor in Patients With Sickle Cell Disease",
-      "sponsor": "Ensoma",
-      "modality": "Not reported",
-      "conditions": [
-        "Sickle Cell Disease"
-      ],
-      "phase": [
-        "PHASE2"
-      ],
-      "status": "TERMINATED",
-      "interventions": [
-        "MGTA-145",
-        "Plerixafor"
-      ],
-      "primary_outcomes": [
-        "Apheresis Collection Yield",
-        "Assess Number of Participants With Treatment Emergent Adverse Events Leading to Study Drug Discontinuation Based on the National Cancer Institute (NCI) Common Terminology Criteria for Adverse Events (CTCAE) Version 5.0.",
-        "Assess the Number of Participants With Treatment Emergent >/= Grade 3 Clinical Laboratory Abnormalities Based on the National Cancer Institute (NCI) Common Terminology Criteria for Adverse Events (CTCAE) Version 5.0.",
-        "Vital Signs - Number of Participants With Clinically Significant Changes From Baseline in Vital Signs",
-        "Laboratory Assessment - Number of Participants With Clinically Significant Changes From Baseline in Hematology and Clinical Chemistry Laboratory Parameters."
-      ],
-      "enrollment": 1,
-      "start_date": "2022-06-24",
-      "first_posted": "",
-      "last_updated": "2025-07-25",
-      "countries": [
-        "United States"
-      ],
-      "summary": "This research study is designed to investigate a new potential medicine for mobilizing stem cells and apheresis collection in patients with Sickle Cell Disease. MGTA-145, the new potential medicine, will be given with plerixafor.",
-      "url": "https://clinicaltrials.gov/study/NCT05445128",
-      "asset_name": "MGTA-145",
-      "sowhat": "Ensoma's stem cell mobilization strategy positions autologous gene therapy as direct CAR-T alternative for genetic blood disorders.",
-      "ai_modality": "Not reported"
     },
     {
       "nct_id": "NCT07066397",
@@ -6850,37 +6016,6 @@
       "sowhat": "Dual gene knockout CAR-T targets exhaustion and proliferation limits, positioning next-generation cellular persistence."
     },
     {
-      "nct_id": "NCT07033299",
-      "title": "The Safety, Efficacy, and Cellular Metabolic Kinetics of CT1192 in Treating Patients With Anti Neutrophil Cytoplasmic Antibody Associated Vasculitis",
-      "sponsor": "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology",
-      "modality": "Not reported",
-      "conditions": [
-        "ANCA Associated Vasculitis (AAV)"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "CAR-T Therapy"
-      ],
-      "primary_outcomes": [
-        "Evaluate the safety and tolerability of CT1192 in patients with ANCA associated vasculitis",
-        "Evaluate the maximum tolerable dose (MTD) and/or dose range of CT1192"
-      ],
-      "enrollment": 12,
-      "start_date": "2025-07-01",
-      "first_posted": "",
-      "last_updated": "2025-06-24",
-      "countries": [
-        "China"
-      ],
-      "summary": "A clinical study exploring the safety, efficacy, and cellular metabolic kinetics of universal CD19/20 CAR-T cell injection in anti neutrophil cytoplasmic antibody associated vasculitis.\n\nThis study is a single arm, open label, exploratory dose escalation clinical trial aimed at evaluating the safety, efficacy, and cellular metabolic dynamics of CT1192 cells in patients with ANCA associated vasculitis.",
-      "url": "https://clinicaltrials.gov/study/NCT07033299",
-      "asset_name": null,
-      "sowhat": "CAR-T expands beyond hematologic malignancies into autoimmune disease, targeting dual B-cell antigens in vasculitis."
-    },
-    {
       "nct_id": "NCT04848493",
       "title": "National Project on Vaccines, COVID-19 and Frail Patients",
       "sponsor": "Azienda USL Reggio Emilia - IRCCS",
@@ -7047,43 +6182,6 @@
       "sowhat": "Chinese center tests CD19 CAR-T consolidation strategy combining engineered feeding T cells in Ph+ B-ALL."
     },
     {
-      "nct_id": "NCT04581473",
-      "title": "Study to Evaluate the Efficacy, Safety and Pharmacokinetics of CT041 Autologous CAR T-cell Injection",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "modality": "Ex vivo CAR-T",
-      "conditions": [
-        "Gastric Adenocarcinoma",
-        "Pancreatic Cancer",
-        "Gastroesophageal Junction Adenocarcinoma"
-      ],
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "CT041 autologous CAR T-cell injection",
-        "Physician's Choice（Paclitaxel or Irinotecan or Apatinib or Anti-PD-1 antibody）"
-      ],
-      "primary_outcomes": [
-        "Phase Ib: Incidence of Treatment Related adverse events (AEs)",
-        "Phase Ib: Identification of Maximum Tolerated Dose (MTD)",
-        "Phase II: Progression-free survival (PFS), as assessed by IRC, of CT041 autologous CAR T-cell injection versus Physician's Choice"
-      ],
-      "enrollment": 192,
-      "start_date": "2020-10-23",
-      "first_posted": "",
-      "last_updated": "2025-06-05",
-      "countries": [
-        "China"
-      ],
-      "summary": "An open, multicenter, phase Ib/II study to evaluate the efficacy, safety and pharmacokinetics of CT041 autologous CAR T-cell injection in patients with advanced gastric/ gastroesophageal junction adenocarcinoma and pancreatic cancer",
-      "url": "https://clinicaltrials.gov/study/NCT04581473",
-      "asset_name": "CT041",
-      "sowhat": "CARsgen expands solid tumor CAR-T beyond hematologic malignancies with CT041 in GI and pancreatic cancers.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
-    },
-    {
       "nct_id": "NCT06945523",
       "title": "Clinical Study on Chimeric Antigen Receptor T Lymphocyte (CAR-T) Targeting CEA for the Treatment of CEA - Positive Advanced Lung Cancer",
       "sponsor": "Chongqing Precision Biotech Co., Ltd",
@@ -7208,42 +6306,6 @@
       "url": "https://clinicaltrials.gov/study/NCT02975687",
       "asset_name": null,
       "sowhat": "Split-dose CD19 CAR-T shows feasibility in refractory ALL, validating dose-escalation strategies in early-stage Chinese programs."
-    },
-    {
-      "nct_id": "NCT05800873",
-      "title": "Evaluate The Efficacy, Safety, Pharmacokinetics And Pharmacodynamics Of EVER001",
-      "sponsor": "Everest Medicines (China) Co.,Ltd.",
-      "modality": "Not reported",
-      "conditions": [
-        "Primary Membranous Nephropathy"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "EVER001",
-        "EVER001"
-      ],
-      "primary_outcomes": [
-        "adverse events",
-        "clinical laboratory assessments.",
-        "vital signs.",
-        "physical examination",
-        "ECG."
-      ],
-      "enrollment": 30,
-      "start_date": "2023-05-15",
-      "first_posted": "",
-      "last_updated": "2025-05-31",
-      "countries": [
-        "China"
-      ],
-      "summary": "EVER001 is a highly selective, oral, reversable, covalent Bruton tyrosine kinase (BTK) inhibitor with high selectivity over other kinases, which is being developed to treat proteinuric glomerular diseases.\n\nThe overall aim of the study is to evaluate the efficacy, safety, pharmacokinetics and pharmacodynamics of EVER001 in subjects with selected proteinuric glomerular diseases. The first targeted disease is primary membranous nephropathy.",
-      "url": "https://clinicaltrials.gov/study/NCT05800873",
-      "asset_name": "EVER001",
-      "sowhat": "BTK inhibition bypasses CAR-T entirely; oral small molecule threatens cell therapy dominance in membranous nephropathy.",
-      "ai_modality": "Not reported"
     },
     {
       "nct_id": "NCT06992583",
@@ -7474,7 +6536,7 @@
       "url": "https://clinicaltrials.gov/study/NCT06890065",
       "asset_name": "JY231",
       "sowhat": "Chinese biotech validates in vivo CAR-T safety in relapsed/refractory B-cell malignancies, signaling commercialization intent.",
-      "ai_modality": "Ex vivo CAR-T — Allogeneic"
+      "ai_modality": "Ex vivo CAR-T — Autologous"
     },
     {
       "nct_id": "NCT02663297",
@@ -7853,38 +6915,6 @@
       "sowhat": "Chinese team expands CAR-T addressable market beyond standard targets via ESO antigen approach in MM."
     },
     {
-      "nct_id": "NCT06891742",
-      "title": "Phase I Study of OriC902 in Treatment of Advanced HCC",
-      "sponsor": "Peking University",
-      "modality": "Not reported",
-      "conditions": [
-        "HCC"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "OriC902"
-      ],
-      "primary_outcomes": [
-        "MTD or biologically effective dose",
-        "RP2D",
-        "Incidence and severity of AE and SAE,"
-      ],
-      "enrollment": 44,
-      "start_date": "2025-02-24",
-      "first_posted": "",
-      "last_updated": "2025-03-24",
-      "countries": [
-        "China"
-      ],
-      "summary": "This is a Phase I clinical study evaluating the safety, pharmacokinetics, and initial efficacy of a GPC3-targeted chimeric antigen receptor autologous T cell injection (OriC902) in GPC3-positive advanced hepatocellular carcinoma (HCC) subjects",
-      "url": "https://clinicaltrials.gov/study/NCT06891742",
-      "asset_name": null,
-      "sowhat": "China's GPC3-CAR-T advances in HCC, validating solid tumor potential beyond hematologic malignancies."
-    },
-    {
       "nct_id": "NCT06887985",
       "title": "JY231(JY231) Injection for the Treatment of Refractory Autoimmune Diseases (ADs)",
       "sponsor": "He Huang",
@@ -7912,38 +6942,6 @@
       "url": "https://clinicaltrials.gov/study/NCT06887985",
       "asset_name": null,
       "sowhat": "CAR-T pivots beyond oncology into autoimmune space, signaling therapeutic class expansion beyond hematologic malignancies."
-    },
-    {
-      "nct_id": "NCT06541639",
-      "title": "EVM16 Injection As a Single and Combination with Tislelizumab in Solid Tumors",
-      "sponsor": "Peking University",
-      "modality": "Not reported",
-      "conditions": [
-        "Advanced or Recurrent Solid Tumors"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "EVM16",
-        "Tislelizumab"
-      ],
-      "primary_outcomes": [
-        "safety and tolerability",
-        "RP2D for EVM16"
-      ],
-      "enrollment": 78,
-      "start_date": "2025-03-04",
-      "first_posted": "",
-      "last_updated": "2025-03-18",
-      "countries": [
-        "China"
-      ],
-      "summary": "The goal of this clinical trial is to learn the side effects, safety and effect of a tumor vaccine (EVM16) alone or in combined with an anti-PD-1 antibody (tislelizumab) . This clinical trial will include solid tumor patients who failed standard treatment.\n\nThe main questions to answer are:\n\nSafety of EVM16. Suitable dose of EVM16. Effects of EVM16 combined with tislelizumab.",
-      "url": "https://clinicaltrials.gov/study/NCT06541639",
-      "asset_name": null,
-      "sowhat": "Chinese group advances personalized neoantigen vaccine strategy as potential CAR-T alternative for solid tumors."
     },
     {
       "nct_id": "NCT06879470",
@@ -8106,33 +7104,6 @@
       "url": "https://clinicaltrials.gov/study/NCT02905188",
       "asset_name": null,
       "sowhat": "Glypican-3 CAR-T targets previously intractable HCC, expanding solid tumor potential beyond hematologic malignancies."
-    },
-    {
-      "nct_id": "NCT06825845",
-      "title": "Long Term Follow-up Observational Study in Patients Treated with Gene-Modified T-Cell Therapy",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed or Refractory Multiple Myeloma"
-      ],
-      "phase": [],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "Zevorcabtagene Autoleucel"
-      ],
-      "primary_outcomes": [
-        "To assess the risk of delayed AEs following exposure to GM T cells"
-      ],
-      "enrollment": 1500,
-      "start_date": "2025-03-31",
-      "first_posted": "",
-      "last_updated": "2025-02-13",
-      "countries": [],
-      "summary": "This is a prospective long-term follow-up (LTFU) study to evaluate the long-term safety and survival benefit for patients who received at least one of CARsgen's GM T cell product in a clinical trial or as a commercially available product. In this study, patients will be followed for up to 15 years after last GM T-cell infusion for the evaluation of delayed adverse events (AEs), vector persistence, potential risk for integration, and survival time due to GM T-cell exposure.",
-      "url": "https://clinicaltrials.gov/study/NCT06825845",
-      "asset_name": "Not reported\n\nThe intervention is listed as \"Zevorcabtagene Autoleucel\" (a generic/branded name for a CAR-T therapy), but no specific alp",
-      "sowhat": "CARsgen's 15-year follow-up validates long-term safety profile critical for CAR-T commercial adoption in myeloma.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
     },
     {
       "nct_id": "NCT06791681",
@@ -8427,10 +7398,10 @@
       "first_posted": "",
       "last_updated": "2025-01-08",
       "countries": [
-        "United States",
-        "Canada",
         "Australia",
-        "Spain"
+        "Spain",
+        "Canada",
+        "United States"
       ],
       "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX120 in subjects with relapsed or refractory multiple myeloma.",
       "url": "https://clinicaltrials.gov/study/NCT04244656",
@@ -8461,10 +7432,10 @@
       "first_posted": "",
       "last_updated": "2025-01-08",
       "countries": [
-        "United States",
-        "Canada",
         "Australia",
-        "Netherlands"
+        "Canada",
+        "Netherlands",
+        "United States"
       ],
       "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX130 in subjects with relapsed or refractory renal cell carcinoma.",
       "url": "https://clinicaltrials.gov/study/NCT04438083",
@@ -8500,8 +7471,8 @@
       "first_posted": "",
       "last_updated": "2025-01-08",
       "countries": [
-        "United States",
-        "Canada"
+        "Canada",
+        "United States"
       ],
       "summary": "A Phase 1b/2, open label, multi-center, clinical study of Chimeric Antigen Receptor T Cells (CAR-T) targeting claudin18.2 in patients with advanced gastric, pancreatic or other specified digestive system cancers",
       "url": "https://clinicaltrials.gov/study/NCT04404595",
@@ -8533,47 +7504,14 @@
       "first_posted": "",
       "last_updated": "2025-01-08",
       "countries": [
-        "United States",
+        "Australia",
         "Canada",
-        "Australia"
+        "United States"
       ],
       "summary": "This is a single-arm, open-label, multicenter, Phase 1 study evaluating the safety and efficacy of CTX130 in subjects with relapsed or refractory T or B cell malignancies.",
       "url": "https://clinicaltrials.gov/study/NCT04502446",
       "asset_name": null,
       "sowhat": "CRISPR advances in vivo CAR-T with CTX130, targeting relapsed/refractory lymphomas without ex vivo engineering."
-    },
-    {
-      "nct_id": "NCT05838131",
-      "title": "Study of CT071 Injection in RRMM or PPCL",
-      "sponsor": "Shanghai Changzheng Hospital",
-      "modality": "Not reported",
-      "conditions": [
-        "Multiple Myeloma",
-        "Primary Plasma Cell Leukemia"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "ACTIVE_NOT_RECRUITING",
-      "interventions": [
-        "Experimental: CAR-T cells Infusion"
-      ],
-      "primary_outcomes": [
-        "DLT after CT071 infusion",
-        "AE of Neurotoxicity and cytokine release syndrome after CT071 infusion",
-        "Adverse Events (AE) after CT071 infusion"
-      ],
-      "enrollment": 20,
-      "start_date": "2023-04-28",
-      "first_posted": "",
-      "last_updated": "2025-01-07",
-      "countries": [
-        "China"
-      ],
-      "summary": "A Clinical Trial to Explore the Safety and Efficacy of CT071 injection in Patients with Relapsed/Refractory Multiple Myeloma or Primary Plasma Cell Leukemia",
-      "url": "https://clinicaltrials.gov/study/NCT05838131",
-      "asset_name": null,
-      "sowhat": "Shanghai hospital launches early-stage CAR-T for aggressive myeloma, signaling competitive pressure in crowded MM space."
     },
     {
       "nct_id": "NCT05807789",
@@ -8664,36 +7602,6 @@
       "url": "https://clinicaltrials.gov/study/NCT06718270",
       "asset_name": null,
       "sowhat": "Chinese developer advances early-stage CAR-T into aggressive myeloma, signaling competitive expansion in high-unmet-need hematologic malignancies."
-    },
-    {
-      "nct_id": "NCT06239636",
-      "title": "First-in-human Safety Study of Hypoimmune Pancreatic Islet Transplantation in Adult Subjects With Type 1 Diabetes",
-      "sponsor": "Per-Ola Carlsson",
-      "modality": "Not reported",
-      "conditions": [
-        "Type1diabetes"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "UP421"
-      ],
-      "primary_outcomes": [
-        "Safety as assessed by number of treatment related adverse events accoridng to CTCAE v 5.0"
-      ],
-      "enrollment": 2,
-      "start_date": "2024-03-08",
-      "first_posted": "",
-      "last_updated": "2024-12-11",
-      "countries": [
-        "Sweden"
-      ],
-      "summary": "The current study tests the hypothesis whether genetically modified Langerhans islet cells containing insulin-producing cells from a deceased organ donor can\n\n1. be transplanted safely and\n2. help to regain insulin production in individuals with type 1 diabetes without need in simultaneous treatment with immunosuppressive medicines.\n\nThe study is an open, one-armed study where adult subjects with longstanding type 1 diabetes will receive transplantation of Langerhans islet cells (25 000 000-80 000 000) into forearm muscle. Both subjects receive active treatment. Safety is monitored with frquent follow-up visits over a year, including medical examinations, blood tests and MRI scans. Insluin producing cell function is monitored with blood samples and continuous glucose measurement.\n\nMain objective is to to investigate the safety of an intramuscular transplantation of genetically modified allogeneic human islets (study product UP421) in adult subjects diagnosed with type 1 diabetes.\n\nSecondary objectives are to study changes in beta-cell function, metabolic control and immunological response to pancreatic islets during the first year following treatment.",
-      "url": "https://clinicaltrials.gov/study/NCT06239636",
-      "asset_name": null,
-      "sowhat": "Allogeneic islet transplant without immunosuppression challenges CAR-T's monopoly on off-the-shelf cell therapy."
     },
     {
       "nct_id": "NCT06727383",
@@ -8826,39 +7734,6 @@
       "sowhat": "Miltenyi advances CD20 CAR-T in r/r B-NHL, positioning against established competitors in dose-finding phase."
     },
     {
-      "nct_id": "NCT05534919",
-      "title": "Efficacy and Safety in Chinese Patients with Immunoglobulin a Nephropathy (IgAN) Who Have Completed Study Nef-301",
-      "sponsor": "Everest Medicines (Singapore) Pte. Ltd.",
-      "modality": "Not reported",
-      "conditions": [
-        "Primary Immunoglobulin a Nephropathy (IgAN)"
-      ],
-      "phase": [
-        "PHASE3"
-      ],
-      "status": "COMPLETED",
-      "interventions": [
-        "Nefecon"
-      ],
-      "primary_outcomes": [
-        "Change in urine protein to creatinine ratio (UPCR) after 9 months",
-        "Change in estimated glomerular filtration rate(eGFR) at 9 months",
-        "The incidence of treatment emergent adverse events"
-      ],
-      "enrollment": 21,
-      "start_date": "2022-12-09",
-      "first_posted": "",
-      "last_updated": "2024-11-12",
-      "countries": [
-        "China"
-      ],
-      "summary": "This is a Phase 3b, multicenter, open-label extension (OLE) study to evaluate the efficacy and safety of Nefecon treatment in Chinese patients who have completed Nef-301 and continue to be treated with a stable dose of Renin-angiotensin system (RAS) inhibitor therapy (Angiotensin-converting enzyme inhibitors (ACEIs) and/or Angiotensin II type I receptor blockers (ARBs).",
-      "url": "https://clinicaltrials.gov/study/NCT05534919",
-      "asset_name": "Nefecon",
-      "sowhat": "Small molecule, not cell therapy—irrelevant to in vivo CAR-T competitive landscape.",
-      "ai_modality": "Not reported"
-    },
-    {
       "nct_id": "NCT06644118",
       "title": "A Study of OL-101 Injection in Patients with Relapsed or Refractory Multiple Myeloma (RRMM)",
       "sponsor": "Zhejiang University",
@@ -8955,69 +7830,6 @@
       "sowhat": "GPC3 CAR-T demonstrates feasibility in solid tumor HCC, validating antigen selection beyond hematologic malignancies."
     },
     {
-      "nct_id": "NCT04762875",
-      "title": "MGTA-145 + Plerixafor in the Mobilization of HSCs for Allogeneic Transplant in Hematologic Malignancies",
-      "sponsor": "Ensoma",
-      "modality": "Not reported",
-      "conditions": [
-        "Related Donors Donating PBSC to a Family Member",
-        "Healthy Donors",
-        "Acute Myelogenous Leukemia",
-        "Acute Lymphoblastic Leukemia",
-        "Myelodysplastic Syndrome"
-      ],
-      "phase": [
-        "PHASE2"
-      ],
-      "status": "TERMINATED",
-      "interventions": [
-        "MGTA-145",
-        "Plerixafor"
-      ],
-      "primary_outcomes": [
-        "HSC Yield in Apheresis Product"
-      ],
-      "enrollment": 7,
-      "start_date": "2021-06-16",
-      "first_posted": "",
-      "last_updated": "2024-11-06",
-      "countries": [
-        "United States"
-      ],
-      "summary": "This research study tests a new medicine for mobilizing stem cells so they can be collected and used for allogeneic stem cell transplant for treatment of hematological malignancies. MGTA-145, the new medicine, will be given with plerixafor.",
-      "url": "https://clinicaltrials.gov/study/NCT04762875",
-      "asset_name": "MGTA-145",
-      "sowhat": "Ensoma's HSC mobilization combo enables better donor cell collection, potentially improving allogeneic transplant availability for CAR-T manufacturing.",
-      "ai_modality": "Not reported"
-    },
-    {
-      "nct_id": "NCT06659770",
-      "title": "A Real-World Observational Study: Zevorcabtagene Autoleucel Injection in Patients with Relapsed/Refractory Multiple Myeloma",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed/Refractory Multiple Myeloma"
-      ],
-      "phase": [],
-      "status": "NOT_YET_RECRUITING",
-      "interventions": [
-        "Zevorcabtagene Autoleucel"
-      ],
-      "primary_outcomes": [
-        "To evaluate long-term survival benefits of zevor-cel in subjects with R/R MM"
-      ],
-      "enrollment": 200,
-      "start_date": "2024-10",
-      "first_posted": "",
-      "last_updated": "2024-10-26",
-      "countries": [],
-      "summary": "This study is a single-arm, open-label, multicenter, post-marketing, Phase IV, prospective, observational clinical trial to evaluate the efficacy and safety of the post-marketing product zevor-cel as treatment for subjects with R/R MM in the real world.",
-      "url": "https://clinicaltrials.gov/study/NCT06659770",
-      "asset_name": "CABA-201",
-      "sowhat": "CARsgen validates zevor-cel's real-world efficacy and safety in R/R myeloma, advancing in vivo CAR-T commercialization beyond controlled trials.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
-    },
-    {
       "nct_id": "NCT06585345",
       "title": "Clinical Study on the Safety and Efficacy of CD7 CAR-T Cell in Patients With Relapsed/Refractory Acute Leukemia",
       "sponsor": "The General Hospital of Western Theater Command",
@@ -9050,39 +7862,6 @@
       "sowhat": "CD7 CAR-T targets T-cell acute leukemia, expanding CAR-T applicability beyond B-cell malignancies into hematologic indications."
     },
     {
-      "nct_id": "NCT06560827",
-      "title": "CT011 Autologous CAR-T Cells in Patients With Hepatocellular Carcinoma at Risk of Recurrence After Surgical Resection",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "modality": "Ex vivo CAR-T",
-      "conditions": [
-        "HCC"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CT011 CAR-GPC3 T Cells Injection"
-      ],
-      "primary_outcomes": [
-        "Incidence and severity of treatment-emergent adverse events (TEAE)",
-        "Incidence and severity of treatment-related adverse events (TRAE)",
-        "Incidence and severity of adverse events of special interest (AESI)"
-      ],
-      "enrollment": 30,
-      "start_date": "2023-10-08",
-      "first_posted": "",
-      "last_updated": "2024-08-19",
-      "countries": [
-        "China"
-      ],
-      "summary": "A Single-arm, Open-label, Multicenter, Phase Ib Clinical Trial to Evaluate the Safety and Efficacy of CT011 Autologous CAR-T Cells in Patients with Hepatocellular Carcinoma at Risk of Recurrence after Surgical Resection.",
-      "url": "https://clinicaltrials.gov/study/NCT06560827",
-      "asset_name": "CT011",
-      "sowhat": "CARsgen advances CAR-T into adjuvant HCC setting, targeting high-recurrence post-resection patients.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
-    },
-    {
       "nct_id": "NCT05401318",
       "title": "Tailoring Treatment in Colorectal Cancer",
       "sponsor": "University Hospital, Akershus",
@@ -9111,51 +7890,6 @@
       "url": "https://clinicaltrials.gov/study/NCT05401318",
       "asset_name": null,
       "sowhat": "Personalized ex vivo CAR-T biomarker testing could expand immunotherapy benefits to chemotherapy-resistant colorectal cancer patients."
-    },
-    {
-      "nct_id": "NCT06271252",
-      "title": "A Study to Evaluate the Safety, PK/PD of (OriCAR-017) in Subjects With RR/MM - RIGEL Study",
-      "sponsor": "OriCell Therapeutics Co., Ltd.",
-      "modality": "Not reported",
-      "conditions": [
-        "Neoplasms, Plasma Cell",
-        "Neoplasms by Histologic Type",
-        "Neoplasms",
-        "Hemostatic Disorders",
-        "Vascular Diseases",
-        "Cardiovascular Diseases",
-        "Paraproteinemias",
-        "Blood Protein Disorders",
-        "Hematologic Diseases",
-        "Hemorrhagic Disorders",
-        "Lymphoproliferative Disorders",
-        "Immunoproliferative Disorders",
-        "Immune System Diseases",
-        "Multiple Myeloma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "OriCAR-017"
-      ],
-      "primary_outcomes": [
-        "Maximum tolerated dose (MTD) of OriCAR-017 US-P1",
-        "Dose-limiting toxicity (DLT)"
-      ],
-      "enrollment": 81,
-      "start_date": "2024-04-03",
-      "first_posted": "",
-      "last_updated": "2024-08-02",
-      "countries": [
-        "United States"
-      ],
-      "summary": "The is a first clinical study for Oricell Therapeutics Inc. in the United States to evaluate the safety, PK, PD and preliminary efficacy of our anti-GPRC5D cell product (OriCAR-017) in subjects with relapsed/refractory multiple myeloma.\n\nRIGEL Study",
-      "url": "https://clinicaltrials.gov/study/NCT06271252",
-      "asset_name": "OriCAR-017",
-      "sowhat": "Chinese biotech enters competitive GPRC5D CAR-T space for relapsed/refractory myeloma with first-in-human U.S. trial.",
-      "ai_modality": "Ex vivo CAR-T — Allogeneic"
     },
     {
       "nct_id": "NCT06256055",
@@ -9524,38 +8258,6 @@
       "sowhat": "Chinese biotech expands CAR-T beyond T-ALL into myeloid leukemia, targeting underexplored CD7+ AML segment."
     },
     {
-      "nct_id": "NCT06407947",
-      "title": "Study of CT071 Injection in High Risk Newly Diagnosed Multiple Myeloma",
-      "sponsor": "Shanghai Changzheng Hospital",
-      "modality": "Not reported",
-      "conditions": [
-        "Multiple Myeloma"
-      ],
-      "phase": [
-        "EARLY_PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "Chimeric antigen receptor modified T cells Infusion"
-      ],
-      "primary_outcomes": [
-        "Adverse Events (AE) after CT071 infusion",
-        "Overall response rate (ORR)",
-        "Recommended Phase II Dose of CT071 in patients with high-risk newly diagnosed multiple myeloma"
-      ],
-      "enrollment": 10,
-      "start_date": "2024-06-06",
-      "first_posted": "",
-      "last_updated": "2024-06-12",
-      "countries": [
-        "China"
-      ],
-      "summary": "This trial is a single-arm, single-center, open-label clinical trial to evaluate the safety, efficacy, and metabolism kinetics of CT071 in patients with high-risk newly diagnosed multiple myeloma.",
-      "url": "https://clinicaltrials.gov/study/NCT06407947",
-      "asset_name": null,
-      "sowhat": "Early-stage CAR-T challenge: can CT071 establish safety profile in aggressive newly-diagnosed myeloma?"
-    },
-    {
       "nct_id": "NCT06439173",
       "title": "Study of the Hematopoietic Niche and the Role of Inflammation in the Pathophysiology of Cytopenias After CAR-T Cell Therapy: Potential of Therapies Directed to Repair the Bone Marrow Microenvironment",
       "sponsor": "Instituto de Investigación Biomédica de Salamanca",
@@ -9584,108 +8286,6 @@
       "url": "https://clinicaltrials.gov/study/NCT06439173",
       "asset_name": null,
       "sowhat": "CAR-T cytopenia mechanisms offer opportunity for bone marrow microenvironment-targeted combination therapies addressing major unmet need."
-    },
-    {
-      "nct_id": "NCT06182696",
-      "title": "OriCAR-017 Chimeric Antigen Receptor (CAR) Modified T Cells for the Treatment of R/RMM",
-      "sponsor": "OriCell Therapeutics Co., Ltd.",
-      "modality": "Not reported",
-      "conditions": [
-        "Relapsed and/or Refractory Multiple Myeloma"
-      ],
-      "phase": [
-        "PHASE1",
-        "PHASE2"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "OriCAR-017"
-      ],
-      "primary_outcomes": [
-        "Maximum tolerated dose of OriCAR-017-P1",
-        "Dose-limiting toxicity (DLT)"
-      ],
-      "enrollment": 83,
-      "start_date": "2023-10-26",
-      "first_posted": "",
-      "last_updated": "2024-05-31",
-      "countries": [
-        "China"
-      ],
-      "summary": "An open label, dose exploratory clinical study to evaluate the safety, efficacy, and pharmacokinetics of OriCAR-017 in R/RMM",
-      "url": "https://clinicaltrials.gov/study/NCT06182696",
-      "asset_name": "OriCAR-017",
-      "sowhat": "Chinese biotech enters competitive MM CAR-T space with early-stage dual-target candidate against established Western players.",
-      "ai_modality": "Ex vivo CAR-T — Allogeneic"
-    },
-    {
-      "nct_id": "NCT05911217",
-      "title": "A Study to Evaluate the Efficacy and Safety of CT041 After Adjuvant Chemotherapy for Pancreatic Cancer",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "modality": "Ex vivo CAR-T",
-      "conditions": [
-        "Pancreatic Cancer"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "RECRUITING",
-      "interventions": [
-        "CT041 autologous CAR T-cell injection"
-      ],
-      "primary_outcomes": [
-        "Disease free survival (DFS)"
-      ],
-      "enrollment": 20,
-      "start_date": "2023-07-11",
-      "first_posted": "",
-      "last_updated": "2024-05-28",
-      "countries": [
-        "China"
-      ],
-      "summary": "An open-label, single-arm, multicenter, Phase Ib clinical trial to evaluate the efficacy and safety of CT041 Autologous CAR T Cell Injection after adjuvant chemotherapy in subjects with pancreatic cancer.",
-      "url": "https://clinicaltrials.gov/study/NCT05911217",
-      "asset_name": "CT041",
-      "sowhat": "CARsgen tackles notoriously immunosuppressive pancreatic cancer with CAR-T, signaling solid tumor ambitions beyond hematologic malignancies.",
-      "ai_modality": "Ex vivo CAR-T — Autologous"
-    },
-    {
-      "nct_id": "NCT04400383",
-      "title": "Clinical Trial to Evaluate AB011 Injection in Patients With CLDN18.2-positive Advanced Solid Tumors",
-      "sponsor": "CARsgen Therapeutics Co., Ltd.",
-      "modality": "Not reported",
-      "conditions": [
-        "Solid Tumor",
-        "Gastric Cancer",
-        "Pancreatic Adenocarcinoma"
-      ],
-      "phase": [
-        "PHASE1"
-      ],
-      "status": "COMPLETED",
-      "interventions": [
-        "AB011 Injection"
-      ],
-      "primary_outcomes": [
-        "Stage1：Incidence of adverse events AE of single and multiple dose (according to NCI CTCAE 5.0)",
-        "Stage1：Incidence of adverse events SAE of single and multiple dose (according to NCI CTCAE 5.0)",
-        "Stage 1: The incidence and case number of DLT (Dose Limiting Toxicity) during observation period",
-        "Stage 2：Incidence of adverse events AE of single and multiple dose for AB011 combinate with XELOX or Gem/nab-P (according to NCI CTCAE 5.0)",
-        "Stage 2：Incidence of adverse events SAE of single and multiple dose for AB011 combinate with XELOX or Gem/nab-P (according to NCI CTCAE 5.0)",
-        "Stage 2: The incidence and case number of DLT (Dose Limiting Toxicity) during observation period"
-      ],
-      "enrollment": 62,
-      "start_date": "2020-06-04",
-      "first_posted": "",
-      "last_updated": "2024-05-24",
-      "countries": [
-        "China"
-      ],
-      "summary": "This is an open, two-stage, phase I study to evaluate the safety, tolerability, pharmacokinetics and preliminary efficacy of AB011 injection in patients with CLDN18.2-positive advanced solid tumors.",
-      "url": "https://clinicaltrials.gov/study/NCT04400383",
-      "asset_name": "AB011",
-      "sowhat": "CARsgen advances in vivo CAR-T into solid tumors via CLDN18.2, targeting gastric and pancreatic cancers.",
-      "ai_modality": "Bispecific TCE"
     },
     {
       "nct_id": "NCT06412458",
