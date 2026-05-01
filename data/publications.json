@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-01T08:08:03.724127+00:00",
-  "count": 19,
+  "fetched_at": "2026-05-01T14:24:40.635765+00:00",
+  "count": 21,
   "publications": [
     {
       "source": "pubmed",
@@ -15,6 +15,21 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41679521/",
       "sowhat": "Viral vectors enable scalable in vivo CAR-T manufacturing, bypassing complex ex vivo production bottlenecks.",
+      "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "41916191",
+      "title": "Non-viral and mRNA-based strategies for next-generation CAR-T cell therapy.",
+      "journal": "Pathology, research and practice",
+      "authors": "Wang T, Jin F, Xing W, Yu S",
+      "abstract": "Chimeric antigen receptor (CAR)-T cell therapy has transformed the treatment landscape for hematologic malignancies, but its broader application remains limited by the complexity, cost, manufacturing time, and integration-related risks associated with viral vector-based engineering. These constraints have become increasingly important as CAR-T strategies are being extended to solid tumors, autoimmune diseases, and in vivo CAR-T generation, while mRNA therapeutics and non-viral delivery technologies continue to advance. However, non-viral platforms and mRNA engineering are often discussed separately, and a unified translational perspective is still lacking. In this review, we examine how mRNA engineering can be integrated with non-viral delivery systems, including lipid nanoparticles, electroporation, and exosome-based platforms, to support safer and more flexible ex vivo and in vivo CAR-T generation. We further discuss key barriers to clinical translation, including limited expression durability, cell-selective delivery, manufacturing scalability, and regulatory considerations, and highlight the emerging contribution of computational approaches to sequence and carrier optimization. Together, these advances support a timely reassessment of non-viral mRNA-based CAR-T engineering as a practical framework for the development of next-generation cell therapies.",
+      "date": "2026-Mar",
+      "doi": "10.1016/j.prp.2026.156455",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41916191/",
+      "sowhat": "mRNA-based non-viral CAR-T manufacturing could overcome viral vector limitations, enabling broader solid tumor and in vivo applications.",
       "category": "Review article"
     },
     {
@@ -285,6 +300,21 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41490421/",
       "sowhat": "In vivo CAR-T engineering via viral and nonviral vectors bypasses costly ex vivo manufacturing, unlocking scalability.",
+      "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42065060",
+      "title": "In Vivo CAR-T Therapy for Cancer Treatment: Mechanisms, Technological Advances, and Clinical Translation.",
+      "journal": "Oncology research",
+      "authors": "Hao L, Lu J, Xue J",
+      "abstract": "In vivo Chimeric Antigen Receptor (CAR)-T cell therapy reprograms a patient's own T cells directly inside the body, bypassing the complex and costly traditional manufacturing process. This is achieved by systemically delivering viral or non-viral vectors that genetically modify endogenous T lymphocytes to produce functional CAR-T cells de novo. By eliminating ex vivo cell processing, this strategy can simplify workflows, reduce costs, improve accessibility, and allow faster treatment. Key delivery platforms include engineered lentiviral and adeno-associated viral (AAV) vectors for lasting CAR expression and targeted lipid nanoparticles (LNPs) for transient mRNA delivery. Emerging technologies like biomaterial scaffolds and ultrasound stimulation further enable localized and spatiotemporally controlled T cell engineering. Clinically, early trials in relapsed/refractory multiple myeloma and B-cell malignancies have shown strong antitumor responses, even without preconditioning chemotherapy. Remaining challenges comprise achieving precise T cell targeting, overcoming the immunosuppressive tumor microenvironment, preventing antigen escape, and managing safety risks such as vector genotoxicity or LNP reactogenicity. Future translation will depend on combining synergistic regimens, refining vector design, and implementing tunable safety controls. The aim of the study is to highlight how in vivo CAR-T therapy is evolving from concept to clinical reality, poised to redefine adoptive cell therapy as a scalable and widely applicable pharmacologic intervention.",
+      "date": "2026",
+      "doi": "10.32604/or.2026.076420",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42065060/",
+      "sowhat": "In vivo CAR-T manufacturing via vectors eliminates costly ex vivo processing, dramatically reducing costs and accelerating clinical deployment.",
       "category": "Review article"
     }
   ]
