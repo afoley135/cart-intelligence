@@ -27,7 +27,7 @@ import time
 import logging
 import requests
 import anthropic
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -70,17 +70,6 @@ PAGE_SIZE      = 100
 OUTPUT_PATH    = Path(__file__).parent.parent / "data" / "trials.json"
 CHANGES_PATH   = Path(__file__).parent.parent / "data" / "trial_changes.json"
 WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
-
-# Only flag a trial as "new" if first_posted is within this many days.
-# Prevents a flood of stale "new" listings after trials.json is reset.
-NEW_TRIAL_LOOKBACK_DAYS = 30
-
-# Changes older than this are pruned from trial_changes.json on each run.
-CHANGE_RETENTION_DAYS = 7
-
-# Pass 2 watchlist queries: only fetch trials updated within this window.
-# Full fetch is used automatically when a company has no cached trials yet.
-WATCHLIST_INCREMENTAL_DAYS = 3  # buffer beyond 1 day for CT.gov indexing lag
 
 # Fields we diff between runs to detect meaningful changes
 # (last_updated alone isn't enough — CT.gov updates it for minor admin changes)
@@ -229,32 +218,6 @@ def fetch_by_sponsor(sponsor: str) -> list[dict]:
     return studies
 
 
-def fetch_by_sponsor_since(sponsor: str, since_date: str) -> list[dict]:
-    """
-    Fetch only trials for a sponsor updated on or after since_date (YYYY-MM-DD).
-    Uses CT.gov filter.advanced to scope the query server-side — much faster
-    than fetching all trials and filtering locally.
-    """
-    studies, page_token = [], None
-    while True:
-        params = {
-            "query.spons":    sponsor,
-            "filter.advanced": f"AREA[LastUpdatePostDate]RANGE[{since_date},MAX]",
-            "fields":         ",".join(FIELDS),
-            "pageSize":       PAGE_SIZE,
-            "format":         "json",
-        }
-        if page_token:
-            params["pageToken"] = page_token
-        data = fetch_page(params)
-        studies.extend(data.get("studies", []))
-        page_token = data.get("nextPageToken")
-        if not page_token:
-            break
-        time.sleep(0.3)
-    return studies
-
-
 # ---------------------------------------------------------------------------
 # Parsing
 # ---------------------------------------------------------------------------
@@ -362,14 +325,7 @@ def diff_trials(
         old = old_studies.get(nct_id)
 
         if old is None:
-            # Only flag as new if recently posted — prevents flood after trials.json reset
-            first_posted = trial.get("first_posted", "")
-            cutoff = (datetime.now(timezone.utc) - timedelta(days=NEW_TRIAL_LOOKBACK_DAYS)).strftime("%Y-%m-%d")
-            if first_posted < cutoff:
-                continue  # old trial appearing for first time due to reset — skip
-            # Skip completed trials — not actionable as new listings
-            if trial.get("status", "").upper() == "COMPLETED":
-                continue
+            # Brand new trial
             changes.append({
                 "nct_id":      nct_id,
                 "change_type": "new_trial",
@@ -403,10 +359,7 @@ def diff_trials(
                 "reviewed":    False,
             })
 
-        # Normalise phase lists before comparing — CT.gov sometimes reorders them
-        old_phase = sorted(p.upper() for p in (old_snap["phase"] or []))
-        new_phase = sorted(p.upper() for p in (new_snap["phase"] or []))
-        if old_phase != new_phase and new_phase:
+        if old_snap["phase"] != new_snap["phase"] and new_snap["phase"]:
             changes.append({
                 "nct_id":      nct_id,
                 "change_type": "phase_change",
@@ -450,13 +403,6 @@ def load_existing_changes() -> list[dict]:
 
 
 def save_changes(all_changes: list[dict]) -> None:
-    # Prune changes older than CHANGE_RETENTION_DAYS — auto-clears stale items
-    cutoff = (datetime.now(timezone.utc) - timedelta(days=CHANGE_RETENTION_DAYS)).isoformat()
-    all_changes = [c for c in all_changes if (c.get("detected_at") or "") >= cutoff]
-
-    # Sort newest first for dashboard display
-    all_changes = sorted(all_changes, key=lambda c: c.get("detected_at") or "", reverse=True)
-
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "count":      len(all_changes),
@@ -519,7 +465,29 @@ def run():
 
     logging.info(f"  After keyword pass: {len(all_studies)} unique trials")
 
-    # Load previous state NOW — needed to determine per-company fetch mode in Pass 2
+    # Pass 2 — watchlist sponsor queries
+    watchlist = load_watchlist()
+    watchlist_lower = [w.lower() for w in watchlist]
+    logging.info(f"Pass 2: watchlist sponsor queries ({len(watchlist)} companies)")
+    new_from_watchlist = 0
+    for company in watchlist:
+        try:
+            raw_studies = fetch_by_sponsor(company)
+            for raw in raw_studies:
+                parsed = parse_study(raw)
+                nct = parsed["nct_id"]
+                if nct and nct not in all_studies:
+                    all_studies[nct] = parsed
+                    new_from_watchlist += 1
+            if raw_studies:
+                logging.info(f"  {company}: {len(raw_studies)} trials found")
+            time.sleep(0.3)
+        except requests.RequestException as e:
+            logging.error(f"Sponsor query '{company}' failed: {e}")
+
+    logging.info(f"  {new_from_watchlist} new trials added from watchlist pass")
+
+    # Load previous state BEFORE overwriting — used for both preservation and diffing
     old_studies: dict[str, dict] = {}
     if OUTPUT_PATH.exists():
         try:
@@ -532,60 +500,9 @@ def run():
         except Exception as e:
             logging.warning(f"Could not load existing trials: {e}")
 
-    # Pass 2 — watchlist sponsor queries (incremental)
-    # For each company: full fetch if no cached trials yet, incremental otherwise.
-    # Incremental uses CT.gov's filter.advanced to only pull recently updated trials
-    # server-side — avoids re-fetching hundreds of unchanged records every day.
-    watchlist = load_watchlist()
-    watchlist_lower = [w.lower() for w in watchlist]
-    since_date = (datetime.now(timezone.utc) - timedelta(days=WATCHLIST_INCREMENTAL_DAYS)).strftime("%Y-%m-%d")
-    logging.info(f"Pass 2: watchlist sponsor queries ({len(watchlist)} companies, incremental since {since_date})")
-    new_from_watchlist = 0
-
-    for company in watchlist:
-        try:
-            # Check if this company has any trials in the cache already
-            company_lower = company.lower()
-            has_cached = any(
-                company_lower in (s.get("sponsor") or "").lower()
-                for s in old_studies.values()
-            )
-
-            if has_cached:
-                raw_studies = fetch_by_sponsor_since(company, since_date)
-                mode = "incremental"
-            else:
-                raw_studies = fetch_by_sponsor(company)
-                mode = "full"
-
-            added = 0
-            for raw in raw_studies:
-                parsed = parse_study(raw)
-                nct = parsed["nct_id"]
-                if nct and nct not in all_studies:
-                    all_studies[nct] = parsed
-                    new_from_watchlist += 1
-                    added += 1
-                elif nct and nct in all_studies:
-                    # Update fields from fresh fetch but preserve cached fields
-                    existing_entry = all_studies[nct]
-                    parsed["sowhat"]      = existing_entry.get("sowhat")
-                    parsed["asset_name"]  = existing_entry.get("asset_name")
-                    parsed["ai_modality"] = existing_entry.get("ai_modality")
-                    all_studies[nct] = parsed
-
-            if raw_studies or not has_cached:
-                logging.info(f"  {company}: {len(raw_studies)} trials fetched ({mode}), {added} new")
-            time.sleep(0.3)
-        except requests.RequestException as e:
-            logging.error(f"Sponsor query '{company}' failed: {e}")
-
-    logging.info(f"  {new_from_watchlist} new trials added from watchlist pass")
-
-    # For trials fetched via keyword pass only (not in watchlist pass),
-    # preserve sowhat and asset_name from old_studies
+    # Preserve sowhat, asset_name from previous run
     for nct, old in old_studies.items():
-        if nct in all_studies and not all_studies[nct].get("sowhat"):
+        if nct in all_studies:
             if old.get("sowhat"):
                 all_studies[nct]["sowhat"] = old["sowhat"]
             if old.get("asset_name"):
@@ -645,14 +562,19 @@ def run():
     all_changes = filtered_existing + new_changes
     save_changes(all_changes)
 
-    # Exclude trials last updated more than 2 years ago
+    # Exclude non-watchlist trials last updated more than 2 years ago.
+    # Watchlist company trials are always kept regardless of age — older completed
+    # trials are still meaningful for competitive landscape tracking.
+    from datetime import timedelta
     cutoff_date = (datetime.now(timezone.utc) - timedelta(days=730)).strftime("%Y-%m-%d")
     before_filter = len(all_studies)
     all_studies = {
         nct: s for nct, s in all_studies.items()
         if (s.get("last_updated") or "") >= cutoff_date
+        or is_watchlisted(s.get("sponsor", ""), watchlist_lower)
     }
-    logging.info(f"  Excluded {before_filter - len(all_studies)} trials updated before {cutoff_date}")
+    excluded = before_filter - len(all_studies)
+    logging.info(f"  Excluded {excluded} non-watchlist trials updated before {cutoff_date}")
 
     studies_list = sorted(
         all_studies.values(),
