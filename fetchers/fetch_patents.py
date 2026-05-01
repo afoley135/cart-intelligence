@@ -97,8 +97,10 @@ GENERIC_WORDS = {
     "laboratory", "laboratories", "inc", "llc", "ltd", "gmbh",
 }
 
-# Stems that match large unrelated companies — always scope to biotech IPC classes
-AMBIGUOUS_STEMS = {"Tessera", "Orbital", "Addition", "Aera", "Integra", "Seamless"}
+# Stems that match large unrelated companies — always scope to biotech IPC classes.
+# "Create" matches many unrelated filers (furniture, software, etc.)
+# "Addition" matches many unrelated filers despite being in the watchlist
+AMBIGUOUS_STEMS = {"Tessera", "Orbital", "Addition", "Aera", "Integra", "Seamless", "Create"}
 
 # EPO XML namespaces
 NS_OPS = "http://ops.epo.org"
@@ -336,7 +338,11 @@ def build_queries(company: str, date_from: str) -> list[str]:
             break
     stem = " ".join(stem_words) if stem_words else words[0]
     date_filter = f"pd>={date_from}"
-    ipc_filter  = "(ic=A61 OR ic=C12N)"
+    # CPC subclass filter: pharmaceuticals (A61K), therapeutic uses (A61P),
+    # and genetic/microbiological engineering (C12N).
+    # Deliberately excludes A61B (surgery), A61C (dentistry), A61G (nursing),
+    # A61L (sterilisation) etc. — those generate most of the irrelevant noise.
+    ipc_filter  = "(cpc=A61K OR cpc=A61P OR cpc=C12N)"
     is_ambiguous = stem.split()[0] in AMBIGUOUS_STEMS
 
     queries = []
