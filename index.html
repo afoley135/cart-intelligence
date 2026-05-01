@@ -181,7 +181,7 @@
     <div class="metric"><div class="metric-label">Watchlist trials</div><div class="metric-value" id="m-watchlist">—</div><div class="metric-sub">from competitive set</div></div>
     <div class="metric"><div class="metric-label">Publications</div><div class="metric-value" id="m-pubs">—</div><div class="metric-sub">PubMed + bioRxiv</div></div>
     <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
-    <div class="metric"><div class="metric-label">Conf. appearances</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">watchlist companies</div></div>
+    <div class="metric"><div class="metric-label">Conf. abstracts</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">AACR · ASGCT · ASH</div></div>
     <div class="metric"><div class="metric-label">Patents</div><div class="metric-value" id="m-patents">—</div><div class="metric-sub">watchlist companies</div></div>
     <div class="metric"><div class="metric-label">Site changes</div><div class="metric-value" id="m-changes">—</div><div class="metric-sub">watchlist pages</div></div>
   </div>
@@ -284,34 +284,31 @@
         <option value="news">News</option>
         <option value="funding">Funding</option>
       </select>
+      <div class="wtoggle" id="news-priority-btn" onclick="toggleNewsPriority()" style="margin-left:4px;">
+        <span class="wdot"></span> Priority sources
+      </div>
       <span class="filter-count" id="news-count"></span>
+    </div>
+    <div id="news-priority-note" style="display:none;font-size:11px;color:var(--text-tertiary);margin-bottom:0.75rem;">
+      Showing press wires (PR Newswire · GlobeNewswire · Business Wire) and priority outlets (BioSpace · Fierce Biotech · Endpoints News · STAT News · Nature). <span style="cursor:pointer;color:#185FA5;" onclick="toggleNewsPriority()">Show all →</span>
     </div>
     <div class="card-feed" id="news-list"><div class="state-msg">Loading news...</div></div>
   </div>
 
   <!-- Patents -->
   <div id="pane-conferences" class="pane">
-    <div id="conf-unmatched-banner" style="display:none;background:#FEF3C7;border:0.5px solid #F59E0B;border-radius:var(--radius-md);padding:10px 14px;margin-bottom:12px;font-size:13px;color:#78350F;">
-      <strong>⚠ Unknown conferences detected</strong> — the following conference names were found in news items but don't match the known calendar.
-      To add them, edit <code>KNOWN_CONFERENCES</code> in <code>summarize.py</code>.<br>
-      <span id="conf-unmatched-list" style="font-size:12px;color:#92400E;"></span>
-    </div>
     <div class="filters">
-      <input type="text" id="conf-search" placeholder="Search company, conference..." oninput="filterConferences()" />
-      <select id="conf-conference" onchange="filterConferences()">
+      <input type="text" id="conf-search" placeholder="Search title, authors, conference..." oninput="filterAbstracts()" />
+      <select id="conf-conference" onchange="filterAbstracts()">
         <option value="">All conferences</option>
-      </select>
-      <select id="conf-type" onchange="filterConferences()">
-        <option value="">All presentation types</option>
-        <option value="oral">Oral</option>
-        <option value="poster">Poster</option>
-        <option value="invited">Invited</option>
-        <option value="unspecified">Unspecified</option>
+        <option value="AACR">AACR</option>
+        <option value="ASGCT">ASGCT</option>
+        <option value="ASH">ASH</option>
       </select>
       <span class="filter-count" id="conf-count"></span>
     </div>
-    <div class="sort-label">Grouped by conference · chronological</div>
-    <div id="conf-list"><div class="state-msg">Loading conference attendance...</div></div>
+    <div class="sort-label">Sorted by date, newest first</div>
+    <div class="card-feed" id="conf-list"><div class="state-msg">Loading conference abstracts...</div></div>
   </div>
 
   <div id="pane-patents" class="pane">
@@ -372,14 +369,26 @@
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],CONF_APPEARANCES={appearances:[],unmatched_conferences:[]},watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],watchlistOnly=false,newsPriorityOnly=true;
+
+// Sources shown in Priority mode.
+// Press wires matched on source name substring; outlets matched exactly.
+const NEWS_PRIORITY_SOURCES = new Set([
+  // Press wires (NewsAPI source names)
+  'PR Newswire','GlobeNewswire','Business Wire','PRN',
+  // Biotech/pharma trade outlets (RSS source names from Google News / direct RSS)
+  'BioSpace','Fierce Biotech','Endpoints News','STAT News','Nature',
+  'Fierce Pharma','BioPharma Dive',
+]);
+// Substring matches for wire services whose exact name varies (e.g. "PR Newswire UK")
+const NEWS_PRIORITY_WIRE_SUBSTRINGS = ['newswire','globenewswire','businesswire','business wire','prnewswire'];
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR,caR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
@@ -388,7 +397,6 @@ async function loadData(){
       fetch('data/patents.json').catch(()=>null),
       fetch('watchlist.json'),
       fetch('data/website_changes.json').catch(()=>null),
-      fetch('data/conference_appearances.json').catch(()=>null),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
     TRIALS=tD.studies||[];PUBS=pD.publications||[];
@@ -399,7 +407,6 @@ async function loadData(){
     if(aR){try{const aD=await aR.json();ABSTRACTS=aD.abstracts||[];}catch(e){ABSTRACTS=[]}}
     if(ptR){try{const ptD=await ptR.json();PATENTS=ptD.patents||[];}catch(e){PATENTS=[]}}
     if(chR){try{const chD=await chR.json();CHANGES=(chD.changes||[]).filter(c=>!c.reviewed);}catch(e){CHANGES=[];}}
-    if(caR){try{const caD=await caR.json();CONF_APPEARANCES={appearances:caD.appearances||[],unmatched_conferences:caD.unmatched_conferences||[]};}catch(e){CONF_APPEARANCES={appearances:[],unmatched_conferences:[]};}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -408,7 +415,10 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);renderConferences(CONF_APPEARANCES);
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);
+    // Initialise news priority toggle to active state
+    document.getElementById('news-priority-btn').classList.add('active');
+    document.getElementById('news-priority-note').style.display='block';
   }catch(e){
     console.error('Failed to load data:',e);
     document.getElementById('trial-body').innerHTML='<tr><td colspan="9" class="state-msg">Failed to load data.</td></tr>';
@@ -432,7 +442,7 @@ function updateMetrics(){
   document.getElementById('m-watchlist').textContent=TRIALS.filter(t=>isWL(t.sponsor)).length;
   document.getElementById('m-pubs').textContent=PUBS.length;
   document.getElementById('m-news').textContent=NEWS.length;
-  document.getElementById('m-abstracts').textContent=CONF_APPEARANCES.appearances.length;
+  document.getElementById('m-abstracts').textContent=ABSTRACTS.length;
   document.getElementById('m-patents').textContent=PATENTS.length;
   document.getElementById('m-changes').textContent=CHANGES.length;
 }
@@ -686,13 +696,36 @@ function renderNews(data){
   }).join('');
 }
 
+function isPrioritySource(n){
+  const src = n.source || '';
+  const srcLower = src.toLowerCase();
+  // Exact match against known set
+  if(NEWS_PRIORITY_SOURCES.has(src)) return true;
+  // Substring match for wire services with variable naming
+  if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w => srcLower.includes(w))) return true;
+  return false;
+}
+
+function toggleNewsPriority(){
+  newsPriorityOnly = !newsPriorityOnly;
+  const btn = document.getElementById('news-priority-btn');
+  const note = document.getElementById('news-priority-note');
+  btn.classList.toggle('active', newsPriorityOnly);
+  note.style.display = newsPriorityOnly ? 'block' : 'none';
+  filterNews();
+}
+
 function filterNews(){
   const q=document.getElementById('news-search').value.toLowerCase();
   const src=document.getElementById('news-source').value;
   const typ=document.getElementById('news-type').value;
   renderNews(NEWS.filter(n=>{
     const text=[n.title,n.summary,n.source].join(' ').toLowerCase();
-    return(!q||text.includes(q))&&(!src||n.source===src)&&(!typ||n.item_type===typ);
+    const matchesSearch = !q || text.includes(q);
+    const matchesSource = !src || n.source === src;
+    const matchesType   = !typ || n.item_type === typ;
+    const matchesPriority = !newsPriorityOnly || isPrioritySource(n);
+    return matchesSearch && matchesSource && matchesType && matchesPriority;
   }));
 }
 
@@ -865,108 +898,39 @@ function confBadge(c){
   return c?`<span class="badge ${map[c]||'b-gray'}">${escHtml(c)}</span>`:'';
 }
 
-function renderConferences(data){
+function renderAbstracts(data){
   const list=document.getElementById('conf-list');
-  const appearances=data.appearances||[];
-  const unmatched=data.unmatched_conferences||[];
-  const total=appearances.length;
-
-  // Unmatched banner
-  const banner=document.getElementById('conf-unmatched-banner');
-  if(unmatched.length){
-    banner.style.display='block';
-    const items=unmatched.map(u=>`<strong>${escHtml(u.raw_name)}</strong> (${escHtml(u.company||'?')})`).join(' · ');
-    document.getElementById('conf-unmatched-list').innerHTML=items;
-  } else {
-    banner.style.display='none';
-  }
-
-  document.getElementById('conf-count').textContent=`${total} appearance${total!==1?'s':''}`;
-
-  if(!total){
-    list.innerHTML='<div class="state-msg">No conference appearances found yet. Appearances are extracted from watchlist company news and press releases.</div>';
+  document.getElementById('conf-count').textContent=`${data.length} abstract${data.length!==1?'s':''}`;
+  if(!data.length){
+    list.innerHTML='<div class="state-msg">No conference abstracts found. Abstracts populate from PubMed supplement issues and the ASGCT website after embargo lifts.</div>';
     return;
   }
-
-  // Populate conference filter dropdown
-  const confSelect=document.getElementById('conf-conference');
-  const existingOpts=new Set([...confSelect.options].map(o=>o.value));
-  const confNames=[...new Set(appearances.map(a=>a.conference).filter(Boolean))].sort();
-  confNames.forEach(c=>{
-    if(!existingOpts.has(c)){
-      const opt=document.createElement('option');
-      opt.value=c; opt.textContent=c;
-      confSelect.appendChild(opt);
-    }
-  });
-
-  // Group by conference
-  const groups={};
-  appearances.forEach(a=>{
-    const key=a.conference||'Unknown';
-    if(!groups[key]) groups[key]={meta:a,items:[]};
-    groups[key].items.push(a);
-  });
-
-  const ptBadge={
-    'oral':       '<span class="badge b-teal">Oral</span>',
-    'poster':     '<span class="badge b-blue">Poster</span>',
-    'invited':    '<span class="badge b-purple">Invited</span>',
-    'unspecified':'<span class="badge b-gray">Unspecified</span>',
-  };
-
-  list.innerHTML=Object.entries(groups).map(([confName,group])=>{
-    const meta=group.meta;
-    const start=meta.conference_start;
-    const end=meta.conference_end;
-    const loc=meta.conference_location||'';
-    const dateRange=start&&end
-      ? `${formatDate(start)} – ${formatDate(end)}`
-      : start ? formatDate(start) : '';
-    const isUpcoming=start&&new Date(start)>new Date();
-    const upcomingTag=isUpcoming?'<span class="badge b-amber" style="margin-left:6px;">Upcoming</span>':'';
-
-    const rows=group.items.map((a,i)=>{
-      const newBadge=isNew(a.source_date)?'<span class="badge b-new">New</span>':'';
-      const pt=ptBadge[a.presentation_type]||ptBadge['unspecified'];
-      const link=a.source_url?`<a class="ext" href="${escHtml(a.source_url)}" target="_blank">Source →</a>`:'';
-      const absTitle=a.abstract_title?`<div style="font-size:12px;color:var(--text-secondary);margin-top:3px;font-style:italic;">${escHtml(a.abstract_title)}</div>`:'';
-      return`<div class="card" style="margin-bottom:0;border-radius:0;border-left:none;border-right:none;border-top:${i===0?'none':'0.5px solid var(--border)'};border-bottom:none;">
-        <div class="card-top" style="margin-bottom:4px;">
-          <span style="font-size:13px;font-weight:500;color:var(--text);">${escHtml(a.company||'Unknown')}</span>
-          ${pt} ${newBadge}
-          <span style="margin-left:auto;">${link}</span>
-        </div>
-        ${absTitle}
-        <div style="font-size:11px;color:var(--text-tertiary);margin-top:4px;">From: ${escHtml(a.source_date||'')} · ${escHtml((a.source_url||'').replace(/^https?:\/\//,'').split('/')[0])}</div>
-      </div>`;
-    }).join('');
-
-    return`<div style="background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);margin-bottom:14px;overflow:hidden;">
-      <div style="padding:12px 16px;background:var(--bg-secondary);border-bottom:0.5px solid var(--border);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
-        <span style="font-size:15px;font-weight:600;color:var(--text);">${escHtml(confName)}</span>
-        ${upcomingTag}
-        <span style="font-size:12px;color:var(--text-tertiary);">${escHtml(dateRange)}${loc?' · '+escHtml(loc):''}</span>
-        <span style="margin-left:auto;font-size:12px;color:var(--text-tertiary);">${group.items.length} appearance${group.items.length!==1?'s':''}</span>
+  list.innerHTML=data.map((p,i)=>{
+    const sowhat=p.sowhat&&p.sowhat!=='Abstract not available'?`<div class="card-sowhat">${escHtml(p.sowhat)}</div>`:'';
+    const url=p.url?`<a class="ext" href="${escHtml(p.url)}" target="_blank">View →</a>`:'';
+    const hasAbstract=p.abstract&&p.abstract.length>50;
+    return`<div class="card">
+      <div class="card-top">
+        <span class="card-source">${escHtml(p.journal||p.conference||'')}</span>
+        <span class="card-date">${formatDate(p.date)}</span>
+        ${confBadge(p.conference)} ${isNew(p.date)?'<span class="badge b-new">New</span>':''} ${url}
       </div>
-      ${rows}
+      <div class="card-title">${escHtml(p.title||'')}</div>
+      ${sowhat}
+      ${p.authors?`<div class="card-authors">${escHtml(p.authors)}</div>`:''}
+      ${hasAbstract?`<button class="abstract-toggle" onclick="toggleAbstract('c${i}')">Show abstract ↓</button><div class="abstract-text" id="abs-c${i}">${escHtml(p.abstract)}</div>`:''}
     </div>`;
   }).join('');
 }
 
-function filterConferences(){
-  const q=(document.getElementById('conf-search').value||'').toLowerCase();
-  const confFilter=document.getElementById('conf-conference').value;
-  const typeFilter=document.getElementById('conf-type').value;
-  const all=CONF_APPEARANCES.appearances||[];
-  const filtered=all.filter(a=>{
-    const text=[a.company,a.conference,a.abstract_title].join(' ').toLowerCase();
-    return(!q||text.includes(q))
-      &&(!confFilter||a.conference===confFilter)
-      &&(!typeFilter||a.presentation_type===typeFilter);
+function filterAbstracts(){
+  const q=document.getElementById('conf-search').value.toLowerCase();
+  const conf=document.getElementById('conf-conference').value;
+  const filtered=ABSTRACTS.filter(a=>{
+    const text=[a.title,a.authors,a.journal,a.abstract,a.conference].join(' ').toLowerCase();
+    return(!q||text.includes(q))&&(!conf||a.conference===conf);
   });
-  // Re-render with filtered subset — rebuild a synthetic data object
-  renderConferences({appearances:filtered,unmatched_conferences:CONF_APPEARANCES.unmatched_conferences});
+  renderAbstracts(filtered);
 }
 
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
