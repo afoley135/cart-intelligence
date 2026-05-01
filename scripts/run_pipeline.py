@@ -26,7 +26,10 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 FETCHERS_DIR = Path(__file__).parent.parent / "fetchers"
 
 STEPS = [
-    ("Website monitoring",      FETCHERS_DIR / "website_monitor.py"),
+    # Website monitoring disabled — virtually all watchlist sites are JS-rendered
+    # and return empty content to plain requests. Re-enable once upgraded to
+    # Playwright (headless browser). See roadmap notes in website_monitor.py.
+    # ("Website monitoring",    FETCHERS_DIR / "website_monitor.py"),
     ("ClinicalTrials.gov",      FETCHERS_DIR / "fetch_trials.py"),
     ("PubMed + bioRxiv",        FETCHERS_DIR / "fetch_publications.py"),
     ("Conference abstracts",    FETCHERS_DIR / "fetch_abstracts.py"),
