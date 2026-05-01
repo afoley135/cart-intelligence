@@ -45,18 +45,25 @@ import requests
 OUTPUT_PATH    = Path(__file__).parent.parent / "data" / "patents.json"
 WATCHLIST_PATH = Path(__file__).parent.parent / "watchlist.json"
 
-LOOKBACK_YEARS = 5
-MODEL          = "claude-haiku-4-5-20251001"
+LOOKBACK_YEARS   = 5
+INCREMENTAL_DAYS = 14    # daily runs: fetch patents published in last N days
+                         # (buffer beyond 1 day to account for EPO indexing lag)
+MODEL            = "claude-haiku-4-5-20251001"
 
 EPO_OPS_KEY       = os.environ.get("EPO_OPS_KEY", "")
 EPO_OPS_SECRET    = os.environ.get("EPO_OPS_SECRET", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+FULL_SCAN         = os.environ.get("FULL_SCAN", "").lower() in ("1", "true", "yes")
 
 EPO_AUTH_URL      = "https://ops.epo.org/3.2/auth/accesstoken"
 # /search/biblio returns full bib data in one shot — no second fetch needed
 EPO_SEARCH_BIBLIO = "https://ops.epo.org/3.2/rest-services/published-data/search/biblio"
 
-YEAR_FROM = (datetime.now(timezone.utc) - timedelta(days=365 * LOOKBACK_YEARS)).year
+# Date boundary for EPO CQL queries
+if FULL_SCAN:
+    DATE_FROM_STR = f"{(datetime.now(timezone.utc) - timedelta(days=365 * LOOKBACK_YEARS)).year}0101"
+else:
+    DATE_FROM_STR = (datetime.now(timezone.utc) - timedelta(days=INCREMENTAL_DAYS)).strftime("%Y%m%d")
 
 # Sleep between individual queries — keeps us under EPO's ~30 req/min limit
 QUERY_SLEEP   = 2.5   # seconds between queries within a company
@@ -319,7 +326,7 @@ def parse_biblio_xml(root: ET.Element) -> list[dict]:
 # Query builder
 # ---------------------------------------------------------------------------
 
-def build_queries(company: str) -> list[str]:
+def build_queries(company: str, date_from: str) -> list[str]:
     words = company.split()
     stem_words = []
     for w in words:
@@ -328,7 +335,7 @@ def build_queries(company: str) -> list[str]:
         if len(stem_words) == 2:
             break
     stem = " ".join(stem_words) if stem_words else words[0]
-    date_filter = f"pd>={YEAR_FROM}0101"
+    date_filter = f"pd>={date_from}"
     ipc_filter  = "(ic=A61 OR ic=C12N)"
     is_ambiguous = stem.split()[0] in AMBIGUOUS_STEMS
 
@@ -354,11 +361,11 @@ def build_queries(company: str) -> list[str]:
 # Per-company fetch
 # ---------------------------------------------------------------------------
 
-def fetch_all_for_company(company: str) -> list[dict]:
+def fetch_all_for_company(company: str, date_from: str) -> list[dict]:
     all_patents: list[dict] = []
     seen_ids: set[str] = set()
 
-    for cql in build_queries(company):
+    for cql in build_queries(company, date_from):
         patents = collect_for_query(cql, company)
         for p in patents:
             pid = p.get("id")
@@ -421,7 +428,6 @@ def run():
         return
 
     watchlist = load_watchlist()
-    logging.info(f"Processing {len(watchlist)} watchlist companies, from {YEAR_FROM}")
 
     # Load existing patents to preserve Claude analysis
     all_patents: dict[str, dict] = {}
@@ -436,12 +442,27 @@ def run():
         except Exception as e:
             logging.warning(f"Could not load existing patents: {e}")
 
+    # Auto-detect mode: full scan if cache is empty (or FULL_SCAN env var set),
+    # incremental otherwise — no manual workflow changes needed for a rebuild
+    cache_empty = len(all_patents) == 0
+    do_full_scan = FULL_SCAN or cache_empty
+    if do_full_scan:
+        year_from = (datetime.now(timezone.utc) - timedelta(days=365 * LOOKBACK_YEARS)).year
+        date_from = f"{year_from}0101"
+        reason    = "empty cache" if cache_empty else "FULL_SCAN env var"
+        logging.info(f"Mode: FULL SCAN (5yr lookback) — {reason}")
+    else:
+        date_from = DATE_FROM_STR
+        logging.info(f"Mode: incremental (last {INCREMENTAL_DAYS}d)")
+
+    logging.info(f"Processing {len(watchlist)} watchlist companies from {date_from}")
+
     new_count = 0
 
     for company in watchlist:
         logging.info(f"  Searching: {company}")
         try:
-            patents = fetch_all_for_company(company)
+            patents = fetch_all_for_company(company, date_from)
             logging.info(f"    {len(patents)} patents found")
 
             for patent in patents:
