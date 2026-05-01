@@ -150,22 +150,23 @@
     .placeholder p { font-size: 13px; color: var(--text-secondary); max-width: 380px; margin: 0 auto; line-height: 1.5; }
     .state-msg { text-align: center; padding: 3rem 1rem; color: var(--text-tertiary); font-size: 13px; }
 
-    /* Slide-out panel */
-    .panel-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.25); z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
-    .panel-overlay.open { opacity: 1; pointer-events: all; }
-    .panel { position: fixed; top: 0; right: 0; bottom: 0; width: 520px; max-width: 95vw; background: var(--bg); border-left: 0.5px solid var(--border-strong); z-index: 101; transform: translateX(100%); transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; padding: 1.5rem; }
-    .panel.open { transform: translateX(0); }
-    .panel-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-secondary); padding: 4px 8px; border-radius: var(--radius-sm); }
-    .panel-close:hover { background: var(--bg-secondary); }
-    .panel-company { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 4px; padding-right: 2rem; }
-    .panel-tag { font-size: 12px; color: var(--wa); font-weight: 500; margin-bottom: 1.25rem; }
-    .panel-section { margin-top: 1.25rem; }
-    .panel-section-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 0.5px solid var(--border); }
+    /* Slide-out panel — retained for structural IDs only, panel itself removed */
+    .panel-overlay { display:none; }
     .panel-pub { padding: 10px 0; border-bottom: 0.5px solid var(--border); }
     .panel-pub:last-child { border-bottom: none; }
     .panel-pub-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; line-height: 1.4; }
     .panel-pub-meta { font-size: 12px; color: var(--text-tertiary); }
     .panel-empty { font-size: 13px; color: var(--text-tertiary); font-style: italic; padding: 8px 0; }
+
+    /* Company page — inline expanded sections */
+    .co-section { border-top: 0.5px solid var(--border); }
+    .co-section-header { display:flex; align-items:center; gap:8px; padding:8px 16px; background:var(--bg-secondary); }
+    .co-section-title { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-tertiary); flex:1; }
+    .co-body { padding:14px 16px; }
+    .co-links { display:flex; gap:8px; flex-wrap:wrap; }
+    .co-link { display:inline-flex; align-items:center; gap:5px; font-size:12px; padding:4px 10px; border-radius:var(--radius-sm); border:0.5px solid var(--border-strong); color:var(--text-secondary); text-decoration:none; background:var(--bg); }
+    .co-link:hover { border-color:var(--wa); color:var(--wa); }
+    .company-modality { font-size:11px; color:var(--text-tertiary); }
   </style>
 </head>
 <body>
@@ -187,7 +188,7 @@
   </div>
   <div class="tabs">
     <div class="tab active" onclick="switchTab('trials')">Clinical trials</div>
-    <div class="tab" onclick="switchTab('pipeline')">Pipeline</div>
+    <div class="tab" onclick="switchTab('pipeline')">Companies</div>
     <div class="tab" onclick="switchTab('pubs')">Publications</div>
     <div class="tab" onclick="switchTab('conferences')">Conferences</div>
     <div class="tab" onclick="switchTab('news')">News</div>
@@ -245,13 +246,13 @@
     </div>
   </div>
 
-  <!-- Pipeline -->
+  <!-- Companies -->
   <div id="pane-pipeline" class="pane">
     <div class="pipeline-search">
-      <input type="text" id="pipeline-search" placeholder="Search company or asset..." oninput="filterPipeline()" />
+      <input type="text" id="pipeline-search" placeholder="Search company..." oninput="filterPipeline()" />
       <span class="filter-count" id="pipeline-count"></span>
     </div>
-    <div id="pipeline-list"><div class="state-msg">Loading pipeline...</div></div>
+    <div id="pipeline-list"><div class="state-msg">Loading companies...</div></div>
   </div>
 
   <!-- Publications -->
@@ -295,20 +296,28 @@
     <div class="card-feed" id="news-list"><div class="state-msg">Loading news...</div></div>
   </div>
 
-  <!-- Patents -->
+  <!-- Conferences -->
   <div id="pane-conferences" class="pane">
+    <div id="conf-unmatched-banner" style="display:none;background:#FEF3C7;border:0.5px solid #F59E0B;border-radius:var(--radius-md);padding:10px 14px;margin-bottom:12px;font-size:13px;color:#78350F;">
+      <strong>⚠ Unknown conferences detected</strong> — found in news items but not in the known calendar. Add them to <code>KNOWN_CONFERENCES</code> in <code>summarize.py</code>.<br>
+      <span id="conf-unmatched-list" style="font-size:12px;color:#92400E;"></span>
+    </div>
     <div class="filters">
-      <input type="text" id="conf-search" placeholder="Search title, authors, conference..." oninput="filterAbstracts()" />
-      <select id="conf-conference" onchange="filterAbstracts()">
+      <input type="text" id="conf-search" placeholder="Search company, conference..." oninput="filterConferences()" />
+      <select id="conf-conference" onchange="filterConferences()">
         <option value="">All conferences</option>
-        <option value="AACR">AACR</option>
-        <option value="ASGCT">ASGCT</option>
-        <option value="ASH">ASH</option>
+      </select>
+      <select id="conf-type" onchange="filterConferences()">
+        <option value="">All presentation types</option>
+        <option value="oral">Oral</option>
+        <option value="poster">Poster</option>
+        <option value="invited">Invited</option>
+        <option value="unspecified">Unspecified</option>
       </select>
       <span class="filter-count" id="conf-count"></span>
     </div>
-    <div class="sort-label">Sorted by date, newest first</div>
-    <div class="card-feed" id="conf-list"><div class="state-msg">Loading conference abstracts...</div></div>
+    <div class="sort-label">Grouped by conference · chronological</div>
+    <div id="conf-list"><div class="state-msg">Loading conference attendance...</div></div>
   </div>
 
   <div id="pane-patents" class="pane">
@@ -348,39 +357,26 @@
   </div>
 </div>
 
-<!-- Slide-out panel -->
-<div class="panel-overlay" id="panel-overlay" onclick="closePanel()"></div>
-<div class="panel" id="company-panel">
-  <button class="panel-close" onclick="closePanel()">✕</button>
-  <div class="panel-company" id="panel-name"></div>
-  <div class="panel-tag">Watchlist company</div>
-  <div class="panel-section">
-    <div class="panel-section-title">Pipeline</div>
-    <div id="panel-pipeline-tbl"></div>
-  </div>
-  <div class="panel-section">
-    <div class="panel-section-title">Publications</div>
-    <div id="panel-pubs"></div>
-  </div>
-  <div class="panel-section">
-    <div class="panel-section-title">News</div>
-    <div id="panel-news"></div>
-  </div>
+
+<!-- Hidden stubs — panel IDs preserved so no JS throws on old references -->
+<div id="panel-overlay" style="display:none"></div>
+<div id="company-panel" style="display:none">
+  <div id="panel-name"></div>
+  <div id="panel-overview"></div>
+  <div id="panel-pipeline-tbl" style="overflow-x:auto;"></div>
+  <div id="panel-pubs"></div>
+  <div id="panel-news"></div>
+  <div id="panel-funding"></div>
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],watchlistOnly=false,newsPriorityOnly=true;
+let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],PROFILES={},CONF_APPEARANCES={appearances:[],unmatched_conferences:[]},watchlistOnly=false,newsPriorityOnly=true;
 
-// Sources shown in Priority mode.
-// Press wires matched on source name substring; outlets matched exactly.
 const NEWS_PRIORITY_SOURCES = new Set([
-  // Press wires (NewsAPI source names)
   'PR Newswire','GlobeNewswire','Business Wire','PRN',
-  // Biotech/pharma trade outlets (RSS source names from Google News / direct RSS)
   'BioSpace','Fierce Biotech','Endpoints News','STAT News','Nature',
   'Fierce Pharma','BioPharma Dive',
 ]);
-// Substring matches for wire services whose exact name varies (e.g. "PR Newswire UK")
 const NEWS_PRIORITY_WIRE_SUBSTRINGS = ['newswire','globenewswire','businesswire','business wire','prnewswire'];
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
@@ -388,7 +384,7 @@ const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufactu
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR,prR,caR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
@@ -397,6 +393,8 @@ async function loadData(){
       fetch('data/patents.json').catch(()=>null),
       fetch('watchlist.json'),
       fetch('data/website_changes.json').catch(()=>null),
+      fetch('company_profiles.json').catch(()=>null),
+      fetch('data/conference_appearances.json').catch(()=>null),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
     TRIALS=tD.studies||[];PUBS=pD.publications||[];
@@ -407,6 +405,8 @@ async function loadData(){
     if(aR){try{const aD=await aR.json();ABSTRACTS=aD.abstracts||[];}catch(e){ABSTRACTS=[]}}
     if(ptR){try{const ptD=await ptR.json();PATENTS=ptD.patents||[];}catch(e){PATENTS=[]}}
     if(chR){try{const chD=await chR.json();CHANGES=(chD.changes||[]).filter(c=>!c.reviewed);}catch(e){CHANGES=[];}}
+    if(prR){try{const prD=await prR.json();PROFILES=prD.companies||{};}catch(e){PROFILES={}}}
+    if(caR){try{const caD=await caR.json();CONF_APPEARANCES={appearances:caD.appearances||[],unmatched_conferences:caD.unmatched_conferences||[]};}catch(e){CONF_APPEARANCES={appearances:[],unmatched_conferences:[]};}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -415,8 +415,7 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);
-    // Initialise news priority toggle to active state
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);renderConferences(CONF_APPEARANCES);
     document.getElementById('news-priority-btn').classList.add('active');
     document.getElementById('news-priority-note').style.display='block';
   }catch(e){
@@ -511,7 +510,7 @@ function renderTrials(data){
     const onW=isWL(t.sponsor);
     const conditions=(t.conditions||[]).slice(0,2).join(', ');
     const summary=(t.sowhat||t.summary||'').trim();
-    const sponsorHtml=onW?`<span class="sponsor-link wl" onclick="openPanel('${escAttr(t.sponsor)}')">${escHtml(t.sponsor||'—')}</span>`:`<span style="font-size:12px">${escHtml(t.sponsor||'—')}</span>`;
+    const sponsorHtml=onW?`<span class="sponsor-link wl" onclick="switchTab('pipeline');setTimeout(()=>{const el=[...document.querySelectorAll('#pipeline-list .company-name')].find(e=>e.textContent.toLowerCase().includes('${escAttr(t.sponsor.toLowerCase().split(' ')[0])}'));if(el){el.closest('.company-block').querySelector('.company-header').click();el.scrollIntoView({behavior:'smooth',block:'start'});}},50)" style="cursor:pointer;">${escHtml(t.sponsor||'—')}</span>`:`<span style="font-size:12px">${escHtml(t.sponsor||'—')}</span>`;
     return`<tr class="${onW?'wrow':''}">
       <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':''}</td>
       <td style="max-width:140px">${sponsorHtml}</td>
@@ -569,33 +568,141 @@ function getCompanyTrials(companyName){
   return TRIALS.filter(t=>(t.sponsor||'').toLowerCase().includes(key.split(' ')[0]));
 }
 
-function renderPipelineCompany(companyName,idx){
+function getProfile(companyName){
+  // Exact match first, then case-insensitive
+  return PROFILES[companyName]||PROFILES[Object.keys(PROFILES).find(k=>k.toLowerCase()===companyName.toLowerCase())]||{};
+}
+
+function isPressRelease(n,companyName){
+  // Match news items that are wire press releases attributed to this company
+  const src=(n.source||'').toLowerCase();
+  const isWire=NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>src.includes(w))||NEWS_PRIORITY_SOURCES.has(n.source||'');
+  if(!isWire) return false;
+  const key=companyName.toLowerCase();
+  return [n.title,n.summary].join(' ').toLowerCase().includes(key);
+}
+
+function renderCompanyBlock(companyName,idx){
+  const profile=getProfile(companyName);
   const trials=getCompanyTrials(companyName);
-  if(!trials.length)return'';
-  const rows=trials.map(t=>{
-    const asset=t.asset_name||t.nct_id;
-    return`<tr>
-      <td>
-        <div class="asset-name">${escHtml(asset)}</div>
-        <div class="asset-nct"><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a></div>
-      </td>
+  const key=companyName.toLowerCase().split(' ')[0];
+
+  // Dossier
+  const dossierEntry=DOSSIERS[companyName]||DOSSIERS[Object.keys(DOSSIERS).find(k=>k.toLowerCase().includes(key))||'']||null;
+  let dossierHtml='<div class="panel-empty">Dossier not yet generated — trigger the weekly dossier workflow to populate.</div>';
+  if(dossierEntry&&dossierEntry.dossier){
+    const d=dossierEntry.dossier;
+    const generated=dossierEntry.generated_at?`Generated ${(new Date(dossierEntry.generated_at)).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}`:'';
+    const sections=[
+      {key:'stage_and_modality',     label:'Stage & modality',       full:false},
+      {key:'delivery_approach',      label:'Delivery approach',      full:false},
+      {key:'indications_pursued',    label:'Indications',            full:false},
+      {key:'best_disclosed_data',    label:'Best disclosed data',    full:false},
+      {key:'key_differentiators',    label:'Key differentiators',    full:true},
+      {key:'last_significant_event', label:'Last significant event', full:true},
+    ];
+    const cells=sections.map(s=>`<div class="${s.full?'dossier-cell-full':'dossier-cell'}">
+      <div class="dossier-label">${s.label}</div>
+      <div class="dossier-text">${d[s.key]?escHtml(d[s.key]):'<em style="color:var(--text-tertiary)">—</em>'}</div>
+    </div>`).join('');
+    dossierHtml=`<div class="dossier-grid">${cells}</div>${generated?`<div class="dossier-generated">${generated}</div>`:''}`;
+  } else if(dossierEntry&&!dossierEntry.dossier&&dossierEntry.has_data){
+    dossierHtml='<div class="panel-empty">Dossier generation failed — will retry next week.</div>';
+  }
+
+  // Pipeline
+  let pipelineHtml='<div class="panel-empty">No clinical trials on record for this company.</div>';
+  if(trials.length){
+    const rows=trials.map(t=>`<tr>
+      <td><div class="asset-name">${escHtml(t.asset_name||t.nct_id)}</div><div class="asset-nct"><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a></div></td>
       <td style="font-size:12px;color:var(--text-secondary);max-width:180px">${escHtml((t.conditions||[]).slice(0,2).join(', ')||'—')}</td>
       <td>${phaseProgress(t.phase)}</td>
       <td>${statusDot(t.status)}</td>
       <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,10)}</td>
-    </tr>`;
-  }).join('');
+    </tr>`).join('');
+    pipelineHtml=`<table class="pipeline-tbl"><thead><tr><th>Asset</th><th>Indication</th><th>Phase</th><th>Status</th><th>Updated</th></tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
+  // Conference presentations
+  const confItems=(CONF_APPEARANCES&&CONF_APPEARANCES.appearances||[])
+    .filter(a=>(a.company||'').toLowerCase().includes(key));
+  let confHtml='<div class="panel-empty">No conference presentations on record.</div>';
+  if(confItems.length){
+    confHtml=confItems.map(a=>{
+      const ptLabel={oral:'Oral',poster:'Poster',invited:'Invited',unspecified:''}[a.presentation_type]||'';
+      const badge=ptLabel?`<span class="badge b-blue" style="margin-left:6px;">${ptLabel}</span>`:'';
+      const link=a.source_url?`<a class="ext" href="${escHtml(a.source_url)}" target="_blank">Source →</a>`:'';
+      return`<div class="panel-pub">
+        <div class="panel-pub-title" style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;">
+          <span>${escHtml(a.conference||'')}</span>${badge}
+          <span style="margin-left:auto;font-size:12px;">${link}</span>
+        </div>
+        ${a.abstract_title?`<div style="font-size:12px;color:var(--text-secondary);margin-top:3px;font-style:italic;">${escHtml(a.abstract_title)}</div>`:''}
+        <div class="panel-pub-meta" style="margin-top:4px;">${a.conference_start?formatDate(a.conference_start):''}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // Press releases — wire items mentioning this company
+  const pressItems=NEWS.filter(n=>isPressRelease(n,companyName)).slice(0,8);
+  let pressHtml='<div class="panel-empty">No press releases found in the current news window.</div>';
+  if(pressItems.length){
+    pressHtml=pressItems.map(n=>`<div class="panel-pub">
+      <div class="panel-pub-title">${n.url?`<a class="ext" href="${escHtml(n.url)}" target="_blank">${escHtml(n.title||'')}</a>`:escHtml(n.title||'')}</div>
+      <div class="panel-pub-meta">${escHtml(n.source||'')} · ${escHtml(n.date||'')}${isNew(n.date)?' · <span class="badge b-new">New</span>':''}</div>
+      ${n.sowhat&&n.sowhat!=='Summary not available'?`<div style="font-size:12px;color:#185FA5;margin-top:4px;">→ ${escHtml(n.sowhat)}</div>`:''}
+    </div>`).join('');
+  }
+
+  // Website links
+  const links=[];
+  if(profile.website)    links.push({label:'Website',       url:profile.website});
+  if(profile.pipeline_page) links.push({label:'Pipeline',   url:profile.pipeline_page});
+  if(profile.news_page)  links.push({label:'News / press',  url:profile.news_page});
+  if(profile.ir_page)    links.push({label:'Investor relations', url:profile.ir_page});
+  const linksHtml=links.length
+    ? `<div class="co-links">${links.map(l=>`<a class="co-link" href="${escHtml(l.url)}" target="_blank">↗ ${escHtml(l.label)}</a>`).join('')}</div>`
+    : '<div class="panel-empty">No website links on record — edit company_profiles.json to add them.</div>';
+
+  // Header summary line
+  const modality=profile.confirmed_modality||'';
+  const stage=profile.stage||'';
+  const summaryParts=[modality,stage].filter(Boolean);
+
+  const trialCount=trials.length?`${trials.length} trial${trials.length!==1?'s':''}`:null;
+  const confCount=confItems.length?`${confItems.length} presentation${confItems.length!==1?'s':''}`:null;
+  const pressCount=pressItems.length?`${pressItems.length} press release${pressItems.length!==1?'s':''}`:null;
+  const chips=[trialCount,confCount,pressCount].filter(Boolean)
+    .map(s=>`<span class="company-count">${s}</span>`).join('');
+
   return`<div class="company-block" id="cb-${idx}">
     <div class="company-header" onclick="toggleCompany(${idx})">
       <span class="company-name">${escHtml(companyName)}</span>
-      <span class="company-count">${trials.length} trial${trials.length!==1?'s':''}</span>
+      ${summaryParts.length?`<span class="company-modality">${escHtml(summaryParts.join(' · '))}</span>`:''}
+      ${chips}
       <span class="company-chevron" id="chev-${idx}">▶</span>
     </div>
     <div class="company-body" id="cbody-${idx}">
-      <table class="pipeline-tbl">
-        <thead><tr><th>Asset</th><th>Indication</th><th>Phase</th><th>Status</th><th>Updated</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
+      <div class="co-section">
+        <div class="co-section-header"><span class="co-section-title">Dossier</span></div>
+        <div class="co-body">${dossierHtml}</div>
+      </div>
+      <div class="co-section">
+        <div class="co-section-header"><span class="co-section-title">Clinical pipeline</span></div>
+        <div class="co-body" style="padding:0;">${pipelineHtml}</div>
+      </div>
+      <div class="co-section">
+        <div class="co-section-header"><span class="co-section-title">Conference presentations</span></div>
+        <div class="co-body">${confHtml}</div>
+      </div>
+      <div class="co-section">
+        <div class="co-section-header"><span class="co-section-title">Press releases</span></div>
+        <div class="co-body">${pressHtml}</div>
+      </div>
+      <div class="co-section">
+        <div class="co-section-header"><span class="co-section-title">Links</span></div>
+        <div class="co-body">${linksHtml}</div>
+      </div>
     </div>
   </div>`;
 }
@@ -612,18 +719,18 @@ function renderPipeline(watchlist){
   const q=(document.getElementById('pipeline-search')||{}).value||'';
   const ql=q.toLowerCase();
 
+  // Show ALL watchlist companies, filtered by search if active
   const companies=watchlist
     .map(w=>w.split(' ').map(wd=>wd.charAt(0).toUpperCase()+wd.slice(1)).join(' '))
-    .filter(c=>getCompanyTrials(c).length>0)
-    .filter(c=>!ql||c.toLowerCase().includes(ql)||getCompanyTrials(c).some(t=>(t.asset_name||'').toLowerCase().includes(ql)));
+    .filter(c=>!ql||c.toLowerCase().includes(ql));
 
-  document.getElementById('pipeline-count').textContent=`${companies.length} compan${companies.length!==1?'ies':'y'} with trials`;
+  document.getElementById('pipeline-count').textContent=`${companies.length} of ${watchlist.length} compan${watchlist.length!==1?'ies':'y'}`;
 
   if(!companies.length){
-    list.innerHTML='<div class="state-msg">No watchlist companies with clinical trials found.</div>';
+    list.innerHTML='<div class="state-msg">No companies match the search.</div>';
     return;
   }
-  list.innerHTML=companies.map((c,i)=>renderPipelineCompany(c,i)).join('');
+  list.innerHTML=companies.map((c,i)=>renderCompanyBlock(c,i)).join('');
 }
 
 function filterPipeline(){renderPipeline(WATCHLIST);}
@@ -697,21 +804,16 @@ function renderNews(data){
 }
 
 function isPrioritySource(n){
-  const src = n.source || '';
-  const srcLower = src.toLowerCase();
-  // Exact match against known set
+  const src=n.source||'';
   if(NEWS_PRIORITY_SOURCES.has(src)) return true;
-  // Substring match for wire services with variable naming
-  if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w => srcLower.includes(w))) return true;
-  return false;
+  const sl=src.toLowerCase();
+  return NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>sl.includes(w));
 }
 
 function toggleNewsPriority(){
-  newsPriorityOnly = !newsPriorityOnly;
-  const btn = document.getElementById('news-priority-btn');
-  const note = document.getElementById('news-priority-note');
-  btn.classList.toggle('active', newsPriorityOnly);
-  note.style.display = newsPriorityOnly ? 'block' : 'none';
+  newsPriorityOnly=!newsPriorityOnly;
+  document.getElementById('news-priority-btn').classList.toggle('active',newsPriorityOnly);
+  document.getElementById('news-priority-note').style.display=newsPriorityOnly?'block':'none';
   filterNews();
 }
 
@@ -721,121 +823,90 @@ function filterNews(){
   const typ=document.getElementById('news-type').value;
   renderNews(NEWS.filter(n=>{
     const text=[n.title,n.summary,n.source].join(' ').toLowerCase();
-    const matchesSearch = !q || text.includes(q);
-    const matchesSource = !src || n.source === src;
-    const matchesType   = !typ || n.item_type === typ;
-    const matchesPriority = !newsPriorityOnly || isPrioritySource(n);
-    return matchesSearch && matchesSource && matchesType && matchesPriority;
+    return(!q||text.includes(q))&&(!src||n.source===src)&&(!typ||n.item_type===typ)&&(!newsPriorityOnly||isPrioritySource(n));
   }));
 }
 
-// ── Company panel ─────────────────────────────────────────────────────────────
+// openPanel/closePanel — replaced by inline Companies tab; kept as no-ops for safety
+function openPanel(sponsor){ switchTab('pipeline'); }
+function closePanel(){}
 
-function openPanel(sponsor){
-  document.getElementById('panel-name').textContent=sponsor;
-  const key=sponsor.toLowerCase().split(' ')[0];
+// ── Conference attendance ────────────────────────────────────────────────────
 
-  // Overview dossier
-  const overviewEl=document.getElementById('panel-overview');
-  const dossierEntry=DOSSIERS[sponsor]||DOSSIERS[Object.keys(DOSSIERS).find(k=>k.toLowerCase().includes(key))||'']||null;
-  if(dossierEntry&&dossierEntry.dossier){
-    const d=dossierEntry.dossier;
-    const generated=dossierEntry.generated_at?(new Date(dossierEntry.generated_at)).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'';
-    const sections=[
-      {key:'stage_and_modality',     label:'Stage & modality',       full:false},
-      {key:'delivery_approach',      label:'Delivery approach',      full:false},
-      {key:'indications_pursued',    label:'Indications',            full:false},
-      {key:'best_disclosed_data',    label:'Best disclosed data',    full:false},
-      {key:'key_differentiators',    label:'Key differentiators',    full:true},
-      {key:'last_significant_event', label:'Last significant event', full:true},
-    ];
-    const cells=sections.map(s=>`
-      <div class="${s.full?'dossier-cell-full':'dossier-cell'}">
-        <div class="dossier-label">${s.label}</div>
-        <div class="dossier-text">${d[s.key]?escHtml(d[s.key]):'<em style="color:var(--text-tertiary)">Not available</em>'}</div>
-      </div>`).join('');
-    overviewEl.innerHTML=`<div class="dossier-grid">${cells}</div>
-      ${generated?`<div class="dossier-generated">Generated ${generated}</div>`:''}`;
-  } else if(dossierEntry&&!dossierEntry.dossier&&dossierEntry.has_data){
-    overviewEl.innerHTML='<div class="panel-empty">Dossier generation failed — will retry next week.</div>';
-  } else {
-    overviewEl.innerHTML='<div class="panel-empty">Dossier not yet generated. Trigger the weekly dossier workflow to populate.</div>';
+function renderConferences(data){
+  const list=document.getElementById('conf-list');
+  const appearances=data.appearances||[];
+  const unmatched=data.unmatched_conferences||[];
+
+  const banner=document.getElementById('conf-unmatched-banner');
+  if(unmatched.length){
+    banner.style.display='block';
+    document.getElementById('conf-unmatched-list').innerHTML=unmatched.map(u=>`<strong>${escHtml(u.raw_name)}</strong> (${escHtml(u.company||'?')})`).join(' · ');
+  } else { banner.style.display='none'; }
+
+  document.getElementById('conf-count').textContent=`${appearances.length} appearance${appearances.length!==1?'s':''}`;
+
+  if(!appearances.length){
+    list.innerHTML='<div class="state-msg">No conference appearances found yet. Appearances are extracted from watchlist company news and press releases.</div>';
+    return;
   }
 
-  // Pipeline table in panel
-  const trials=TRIALS.filter(t=>(t.sponsor||'').toLowerCase().includes(key));
-  const ptbl=document.getElementById('panel-pipeline-tbl');
-  if(trials.length){
-    const rows=trials.map(t=>`<tr>
-      <td>
-        <div class="asset-name">${escHtml(t.asset_name||t.nct_id)}</div>
-        <div class="asset-nct"><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a></div>
-      </td>
-      <td style="font-size:12px;color:var(--text-secondary);max-width:160px">${escHtml((t.conditions||[]).slice(0,2).join(', ')||'—')}</td>
-      <td>${phaseProgress(t.phase)}</td>
-      <td>${statusDot(t.status)}</td>
-      <td style="font-size:11px;color:var(--text-tertiary);white-space:nowrap">${(t.last_updated||'').slice(0,10)}</td>
-    </tr>`).join('');
-    ptbl.innerHTML=`<table class="pipeline-tbl" style="margin-top:4px">
-      <thead><tr><th>Asset</th><th>Indication</th><th>Phase</th><th>Status</th><th>Updated</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table>`;
-  } else {
-    ptbl.innerHTML='<div class="panel-empty">No trials found for this sponsor.</div>';
-  }
+  // Populate conference filter
+  const confSelect=document.getElementById('conf-conference');
+  const existing=new Set([...confSelect.options].map(o=>o.value));
+  [...new Set(appearances.map(a=>a.conference).filter(Boolean))].sort().forEach(c=>{
+    if(!existing.has(c)){const o=document.createElement('option');o.value=c;o.textContent=c;confSelect.appendChild(o);}
+  });
 
-  // Publications
-  const pubs=PUBS.filter(p=>[p.title,p.abstract,p.authors].join(' ').toLowerCase().includes(key));
-  const pubsEl=document.getElementById('panel-pubs');
-  pubsEl.innerHTML=pubs.length?pubs.slice(0,5).map(p=>`
-    <div class="panel-pub">
-      <div class="panel-pub-title">${p.url?`<a class="ext" href="${escHtml(p.url)}" target="_blank">${escHtml(p.title||'')}</a>`:escHtml(p.title||'')}</div>
-      <div class="panel-pub-meta">${escHtml(p.journal||'')} · ${formatDate(p.date)}${p.category?' · '+escHtml(p.category):''}</div>
-      ${p.sowhat&&p.sowhat!=='Abstract not available'?`<div style="font-size:12px;color:#185FA5;margin-top:4px">→ ${escHtml(p.sowhat)}</div>`:''}
-    </div>`).join(''):'<div class="panel-empty">No publications matched.</div>';
+  const ptBadge={oral:'<span class="badge b-teal">Oral</span>',poster:'<span class="badge b-blue">Poster</span>',invited:'<span class="badge b-purple">Invited</span>',unspecified:'<span class="badge b-gray">Unspecified</span>'};
 
-  // News
-  const newsItems=NEWS.filter(n=>[n.title,n.summary].join(' ').toLowerCase().includes(key));
-  const newsEl=document.getElementById('panel-news');
-  newsEl.innerHTML=newsItems.length?newsItems.slice(0,5).map(n=>`
-    <div class="panel-pub">
-      <div class="panel-pub-title">${n.url?`<a class="ext" href="${escHtml(n.url)}" target="_blank">${escHtml(n.title||'')}</a>`:escHtml(n.title||'')}</div>
-      <div class="panel-pub-meta">${escHtml(n.source||'')} · ${escHtml(n.date||'')}</div>
-      ${n.sowhat&&n.sowhat!=='Summary not available'?`<div style="font-size:12px;color:#185FA5;margin-top:4px">→ ${escHtml(n.sowhat)}</div>`:''}
-    </div>`).join(''):'<div class="panel-empty">No news items matched.</div>';
+  const groups={};
+  appearances.forEach(a=>{
+    const k=a.conference||'Unknown';
+    if(!groups[k])groups[k]={meta:a,items:[]};
+    groups[k].items.push(a);
+  });
 
-  // Funding
-  const fundingEl=document.getElementById('panel-funding');
-  const companyFunding=FUNDING[sponsor]||FUNDING[Object.keys(FUNDING).find(k=>k.toLowerCase().includes(key))||'']||null;
-  if(companyFunding&&companyFunding.rounds&&companyFunding.rounds.length){
-    const rounds=companyFunding.rounds;
-    const total=rounds.reduce((sum,r)=>sum+(r.amount_usd||0),0);
-    const rows=rounds.map(r=>`<tr>
-      <td style="white-space:nowrap;color:var(--text-tertiary)">${escHtml(r.date||'—')}</td>
-      <td><span class="badge b-blue">${escHtml(r.round_type||'—')}</span></td>
-      <td style="white-space:nowrap;font-weight:500">${r.amount_usd?'$'+r.amount_usd+'M':'Undisclosed'}</td>
-      <td style="font-size:11px;color:var(--text-secondary);max-width:180px">${escHtml((r.investors||[]).join(', ')||'—')}</td>
-      <td>${r.url?`<a class="ext" href="${escHtml(r.url)}" target="_blank">Source</a>`:''}</td>
-    </tr>`).join('');
-    fundingEl.innerHTML=`<table class="funding-table">
-      <thead><tr><th>Date</th><th>Round</th><th>Amount</th><th>Investors</th><th></th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table>
-    ${total>0?`<div class="funding-total" style="margin-top:10px">Total disclosed: <span>$${total}M</span></div>`:''}`;
-  } else {
-    fundingEl.innerHTML='<div class="panel-empty">No funding data found. This may populate after the next pipeline run.</div>';
-  }
-
-  document.getElementById('panel-overlay').classList.add('open');
-  document.getElementById('company-panel').classList.add('open');
-  document.body.style.overflow='hidden';
+  list.innerHTML=Object.entries(groups).map(([confName,group])=>{
+    const m=group.meta;
+    const start=m.conference_start,end=m.conference_end,loc=m.conference_location||'';
+    const dateRange=start&&end?`${formatDate(start)} – ${formatDate(end)}`:start?formatDate(start):'';
+    const upcoming=start&&new Date(start)>new Date()?'<span class="badge b-amber" style="margin-left:6px;">Upcoming</span>':'';
+    const rows=group.items.map((a,i)=>{
+      const link=a.source_url?`<a class="ext" href="${escHtml(a.source_url)}" target="_blank">Source →</a>`:'';
+      return`<div class="card" style="margin-bottom:0;border-radius:0;border-left:none;border-right:none;border-top:${i===0?'none':'0.5px solid var(--border)'};border-bottom:none;">
+        <div class="card-top">
+          <span style="font-size:13px;font-weight:500;">${escHtml(a.company||'')}</span>
+          ${ptBadge[a.presentation_type]||ptBadge.unspecified} ${isNew(a.source_date)?'<span class="badge b-new">New</span>':''}
+          <span style="margin-left:auto;">${link}</span>
+        </div>
+        ${a.abstract_title?`<div style="font-size:12px;color:var(--text-secondary);margin-top:3px;font-style:italic;">${escHtml(a.abstract_title)}</div>`:''}
+        <div style="font-size:11px;color:var(--text-tertiary);margin-top:4px;">${escHtml(a.source_date||'')}</div>
+      </div>`;
+    }).join('');
+    return`<div style="background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);margin-bottom:14px;overflow:hidden;">
+      <div style="padding:12px 16px;background:var(--bg-secondary);border-bottom:0.5px solid var(--border);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+        <span style="font-size:15px;font-weight:600;">${escHtml(confName)}</span>${upcoming}
+        <span style="font-size:12px;color:var(--text-tertiary);">${escHtml(dateRange)}${loc?' · '+escHtml(loc):''}</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-tertiary);">${group.items.length} appearance${group.items.length!==1?'s':''}</span>
+      </div>
+      ${rows}
+    </div>`;
+  }).join('');
 }
 
-function closePanel(){
-  document.getElementById('panel-overlay').classList.remove('open');
-  document.getElementById('company-panel').classList.remove('open');
-  document.body.style.overflow='';
+function filterConferences(){
+  const q=(document.getElementById('conf-search').value||'').toLowerCase();
+  const cf=document.getElementById('conf-conference').value;
+  const tf=document.getElementById('conf-type').value;
+  const filtered=(CONF_APPEARANCES.appearances||[]).filter(a=>{
+    const text=[a.company,a.conference,a.abstract_title].join(' ').toLowerCase();
+    return(!q||text.includes(q))&&(!cf||a.conference===cf)&&(!tf||a.presentation_type===tf);
+  });
+  renderConferences({appearances:filtered,unmatched_conferences:CONF_APPEARANCES.unmatched_conferences});
 }
+
+function renderAbstracts(){}  // legacy stub — abstracts now handled by Conferences tab
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});
 
@@ -898,40 +969,8 @@ function confBadge(c){
   return c?`<span class="badge ${map[c]||'b-gray'}">${escHtml(c)}</span>`:'';
 }
 
-function renderAbstracts(data){
-  const list=document.getElementById('conf-list');
-  document.getElementById('conf-count').textContent=`${data.length} abstract${data.length!==1?'s':''}`;
-  if(!data.length){
-    list.innerHTML='<div class="state-msg">No conference abstracts found. Abstracts populate from PubMed supplement issues and the ASGCT website after embargo lifts.</div>';
-    return;
-  }
-  list.innerHTML=data.map((p,i)=>{
-    const sowhat=p.sowhat&&p.sowhat!=='Abstract not available'?`<div class="card-sowhat">${escHtml(p.sowhat)}</div>`:'';
-    const url=p.url?`<a class="ext" href="${escHtml(p.url)}" target="_blank">View →</a>`:'';
-    const hasAbstract=p.abstract&&p.abstract.length>50;
-    return`<div class="card">
-      <div class="card-top">
-        <span class="card-source">${escHtml(p.journal||p.conference||'')}</span>
-        <span class="card-date">${formatDate(p.date)}</span>
-        ${confBadge(p.conference)} ${isNew(p.date)?'<span class="badge b-new">New</span>':''} ${url}
-      </div>
-      <div class="card-title">${escHtml(p.title||'')}</div>
-      ${sowhat}
-      ${p.authors?`<div class="card-authors">${escHtml(p.authors)}</div>`:''}
-      ${hasAbstract?`<button class="abstract-toggle" onclick="toggleAbstract('c${i}')">Show abstract ↓</button><div class="abstract-text" id="abs-c${i}">${escHtml(p.abstract)}</div>`:''}
-    </div>`;
-  }).join('');
-}
 
-function filterAbstracts(){
-  const q=document.getElementById('conf-search').value.toLowerCase();
-  const conf=document.getElementById('conf-conference').value;
-  const filtered=ABSTRACTS.filter(a=>{
-    const text=[a.title,a.authors,a.journal,a.abstract,a.conference].join(' ').toLowerCase();
-    return(!q||text.includes(q))&&(!conf||a.conference===conf);
-  });
-  renderAbstracts(filtered);
-}
+
 
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function escAttr(s){return String(s).replace(/'/g,"\\'");}
