@@ -731,7 +731,8 @@ function renderPipeline(watchlist){
   // Show ALL watchlist companies, filtered by search if active
   const companies=watchlist
     .map(w=>w.split(' ').map(wd=>wd.charAt(0).toUpperCase()+wd.slice(1)).join(' '))
-    .filter(c=>!ql||c.toLowerCase().includes(ql));
+    .filter(c=>!ql||c.toLowerCase().includes(ql))
+    .sort((a,b)=>a.localeCompare(b));
 
   document.getElementById('pipeline-count').textContent=`${companies.length} of ${watchlist.length} compan${watchlist.length!==1?'ies':'y'}`;
 
