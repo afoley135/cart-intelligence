@@ -181,7 +181,7 @@
     <div class="metric"><div class="metric-label">Watchlist trials</div><div class="metric-value" id="m-watchlist">—</div><div class="metric-sub">from competitive set</div></div>
     <div class="metric"><div class="metric-label">Publications</div><div class="metric-value" id="m-pubs">—</div><div class="metric-sub">PubMed + bioRxiv</div></div>
     <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
-    <div class="metric"><div class="metric-label">Conf. abstracts</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">AACR · ASGCT · ASH</div></div>
+    <div class="metric"><div class="metric-label">Conf. appearances</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">watchlist companies</div></div>
     <div class="metric"><div class="metric-label">Patents</div><div class="metric-value" id="m-patents">—</div><div class="metric-sub">watchlist companies</div></div>
     <div class="metric"><div class="metric-label">Site changes</div><div class="metric-value" id="m-changes">—</div><div class="metric-sub">watchlist pages</div></div>
   </div>
@@ -291,18 +291,27 @@
 
   <!-- Patents -->
   <div id="pane-conferences" class="pane">
+    <div id="conf-unmatched-banner" style="display:none;background:#FEF3C7;border:0.5px solid #F59E0B;border-radius:var(--radius-md);padding:10px 14px;margin-bottom:12px;font-size:13px;color:#78350F;">
+      <strong>⚠ Unknown conferences detected</strong> — the following conference names were found in news items but don't match the known calendar.
+      To add them, edit <code>KNOWN_CONFERENCES</code> in <code>summarize.py</code>.<br>
+      <span id="conf-unmatched-list" style="font-size:12px;color:#92400E;"></span>
+    </div>
     <div class="filters">
-      <input type="text" id="conf-search" placeholder="Search title, authors, conference..." oninput="filterAbstracts()" />
-      <select id="conf-conference" onchange="filterAbstracts()">
+      <input type="text" id="conf-search" placeholder="Search company, conference..." oninput="filterConferences()" />
+      <select id="conf-conference" onchange="filterConferences()">
         <option value="">All conferences</option>
-        <option value="AACR">AACR</option>
-        <option value="ASGCT">ASGCT</option>
-        <option value="ASH">ASH</option>
+      </select>
+      <select id="conf-type" onchange="filterConferences()">
+        <option value="">All presentation types</option>
+        <option value="oral">Oral</option>
+        <option value="poster">Poster</option>
+        <option value="invited">Invited</option>
+        <option value="unspecified">Unspecified</option>
       </select>
       <span class="filter-count" id="conf-count"></span>
     </div>
-    <div class="sort-label">Sorted by date, newest first</div>
-    <div class="card-feed" id="conf-list"><div class="state-msg">Loading conference abstracts...</div></div>
+    <div class="sort-label">Grouped by conference · chronological</div>
+    <div id="conf-list"><div class="state-msg">Loading conference attendance...</div></div>
   </div>
 
   <div id="pane-patents" class="pane">
@@ -327,11 +336,7 @@
 
   <!-- Changes -->
   <div id="pane-changes" class="pane">
-    <div style="font-size:11px;font-weight:600;color:#1D9E75;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid #1D9E75;">Trial activity — watchlist companies</div>
-    <div class="sort-label" style="margin-bottom:10px;">New registrations and status changes for watchlist companies, unreviewed.</div>
-    <div class="card-feed" id="trial-changes-list"><div class="state-msg">Loading trial changes...</div></div>
-    <div style="font-size:11px;font-weight:600;color:#5f5e5a;text-transform:uppercase;letter-spacing:0.08em;margin:24px 0 10px;padding-bottom:8px;border-bottom:2px solid #e8e7e2;">Competitor website changes</div>
-    <div class="filters" style="margin-bottom:8px;">
+    <div class="filters">
       <input type="text" id="changes-search" placeholder="Search company, page type..." oninput="filterChanges()" />
       <select id="changes-magnitude" onchange="filterChanges()">
         <option value="">All magnitudes</option>
@@ -353,12 +358,8 @@
   <div class="panel-company" id="panel-name"></div>
   <div class="panel-tag">Watchlist company</div>
   <div class="panel-section">
-    <div class="panel-section-title">Overview</div>
-    <div id="panel-overview"></div>
-  </div>
-  <div class="panel-section">
     <div class="panel-section-title">Pipeline</div>
-    <div id="panel-pipeline-tbl" style="overflow-x:auto;"></div>
+    <div id="panel-pipeline-tbl"></div>
   </div>
   <div class="panel-section">
     <div class="panel-section-title">Publications</div>
@@ -368,21 +369,17 @@
     <div class="panel-section-title">News</div>
     <div id="panel-news"></div>
   </div>
-  <div class="panel-section">
-    <div class="panel-section-title">Funding</div>
-    <div id="panel-funding"></div>
-  </div>
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],TRIAL_CHANGES=[],TC_MAP={},watchlistOnly=false;
+let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],CONF_APPEARANCES={appearances:[],unmatched_conferences:[]},watchlistOnly=false;
 let sortCol='last_updated',sortDir='desc';
 const SEVEN_DAYS=7*24*60*60*1000;
 const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufacturing / process':'b-purple','Binder optimization':'b-amber','Review article':'b-gray'};
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR,tcR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR,caR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
@@ -391,7 +388,7 @@ async function loadData(){
       fetch('data/patents.json').catch(()=>null),
       fetch('watchlist.json'),
       fetch('data/website_changes.json').catch(()=>null),
-      fetch('data/trial_changes.json').catch(()=>null),
+      fetch('data/conference_appearances.json').catch(()=>null),
     ]);
     const tD=await tR.json(),pD=await pR.json(),wD=await wR.json();
     TRIALS=tD.studies||[];PUBS=pD.publications||[];
@@ -402,7 +399,7 @@ async function loadData(){
     if(aR){try{const aD=await aR.json();ABSTRACTS=aD.abstracts||[];}catch(e){ABSTRACTS=[]}}
     if(ptR){try{const ptD=await ptR.json();PATENTS=ptD.patents||[];}catch(e){PATENTS=[]}}
     if(chR){try{const chD=await chR.json();CHANGES=(chD.changes||[]).filter(c=>!c.reviewed);}catch(e){CHANGES=[];}}
-    if(tcR){try{const tcD=await tcR.json();TRIAL_CHANGES=(tcD.changes||[]).filter(c=>!c.reviewed);TC_MAP={};TRIAL_CHANGES.forEach(c=>{if(!TC_MAP[c.nct_id])TC_MAP[c.nct_id]=[];TC_MAP[c.nct_id].push(c);});}catch(e){TRIAL_CHANGES=[];TC_MAP={};}}
+    if(caR){try{const caD=await caR.json();CONF_APPEARANCES={appearances:caD.appearances||[],unmatched_conferences:caD.unmatched_conferences||[]};}catch(e){CONF_APPEARANCES={appearances:[],unmatched_conferences:[]};}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
     if(dates.length){
       const latest=new Date(dates.sort().pop());
@@ -411,7 +408,7 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);renderTrialChanges(TRIAL_CHANGES);
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderAbstracts(ABSTRACTS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);renderConferences(CONF_APPEARANCES);
   }catch(e){
     console.error('Failed to load data:',e);
     document.getElementById('trial-body').innerHTML='<tr><td colspan="9" class="state-msg">Failed to load data.</td></tr>';
@@ -435,7 +432,7 @@ function updateMetrics(){
   document.getElementById('m-watchlist').textContent=TRIALS.filter(t=>isWL(t.sponsor)).length;
   document.getElementById('m-pubs').textContent=PUBS.length;
   document.getElementById('m-news').textContent=NEWS.length;
-  document.getElementById('m-abstracts').textContent=ABSTRACTS.length;
+  document.getElementById('m-abstracts').textContent=CONF_APPEARANCES.appearances.length;
   document.getElementById('m-patents').textContent=PATENTS.length;
   document.getElementById('m-changes').textContent=CHANGES.length;
 }
@@ -491,30 +488,6 @@ function statusDot(s){
 
 // ── Trials ───────────────────────────────────────────────────────────────────
 
-function trialChangeBadge(t){
-  const changes=TC_MAP[t.nct_id];
-  if(changes&&changes.length){
-    const priority=['new_trial','status_change','phase_change','start_date_set'];
-    const c=changes.sort((a,b)=>priority.indexOf(a.change_type)-priority.indexOf(b.change_type))[0];
-    const labels={
-      new_trial:'New listing',
-      status_change:`Now ${(c.status_new||'').replace(/_/g,' ').toLowerCase().replace(/\b\w/g,l=>l.toUpperCase())}`,
-      phase_change:'Phase updated',
-      start_date_set:'Start date set',
-    };
-    const tooltips={
-      new_trial:`First registered: ${(t.first_posted||'').slice(0,10)||'recently'}`,
-      status_change:`${(c.status_old||'').replace(/_/g,' ')} → ${(c.status_new||'').replace(/_/g,' ')}`,
-      phase_change:`${(c.phase_old||[]).join('/')} → ${(c.phase_new||[]).join('/')}`,
-      start_date_set:`Trial start: ${c.start_date||''}`,
-    };
-    const label=labels[c.change_type]||'Updated';
-    const tip=tooltips[c.change_type]||'';
-    return`<span class="badge b-new" style="margin-left:4px;cursor:default;" title="${escAttr(tip)}">${escHtml(label)}</span>`;
-  }
-  return isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':'';
-}
-
 function renderTrials(data){
   const tbody=document.getElementById('trial-body');
   document.getElementById('trial-count').textContent=`${data.length} trial${data.length!==1?'s':''}`;
@@ -530,7 +503,7 @@ function renderTrials(data){
     const summary=(t.sowhat||t.summary||'').trim();
     const sponsorHtml=onW?`<span class="sponsor-link wl" onclick="openPanel('${escAttr(t.sponsor)}')">${escHtml(t.sponsor||'—')}</span>`:`<span style="font-size:12px">${escHtml(t.sponsor||'—')}</span>`;
     return`<tr class="${onW?'wrow':''}">
-      <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${trialChangeBadge(t)}</td>
+      <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':''}</td>
       <td style="max-width:140px">${sponsorHtml}</td>
       <td>${modalityBadge(t.profile_modality||t.ai_modality||t.modality)}</td>
       <td style="font-size:12px;max-width:150px">${escHtml(conditions||'—')}</td>
@@ -892,39 +865,108 @@ function confBadge(c){
   return c?`<span class="badge ${map[c]||'b-gray'}">${escHtml(c)}</span>`:'';
 }
 
-function renderAbstracts(data){
+function renderConferences(data){
   const list=document.getElementById('conf-list');
-  document.getElementById('conf-count').textContent=`${data.length} abstract${data.length!==1?'s':''}`;
-  if(!data.length){
-    list.innerHTML='<div class="state-msg">No conference abstracts found. Abstracts populate from PubMed supplement issues and the ASGCT website after embargo lifts.</div>';
+  const appearances=data.appearances||[];
+  const unmatched=data.unmatched_conferences||[];
+  const total=appearances.length;
+
+  // Unmatched banner
+  const banner=document.getElementById('conf-unmatched-banner');
+  if(unmatched.length){
+    banner.style.display='block';
+    const items=unmatched.map(u=>`<strong>${escHtml(u.raw_name)}</strong> (${escHtml(u.company||'?')})`).join(' · ');
+    document.getElementById('conf-unmatched-list').innerHTML=items;
+  } else {
+    banner.style.display='none';
+  }
+
+  document.getElementById('conf-count').textContent=`${total} appearance${total!==1?'s':''}`;
+
+  if(!total){
+    list.innerHTML='<div class="state-msg">No conference appearances found yet. Appearances are extracted from watchlist company news and press releases.</div>';
     return;
   }
-  list.innerHTML=data.map((p,i)=>{
-    const sowhat=p.sowhat&&p.sowhat!=='Abstract not available'?`<div class="card-sowhat">${escHtml(p.sowhat)}</div>`:'';
-    const url=p.url?`<a class="ext" href="${escHtml(p.url)}" target="_blank">View →</a>`:'';
-    const hasAbstract=p.abstract&&p.abstract.length>50;
-    return`<div class="card">
-      <div class="card-top">
-        <span class="card-source">${escHtml(p.journal||p.conference||'')}</span>
-        <span class="card-date">${formatDate(p.date)}</span>
-        ${confBadge(p.conference)} ${isNew(p.date)?'<span class="badge b-new">New</span>':''} ${url}
+
+  // Populate conference filter dropdown
+  const confSelect=document.getElementById('conf-conference');
+  const existingOpts=new Set([...confSelect.options].map(o=>o.value));
+  const confNames=[...new Set(appearances.map(a=>a.conference).filter(Boolean))].sort();
+  confNames.forEach(c=>{
+    if(!existingOpts.has(c)){
+      const opt=document.createElement('option');
+      opt.value=c; opt.textContent=c;
+      confSelect.appendChild(opt);
+    }
+  });
+
+  // Group by conference
+  const groups={};
+  appearances.forEach(a=>{
+    const key=a.conference||'Unknown';
+    if(!groups[key]) groups[key]={meta:a,items:[]};
+    groups[key].items.push(a);
+  });
+
+  const ptBadge={
+    'oral':       '<span class="badge b-teal">Oral</span>',
+    'poster':     '<span class="badge b-blue">Poster</span>',
+    'invited':    '<span class="badge b-purple">Invited</span>',
+    'unspecified':'<span class="badge b-gray">Unspecified</span>',
+  };
+
+  list.innerHTML=Object.entries(groups).map(([confName,group])=>{
+    const meta=group.meta;
+    const start=meta.conference_start;
+    const end=meta.conference_end;
+    const loc=meta.conference_location||'';
+    const dateRange=start&&end
+      ? `${formatDate(start)} – ${formatDate(end)}`
+      : start ? formatDate(start) : '';
+    const isUpcoming=start&&new Date(start)>new Date();
+    const upcomingTag=isUpcoming?'<span class="badge b-amber" style="margin-left:6px;">Upcoming</span>':'';
+
+    const rows=group.items.map((a,i)=>{
+      const newBadge=isNew(a.source_date)?'<span class="badge b-new">New</span>':'';
+      const pt=ptBadge[a.presentation_type]||ptBadge['unspecified'];
+      const link=a.source_url?`<a class="ext" href="${escHtml(a.source_url)}" target="_blank">Source →</a>`:'';
+      const absTitle=a.abstract_title?`<div style="font-size:12px;color:var(--text-secondary);margin-top:3px;font-style:italic;">${escHtml(a.abstract_title)}</div>`:'';
+      return`<div class="card" style="margin-bottom:0;border-radius:0;border-left:none;border-right:none;border-top:${i===0?'none':'0.5px solid var(--border)'};border-bottom:none;">
+        <div class="card-top" style="margin-bottom:4px;">
+          <span style="font-size:13px;font-weight:500;color:var(--text);">${escHtml(a.company||'Unknown')}</span>
+          ${pt} ${newBadge}
+          <span style="margin-left:auto;">${link}</span>
+        </div>
+        ${absTitle}
+        <div style="font-size:11px;color:var(--text-tertiary);margin-top:4px;">From: ${escHtml(a.source_date||'')} · ${escHtml((a.source_url||'').replace(/^https?:\/\//,'').split('/')[0])}</div>
+      </div>`;
+    }).join('');
+
+    return`<div style="background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);margin-bottom:14px;overflow:hidden;">
+      <div style="padding:12px 16px;background:var(--bg-secondary);border-bottom:0.5px solid var(--border);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+        <span style="font-size:15px;font-weight:600;color:var(--text);">${escHtml(confName)}</span>
+        ${upcomingTag}
+        <span style="font-size:12px;color:var(--text-tertiary);">${escHtml(dateRange)}${loc?' · '+escHtml(loc):''}</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-tertiary);">${group.items.length} appearance${group.items.length!==1?'s':''}</span>
       </div>
-      <div class="card-title">${escHtml(p.title||'')}</div>
-      ${sowhat}
-      ${p.authors?`<div class="card-authors">${escHtml(p.authors)}</div>`:''}
-      ${hasAbstract?`<button class="abstract-toggle" onclick="toggleAbstract('c${i}')">Show abstract ↓</button><div class="abstract-text" id="abs-c${i}">${escHtml(p.abstract)}</div>`:''}
+      ${rows}
     </div>`;
   }).join('');
 }
 
-function filterAbstracts(){
-  const q=document.getElementById('conf-search').value.toLowerCase();
-  const conf=document.getElementById('conf-conference').value;
-  const filtered=ABSTRACTS.filter(a=>{
-    const text=[a.title,a.authors,a.journal,a.abstract,a.conference].join(' ').toLowerCase();
-    return(!q||text.includes(q))&&(!conf||a.conference===conf);
+function filterConferences(){
+  const q=(document.getElementById('conf-search').value||'').toLowerCase();
+  const confFilter=document.getElementById('conf-conference').value;
+  const typeFilter=document.getElementById('conf-type').value;
+  const all=CONF_APPEARANCES.appearances||[];
+  const filtered=all.filter(a=>{
+    const text=[a.company,a.conference,a.abstract_title].join(' ').toLowerCase();
+    return(!q||text.includes(q))
+      &&(!confFilter||a.conference===confFilter)
+      &&(!typeFilter||a.presentation_type===typeFilter);
   });
-  renderAbstracts(filtered);
+  // Re-render with filtered subset — rebuild a synthetic data object
+  renderConferences({appearances:filtered,unmatched_conferences:CONF_APPEARANCES.unmatched_conferences});
 }
 
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
@@ -937,46 +979,12 @@ function switchTab(name){
   document.getElementById(`pane-${name}`).classList.add('active');
 }
 
-function renderTrialChanges(data){
-  const list=document.getElementById('trial-changes-list');
-  if(!list)return;
-  const relevant=data.filter(c=>['new_trial','status_change'].includes(c.change_type));
-  if(!relevant.length){list.innerHTML='<div class="state-msg">No new trial activity for watchlist companies.</div>';return;}
-  const typeLabels={new_trial:'New listing',status_change:'Status change',phase_change:'Phase updated',start_date_set:'Start date set'};
-  const typeCls={new_trial:'b-teal',status_change:'b-new',phase_change:'b-amber',start_date_set:'b-gray'};
-  list.innerHTML=relevant.map(c=>{
-    const label=typeLabels[c.change_type]||c.change_type;
-    const cls=typeCls[c.change_type]||'b-gray';
-    const asset=c.asset_name?` <span style="color:var(--text-tertiary);font-size:11px;">(${escHtml(c.asset_name)})</span>`:'';
-    let detail='';
-    if(c.change_type==='new_trial'){
-      const phase=(c.phase||[]).join('/').replace(/PHASE/g,'Ph ')||'Phase N/A';
-      const status=(c.status||'').replace(/_/g,' ');
-      const conds=(c.conditions||[]).slice(0,2).join(', ')||'—';
-      detail=`<div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">${escHtml(phase)} · ${escHtml(status)} · ${escHtml(conds)}</div>`;
-    } else if(c.change_type==='status_change'){
-      detail=`<div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">${escHtml((c.status_old||'').replace(/_/g,' '))} → <strong>${escHtml((c.status_new||'').replace(/_/g,' '))}</strong></div>`;
-    }
-    return`<div class="card">
-      <div class="card-top">
-        <span class="card-source">${escHtml(c.sponsor||'')}</span>
-        <span class="card-date">${(c.detected_at||'').slice(0,10)}</span>
-        <span class="badge ${cls}">${escHtml(label)}</span>
-        ${c.url?`<a class="ext" href="${escHtml(c.url)}" target="_blank">${escHtml(c.nct_id||'')} →</a>`:`<span style="font-size:12px;color:var(--text-tertiary)">${escHtml(c.nct_id||'')}</span>`}
-      </div>
-      <div class="card-title">${escHtml(c.title||'—')}${asset}</div>
-      ${detail}
-    </div>`;
-  }).join('');
-}
-
 function renderChanges(data){
   const list=document.getElementById('changes-list');
   const count=document.getElementById('changes-count');
   const badge=document.getElementById('changes-badge');
   if(count)count.textContent=`${data.length} change${data.length!==1?'s':''}`;
-  const totalChanges=data.length+TRIAL_CHANGES.filter(c=>['new_trial','status_change'].includes(c.change_type)).length;
-  if(badge){if(totalChanges){badge.textContent=totalChanges;badge.style.display='inline';}else{badge.style.display='none';}}
+  if(badge){if(data.length){badge.textContent=data.length;badge.style.display='inline';}else{badge.style.display='none';}}
   if(!list)return;
   if(!data.length){list.innerHTML='<div class="state-msg">No unreviewed changes. The monitor runs daily and flags page updates for review here.</div>';return;}
   list.innerHTML=data.map((c,i)=>{
