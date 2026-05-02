@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-01T16:14:02.667637+00:00",
-  "count": 433,
+  "fetched_at": "2026-05-02T07:30:55.680305+00:00",
+  "count": 437,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7163,6 +7163,72 @@
       "novelty_summary": "The invention describes a novel in vitro NK cell expansion method combining OK-432 (Picibanil) with irradiated K562 feeder cells, offering an alternative approach to CAR-T-like immunotherapy. While NK cell engineering represents an adjacent therapeutic modality to CAR-T, this composition-based culture method may have competitive implications for off-the-shelf cellular immunotherapy products due to NK cells' reduced immunogenicity and lack of GvHD liability.",
       "relevant": true,
       "title_original": "SYSTÈME ET PROCÉDÉ DE CULTURE DE CELLULES NK ET LEUR UTILISATION"
+    },
+    {
+      "id": "US20260117187.A1",
+      "title": "LIPID NANOPARTICLES FOR BIOPRODUCTION",
+      "abstract": "A nonviral gene therapy delivers DNA that allows cells to produce proteins such as their own growth factors in culture media. Lipid nanoparticles provide an effective delivery mechanism into a target cell. By encapsulating plasmid DNA encoding the growth factors with inducible promoters into lipid nanoparticles (LNPs), target cells create their own growth factors reducing a need for expensive growth factors from external sources. DNA expression lasts for several days reducing the amount of reagent needed. The plasmid DNA is more stable than mRNA and proteins, therefore reducing logistical challenges.",
+      "assignee": "WORCESTER POLYTECHNIC INST [US]; Worcester Polytechnic Institute",
+      "watchlist_company": "Create Medicines",
+      "filing_date": "",
+      "patent_number": "US20260117187A1",
+      "application_number": "20260117187",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260117187A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent describes LNP-mediated delivery of plasmid DNA with inducible promoters enabling in situ production of growth factors (e.g., cytokines) in cultured cells, reducing dependency on exogenous supplementation. This approach leverages plasmid DNA stability advantages over mRNA while enabling transient protein expression for cost reduction in cell manufacturing—potentially applicable to reducing GMP costs in CAR-T cell expansion.",
+      "relevant": true
+    },
+    {
+      "id": "WO2026086893.A1",
+      "title": "Single-Domain Antibody Targeting Nectin-4, Chimeric Antigen Receptor, and Associated Uses",
+      "abstract": "The present invention relates to the field of biomedicine, and in particular to a Nectin-4-targeting single-domain antibody, a chimeric antigen receptor, and a use thereof. The provided anti-Nectin-4 single-domain antibody has the advantages of low molecular weight, high solubility, high stability, low immunogenicity, and high tissue permeability, and requires no additional folding and assembly steps or linker optimization and modification, so that said antibody becomes a promising alternative to antibodies having a large molecular weight, such as monoclonal antibodies and scFv single-chain antibodies.",
+      "assignee": "SHENZHEN GENOCURY BIOTECH CO LTD [CN]; 深圳市济因生物科技有限公司",
+      "watchlist_company": "Genocury",
+      "filing_date": "",
+      "patent_number": "WO2026086893A1",
+      "application_number": "2026086893",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/WO2026086893A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The invention provides a Nectin-4-targeting single-domain antibody with improved biophysical properties (low molecular weight, high solubility, stability, and tissue permeability) integrated into a chimeric antigen receptor format. This represents a competitive advantage for in vivo CAR-T applications by potentially enabling superior tumor penetration and reduced immunogenicity compared to conventional scFv-based CAR constructs, while eliminating the need for linker optimization.",
+      "relevant": true,
+      "title_original": "ANTICORPS À DOMAINE UNIQUE CIBLANT LA NECTINE-4, RÉCEPTEUR ANTIGÉNIQUE CHIMÉRIQUE ET UTILISATION ASSOCIÉE"
+    },
+    {
+      "id": "WO2026087488.A1",
+      "title": "Gene editing tools and compositions for cell engineering",
+      "abstract": "The present invention relates to a composition comprising a transposase, optionally a RNA-guided nuclease, and a supercoiled circular dsDNA molecule comprising a transgene flanked by ITRs, in particular for its use as a gene editing tool.",
+      "assignee": "INTEGRA THERAPEUTICS [ES]; INTEGRA THERAPEUTICS",
+      "watchlist_company": "Integra Therapeutics",
+      "filing_date": "",
+      "patent_number": "WO2026087488A1",
+      "application_number": "2026087488",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/WO2026087488A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent discloses a composition combining transposase, optional RNA-guided nuclease, and supercoiled circular dsDNA with transgene flanked by ITRs as an integrated gene editing tool. This combination approach for non-viral gene delivery and cell engineering offers potential advantages in CAR-T manufacturing by enabling efficient integration of CAR constructs without viral vectors, potentially improving scalability and reducing manufacturing complexity.",
+      "relevant": true,
+      "title_original": "OUTILS D'ÉDITION GÉNIQUE ET COMPOSITIONS POUR L'INGÉNIERIE CELLULAIRE"
+    },
+    {
+      "id": "US20260115324.A1",
+      "title": "Chimeric Antigen Receptors Targeting CD19",
+      "abstract": "Provided herein are RNA sequences encoding a chimeric antigen receptor (CAR) comprising a CD19 antigen binding molecule, along with related compositions and methods. In some embodiments, circular RNAs encoding the CD19 binding molecule or CD19 CAR, along with related compositions, methods, and precursors, are described herein. In some embodiments, these compositions comprise a transfer vehicle, e.g., comprising an ionizable lipid described herein.",
+      "assignee": "ORNA THERAPEUTICS INC [US]; RENAGADE THERAPEUTICS MAN INC [US]; Orna Therapeutics, Inc.",
+      "watchlist_company": "Orna Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260115324A1",
+      "application_number": "20260115324",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260115324A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent describes circular RNA (circRNA) encoding CD19-targeting CAR constructs delivered via ionizable lipid-based transfer vehicles, representing a novel delivery modality alternative to viral vectors and linear mRNA for in vivo CAR-T cell engineering. The use of circular RNA architecture offers potential advantages in stability, reduced innate immune activation, and sustained protein expression, with significant competitive implications for non-viral CAR-T cell manufacturing and therapeutic efficacy.",
+      "relevant": true
     }
   ]
 }
