@@ -304,7 +304,7 @@
       <span class="filter-count" id="news-count"></span>
     </div>
     <div id="news-priority-note" style="display:none;font-size:11px;color:var(--text-tertiary);margin-bottom:0.75rem;">
-      Showing press wires (PR Newswire · GlobeNewswire · Business Wire) and priority outlets (BioSpace · Fierce Biotech · Fierce Pharma · Endpoints News · STAT News · Nature). <span style="cursor:pointer;color:#185FA5;" onclick="toggleNewsPriority()">Show all →</span>
+      Showing priority outlets (BioSpace · Fierce Biotech · Fierce Pharma · Endpoints News · STAT News) plus wire articles (PR Newswire · GlobeNewswire · Business Wire) mentioning watchlist companies. <span style="cursor:pointer;color:#185FA5;" onclick="toggleNewsPriority()">Show all →</span>
     </div>
     <div class="card-feed" id="news-list"><div class="state-msg">Loading news...</div></div>
   </div>
@@ -400,18 +400,15 @@ const CONF_CALENDAR=[
   {name:'ASH 2025',     full:'ASH Annual Meeting 2025',      start:'2025-12-06',end:'2025-12-09',location:'Orlando, FL',      badge:'b-ash'},
 ];
 
+// Priority outlets — the five curated trade publications shown in priority mode.
+// Wire services (PR Newswire, GlobeNewswire, Business Wire) are intentionally
+// excluded — their articles come through on every watchlist query regardless.
 const NEWS_PRIORITY_SOURCES = new Set([
-  // Wire services (exact NewsAPI names)
-  'PR Newswire','GlobeNewswire','Business Wire','PRN',
-  // Trade outlets (exact Google News RSS source names)
-  'BioSpace','Fierce Biotech','Endpoints News','STAT News','Nature',
-  'Fierce Pharma','BioPharma Dive','FierceBiotech','FiercePharma',
-  'Endpoints','STAT','Nature Medicine','Nature Biotechnology',
+  'BioSpace','Fierce Biotech','Fierce Pharma','Endpoints News','STAT News',
+  'FierceBiotech','FiercePharma','Endpoints','STAT',
 ]);
-// Wire substrings — catch variants like "PR Newswire UK", "PRNewswire"
-const NEWS_PRIORITY_WIRE_SUBSTRINGS = ['newswire','globenewswire','businesswire','business wire','prnewswire'];
-// Outlet substrings — catch domain-style names like "fiercebiotech.com", loose caps variants
-const NEWS_PRIORITY_OUTLET_SUBSTRINGS = ['fierce','biospace','endpoints','statnews','stat news','biopharma dive','biopharmadive'];
+// Outlet substrings — catch domain-style and loose-cap variants
+const NEWS_PRIORITY_OUTLET_SUBSTRINGS = ['fierce','biospace','endpoints','statnews','stat news'];
 // fetch_source values that are always priority (direct curated RSS feeds)
 const NEWS_PRIORITY_FETCH_SOURCES = new Set(['rss','rss_watchlist']);
 let sortCol='last_updated',sortDir='desc';
@@ -544,7 +541,7 @@ function renderTrials(data){
   tbody.innerHTML=data.map(t=>{
     const onW=isWL(t.sponsor);
     const conditions=(t.conditions||[]).slice(0,2).join(', ');
-    const summary=(t.sowhat||t.summary||'').trim();
+    const summary=cleanSowhat(t.sowhat||t.summary||'');
     const sponsorHtml=onW?`<span class="sponsor-link wl" onclick="switchTab('pipeline');setTimeout(()=>{const el=[...document.querySelectorAll('#pipeline-list .company-name')].find(e=>e.textContent.toLowerCase().includes('${escAttr(t.sponsor.toLowerCase().split(' ')[0])}'));if(el){el.closest('.company-block').querySelector('.company-header').click();el.scrollIntoView({behavior:'smooth',block:'start'});}},50)" style="cursor:pointer;">${escHtml(t.sponsor||'—')}</span>`:`<span style="font-size:12px">${escHtml(t.sponsor||'—')}</span>`;
     return`<tr class="${onW?'wrow':''}">
       <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':''}</td>
@@ -611,8 +608,7 @@ function getProfile(companyName){
 function isPressRelease(n,companyName){
   // Match wire-sourced items only (press releases, not trade coverage)
   const src=(n.source||'').toLowerCase();
-  const isWire=NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>src.includes(w))
-    ||['pr newswire','globenewswire','business wire','businesswire','prnewswire'].some(w=>src.includes(w));
+  const isWire=['pr newswire','globenewswire','business wire','businesswire','prnewswire','globe newswire'].some(w=>src.includes(w));
   if(!isWire) return false;
   const key=companyName.toLowerCase();
   return [n.title,n.summary].join(' ').toLowerCase().includes(key);
@@ -686,7 +682,7 @@ function renderCompanyBlock(companyName,idx){
     pressHtml=pressItems.map(n=>`<div class="panel-pub">
       <div class="panel-pub-title">${n.url?`<a class="ext" href="${escHtml(n.url)}" target="_blank">${escHtml(n.title||'')}</a>`:escHtml(n.title||'')}</div>
       <div class="panel-pub-meta">${escHtml(n.source||'')} · ${escHtml(n.date||'')}${isNew(n.date)?' · <span class="badge b-new">New</span>':''}</div>
-      ${n.sowhat&&n.sowhat!=='Summary not available'?`<div style="font-size:12px;color:#185FA5;margin-top:4px;">→ ${escHtml(n.sowhat)}</div>`:''}
+      ${n.sowhat&&n.sowhat!=='Summary not available'?`<div style="font-size:12px;color:#185FA5;margin-top:4px;">→ ${escHtml(cleanSowhat(n.sowhat))}</div>`:''}
     </div>`).join('');
   }
 
@@ -781,7 +777,7 @@ function renderPubs(data){
   list.innerHTML=data.map((p,i)=>{
     const typeBadge=p.preprint?'<span class="badge b-amber">Preprint</span>':'<span class="badge b-teal">Peer-reviewed</span>';
     const catBadge=p.category?`<span class="badge ${CAT_BADGE[p.category]||'b-gray'}">${escHtml(p.category)}</span>`:'';
-    const sowhat=p.sowhat&&p.sowhat!=='Abstract not available'?`<div class="card-sowhat">${escHtml(p.sowhat)}</div>`:'';
+    const sowhat=p.sowhat&&p.sowhat!=='Abstract not available'?`<div class="card-sowhat">${escHtml(cleanSowhat(p.sowhat))}</div>`:'';
     const pubUrl=p.url?`<a class="ext" href="${escHtml(p.url)}" target="_blank">View →</a>`:'';
     const hasAbstract=p.abstract&&p.abstract.length>50;
     return`<div class="card">
@@ -829,7 +825,7 @@ function renderNews(data){
   document.getElementById('news-count').textContent=`${data.length} item${data.length!==1?'s':''}`;
   if(!data.length){list.innerHTML='<div class="state-msg">No news items found. The news feed will populate after the next pipeline run.</div>';return;}
   list.innerHTML=data.map(n=>{
-    const sowhat=n.sowhat&&n.sowhat!=='Summary not available'?`<div class="card-sowhat">${escHtml(n.sowhat)}</div>`:'';
+    const sowhat=n.sowhat&&n.sowhat!=='Summary not available'?`<div class="card-sowhat">${escHtml(cleanSowhat(n.sowhat))}</div>`:'';
     const url=n.url?`<a class="ext" href="${escHtml(n.url)}" target="_blank">Read →</a>`:'';
     return`<div class="card">
       <div class="card-top"><span class="card-source">${escHtml(n.source||'')}</span><span class="card-date">${escHtml(n.date||'')}</span>${isNew(n.date)?'<span class="badge b-new">New</span>':''} ${url}</div>
@@ -840,28 +836,34 @@ function renderNews(data){
   }).join('');
 }
 
+const NEWS_WIRE_SUBSTRINGS = ['pr newswire','prnewswire','globenewswire','globe newswire','business wire','businesswire'];
+
+function isWireSource(n){
+  const sl=(n.source||'').toLowerCase();
+  return NEWS_WIRE_SUBSTRINGS.some(w=>sl.includes(w));
+}
+
+function mentionsWatchlistCompany(n){
+  const text=[n.title,n.summary,n.sowhat].join(' ').toLowerCase();
+  return WATCHLIST.some(w=>text.includes(w));
+}
+
 function isPrioritySource(n){
   // 1. Curated direct RSS feeds (STAT News, Endpoints) — always priority
   if(NEWS_PRIORITY_FETCH_SOURCES.has(n.fetch_source||'')) return true;
   const src=n.source||'';
   const sl=src.toLowerCase();
-  // 2. Exact source name match
+  // 2. Five priority trade outlets — always priority regardless of subject
   if(NEWS_PRIORITY_SOURCES.has(src)) return true;
-  // 3. Wire service substring
-  if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>sl.includes(w))) return true;
-  // 4. Outlet substring on source name
   if(NEWS_PRIORITY_OUTLET_SUBSTRINGS.some(w=>sl.includes(w))) return true;
-  // 5. URL domain fallback — for items stored as "Google News" where outlet
-  //    info is only available in the article URL (e.g. fiercebiotech.com)
+  // URL domain fallback for Google News items where source field = "Google News"
   const url=(n.url||'').toLowerCase();
   if(NEWS_PRIORITY_OUTLET_SUBSTRINGS.some(w=>url.includes(w))) return true;
-  if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>url.includes(w))) return true;
-  // 6. Title suffix — Google News RSS appends "- Outlet Name" to titles;
-  //    source field stays "Google News" so checks 2-5 miss these entirely.
-  //    e.g. "Umoja Biopharma raises $50M - BioSpace"
+  // Title suffix fallback — Google News appends "- Outlet Name" to titles
   const tl=(n.title||'').toLowerCase();
   if(NEWS_PRIORITY_OUTLET_SUBSTRINGS.some(w=>tl.includes(' - '+w)||tl.endsWith(w))) return true;
-  if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>tl.includes(' - '+w)||tl.endsWith(w))) return true;
+  // 3. Wire services — only priority when the item mentions a watchlist company
+  if(isWireSource(n)&&mentionsWatchlistCompany(n)) return true;
   return false;
 }
 
@@ -1086,6 +1088,26 @@ function confBadge(c){
 
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function escAttr(s){return String(s).replace(/'/g,"\\'");}
+
+// Sanitize sowhat fields that arrive as raw JSON strings from the AI pipeline.
+// Handles: plain text, {"sowhat":"..."}, ```json\n{...}```, mixed-field objects
+function cleanSowhat(raw){
+  if(!raw||typeof raw!=='string') return '';
+  let s=raw.trim();
+  s=s.replace(/^```json\s*/i,'').replace(/^```\s*/,'').replace(/```\s*$/,'').trim();
+  if(s.startsWith('{')){
+    try{
+      const obj=JSON.parse(s);
+      if(typeof obj.sowhat==='string') return obj.sowhat.trim();
+      const first=Object.values(obj).find(v=>typeof v==='string'&&v.length>5);
+      if(first) return first.trim();
+    }catch(e){
+      const m=s.match(/"sowhat"\s*:\s*"([^"]+)"/);
+      if(m) return m[1].trim();
+    }
+  }
+  return s;
+}
 
 function switchTab(name){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
