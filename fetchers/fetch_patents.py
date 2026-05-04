@@ -16,7 +16,14 @@ Three search strategies per company:
 Rate limiting:
   EPO OPS free tier allows ~30 requests/minute.
   With 3 queries × 28 companies = ~84 requests, we sleep 2.5s between
-  queries and 3s between companies to stay well under the limit.
+  queries within a company and apply a proportional cooldown after each
+  company (3s base + 0.5s per patent found, capped at 30s). This prevents
+  large result sets (e.g. 39 results from "Addition Therapeutics") from
+  saturating the per-minute bucket and causing downstream 403 cascades.
+
+  403 handling is lifted out of the per-request retry loop. If a 403
+  occurs, search_biblio raises ThrottleError; fetch_all_for_company catches
+  it, sleeps 45s, then moves on rather than hammering the same endpoint.
 
 For each new patent, calls Claude to classify claim type and summarise
 novelty. Existing analysis is cached and not re-run.
@@ -37,6 +44,14 @@ from pathlib import Path
 
 import anthropic
 import requests
+
+# ---------------------------------------------------------------------------
+# Custom exceptions
+# ---------------------------------------------------------------------------
+
+class ThrottleError(Exception):
+    """Raised when EPO OPS returns an unrecoverable 403 after retry."""
+
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -66,8 +81,11 @@ else:
     DATE_FROM_STR = (datetime.now(timezone.utc) - timedelta(days=INCREMENTAL_DAYS)).strftime("%Y%m%d")
 
 # Sleep between individual queries — keeps us under EPO's ~30 req/min limit
-QUERY_SLEEP   = 2.5   # seconds between queries within a company
-COMPANY_SLEEP = 3.0   # seconds between companies
+QUERY_SLEEP        = 2.5   # seconds between queries within a company
+COMPANY_SLEEP_BASE = 3.0   # minimum seconds between companies
+COMPANY_SLEEP_PER  = 0.5   # additional seconds per patent found (proportional cooldown)
+COMPANY_SLEEP_MAX  = 30.0  # cap so large result sets don't stall the run unnecessarily
+THROTTLE_SLEEP     = 45.0  # seconds to sleep when a 403 is unrecoverable
 
 PATENT_ANALYSIS_PROMPT = """\
 You are a biotech patent analyst specialising in cell and gene therapy.
@@ -173,7 +191,10 @@ def search_biblio(cql: str, start: int = 1, count: int = 25) -> dict:
         return search_biblio(cql, start, count)
 
     if resp.status_code == 403:
-        logging.warning(f"  Forbidden (403) — sleeping 20s then retrying once")
+        # Single retry with a short sleep. If it fails again, raise ThrottleError
+        # so fetch_all_for_company can handle it at the company level (one long
+        # sleep) rather than retrying per-request and cascading 403s.
+        logging.warning("  Forbidden (403) — sleeping 20s then retrying once")
         time.sleep(20)
         try:
             resp = requests.get(
@@ -183,7 +204,10 @@ def search_biblio(cql: str, start: int = 1, count: int = 25) -> dict:
                 timeout=45,
             )
         except requests.RequestException as e:
-            logging.warning(f"  Retry failed: {e}")
+            raise ThrottleError(f"Retry request failed: {e}") from e
+        if resp.status_code in (403, 429):
+            raise ThrottleError(f"Still throttled after retry: HTTP {resp.status_code}")
+        if resp.status_code == 404:
             return {"patents": [], "total": 0}
         if not resp.ok:
             logging.warning(f"  Still failing after retry: HTTP {resp.status_code}")
@@ -372,7 +396,15 @@ def fetch_all_for_company(company: str, date_from: str) -> list[dict]:
     seen_ids: set[str] = set()
 
     for cql in build_queries(company, date_from):
-        patents = collect_for_query(cql, company)
+        try:
+            patents = collect_for_query(cql, company)
+        except ThrottleError as e:
+            # EPO is throttling at the per-minute level. Sleep once at company
+            # level and move on — retrying the same query would just compound
+            # the problem for all downstream companies.
+            logging.warning(f"  Throttled on '{cql[:60]}': {e} — sleeping {THROTTLE_SLEEP:.0f}s")
+            time.sleep(THROTTLE_SLEEP)
+            break
         for p in patents:
             pid = p.get("id")
             if pid and pid not in seen_ids:
@@ -482,7 +514,14 @@ def run():
                     all_patents[pid] = patent
                     new_count += 1
 
-            time.sleep(COMPANY_SLEEP)
+            # Proportional cooldown: large result sets burn more API quota,
+            # so sleep longer before the next company to let the rate-limit
+            # bucket refill. Base 3s + 0.5s per patent found, capped at 30s.
+            cooldown = min(
+                COMPANY_SLEEP_BASE + len(patents) * COMPANY_SLEEP_PER,
+                COMPANY_SLEEP_MAX,
+            )
+            time.sleep(cooldown)
         except Exception as e:
             logging.error(f"  Failed for {company}: {e}")
 
