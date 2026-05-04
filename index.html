@@ -195,7 +195,7 @@
     <div class="metric"><div class="metric-label">Watchlist trials</div><div class="metric-value" id="m-watchlist">—</div><div class="metric-sub">from competitive set</div></div>
     <div class="metric"><div class="metric-label">Publications</div><div class="metric-value" id="m-pubs">—</div><div class="metric-sub">PubMed + bioRxiv</div></div>
     <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
-    <div class="metric"><div class="metric-label">Conf. abstracts</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">AACR · ASGCT · ASH</div></div>
+    <div class="metric" style="cursor:pointer;" onclick="switchTab('conferences')" title="Go to Conferences tab"><div class="metric-label" id="m-conf-label">Next conference</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub" id="m-conf-sub">—</div></div>
     <div class="metric"><div class="metric-label">Patents</div><div class="metric-value" id="m-patents">—</div><div class="metric-sub">watchlist companies</div></div>
 
   </div>
@@ -473,9 +473,26 @@ function updateMetrics(){
   document.getElementById('m-watchlist').textContent=TRIALS.filter(t=>isWL(t.sponsor)).length;
   document.getElementById('m-pubs').textContent=PUBS.length;
   document.getElementById('m-news').textContent=NEWS.length;
-  document.getElementById('m-abstracts').textContent=ABSTRACTS.length;
   document.getElementById('m-patents').textContent=PATENTS.length;
 
+  // Next conference tile — find the next upcoming conference from the calendar
+  const today=new Date();
+  const next=CONF_CALENDAR.filter(c=>new Date(c.end)>=today).sort((a,b)=>a.start.localeCompare(b.start))[0];
+  if(next){
+    // Count distinct watchlist companies with appearances at this conference
+    const appearances=(CONF_APPEARANCES.appearances||[]).filter(a=>a.conference===next.name);
+    const companies=new Set(appearances.map(a=>(a.company||'').toLowerCase()).filter(Boolean));
+    const count=companies.size;
+    const startD=new Date(next.start);
+    const endD=new Date(next.end);
+    const fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    const dateStr=`${fmt(startD)}–${fmt(endD)} · ${next.location}`;
+    document.getElementById('m-conf-label').textContent=next.name;
+    document.getElementById('m-abstracts').textContent=count||'—';
+    document.getElementById('m-conf-sub').textContent=count
+      ? `${count} watchlist co${count!==1?'s':''} · ${dateStr}`
+      : dateStr;
+  }
 }
 
 function modalityBadge(m){
