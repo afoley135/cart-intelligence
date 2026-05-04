@@ -26,22 +26,52 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 LOOKBACK_DAYS  = 30
-PUBMED_MAX     = 100
+PUBMED_MAX     = 200
 BIORXIV_MAX    = 50
 
+# Broader PubMed query covering more phrasing variants used in academic literature.
+# Searches title/abstract ([tiab]) so terms must appear in the paper itself.
+# Grouped into three clusters:
+#   A) Explicit "in vivo CAR" phrasing
+#   B) Delivery modality + CAR combinations
+#   C) Direct T-cell / lymphocyte engineering without ex vivo step
 PUBMED_QUERY = (
-    '("in vivo CAR-T"[tiab] OR "in vivo CAR T"[tiab] OR '
+    '('
+    # Cluster A — explicit in vivo CAR phrasing
+    '"in vivo CAR-T"[tiab] OR "in vivo CAR T"[tiab] OR '
     '"in vivo chimeric antigen receptor"[tiab] OR '
-    '"lentiviral CAR T in vivo"[tiab] OR '
-    '"lipid nanoparticle CAR"[tiab] OR '
-    '"non-viral CAR T"[tiab]) '
+    '"in vivo generated CAR"[tiab] OR '
+    '"in vivo CAR-NK"[tiab] OR '
+    # Cluster B — delivery modality + CAR
+    '"lipid nanoparticle" AND "CAR T"[tiab] OR '
+    '"LNP" AND "CAR T"[tiab] OR '
+    '"mRNA CAR"[tiab] OR '
+    '"non-viral CAR T"[tiab] OR '
+    '"AAV CAR"[tiab] OR '
+    '"lentiviral vector" AND "CAR" AND "in vivo"[tiab] OR '
+    '"sleeping beauty" AND "CAR T" AND "in vivo"[tiab] OR '
+    # Cluster C — direct T-cell engineering
+    '"direct T cell engineering"[tiab] OR '
+    '"in vivo T cell reprogramming"[tiab] OR '
+    '"in vivo lymphocyte engineering"[tiab] OR '
+    '"in situ CAR"[tiab]'
+    ') '
     'AND ("{date_from}"[edat]:"{date_to}"[edat])'
 )
 
+# bioRxiv terms: simple substring match against title+abstract after paginating
+# all preprints in the date window. Keep terms specific enough to avoid false
+# positives — bioRxiv covers all biology so "CAR" alone is too broad.
 BIORXIV_SEARCH_TERMS = [
     "in vivo CAR-T",
-    "in vivo CAR T cell",
+    "in vivo CAR T",
+    "in vivo chimeric antigen receptor",
     "lipid nanoparticle CAR",
+    "mRNA CAR",
+    "AAV CAR",
+    "non-viral CAR T",
+    "in vivo T cell reprogramming",
+    "in situ CAR",
 ]
 
 NCBI_BASE    = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
@@ -161,22 +191,52 @@ def parse_pubmed_article(article: ET.Element) -> dict:
 # ---------------------------------------------------------------------------
 
 def biorxiv_fetch(term: str, lookback_days: int, max_results: int) -> tuple[list[dict], int]:
+    """
+    Paginate through ALL bioRxiv preprints in the date window and substring-match
+    against each term. The /details endpoint returns 100 items per page; we walk
+    pages until the API returns an empty collection or we hit max_results.
+
+    Previously only the first page (offset 0, ~30 items) was checked, which
+    guaranteed 0 matches because bioRxiv posts hundreds of preprints per day.
+    """
     end_date   = datetime.now(timezone.utc).date()
     start_date = end_date - timedelta(days=lookback_days)
-    url = f"{BIORXIV_BASE}/details/biorxiv/{start_date.isoformat()}/{end_date.isoformat()}/0/json"
-    resp = requests.get(url, timeout=30)
-    resp.raise_for_status()
-    collection = resp.json().get("collection", [])
-    raw_count  = len(collection)
     term_lower = term.lower()
-    results = []
-    for item in collection:
-        text = " ".join([item.get("title",""), item.get("abstract",""), item.get("category","")]).lower()
-        if term_lower in text:
-            results.append(parse_biorxiv_item(item))
-        if len(results) >= max_results:
-            break
-    return results, raw_count
+    results    = []
+    total_seen = 0
+    cursor     = 0
+
+    while len(results) < max_results:
+        url = (
+            f"{BIORXIV_BASE}/details/biorxiv"
+            f"/{start_date.isoformat()}/{end_date.isoformat()}"
+            f"/{cursor}/json"
+        )
+        resp = requests.get(url, timeout=30)
+        resp.raise_for_status()
+        data       = resp.json()
+        collection = data.get("collection", [])
+
+        if not collection:
+            break  # No more pages
+
+        total_seen += len(collection)
+
+        for item in collection:
+            text = " ".join([
+                item.get("title", ""),
+                item.get("abstract", ""),
+                item.get("category", ""),
+            ]).lower()
+            if term_lower in text:
+                results.append(parse_biorxiv_item(item))
+            if len(results) >= max_results:
+                break
+
+        cursor += 100  # bioRxiv pages are 100 items each
+        time.sleep(0.3)
+
+    return results[:max_results], total_seen
 
 
 def parse_biorxiv_item(item: dict) -> dict:
@@ -250,14 +310,14 @@ def run():
     logging.info("Pass 1: bioRxiv keyword queries")
     for term in BIORXIV_SEARCH_TERMS:
         try:
-            preprints, raw_count = biorxiv_fetch(term, LOOKBACK_DAYS, BIORXIV_MAX)
+            preprints, total_seen = biorxiv_fetch(term, LOOKBACK_DAYS, BIORXIV_MAX)
             for p in preprints:
                 key = p["doi"] or p["title"][:60]
                 if key in all_pubs:
                     p["sowhat"] = all_pubs[key].get("sowhat") or p.get("sowhat")
                     p["category"] = all_pubs[key].get("category") or p.get("category")
                 all_pubs[key] = p
-            logging.info(f"  '{term}': {len(preprints)} preprints matched (API returned {raw_count} total in window)")
+            logging.info(f"  '{term}': {len(preprints)} matched (scanned {total_seen} total preprints)")
             time.sleep(0.5)
         except requests.RequestException as e:
             logging.error(f"bioRxiv fetch failed for '{term}': {e}")
