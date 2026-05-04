@@ -508,7 +508,16 @@ def run():
             if old.get("asset_name"):
                 all_studies[nct]["asset_name"] = old["asset_name"]
 
+    # Preserve cached ai_modality from previous run BEFORE Pass 3 so that
+    # already-classified trials are excluded from needs_classification and
+    # are never re-classified (preserving per-trial nuance like CARsgen).
+    for nct, old in old_studies.items():
+        if nct in all_studies and old.get("ai_modality"):
+            if not all_studies[nct].get("ai_modality"):
+                all_studies[nct]["ai_modality"] = old["ai_modality"]
+
     # Pass 3 — Claude classification for watchlist company trials
+    # Only runs on trials that are genuinely new (no cached ai_modality above).
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if api_key:
         needs_classification = [
@@ -525,12 +534,6 @@ def run():
             time.sleep(0.2)
     else:
         logging.warning("Pass 3 skipped: ANTHROPIC_API_KEY not set")
-
-    # Preserve cached ai_modality from previous run
-    for nct, old in old_studies.items():
-        if nct in all_studies and old.get("ai_modality"):
-            if not all_studies[nct].get("ai_modality"):
-                all_studies[nct]["ai_modality"] = old["ai_modality"]
 
     # ── Change detection ──────────────────────────────────────────────────────
     logging.info("Detecting trial changes for watchlist companies...")
