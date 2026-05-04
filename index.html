@@ -490,8 +490,8 @@ function updateMetrics(){
     document.getElementById('m-conf-label').textContent=next.name;
     document.getElementById('m-abstracts').textContent=count||'—';
     document.getElementById('m-conf-sub').textContent=count
-      ? `${count} watchlist co${count!==1?'s':''} · ${dateStr}`
-      : dateStr;
+      ? `${count} watchlist compan${count!==1?'ies':'y'}`
+      : 'No appearances yet';
   }
 }
 
