@@ -184,7 +184,7 @@
     <div class="metric"><div class="metric-label">News items</div><div class="metric-value" id="m-news">—</div><div class="metric-sub">last 30 days</div></div>
     <div class="metric"><div class="metric-label">Conf. abstracts</div><div class="metric-value" id="m-abstracts">—</div><div class="metric-sub">AACR · ASGCT · ASH</div></div>
     <div class="metric"><div class="metric-label">Patents</div><div class="metric-value" id="m-patents">—</div><div class="metric-sub">watchlist companies</div></div>
-    <div class="metric"><div class="metric-label">Site changes</div><div class="metric-value" id="m-changes">—</div><div class="metric-sub">watchlist pages</div></div>
+
   </div>
   <div class="tabs">
     <div class="tab active" onclick="switchTab('trials')">Clinical trials</div>
@@ -193,7 +193,7 @@
     <div class="tab" onclick="switchTab('conferences')">Conferences</div>
     <div class="tab" onclick="switchTab('news')">News</div>
     <div class="tab" onclick="switchTab('patents')">Patents</div>
-    <div class="tab" onclick="switchTab('changes')">Changes <span id="changes-badge" style="display:none;background:#FEF3C7;color:#92400E;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;vertical-align:middle;"></span></div>
+
   </div>
 
   <!-- Trials -->
@@ -340,21 +340,7 @@
     <div class="card-feed" id="patent-list"><div class="state-msg">Loading patents...</div></div>
   </div>
 
-  <!-- Changes -->
-  <div id="pane-changes" class="pane">
-    <div class="filters">
-      <input type="text" id="changes-search" placeholder="Search company, page type..." oninput="filterChanges()" />
-      <select id="changes-magnitude" onchange="filterChanges()">
-        <option value="">All magnitudes</option>
-        <option value="major">Major</option>
-        <option value="moderate">Moderate</option>
-        <option value="minor">Minor</option>
-      </select>
-      <span class="filter-count" id="changes-count"></span>
-    </div>
-    <div class="sort-label">Unreviewed changes, newest first. Visit the flagged page to confirm what changed.</div>
-    <div class="card-feed" id="changes-list"><div class="state-msg">Loading changes...</div></div>
-  </div>
+
 </div>
 
 
@@ -370,7 +356,7 @@
 </div>
 
 <script>
-let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},CHANGES=[],PROFILES={},CONF_APPEARANCES={appearances:[],unmatched_conferences:[]},watchlistOnly=false,newsPriorityOnly=true;
+let TRIALS=[],PUBS=[],NEWS=[],ABSTRACTS=[],PATENTS=[],WATCHLIST=[],FUNDING={},DOSSIERS={},PROFILES={},CONF_APPEARANCES={appearances:[],unmatched_conferences:[]},watchlistOnly=false,newsPriorityOnly=true;
 
 const NEWS_PRIORITY_SOURCES = new Set([
   // Wire services (exact NewsAPI names)
@@ -392,7 +378,7 @@ const CAT_BADGE={'Clinical data':'b-teal','Preclinical data':'b-blue','Manufactu
 
 async function loadData(){
   try{
-    const[tR,pR,nR,fR,dR,aR,ptR,wR,chR,prR,caR]=await Promise.all([
+    const[tR,pR,nR,fR,dR,aR,ptR,wR,prR,caR]=await Promise.all([
       fetch('data/trials.json'),fetch('data/publications.json'),
       fetch('data/news.json').catch(()=>null),
       fetch('data/funding.json').catch(()=>null),
@@ -400,7 +386,6 @@ async function loadData(){
       fetch('data/abstracts.json').catch(()=>null),
       fetch('data/patents.json').catch(()=>null),
       fetch('watchlist.json'),
-      fetch('data/website_changes.json').catch(()=>null),
       fetch('company_profiles.json').catch(()=>null),
       fetch('data/conference_appearances.json').catch(()=>null),
     ]);
@@ -412,7 +397,7 @@ async function loadData(){
     if(dR){try{const dD=await dR.json();DOSSIERS=dD.dossiers||{};}catch(e){DOSSIERS={}}}
     if(aR){try{const aD=await aR.json();ABSTRACTS=aD.abstracts||[];}catch(e){ABSTRACTS=[]}}
     if(ptR){try{const ptD=await ptR.json();PATENTS=ptD.patents||[];}catch(e){PATENTS=[]}}
-    if(chR){try{const chD=await chR.json();CHANGES=(chD.changes||[]).filter(c=>!c.reviewed);}catch(e){CHANGES=[];}}
+
     if(prR){try{const prD=await prR.json();PROFILES=prD.companies||{};}catch(e){PROFILES={}}}
     if(caR){try{const caD=await caR.json();CONF_APPEARANCES={appearances:caD.appearances||[],unmatched_conferences:caD.unmatched_conferences||[]};}catch(e){CONF_APPEARANCES={appearances:[],unmatched_conferences:[]};}}
     const dates=[tD.fetched_at,pD.fetched_at].filter(Boolean);
@@ -423,7 +408,7 @@ async function loadData(){
       const m=String(latest.getUTCMinutes()).padStart(2,'0');
       document.getElementById('last-updated').textContent=`Last updated: ${dateStr} · ${h}:${m} UTC`;
     }
-    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderChanges(CHANGES);renderConferences(CONF_APPEARANCES);
+    updateMetrics();filterTrials();renderPipeline(WATCHLIST);renderPubs(PUBS);renderPatents(PATENTS);populatePatentCompanies();populateNewsSources();filterNews();renderConferences(CONF_APPEARANCES);
     document.getElementById('news-priority-btn').classList.add('active');
     document.getElementById('news-priority-note').style.display='block';
   }catch(e){
@@ -451,7 +436,7 @@ function updateMetrics(){
   document.getElementById('m-news').textContent=NEWS.length;
   document.getElementById('m-abstracts').textContent=ABSTRACTS.length;
   document.getElementById('m-patents').textContent=PATENTS.length;
-  document.getElementById('m-changes').textContent=CHANGES.length;
+
 }
 
 function modalityBadge(m){
@@ -1010,42 +995,7 @@ function switchTab(name){
   document.getElementById(`pane-${name}`).classList.add('active');
 }
 
-function renderChanges(data){
-  const list=document.getElementById('changes-list');
-  const count=document.getElementById('changes-count');
-  const badge=document.getElementById('changes-badge');
-  if(count)count.textContent=`${data.length} change${data.length!==1?'s':''}`;
-  if(badge){if(data.length){badge.textContent=data.length;badge.style.display='inline';}else{badge.style.display='none';}}
-  if(!list)return;
-  if(!data.length){list.innerHTML='<div class="state-msg">No unreviewed changes. The monitor runs daily and flags page updates for review here.</div>';return;}
-  list.innerHTML=data.map((c,i)=>{
-    const magCls={'major':'b-pink','moderate':'b-amber','minor':'b-gray'}[c.change_magnitude]||'b-gray';
-    const pageLabel=(c.page_type||'').replace('_page','').replace('_',' ');
-    const added=(c.signals_added||[]).map(s=>`<div style="font-size:12px;color:#1D9E75;margin-top:4px;line-height:1.4">+ ${escHtml(s.slice(0,180))}</div>`).join('');
-    const removed=(c.signals_removed||[]).map(s=>`<div style="font-size:12px;color:#D4537E;margin-top:4px;line-height:1.4">- ${escHtml(s.slice(0,180))}</div>`).join('');
-    return`<div class="card">
-      <div class="card-top">
-        <span class="card-source">${escHtml(c.company||'')}</span>
-        <span class="card-date">${(c.detected_at||'').slice(0,10)}</span>
-        <span class="badge ${magCls}">${escHtml(c.change_magnitude||'')}</span>
-        <span class="badge b-gray">${escHtml(pageLabel)}</span>
-        ${c.url?`<a class="ext" href="${escHtml(c.url)}" target="_blank">View page →</a>`:''}
-      </div>
-      <div class="card-title">${escHtml(c.company||'')} — ${escHtml(pageLabel)} page changed</div>
-      ${c.word_count_delta!=null?`<div style="font-size:12px;color:var(--text-tertiary);margin:4px 0 8px">Word count: ${c.word_count_old} → ${c.word_count_new} (${c.word_count_delta>0?'+':''}${c.word_count_delta})</div>`:''}
-      ${added}${removed}
-    </div>`;
-  }).join('');
-}
 
-function filterChanges(){
-  const q=(document.getElementById('changes-search').value||'').toLowerCase();
-  const mag=document.getElementById('changes-magnitude').value;
-  renderChanges(CHANGES.filter(c=>{
-    const text=[c.company,c.page_type].join(' ').toLowerCase();
-    return(!q||text.includes(q))&&(!mag||c.change_magnitude===mag);
-  }));
-}
 
 loadData();
 </script>
