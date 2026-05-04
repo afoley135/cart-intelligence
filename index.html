@@ -291,7 +291,7 @@
       <span class="filter-count" id="news-count"></span>
     </div>
     <div id="news-priority-note" style="display:none;font-size:11px;color:var(--text-tertiary);margin-bottom:0.75rem;">
-      Showing press wires (PR Newswire · GlobeNewswire · Business Wire) and priority outlets (BioSpace · Fierce Biotech · Endpoints News · STAT News · Nature). <span style="cursor:pointer;color:#185FA5;" onclick="toggleNewsPriority()">Show all →</span>
+      Showing press wires (PR Newswire · GlobeNewswire · Business Wire) and priority outlets (BioSpace · Fierce Biotech · Fierce Pharma · Endpoints News · STAT News · Nature). <span style="cursor:pointer;color:#185FA5;" onclick="toggleNewsPriority()">Show all →</span>
     </div>
     <div class="card-feed" id="news-list"><div class="state-msg">Loading news...</div></div>
   </div>
@@ -829,6 +829,12 @@ function isPrioritySource(n){
   const url=(n.url||'').toLowerCase();
   if(NEWS_PRIORITY_OUTLET_SUBSTRINGS.some(w=>url.includes(w))) return true;
   if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>url.includes(w))) return true;
+  // 6. Title suffix — Google News RSS appends "- Outlet Name" to titles;
+  //    source field stays "Google News" so checks 2-5 miss these entirely.
+  //    e.g. "Umoja Biopharma raises $50M - BioSpace"
+  const tl=(n.title||'').toLowerCase();
+  if(NEWS_PRIORITY_OUTLET_SUBSTRINGS.some(w=>tl.includes(' - '+w)||tl.endsWith(w))) return true;
+  if(NEWS_PRIORITY_WIRE_SUBSTRINGS.some(w=>tl.includes(' - '+w)||tl.endsWith(w))) return true;
   return false;
 }
 
