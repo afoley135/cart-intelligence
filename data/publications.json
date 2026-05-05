@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-04T08:21:52.400124+00:00",
-  "count": 22,
+  "fetched_at": "2026-05-05T08:10:12.172843+00:00",
+  "count": 23,
   "publications": [
     {
       "source": "pubmed",
@@ -285,6 +285,21 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41928252/",
       "sowhat": "In vivo CAR-T generation bypasses manufacturing bottlenecks, reducing costs while preserving T-cell functionality and therapeutic durability.",
+      "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42008208",
+      "title": "In vivo CAR-cell therapy: current challenges and emerging therapeutic advances.",
+      "journal": "Molecular biomedicine",
+      "authors": "Yang YM, Bao B, Cao YH, Yao J, Ding YF et al.",
+      "abstract": "In vivo chimeric antigen receptor (CAR) cell therapy is undergoing a transformative shift from conventional ex vivo manufacturing toward in situ cellular editing, aiming to generate functional CAR-engineered immune cells directly within patients through targeted vector delivery, thereby significantly enhancing therapeutic accessibility and applicability. While rapid advances have been made in both viral (lentiviral and adeno-associated viral vectors) and non-viral (lipid nanoparticle) delivery platforms, along with the expansion of effector cell lineages including CAR-T, CAR-NK, and CAR-M, critical translational bottlenecks remain. These include insufficient delivery precision, limited cellular persistence, immunosuppressive tumor microenvironment (TME) resistance, and challenges in safety controllability. This review systematically examines the working mechanisms and limitations of current delivery platforms for in vivo gene transfer. It provides a comprehensive comparison of how CAR-T, CAR-NK, and CAR-M platforms employ distinct yet complementary strategies to address tumor heterogeneity, solid tumor physical and immune barriers, and the specificity constraints of in situ editing. Furthermore, we highlight emerging frontiers such as artificial intelligence-guided personalized therapy design, smart delivery systems (logic-gated CARs, circular RNA vectors), and the development of multicellular synergistic \"synthetic immune systems.\" By integrating multidisciplinary perspectives, this review not only offers a comprehensive roadmap bridging fundamental mechanisms to clinical translation but also lays a theoretical and technical foundation for advancing the next generation of safe, precise, and efficacious in vivo CAR therapies.",
+      "date": "2026-04",
+      "doi": "10.3389/fimmu.2024.1489827",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42008208/",
+      "sowhat": "In vivo CAR engineering shifts manufacturing to patients, but delivery precision and TME resistance remain critical barriers.",
       "category": "Review article"
     },
     {
