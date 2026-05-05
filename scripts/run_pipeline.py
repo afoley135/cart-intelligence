@@ -4,13 +4,21 @@ run_pipeline.py
 ---------------
 Orchestrates the full data pipeline in the correct order:
 
-  1. website_monitor.py      — Watchlist company website change detection
-  2. fetch_trials.py         — ClinicalTrials.gov
-  3. fetch_publications.py   — PubMed + bioRxiv
-  4. fetch_abstracts.py      — Conference abstracts
-  5. fetch_news.py           — NewsAPI + RSS feeds
-  6. fetch_patents.py        — EPO OPS patents
+  1. fetch_trials.py         — ClinicalTrials.gov
+  2. fetch_publications.py   — PubMed + bioRxiv
+  3. fetch_abstracts.py      — Conference abstracts
+  4. fetch_news.py           — NewsAPI + RSS feeds
+  5. fetch_patents.py        — EPO OPS patents
+  6. fetch_curated.py        — Re-fetch + merge manually curated entries
   7. summarize.py            — AI "so what" generation
+
+fetch_curated.py runs AFTER all automated fetchers so it can:
+  - Re-fetch live data for curated trials and publications
+  - Merge curated entries into the data files (winning over automated entries
+    for the same key, so curated data is always shown)
+
+summarize.py runs LAST so it can generate sowhat summaries for any curated
+items that are new or don't yet have one.
 
 Run manually:
   python scripts/run_pipeline.py
@@ -35,6 +43,9 @@ STEPS = [
     ("Conference abstracts",    FETCHERS_DIR / "fetch_abstracts.py"),
     ("News + Funding",          FETCHERS_DIR / "fetch_news.py"),
     ("Patents",                 FETCHERS_DIR / "fetch_patents.py"),
+    # Curated entries: re-fetch live data and merge into data files.
+    # Must run after all automated fetchers and before summarize.py.
+    ("Curated entries",         FETCHERS_DIR / "fetch_curated.py"),
     ("AI summarisation",        FETCHERS_DIR / "summarize.py"),
 ]
 
