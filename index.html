@@ -67,6 +67,7 @@
     .b-pink{background:#FBEAF0;color:#993556;} .b-new{background:#FEF3C7;color:#92400E;}
     .b-teal-dark{background:#085041;color:#9FE1CB;} .b-teal-mid{background:#0F6E56;color:#E1F5EE;}
     .b-coral{background:#FAECE7;color:#993C1D;}
+    .b-pin{background:#F3F0FF;color:#4B3FBF;}
     .b-com    { background:#E1F5EE; color:#0F6E56; }
     .b-mot    { background:#E6F1FB; color:#185FA5; }
     .b-mop    { background:#FBEAF0; color:#993556; }
@@ -561,7 +562,7 @@ function renderTrials(data){
     const summary=cleanSowhat(t.sowhat||t.summary||'');
     const sponsorHtml=onW?`<span class="sponsor-link wl" onclick="switchTab('pipeline');setTimeout(()=>{const el=[...document.querySelectorAll('#pipeline-list .company-name')].find(e=>e.textContent.toLowerCase().includes('${escAttr(t.sponsor.toLowerCase().split(' ')[0])}'));if(el){el.closest('.company-block').querySelector('.company-header').click();el.scrollIntoView({behavior:'smooth',block:'start'});}},50)" style="cursor:pointer;">${escHtml(t.sponsor||'—')}</span>`:`<span style="font-size:12px">${escHtml(t.sponsor||'—')}</span>`;
     return`<tr class="${onW?'wrow':''}">
-      <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':''}</td>
+      <td><a class="ext" href="${t.url}" target="_blank">${t.nct_id}</a>${isNew(t.last_updated)?'<span class="badge b-new" style="margin-left:4px">New</span>':''}${t.curated?'<span class="badge b-pin" style="margin-left:4px" title="Manually curated">📌</span>':''}</td>
       <td style="max-width:140px">${sponsorHtml}</td>
       <td>${modalityBadge(t.profile_modality||t.ai_modality||t.modality)}</td>
       <td style="font-size:12px;max-width:150px">${escHtml(conditions||'—')}</td>
@@ -801,7 +802,7 @@ function renderPubs(data){
       <div class="card-top">
         <span class="card-source">${escHtml(p.journal||'')}</span>
         <span class="card-date">${formatDate(p.date)}</span>
-        ${typeBadge} ${catBadge} ${isNew(p.date)?'<span class="badge b-new">New</span>':''} ${pubUrl}
+        ${typeBadge} ${catBadge} ${isNew(p.date)?'<span class="badge b-new">New</span>':''} ${p.curated?'<span class="badge b-pin" title="Manually curated">📌</span>':''} ${pubUrl}
       </div>
       <div class="card-title">${escHtml(p.title||'')}</div>
       ${sowhat}
@@ -845,7 +846,7 @@ function renderNews(data){
     const sowhat=n.sowhat&&n.sowhat!=='Summary not available'?`<div class="card-sowhat">${escHtml(cleanSowhat(n.sowhat))}</div>`:'';
     const url=n.url?`<a class="ext" href="${escHtml(n.url)}" target="_blank">Read →</a>`:'';
     return`<div class="card">
-      <div class="card-top"><span class="card-source">${escHtml(n.source||'')}</span><span class="card-date">${escHtml(n.date||'')}</span>${isNew(n.date)?'<span class="badge b-new">New</span>':''} ${url}</div>
+      <div class="card-top"><span class="card-source">${escHtml(n.source||'')}</span><span class="card-date">${escHtml(n.date||'')}</span>${isNew(n.date)?'<span class="badge b-new">New</span>':''} ${n.curated?'<span class="badge b-pin" title="Manually curated">📌</span>':''} ${url}</div>
       <div class="card-title">${escHtml(n.title||'')}</div>
       ${sowhat}
       ${n.summary?`<div class="card-body">${escHtml(n.summary)}</div>`:''}
