@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-07T08:34:53.306904+00:00",
-  "count": 48,
+  "fetched_at": "2026-05-08T07:33:47.521504+00:00",
+  "count": 49,
   "abstracts": [
     {
       "source": "pubmed",
@@ -315,7 +315,7 @@
       "pmid": "42049130",
       "title": "On the road to in vivo CAR-T success: Comparing promising viral and non-viral vectors.",
       "journal": "Biotechnology advances",
-      "authors": "de la Mota S, Suchet L, van Wijk M, Stibbs DJ, Couto PS et al.",
+      "authors": "de la Mota S, Suchet L, van Wijk M, Stibbs DJ, Silva Couto P et al.",
       "abstract": "Chimeric antigen receptor (CAR)-T-cell therapies have demonstrated substantial efficacy in haematological malignancies, with multiple products approved for clinical use. However, broader application remains limited by severe toxicities, reduced efficacy toward solid tumours, and the high cost and complexity of ex vivo manufacturing. The autologous nature of most current therapies contributes to variable product quality, lengthy vein-to-vein times, and restricted patient access. In vivo CAR-T therapy has emerged as a potential solution, aiming to generate functional CAR-T-cells within the patient, with several platforms progressing into early Phase I clinical trials. This approach eliminates reliance on patient-derived starting material, reduces manufacturing failure rates, and offers the prospect of off-the-shelf availability at lower cost. Central to in vivo CAR-T development is selecting an appropriate gene delivery platform. Viral vectors, including lentiviral, adenoviral, and adeno-associated viral systems, have an established role in ex vivo CAR-T manufacturing and in vivo gene therapies. Non-viral vectors, such as lipid nanoparticles (LNP) and polyplexes, have garnered increasing attention due to their high packaging capacity, potential for redosing, and validation in large-scale production, as exemplified by mRNA-LNP vaccines against COVID-19. Recently, the in vivo CAR-T engineering toolbox has expanded with DNA-based LNP platforms capable of stably integrating CAR transgenes via transposon systems, fourth-generation T-cell-targeted lentiviral systems that minimise CAR display on vector particles and aberrant splicing, and emerging genome-editing technologies. This review compares viral and non-viral vectors for in vivo CAR-T therapy, evaluating their relative advantages and limitations in terms of safety, efficacy, scalability, analytical methods, regulatory implementation and commercial feasibility.",
       "date": "2026-Apr",
       "doi": "10.1016/j.biotechadv.2026.108907",
@@ -547,6 +547,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41632088/",
       "sowhat": "EV-delivered nanobody-CAR in vivo generation achieves solid tumor efficacy with lower immunogenicity than viral alternatives."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42093990",
+      "title": "Rewiring the immune response in lung cancer: current progress in bispecific antibodies, CAR-T therapy, and the rise of in vivo CAR-T platforms.",
+      "journal": "Frontiers in immunology",
+      "authors": "He L, Sun Y, Ma B, Lang G, Wen J et al.",
+      "abstract": "Lung cancer remains the leading cause of cancer mortality worldwide and continues to impose a major clinical burden, particularly in advanced non-small cell lung cancer (NSCLC) and small-cell lung cancer (SCLC). Although targeted therapies, antiangiogenic agents, immune checkpoint inhibitors, and antibody-drug conjugates have improved outcomes in selected patients, durable responses remain limited by primary and acquired resistance. Here, we comprehensively review recent progress in immunologically oriented therapeutic strategies for lung cancer, focusing on bispecific antibodies, chimeric antigen receptor (CAR) T-cell therapy, and emerging in vivo CAR-engineering modalities. We further elaborate on the clinical rationale, latest translational and early clinical evidence, and key challenges, including on-target, off-tumor toxicity, cytokine release syndrome, limited T-cell persistence, insufficient tumor trafficking, and immunosuppression within the tumor microenvironment. Taken together, we find that while bispecific antibodies currently show favorable efficacy and safety in lung cancer; advances in CAR design and in vivo delivery may broaden the applicability of CAR-T therapy in this setting.",
+      "date": "2026",
+      "doi": "10.1007/s13238-016-0323-0",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42093990/",
+      "sowhat": "In vivo CAR-T engineering emerges as promising alternative to ex vivo approaches for lung cancer, addressing durability and manufacturing challenges."
     },
     {
       "source": "pubmed",

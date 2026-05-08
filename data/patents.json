@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-07T08:53:38.793327+00:00",
-  "count": 440,
+  "fetched_at": "2026-05-08T07:52:29.290097+00:00",
+  "count": 443,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7278,6 +7278,54 @@
       "data_type": "patent",
       "claim_type": "Composition of matter",
       "novelty_summary": "The patent discloses ionizable lipids and LNP conjugates with targeting moieties for selective delivery to immune cells and HSCs, enabling both ex vivo and in vivo therapeutic payload delivery. This is significant for in vivo CAR-T as it addresses the key challenge of achieving targeted lymphocyte transduction without systemic toxicity, potentially enabling direct in vivo CAR-T cell engineering.",
+      "relevant": true
+    },
+    {
+      "id": "AU2024342487.A1",
+      "title": "LIPID NANOPARTICLES FOR DELIVERY OF THERAPEUTIC PAYLOADS TO CELLS",
+      "abstract": "",
+      "assignee": "TESSERA THERAPEUTICS INC; TESSERA THERAPEUTICS, INC.",
+      "watchlist_company": "Tessera Therapeutics",
+      "filing_date": "",
+      "patent_number": "AU2024342487A1",
+      "application_number": "2024342487",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2024342487A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent claims lipid nanoparticle (LNP) compositions designed for therapeutic payload delivery to cells. LNPs represent a critical enabling technology for non-viral delivery of genetic material (mRNA, DNA) to T cells and other cell types, offering potential advantages over viral vectors in manufacturing scalability and immunogenicity profiles for in vivo CAR-T and other cell therapy applications.",
+      "relevant": true
+    },
+    {
+      "id": "AU2024370741.A1",
+      "title": "RNA FOR IN VIVO TRANSFECTION WITH INCREASED EXPRESSION",
+      "abstract": "This disclosure provides improved RNA molecules, including mRNA molecules that can be produced by in vitro transcription and are suitable for in vivo transfection using an appropriate delivery vehicle, such as a lipid nanoparticle (LNP) or targeted lipid nanoparticle (tLNP). The improved RNA include particular combinations of 5' untranslated region (UTR) and 3' UTR, particular 3' UTRs, or particular open reading frame sequences. Also provided herein are compositions of the LNP, or tLNP with an antibody as a targeting moiety, such as anti-CD8 antibodies that are used as targeting moiety.",
+      "assignee": "CAPSTAN THERAPEUTICS INC; CAPSTAN THERAPEUTICS, INC.",
+      "watchlist_company": "Capstan Therapeutics",
+      "filing_date": "",
+      "patent_number": "AU2024370741A1",
+      "application_number": "2024370741",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2024370741A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent discloses optimized mRNA molecules with specific combinations of 5' and 3' UTRs and ORF sequences designed for enhanced in vivo expression via LNP/tLNP delivery. For in vivo CAR-T applications, the targeted LNP formulation with anti-CD8 antibodies as targeting moieties represents a significant advance in directing mRNA-based CAR-T cell engineering to CD8+ T cells in vivo, potentially enabling direct CAR engineering without ex vivo cell manipulation.",
+      "relevant": true
+    },
+    {
+      "id": "AU2026203017.A1",
+      "title": "Lachnospiraceae bacterium ND2006 Cas12a mutant genes and polypeptides encoded by same",
+      "abstract": "19861146_1 (GHMatters) P116964.AU This invention pertains to mutant Lachnospiraceae bacterium ND2006 (Lb) Cas12a nucleic acids and proteins for use in CRISPR/Cas12a endonuclease systems, and their methods of use. In particular, the invention pertains to an isolated mutant LbCas12a protein, wherein the isolated mutant LbCas12a protein is active in a CRISPR/Cas12a endonuclease system. The invention also includes isolated nucleic acids encoding mutant LbCas12a proteins, ribonucleoprotein complexes and CRISPR/Cas12a endonuclease systems having mutant LbCas12a proteins. pr p r",
+      "assignee": "INTEGRATED DNA TECHNOLOGIES INC; Integrated DNA Technologies, Inc.",
+      "watchlist_company": "Integra Therapeutics",
+      "filing_date": "",
+      "patent_number": "AU2026203017A1",
+      "application_number": "2026203017",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2026203017A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The invention discloses mutant Lachnospiraceae bacterium ND2006 Cas12a proteins and encoding nucleic acids with improved activity in CRISPR/Cas12a endonuclease systems. While Cas12a is a known gene-editing tool, engineered mutants with enhanced activity could improve on-target editing efficiency and reduce off-target effects in therapeutic applications, including potential ex vivo CAR-T cell engineering.",
       "relevant": true
     }
   ]
