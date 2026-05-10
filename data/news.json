@@ -1,7 +1,75 @@
 {
-  "fetched_at": "2026-05-09T08:03:34.295157+00:00",
-  "count": 180,
+  "fetched_at": "2026-05-10T08:16:21.418747+00:00",
+  "count": 182,
   "news": [
+    {
+      "source": "news.google.com",
+      "title": "The emerging cancer treatment that’s exciting scientists: ‘We’ve just scratched the surface on what’s possible’ - The Guardian",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPS0NpMTFPeEhLYjc0Z2ZLZ2tXUlFhWGh1eHdMSXBqek5aSXhPc2NfaVdGeW10RDFVMFpYVXloYmp0Zmtma3ZxdjV2Vl9NaG9jNmpsZmZVSGo0ODVrcjNkVV9nWG81UEp1ZjVFWXd3NV9fOHkwT1F1VmFuSXBGa1JGblVDM0JrUTZTVDBESkRTamlfaTVjc3dBbA?oc=5",
+      "date": "2026-05-10",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "GlobeNewswire",
+      "title": "Azalea Therapeutics Announces Late-Breaking Oral Presentation at ASGCT Annual Meeting Demonstrating First-in-Primate In Vivo TRAC-CAR T Cell Engineering",
+      "summary": "BERKELEY, Calif., May 08, 2026 (GLOBE NEWSWIRE) -- Azalea Therapeutics, Inc., a biotechnology company redefining precision genomic medicines in vivo, today announced that first-in-primate data from its proprietary in vivo CAR T cell platform have been accepte…",
+      "url": "https://www.globenewswire.com/news-release/2026/05/08/3291349/0/en/Azalea-Therapeutics-Announces-Late-Breaking-Oral-Presentation-at-ASGCT-Annual-Meeting-Demonstrating-First-in-Primate-In-Vivo-TRAC-CAR-T-Cell-Engineering.html",
+      "date": "2026-05-08",
+      "tags": [],
+      "sowhat": "```json\n{\n  \"sowhat\": \"First-in-primate in vivo CAR-T data validates Azalea's TRAC platform approach for direct cell engineering\",\n  \"item_type\": \"news\"\n}\n```",
+      "item_type": "news",
+      "fetch_source": "newsapi",
+      "conference_mention": {
+        "company": "Azalea Therapeutics",
+        "conference_canonical": "ASGCT 2026",
+        "conference_raw": "ASGCT Annual Meeting",
+        "presentation_type": "oral",
+        "abstract_title": "First-in-Primate In Vivo TRAC-CAR T Cell Engineering",
+        "conference_date_mentioned": null,
+        "source_url": "https://www.globenewswire.com/news-release/2026/05/08/3291349/0/en/Azalea-Therapeutics-Announces-Late-Breaking-Oral-Presentation-at-ASGCT-Annual-Meeting-Demonstrating-First-in-Primate-In-Vivo-TRAC-CAR-T-Cell-Engineering.html",
+        "source_date": "2026-05-08",
+        "extracted_at": "2026-05-10T08:22:58.834554+00:00"
+      }
+    },
+    {
+      "source": "news.google.com",
+      "title": "Azalea Therapeutics Announces Late-Breaking Oral Presentation at ASGCT Annual Meeting Demonstrating First-in-Primate In Vivo TRAC-CAR T Cell Engineering - GlobeNewswire",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNN3Q2cmdxbm81dlhoYWJ3MEpQb3B6MDhvQU9QRXhsVnB3RGZ5OG42cWVMeTJwSjhDcDhHd3k3Tkx4ekJhdDU5VGhodE42OHc2ZHZaNHN2ZVo3ZjYwLWI0V2JmekotM3k2RjNJdlhvaWl6WV9oa3ZkZkt5STZmZy1iOEdpN0NLQlBMcjBsbExaRmdmbENMVE0tZFNLMVJKdWl1OWhBVy1VMmZCQ01VVmZzX0pfeGRrM2xVQVN2RF9WcXlKRFp6dmtYYkM2NGVkNXJ0OWVIR3hBaUlkajBkS0wyS3d6RGJzdHZBdDdSWW41d1VBaURUZTZhb1lOeDZyNVMxNW9mTzY1blNFTGk5eDdkVzhvTFY1dVpicVc4NXN5V1NpeDBDVnVIcWJWVDNZM1hVVGtkWm5oTHA5WWt5d2N1dkpqNm9PQTg?oc=5",
+      "date": "2026-05-08",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": {
+        "company": "Azalea Therapeutics",
+        "conference_canonical": "ASGCT 2025",
+        "conference_raw": "ASGCT Annual Meeting",
+        "presentation_type": "oral",
+        "abstract_title": "First-in-Primate In Vivo TRAC-CAR T Cell Engineering",
+        "conference_date_mentioned": null,
+        "source_url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNN3Q2cmdxbm81dlhoYWJ3MEpQb3B6MDhvQU9QRXhsVnB3RGZ5OG42cWVMeTJwSjhDcDhHd3k3Tkx4ekJhdDU5VGhodE42OHc2ZHZaNHN2ZVo3ZjYwLWI0V2JmekotM3k2RjNJdlhvaWl6WV9oa3ZkZkt5STZmZy1iOEdpN0NLQlBMcjBsbExaRmdmbENMVE0tZFNLMVJKdWl1OWhBVy1VMmZCQ01VVmZzX0pfeGRrM2xVQVN2RF9WcXlKRFp6dmtYYkM2NGVkNXJ0OWVIR3hBaUlkajBkS0wyS3d6RGJzdHZBdDdSWW41d1VBaURUZTZhb1lOeDZyNVMxNW9mTzY1blNFTGk5eDdkVzhvTFY1dVpicVc4NXN5V1NpeDBDVnVIcWJWVDNZM1hVVGtkWm5oTHA5WWt5d2N1dkpqNm9PQTg?oc=5",
+        "source_date": "2026-05-08",
+        "extracted_at": "2026-05-10T08:23:00.045726+00:00"
+      }
+    },
+    {
+      "source": "news.google.com",
+      "title": "ParcelBio Unveils Programmable mRNA Platform Backed by $13M Financing - Genetic Engineering and Biotechnology News",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPT3VJSkw1X0FjN1dDNkFUSU13ZzJuOTBoV3hyWVQ5NkNVaUphekdMYlVHQ0NvRmZ0bW9TekNiejNSQ0sxaEhLM3VZaVYxMkd3RUtnRFFNUEd5aFUzOEJhV1V1ZVB6clowSEVIVDZBT0FKMHpDdVA0YzRpSkFjS2pzMzNUT2xNeWgxTnQxQkx4RUFxZDlGd2dMaGE0REcwbjNjNmhIQmt3dUp0YXRweVl1QTdhX0FtaHNLVEE?oc=5",
+      "date": "2026-05-08",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
     {
       "source": "news.google.com",
       "title": "In vivo mRNA gene therapy platform reprograms cytotoxic T cells - BioWorld News",
@@ -16,33 +84,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "Azalea Therapeutics Announces Late-Breaking Oral - GlobeNewswire",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNN3Q2cmdxbm81dlhoYWJ3MEpQb3B6MDhvQU9QRXhsVnB3RGZ5OG42cWVMeTJwSjhDcDhHd3k3Tkx4ekJhdDU5VGhodE42OHc2ZHZaNHN2ZVo3ZjYwLWI0V2JmekotM3k2RjNJdlhvaWl6WV9oa3ZkZkt5STZmZy1iOEdpN0NLQlBMcjBsbExaRmdmbENMVE0tZFNLMVJKdWl1OWhBVy1VMmZCQ01VVmZzX0pfeGRrM2xVQVN2RF9WcXlKRFp6dmtYYkM2NGVkNXJ0OWVIR3hBaUlkajBkS0wyS3d6RGJzdHZBdDdSWW41d1VBaURUZTZhb1lOeDZyNVMxNW9mTzY1blNFTGk5eDdkVzhvTFY1dVpicVc4NXN5V1NpeDBDVnVIcWJWVDNZM1hVVGtkWm5oTHA5WWt5d2N1dkpqNm9PQTg?oc=5",
-      "date": "2026-05-08",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
       "title": "Early CAR-T Therapy Boosts Blood Cancer Survival Rates - 조선일보",
       "summary": "",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZzFWZFhSYkh0Vng5eUNlYUhNeWtLVzYtSW16cG16SFoxM0pna3pTMEtFUkQtb21TNEFYTWhCaktKbG5KVXg5ZTlWeTA3MjlSaGoyWkhGLXJfWmJPblhBX0tfWFBESE9sRFNuNUtrb1Z1Ml80SlhDd2hUZ1IzN2F4LXA4dUo1eU9W?oc=5",
-      "date": "2026-05-08",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
-      "title": "ParcelBio Unveils Programmable mRNA Platform Backed by $13M Financing - Genetic Engineering and Biotechnology News",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPT3VJSkw1X0FjN1dDNkFUSU13ZzJuOTBoV3hyWVQ5NkNVaUphekdMYlVHQ0NvRmZ0bW9TekNiejNSQ0sxaEhLM3VZaVYxMkd3RUtnRFFNUEd5aFUzOEJhV1V1ZVB6clowSEVIVDZBT0FKMHpDdVA0YzRpSkFjS2pzMzNUT2xNeWgxTnQxQkx4RUFxZDlGd2dMaGE0REcwbjNjNmhIQmt3dUp0YXRweVl1QTdhX0FtaHNLVEE?oc=5",
       "date": "2026-05-08",
       "tags": [],
       "sowhat": "Summary not available",
@@ -64,21 +108,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "G-Link CAR-T Delivery Platform Showcased at ASGCT - Genetic Engineering and Biotechnology News",
+      "title": "CAR T-cells targeting CD117 effectively eliminate mast cells in preclinical models of advanced systemic mastocytosis - Nature",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPblN0T1kyeTczSW1KVXVlMkR5bE5ZTWMxSEg5VS1Va1RLaXAtWnF1a2RiVm1OZHhqRnVPSkFSQlVVb3cwVnFENS1HSERUbEYwaVBtcldGZ2dEUlE3ZDBWU1FPVWtFek14VERjeG5SelFLajF6Z0dxT0d0Z2M2dTM5VWYyZ0ZONnI0bFVuV2tabWhCaVdmMW1QaUhmOGVBNDRsd2NfczBYaVhCbGVWUW91SXNmQm9xYU5fNEE?oc=5",
-      "date": "2026-05-07",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
-      "title": "In Vivo CAR-T Therapy Market Trends and Insights - Precedence Research",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPSUhEUlNCcmFwYkRtWm9qcEVORDluaFdxczRHZVRrVnhpUUQ2bTNXeE5kdUNTOGtxeGYxVzFnUV9FZTJmb0NMMDBQQU12dGROQXRQRUNwY3Q4WUd6VDl1di1QRkIyMHF1TDI4a0FDc0R3NDN4VGhiVmNvVjRWM1pydkRaZw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5ON0V1LWEwSzREQXNVXzBTVDh6dE5BSXhYZ0pZeVRlU3VleUxwQWJtXzJrTHR3dlo2bk9EcENmWk5XZ3hkWW9TWVBQaldCdU5Nckx2OUNsbXZuaTI0b25Z?oc=5",
       "date": "2026-05-07",
       "tags": [],
       "sowhat": "Summary not available",
@@ -103,6 +135,30 @@
       "title": "ParcelBio: $13 Million Seed Financing Raised To Advance Next-Generation mRNA Medicines - Pulse 2.0",
       "summary": "",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPS29HcDQ4YjJ6aE9ReHZzN0lIRzFlM2lpdFNQeUpnVFN4b1F4QmJMeFpUaXc0SUY2b1BoY1VHLXRneVhLT0FLdktod1hYZmVjYXNNWXpCY2dKbTFsZU04OGQwcUl0NlF1ZUo4SW9yZ2VnWkMwSHNBLUdFdXZmMlN1ejl5am1GN05Eay1ZYnNqS0MyS0J3blhTb2NmOUJNSml0SE1iWTFFMNIBrAFBVV95cUxOTURqLTV0aXljTHdCcTFQQnl2NE5wQXo4aUYxOXFjbTJiYUtyX1UyNk9kYm9lTktQNGg0anVOOTZyQXpCVlNoNUZkWTJuenpnNUsxYmVnN1NIN3huc0p4ZkF1SGlSak5sUE5WUmJjSTlpRmdtMERueEtVbVVlR2FaXzNELTVxUVFrb3VtUEh0eGx0OEl0Rmx5SVl3azNtMmRFOGVvNF9NNld5LWl0?oc=5",
+      "date": "2026-05-07",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
+      "title": "G-Link CAR-T Delivery Platform Showcased at ASGCT - Genetic Engineering and Biotechnology News",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPblN0T1kyeTczSW1KVXVlMkR5bE5ZTWMxSEg5VS1Va1RLaXAtWnF1a2RiVm1OZHhqRnVPSkFSQlVVb3cwVnFENS1HSERUbEYwaVBtcldGZ2dEUlE3ZDBWU1FPVWtFek14VERjeG5SelFLajF6Z0dxT0d0Z2M2dTM5VWYyZ0ZONnI0bFVuV2tabWhCaVdmMW1QaUhmOGVBNDRsd2NfczBYaVhCbGVWUW91SXNmQm9xYU5fNEE?oc=5",
+      "date": "2026-05-07",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
+      "title": "In Vivo CAR-T Therapy Market Trends and Insights - Precedence Research",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPSUhEUlNCcmFwYkRtWm9qcEVORDluaFdxczRHZVRrVnhpUUQ2bTNXeE5kdUNTOGtxeGYxVzFnUV9FZTJmb0NMMDBQQU12dGROQXRQRUNwY3Q4WUd6VDl1di1QRkIyMHF1TDI4a0FDc0R3NDN4VGhiVmNvVjRWM1pydkRaZw?oc=5",
       "date": "2026-05-07",
       "tags": [],
       "sowhat": "Summary not available",
@@ -160,21 +216,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "CRISPR Therapeutics: Pipeline Expansion and In Vivo CAR-T Platform Support Buy Rating; $80 Price Target Reiterated - TipRanks",
+      "title": "Factor Bioscience to Deliver Seven Presentations at the American Society of Gene & Cell Therapy (ASGCT) 29th Annual Meeting - The Norfolk Daily News",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQcXJkWHlhS2lveWxUZ3RySmdjSlFPT2V3a2hzRnpQWkpOajhSVXFFbExrdGotMmZMWmxmOThCbG9jTld0cnpSUXIteExDcHQzcGMxOF9Mc1AtQS0xSGV4V1dqR2lJdDhnMnFmRHZIai1aUS1kcVBMd05DSDVPTnpaVEdFRE8yal9uTjZUdWNHYUIzQ21RX2hJT0FGLVltaWFicVJHMXVCY0NxdHpYMjZPM3FVaTVYZEViWm9LZjhHZlZ5RDJtRFotWTdZakdheUsweDB5bE9RaUJWWFdsSS0xZEMteHd1SkxCUE1WaXF6bFVnQXBj?oc=5",
-      "date": "2026-05-05",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
-      "title": "Factor Bioscience to Deliver Seven Presentations at the American Society of Gene & Cell Therapy (ASGCT) 29th Annual Meeting - PR Newswire",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQV1JPdm96dkt5LWdvcDRiZ1pzdVVtek9VX25ZNVVPMTJQSXNVRjI4SF9PS1NHRUxZSTVyNnYxVzc3SXZmLU55dkQ3MzlCeUcxNjg4SXdhbkpHbTNwM1gwTVZEcGdlVVpwZlY2RG5wZlZlV0xVVnhBTks3blpqWFc3dG1fN3JBczhmYVZWcjZzTWJTazVfTUtNOEpqT29DTWZOMjNpajNFSGZOdjl2VGR0MUJZZkhTczFjVkc4NkFFVVBvZS1iQmVuZ3J6aTJSU0JLUldjampMR0ZmUVRLN1YxeTVSQTZ2U213NlE4cUNkbTEyOW1YLXBzSXdQWkMyQ3NoYTgzRl9Bcw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxPQkJsVVgwVjhfTmNySnBWUjByWUxqMlVIZ3VKZTRGdkU0a1FNcW9Hb01zMnJDalV6RGlHby1xMVlTUmRna2lnbUFZQ3pOamloQVNWS3hBVnBZSF9WMUxvQzJrazRWN0JtVjhzWXJLUVplRGUxcXRwZ3dwbS0zclltem9nVHZ5NVg5U3hCRXc0bTA5eTRFR3FvblpPN0lmT3NtdlctU0dDQVc3XzNzYzVtZXp5eUJxR01EUHBad1hJMGxxaFlGNmM3Q2hfc1hyTGJHTTkxVDhGQjlNOHQ5ZkhncGdxQXN5UnQ5WVdya21EYUxSQTFfY1dnV1ZfNWdGbFUzZFBsdzA4djF1MjMwT2JSNEx5Tk9VV1FGYUFJOUZZbUU3VDh1U3ZLS0dBSHdxSkpUMXRj?oc=5",
       "date": "2026-05-05",
       "tags": [],
       "sowhat": "Summary not available",
@@ -204,6 +248,30 @@
       "sowhat": "```json\n{\n  \"sowhat\": \"Summary not available\",\n  \"item_type\": \"news\"\n}\n```",
       "item_type": "news",
       "fetch_source": "newsapi",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
+      "title": "CRISPR Therapeutics: Pipeline Expansion and In Vivo CAR-T Platform Support Buy Rating; $80 Price Target Reiterated - TipRanks",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQcXJkWHlhS2lveWxUZ3RySmdjSlFPT2V3a2hzRnpQWkpOajhSVXFFbExrdGotMmZMWmxmOThCbG9jTld0cnpSUXIteExDcHQzcGMxOF9Mc1AtQS0xSGV4V1dqR2lJdDhnMnFmRHZIai1aUS1kcVBMd05DSDVPTnpaVEdFRE8yal9uTjZUdWNHYUIzQ21RX2hJT0FGLVltaWFicVJHMXVCY0NxdHpYMjZPM3FVaTVYZEViWm9LZjhHZlZ5RDJtRFotWTdZakdheUsweDB5bE9RaUJWWFdsSS0xZEMteHd1SkxCUE1WaXF6bFVnQXBj?oc=5",
+      "date": "2026-05-05",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
+      "title": "Factor Bioscience to Deliver Seven Presentations at the American Society of Gene & Cell Therapy (ASGCT) 29th Annual Meeting - PR Newswire",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQV1JPdm96dkt5LWdvcDRiZ1pzdVVtek9VX25ZNVVPMTJQSXNVRjI4SF9PS1NHRUxZSTVyNnYxVzc3SXZmLU55dkQ3MzlCeUcxNjg4SXdhbkpHbTNwM1gwTVZEcGdlVVpwZlY2RG5wZlZlV0xVVnhBTks3blpqWFc3dG1fN3JBczhmYVZWcjZzTWJTazVfTUtNOEpqT29DTWZOMjNpajNFSGZOdjl2VGR0MUJZZkhTczFjVkc4NkFFVVBvZS1iQmVuZ3J6aTJSU0JLUldjampMR0ZmUVRLN1YxeTVSQTZ2U213NlE4cUNkbTEyOW1YLXBzSXdQWkMyQ3NoYTgzRl9Bcw?oc=5",
+      "date": "2026-05-05",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
       "conference_mention": false
     },
     {
@@ -291,18 +359,6 @@
       "conference_mention": false
     },
     {
-      "source": "news.google.com",
-      "title": "Kernal Biologics to Showcase mRNA 2.0 Platform and T-Cell-Targeted LNPs for In Situ CAR T Programming at ASGCT 2026 - Yahoo Finance",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbWZCcEUxRWpBSnJwRnNneWVpWFdmWmphSVllNndnMWpRY2ZkWjVtQWlPTlZ1aXE4MVNlNzFDM1FGRk9RU0RBelA1T3VHamRWVGRjWUIxS2FqdDE1aVI0amF0OXg2REstZTg1NTViaGxlSUNJczdVdEJXTmtjRS1fNV8tYmd0RXNVWHhINUZKZ1dRZ0ExeXpmdHZVYm1nLWNDeWE4?oc=5",
-      "date": "2026-04-30",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
       "source": "Financial Post",
       "title": "Lilly Raises Sales Forecast on Optimism About Obesity Pill",
       "summary": "Eli Lilly & Co. raised its full-year sales outlook on the strength of its weight-loss drugs and high hopes for its new obesity pill.",
@@ -312,6 +368,18 @@
       "sowhat": "```json\n{\n  \"sowhat\": \"Summary not available\",\n  \"item_type\": \"news\"\n}\n```",
       "item_type": "news",
       "fetch_source": "newsapi",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
+      "title": "Kernal Biologics to Showcase mRNA 2.0 Platform and T-Cell-Targeted LNPs for In Situ CAR T Programming at ASGCT 2026 - Yahoo Finance",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbWZCcEUxRWpBSnJwRnNneWVpWFdmWmphSVllNndnMWpRY2ZkWjVtQWlPTlZ1aXE4MVNlNzFDM1FGRk9RU0RBelA1T3VHamRWVGRjWUIxS2FqdDE1aVI0amF0OXg2REstZTg1NTViaGxlSUNJczdVdEJXTmtjRS1fNV8tYmd0RXNVWHhINUZKZ1dRZ0ExeXpmdHZVYm1nLWNDeWE4?oc=5",
+      "date": "2026-04-30",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
       "conference_mention": false
     },
     {
@@ -606,10 +674,10 @@
         "conference_raw": "American Society of Gene and Cell Therapy 29th Annual Meeting",
         "presentation_type": "unspecified",
         "abstract_title": null,
-        "conference_date_mentioned": null,
+        "conference_date_mentioned": "April 27, 2026",
         "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282072/0/en/Tessera-Therapeutics-to-Present-New-Preclinical-Data-Supporting-In-Vivo-Program-in-Sickle-Cell-Disease-and-Advancements-in-In-Vivo-CAR-T-Applications-at-the-American-Society-of-Gen.html",
         "source_date": "2026-04-27",
-        "extracted_at": "2026-05-09T08:10:34.638326+00:00"
+        "extracted_at": "2026-05-10T08:23:11.037500+00:00"
       }
     },
     {
@@ -631,7 +699,7 @@
         "conference_date_mentioned": "April 27, 2026",
         "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282054/0/en/Umoja-Biopharma-Announces-Unveiling-of-UB-VV500-in-Upcoming-Poster-Presentation-at-the-American-Society-of-Gene-Cell-Therapy-Annual-Meeting.html",
         "source_date": "2026-04-27",
-        "extracted_at": "2026-05-09T08:10:35.808491+00:00"
+        "extracted_at": "2026-05-10T08:23:12.319490+00:00"
       }
     },
     {
@@ -650,10 +718,56 @@
         "conference_raw": "American Society of Gene & Cell Therapy (ASGCT) 2026 Annual Meeting",
         "presentation_type": "oral",
         "abstract_title": "Preclinical Data from in vivo CAR T SG293",
-        "conference_date_mentioned": null,
+        "conference_date_mentioned": "April 27, 2026",
         "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282052/0/en/Sana-Biotechnology-Announces-Oral-Presentation-Highlighting-Preclinical-Data-from-in-vivo-CAR-T-SG293-at-the-American-Society-of-Gene-Cell-Therapy-ASGCT-2026-Annual-Meeting.html",
         "source_date": "2026-04-27",
-        "extracted_at": "2026-05-09T08:10:37.016205+00:00"
+        "extracted_at": "2026-05-10T08:23:13.608777+00:00"
+      }
+    },
+    {
+      "source": "news.google.com",
+      "title": "This Week’s CGT News: Lilly’s $7B In Vivo CAR-T Bet - The Medicine Maker",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYUhWLWFPZk95eGdsVXczLW5kNEZIVDdVMzNTWUJacHo2VHZraVhuSHVfbWNidlgzWUpENkNVc2xaUEhBQVRQRGhTaHVPUmdIWi1XeVZ1Qkd5c2k2bUxNb0VXLXdHWEFCT0FfNGxtYVRId1h3X1g1NGRiSWRwNE1RNi1FWmljLWFNa2pFYVU3cUhVRVNld2VYS2gzek1WeTNvVmxjYlFn?oc=5",
+      "date": "2026-04-27",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
+      "title": "Strand Therapeutics to Present Preclinical Data on Its Programmable mRNA In Vivo CAR-T Platform at the 29th American Society of Gene & Cell Therapy (ASGCT) Annual Meeting - Business Wire",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxOSTlHQTR1WXZYOG9fbWo4YXJBYmEzM1FwTlg2SXN0dng5VmVpWFQyOEx2clk1ZnhoZEwweFREVlJQMlhwd01mYThfRE1ZUHQzLUxjSzlwTXdJTHlTT3VsUXB5amdaOGVzVlo5YnB2WWhlVG1wR1NzQUM4d1c3OHFYUHdJWmtGMm5ndjlrRU95dnZMUGJ5eUpqYnFoTWJseTdZOFYyY3NpWmlnYndZckVzU2VCel95VEtLZTdidkVfdFZvaWxlSUJsaTdhSW8yV0tLQTc3RUNkVlJsZkFvMHE2UFdCczlWVGVYS01IQXJqcEZBT25kVUVpSDJxcTJaSVRfMWNQa3RKV3YzWDRFY3NobDl3RmVmRllxNzhpd3BZamYxTHhuTTFBY3NRS2hfMUp5NlBzNlR3eFM4b3daOFpLalFBUWctQQ?oc=5",
+      "date": "2026-04-27",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
+      "title": "Sana Biotechnology Announces Oral Presentation Highlighting Preclinical Data from in vivo CAR T SG293 at the American Society of Gene & Cell Therapy (ASGCT) 2026 Annual Meeting - Yahoo Finance",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVVk4OWRMX3l5UUtFcWt1MG9TUHdCbzc0N1N6NXdnaEdqOEVtcmxQRDQ5RTBpd1dnR1YtLXQ0SEFxbUM0SjBobzBzTEVIcUVjVlkwZGhwT0ktMGVGV1JTQld1OXd5ZmVUaDNSdHBqMkFxSGQwYXFCV0RQMG4xZmxiVkdpam5lTjJMTXl2SlhNRzg2blllc0p5SDRWVkgzR1NvOVRmRmNkU2dURGd0Q0ZfSU1jeVVBdw?oc=5",
+      "date": "2026-04-27",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": {
+        "company": "Sana Biotechnology",
+        "conference_canonical": "ASGCT 2026",
+        "conference_raw": "American Society of Gene & Cell Therapy (ASGCT) 2026 Annual Meeting",
+        "presentation_type": "oral",
+        "abstract_title": "Preclinical Data from in vivo CAR T SG293",
+        "conference_date_mentioned": null,
+        "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVVk4OWRMX3l5UUtFcWt1MG9TUHdCbzc0N1N6NXdnaEdqOEVtcmxQRDQ5RTBpd1dnR1YtLXQ0SEFxbUM0SjBobzBzTEVIcUVjVlkwZGhwT0ktMGVGV1JTQld1OXd5ZmVUaDNSdHBqMkFxSGQwYXFCV0RQMG4xZmxiVkdpam5lTjJMTXl2SlhNRzg2blllc0p5SDRWVkgzR1NvOVRmRmNkU2dURGd0Q0ZfSU1jeVVBdw?oc=5",
+        "source_date": "2026-04-27",
+        "extracted_at": "2026-05-10T08:23:15.954356+00:00"
       }
     },
     {
@@ -687,54 +801,8 @@
         "conference_date_mentioned": "May 11-15, 2026",
         "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282059/0/en/Addition-Therapeutics-Announces-Multiple-Oral-and-Poster-Presentations-at-the-American-Society-of-Gene-Cell-Therapy-ASGCT-29th-Annual-Meeting.html",
         "source_date": "2026-04-27",
-        "extracted_at": "2026-05-09T08:10:38.304970+00:00"
+        "extracted_at": "2026-05-10T08:23:17.183060+00:00"
       }
-    },
-    {
-      "source": "news.google.com",
-      "title": "This Week’s CGT News: Lilly’s $7B In Vivo CAR-T Bet - The Medicine Maker",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYUhWLWFPZk95eGdsVXczLW5kNEZIVDdVMzNTWUJacHo2VHZraVhuSHVfbWNidlgzWUpENkNVc2xaUEhBQVRQRGhTaHVPUmdIWi1XeVZ1Qkd5c2k2bUxNb0VXLXdHWEFCT0FfNGxtYVRId1h3X1g1NGRiSWRwNE1RNi1FWmljLWFNa2pFYVU3cUhVRVNld2VYS2gzek1WeTNvVmxjYlFn?oc=5",
-      "date": "2026-04-27",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
-      "title": "Sana Biotechnology Announces Oral Presentation Highlighting Preclinical Data from in vivo CAR T SG293 at the American Society of Gene & Cell Therapy (ASGCT) 2026 Annual Meeting - Yahoo Finance",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVVk4OWRMX3l5UUtFcWt1MG9TUHdCbzc0N1N6NXdnaEdqOEVtcmxQRDQ5RTBpd1dnR1YtLXQ0SEFxbUM0SjBobzBzTEVIcUVjVlkwZGhwT0ktMGVGV1JTQld1OXd5ZmVUaDNSdHBqMkFxSGQwYXFCV0RQMG4xZmxiVkdpam5lTjJMTXl2SlhNRzg2blllc0p5SDRWVkgzR1NvOVRmRmNkU2dURGd0Q0ZfSU1jeVVBdw?oc=5",
-      "date": "2026-04-27",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": {
-        "company": "Sana Biotechnology",
-        "conference_canonical": "ASGCT 2026",
-        "conference_raw": "American Society of Gene & Cell Therapy (ASGCT) 2026 Annual Meeting",
-        "presentation_type": "oral",
-        "abstract_title": "Preclinical Data from in vivo CAR T SG293",
-        "conference_date_mentioned": null,
-        "source_url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVVk4OWRMX3l5UUtFcWt1MG9TUHdCbzc0N1N6NXdnaEdqOEVtcmxQRDQ5RTBpd1dnR1YtLXQ0SEFxbUM0SjBobzBzTEVIcUVjVlkwZGhwT0ktMGVGV1JTQld1OXd5ZmVUaDNSdHBqMkFxSGQwYXFCV0RQMG4xZmxiVkdpam5lTjJMTXl2SlhNRzg2blllc0p5SDRWVkgzR1NvOVRmRmNkU2dURGd0Q0ZfSU1jeVVBdw?oc=5",
-        "source_date": "2026-04-27",
-        "extracted_at": "2026-05-08T07:52:54.689885+00:00"
-      }
-    },
-    {
-      "source": "news.google.com",
-      "title": "Strand Therapeutics to Present Preclinical Data on Its Programmable mRNA In Vivo CAR-T Platform at the 29th American Society of Gene & Cell Therapy (ASGCT) Annual Meeting - Business Wire",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxOSTlHQTR1WXZYOG9fbWo4YXJBYmEzM1FwTlg2SXN0dng5VmVpWFQyOEx2clk1ZnhoZEwweFREVlJQMlhwd01mYThfRE1ZUHQzLUxjSzlwTXdJTHlTT3VsUXB5amdaOGVzVlo5YnB2WWhlVG1wR1NzQUM4d1c3OHFYUHdJWmtGMm5ndjlrRU95dnZMUGJ5eUpqYnFoTWJseTdZOFYyY3NpWmlnYndZckVzU2VCel95VEtLZTdidkVfdFZvaWxlSUJsaTdhSW8yV0tLQTc3RUNkVlJsZkFvMHE2UFdCczlWVGVYS01IQXJqcEZBT25kVUVpSDJxcTJaSVRfMWNQa3RKV3YzWDRFY3NobDl3RmVmRllxNzhpd3BZamYxTHhuTTFBY3NRS2hfMUp5NlBzNlR3eFM4b3daOFpLalFBUWctQQ?oc=5",
-      "date": "2026-04-27",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
     },
     {
       "source": "news.google.com",
@@ -1111,18 +1179,6 @@
       "conference_mention": false
     },
     {
-      "source": "GlobeNewswire",
-      "title": "Ribonucleic Acid (RNA) Therapy Clinical Trials Research Report 2026: $3.4 Bn Market Opportunities, Trends, Competitive Landscape, Strategies, and Forecasts, 2020-2025, 2025-2030F, 2035F",
-      "summary": "Advancements in RNA delivery, increased funding for rare diseases and anticancer research, growing biotech-pharma collaborations, and personalized medicine adoption drive opportunities in RNA therapy trials. Focus areas include infectious disease treatments, …",
-      "url": "https://www.globenewswire.com/news-release/2026/04/24/3280592/28124/en/Ribonucleic-Acid-RNA-Therapy-Clinical-Trials-Research-Report-2026-3-4-Bn-Market-Opportunities-Trends-Competitive-Landscape-Strategies-and-Forecasts-2020-2025-2025-2030F-2035F.html",
-      "date": "2026-04-24",
-      "tags": [],
-      "sowhat": "```json\n{\n  \"sowhat\": \"RNA therapy market expansion signals growing competition for non-viral delivery alternatives to CAR-T approaches.\",\n  \"item_type\": \"news\"\n}\n```",
-      "item_type": "news",
-      "fetch_source": "newsapi",
-      "conference_mention": false
-    },
-    {
       "source": "news.google.com",
       "title": "Weekly Rundown: Lilly expands in vivo CAR T push with $7B Kelonia deal - Drug Discovery News",
       "summary": "",
@@ -1132,6 +1188,18 @@
       "sowhat": "Summary not available",
       "item_type": "news",
       "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "GlobeNewswire",
+      "title": "Ribonucleic Acid (RNA) Therapy Clinical Trials Research Report 2026: $3.4 Bn Market Opportunities, Trends, Competitive Landscape, Strategies, and Forecasts, 2020-2025, 2025-2030F, 2035F",
+      "summary": "Advancements in RNA delivery, increased funding for rare diseases and anticancer research, growing biotech-pharma collaborations, and personalized medicine adoption drive opportunities in RNA therapy trials. Focus areas include infectious disease treatments, …",
+      "url": "https://www.globenewswire.com/news-release/2026/04/24/3280592/28124/en/Ribonucleic-Acid-RNA-Therapy-Clinical-Trials-Research-Report-2026-3-4-Bn-Market-Opportunities-Trends-Competitive-Landscape-Strategies-and-Forecasts-2020-2025-2025-2030F-2035F.html",
+      "date": "2026-04-24",
+      "tags": [],
+      "sowhat": "```json\n{\n  \"sowhat\": \"RNA therapy market expansion signals growing competition for non-viral delivery alternatives to CAR-T approaches.\",\n  \"item_type\": \"news\"\n}\n```",
+      "item_type": "news",
+      "fetch_source": "newsapi",
       "conference_mention": false
     },
     {
@@ -1472,6 +1540,18 @@
     },
     {
       "source": "news.google.com",
+      "title": "Lilly adds gene delivery technology to CAR T in up to $7B Kelonia deal - BioSpace",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQkFHcFdfNExReUsxR2JkbS1LUmEyYWpLWU1aSmhTT1dfNVpXMk9mWU1UUFF1ME9CSjNBOEw1NzFiUnduVmhDdGw5NlIwbldkQmpydFV4OVlUWVFXcTVnWTJnZVh0YmNoZG5pbXZxbm5CNGdlRGxnZXJqRUVvTzh6R0t6R2dLcGpIQlltZ2N4ZGpoZ1kxNnhqTTBWS0FJMERNQVJGM0tn?oc=5",
+      "date": "2026-04-20",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
       "title": "The BioPharm Brief: Oncology Innovations Continue with Durable Survival, In Vivo CAR-T, and Combination Therapies - BioPharm International",
       "summary": "",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNNjhteUhjRzZSeTRrWnlUbEczQWszRTd2ZVJxRmljMGhSbm9wdVpxaklQQlZuV3NldWNRbzNHd2EtTDh0aF84UDVURTNmY1NMRHlOc3ljY04xR2RHUng2ZjNfaGpZSHFieDNWYkZ0X3dQYmRIdFRoem13RUlrLUdCcUktMHRIaERucjhDREFnMlVHNmQwTjVvNlRueGJKR29aSFNPQW5BVFBiU1luWEI2RUstRXpaeWp3RV83QUFwRVhpMFNjV292anJZV3FCX3JqdU9nQWdONDBwWWJzU3dma0l1NjRvbFBH?oc=5",
@@ -1496,9 +1576,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "Lilly adds gene delivery technology to CAR T in up to $7B Kelonia deal - BioSpace",
+      "title": "Lilly’s $7B Kelonia deal targets cancer therapy made inside the body - Stock Titan",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQkFHcFdfNExReUsxR2JkbS1LUmEyYWpLWU1aSmhTT1dfNVpXMk9mWU1UUFF1ME9CSjNBOEw1NzFiUnduVmhDdGw5NlIwbldkQmpydFV4OVlUWVFXcTVnWTJnZVh0YmNoZG5pbXZxbm5CNGdlRGxnZXJqRUVvTzh6R0t6R2dLcGpIQlltZ2N4ZGpoZ1kxNnhqTTBWS0FJMERNQVJGM0tn?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd19EanY2QUlvQjlpTU9GTTVhWEo4UU9pcmdyRlFLVldkM2lrbzhiUHBtTXdybDZjd0Z1Mm5HazdjaU05aDl2TEkzT2o0WUMxMmVIMUxPQmJnNDFPMmJRa1M0YUZrMURBOUdWbnBtZi11Y01wNENRbU00YndnTjYzRzdEcDN1Y185WWx5VVV4VEN0UzR1Q1lNZUhYLWZqMlpyM0RlSURtTVlNUDBlMWJQSkdyb0h0UGExdE95SkpR?oc=5",
       "date": "2026-04-20",
       "tags": [],
       "sowhat": "Summary not available",
@@ -1511,6 +1591,40 @@
       "title": "Lilly to Acquire Kelonia for Up to $7B, Expanding Cancer Cell Therapy Pipeline - Genetic Engineering and Biotechnology News",
       "summary": "",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOHpnbTAyNjlXNV9zZy1TR0k2RjNORXJtUENVcHEwYm9vYkhjY0J0cFdSOXlmbWZQeVRRTGlDX2YyN2JSa3Z5UC0zVlRoNE4xQ2NiaFFPM0ZsbjVEZ1JWTTdlaVhoSTRXa3JsN2lZSGlZVUNDa3ZOQkplSU05dU1jUFJFZnp0TkhwT0czNlpGR3kwMHJyTmFlNUV2ZHhpc2xNcnZNZDcweDlFNzNLZE44Wmp6TDQxOXA3dXc?oc=5",
+      "date": "2026-04-20",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
+    },
+    {
+      "source": "news.google.com",
+      "title": "Immunofoco Presents Preclinical Data for IMV102, an In Vivo CAR-T Candidate, Demonstrating Durable Tumor Control at the AACR 2026 - The Manila Times",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNRjJPNGI1aGxqV3k0enc0bGU4REdkT1daZ2NsSk9aLVFyTGpxZFFoNE5vWUVhSHBZMmJXQ1d6Vl9DclJVeVItR2dJRXRzWmpaeUFlMHBDeVczcjBQOFV2YTczWFNlUmlVWFBnNXhfNGliYW0xa1QwcFBjbzYtY25ta2ZOejlKMkZxeDEteWRjcTI4RHYyRkYxUmdwNjFjdUtZS2c4ODJwdEhIT3VhSldjUWNiZmF2azhscEJrWUEtWlRDOVVtZERJdlloMXVySGcyMWphX2djaHhGQmNoWlBVQzFBWGFCUlNfSnRqNXExak5MamxQT1htXzhvQ2s1QmxlUEN4SFNMaWFwTjdDaXM5eGZ4UmZ5MDhlMWMtYUlGdDBwNzZUNXfSAasCQVVfeXFMT0d1R1ZGS0dmTjl1Um5GWGVWVmdSa1VWeXRlWlBEQTM2bXcyYjBxXzFaTzRRY1gwMmFEclo2aUJwQUhhNDNTazZleVBUNm4zRExIMUQwRVdDdWhYMGRFSzN1eUllQm1TQUtiTEJ5dGVvYTBMT250eU5YYlFHalh4aDBGSmVVWHVDRW81R2h3S0JPNU1VRS05RHdRVXBaMzIwemh0UmxPNWZCUk5lYm9QWVBrdmRVdUllMFlZeWhaeEpfb2IyVGxlYUdtNlRvRzNCR01kdUNYbjEwTmJMVHlzRjBWS3IwV01HUU9mNWowemV6NXpKczdpQkdob1lFX1lRNFI5OGFucGR1MkpMUTBUelpqZk55dGhSbnlWSmF1S01zSFB1eHdkblR0WG8?oc=5",
+      "date": "2026-04-20",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": {
+        "company": "Immunofoco",
+        "conference_canonical": "AACR 2026",
+        "conference_raw": "AACR 2026",
+        "presentation_type": "unspecified",
+        "abstract_title": "Preclinical Data for IMV102, an In Vivo CAR-T Candidate, Demonstrating Durable Tumor Control",
+        "conference_date_mentioned": null,
+        "source_url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNRjJPNGI1aGxqV3k0enc0bGU4REdkT1daZ2NsSk9aLVFyTGpxZFFoNE5vWUVhSHBZMmJXQ1d6Vl9DclJVeVItR2dJRXRzWmpaeUFlMHBDeVczcjBQOFV2YTczWFNlUmlVWFBnNXhfNGliYW0xa1QwcFBjbzYtY25ta2ZOejlKMkZxeDEteWRjcTI4RHYyRkYxUmdwNjFjdUtZS2c4ODJwdEhIT3VhSldjUWNiZmF2azhscEJrWUEtWlRDOVVtZERJdlloMXVySGcyMWphX2djaHhGQmNoWlBVQzFBWGFCUlNfSnRqNXExak5MamxQT1htXzhvQ2s1QmxlUEN4SFNMaWFwTjdDaXM5eGZ4UmZ5MDhlMWMtYUlGdDBwNzZUNXfSAasCQVVfeXFMT0d1R1ZGS0dmTjl1Um5GWGVWVmdSa1VWeXRlWlBEQTM2bXcyYjBxXzFaTzRRY1gwMmFEclo2aUJwQUhhNDNTazZleVBUNm4zRExIMUQwRVdDdWhYMGRFSzN1eUllQm1TQUtiTEJ5dGVvYTBMT250eU5YYlFHalh4aDBGSmVVWHVDRW81R2h3S0JPNU1VRS05RHdRVXBaMzIwemh0UmxPNWZCUk5lYm9QWVBrdmRVdUllMFlZeWhaeEpfb2IyVGxlYUdtNlRvRzNCR01kdUNYbjEwTmJMVHlzRjBWS3IwV01HUU9mNWowemV6NXpKczdpQkdob1lFX1lRNFI5OGFucGR1MkpMUTBUelpqZk55dGhSbnlWSmF1S01zSFB1eHdkblR0WG8?oc=5",
+        "source_date": "2026-04-20",
+        "extracted_at": "2026-05-10T08:23:18.459260+00:00"
+      }
+    },
+    {
+      "source": "news.google.com",
+      "title": "Lilly to acquire Kelonia Therapeutics to advance in vivo CAR-T cell therapies - Investing News Network",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVDRTUHBsaEo3VEEtelM0cWxmdnlUWkFvREV4bzFiZVVfM0ZBSE1PS294WGpRaDJKVzVlb2c0VzY5RWpCQnVyY2VSc0xOd0U4UUJDVFVqV1V5cmRMQVlHaTZVbnJOWmt1dlhnTW51VVNHRUNGdGlHVGhLRVFLZllpeVdUdWhuQjUtRVpnLXVCRklVLUFqQUVLVkdnY2RzMjJHM25LeHM3OA?oc=5",
       "date": "2026-04-20",
       "tags": [],
       "sowhat": "Summary not available",
@@ -1535,18 +1649,6 @@
       "title": "Lilly’s $7bn bet on Kelonia to transform in vivo CAR T therapies - BioXconomy",
       "summary": "",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQeVAtNEJ3OThGdFVkSWNKNEF3MWtkMEVOMkV3ZDBudHRKbENZNXFjVmpfS2FtY2ZXQ3FIOEYxZ2VCdW1aNTVSNUhXQ0JHVGw3N3hXR1NzRVRpb3dZYUZIMnpXNHNLdTdzSGVxOGI0V25vZTM0cjRlVGFmWFZzOVdfU1ZaaDZJSVozR0FyTlh6dEpYSWpFR3ZuTGc4SUN5YW51MlRn?oc=5",
-      "date": "2026-04-20",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
-      "title": "Lilly’s $7B Kelonia deal targets cancer therapy made inside the body - Stock Titan",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd19EanY2QUlvQjlpTU9GTTVhWEo4UU9pcmdyRlFLVldkM2lrbzhiUHBtTXdybDZjd0Z1Mm5HazdjaU05aDl2TEkzT2o0WUMxMmVIMUxPQmJnNDFPMmJRa1M0YUZrMURBOUdWbnBtZi11Y01wNENRbU00YndnTjYzRzdEcDN1Y185WWx5VVV4VEN0UzR1Q1lNZUhYLWZqMlpyM0RlSURtTVlNUDBlMWJQSkdyb0h0UGExdE95SkpR?oc=5",
       "date": "2026-04-20",
       "tags": [],
       "sowhat": "Summary not available",
@@ -1823,28 +1925,6 @@
       }
     },
     {
-      "source": "Google News",
-      "title": "Immunofoco Presents Preclinical Data for IMV102, an In Vivo CAR-T Candidate, Demonstrating Durable Tumor Control at the AACR 2026 - The Manila Times",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNRjJPNGI1aGxqV3k0enc0bGU4REdkT1daZ2NsSk9aLVFyTGpxZFFoNE5vWUVhSHBZMmJXQ1d6Vl9DclJVeVItR2dJRXRzWmpaeUFlMHBDeVczcjBQOFV2YTczWFNlUmlVWFBnNXhfNGliYW0xa1QwcFBjbzYtY25ta2ZOejlKMkZxeDEteWRjcTI4RHYyRkYxUmdwNjFjdUtZS2c4ODJwdEhIT3VhSldjUWNiZmF2azhscEJrWUEtWlRDOVVtZERJdlloMXVySGcyMWphX2djaHhGQmNoWlBVQzFBWGFCUlNfSnRqNXExak5MamxQT1htXzhvQ2s1QmxlUEN4SFNMaWFwTjdDaXM5eGZ4UmZ5MDhlMWMtYUlGdDBwNzZUNXfSAasCQVVfeXFMT0d1R1ZGS0dmTjl1Um5GWGVWVmdSa1VWeXRlWlBEQTM2bXcyYjBxXzFaTzRRY1gwMmFEclo2aUJwQUhhNDNTazZleVBUNm4zRExIMUQwRVdDdWhYMGRFSzN1eUllQm1TQUtiTEJ5dGVvYTBMT250eU5YYlFHalh4aDBGSmVVWHVDRW81R2h3S0JPNU1VRS05RHdRVXBaMzIwemh0UmxPNWZCUk5lYm9QWVBrdmRVdUllMFlZeWhaeEpfb2IyVGxlYUdtNlRvRzNCR01kdUNYbjEwTmJMVHlzRjBWS3IwV01HUU9mNWowemV6NXpKczdpQkdob1lFX1lRNFI5OGFucGR1MkpMUTBUelpqZk55dGhSbnlWSmF1S01zSFB1eHdkblR0WG8?oc=5",
-      "date": "2026-04-20",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": {
-        "company": "Immunofoco",
-        "conference_canonical": "AACR 2026",
-        "conference_raw": "AACR 2026",
-        "presentation_type": "unspecified",
-        "abstract_title": "Preclinical Data for IMV102, an In Vivo CAR-T Candidate, Demonstrating Durable Tumor Control",
-        "conference_date_mentioned": null,
-        "source_url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNRjJPNGI1aGxqV3k0enc0bGU4REdkT1daZ2NsSk9aLVFyTGpxZFFoNE5vWUVhSHBZMmJXQ1d6Vl9DclJVeVItR2dJRXRzWmpaeUFlMHBDeVczcjBQOFV2YTczWFNlUmlVWFBnNXhfNGliYW0xa1QwcFBjbzYtY25ta2ZOejlKMkZxeDEteWRjcTI4RHYyRkYxUmdwNjFjdUtZS2c4ODJwdEhIT3VhSldjUWNiZmF2azhscEJrWUEtWlRDOVVtZERJdlloMXVySGcyMWphX2djaHhGQmNoWlBVQzFBWGFCUlNfSnRqNXExak5MamxQT1htXzhvQ2s1QmxlUEN4SFNMaWFwTjdDaXM5eGZ4UmZ5MDhlMWMtYUlGdDBwNzZUNXfSAasCQVVfeXFMT0d1R1ZGS0dmTjl1Um5GWGVWVmdSa1VWeXRlWlBEQTM2bXcyYjBxXzFaTzRRY1gwMmFEclo2aUJwQUhhNDNTazZleVBUNm4zRExIMUQwRVdDdWhYMGRFSzN1eUllQm1TQUtiTEJ5dGVvYTBMT250eU5YYlFHalh4aDBGSmVVWHVDRW81R2h3S0JPNU1VRS05RHdRVXBaMzIwemh0UmxPNWZCUk5lYm9QWVBrdmRVdUllMFlZeWhaeEpfb2IyVGxlYUdtNlRvRzNCR01kdUNYbjEwTmJMVHlzRjBWS3IwV01HUU9mNWowemV6NXpKczdpQkdob1lFX1lRNFI5OGFucGR1MkpMUTBUelpqZk55dGhSbnlWSmF1S01zSFB1eHdkblR0WG8?oc=5",
-        "source_date": "2026-04-20",
-        "extracted_at": "2026-05-01T15:41:29.665485+00:00"
-      }
-    },
-    {
       "source": "Endpoints News",
       "title": "Lilly to buy Kelonia for $3.25B upfront, underlining its in vivo CAR-T strategy",
       "summary": "Eli Lilly is going big on in vivo CAR-T therapy.\n\n The company said Monday that it would buy Kelonia Therapeutics, which has a Phase 1 program for multiple myeloma and a ...",
@@ -1911,7 +1991,7 @@
         "conference_date_mentioned": null,
         "source_url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNQ1ZITDA4OVRuMURqU2JMaVZ6N1ppcnp0MUNMWHZSQ0I0eWJhOHVLLTBFakhQVlp5VGZXZFI1TVBieEhzX2ZXY1NqMDU3a3g1b3RBb0VrbVFtYjltS2xoT2hRSmZ5WjZyeHVKOVk4OEtLTmVtSGVsa3QyZElyaUg1WHhfQ05XOEdBN3pUM0JjWm9fSTgwSFlSVU05dHcyWXRwTE1fOW84RFZwVVFDN3ZBMEdwa2F2UDVSS0FFWVFXVDVRT1VhUUtVVkxma1BTc2o1TjZTb0tTREVkZVMtWG16Q0EtRFJlbm9ZeUcwN3pRbUM?oc=5",
         "source_date": "2026-04-17",
-        "extracted_at": "2026-05-09T08:10:39.420562+00:00"
+        "extracted_at": "2026-05-10T08:23:20.412689+00:00"
       }
     },
     {
@@ -2008,9 +2088,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "Circio, Acuitas Partner to Advance In Vivo CAR‑T Therapy Using Circular RNA - Contract Pharma",
+      "title": "In vivo autoimmune CAR-T race grows as two RNA startups enter the clinic - Endpoints News",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQR3BLZ3NjNEFsVE5DNm5VTFlDYjdUUnFvQzlPdWx5TzhSMzBJMUlzeXpQeC1aN2JZV0d6ckVXTlBNa0YtUnM1eU1PZFVtS1haZ0FjeTJmMHdadVhibWVjMmgxUFpSNDdzR0RUVkhXU2l2NlFEN0JOTS1DYzRnZHlJX0xWSExXQ3VCQUphNmxoZzdOM1RJY1kzSFVwOC0zekJJeVlHMHN4eHJMWU1nRFdveFl1N08wY25mVFJnTktpNEJoVzdNQ0tR?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPemhZeTdJQV9yckNNZEpaSWVQQWk1WlMwam1BczA4SldYVmlSVDduRmdjMTNkMUZxTGRHck9uZVo0blBoSDBsY2N1UEtuN3BTY2o0N214ZVg1ZnpkYzJEd1dwb3M0UUF5VDFIWkQ3Z2VJa3ZqanRENVhGLTlYek42Sm12M2s0RGRpN3RseVV6TzRpaDlzUEZkWmxiYVZHQTU2dEE?oc=5",
       "date": "2026-04-15",
       "tags": [],
       "sowhat": "Summary not available",
@@ -2020,9 +2100,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "In vivo autoimmune CAR-T race grows as two RNA startups enter the clinic - Endpoints News",
+      "title": "Circio, Acuitas Partner to Advance In Vivo CAR‑T Therapy Using Circular RNA - Contract Pharma",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPemhZeTdJQV9yckNNZEpaSWVQQWk1WlMwam1BczA4SldYVmlSVDduRmdjMTNkMUZxTGRHck9uZVo0blBoSDBsY2N1UEtuN3BTY2o0N214ZVg1ZnpkYzJEd1dwb3M0UUF5VDFIWkQ3Z2VJa3ZqanRENVhGLTlYek42Sm12M2s0RGRpN3RseVV6TzRpaDlzUEZkWmxiYVZHQTU2dEE?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQR3BLZ3NjNEFsVE5DNm5VTFlDYjdUUnFvQzlPdWx5TzhSMzBJMUlzeXpQeC1aN2JZV0d6ckVXTlBNa0YtUnM1eU1PZFVtS1haZ0FjeTJmMHdadVhibWVjMmgxUFpSNDdzR0RUVkhXU2l2NlFEN0JOTS1DYzRnZHlJX0xWSExXQ3VCQUphNmxoZzdOM1RJY1kzSFVwOC0zekJJeVlHMHN4eHJMWU1nRFdveFl1N08wY25mVFJnTktpNEJoVzdNQ0tR?oc=5",
       "date": "2026-04-15",
       "tags": [],
       "sowhat": "Summary not available",
@@ -2152,9 +2232,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "Penn Medicine at the AACR Annual Meeting 2026 - Penn Medicine",
+      "title": "What ESO-T01 Tells Us About the Next Frontier in Multiple Myeloma - CancerNetwork",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPQXRIZ2hyYWV0X3FkOUt0d2ZDa2xUUUxkNW1nRUNPZllUSkdIZGo1NXoyalg0ZzM2OUw3akdzRHM2ODVleXZOUDFTUEZxaVVha1NVWDNsYy1zeWQwWF9jckQ2WV96VFJBc0pHMUVtNEVoVmtjd1NId3N2UGJ2WUJELUdvdWRWdw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPM2FmeFRJM29jVWhUUXo1dkRHbWFNZzV4SVFFb09GM3MtcUNQTHo4Wk9CZFdVaDVla1ZIZ3RTQzZJTEVqTU1ZVEdNRHdOVTZVSnRHNmkxaGNaMkh0V0VEMk1NMzY0ZHpaaGVVemhUcmdwa1FqLU82ME5peEFxdGcyTW4xQTdjUW1RblZ5WkctWGF0ajJObnJVc0FTM1ZpeXpEbGc?oc=5",
       "date": "2026-04-13",
       "tags": [],
       "sowhat": "Summary not available",
@@ -2164,9 +2244,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "What ESO-T01 Tells Us About the Next Frontier in Multiple Myeloma - CancerNetwork",
+      "title": "Penn Medicine at the AACR Annual Meeting 2026 - Penn Medicine",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPM2FmeFRJM29jVWhUUXo1dkRHbWFNZzV4SVFFb09GM3MtcUNQTHo4Wk9CZFdVaDVla1ZIZ3RTQzZJTEVqTU1ZVEdNRHdOVTZVSnRHNmkxaGNaMkh0V0VEMk1NMzY0ZHpaaGVVemhUcmdwa1FqLU82ME5peEFxdGcyTW4xQTdjUW1RblZ5WkctWGF0ajJObnJVc0FTM1ZpeXpEbGc?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPQXRIZ2hyYWV0X3FkOUt0d2ZDa2xUUUxkNW1nRUNPZllUSkdIZGo1NXoyalg0ZzM2OUw3akdzRHM2ODVleXZOUDFTUEZxaVVha1NVWDNsYy1zeWQwWF9jckQ2WV96VFJBc0pHMUVtNEVoVmtjd1NId3N2UGJ2WUJELUdvdWRWdw?oc=5",
       "date": "2026-04-13",
       "tags": [],
       "sowhat": "Summary not available",
@@ -2301,42 +2381,6 @@
       "tags": [],
       "sowhat": "Chinese CAR-T firm Oricell accelerates solid tumor expansion via pre-IPO funding ahead of public markets entry.",
       "fetch_source": "rss_watchlist",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
-      "title": "Nanotechnology-enhanced chimeric antigen receptor-T cell therapy for ovarian cancer - EurekAlert!",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9RTG5fN0NFSjRzd0UtR2ZaQXdUVUNPYlRMNWw5RXlIQmZKSFV1TUY0YmFiMHJrTDNFT0YteVNVeEhfeDdzdTZOYVFrc2dFZ3JCWTRQT1VQLTJqN084?oc=5",
-      "date": "2026-04-09",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "Google News",
-      "title": "5 years after lupus breakthrough, CAR-T is still surprising autoimmunity researchers - statnews.com",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQOGRjTHBPUU8xM2dORXBEVTVNWkZFaGhBSWs3dDd4akpGN2QyYnFOeE5BU0h0RnhNZGJEQjgyellpd3J2XzRKcktsRW1QRmhVU3RuRVBrRkRhOXFsWHhXSWdzUjFTLWhNd2hHc1FLZUZaTWZaT1F4V0RVUlFtYUxIWnE2alNvQQ?oc=5",
-      "date": "2026-04-09",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "Google News",
-      "title": "CAR T Cells Drive Recovery in Severe Autoimmune Disease Case - Inside Precision Medicine",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPSkpSeFBTUjdIVU5vZHVaY3oyVzE4dG1QUF9meXRkaVBkdnNpT3dUYWZXUW04WVhPTVVFaXFVVUNGWV9TSkNGZHhIVUhSUFRLRXd3RlVOMTBIUkJmWWN0WHJVWjV5S0Q3OGc1LUtFQXJNdG9xTnJrVDFMalhMdFhDeTlKQ2s2bktuN3VLV1VCWlk1clZfR2lJOHpBbUR3OFJuVmN0YmdVRVBvcjdRQzIxMDB6VEZxVTB6ajgxWEJHb0lneGxnOVE?oc=5",
-      "date": "2026-04-09",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
       "conference_mention": false
     }
   ]
