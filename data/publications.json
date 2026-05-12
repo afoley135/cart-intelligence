@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-11T09:40:02.234654+00:00",
-  "count": 26,
+  "fetched_at": "2026-05-12T08:41:44.054498+00:00",
+  "count": 27,
   "publications": [
     {
       "source": "pubmed",
@@ -151,6 +151,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42088834/",
       "sowhat": "Pre-conditioning with chemotherapy and ICIs can optimize host T cell repertoires to enhance in vivo CAR-T efficacy.",
       "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42110477",
+      "title": "CAR-T cells directed toward PD-L1 demonstrate potent, antigen-specific activity against cholangiocarcinoma: A proof of concept study.",
+      "journal": "Molecular therapy. Oncology",
+      "authors": "Gondaliya P, Luo Y, Sayyed AA, Zinn DA, Qie Y et al.",
+      "abstract": "An immunosuppressive microenvironment driven by tumor and stromal cells expressing programmed death-ligand 1 (PD-L1) contributes to immune evasion and poor prognosis in cholangiocarcinoma. Although antibodies to PD-L1 are used clinically, their benefit is limited by immune exclusion within the local microenvironment. To overcome this, we evaluated engineered T cells directed toward PD-L1 that simultaneously target tumor cells and the immunosuppressive microenvironment. Human donor T cells were transduced with a lentiviral vector encoding a chimeric antigen receptor (CAR) consisting of an anti-PD-L1 scFv, CD4 transmembrane domain, and 4-1BB/CD3ζ signaling domain. The antitumor efficacy of these CAR-T cells was assessed in a murine orthotopic tumor model, and their specificity and effect were validated in human malignant cholangiocytes with varying PD-L1 expression. PD-L1 CAR-T cells retained T cell identity, demonstrated antigen-specific cytotoxicity, and effectively reduced tumor burden in vivo. Cytotoxicity was abrogated in PD-L1 knockout cells, confirming target specificity. PD-L1 CAR-T cells significantly reduced tumor cell viability within multicellular spheroids. Gemcitabine pretreatment upregulated PD-L1 expression and enhanced CAR-T-mediated cytotoxicity. These findings demonstrate the feasibility of second-generation PD-L1 CAR-T cells, demonstrating preclinical efficacy and specificity, and validating a therapeutic strategy that targets the tumor microenvironment for these challenging cancers.",
+      "date": "2026-06",
+      "doi": "10.1016/j.omton.2026.201209",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42110477/",
+      "sowhat": "PD-L1-targeted CAR-T cells overcome immunosuppression in cholangiocarcinoma by simultaneously eliminating tumor and stromal cells.",
+      "category": "Clinical data"
     },
     {
       "source": "pubmed",

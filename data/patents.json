@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-11T10:00:24.888149+00:00",
-  "count": 451,
+  "fetched_at": "2026-05-12T08:52:21.016834+00:00",
+  "count": 455,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7462,6 +7462,71 @@
       "novelty_summary": "The patent discloses hypoimmune allogeneic CD19-directed CAR T cells for treating B cell malignancies and B cell-mediated disorders. The competitive significance lies in the use of allogeneic (off-the-shelf) hypoimmune CAR T cells rather than autologous cells, potentially enabling faster manufacturing, reduced immunogenicity, and broader accessibility for in vivo CAR-T therapy.",
       "relevant": true,
       "title_original": "MÉTHODES DE DÉTECTION DE LA DÉPLÉTION DES LYMPHOCYTES B ET DE TRAITEMENT DE MALADIES MÉDIÉES PAR LES LYMPHOCYTES B"
+    },
+    {
+      "id": "IL327509.A",
+      "title": "Engineered retrotransposable element proteins for gene delivery and insertion",
+      "abstract": "",
+      "assignee": "AVERNA THERAPEUTICS LTD [IL]; AVERNA THERAPEUTICS LTD",
+      "watchlist_company": "Averna Therapeutics",
+      "filing_date": "",
+      "patent_number": "IL327509A",
+      "application_number": "327509",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/IL327509A",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent describes engineered retrotransposable element proteins optimized for gene delivery and genomic insertion, offering a novel non-viral delivery platform distinct from viral vectors and conventional transposons. This technology is relevant to CAR-T engineering as it provides an alternative mechanism for stable transgene integration into T cells, potentially improving efficiency and safety compared to existing integration methods.",
+      "relevant": true
+    },
+    {
+      "id": "IL327388.A",
+      "title": "Viral vectors and packaging cell lines",
+      "abstract": "",
+      "assignee": "UMOJA BIOPHARMA INC [US]; UMOJA BIOPHARMA INC.",
+      "watchlist_company": "Umoja Biopharma",
+      "filing_date": "",
+      "patent_number": "IL327388A",
+      "application_number": "327388",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/IL327388A",
+      "data_type": "patent",
+      "claim_type": "Unknown",
+      "novelty_summary": null,
+      "relevant": true
+    },
+    {
+      "id": "IL327045.A",
+      "title": "Constrained ionizable cationic lipids and lipid nanoparticles",
+      "abstract": "",
+      "assignee": "CAPSTAN THERAPEUTICS INC [US]; KARMALI PRIYA PRAKASH [US]; TANIS STEVEN [US]",
+      "watchlist_company": "Capstan Therapeutics",
+      "filing_date": "",
+      "patent_number": "IL327045A",
+      "application_number": "327045",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/IL327045A",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent describes novel constrained ionizable cationic lipids with structural constraints designed to improve lipid nanoparticle (LNP) formulation properties. These lipids are relevant to gene therapy delivery as optimized LNPs can enhance mRNA delivery efficiency and cellular uptake, which is significant for CAR-T manufacturing and in vivo therapeutic applications requiring improved transfection.",
+      "relevant": true
+    },
+    {
+      "id": "WO2026096738.A1",
+      "title": "CHIMERIC ANTIGEN RECEPTOR TARGETING CD19",
+      "abstract": "Provided herein are RNA sequences encoding a chimeric antigen receptor (CAR) comprising a CD19 antigen binding molecule, along with related compositions and methods. In some embodiments, circular RNAs encoding the CD19 binding molecule or CD19 CAR, along with related compositions, methods, and precursors, are described herein. In some embodiments, these compositions comprise a transfer vehicle, e.g., comprising an ionizable lipid described herein.",
+      "assignee": "ORNA THERAPEUTICS INC [US]; RENAGADE THERAPEUTICS MAN INC [US]; ORNA THERAPEUTICS, INC.",
+      "watchlist_company": "Orna Therapeutics",
+      "filing_date": "",
+      "patent_number": "WO2026096738A1",
+      "application_number": "2026096738",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/WO2026096738A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent discloses circular RNA (circRNA) encoding CD19-targeting CAR with ionizable lipid-based delivery vehicles, representing a non-viral delivery approach distinct from viral vectors or linear RNA modalities. This is competitively significant for in vivo CAR-T as circRNA offers improved stability, reduced immunogenicity, and self-amplifying potential compared to conventional mRNA, while ionizable lipids enable efficient lymphocyte transfection without viral integration risk.",
+      "relevant": true,
+      "title_original": "RÉCEPTEUR ANTIGÉNIQUE CHIMÉRIQUE CIBLANT CD19"
     }
   ]
 }
