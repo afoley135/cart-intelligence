@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-12T08:41:44.054498+00:00",
-  "count": 27,
+  "fetched_at": "2026-05-13T08:52:20.180983+00:00",
+  "count": 28,
   "publications": [
     {
       "source": "pubmed",
@@ -165,6 +165,21 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42110477/",
       "sowhat": "PD-L1-targeted CAR-T cells overcome immunosuppression in cholangiocarcinoma by simultaneously eliminating tumor and stromal cells.",
+      "category": "Clinical data"
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "In vivo programming of stem-like CAR T cells by lymphatic-selective lipid nanoparticle enables durable anti-tumour efficacy in orthotopic model",
+      "journal": "bioRxiv (preprint)",
+      "authors": "MA, Y., CHEN, J., Huang, X., CAI, J., MA, G. et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has shown remarkable efficacy in hematological malignancies, yet its efficacy in solid tumours remains limited by poor persistence and progressive exhaustion within the tumour microenvironment. These barriers may be particularly pronounced in emerging in vivo CAR-T therapies, in which transient transgene expression and insufficient control over T-cell differentiation restrict the generation of durable antitumour immunity. Here, we report a primary lymphoid tissue-targeting lipid nanoparticle (pLNP), that directs in vivo CAR-T programming to the thymus and lymphoid tissues, thereby increasing the proportion of stem-like CAR-T cells and promoting durable, exhaustion-resistant antitumour responses. After antibody conjugation, pLNP enabled in vivo CAR expression in developing T cells, generating CAR-T cells enriched in naive and stem cell-like memory phenotypes with prolonged persistence. To reinforce this, we co-administered interleukin-7 (IL-7) mRNA, which increased stem-like CAR-T populations, favoured progenitor exhausted T (Tpex) cells over terminally exhausted states, and enhanced cytotoxic function without overt inflammatory amplification. This stemness-promoting strategy also improved responsiveness to immune checkpoint blockade, producing synergistic antitumour effects with anti-PD-1 therapy, reducing LNP dose requirements, and inducing durable tumour regression with prolonged survival in both subcutaneous and orthotopic DLL3-positive small-cell lung cancer models. Similar enhancement of in vivo CAR-T efficacy was also observed in aged mice with thymic involution. Together, these findings illustrated that primary lymphoid tissue-directed in vivo CAR-T programming is a potential strategy to overcome insufficient persistence and progressive exhaustion in solid tumours.",
+      "date": "2026-05-12",
+      "doi": "10.64898/2026.05.08.723693",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.05.08.723693",
+      "sowhat": "Lymphoid-targeting lipid nanoparticles deliver durable anti-tumor CAR-T responses by promoting stem-like cell differentiation in vivo.",
       "category": "Clinical data"
     },
     {
