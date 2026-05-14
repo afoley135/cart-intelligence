@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-13T08:52:20.180983+00:00",
-  "count": 28,
+  "fetched_at": "2026-05-14T08:45:05.786357+00:00",
+  "count": 30,
   "publications": [
     {
       "source": "pubmed",
@@ -195,6 +195,36 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42104450/",
       "sowhat": "Nanotech enhancements address manufacturing complexity and solid tumor efficacy gaps in CAR-T development.",
+      "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42129518",
+      "title": "First-in-human study of FLT3 CAR-T cell therapy for relapsed acute myeloid leukemia.",
+      "journal": "NPJ precision oncology",
+      "authors": "Wu X, Lu G, Tian L, Chen S, Caligiuri MA et al.",
+      "abstract": "In this first-in-human open-label study, autologous FLT3 CAR-T cells were delivered to two patients with relapsed and refractory FLT3+ AML. Bone marrow examination revealed AML blasts with high but variable surface density of FLT3 expression. Following tumor cytoreduction and lymphodepletion, 1 × 106/kg of FLT3 CAR-T cells were administered, resulting in in vivo CAR-T cell expansion and grade 1 cytokine release syndrome in both patients. Both patients failed to achieve remission after CAR-T cell therapy, but bone marrow examination following therapy revealed the elimination of FLT3+ AML blasts, persistence of FLT3 - AML blasts, and early post-treatment preservation of normal CD34+ hematopoietic stem and progenitor cells (HSPCs) with variable FLT3 expression. Collectively, autologous FLT3 CAR-T cells can be safely administered and can eradicate FLT3⁺ blasts with minimal toxicity, without causing substantial damage to normal CD34⁺ HSPCs; however, they fail to induce leukemic remission due to the heterogeneity of FLT3 expression and the persistence of FLT3⁻ AML blasts.",
+      "date": "2026-05",
+      "doi": "10.1038/s41698-026-01466-2",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42129518/",
+      "sowhat": "FLT3 CAR-T shows activity against target blasts but FLT3-negative escape and HSPC toxicity limit efficacy in relapsed AML.",
+      "category": "Clinical data"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42129307",
+      "title": "Circadian engineering of in vivo CAR T cell therapy for precision oncology.",
+      "journal": "NPJ precision oncology",
+      "authors": "Bautista J, Echeverría CE, Rodríguez-Marcano MG, López-Cortés A",
+      "abstract": "Circadian rhythms shape antitumor immunity by regulating endocrine signaling, vascular permissiveness, leukocyte trafficking, metabolism, and suppressive features of the tumor microenvironment across the 24-h cycle. Here, we propose that biological time may represent an important design variable for CAR T-cell therapy. This concept may be particularly relevant to in vivo CAR T platforms, which could extend temporal control beyond infusion timing through repeatable induction, tunable amplitude, and reversible shutdown. We discuss evidence that CD8⁺ T-cell clocks, neuroendocrine oscillations, endothelial gatekeeping, and rhythmic tumor-microenvironment remodeling influence immune access, effector competence, exhaustion risk, and inflammatory toxicity. We further examine how viral vectors, lipid nanoparticles, and programmable control circuits might enable circadian-aware CAR installation and duty-cycling. Together, these observations support chrono-synthetic CAR T as a testable translational framework for precision immuno-oncology.",
+      "date": "2026-05",
+      "doi": "10.1038/s41698-026-01464-4",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42129307/",
+      "sowhat": "Circadian timing optimization could enhance CAR-T efficacy, trafficking, and safety by aligning therapy with tumor microenvironment rhythms.",
       "category": "Review article"
     },
     {

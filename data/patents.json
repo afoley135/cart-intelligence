@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-13T09:01:16.053202+00:00",
-  "count": 455,
+  "fetched_at": "2026-05-14T08:53:28.451538+00:00",
+  "count": 457,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7527,6 +7527,40 @@
       "novelty_summary": "The patent discloses circular RNA (circRNA) encoding CD19-targeting CAR with ionizable lipid-based delivery vehicles, representing a non-viral delivery approach distinct from viral vectors or linear RNA modalities. This is competitively significant for in vivo CAR-T as circRNA offers improved stability, reduced immunogenicity, and self-amplifying potential compared to conventional mRNA, while ionizable lipids enable efficient lymphocyte transfection without viral integration risk.",
       "relevant": true,
       "title_original": "RÉCEPTEUR ANTIGÉNIQUE CHIMÉRIQUE CIBLANT CD19"
+    },
+    {
+      "id": "EP4740966.A1",
+      "title": "Therapeutic Use of Protein Heterodimer",
+      "abstract": "[0001]    Use of a protein heterodimer in the preparation of a drug, which drug is used for preventing and/or treating malignant effusion. The protein heterodimer contains a first member and a second member different from the first member, wherein the first member contains a light chain and a heavy chain, the heavy chain contains a first Fc region, and the light chain is complexed with the heavy chain to form a targeting moiety that exhibits binding specificity for a tumor antigen; and the second member contains a polypeptide containing an immunomodulator fused to a second Fc region. The first member and the second member are associated by means of the complexing of the first Fc region with the second Fc region so as to form the heterodimer. In addition, the first Fc region contains a first modification and/or the second Fc region contains a second modification, and these modifications can more effectively promote heterodimerization between the first member and the second member.",
+      "assignee": "SHIHUIDA PHARMACEUTICAL GROUP JILIN CO LTD [CN]; Shihuida Pharmaceutical Group (Jilin) Co., Ltd.",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "EP4740966A1",
+      "application_number": "4740966",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/EP4740966A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent discloses a protein heterodimer comprising a targeting moiety (antibody-like structure with tumor antigen specificity) fused to an Fc region, complexed with an immunomodulator-Fc fusion protein. The innovation lies in the specific Fc region pairing strategy to create a bispecific or multispecific therapeutic for malignant effusion treatment, potentially offering improved tumor targeting and immune activation compared to monoclonal antibodies alone.",
+      "relevant": true,
+      "title_original": "THERAPEUTISCHE VERWENDUNG VON PROTEIN-HETERODIMER"
+    },
+    {
+      "id": "EP4741508.A2",
+      "title": "Hyperactive Transposons and Transposases",
+      "abstract": "[0001]    The present invention relates to a polypeptide comprising a piggyBac transposase or a fragment or a derivative thereof having transposase function comprising at least one amino acid substitution. Further, the present invention relates to a transposable element comprising a piggyBac or piggyBac-like left repeat sequence and left internal repeat sequence, wherein the left internal repeat sequence comprises at least one nucleotide modification. Furthermore, the present invention relates to a kit comprising the above transposase and/or transposable element. In addition, the present invention relates to a targeting system comprising the above transposase and/or transposable element.",
+      "assignee": "PROBIOGEN AG [DE]; ProBioGen AG",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "EP4741508A2",
+      "application_number": "4741508",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/EP4741508A2",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent discloses hyperactive piggyBac transposase variants with amino acid substitutions and modified transposable elements with nucleotide modifications in repeat sequences, designed to enhance transposition efficiency. This is significant for in vivo CAR-T applications as improved transposases enable more efficient non-viral genomic integration of CAR constructs, potentially reducing off-target effects and improving therapeutic efficacy compared to wild-type transposition systems.",
+      "relevant": true,
+      "title_original": "HYPERAKTIVE TRANSPOSONS UND TRANSPOSASEN"
     }
   ]
 }
