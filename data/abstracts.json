@@ -1,7 +1,35 @@
 {
-  "fetched_at": "2026-05-14T08:45:26.369803+00:00",
-  "count": 50,
+  "fetched_at": "2026-05-15T08:55:59.701774+00:00",
+  "count": 52,
   "abstracts": [
+    {
+      "source": "pubmed",
+      "pmid": "42134560",
+      "title": "In Vivo Generation of CAR-T Cells: Current Obstacles, Strategic Solutions, and Clinical Translation.",
+      "journal": "Critical reviews in oncology/hematology",
+      "authors": "Jiang Z, Xu S, Li W, Chen J, Guo Z",
+      "abstract": "Chimeric antigen receptor T (CAR-T) cell therapy has transformed the treatment of hematologic malignancies, but conventional ex vivo manufacturing remains costly, labor-intensive, and difficult to scale. In vivo CAR-T generation, which reprograms endogenous T cells directly within patients using engineered vectors, offers a simplified and potentially more accessible alternative. This review outlines the major barriers to in vivo CAR-T development-including inefficient systemic delivery, off-target transduction, the trade-off between transfection efficiency and biosafety, and limited persistence of CAR expression. We summarize emerging engineering strategies such as targeted vector systems, combinatorial T-cell recognition, tunable expression control, and approaches to enhance functional durability. Recent early-phase clinical trials demonstrate the feasibility of in vivo CAR-T induction. We also discuss future opportunities and challenges that will shape the translation of this rapidly evolving therapeutic paradigm.",
+      "date": "2026-May",
+      "doi": "10.1016/j.critrevonc.2026.105373",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42134560/",
+      "sowhat": "In vivo CAR-T generation using engineered vectors could eliminate costly ex vivo manufacturing, but faces delivery, safety, and persistence challenges."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42130331",
+      "title": "β-Hydroxy Thioether-Derived Ionizable Lipids for Spleen-Tropic mRNA Delivery and In Vivo Chimeric Antigen Receptor T Cell Engineering.",
+      "journal": "ACS nano",
+      "authors": "Guo Q, Zhang Y, Yang X, Liu Q, Sun J et al.",
+      "abstract": "The delivery of nucleic acids via lipid nanoparticles (LNPs) to generate chimeric antigen receptor (CAR) T cells in vivo represents a promising therapeutic strategy for a broad spectrum of diseases. Nevertheless, the low efficiency of in vivo gene delivery to T cells remains a major obstacle. In this study, we established a structurally diverse combinatorial library of ionizable lipids based on a β-hydroxy thioether scaffold. From this library, 300 distinct ionizable lipids were synthesized and systematically evaluated for their mRNA delivery efficacy using a luciferase reporter assay in both in vitro and in vivo settings. We identified 113-AA-C8C14 as a leading candidate, which demonstrated a tropism for spleen-specific mRNA delivery. The 113-AA-C8C14 LNPs achieved a 57-fold enhancement in mRNA expression in the spleen compared to a benchmark selective organ-targeting (SORT) LNP formulation. Furthermore, when loaded with mRNA encoding a CD19-specific CAR, the 113-AA-C8C14 LNPs generated 2.7 times more CAR T cells in vivo. This was accompanied by an enhanced T cell response, evidenced by a 2.9-fold and 3.7-fold increase in the secretion of interferon-γ (IFN-γ) and tumor necrosis factor-α (TNF-α), respectively. Consequently, this approach led to a 2.3-fold greater inhibition of tumor growth in a mouse model of pancreatic cancer. Our study demonstrates the potential of the 113-AA-C8C14 LNP for in vivo CAR T cell therapy in the future.",
+      "date": "2026-May",
+      "doi": "10.1021/acsnano.6c00706",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42130331/",
+      "sowhat": "Novel ionizable lipid enables spleen-targeted in vivo CAR-T engineering with 57-fold mRNA delivery enhancement."
+    },
     {
       "source": "pubmed",
       "pmid": "42129518",
@@ -486,11 +514,11 @@
       "authors": "Li H, Wen W, Zhao X, Liang G",
       "abstract": "In 2017, the United States Food and Drug Administration (FDA) granted the inaugural approval of chimeric antigen receptor T cell (CAR-T) therapy, marking the advent of a new era in cancer immunotherapy. However, the conventional ex vivo CAR‑T cell manufacturing workflow is complex and time consuming, resulting not only in high treatment costs and limited patient access, but also in effector differentiation of T cells and upregulation of exhaustion markers during prolonged in vitro expansion, which may impair the durability and antitumor activity of the cell product and reduce therapeutic efficacy. To enhance the efficacy and accessibility of CAR-T therapy, the strategy of in vivo generation of CAR cells has emerged as a prominent research focus, notwithstanding substantial technical challenges and its broad prospects. This review systematically summarizes the latest advances, technical challenges, and future trends of in vivo CAR-T therapy, with an emphasis on CAR mRNA molecular design, structural modifications, advancements in gene delivery technologies, and clinical applications, aiming to provide a comprehensive reference for related research.",
       "date": "2026-Apr",
-      "doi": "10.1186/s12951-026-04232-5",
+      "doi": "10.1038/s41467-019-13007-6",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41928252/",
-      "sowhat": "In vivo CAR-T generation bypasses costly ex vivo manufacturing, preserving T-cell fitness and expanding patient access to immunotherapy."
+      "sowhat": "In vivo CAR-T generation bypasses ex vivo manufacturing complexity, reducing costs while preserving T cell potency and durability."
     },
     {
       "source": "pubmed",
