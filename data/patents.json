@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-19T09:50:24.921105+00:00",
-  "count": 461,
+  "fetched_at": "2026-05-20T09:22:19.156201+00:00",
+  "count": 462,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7625,6 +7625,23 @@
       "claim_type": "Composition + Method",
       "novelty_summary": "The patent discloses circular RNA constructs with IRES elements for expressing CAR molecules (CD19 or BCMA-targeting binders) and precursor polynucleotides encoding full CAR constructs. The competitive significance lies in using self-replicating circular RNA as an alternative to linear mRNA for CAR-T cell engineering, potentially offering improved expression kinetics, reduced immunogenicity, and enhanced durability compared to conventional viral vectors or transient mRNA delivery.",
       "relevant": true
+    },
+    {
+      "id": "WO2026098518.A1",
+      "title": "Antibodies Specifically Targeting CLDN6 and Their Use in the Preparation of CAR-T Cells",
+      "abstract": "Provided are an antibody specifically targeting CLDN6 and a use thereof in the preparation of a CAR-T cell. The provided CLDN6 antibody specifically targets CLDN6, but does not recognize CLDN3, CLDN4, or CLDN9 or exhibits significantly different recognition methods. A sequence of the antibody specifically targeting CLDN6A can be used to construct a chimeric antigen receptor (CAR) and a bivalent antibody (bispecific antibody). The CAR constructed on the basis of the sequence of the antibody can be transduced into a T cell to create a CAR-T cell specifically targeting CLDN6, which can be used for treating solid tumors such as ovarian cancer.",
+      "assignee": "SHENZHEN HAOSHI BIOTECHNOLOGY CO LTD [CN]; 深圳豪石生物科技有限公司",
+      "watchlist_company": "Create Medicines",
+      "filing_date": "",
+      "patent_number": "WO2026098518A1",
+      "application_number": "2026098518",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/WO2026098518A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent presents a CLDN6-specific antibody with high selectivity (non-cross-reactive with CLDN3, CLDN4, CLDN9) and its application to construct CAR-T cells targeting CLDN6+ solid tumors, particularly ovarian cancer. This offers competitive advantage through improved specificity to reduce off-target toxicity in CAR-T therapy against claudin-6-expressing malignancies.",
+      "relevant": true,
+      "title_original": "ANTICORPS CIBLANT DE MANIÈRE SPÉCIFIQUE CLDN6 ET SON UTILISATION DANS LA PRÉPARATION D'UNE CELLULE CAR-T"
     }
   ]
 }
