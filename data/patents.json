@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-21T09:28:56.863240+00:00",
-  "count": 468,
+  "fetched_at": "2026-05-22T09:16:24.308953+00:00",
+  "count": 469,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7742,6 +7742,22 @@
       "novelty_summary": "The patent describes engineered cells expressing chimeric receptors with dual functionality targeting both anti-tumor and anti-transplant rejection responses, with specific emphasis on anti-NK cell immune rejection mechanisms. This represents a novel application of CAR technology beyond traditional tumor targeting, potentially addressing graft-versus-host disease (GVHD) or transplant rejection scenarios, which could expand CAR-T utility in solid organ and allogeneic transplant settings.",
       "relevant": true,
       "title_original": "ZUSAMMENSETZUNG FÜR ZELLULÄRE IMMUNTHERAPIE UND VERFAHREN"
+    },
+    {
+      "id": "US20260133194.A1",
+      "title": "PROGRAMMED CELL DEATH LIGAND 1 (PD-L1) TARGETING POLYPEPTIDE, MOLECULAR IMAGING PROBE, AND USE THEREOF",
+      "abstract": "A programmed cell death ligand 1 (PD-L1) targeting polypeptide, a molecular imaging probe, and a use thereof are provided. The PD-L1 targeting polypeptide includes any one of the following polypeptides: (1) a polypeptide shown in at least one of SEQ ID NO: 1 to SEQ ID NO: 9; and (2) a polypeptide that is derived from an amino acid sequence of (1) through a substitution and/or a deletion and/or an addition of one or more amino acid residues and has the same function as the amino acid sequence. The magnetic resonance molecular imaging probe based on the PD-L1 targeting polypeptide enables the early diagnosis and evaluation of a tumor and an immune-mediated myocardial injury.",
+      "assignee": "PEKING UNION MEDICAL COLLEGE HOSPITAL CAMS [CN]; Peking Union Medical College Hospital, Chinese Academy of Medical Sciences",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260133194A1",
+      "application_number": "20260133194",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260133194A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent discloses PD-L1 targeting polypeptides (SEQ ID NOs 1-9 and variants) conjugated to magnetic resonance imaging contrast agents for molecular imaging. The competitive significance for in vivo CAR-T is limited; however, PD-L1 targeting moieties are relevant to CAR-T engineering as PD-L1 is an immune checkpoint that can be incorporated into CAR-T design or used diagnostically to monitor CAR-T activity and tumor microenvironment status.",
+      "relevant": true
     }
   ]
 }
