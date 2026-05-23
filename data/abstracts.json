@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-22T09:07:47.559146+00:00",
-  "count": 52,
+  "fetched_at": "2026-05-23T08:22:51.970197+00:00",
+  "count": 53,
   "abstracts": [
     {
       "source": "pubmed",
@@ -183,6 +183,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41679305/",
       "sowhat": "In vivo immune cell editing bypasses ex vivo manufacturing bottlenecks, enabling direct TME reprogramming for broader CAR-T accessibility."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42170676",
+      "title": "Engineering precision oncology: Targeting tumors and immune cells with lentiviral vectors.",
+      "journal": "Molecular therapy. Oncology",
+      "authors": "Rossi J, Martinello C, Sorrentino R, Guyonnet-Duperat V, Amintas S et al.",
+      "abstract": "Lentiviral vectors (LVs) are emerging as versatile tools for the efficient and stable delivery of therapeutic genes. Although VSV-G-pseudotyped LVs remain the standard for ex vivo genetic engineering, their broad tropism and serum sensitivity limit their applicability for in vivo cancer therapy, where precise targeting is essential for efficacy and safety. This review synthesizes two decades of advances in LV pseudotyping, comparing natural viral envelopes, engineered targeting strategies, and multicomponent glycoprotein systems that reshape vector tropism. We discussed donor-derived envelopes such as measles virus, baboon endogenous retrovirus, Nipah virus, and Sindbis virus, highlighting their value for transducing hematopoietic, immune, and tumor cells. We also examined next-generation retargeting innovations, including engineered receptor-binding domains, display of cytokines or antibody fragments, and VSV-G mutants that ablate natural receptor interactions, to enhance specificity for T cells, B cells, hematopoietic stem cells, and tumor-associated antigens. Finally, we review the recent emergence of engineered virus-like particles (VLPs) as precision tools for in vivo delivery of CRISPR-Cas9, base-editing, and prime-editing complexes. Collectively, these advances position receptor-targeted lentiviral and VLP systems as promising platforms for the next generation of precision oncology, enabling selective in vivo CAR T/NK cell generation, targeted tumor modification, and cell-restricted gene editing.",
+      "date": "2026-Jun",
+      "doi": "10.1016/j.omtn.2024.102318",
+      "conference": "ASGCT",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42170676/",
+      "sowhat": "Engineered lentiviral vectors enable precise in vivo targeting of tumor and immune cells, advancing CAR-T delivery beyond ex vivo limitations."
     },
     {
       "source": "pubmed",

@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-22T09:16:24.308953+00:00",
-  "count": 469,
+  "fetched_at": "2026-05-23T08:31:06.991594+00:00",
+  "count": 472,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7757,6 +7757,54 @@
       "data_type": "patent",
       "claim_type": "Composition of matter",
       "novelty_summary": "The patent discloses PD-L1 targeting polypeptides (SEQ ID NOs 1-9 and variants) conjugated to magnetic resonance imaging contrast agents for molecular imaging. The competitive significance for in vivo CAR-T is limited; however, PD-L1 targeting moieties are relevant to CAR-T engineering as PD-L1 is an immune checkpoint that can be incorporated into CAR-T design or used diagnostically to monitor CAR-T activity and tumor microenvironment status.",
+      "relevant": true
+    },
+    {
+      "id": "US20260139237.A1",
+      "title": "FUSION PROTEIN CONTAINING CAS PROTEIN AND BACTERIAL TOXIN AND USE THEREOF",
+      "abstract": "[0000]    A fusion protein may include a Cas protein and a bacterial toxin. Such a fusion protein, a polypeptide thereof, and/or a CRISPR-Cas system including the fusion protein may allow effective base editing. Due to the small size of the polypeptide, the polypeptide can facilitate delivery through vectors. In addition, when indels are accordingly induced, indel efficiency can significantly increase, and for indel induction, the size of nucleotides where indels are formed can also increase, whereby effective utilization can be made for gene knock-out.",
+      "assignee": "THE ASAN FOUND [KR]; UNIV OF ULSAN FOUNDATION FOR INDUSTRY COOPERATION [KR]; RESEARCH & BUSINESS FOUNDATION SUNGKYUNKWAN UNIV [KR]",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260139237A1",
+      "application_number": "20260139237",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260139237A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "A fusion protein combining a Cas protein with a bacterial toxin domain to improve base editing efficiency and indel induction while reducing molecular size for enhanced vector delivery. This approach is significant for gene therapy applications requiring efficient gene knockout with improved delivery kinetics, particularly relevant for ex vivo T cell engineering where delivery optimization is critical.",
+      "relevant": true
+    },
+    {
+      "id": "US20260139305.A1",
+      "title": "COMPANION DIAGNOSTIC TO MONITOR THE EFFECTS OF GENE THERAPY",
+      "abstract": "[0000]    The invention relates to the field of gene therapy. In addition the invention relates to the field of interfering RNA and/or microRNA (miRNA). In particular the invention relates to gene therapy involving such miRNA's and more in particular to diagnostic tools to be implemented in the treatment of disease, when such treatment is carried out by delivery of miRNA's to a patient, i.e. to cells of a patient. The present invention uses the content of extracellular vesicles that are found in body fluids to determine the presence of miRNA's or the like expressed through the introduction of a gene delivery vehicle is in a host.",
+      "assignee": "UNIQURE IP B V [NL]; uniQure IP B.V.",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260139305A1",
+      "application_number": "20260139305",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260139305A1",
+      "data_type": "patent",
+      "claim_type": "Method (process)",
+      "novelty_summary": "The patent describes a diagnostic method using extracellular vesicles (EVs) in body fluids to monitor miRNA expression following gene therapy delivery. The competitive significance lies in enabling non-invasive, real-time monitoring of therapeutic gene delivery efficacy and tissue distribution, which is valuable for clinical development and patient stratification in gene therapy programs.",
+      "relevant": true
+    },
+    {
+      "id": "US20260137811.A1",
+      "title": "TARGETING VECTOR, PREPARATION METHOD THEREFOR AND USE THEREOF",
+      "abstract": "[0000]    Provided are a targeting vector and a method for targeting same to a host cell. The vector comprises a first molecule that binds to an endocytosis receptor of the target cell and a second molecule that promotes the release of a substance carried by the targeting vector into a cytoplasm. When the targeting vector is a viral vector, the first molecule is not part of a viral envelope protein, and the second molecule promotes endosomal escape or lysosomal escape of the targeting vector. The first molecule is designed according to the endocytosis receptor of the cell to be targeted, different types of cells can be targeted, and after a reasonable mutation is carried out on the vector, infection of cells that do not need to be targeted can be avoided, thereby improving the accuracy of the vector.",
+      "assignee": "SHENZHEN GENOCURY BIOTECH CO LTD [CN]; SHENZHEN GENOCURY BIOTECH CO., LTD.",
+      "watchlist_company": "Genocury",
+      "filing_date": "",
+      "patent_number": "US20260137811A1",
+      "application_number": "20260137811",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260137811A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent describes a targeting vector platform with modular first and second molecules for receptor-specific cell targeting and endosomal/lysosomal escape, designed to improve targeting accuracy and reduce off-target transduction. For in vivo CAR-T applications, this could enable more precise viral delivery of CAR constructs to target T cells while minimizing transduction of non-target cell populations, potentially improving CAR-T manufacturing efficiency and reducing systemic toxicity.",
       "relevant": true
     }
   ]
