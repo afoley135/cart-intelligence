@@ -1,7 +1,49 @@
 {
-  "fetched_at": "2026-05-23T08:22:51.970197+00:00",
-  "count": 53,
+  "fetched_at": "2026-05-24T08:34:44.986810+00:00",
+  "count": 56,
   "abstracts": [
+    {
+      "source": "pubmed",
+      "pmid": "42174685",
+      "title": "In vivo CAR-T therapy: latest updates from the 2025 ASH annual meeting.",
+      "journal": "Biomarker research",
+      "authors": "Wang S, Kong R, Zhong G, Yang X, Zhou X",
+      "abstract": "Chimeric antigen receptor (CAR)-T cell therapy has significantly improved outcomes in hematologic malignancies but remains constrained by complex ex vivo manufacturing and lymphodepleting chemotherapy. In vivo CAR-T therapy enables direct genetic programming of endogenous T cells through systemic delivery of CAR-encoding vectors, thereby bypassing ex vivo manipulation and simplifying treatment workflows. This strategy has the potential to reduce production timelines, lower costs, and broaden patient accessibility. In addition, in vivo CAR-T approaches may preserve more physiological T-cell states and offer improved scalability. Importantly, however, current in vivo CAR-T platforms differ substantially in delivery modality, persistence, reversibility, safety profile, and translational feasibility. Here, we summarize the latest advances in major preclinical approaches and early clinical studies presented at the 2025 ASH annual meeting, with emphasis on the comparative strengths, limitations, and translational trade-offs of viral vector-based, RNA/lipid nanoparticle-based, non-viral DNA, and gene-writing strategies.",
+      "date": "2026-May",
+      "doi": "10.1182/blood-2025-103",
+      "conference": "ASH",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42174685/",
+      "sowhat": "In vivo CAR-T eliminates ex vivo manufacturing, reducing timelines and costs while preserving physiological T-cell states for broader accessibility."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42173871",
+      "title": "The in vivo revolution in CAR-T therapy medicinal products: challenges and regulatory prospects.",
+      "journal": "Signal transduction and targeted therapy",
+      "authors": "Lu J, Cui J, Dong J, Yan L, Wang X et al.",
+      "abstract": "Chimeric antigen receptor T-cell (CAR-T) therapy, a groundbreaking advancement in cancer immunotherapy, has demonstrated remarkable efficacy in treating hematological malignancies and autoimmune diseases. However, conventional ex vivo CAR-T therapy medicinal products face multiple limitations, including complex manufacturing processes, high production costs, and challenges in quality control and risk management. In recent years, the emergence of in vivo CAR-T therapy medicinal products using viral vector or lipid nanoparticle platforms has provided a promising new direction by simplifying manufacturing, enhancing scalability, lowering costs, and increasing accessibility, though it may introduce elevated risks such as off-target effects and immunogenicity. From a regulatory perspective, this article reviews the progress, technological strengths, and regulatory landscape of in vivo CAR-T therapy medicinal products. We analyze their potential benefits in manufacturability, scalability, and discuss challenges including quality control, safety risks, and mitigation strategies in drug development. We propose adaptive regulatory strategies together with early regulatory engagement and international coordination to accelerate the clinical translation and standardized use of this emerging modality.",
+      "date": "2026-May",
+      "doi": "10.37765/ajmc.2021.88737",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42173871/",
+      "sowhat": "In vivo CAR-T platforms via viral vectors and LNPs offer manufacturing simplification and cost reduction but face novel regulatory toxicity and immunogenicity challenges."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42173446",
+      "title": "Rapid receptor internalization potentiates CD7-targeted lipid nanoparticles for efficient mRNA delivery to T cells and in vivo CAR T-cell engineering.",
+      "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+      "authors": "Zeng J, Papp TE, Akyianu A, Bahena A, Leo L et al.",
+      "abstract": "Targeted lipid nanoparticles (tLNPs) enable efficient mRNA delivery to T cells, allowing for in situ generation of chimeric antigen receptor (CAR) T cells without ex vivo manipulation. This strategy has shown promising therapeutic efficacy in preclinical studies of cardiac fibrosis, cancer, and autoimmune diseases. While multiple T-cell surface receptors have been targeted across studies for tLNP-mediated in vivo CAR T-cell generation and exhibit diverse efficiencies, their comparative performance and the mechanisms underlying these differences remain unclear. Here, we systematically compared tLNPs with antibody-based moieties targeting T-cell receptors including CD2, CD4, CD5, CD7, CD8, or a CD4 + 8 dual-targeting combination under identical conditions, assessing their mRNA delivery efficiency in human T cells and PBMCs in vitro, and subsequently validating the best performer in vivo in humanized mice. Among all moieties tested, CD7-targeted tLNPs achieved the highest mRNA delivery to T cells and efficiently generated functional aCD20 CAR T cells in vivo. Mechanistic analysis revealed that receptor internalization, rather than the receptor abundance, is the primary determinant of delivery efficiency, a property intrinsic to each receptor and largely independent of antibody clone. These findings provide a rational framework for selecting optimal targeting moiety to enable highly efficient in vivo CAR T-cell engineering.",
+      "date": "2026-May",
+      "doi": "10.1016/j.jconrel.2026.115043",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42173446/",
+      "sowhat": "CD7-targeted LNPs enable efficient in vivo CAR-T engineering without ex vivo manipulation via rapid receptor internalization."
+    },
     {
       "source": "pubmed",
       "pmid": "42155646",
