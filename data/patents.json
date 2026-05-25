@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-24T08:42:27.389549+00:00",
-  "count": 472,
+  "fetched_at": "2026-05-25T10:17:22.187093+00:00",
+  "count": 474,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7806,6 +7806,40 @@
       "claim_type": "Composition + Method",
       "novelty_summary": "The patent describes a targeting vector platform with modular first and second molecules for receptor-specific cell targeting and endosomal/lysosomal escape, designed to improve targeting accuracy and reduce off-target transduction. For in vivo CAR-T applications, this could enable more precise viral delivery of CAR constructs to target T cells while minimizing transduction of non-target cell populations, potentially improving CAR-T manufacturing efficiency and reducing systemic toxicity.",
       "relevant": true
+    },
+    {
+      "id": "WO2026102814.A1",
+      "title": "Single-domain antibody inhibitor of TNFR2 and its use",
+      "abstract": "Disclosed are an inhibitory TNFR2 single-domain antibody and a use thereof. The antibody comprises CDR regions having certain sequence identity to the amino acid sequences shown in SEQ ID NOs: 2-4. The inhibitory TNFR2 single-domain antibody can effectively inhibit the binding of a TNF to TNFR2. Moreover, the antibody also has the effects of reducing the proportion of Treg cells and inhibiting the proliferation of Treg cells. In addition, the molecular weight of the antibody is only one tenth of that of a traditional antibody. The antibody can also effectively penetrate the blood-brain barrier while effectively reducing production costs and difficulty. Compared with the traditional antibody, the antibody has greater potential in the treatment of TNFR2-related diseases.",
+      "assignee": "UNIV OF MACAU [CN]; RESEARCH INST OF TSINGHUA PEARL RIVER DELTA [CN]; 澳门大学",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "WO2026102814A1",
+      "application_number": "2026102814",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/WO2026102814A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "A single-domain antibody (sdAb) targeting TNFR2 that inhibits TNF-TNFR2 binding while reducing regulatory T cell (Treg) proportion and proliferation. The sdAb's reduced molecular weight (~1/10 of conventional antibodies) enables superior blood-brain barrier penetration and lower manufacturing costs, with significant potential for treating TNFR2-related diseases including cancer immunotherapy applications.",
+      "relevant": true,
+      "title_original": "ANTICORPS À DOMAINE UNIQUE INHIBITEUR DE TNFR2 ET SON UTILISATION"
+    },
+    {
+      "id": "WO2026107131.A2",
+      "title": "Modified viral particles for targeted administration",
+      "abstract": "Provided herein, among other things, are novel and improved glycoproteins, including modified glycoproteins; engineered viral particles comprising such novel and modified glycoproteins; and methods for targeted delivery, for example, to immune cells such as T cells. In some aspects, the engineered viral particles allow targeted delivery of the cargo for various applications, including treating various conditions such as autoimmune diseases and cancer. In some aspects, the engineered viral particles comprise a viral fusogen that is a glycoprotein of Chandipura, Perinet, Piry, Jurona viruses, or variants thereof. In other aspects, the engineered viral particles comprise a modified vesiculovirus glycoprotein mutant, for example, with mutations at amino acids corresponding to positions I347 or R354 of Vesicular Stomatitis Virus G (VSV-G) that reduce binding to Low Density Lipoprotein Receptor (LDL-R).",
+      "assignee": "ORBITAL THERAPEUTICS INC [US]; ORBITAL THERAPEUTICS, INC.",
+      "watchlist_company": "Orbital Therapeutics",
+      "filing_date": "",
+      "patent_number": "WO2026107131A2",
+      "application_number": "2026107131",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/WO2026107131A2",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent discloses engineered viral particles with modified glycoproteins (including Chandipura, Perinet, Piry, Jurona virus glycoproteins and vesiculovirus mutants) designed for targeted delivery to immune cells, particularly T cells, with applications in cancer and autoimmune disease treatment. The competitive significance lies in the use of pseudotyped or engineered viral vectors as delivery vehicles for CAR-T cell engineering and gene therapy, offering improved specificity and transduction efficiency compared to conventional lentiviral or retroviral approaches.",
+      "relevant": true,
+      "title_original": "PARTICULES VIRALES MODIFIÉES POUR ADMINISTRATION CIBLÉE"
     }
   ]
 }
