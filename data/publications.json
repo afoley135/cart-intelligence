@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-26T09:52:54.867069+00:00",
-  "count": 39,
+  "fetched_at": "2026-05-27T09:47:36.536798+00:00",
+  "count": 40,
   "publications": [
     {
       "source": "pubmed",
@@ -361,6 +361,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42173446/",
       "sowhat": "CD7-targeting lipid nanoparticles enable rapid in vivo CAR-T generation, outperforming alternative T-cell receptor targets through receptor internalization.",
       "category": "Manufacturing / process"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42189068",
+      "title": "CAR-T cell therapy in cancer immunotherapy - Biology, clinical successes, and emerging challenges: A review.",
+      "journal": "Biomolecules & biomedicine",
+      "authors": "Bedada AT, Mehdi M, Mohammed O",
+      "abstract": "Cancer immunotherapy has transformed oncology by enabling targeted activation of antitumor immune responses in patients with relapsed or refractory malignancies. Among adoptive cell transfer (ACT) strategies, chimeric antigen receptor T-cell (CAR-T) therapy has emerged as a pivotal therapeutic advancement, genetically redirecting T lymphocytes to recognize tumor-associated antigens independently of major histocompatibility complex (MHC) presentation. This review provides a comprehensive overview of the biological principles, design evolution, manufacturing platforms, clinical applications, resistance mechanisms, toxicities, and future directions of CAR-T cell therapy within cancer immunotherapy. Specifically, we examine the evolution of CAR architecture, spanning from first-generation constructs to advanced armored and fifth-generation platforms. Furthermore, we compare viral and non-viral gene delivery systems and discuss emerging approaches such as in vivo CAR engineering, allogeneic \"off-the-shelf\" products, logic-gated receptors, safety switches, and alternative immune-cell platforms, including natural killer (NK) cells and macrophages. CAR-T cell therapy has achieved its most profound clinical success in hematological malignancies, particularly in cluster of differentiation 19 (CD19)-positive B-cell acute lymphoblastic leukemia and B-cell non-Hodgkin lymphoma, reporting durable remission rates of approximately 60-90% in specific clinical contexts. However, broader clinical translation, particularly in solid tumors, remains constrained by challenges such as cytokine release syndrome (CRS), immune effector cell-associated neurotoxicity syndrome (ICANS), antigen escape, tumor heterogeneity, poor trafficking, limited persistence, high manufacturing costs, and the immunosuppressive tumor microenvironment (TME). While next-generation strategies-including clustered regularly interspaced short palindromic repeats/CRISPR-associated protein 9 (CRISPR/Cas9)-mediated editing, lipid nanoparticle (LNP)-based messenger ribonucleic acid (mRNA) delivery, bispecific CARs, and inducible suicide switches-hold promise for improving safety, specificity, scalability, and accessibility, a significant number remain in preclinical or early-phase clinical development. Overall, CAR-T cell therapy represents a transformative \"living drug\" platform in oncology; however, its broader clinical utility is contingent upon improving durability, reducing toxicity, overcoming solid-tumor barriers, and validating next-generation technologies through robust, long-term clinical studies.",
+      "date": "2026-05",
+      "doi": "10.17305/bb.2026.14266",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42189068/",
+      "sowhat": "CAR-T therapy transforms cancer treatment by genetically redirecting T cells to recognize tumor antigens independently of MHC presentation.",
+      "category": "Review article"
     },
     {
       "source": "pubmed",

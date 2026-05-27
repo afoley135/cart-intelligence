@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-26T09:54:10.092996+00:00",
-  "count": 155,
+  "fetched_at": "2026-05-27T09:48:55.273714+00:00",
+  "count": 154,
   "news": [
     {
       "source": "news.google.com",
@@ -28,9 +28,9 @@
     },
     {
       "source": "news.google.com",
-      "title": "From bench to in vivo CAR T: a practical playbook for targeted LNP development - Drug Discovery News",
+      "title": "TRAC in vivo: culmination of CAR and vector engineering - Nature",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbjdMRmpxWm5oYl9SS3hLSjV1dkFUUjFZQXBSdTZFUllmME9peHdUa1JPeDJtalBvckY5a3JiT0Vwa19JSW53RW1peXRvNzBOa1pWWlVtTDRXYm1aRkNRbkQwTHJhVmV3eDFXS2NtUFlGaENVQ19CalF6MXJkYk9KRmRleVk0UkZSVjZfd3FTU0FKeVY4RVY3TzZRSnAtNmJqSERoUHFUWDN2bWtzZHUzU2x0bVB1NGZy?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBZZzhFOTU2WXNzUGpNOTRUS1hrVk1ndVN1OHhOMjJkb3lDdEt6RjVNbGw3RnlfdUdDbUo1blU1Q0lvZjFZdng4WHk1N3NDNkJrcW95RTQ2WEhkbVBVZ1pN?oc=5",
       "date": "2026-05-25",
       "tags": [],
       "sowhat": "Summary not available",
@@ -39,10 +39,22 @@
       "conference_mention": false
     },
     {
+      "source": "GlobeNewswire",
+      "title": "Emerging Hope in Multiple Myeloma Market: 7 Late-Stage Therapies Nearing the Finish Line | DelveInsight",
+      "summary": "The multiple myeloma market is evolving toward immunotherapy-dominated, multi-line treatment paradigms with strong growth driven by CAR-T and bispecific antibodies. Leading contenders advancing through the pipeline include AZD0120 [AstraZeneca (Gracell Biotec…",
+      "url": "https://www.globenewswire.com/news-release/2026/05/25/3300693/0/en/Emerging-Hope-in-Multiple-Myeloma-Market-7-Late-Stage-Therapies-Nearing-the-Finish-Line-DelveInsight.html",
+      "date": "2026-05-25",
+      "tags": [],
+      "sowhat": "```json\n{\n  \"sowhat\": \"CAR-T and bispecific antibodies driving multi-line myeloma treatment paradigm shift with seven late-stage therapies advancing.\",\n  \"item_type\": \"news\"\n}\n```",
+      "item_type": "news",
+      "fetch_source": "newsapi",
+      "conference_mention": false
+    },
+    {
       "source": "news.google.com",
-      "title": "TRAC in vivo: culmination of CAR and vector engineering - Nature",
+      "title": "From bench to in vivo CAR T: a practical playbook for targeted LNP development - Drug Discovery News",
       "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBZZzhFOTU2WXNzUGpNOTRUS1hrVk1ndVN1OHhOMjJkb3lDdEt6RjVNbGw3RnlfdUdDbUo1blU1Q0lvZjFZdng4WHk1N3NDNkJrcW95RTQ2WEhkbVBVZ1pN?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbjdMRmpxWm5oYl9SS3hLSjV1dkFUUjFZQXBSdTZFUllmME9peHdUa1JPeDJtalBvckY5a3JiT0Vwa19JSW53RW1peXRvNzBOa1pWWlVtTDRXYm1aRkNRbkQwTHJhVmV3eDFXS2NtUFlGaENVQ19CalF6MXJkYk9KRmRleVk0UkZSVjZfd3FTU0FKeVY4RVY3TzZRSnAtNmJqSERoUHFUWDN2bWtzZHUzU2x0bVB1NGZy?oc=5",
       "date": "2026-05-25",
       "tags": [],
       "sowhat": "Summary not available",
@@ -327,18 +339,6 @@
       "conference_mention": false
     },
     {
-      "source": "news.google.com",
-      "title": "ASGCT dispatch: In vivo CAR-T is everywhere - Endpoints News",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSWFRT2dKN3NkTmxTWVZwQ081c0p2Y3NDSmYtdk5teXFualB6WGNubllzZDF5SWxNQXdFWm96QUM0NnBpYVZzOEF1MlBPSHFrU2lvX1M5X3JDX1kzeV9VT2YwXzZsZ1RHTjlZNU51UU5HQXJwUEZHYU5rdG8tMHhRTFRjMXppRVhKUkcyblBiNmxldw?oc=5",
-      "date": "2026-05-14",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
       "source": "GlobeNewswire",
       "title": "Tessera Therapeutics Showcases New Preclinical Data Advancing In Vivo Program in Sickle Cell Disease and CAR-T Applications at the American Society of Gene and Cell Therapy 29th Annual Meeting",
       "summary": "SOMERVILLE, Mass., May 14, 2026 (GLOBE NEWSWIRE) -- Tessera Therapeutics (“Tessera”), the biotechnology company pioneering a new approach in genetic medicine known as Gene Writing™, is presenting updates across its in vivo genetic medicine programs for SCD an…",
@@ -357,8 +357,20 @@
         "conference_date_mentioned": "May 14, 2026",
         "source_url": "https://www.globenewswire.com/news-release/2026/05/14/3295150/0/en/Tessera-Therapeutics-Showcases-New-Preclinical-Data-Advancing-In-Vivo-Program-in-Sickle-Cell-Disease-and-CAR-T-Applications-at-the-American-Society-of-Gene-and-Cell-Therapy-29th-An.html",
         "source_date": "2026-05-14",
-        "extracted_at": "2026-05-26T10:11:06.220115+00:00"
+        "extracted_at": "2026-05-27T10:05:13.245455+00:00"
       }
+    },
+    {
+      "source": "news.google.com",
+      "title": "ASGCT dispatch: In vivo CAR-T is everywhere - Endpoints News",
+      "summary": "",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSWFRT2dKN3NkTmxTWVZwQ081c0p2Y3NDSmYtdk5teXFualB6WGNubllzZDF5SWxNQXdFWm96QUM0NnBpYVZzOEF1MlBPSHFrU2lvX1M5X3JDX1kzeV9VT2YwXzZsZ1RHTjlZNU51UU5HQXJwUEZHYU5rdG8tMHhRTFRjMXppRVhKUkcyblBiNmxldw?oc=5",
+      "date": "2026-05-14",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "google_news_rss",
+      "conference_mention": false
     },
     {
       "source": "news.google.com",
@@ -601,7 +613,7 @@
         "conference_date_mentioned": null,
         "source_url": "https://www.globenewswire.com/news-release/2026/05/12/3292599/0/en/Addition-Therapeutics-Presents-Preclinical-Proof-of-Concept-Data-at-American-Society-of-Gene-Cell-Therapy-ASGCT-29th-Annual-Meeting.html",
         "source_date": "2026-05-12",
-        "extracted_at": "2026-05-26T10:11:07.607188+00:00"
+        "extracted_at": "2026-05-27T10:05:14.666760+00:00"
       }
     },
     {
@@ -629,6 +641,18 @@
       "conference_mention": false
     },
     {
+      "source": "GlobeNewswire",
+      "title": "CAR/TCR/TIL Therapies in Oncology Analytical Tool: Clinical Development Activity, Supported by 1,373 Clinical Trials, 350 Strategic Deals, 2,370+ Drugs, Collaborations Across 870+ Organizations",
+      "summary": "The CAR/TCR/TIL therapy market offers opportunities in precise tumor targeting, durable responses, personalized medicine, solid tumor advances, and platform innovation. With a booming pipeline and innovative therapies, staying competitive requires strategic i…",
+      "url": "https://www.globenewswire.com/news-release/2026/05/12/3292584/28124/en/CAR-TCR-TIL-Therapies-in-Oncology-Analytical-Tool-Clinical-Development-Activity-Supported-by-1-373-Clinical-Trials-350-Strategic-Deals-2-370-Drugs-Collaborations-Across-870-Organiz.html",
+      "date": "2026-05-12",
+      "tags": [],
+      "sowhat": "```json\n{\n  \"sowhat\": \"Market expansion beyond blood cancers with 1,373 trials and 350 deals signaling solid tumor momentum for in vivo CAR-T.\",\n  \"item_type\": \"news\"\n}\n```",
+      "item_type": "news",
+      "fetch_source": "newsapi",
+      "conference_mention": false
+    },
+    {
       "source": "news.google.com",
       "title": "OPKO Health’s ModeX Therapeutics Will Present Data Demonstrating In Vivo CAR-T Cell Generation and Deep B-Cell Depletion in Preclinical Studies - Yahoo Finance",
       "summary": "",
@@ -650,18 +674,6 @@
       "sowhat": "Summary not available",
       "item_type": "news",
       "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "GlobeNewswire",
-      "title": "CAR/TCR/TIL Therapies in Oncology Analytical Tool: Clinical Development Activity, Supported by 1,373 Clinical Trials, 350 Strategic Deals, 2,370+ Drugs, Collaborations Across 870+ Organizations",
-      "summary": "The CAR/TCR/TIL therapy market offers opportunities in precise tumor targeting, durable responses, personalized medicine, solid tumor advances, and platform innovation. With a booming pipeline and innovative therapies, staying competitive requires strategic i…",
-      "url": "https://www.globenewswire.com/news-release/2026/05/12/3292584/28124/en/CAR-TCR-TIL-Therapies-in-Oncology-Analytical-Tool-Clinical-Development-Activity-Supported-by-1-373-Clinical-Trials-350-Strategic-Deals-2-370-Drugs-Collaborations-Across-870-Organiz.html",
-      "date": "2026-05-12",
-      "tags": [],
-      "sowhat": "```json\n{\n  \"sowhat\": \"Market expansion beyond blood cancers with 1,373 trials and 350 deals signaling solid tumor momentum for in vivo CAR-T.\",\n  \"item_type\": \"news\"\n}\n```",
-      "item_type": "news",
-      "fetch_source": "newsapi",
       "conference_mention": false
     },
     {
@@ -911,7 +923,7 @@
         "conference_date_mentioned": null,
         "source_url": "https://www.globenewswire.com/news-release/2026/05/08/3291349/0/en/Azalea-Therapeutics-Announces-Late-Breaking-Oral-Presentation-at-ASGCT-Annual-Meeting-Demonstrating-First-in-Primate-In-Vivo-TRAC-CAR-T-Cell-Engineering.html",
         "source_date": "2026-05-08",
-        "extracted_at": "2026-05-26T10:11:14.160998+00:00"
+        "extracted_at": "2026-05-27T10:05:16.956453+00:00"
       }
     },
     {
@@ -933,7 +945,7 @@
         "conference_date_mentioned": null,
         "source_url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNN3Q2cmdxbm81dlhoYWJ3MEpQb3B6MDhvQU9QRXhsVnB3RGZ5OG42cWVMeTJwSjhDcDhHd3k3Tkx4ekJhdDU5VGhodE42OHc2ZHZaNHN2ZVo3ZjYwLWI0V2JmekotM3k2RjNJdlhvaWl6WV9oa3ZkZkt5STZmZy1iOEdpN0NLQlBMcjBsbExaRmdmbENMVE0tZFNLMVJKdWl1OWhBVy1VMmZCQ01VVmZzX0pfeGRrM2xVQVN2RF9WcXlKRFp6dmtYYkM2NGVkNXJ0OWVIR3hBaUlkajBkS0wyS3d6RGJzdHZBdDdSWW41d1VBaURUZTZhb1lOeDZyNVMxNW9mTzY1blNFTGk5eDdkVzhvTFY1dVpicVc4NXN5V1NpeDBDVnVIcWJWVDNZM1hVVGtkWm5oTHA5WWt5d2N1dkpqNm9PQTg?oc=5",
         "source_date": "2026-05-08",
-        "extracted_at": "2026-05-26T10:11:15.350135+00:00"
+        "extracted_at": "2026-05-27T10:05:18.242009+00:00"
       }
     },
     {
@@ -1579,7 +1591,7 @@
         "conference_date_mentioned": "April 27, 2026",
         "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282072/0/en/Tessera-Therapeutics-to-Present-New-Preclinical-Data-Supporting-In-Vivo-Program-in-Sickle-Cell-Disease-and-Advancements-in-In-Vivo-CAR-T-Applications-at-the-American-Society-of-Gen.html",
         "source_date": "2026-04-27",
-        "extracted_at": "2026-05-26T10:11:21.873713+00:00"
+        "extracted_at": "2026-05-27T10:05:26.762051+00:00"
       }
     },
     {
@@ -1601,7 +1613,7 @@
         "conference_date_mentioned": "April 27, 2026",
         "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282054/0/en/Umoja-Biopharma-Announces-Unveiling-of-UB-VV500-in-Upcoming-Poster-Presentation-at-the-American-Society-of-Gene-Cell-Therapy-Annual-Meeting.html",
         "source_date": "2026-04-27",
-        "extracted_at": "2026-05-26T10:11:23.076419+00:00"
+        "extracted_at": "2026-05-27T10:05:28.111262+00:00"
       }
     },
     {
@@ -1620,10 +1632,32 @@
         "conference_raw": "American Society of Gene & Cell Therapy (ASGCT) 2026 Annual Meeting",
         "presentation_type": "oral",
         "abstract_title": "Preclinical Data from in vivo CAR T SG293",
-        "conference_date_mentioned": null,
+        "conference_date_mentioned": "April 27, 2026",
         "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282052/0/en/Sana-Biotechnology-Announces-Oral-Presentation-Highlighting-Preclinical-Data-from-in-vivo-CAR-T-SG293-at-the-American-Society-of-Gene-Cell-Therapy-ASGCT-2026-Annual-Meeting.html",
         "source_date": "2026-04-27",
-        "extracted_at": "2026-05-26T10:11:24.458118+00:00"
+        "extracted_at": "2026-05-27T10:05:29.751191+00:00"
+      }
+    },
+    {
+      "source": "GlobeNewswire",
+      "title": "Addition Therapeutics Announces Multiple Oral and Poster Presentations at the American Society of Gene & Cell Therapy (ASGCT) 29th Annual Meeting",
+      "summary": "Addition Therapeutics announces multiple oral and poster presentations at the upcoming ASGCT Annual Meeting, May 11-15, 2026, in Boston. ...",
+      "url": "https://www.globenewswire.com/news-release/2026/04/27/3282059/0/en/Addition-Therapeutics-Announces-Multiple-Oral-and-Poster-Presentations-at-the-American-Society-of-Gene-Cell-Therapy-ASGCT-29th-Annual-Meeting.html",
+      "date": "2026-04-27",
+      "tags": [],
+      "sowhat": "Summary not available",
+      "item_type": "news",
+      "fetch_source": "newsapi",
+      "conference_mention": {
+        "company": "Addition Therapeutics",
+        "conference_canonical": "ASGCT 2026",
+        "conference_raw": "American Society of Gene & Cell Therapy (ASGCT) 29th Annual Meeting",
+        "presentation_type": "unspecified",
+        "abstract_title": null,
+        "conference_date_mentioned": "May 11-15, 2026",
+        "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282059/0/en/Addition-Therapeutics-Announces-Multiple-Oral-and-Poster-Presentations-at-the-American-Society-of-Gene-Cell-Therapy-ASGCT-29th-Annual-Meeting.html",
+        "source_date": "2026-04-27",
+        "extracted_at": "2026-05-27T10:05:31.026899+00:00"
       }
     },
     {
@@ -1659,28 +1693,6 @@
       "item_type": "news",
       "fetch_source": "google_news_rss",
       "conference_mention": false
-    },
-    {
-      "source": "GlobeNewswire",
-      "title": "Addition Therapeutics Announces Multiple Oral and Poster Presentations at the American Society of Gene & Cell Therapy (ASGCT) 29th Annual Meeting",
-      "summary": "Addition Therapeutics announces multiple oral and poster presentations at the upcoming ASGCT Annual Meeting, May 11-15, 2026, in Boston. ...",
-      "url": "https://www.globenewswire.com/news-release/2026/04/27/3282059/0/en/Addition-Therapeutics-Announces-Multiple-Oral-and-Poster-Presentations-at-the-American-Society-of-Gene-Cell-Therapy-ASGCT-29th-Annual-Meeting.html",
-      "date": "2026-04-27",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "newsapi",
-      "conference_mention": {
-        "company": "Addition Therapeutics",
-        "conference_canonical": "ASGCT 2026",
-        "conference_raw": "American Society of Gene & Cell Therapy (ASGCT) 29th Annual Meeting",
-        "presentation_type": "unspecified",
-        "abstract_title": null,
-        "conference_date_mentioned": "May 11-15, 2026",
-        "source_url": "https://www.globenewswire.com/news-release/2026/04/27/3282059/0/en/Addition-Therapeutics-Announces-Multiple-Oral-and-Poster-Presentations-at-the-American-Society-of-Gene-Cell-Therapy-ASGCT-29th-Annual-Meeting.html",
-        "source_date": "2026-04-27",
-        "extracted_at": "2026-05-26T10:11:28.791276+00:00"
-      }
     },
     {
       "source": "news.google.com",
@@ -2002,30 +2014,6 @@
       "summary": "",
       "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9mVjRjRkNscXlNS1dFc1k0RlVqWUxzTEktbmhIc3U1blU3WEFmWjFocUVqMHRQeHRNaVJ5c1NRVzV3Tm9KeDYxVDNrazhEOVk0MFVHajMwRFBJTVhfTU9j?oc=5",
       "date": "2026-04-27",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
-      "title": "In Vivo CAR Engineering and the Next Phase of Cellular Immunotherapy - CancerNetwork",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQdTJrWndkMld3UzRlbmhGWnJDTFJxYktrZWxHV0E3MTdZN0dnLUpRdzJvUzE3SV9VS3V4NXJMcldKYlNxMG1KMDNqYnpYYTdNamd3Z1MyYUNOSnJrenl4VHl4d0JmYlJuaVlMc2xRbklEQ3M3N2RZSm9hZ1hPQzN4WWJUNTdBYlk1bWEyTjFkN2lTOUtGWDdERkVmaEZhaVA1T25tV1Rn?oc=5",
-      "date": "2026-04-26",
-      "tags": [],
-      "sowhat": "Summary not available",
-      "item_type": "news",
-      "fetch_source": "google_news_rss",
-      "conference_mention": false
-    },
-    {
-      "source": "news.google.com",
-      "title": "Oncology Biotech Weekly: Eli Lilly's $7B In Vivo CAR-T Deal and the Unstoppable Rise of Precision Oncology - Oncodaily",
-      "summary": "",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE80eFZuWjk2cjd3VlhuZlFDdTdtbjQxRnJPT1k0bzUtQV9vNDk4aG5relBETXQzWlZhWm56NmpsckxFOGd3NVNTN2drLWYzR0xKRDdnY05abEc?oc=5",
-      "date": "2026-04-26",
       "tags": [],
       "sowhat": "Summary not available",
       "item_type": "news",
