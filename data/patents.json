@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-29T10:02:27.689740+00:00",
-  "count": 475,
+  "fetched_at": "2026-05-30T08:52:01.348216+00:00",
+  "count": 476,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7856,6 +7856,23 @@
       "claim_type": "Composition of matter",
       "novelty_summary": "The invention describes a pharmaceutical composition containing a engineered human PH20 hyaluronidase variant with specific amino acid substitutions in alpha-helix 8 and linker regions, combined with a drug for subcutaneous delivery. The PH20 variant is designed to enhance subcutaneous bioavailability and absorption of co-administered therapeutics, offering competitive advantage for improving delivery of large biologics and cell therapies via non-intravenous routes.",
       "relevant": true
+    },
+    {
+      "id": "WO2026103292.A1",
+      "title": "ZOMIB-BASED NANOMICELLAR FORMULATION AND PREPARATION METHOD THEREFOR",
+      "abstract": "Provided are a zomib-based nanomicellar formulation and a preparation method therefor. The nanomicellar formulation comprises: carfilzomib, a micelle carrier material, and a stabilizer, wherein the mass ratio of carfilzomib, the micelle carrier material, and the stabilizer is 1:15-30:15-30, and the carrier material is PEG-DSPE. PEG-DSPE is used as a drug carrier to prepare a carfilzomib micelle formulation. The formulation has a particle size of 8-20 nm, has high entrapment efficiency, and has a strong cell penetration capability without being quickly cleared. In addition, the preparation process is simple, without requiring lyophilization. Compared with existing cafilzomib formulations, the toxicity is reduced at the same dosage.",
+      "assignee": "JIANGSU BIOSCENE PHARMACEUTICAL CO LTD [CN]; 江苏百奥信康医药科技有限公司",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "WO2026103292A1",
+      "application_number": "2026103292",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/WO2026103292A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "A nanomicellar formulation of carfilzomib (proteasome inhibitor) using PEG-DSPE as carrier with optimized mass ratios (1:15-30:15-30), achieving 8-20 nm particles with high entrapment efficiency and reduced toxicity compared to existing formulations. While not directly a CAR-T technology, this represents an improved drug delivery platform potentially applicable to ex vivo CAR-T manufacturing or in vivo conditioning regimens, where proteasome inhibitors are used to enhance CAR-T persistence and reduce exhaustion.",
+      "relevant": true,
+      "title_original": "FORMULATION NANOMICELLAIRE À BASE DE ZOMIB ET SON PROCÉDÉ DE PRÉPARATION"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-05-29T09:54:34.964854+00:00",
-  "count": 40,
+  "fetched_at": "2026-05-30T08:38:10.405161+00:00",
+  "count": 41,
   "publications": [
     {
       "source": "pubmed",
@@ -181,6 +181,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42170676/",
       "sowhat": "Engineered lentiviral vectors enable precise in vivo targeting for CAR-T delivery, improving therapeutic specificity and safety.",
       "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42213756",
+      "title": "mRNA-laden LNP-enabled in situ CAR-macrophage alleviates liver fibrosis via inhibiting activated HSCs and modulating the immune microenvironment.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "authors": "Huang X, Hao J, Wang S, Deng B, Wang P et al.",
+      "abstract": "Liver fibrosis, marked by an abnormal buildup of extracellular matrix (ECM), poses a major health threat. Myofibroblasts, predominantly derived from hepatic stellate cells (HSCs) and portal fibroblasts, are the primary drivers of ECM synthesis. Fibroblast activation protein (FAP), highly expressed by activated HSCs, is a pivotal player in the pathogenesis of liver fibrosis. Delineating the mechanisms underlying HSC activation and devising strategies to curb their hyperactivity are paramount for the management and prevention of liver fibrosis. In this study, we explored a pioneering therapeutic approach leveraging CD163 antibody-conjugated liposomal nanoparticles (LNPs) encapsulating FAP-specific chimeric antigen receptor macrophage (CAR-M) mRNA (αCD163/LNP-FAPCAR). These LNPs are designed to selectively transduce liver macrophages, facilitating the in situ generation of FAP-specific CAR-modified macrophages (FAPCAR-M). Our findings revealed that these LNPs efficiently transduced macrophages, augmenting their phagocytic capabilities toward target cells. This resulted in a significant reduction of ECM and a concomitant enhancement of liver fibrosis resolution. The overarching goal is to precisely target and neutralize hyperactive fibroblasts, offering a promising avenue for treating liver fibrosis.",
+      "date": "2026-06",
+      "doi": "10.1073/pnas.2534673123",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42213756/",
+      "sowhat": "In situ CAR-macrophage therapy via mRNA-LNPs targets fibrosis by redirecting macrophages against activated hepatic stellate cells.",
+      "category": "Clinical data"
     },
     {
       "source": "biorxiv",
