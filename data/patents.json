@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-01T11:36:22.143347+00:00",
-  "count": 477,
+  "fetched_at": "2026-06-02T10:35:45.041052+00:00",
+  "count": 481,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7888,6 +7888,71 @@
       "data_type": "patent",
       "claim_type": "Composition + Method",
       "novelty_summary": "The patent addresses pharmaceutical formulations for viral gene therapy vectors with improved stability, specifically targeting enzyme replacement therapy for lysosomal storage disorders. This is competitive for in vivo gene therapy delivery by enhancing vector stability and potentially extending shelf-life or in vivo persistence, though the scope appears broader than CAR-T applications and focuses on AAV-based enzyme replacement rather than T cell engineering.",
+      "relevant": true
+    },
+    {
+      "id": "WO2026110042.A1",
+      "title": "Methods for expansion of skin-derived Vδ1+ gamma delta T lymphocytes and their use",
+      "abstract": "The present disclosure relates to the expansion of gamma delta (γδ) T cells, e.g., Vδ1+ γδ T cells. In particular, the present disclosure provides improved methods and processes for expanding highly active γδ T cells (e.g., Vδ1+ γδ T cells) from skin with the addition of one or more cytokines, such as IL-2, IL-15, and TGF-β.",
+      "assignee": "KINGS COLLEGE LONDON [GB]; KING'S COLLEGE LONDON",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "WO2026110042A1",
+      "application_number": "2026110042",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/WO2026110042A1",
+      "data_type": "patent",
+      "claim_type": "Method (process)",
+      "novelty_summary": "The patent discloses improved methods for ex vivo expansion of Vδ1+ γδ T cells derived from skin using specific cytokine combinations (IL-2, IL-15, TGF-β). While γδ T cells represent an alternative to conventional αβ CAR-T approaches, this invention focuses on cytokine-driven expansion rather than CAR engineering, offering potential competitive advantages in manufacturing potent γδ T cell therapies with reduced ex vivo manipulation compared to viral transduction-dependent approaches.",
+      "relevant": true,
+      "title_original": "PROCÉDÉS D'EXPANSION DE LYMPHOCYTES T VDELTA1+ GAMMADELTA DE LA PEAU ET LEUR UTILISATION"
+    },
+    {
+      "id": "US20260146238.A1",
+      "title": "UREA-BASED ICE RECRYSTALLIZATION INHIBITOR COMPOUNDS AND COMPOSITIONS, AND USES THEREOF FOR CRYOPRESERVATION",
+      "abstract": "The specification relates to a compound of formula (1), its enantiomer, diastereomer, or its physiologically acceptable salt thereof, along with a composition containing the same; wherein R1, R2, and R3 are as disclosed herein. The compound or composition have potential for use as a cryopreservation agent or an ice crystal recrystallization inhibitor. In addition, disclosed is a method for cryopreserving a biological material. Further, disclosed is a process for preparation of the compound.",
+      "assignee": "PANTHERA CRYOSOLUTIONS INC [CA]; UNIV OF OTTAWA [CA]; PanTHERA CryoSolutions Inc.",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260146238A1",
+      "application_number": "20260146238",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260146238A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "Novel urea-based ice recrystallization inhibitor (IRI) compounds designed to prevent ice crystal formation and recrystallization during cryopreservation of biological materials. This is competitively significant for CAR-T cell therapies, where cryopreservation is critical for manufacturing, storage, and logistics; improved IRIs could enhance post-thaw cell viability and functionality, reducing manufacturing costs and improving clinical outcomes.",
+      "relevant": true
+    },
+    {
+      "id": "US20260146239.A1",
+      "title": "TERTIARY AMIDE ALDONAMIDE BASED ICE RECRYSTALLIZATION INHIBITOR COMPOUNDS AND COMPOSITIONS, AND USES THEREOF FOR CRYOPRESERVATION",
+      "abstract": "[0000]    The specification relates to a compound of formula (1), its enantiomer, diastereomer, or its physiologically acceptable salt thereof, along with a composition containing the same; wherein Q, J, R<1>, R<2>, R<3>, R<4 >and R<a >are as disclosed herein. The compound or composition have potential for use as a cryopreservation agent or an ice crystal recrystallization inhibitor. In addition, disclosed is a method for cryopreserving a biological material. Further, disclosed is a process for preparation of the compound.\n[0000]    <img class=\"EMIRef\" id=\"1dcc7e70-20f8-40a7-9d0d-8b2148c899a7-EMI-C00001\" />",
+      "assignee": "UNIV OF OTTAWA [CA]; PANTHERA CRYOSOLUTIONS INC [CA]; University of Ottawa",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260146239A1",
+      "application_number": "20260146239",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260146239A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent describes novel tertiary amide aldonamide-based ice recrystallization inhibitor (IRI) compounds designed for cryopreservation of biological materials. This is significant for cell and gene therapy as improved cryopreservation agents could enhance the viability and long-term storage of CAR-T cells and other engineered T cells, addressing a critical bottleneck in manufacturing and clinical deployment of cellular therapeutics.",
+      "relevant": true
+    },
+    {
+      "id": "US20260146246.A1",
+      "title": "Fusion Geminin Protein",
+      "abstract": "[0000]    A CRISPR-Cas-Geminin system that maintains potent on-target editing activity but has reduced off-target editing activity relative to wild-type Cas, and methods of use.",
+      "assignee": "INTEGRATED DNA TECH INC [US]; Integrated DNA Technologies, Inc.",
+      "watchlist_company": "Integra Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260146246A1",
+      "application_number": "20260146246",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260146246A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent discloses a fusion Geminin protein integrated with CRISPR-Cas systems to enhance on-target editing specificity while reducing off-target effects. For in vivo CAR-T and gene therapy applications, this represents a significant advance in improving the safety profile of genome editing by maintaining efficacy while minimizing unintended genomic modifications—a critical concern for therapeutic T cell engineering where off-target cuts could compromise cell function or promote oncogenic events.",
       "relevant": true
     }
   ]
