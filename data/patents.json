@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-03T11:13:21.817231+00:00",
-  "count": 481,
+  "fetched_at": "2026-06-04T10:18:22.170168+00:00",
+  "count": 483,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -7954,6 +7954,40 @@
       "claim_type": "Composition of matter",
       "novelty_summary": "The patent discloses a fusion Geminin protein integrated with CRISPR-Cas systems to enhance on-target editing specificity while reducing off-target effects. For in vivo CAR-T and gene therapy applications, this represents a significant advance in improving the safety profile of genome editing by maintaining efficacy while minimizing unintended genomic modifications—a critical concern for therapeutic T cell engineering where off-target cuts could compromise cell function or promote oncogenic events.",
       "relevant": true
+    },
+    {
+      "id": "EP4752219.A2",
+      "title": "RNA Polymerase Variants and Use Thereof",
+      "abstract": "The present application provides a class of T7 RNA polymerase variants and the use thereof, wherein the amino acid sequences of the T7 RNA polymerase variants comprise, relative to SEQ ID NO: 1, at least one substitution or deletion at amino acid positions selected from R34, K172, Y178, R386, D388, Q435, N437 or D438. The variants have improved catalytic activity relative to the wild-type T7 RNA polymerase, which can increase the capping rate of mRNA products during in-vitro transcription (co-transcriptional capping). In addition, the present application further provides a method for preparing RNA by using such variants. By adopting the method to prepare RNA molecules, more capped mRNAs can be obtained.",
+      "assignee": "NANJING VAZYME BIOTECH CO LTD [CN]; Nanjing Vazyme Biotech Co., Ltd.",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "EP4752219A2",
+      "application_number": "4752219",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/EP4752219A2",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "T7 RNA polymerase variants with specific amino acid substitutions/deletions at defined positions (R34, K172, Y178, R386, D388, Q435, N437, D438) that exhibit improved catalytic activity and enhanced co-transcriptional capping efficiency. This is competitively significant for in vivo CAR-T as efficient production of capped mRNA is critical for mRNA-based therapeutics, including mRNA encoding CAR constructs, where translation efficiency and immunogenicity profiles depend on proper 5' capping.",
+      "relevant": true,
+      "title_original": "RNA-POLYMERASEVARIANTE UND VERWENDUNG DAVON"
+    },
+    {
+      "id": "EP4752222.A2",
+      "title": "S. pyogenes Cas9 mutant gene and polypeptides encoded thereby",
+      "abstract": "[0001]    This invention pertains to mutant Cas9 nucleic acids and proteins for use in CRISPR/Cas endonuclease systems, and their methods of use. In particular, the invention pertains to an isolated mutant Cas9 protein, wherein the isolated mutant Cas9 protein is active in a CRISPR/Cas endonuclease system, wherein the CRISPR/Cas endonuclease system displays reduced off-target editing activity and maintained on-target editing activity relative to a wild-type CRISPR/Cas endonuclease system. The invention also includes isolated nucleic acids encoding mutant Cas9 proteins, ribonucleoprotein complexes and CRSPR/Cas endonuclease systems having mutant Cas9 proteins that display reduced off-target editing activity and maintained on-target editing activity relative to a wild-type CRISPR/Cas endonuclease system.",
+      "assignee": "INTEGRATED DNA TECH INC [US]; Integrated DNA Technologies, Inc.",
+      "watchlist_company": "Integra Therapeutics",
+      "filing_date": "",
+      "patent_number": "EP4752222A2",
+      "application_number": "4752222",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/EP4752222A2",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent discloses mutant S. pyogenes Cas9 proteins with reduced off-target editing activity while maintaining on-target activity, addressing a critical limitation in CRISPR/Cas9 systems. This is significant for in vivo CAR-T applications as improved specificity reduces genotoxic risk and potential off-target immunological effects when integrating therapeutic genes into T cells.",
+      "relevant": true,
+      "title_original": "S. PYOGENES CAS9 MUTANTE GENE UND DAVON KODIERTE POLYPEPTIDE"
     }
   ]
 }
