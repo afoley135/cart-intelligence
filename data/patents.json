@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-05T09:57:12.918150+00:00",
-  "count": 484,
+  "fetched_at": "2026-06-06T08:51:41.312974+00:00",
+  "count": 489,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -8005,6 +8005,86 @@
       "novelty_summary": "The patent discloses methods for transducing T cells and NK cells using engineered signaling polypeptides that include microenvironment-restricted biologic CARs (MRB-CARs) combined with inhibitory RNA molecules and lymphoproliferative elements. The MRB-CAR concept and the combination of proliferation-driving elements with regulatory mechanisms represents a differentiated approach to controlling CAR-T activity in situ, with competitive significance for reducing off-target toxicity while maintaining anti-tumor efficacy in vivo.",
       "relevant": true,
       "title_original": "VERFAHREN UND ZUSAMMENSETZUNGEN ZUR TRANSDUKTION UND EXPANSION VON LYMPHOZYTEN UND REGULIERUNG DER AKTIVITÄT DAVON"
+    },
+    {
+      "id": "AU2026203916.A1",
+      "title": "Methods and compositions for genomic integration",
+      "abstract": "METHODS AND COMPOSITIONS FOR GENOMIC INTEGRATION Methods and composition for modulating a target genome and stable integration of a transgene of interest into the genome of a cell are disclosed. METHODS AND COMPOSITIONS FOR GENOMIC INTEGRATION ay a y",
+      "assignee": "CREATE MEDICINES INC; CREATE Medicines, Inc.",
+      "watchlist_company": "Create Medicines",
+      "filing_date": "",
+      "patent_number": "AU2026203916A1",
+      "application_number": "2026203916",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2026203916A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent discloses methods and compositions for achieving stable genomic integration of transgenes into target cells, with potential application to cell engineering platforms. The competitive significance for in vivo CAR-T relates to durable transgene expression and reduced risk of genotoxicity compared to non-integrating delivery approaches, though specific CAR-T claims or mechanisms are not evident from the abstract provided.",
+      "relevant": true
+    },
+    {
+      "id": "AU2024368432.A1",
+      "title": "LIPID NANOPARTICLES FOR DELIVERY OF THERAPEUTIC PAYLOADS TO T CELLS",
+      "abstract": "",
+      "assignee": "TESSERA THERAPEUTICS INC; TESSERA THERAPEUTICS, INC.",
+      "watchlist_company": "Tessera Therapeutics",
+      "filing_date": "",
+      "patent_number": "AU2024368432A1",
+      "application_number": "2024368432",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2024368432A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent describes lipid nanoparticles (LNPs) engineered for selective delivery of therapeutic payloads to T cells, representing a novel delivery platform applicable to CAR-T cell manufacturing and in vivo T cell engineering. The technology addresses a key challenge in cell and gene therapy by enabling targeted payload delivery to T cells, potentially improving efficacy and reducing off-target effects compared to conventional delivery approaches.",
+      "relevant": true
+    },
+    {
+      "id": "US20260152710.A1",
+      "title": "CELL CULTURE DEVICE AND METHOD OF CULTURING CELLS",
+      "abstract": "A cell culture device including: a top component, wherein the top component includes a cell culture chamber and one or more cell culture medium reservoirs; wherein the cell culture chamber includes an outer area and an inner area, wherein the outer area and inner area of the cell culture chamber are separated from each other by at least one row of micropillars, and wherein the outer area of the cell culture chamber is fluidly connected to the one or more cell culture medium reservoirs, and wherein the cell culture chamber includes an inlet which allows addition of a mixture including cells to the inner area of the cell culture chamber; a method of use thereof; and a system including the same.",
+      "assignee": "CITY UNIV OF HONG KONG [CN]; City University of Hong Kong",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260152710A1",
+      "application_number": "20260152710",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260152710A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent describes a microfluidic cell culture device with a dual-chamber design (outer and inner areas separated by micropillars) that enables controlled nutrient delivery and spatial organization of cultured cells. While the device itself may have utility for T cell expansion and engineering, the patent does not disclose CAR-T-specific modifications, genetic engineering methods, or in vivo delivery mechanisms, limiting its direct competitive significance for CAR-T therapeutics.",
+      "relevant": true
+    },
+    {
+      "id": "AU2024379678.A1",
+      "title": "SINGLE DOMAIN ANTIBODY SPECIFICALLY BINDING TO SOX2, FUSION PROTEIN INCLUDING SAME, AND USE THEREOF",
+      "abstract": "The present invention relates to a single domain antibody specifically binding to SOX2 via E3 ubiquitin ligase or an antigen-binding fragment thereof, a fusion protein for enhancing proteolysis using same, and a use thereof. The fusion protein comprising the anti-SOX2 single domain antibody and the E3 ubiquitin ligase fragment of the present invention specifically binds to SOX2 to degrade SOX2. SOX2 degradation by the fusion protein promotes growth inhibition and apoptosis of cancer cell lines. In addition, when used in combination with an anticancer agent, the fusion protein inhibited the growth of cancer cells that exhibit drug resistance. The fusion protein inhibits tumor growth in a tumor mouse model. Therefore, the fusion protein of the present invention can be advantageously used for preventing or treating cancer.",
+      "assignee": "GENEXINE INC; GENEXINE, INC.",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "AU2024379678A1",
+      "application_number": "2024379678",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2024379678A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent describes a novel fusion protein combining an anti-SOX2 single domain antibody with an E3 ubiquitin ligase fragment that enables targeted protein degradation of SOX2, a stem cell marker overexpressed in certain cancers. The competitive significance for cell therapy lies in the potential to engineer T cells or other therapeutic cells to express this fusion protein for enhanced anti-tumor activity through targeted degradation of cancer stem cell markers.",
+      "relevant": true
+    },
+    {
+      "id": "US20260151503.A1",
+      "title": "TARGETED NANOPARTICLE, TARGETED CELL, PREPARATION METHOD THEREFOR, AND USE THEREOF",
+      "abstract": "[0000]    A targeted nanoscale particle is bound to the outer surface of the targeted cell, and is composed of a plurality of proteins interconnected via a first binding site. The targeted nanoscale particle further comprises a second binding site, and is bound to the outer surface of a target cell via the second binding site. In an exemplary embodiment, the targeted nanoscale particle can promote the interaction between the two types of cells by simultaneously binding to a chimeric antigen receptor T cell and a leukemia cell, thereby promoting the recognition and killing of the leukemia cell by the chimeric antigen receptor T cell. In addition, the internal cavities of the proteins in the targeted nanoscale particle provide space for loading of a chemotherapeutic drug, thus realizing the combination therapy of the chimeric antigen receptor T cell and other therapies while loading the drug.",
+      "assignee": "INST OF PROCESS ENGINEERING CHINESE ACADEMY OF SCIENCE [CN]; INSTITUTE OF PROCESS ENGINEERING, CHINESE ACADEMY OF SCIENCE",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260151503A1",
+      "application_number": "20260151503",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260151503A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "A dual-binding nanoparticle scaffold that simultaneously engages CAR-T cells and target tumor cells (leukemia), enhancing CAR-T recognition and cytotoxicity while providing a drug-loading cavity for co-delivery of chemotherapeutics. This represents a novel approach to improving CAR-T cell engagement and therapeutic efficacy through engineered cell-bridging nanoparticles with integrated drug payload capacity.",
+      "relevant": true
     }
   ]
 }
