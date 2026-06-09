@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-08T10:39:24.473143+00:00",
-  "count": 53,
+  "fetched_at": "2026-06-09T10:06:47.212657+00:00",
+  "count": 52,
   "abstracts": [
     {
       "source": "pubmed",
@@ -729,20 +729,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42065060/",
       "sowhat": "In vivo CAR-T eliminates manufacturing bottlenecks by genetically reprogramming T cells directly inside patients using viral vectors and LNPs."
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41183575",
-      "title": "In vivo nano-engineering T cells for CAR-T therapy.",
-      "journal": "Journal of controlled release : official journal of the Controlled Release Society",
-      "authors": "Shi T, Li Y, Deng C, Ren Q, Xu C et al.",
-      "abstract": "In vivo nano-engineering of T cells has moved from a delivery question to an integrated framework that combines targeting, exposure, and expression to build CAR T therapies within patients. We distill the design rules of active targeting on viral and nonviral carriers (ligand architecture, avidity, and linker chemistry shaping receptor engagement, uptake) and endosomal escape, and contrast them with practical constraints from variable EPR, off-targeting, and batch consistency. At the organ scale, spleen-tropic designs provide a pragmatic exposure platform shaped by microanatomy, hemodynamics, and protein-corona programming. Unlike traditional liver-directed systems, spleen-targeting nanocarriers as a novel and underexplored therapeutic direction for in vivo T-cell programming, offer the potential for selective delivery to lymphoid-resident T cell precursors, facilitating more precise immunomodulation. Because distribution is not the same as expression, specificity therefore comes from payload logic, including promoters tuned to lineage or activation state, UTR designs with miRNA detargeting, and protein or logic-gated circuits, which confine expression without changing biodistribution. We outline translational priorities in targeting precision, analytics and CMC, and regulatory classification, and advocate coordinated design of active targeting, corona-aware exposure, and expression-centric control for scalable, indication-tailored in vivo CAR T.",
-      "date": "2025-Dec",
-      "doi": "10.1016/j.jconrel.2025.114379",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41183575/",
-      "sowhat": "In vivo spleen-targeted nanocarriers enable direct T-cell CAR programming within patients, bypassing ex vivo manufacturing constraints."
     }
   ]
 }

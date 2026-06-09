@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-08T10:39:06.680897+00:00",
-  "count": 41,
+  "fetched_at": "2026-06-09T10:06:27.437915+00:00",
+  "count": 42,
   "publications": [
     {
       "source": "pubmed",
@@ -195,6 +195,21 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42213756/",
       "sowhat": "In situ CAR-macrophage therapy via mRNA-LNPs targets fibrosis by redirecting macrophages against activated hepatic stellate cells.",
+      "category": "Clinical data"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42256207",
+      "title": "mRNA-LNP vaccine providing antigen and co-stimulation in the tumor microenvironment enhances CAR T cell function (CART-Vac).",
+      "journal": "Molecular therapy. Oncology",
+      "authors": "Nakashima I, Saito S, Zhao J, Tanaka M, Akahoshi E et al.",
+      "abstract": "Despite advances in multimodal therapies, outcomes for pediatric patients with relapsed or refractory cancers remain poor. Chimeric antigen receptor (CAR) T cell therapy has demonstrated limited efficacy in solid tumors due to the immunosuppressive tumor microenvironment (TME), which promotes T cell exhaustion and restricts CAR T cell expansion. This study evaluated a combinatorial approach to enhance CAR T function by reprogramming the TME to overexpress target antigens (TAs) and co-stimulatory molecules (CSMs) through a lipid nanoparticle-based CAR-T vaccination (CART-Vac). As proof of concept, rhabdomyosarcoma cells (Rh30) engineered to overexpress TAs and CSMs (Rh30-TACS) were examined. EPHB4-directed CAR T cells demonstrated enhanced cytotoxicity, proliferation, and cytokine secretion in vitro, and superior tumor control with increased T cell infiltration in Rh30-TACS tumors in vivo compared with Rh30 tumors. To induce TA and CSM expression in the TME, CART-Vac was designed to deliver mRNAs encoding truncated EPHB4, CD80, and CD137L. CART-Vac effectively mediated transient expression, significantly enhancing CAR T expansion and antitumor activity in both models. These findings suggest that CART-Vac can modulate the TME, offering a promising strategy to improve the therapeutic efficacy of CAR T cells in solid tumors.",
+      "date": "2026-06",
+      "doi": "10.1038/bmt.2012.244",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42256207/",
+      "sowhat": "mRNA-LNP vaccination reprograms tumor microenvironment to boost CAR-T expansion and function in solid tumors.",
       "category": "Clinical data"
     },
     {
