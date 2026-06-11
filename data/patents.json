@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-10T10:18:18.528707+00:00",
-  "count": 495,
+  "fetched_at": "2026-06-11T10:34:33.021923+00:00",
+  "count": 497,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -8182,6 +8182,40 @@
       "claim_type": "Method (process)",
       "novelty_summary": "The invention describes a directed evolution approach to generate target-specific large serine recombinases (LSRs) through mutagenesis and library screening. LSRs represent an emerging alternative to site-specific recombinases for precision genome editing and could offer competitive advantages in CAR-T engineering by enabling more precise transgene insertion, reduced off-target recombination, and improved safety profiles compared to traditional integrase-based systems.",
       "relevant": true
+    },
+    {
+      "id": "EP4755917.A1",
+      "title": "Anti-OX40L antibodies and uses thereof",
+      "abstract": "[0001]    The present invention relates to novel antibodies and antibody-binding fragments that specifically bind to OX40L and compositions containing the antibodies or antibody-binding fragments. In addition, the present invention relates to nucleic acids encoding the antibodies or antibody-binding fragments thereof and host cells containing the same, as well as related uses. In addition, the present invention relates to therapeutic and diagnostic uses of these antibodies and antibody -binding fragments.",
+      "assignee": "FORTVITA BIOLOGICS INC [KY]; Fortvita Biologics Inc.",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "EP4755917A1",
+      "application_number": "4755917",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/EP4755917A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "Novel anti-OX40L antibodies and antibody-binding fragments with defined binding specificity, along with encoding nucleic acids and host cells. OX40L is a co-stimulatory molecule critical for T cell activation and persistence, making anti-OX40L antibodies potentially significant for enhancing CAR-T cell expansion and anti-tumor functionality in vivo.",
+      "relevant": true,
+      "title_original": "ANTI-OX40L-ANTIKÖRPER UND VERWENDUNG DAVON"
+    },
+    {
+      "id": "EP4756014.A1",
+      "title": "Cell therapeutic based on recombinant immune cells for cancer treatment through polyclonal expansion of tumor-infiltrating T cells within a tumor",
+      "abstract": "[0001]    The invention relates to a recombinant immune cell into which (i) a first nucleic acid sequence encoding a single chain variable fragment (scFv) of an anti-CD3 antibody and (ii) a second nucleic acid sequence encoding a membrane protein are introduced. When the recombinant immune cells of the present invention are injected into tumors, the expression of the anti-CD3 epsilon chain scFv gene is induced on the cell membrane surface through membrane proteins, and intratumoral polyclonal proliferation of tumor-infiltrating T cells is induced through various costimulatory molecules of immune cells, thereby delaying or inhibiting tumor growth. In addition, the present invention relates to a composition comprising the recombinant immune cells as an active ingredient for treating cancer, wherein the recombinant immune cells are directly injected into a tumor.",
+      "assignee": "KOREA ADVANCED INST OF SCIENCE AND TECHNOLOGY [KR]; Korea Advanced Institute of Science and Technology",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "EP4756014A1",
+      "application_number": "4756014",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/EP4756014A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The invention presents recombinant immune cells engineered with dual nucleic acid sequences: an anti-CD3 scFv and a membrane protein, designed to induce in situ polyclonal expansion of tumor-infiltrating lymphocytes (TILs) upon intratumoral injection. The competitive significance lies in a localized, in vivo T cell activation strategy that avoids ex vivo expansion, potentially offering manufacturing simplicity and reduced off-tumor toxicity compared to conventional CAR-T approaches.",
+      "relevant": true,
+      "title_original": "AUF REKOMBINANTEN IMMUNZELLEN BASIERENDES ZELLTHERAPEUTIKUM ZUR BEHANDLUNG VON KREBS DURCH POLYKLONALE EXPANSION VON TUMORINFILTRIERENDEN T-ZELLEN IN EINEM TUMOR"
     }
   ]
 }
