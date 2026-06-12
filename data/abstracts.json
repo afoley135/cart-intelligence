@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-11T10:26:17.073574+00:00",
-  "count": 53,
+  "fetched_at": "2026-06-12T10:15:04.676397+00:00",
+  "count": 54,
   "abstracts": [
     {
       "source": "pubmed",
@@ -85,20 +85,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42146330/",
       "sowhat": "PAIR-CRISPR maps bidirectional DNA repair interactions enabling precision engineering of cell therapy manufacturing processes."
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42134560",
-      "title": "In vivo generation of CAR-T cells: Current obstacles, strategic solutions, and clinical translation.",
-      "journal": "Critical reviews in oncology/hematology",
-      "authors": "Jiang Z, Xu S, Li W, Chen J, Guo Z",
-      "abstract": "Chimeric antigen receptor T (CAR-T) cell therapy has transformed the treatment of hematologic malignancies, but conventional ex vivo manufacturing remains costly, labor-intensive, and difficult to scale. In vivo CAR-T generation, which reprograms endogenous T cells directly within patients using engineered vectors, offers a simplified and potentially more accessible alternative. This review outlines the major barriers to in vivo CAR-T development-including inefficient systemic delivery, off-target transduction, the trade-off between transfection efficiency and biosafety, and limited persistence of CAR expression. We summarize emerging engineering strategies such as targeted vector systems, combinatorial T-cell recognition, tunable expression control, and approaches to enhance functional durability. Recent early-phase clinical trials demonstrate the feasibility of in vivo CAR-T induction. We also discuss future opportunities and challenges that will shape the translation of this rapidly evolving therapeutic paradigm.",
-      "date": "2026-May",
-      "doi": "10.1016/j.critrevonc.2026.105373",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42134560/",
-      "sowhat": "In vivo CAR-T generation using engineered vectors could eliminate costly ex vivo manufacturing, but faces delivery, safety, and persistence challenges."
     },
     {
       "source": "pubmed",
@@ -253,6 +239,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41679305/",
       "sowhat": "In vivo immune cell editing bypasses ex vivo manufacturing bottlenecks, enabling direct TME reprogramming for broader CAR-T accessibility."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42272105",
+      "title": "Antibody Format Matters: A Comparative Analysis of VHH and scFv Domains Reveals Superior In Vivo CAR T Cell Function with VHH Domains.",
+      "journal": "Molecular therapy : the journal of the American Society of Gene Therapy",
+      "authors": "Kinna A, Datta P, Bughda R, Parekh F, Robson M et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T cells require an extracellular targeting domain for antigen specificity, typically a scFv. VHH antibodies are emerging as alternative CAR binding regions due to their reduced size, improved stability and CDR3 loop architecture. Herein, we generated and compared VHH and scFv antibodies targeting CD123, via immunised phage display libraries, selecting ten antibody pairs based on comparable domain targeting and kinetic profiles (KD range M 10-9-10-11). The VHH antibody fragments showed improved stability (Tm50 Δ7.85°C), reduced aggregation and a favourable surface charge. CARs incorporating a VHH demonstrated higher IL2 and IFNγ secretion than scFv derived CARs during in vitro analysis and substantially enhanced survival and decreased tumour burden in a xenograft murine model of acute myeloid leukaemia. This comprehensive comparison of the two most adopted antibody classes provides a rationale for the selection of VHH as preferred CAR binding domains.",
+      "date": "2026-Jun",
+      "doi": "10.1016/j.ymthe.2026.06.017",
+      "conference": "ASGCT",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42272105/",
+      "sowhat": "VHH domains outperform scFv in in vivo CAR-T efficacy, offering superior tumor control through improved antibody stability and function."
     },
     {
       "source": "pubmed",
@@ -505,6 +505,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42088834/",
       "sowhat": "Chemotherapy and ICIs reshape host T-cell repertoire to enhance in vivo CAR-T potency through strategic pre-conditioning."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42134560",
+      "title": "In vivo generation of CAR-T cells: Current obstacles, strategic solutions, and clinical translation.",
+      "journal": "Critical reviews in oncology/hematology",
+      "authors": "Jiang Z, Xu S, Li W, Chen J, Guo Z",
+      "abstract": "Chimeric antigen receptor T (CAR-T) cell therapy has transformed the treatment of hematologic malignancies, but conventional ex vivo manufacturing remains costly, labor-intensive, and difficult to scale. In vivo CAR-T generation, which reprograms endogenous T cells directly within patients using engineered vectors, offers a simplified and potentially more accessible alternative. This review outlines the major barriers to in vivo CAR-T development-including inefficient systemic delivery, off-target transduction, the trade-off between transfection efficiency and biosafety, and limited persistence of CAR expression. We summarize emerging engineering strategies such as targeted vector systems, combinatorial T-cell recognition, tunable expression control, and approaches to enhance functional durability. Recent early-phase clinical trials demonstrate the feasibility of in vivo CAR-T induction. We also discuss future opportunities and challenges that will shape the translation of this rapidly evolving therapeutic paradigm.",
+      "date": "2026-Aug",
+      "doi": "10.1016/j.critrevonc.2026.105373",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42134560/",
+      "sowhat": "In vivo CAR-T generation using engineered vectors could eliminate costly ex vivo manufacturing, but faces delivery, safety, and persistence challenges."
     },
     {
       "source": "pubmed",

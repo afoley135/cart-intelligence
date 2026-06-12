@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-11T10:26:01.590305+00:00",
-  "count": 43,
+  "fetched_at": "2026-06-12T10:14:34.624182+00:00",
+  "count": 45,
   "publications": [
     {
       "source": "pubmed",
@@ -154,6 +154,21 @@
     },
     {
       "source": "pubmed",
+      "pmid": "42134560",
+      "title": "In vivo generation of CAR-T cells: Current obstacles, strategic solutions, and clinical translation.",
+      "journal": "Critical reviews in oncology/hematology",
+      "authors": "Jiang Z, Xu S, Li W, Chen J, Guo Z",
+      "abstract": "Chimeric antigen receptor T (CAR-T) cell therapy has transformed the treatment of hematologic malignancies, but conventional ex vivo manufacturing remains costly, labor-intensive, and difficult to scale. In vivo CAR-T generation, which reprograms endogenous T cells directly within patients using engineered vectors, offers a simplified and potentially more accessible alternative. This review outlines the major barriers to in vivo CAR-T development-including inefficient systemic delivery, off-target transduction, the trade-off between transfection efficiency and biosafety, and limited persistence of CAR expression. We summarize emerging engineering strategies such as targeted vector systems, combinatorial T-cell recognition, tunable expression control, and approaches to enhance functional durability. Recent early-phase clinical trials demonstrate the feasibility of in vivo CAR-T induction. We also discuss future opportunities and challenges that will shape the translation of this rapidly evolving therapeutic paradigm.",
+      "date": "2026-08",
+      "doi": "10.1016/j.critrevonc.2026.105373",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42134560/",
+      "sowhat": "In vivo CAR-T generation could democratize cell therapy by eliminating costly manufacturing, if delivery and safety barriers are overcome.",
+      "category": "Review article"
+    },
+    {
+      "source": "pubmed",
       "pmid": "42110477",
       "title": "CAR-T cells directed toward PD-L1 demonstrate potent, antigen-specific activity against cholangiocarcinoma: A proof of concept study.",
       "journal": "Molecular therapy. Oncology",
@@ -226,6 +241,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42261652/",
       "sowhat": "In vivo CAR-T KLN-1010 achieves 100% response rate with complete MRD clearance in myeloma patients.",
       "category": "Clinical data"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42272105",
+      "title": "Antibody Format Matters: A Comparative Analysis of VHH and scFv Domains Reveals Superior In Vivo CAR T Cell Function with VHH Domains.",
+      "journal": "Molecular therapy : the journal of the American Society of Gene Therapy",
+      "authors": "Kinna A, Datta P, Bughda R, Parekh F, Robson M et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T cells require an extracellular targeting domain for antigen specificity, typically a scFv. VHH antibodies are emerging as alternative CAR binding regions due to their reduced size, improved stability and CDR3 loop architecture. Herein, we generated and compared VHH and scFv antibodies targeting CD123, via immunised phage display libraries, selecting ten antibody pairs based on comparable domain targeting and kinetic profiles (KD range M 10-9-10-11). The VHH antibody fragments showed improved stability (Tm50 Δ7.85°C), reduced aggregation and a favourable surface charge. CARs incorporating a VHH demonstrated higher IL2 and IFNγ secretion than scFv derived CARs during in vitro analysis and substantially enhanced survival and decreased tumour burden in a xenograft murine model of acute myeloid leukaemia. This comprehensive comparison of the two most adopted antibody classes provides a rationale for the selection of VHH as preferred CAR binding domains.",
+      "date": "2026-06",
+      "doi": "10.1016/j.ymthe.2026.06.017",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42272105/",
+      "sowhat": "VHH domains outperform scFv in CAR-T cells, demonstrating superior in vivo efficacy and survival benefits.",
+      "category": "Binder optimization"
     },
     {
       "source": "biorxiv",
@@ -315,21 +345,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42129307/",
       "sowhat": "Circadian timing optimization could enhance CAR-T efficacy, trafficking, and safety by aligning therapy with tumor microenvironment rhythms.",
-      "category": "Review article"
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42134560",
-      "title": "In vivo generation of CAR-T cells: Current obstacles, strategic solutions, and clinical translation.",
-      "journal": "Critical reviews in oncology/hematology",
-      "authors": "Jiang Z, Xu S, Li W, Chen J, Guo Z",
-      "abstract": "Chimeric antigen receptor T (CAR-T) cell therapy has transformed the treatment of hematologic malignancies, but conventional ex vivo manufacturing remains costly, labor-intensive, and difficult to scale. In vivo CAR-T generation, which reprograms endogenous T cells directly within patients using engineered vectors, offers a simplified and potentially more accessible alternative. This review outlines the major barriers to in vivo CAR-T development-including inefficient systemic delivery, off-target transduction, the trade-off between transfection efficiency and biosafety, and limited persistence of CAR expression. We summarize emerging engineering strategies such as targeted vector systems, combinatorial T-cell recognition, tunable expression control, and approaches to enhance functional durability. Recent early-phase clinical trials demonstrate the feasibility of in vivo CAR-T induction. We also discuss future opportunities and challenges that will shape the translation of this rapidly evolving therapeutic paradigm.",
-      "date": "2026-05",
-      "doi": "10.1016/j.critrevonc.2026.105373",
-      "mesh_terms": [],
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42134560/",
-      "sowhat": "In vivo CAR-T generation could democratize cell therapy by eliminating costly manufacturing, if delivery and safety barriers are overcome.",
       "category": "Review article"
     },
     {
@@ -646,6 +661,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42093990/",
       "sowhat": "In vivo CAR-T engineering emerges as solution to overcome resistance limitations in advanced lung cancer immunotherapy.",
       "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42273674",
+      "title": "Development and in vivo evaluation of novel humanized CD19 CAR-T cells for advanced B cell malignancies.",
+      "journal": "Frontiers in immunology",
+      "authors": "Andrade CO, Bezerra MRL, Sousa IG, Correia EM, Lima AJF et al.",
+      "abstract": "Chimeric antigen receptor T-cell therapy targeting CD19 has revolutionized the treatment of B-cell malignancies; however, limitations related to immunogenicity, persistence, and manufacturing costs remain significant barriers to broader clinical application. Most approved CD19-directed CAR-T products rely on murine-derived single-chain variable fragments, which may elicit anti-mouse immune responses and compromise long-term efficacy.",
+      "date": "2026",
+      "doi": "10.1186/s12967-016-1047-x",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42273674/",
+      "sowhat": "Humanized CD19 CAR-T cells could reduce immunogenicity, improving persistence and expanding clinical accessibility in B-cell malignancies.",
+      "category": "Clinical data"
     }
   ]
 }
