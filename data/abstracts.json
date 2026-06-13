@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-12T10:15:04.676397+00:00",
-  "count": 54,
+  "fetched_at": "2026-06-13T09:04:13.037084+00:00",
+  "count": 55,
   "abstracts": [
     {
       "source": "pubmed",
@@ -253,6 +253,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42272105/",
       "sowhat": "VHH domains outperform scFv in in vivo CAR-T efficacy, offering superior tumor control through improved antibody stability and function."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42285385",
+      "title": "Neutralizing LFA-1 alleviates acute lung injury by diminishing pulmonary retention of CAR-T cells.",
+      "journal": "Pharmacological research",
+      "authors": "Hou R, He W, Li H, Li W, Wang X et al.",
+      "abstract": "On-target, off-tumor toxicity presents a significant challenge in chimeric antigen receptor (CAR) T therapy for solid tumors. Traditional approaches to managing adverse reactions, such as suppressing in vivo CAR-T cell activity, risk impairing their antitumor efficacy, often resulting in treatment failure. Intravenously infused CAR-T cells initially traffic to the lungs, where they are activated by tumor-associated antigens (TAAs) expressed on pulmonary tissues, leading to acute lung injury. To address this, this study developed a strategy involving leukocyte function-associated antigen 1 (LFA-1) neutralization at the time of infusion. This approach modulates CAR-T cell pharmacokinetics to enhance efficacy while minimizing toxicity. Post-infusion, CAR-T cells preferentially sequester and activate in the lung, secreting tumor necrosis factor α (TNF-α), which upregulates intercellular adhesion molecule 1 (ICAM-1) expression on pulmonary endothelial cells. This triggers an \"activation-adhesion\" feedback loop via the LFA-1/ICAM-1 pathway, exacerbating lung injury. Neutralization of LFA-1 during infusion significantly reduces CAR-T cell adhesion to pulmonary endothelium, disrupts this feedback loop, and mitigates acute lung injury. By accelerating the pharmacokinetic progression of CAR-T cells beyond the lung, this strategy not only alleviates the acute toxicity associated with high-dose regimens but also enhances the antitumor efficacy of low-dose CAR-T cells, thus expanding the therapeutic window.",
+      "date": "2026-Jun",
+      "doi": "10.1016/j.phrs.2026.108292",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42285385/",
+      "sowhat": "LFA-1 neutralization reduces CAR-T pulmonary toxicity while preserving antitumor efficacy in solid tumors."
     },
     {
       "source": "pubmed",
