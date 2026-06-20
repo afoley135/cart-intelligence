@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-19T10:36:54.442967+00:00",
-  "count": 521,
+  "fetched_at": "2026-06-20T09:07:28.789494+00:00",
+  "count": 525,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -8613,6 +8613,71 @@
       "data_type": "patent",
       "claim_type": "Composition + Method",
       "novelty_summary": "The patent discloses purification methods and purified linear DNA products with potential nuclease-resistance properties. While linear DNA is a known delivery format, the specific purification techniques and resulting product characterization may offer utility in gene therapy manufacturing, though the abstract provides insufficient detail on specific CAR-T or T cell engineering applications.",
+      "relevant": true
+    },
+    {
+      "id": "US20260166143.A1",
+      "title": "LENTIVIRAL PARTICLES DISPLAYING FUSION MOLECULES AND USES THEREOF",
+      "abstract": "Provided herein are particles comprising polynucleotide constructs for generating cells expressing anti-CD19 chimeric antigen receptor, as well as vectors, such as lentiviral vectors, comprising same, cells comprising same, and methods of using same.",
+      "assignee": "UMOJA BIOPHARMA INC [US]; Umoja Biopharma, Inc.",
+      "watchlist_company": "Umoja Biopharma",
+      "filing_date": "",
+      "patent_number": "US20260166143A1",
+      "application_number": "20260166143",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260166143A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The invention describes lentiviral particles displaying fusion molecules that deliver polynucleotide constructs for generating anti-CD19 CAR-T cells. The competitive significance lies in the use of lentiviral vector-based delivery with fusion molecule display technology, potentially offering improved transduction efficiency and targeting compared to conventional CAR-T manufacturing approaches.",
+      "relevant": true
+    },
+    {
+      "id": "EP4758160.A1",
+      "title": "COMPOSITIONS FOR MODIFYING CELLS",
+      "abstract": "",
+      "assignee": "KELONIA THERAPEUTICS INC [US]; Kelonia Therapeutics, Inc.",
+      "watchlist_company": "Kelonia Therapeutics",
+      "filing_date": "",
+      "patent_number": "EP4758160A1",
+      "application_number": "4758160",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/EP4758160A1",
+      "data_type": "patent",
+      "claim_type": "Unknown",
+      "novelty_summary": null,
+      "relevant": true,
+      "title_original": "ZUSAMMENSETZUNGEN ZUR MODIFIZIERUNG VON ZELLEN"
+    },
+    {
+      "id": "US20260167965.A1",
+      "title": "Modified PEG-RNAs with Improved Activity in Prime Editing Applications",
+      "abstract": "A modified pegRNA Cas9 nickase system that maintains potent on-target editing activity but has reduced off-target editing activity relative to wild-type Cas, and methods of production and use.",
+      "assignee": "INTEGRATED DNA TECH INC [US]; Integrated DNA Technologies, Inc.",
+      "watchlist_company": "Integra Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260167965A1",
+      "application_number": "20260167965",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260167965A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "Modified pegRNA structures with enhanced on-target activity and reduced off-target effects in prime editing systems using Cas9 nickase. While relevant to precision gene editing, this addresses general prime editing optimization rather than CAR-T-specific engineering, limiting direct competitive significance for in vivo CAR-T applications.",
+      "relevant": true
+    },
+    {
+      "id": "US20260166144.A1",
+      "title": "CHIMERIC POLYPEPTIDE AND USE THEREOF",
+      "abstract": "[0000]    Provided are an antibody/T cell receptor chimera carrying different signal peptides and the use thereof. The provided chimeric polypeptide contains a chain A and a chain B, wherein the chain A contains a first antigen binding domain and a first constant region, and the chain B contains a second antigen binding domain and a second constant region: (i) the first and/or second antigen binding domain is a heavy chain or heavy chain variable region of an antibody, which is operably linked to a heavy chain signal peptide or a TCR subunit signal peptide; and (ii) the first and/or second antigen binding domain is a light chain or light chain variable region of an antibody, which is operably linked to a light chain signal peptide or a TCR subunit signal peptide.",
+      "assignee": "CARSGEN LIFE SCIENCES CO LTD [CN]; CARSGEN LIFE SCIENCES CO., LTD.",
+      "watchlist_company": "CARsgen Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260166144A1",
+      "application_number": "20260166144",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260166144A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The invention describes a chimeric polypeptide combining antibody and T cell receptor (TCR) elements with flexible signal peptide engineering (antibody-derived or TCR-derived signal peptides for both heavy and light chain variable regions). This modular approach to signal peptide selection could improve expression efficiency and cellular trafficking of CAR-T constructs, potentially enhancing in vivo persistence and therapeutic efficacy by optimizing protein folding and membrane presentation.",
       "relevant": true
     }
   ]
