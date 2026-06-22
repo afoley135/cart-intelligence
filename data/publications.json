@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-21T09:54:12.035928+00:00",
-  "count": 47,
+  "fetched_at": "2026-06-22T11:53:58.128386+00:00",
+  "count": 48,
   "publications": [
     {
       "source": "pubmed",
@@ -286,6 +286,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42293251/",
       "sowhat": "Abstract not available",
       "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42324589",
+      "title": "Identification of Novel Small-Molecule Inhibitors Targeting KDM5B and Evaluation of Their Antitumour Effects.",
+      "journal": "Cancer medicine",
+      "authors": "Hara T, Meng S, Konno M, Nishida N, Koseki J et al.",
+      "abstract": "KDM5B, a member of the KDM5 family of histone demethylases, plays a critical role in transcriptional repression by demethylating H3K4me2/3. It regulates key biological processes such as development, stem cell maintenance, and oncogenesis, and its aberrant expression is implicated in various cancers. Accordingly, KDM5B is considered a promising therapeutic target in cancer drug discovery. In this study, we performed a screening to identify novel inhibitors of KDM5B. Through this screening, we identified a common core scaffold associated with KDM5B inhibitory activity, and subsequent optimization of the side-chain structures led to the identification of a series of compounds with IC50 values ranging from several nanomolar to several micromolar. Evaluation of growth inhibitory activity using the JFCR39 human cancer cell line panel revealed that the final lead compounds, JB-157 and JB-161, exhibited GI50 values in the low micromolar range. In a xenograft model, where the human colorectal cancer cell line HT-29 was implanted into NOD/SCID mice, administration of these compounds resulted in antitumour effects, with JB-161 showing particularly pronounced tumor suppression in a subset of treated animals. Furthermore, combination treatment with in vivo CAR-T cell therapy and JB-161 in C57BL/6J mice was associated with alterations in chromatin accessibility in tumor and immune cell populations. Taken together, these results suggest that JB-161 is a candidate KDM5B inhibitor associated with chromatin accessibility changes and antitumour activity.",
+      "date": "2026-06",
+      "doi": "10.1002/cam4.72058",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42324589/",
+      "sowhat": "KDM5B inhibition may enhance CAR-T efficacy by modulating stem cell programs and tumor immunogenicity.",
+      "category": "Preclinical data"
     },
     {
       "source": "biorxiv",
