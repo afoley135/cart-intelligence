@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-24T09:21:23.691866+00:00",
-  "count": 525,
+  "fetched_at": "2026-06-25T08:58:01.851791+00:00",
+  "count": 526,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -8679,6 +8679,23 @@
       "claim_type": "Composition of matter",
       "novelty_summary": "The invention describes a chimeric polypeptide combining antibody and T cell receptor (TCR) elements with flexible signal peptide engineering (antibody-derived or TCR-derived signal peptides for both heavy and light chain variable regions). This modular approach to signal peptide selection could improve expression efficiency and cellular trafficking of CAR-T constructs, potentially enhancing in vivo persistence and therapeutic efficacy by optimizing protein folding and membrane presentation.",
       "relevant": true
+    },
+    {
+      "id": "EP4763995.A2",
+      "title": "TEMPLATE-BASED PARTITIONING FOR SCREENING",
+      "abstract": "The invention provides high-throughput systems and methods for screening CRISPR- edited cells in bulk with single cell resolution. Methods of the invention use cells expressing polyadenylated guide RNAs that are detectable by RNA sequencing. Methods of the invention provide for the detection of each cell's guide RNA along with its single cell transcriptome to provide useful gene expression data for assessing CRISPR activity from cells in bulk. In addition, methods of the invention offer a high throughput single cell analytical framework for generating single cell transcriptome data from which CRISPR activity may be evaluated.",
+      "assignee": "ILLUMINA INC [US]; Illumina, Inc.",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "EP4763995A2",
+      "application_number": "4763995",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/EP4763995A2",
+      "data_type": "patent",
+      "claim_type": "Method (process)",
+      "novelty_summary": "The invention presents a high-throughput screening method combining polyadenylated guide RNA detection with single-cell RNA sequencing to assess CRISPR activity in bulk cell populations while maintaining single-cell resolution. This approach enables simultaneous evaluation of guide RNA identity and transcriptomic changes, offering competitive advantage for functional genomics screening in engineered cell therapies by reducing cost and complexity of single-cell analysis.",
+      "relevant": true,
+      "title_original": "VORTEMPLATE-INSTANTPARTITIONEN ZUM SCREENING"
     }
   ]
 }
