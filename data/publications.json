@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-25T08:50:06.863305+00:00",
-  "count": 48,
+  "fetched_at": "2026-06-26T09:05:43.637048+00:00",
+  "count": 50,
   "publications": [
     {
       "source": "pubmed",
@@ -166,6 +166,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42134560/",
       "sowhat": "In vivo CAR-T generation could democratize cell therapy by eliminating costly manufacturing, if delivery and safety barriers are overcome.",
       "category": "Review article"
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "Engineering of CAR-less lentiviral vectors via ER retention-mediated CAR blockade",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Ma, L., Wang, J., Huang, M., Yao, M., Yi, S. et al.",
+      "abstract": "Chimeric antigen receptor (CAR)-T cell therapies have transformed the treatment of various tumor types by redirecting and activating T cells against tumor cells. However, CAR-T cell manufacturing approaches remain challenging and limit their widespread use in clinical settings. In vivo CAR-T therapy bypasses ex vivo cell manufacturing and patient preconditioning limitations; however, it faces a significant safety concern as CAR proteins on viral packaging cells are incorporated into budding virions, leading to off-target transduction of tumor cells. Here, we address this risk by developing the CAR-Less ER-Anchor Vector (CLEAN-V) system. By exploiting endoplasmic reticulum (ER) retention, CLEAN-V prevents the CAR protein from trafficking to the cell surface during viral packaging, thereby blocking its incorporation into the viral envelope. CLEAN-V particles exhibit near-complete loss of CAR-mediated tumor cell transduction. Furthermore, CLEAN-V integrates seamlessly into existing third-generation LVV workflows in four- or five-plasmid formats and generates CAR-T cells with preserved phenotypic and functional integrity. These results establish CLEAN-V as a robust platform for developing safe, targeted lentiviral vectors for in vivo CAR-T therapy.",
+      "date": "2026-06-23",
+      "doi": "10.64898/2026.06.21.733647",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.06.21.733647",
+      "sowhat": "In vivo CAR-T manufacturing could overcome safety risks from CAR-decorated virions through ER retention-based engineering.",
+      "category": "Manufacturing / process"
     },
     {
       "source": "pubmed",
@@ -721,6 +736,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42273674/",
       "sowhat": "Humanized CD19 CAR-T cells could reduce immunogenicity, improving persistence and expanding clinical accessibility in B-cell malignancies.",
       "category": "Clinical data"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42344919",
+      "title": "In vivo immune engineering via mRNA therapeutics: reprogramming the post-infarction cardiac microenvironment.",
+      "journal": "Frontiers in immunology",
+      "authors": "Liu Y, Liu R, Meng C, Li J, Yang K et al.",
+      "abstract": "Myocardial infarction (MI) initiates a biphasic immune response, which plays a critical role in determining whether the heart undergoes adaptive repair or progresses to pathological fibrosis. Traditional drug and gene therapy delivery systems have been insufficient in precisely modulating this intricate sequence of events in both temporal and spatial dimensions. In recent years, nucleoside-modified messenger RNA (mRNA) technology, encapsulated within lipid nanoparticles (LNPs), has emerged as a novel platform for delivering transient, non-integrating, and repeatable immune modulation to the injured heart. This article will explore recent interdisciplinary advancements in mRNA technology and cardiac immunology from five distinct perspectives. (i) Strategies for mRNA design, encompassing nucleoside modifications and purification techniques, are primarily aimed at circumventing detection by innate immune sensors within inflamed myocardial tissue; (ii) The concept of trained immunity is investigated, focusing on how transient expression of mRNA encoding epigenetic editors may potentially erase pathological epigenetic imprints in myeloid progenitor cells; (iii) Immune cell reprogramming is examined, addressing the myeloid lineage through macrophage polarization and the degradation of neutrophil extracellular traps via metabolic and transcriptional reprogramming, as well as the lymphoid lineage through transient CAR-T cells, in situ-induced regulatory T cells, and regulatory B cells, with an emphasis on the role of cardiomyocytes as paracrine signaling hubs; (iv) The optimization of lipid nanoparticle (LNP) delivery technology is discussed, including SORT-based organ-targeting strategies and the immunogenicity challenges faced by lipid carriers in ischemic tissues, alongside the development of next-generation self-amplifying RNA payloads; (v) Standards for clinical translation are outlined, involving representative pipelines such as AZD8601 and mRNA-0184, strategies for repeated dosing from an immunological perspective, and the use of biomarkers to guide precision dosing timing. In conclusion, we propose an innovative framework that integrates spatial transcriptomics, gender-stratified dosing strategies, and multi-mRNA formulation technology, with the objective of establishing a viable pathway for personalized cardiac immune reprogramming.",
+      "date": "2026",
+      "doi": "10.1038/s41586-020-2639-4",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42344919/",
+      "sowhat": "mRNA-LNP platform enables temporal, spatial immune reprogramming in cardiac injury—expanding in vivo cell therapy beyond oncology.",
+      "category": "Review article"
     }
   ]
 }

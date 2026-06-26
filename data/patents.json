@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-25T08:58:01.851791+00:00",
-  "count": 526,
+  "fetched_at": "2026-06-26T09:20:53.042813+00:00",
+  "count": 529,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -8696,6 +8696,54 @@
       "novelty_summary": "The invention presents a high-throughput screening method combining polyadenylated guide RNA detection with single-cell RNA sequencing to assess CRISPR activity in bulk cell populations while maintaining single-cell resolution. This approach enables simultaneous evaluation of guide RNA identity and transcriptomic changes, offering competitive advantage for functional genomics screening in engineered cell therapies by reducing cost and complexity of single-cell analysis.",
       "relevant": true,
       "title_original": "VORTEMPLATE-INSTANTPARTITIONEN ZUM SCREENING"
+    },
+    {
+      "id": "AU2024389096.A1",
+      "title": "ANTIGEN-BINDING PROTEIN AND USE THEREOF",
+      "abstract": "A nanobody specifically binding to HER2 or an antigen-binding fragment thereof, a composition comprising the nanobody or the antigen-binding fragment thereof, and a nucleic acid molecule encoding the antibody or the antigen-binding fragment thereof. In addition, the present invention further relates to the use of the nanobody or the antigen-binding fragment thereof in the treatment and diagnosis of diseases.",
+      "assignee": "MINGHUI PHARMACEUTICAL SHANGHAI LTD; MINGHUI PHARMACEUTICAL HANGZHOU LTD; MINGHUI PHARMACEUTICAL (HANGZHOU) LIMITED",
+      "watchlist_company": "Addition Therapeutics",
+      "filing_date": "",
+      "patent_number": "AU2024389096A1",
+      "application_number": "2024389096",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2024389096A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent discloses HER2-specific nanobodies (single-domain antibodies) and encoding nucleic acids for therapeutic and diagnostic applications. While nanobodies represent established antibody engineering technology, their application in CAR-T cell therapy would require integration with T cell receptor engineering platforms; however, the patent abstract does not explicitly disclose CAR-T constructs or cell engineering applications, limiting competitive significance for in vivo CAR-T.",
+      "relevant": true
+    },
+    {
+      "id": "AU2025208175.A1",
+      "title": "SAFETY SWITCHES TO CONTROL IN VITRO AND IN VIVO PROLIFERATION OF CELL THERAPY PRODUCTS",
+      "abstract": "The present disclosure provides modified cells comprising a nucleic acid encoding an agent (e.g., a detection agent, a selection agent, or a detection agent and a selection agent) inserted at an endogenous proliferation gene or off-target cell marker gene, as well as compositions, methods, uses, and kits related thereto.",
+      "assignee": "SANA BIOTECHNOLOGY INC; SANA BIOTECHNOLOGY, INC.",
+      "watchlist_company": "Sana Biotechnology",
+      "filing_date": "",
+      "patent_number": "AU2025208175A1",
+      "application_number": "2025208175",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2025208175A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent discloses modified cells with nucleic acid inserts at endogenous proliferation genes or off-target cell marker genes to encode detection and/or selection agents, enabling controlled proliferation of cell therapy products both in vitro and in vivo. This addresses a critical safety concern in cell therapy by providing inducible safety switches to manage therapeutic cell expansion and minimize adverse events from uncontrolled proliferation.",
+      "relevant": true
+    },
+    {
+      "id": "AU2024398058.A1",
+      "title": "LIPID NANOPARTICLES COMPRISING CODING RNA MOLECULES FOR USE IN GENE EDITING AND AS VACCINES AND THERAPEUTIC AGENTS",
+      "abstract": "The present disclosure describes improved LNP-based RNA vaccines, nucleobase editing systems, and therapeutics for use in treating and/or immunization against disease. In particular, the disclosure describes improved LNPs, including novel and improved ionizable lipids for making LNPs, that enhance the targeted delivery of LNP-based RNA vaccines and therapeutics based on linear and/or circular mRNAs. The improved LNPs protect linear and/or circular mRNA payloads from degradation and clearance while achieving targeted systemic or local delivery for use as enhanced vaccines and/or therapeutic agents.",
+      "assignee": "RENAGADE THERAPEUTICS MAN INC; ORNA THERAPEUTICS INC; RENAGADE THERAPEUTICS MANAGEMENT INC.",
+      "watchlist_company": "Orna Therapeutics",
+      "filing_date": "",
+      "patent_number": "AU2024398058A1",
+      "application_number": "2024398058",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/AU2024398058A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent claims improved lipid nanoparticles (LNPs) with novel ionizable lipids that enhance targeted delivery and protect linear/circular mRNA payloads from degradation. While focused on vaccines and general therapeutics rather than CAR-T specifically, the LNP delivery platform and mRNA protection mechanisms are directly applicable to in vivo CAR-T cell engineering, where efficient mRNA delivery to T cells is a critical bottleneck for clinical translation.",
+      "relevant": true
     }
   ]
 }
