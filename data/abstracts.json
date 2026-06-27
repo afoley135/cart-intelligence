@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-06-26T09:06:01.974972+00:00",
-  "count": 58,
+  "fetched_at": "2026-06-27T08:47:36.005123+00:00",
+  "count": 60,
   "abstracts": [
     {
       "source": "pubmed",
@@ -136,11 +136,11 @@
       "authors": "Li H, Li J, Liu X, Wei X, Zeng X et al.",
       "abstract": "Chimeric antigen receptor T-cell (CAR-T) therapy has emerged as a transformative immunotherapy, which achieves remarkable success in hematological malignancies. However, broader application of CAR-T therapy is hindered by multiple challenges, including limited efficacy in solid tumors, antigen escape, severe toxicities, and complex, costly manufacturing. Recent studies have emerged that nanotechnology offers innovative solutions to overcome barriers. In this review, we summarized how nanotechnology enhances CAR-T therapy across six dimensions: CAR design, transfection, expansion, modification, monitoring, and combination with other therapies. We discussed the applications of various nanomaterials to improve CAR-T cell function, including lipid nanoparticles, nanogels, and nanobodies. Specifically, we recapitulate that nanotechnology facilitates the generation of CAR-T cells in vivo, enables spatiotemporal control of T cells, remodels the immunosuppressive microenvironment in solid tumors, and enables dual-targeting strategies to mitigate antigen escape. Finally, we outlined the clinical application of nanotechnology in hematological malignancies and solid tumors, as well as non-malignant senescence and autoimmune diseases. Collectively, we believe the integration of nanotechnology enhances the safety and efficacy and broadens therapeutic scope, which will open a new era of precision medicine.",
       "date": "2026-May",
-      "doi": "10.1186/s13045-026-01805-7",
+      "doi": "10.1021/acsomega.4c09718",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42104450/",
-      "sowhat": "Nanotechnology enhancements across CAR design, manufacturing, and monitoring could unlock solid tumor efficacy and reduce toxicity burdens."
+      "sowhat": "Nanotechnology enhances CAR-T efficacy in solid tumors while reducing manufacturing complexity and toxicity across multiple therapeutic dimensions."
     },
     {
       "source": "pubmed",
@@ -253,6 +253,34 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42272105/",
       "sowhat": "VHH domains outperform scFv in in vivo CAR-T efficacy, offering superior tumor control through improved antibody stability and function."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42352518",
+      "title": "In Vivo CAR-Based Immune Cell Engineering: Future Applications and Challenges in Malignant Glioma.",
+      "journal": "Cancers",
+      "authors": "Yamaguchi J, Bergquist A, Lu J, Lakshmanachetty S, Khan SH et al.",
+      "abstract": "Chimeric antigen receptor (CAR)-T cell therapy has achieved remarkable success in hematologic malignancies, and its development is being actively pursued across a broad range of cancer types. However, current CAR-T cell therapies rely on ex vivo engineering, which presents significant logistical, temporal, and biological limitations. In vivo CAR-T cell engineering is emerging as a new paradigm that may overcome these challenges by enabling the direct reprogramming of immune cells within the patient through the administration of CAR-encoding vectors. This approach represents an off-the-shelf form of autologous immune therapy. Advances in viral engineering and nanotechnology have enabled the development of diverse CAR delivery platforms that not only deliver CAR constructs but also facilitate the delivery of gene-editing components, such as Cas9, allowing for more sophisticated in vivo genetic modifications. Some of these approaches have already entered clinical evaluation and have shown promising early results in hematologic malignancies, with clinical trials in solid tumors now underway. However, the application of in vivo-engineered CAR-T cell therapies to malignant glioma remains largely unexplored, reflecting challenges distinct from those encountered in hematologic malignancies. In this review, we discuss these challenges and potential strategies to address them, while highlighting recent progress in in vivo CAR-T cell engineering.",
+      "date": "2026-Jun",
+      "doi": "10.3390/cancers18121986",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42352518/",
+      "sowhat": "In vivo CAR-T engineering via viral vectors could overcome ex vivo CAR-T logistical barriers in solid tumors like glioma."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42351704",
+      "title": "In Vivo mRNA-Lipid Nanoparticle CAR-T Cell Engineering: Advances, Challenges, and Clinical Translation.",
+      "journal": "Biomedicines",
+      "authors": "Yadav VK, Yadav P, Mallappa S, Neeli P",
+      "abstract": "Chimeric antigen receptor T (CAR-T) cell therapy has transformed the treatment of hematologic malignancies, yet its broader application, particularly in solid tumors, remains constrained by high cost, labor-intensive manufacturing, limited production capacity, and variable clinical performance, as well as barriers such as poor trafficking, antigen heterogeneity, and an immunosuppressive tumor microenvironment. In vivo CAR-T cell engineering, in which CAR-T cells are generated directly within the patient, offers a paradigm shift by eliminating the need for ex vivo cell processing and complex logistical infrastructure. Among emerging approaches, messenger RNA (mRNA)-loaded lipid nanoparticles (LNPs) have emerged as a promising and clinically tractable platform for in vivo CAR-T cell generation, enabling direct reprogramming of T lymphocytes within the patient and thereby circumventing the need for leukapheresis, viral vector production, and prolonged ex vivo culture, effectively transforming the patient into their own cell therapy factory. This review synthesizes advances in mRNA-LNP-mediated in vivo CAR-T cell generation, encompassing ionizable lipid chemistry and emerging T cell-targeted delivery strategies, including surface functionalization approaches. We discuss the implications of transient CAR expression for immune activation, safety, and therapeutic durability, alongside CAR design optimization through co-stimulatory domains and safety switches. Preclinical evidence from murine tumor models and non-human primates is integrated with current regulatory considerations, and key barriers to clinical translation are highlighted. Collectively, progress in nucleic acid delivery, synthetic immunology, and precision medicine positions in vivo mRNA-CAR-T therapy as a promising modality for oncology and beyond.",
+      "date": "2026-Jun",
+      "doi": "10.3390/biomedicines14061276",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42351704/",
+      "sowhat": "In vivo mRNA-LNP CAR-T engineering eliminates costly ex vivo manufacturing, enabling direct patient cell engineering for solid tumors."
     },
     {
       "source": "pubmed",
