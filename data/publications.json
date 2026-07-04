@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-07-03T09:07:30.280301+00:00",
-  "count": 55,
+  "fetched_at": "2026-07-04T08:41:46.025804+00:00",
+  "count": 56,
   "publications": [
     {
       "source": "pubmed",
@@ -166,6 +166,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42134560/",
       "sowhat": "In vivo CAR-T generation could democratize cell therapy by eliminating costly manufacturing, if delivery and safety barriers are overcome.",
       "category": "Review article"
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "Safe Redosable Low-Immunogenic In Vivo CAR-T Therapy for B Cell Malignancies and Solid Tumors",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Alam, R., Kumar, S., Shukla, R., Chaudhary, N., Gupta, J. et al.",
+      "abstract": "In vivo CAR-T cell therapy eliminates manufacturing complexities associated with ex vivo autologous approaches, but safety concerns have limited adoption. We developed viroVbot, a next-generation in vivo CAR-T platform, by combining computational immunogenicity prediction (CIMMEXTM) with envelope engineering. Screening 22,562 glycoprotein sequences, we identified 641 vesiculovirus homologs, from which we selected Piry virus glycoprotein (PIRYV) as the optimal candidate. PIRYV exhibited lower MHC-epitope density, reduced human seroprevalence, with decreased T cell activation compared to VSV-G. To enhance targeting specificity, we engineered receptor-binding-deficient PIRYV (ePIRYVRBD) displaying CD3/CD7 nanobodies for T cell-selective transduction. To maximize safety, we engineered CAR-TRAP producer cells to eliminate unwanted B cell transduction and incorporated machine learning-optimized T cell-specific promoters that restrict CAR activation exclusively to lymphocytes. Additional modifications suppressed hepatocyte expression and prevented phagocytic uptake. In humanized xenograft models, viroVbot3 generated potent BCMA/CD19 specific CAR-T responses against multiple myeloma and Claudin18.2-targeting gastric cancer, demonstrating sequential redosing with alternative envelopes. Critically, viroVbot3 exhibited minimal off-target organ biodistribution with CAR expression restricted to T lymphocytes. These findings establish viroVbot as a low-immunogenic platform for scalable in vivo CAR-T manufacturing with capability for sequential redosing across hematologic and solid tumors.",
+      "date": "2026-07-02",
+      "doi": "10.64898/2026.06.30.735484",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.06.30.735484",
+      "sowhat": "Abstract not available",
+      "category": null
     },
     {
       "source": "pubmed",
