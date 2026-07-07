@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-07-06T10:13:55.506485+00:00",
-  "count": 56,
+  "fetched_at": "2026-07-07T09:39:37.450110+00:00",
+  "count": 58,
   "publications": [
     {
       "source": "pubmed",
@@ -173,7 +173,7 @@
       "title": "Safe Redosable Low-Immunogenic In Vivo CAR-T Therapy for B Cell Malignancies and Solid Tumors",
       "journal": "bioRxiv (preprint)",
       "authors": "Alam, R., Kumar, S., Shukla, R., Chaudhary, N., Gupta, J. et al.",
-      "abstract": "In vivo CAR-T cell therapy eliminates manufacturing complexities associated with ex vivo autologous approaches, but safety concerns have limited adoption. We developed viroVbot, a next-generation in vivo CAR-T platform, by combining computational immunogenicity prediction (CIMMEXTM) with envelope engineering. Screening 22,562 glycoprotein sequences, we identified 641 vesiculovirus homologs, from which we selected Piry virus glycoprotein (PIRYV) as the optimal candidate. PIRYV exhibited lower MHC-epitope density, reduced human seroprevalence, with decreased T cell activation compared to VSV-G. To enhance targeting specificity, we engineered receptor-binding-deficient PIRYV (ePIRYVRBD) displaying CD3/CD7 nanobodies for T cell-selective transduction. To maximize safety, we engineered CAR-TRAP producer cells to eliminate unwanted B cell transduction and incorporated machine learning-optimized T cell-specific promoters that restrict CAR activation exclusively to lymphocytes. Additional modifications suppressed hepatocyte expression and prevented phagocytic uptake. In humanized xenograft models, viroVbot3 generated potent BCMA/CD19 specific CAR-T responses against multiple myeloma and Claudin18.2-targeting gastric cancer, demonstrating sequential redosing with alternative envelopes. Critically, viroVbot3 exhibited minimal off-target organ biodistribution with CAR expression restricted to T lymphocytes. These findings establish viroVbot as a low-immunogenic platform for scalable in vivo CAR-T manufacturing with capability for sequential redosing across hematologic and solid tumors.",
+      "abstract": "In vivo CAR-T cell therapy eliminates manufacturing complexities associated with ex vivo autologous approaches, but safety concerns have limited adoption. We developed viroVbot, a next-generation in vivo CAR-T platform, by combining computational immunogenicity prediction (CIMMEXTM) with envelope engineering. Screening 22,562 glycoprotein sequences, we identified 641 vesiculovirus homologs, from which we selected Piry virus glycoprotein (PIRYV) as the optimal candidate. PIRYV exhibited lower MHC-epitope density, reduced human seroprevalence, with decreased T cell activation compared to VSV- G. To enhance targeting specificity, we engineered receptor-binding-deficient PIRYV (ePIRYVRBD) displaying CD3/CD7 nanobodies for T cell-selective transduction. To maximize safety, we engineered CAR-TRAP producer cells to eliminate unwanted B cell transduction and incorporated machine learning-optimized T cell-specific promoters that restrict CAR activation exclusively to lymphocytes. Additional modifications suppressed hepatocyte expression and prevented phagocytic uptake. In humanized xenograft models, viroVbot3 generated potent BCMA/CD19 specific CAR-T responses against multiple myeloma and Claudin18.2-targeting gastric cancer, demonstrating sequential redosing with alternative envelopes. Critically, viroVbot3 exhibited minimal off-target organ biodistribution with CAR expression restricted to T lymphocytes. These findings establish viroVbot as a low-immunogenic platform for scalable in vivo CAR-T manufacturing with capability for sequential redosing across hematologic and solid tumors.",
       "date": "2026-07-02",
       "doi": "10.64898/2026.06.30.735484",
       "mesh_terms": [],
@@ -841,6 +841,36 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42344919/",
       "sowhat": "mRNA-LNP platform enables temporal, spatial immune reprogramming in cardiac injury—expanding in vivo cell therapy beyond oncology.",
       "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42409473",
+      "title": "In vivo transduction of CAR T cells: Pharmacological principles, delivery platforms, and the road to clinical translation.",
+      "journal": "Advances in pharmacology (San Diego, Calif.)",
+      "authors": "Gill SI",
+      "abstract": "Chimeric antigen receptor (CAR) T cell therapy has fundamentally altered the treatment landscape for hematological malignancies, yet the autologous ex vivo manufacturing process that underpins commercially available products imposes severe constraints on access, scalability, and cost. In vivo CAR T cell generation can be achieved by direct systemic administration of gene delivery vehicles engineered to selectively transduce endogenous T lymphocytes. This approach reconceives the patient's own lymphoid organs as a bioreactor. Two major platforms are now entering clinical testing: engineered viral vectors that stably integrate a CAR transgene, and lipid nanoparticles (LNPs) that deliver CAR-encoding RNA for transient expression. This review examines the biological rationale, delivery engineering, immunological barriers, CAR payload design, early clinical evidence, and future directions of this field. Particular emphasis is placed on the pharmacological principles that distinguish in vivo from ex vivo approaches, and on the transformative potential for indications that lie beyond the current reach of conventional CAR T cell therapy.",
+      "date": "2026",
+      "doi": "10.1016/bs.apha.2026.05.003",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42409473/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42409472",
+      "title": "Transient T cell therapies.",
+      "journal": "Advances in pharmacology (San Diego, Calif.)",
+      "authors": "Xiao Y, Bai M, Ang MJY, Mitchell MJ, Han X",
+      "abstract": "Chimeric antigen receptor (CAR) T cell therapy has achieved clinical success in hematological malignancies, but its reliance on viral vectors and complex ex vivo manufacturing poses challenges related to safety, cost, and scalability. Next-generation strategies, including universal (\"off-the-shelf\") and in vivo CAR-T cell therapies, have emerged to address these limitations. The latter strategy employs targeted delivery systems to directly program patients' T cells in situ, bypassing ex vivo manipulation and offering a more streamlined, scalable, and safer therapeutic paradigm. The success of in vivo CAR-T cell therapy relies on targeted delivery systems. While engineered lentiviruses enable stable integration, non-viral vectors for transient CAR expression offer superior pharmacological control. This approach, exemplified by lipid nanoparticles in combination with mRNA, avoids risks of insertional mutagenesis and enables titratable, short-lived CAR expression, thereby enhancing safety management and suitability for applications beyond oncology. In this chapter, we first delineate the pharmacological imperative for transient CAR expression. Next, various delivery strategies are systematically reviewed, including ex vivo electroporation, in vivo non-viral systems, and engineered virus-like particles. Afterwards, we summarize the ongoing clinical trials of transient CAR-T cell therapy for oncology and non-oncology indications. Finally, we provide perspectives on the development of next-generation transient CAR-T cell therapies.",
+      "date": "2026",
+      "doi": "10.1016/bs.apha.2026.05.007",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42409472/",
+      "sowhat": "Abstract not available",
+      "category": null
     }
   ]
 }
