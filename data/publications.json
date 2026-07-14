@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-07-13T09:20:38.423974+00:00",
-  "count": 60,
+  "fetched_at": "2026-07-14T08:19:26.393984+00:00",
+  "count": 61,
   "publications": [
     {
       "source": "pubmed",
@@ -188,7 +188,7 @@
       "title": "Safe Redosable Low-Immunogenic In Vivo CAR-T Therapy for B Cell Malignancies and Solid Tumors",
       "journal": "bioRxiv (preprint)",
       "authors": "Alam, R., Kumar, S., Shukla, R., Chaudhary, N., Gupta, J. et al.",
-      "abstract": "In vivo CAR-T cell therapy eliminates manufacturing complexities associated with ex vivo autologous approaches, but safety concerns have limited adoption. We developed viroVbot, a next-generation in vivo CAR-T platform, by combining computational immunogenicity prediction (CIMMEXTM) with envelope engineering. Screening 22,562 glycoprotein sequences, we identified 641 vesiculovirus homologs, from which we selected Piry virus glycoprotein (PIRYV) as the optimal candidate. PIRYV exhibited lower MHC-epitope density, reduced human seroprevalence, with decreased T cell activation compared to VSV- G. To enhance targeting specificity, we engineered receptor-binding-deficient PIRYV (ePIRYVRBD) displaying CD3/CD7 nanobodies for T cell-selective transduction. To maximize safety, we engineered CAR-TRAP producer cells to eliminate unwanted B cell transduction and incorporated machine learning-optimized T cell-specific promoters that restrict CAR activation exclusively to lymphocytes. Additional modifications suppressed hepatocyte expression and prevented phagocytic uptake. In humanized xenograft models, viroVbot3 generated potent BCMA/CD19 specific CAR-T responses against multiple myeloma and Claudin18.2-targeting gastric cancer, demonstrating sequential redosing with alternative envelopes. Critically, viroVbot3 exhibited minimal off-target organ biodistribution with CAR expression restricted to T lymphocytes. These findings establish viroVbot as a low-immunogenic platform for scalable in vivo CAR-T manufacturing with capability for sequential redosing across hematologic and solid tumors.",
+      "abstract": "In vivo CAR-T cell therapy eliminates manufacturing complexities associated with ex vivo autologous approaches, but safety concerns have limited adoption. We developed viroVbot, a next-generation in vivo CAR-T platform, by combining computational immunogenicity prediction (CIMMEXTM) with envelope engineering. Screening 22,562 glycoprotein sequences, we identified 641 vesiculovirus homologs, from which we selected Piry virus glycoprotein (PIRYV) as the optimal candidate. PIRYV exhibited lower MHC-epitope density, reduced human seroprevalence, with decreased T cell activation compared to VSV-G. To enhance targeting specificity, we engineered receptor-binding-deficient PIRYV (ePIRYVRBD) displaying CD3/CD7 nanobodies for T cell-selective transduction. To maximize safety, we engineered CAR-TRAP producer cells to eliminate unwanted B cell transduction and incorporated machine learning-optimized T cell-specific promoters that restrict CAR activation exclusively to lymphocytes. Additional modifications suppressed hepatocyte expression and prevented phagocytic uptake. In humanized xenograft models, viroVbot3 generated potent BCMA/CD19 specific CAR-T responses against multiple myeloma and Claudin18.2-targeting gastric cancer, demonstrating sequential redosing with alternative envelopes. Critically, viroVbot3 exhibited minimal off-target organ biodistribution with CAR expression restricted to T lymphocytes. These findings establish viroVbot as a low-immunogenic platform for scalable in vivo CAR-T manufacturing with capability for sequential redosing across hematologic and solid tumors.",
       "date": "2026-07-02",
       "doi": "10.64898/2026.06.30.735484",
       "mesh_terms": [],
@@ -224,6 +224,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42431476/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42442285",
+      "title": "Cytokine co-presentation on targeted lipid nanoparticles enhances in vivo T cell engineering.",
+      "journal": "Biomaterials",
+      "authors": "Patel M, Choy J, Cheng L, Ariail E, Jain M et al.",
+      "abstract": "T lymphocytes are attractive cellular targets for gene therapy and cell engineering, due to their critical role in adaptive immunity; however, efficient in vivo T cell transfection remains challenging. Antibody-conjugated lipid nanoparticles (LNPs) have emerged as a non-viral approach to engage T cells in vivo, but existing platforms primarily deliver activation signals 1 and 2 and lack cytokine-mediated signal 3 support. Here, we introduce a signal 3-augmented LNP design in which interleukin-7 (IL-7) is co-conjugated to the LNP surface with anti-CD3 and anti-CD28 antibodies, enabling localized tri-signal presentation at the T cell-nanoparticle interface. IL-7 co-presentation by these anti-CD3/anti-CD28/IL-7 LNPs significantly enhances particle uptake and transgene expression in primary human T cells compared to antibody-only LNPs or equivalent supplementation with soluble IL-7, demonstrating the importance of particle-bound signal 3 delivery. In naïve T cells, IL-7-conjugated LNPs promote coupled proliferation and transgene expression, increasing the fraction of transfected cells within both proliferating and non-proliferating populations. In vivo, IL-7-conjugated LNPs bias functional mRNA transfection toward splenic T cells while reducing hepatic T cell transfection, without altering overall organ-level biodistribution. As a proof of concept, IL-7-conjugated LNPs deliver chimeric antigen receptor (CAR) mRNA to generate functional CAR-expressing T cells in vivo, enabling antigen-specific target cell depletion. Together, these results establish cytokine signal 3 co-presentation as an effective design approach for T cell-targeted mRNA LNPs, resulting in enhanced engagement, uptake, and transfection in T cells in vivo.",
+      "date": "2026-07",
+      "doi": "10.1016/j.biomaterials.2026.124429",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42442285/",
       "sowhat": "Abstract not available",
       "category": null
     },
