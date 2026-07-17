@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-07-16T08:36:05.920704+00:00",
-  "count": 63,
+  "fetched_at": "2026-07-17T08:52:53.415884+00:00",
+  "count": 64,
   "publications": [
     {
       "source": "pubmed",
@@ -189,7 +189,7 @@
       "journal": "bioRxiv (preprint)",
       "authors": "Alam, R., Kumar, S., Shukla, R., Chaudhary, N., Gupta, J. et al.",
       "abstract": "In vivo CAR-T cell therapy eliminates manufacturing complexities associated with ex vivo autologous approaches, but safety concerns have limited adoption. We developed viroVbot, a next-generation in vivo CAR-T platform, by combining computational immunogenicity prediction (CIMMEXTM) with envelope engineering. Screening 22,562 glycoprotein sequences, we identified 641 vesiculovirus homologs, from which we selected Piry virus glycoprotein (PIRYV) as the optimal candidate. PIRYV exhibited lower MHC-epitope density, reduced human seroprevalence, with decreased T cell activation compared to VSV-G. To enhance targeting specificity, we engineered receptor-binding-deficient PIRYV (ePIRYVRBD) displaying CD3/CD7 nanobodies for T cell-selective transduction. To maximize safety, we engineered CAR-TRAP producer cells to eliminate unwanted B cell transduction and incorporated machine learning-optimized T cell-specific promoters that restrict CAR activation exclusively to lymphocytes. Additional modifications suppressed hepatocyte expression and prevented phagocytic uptake. In humanized xenograft models, viroVbot3 generated potent BCMA/CD19 specific CAR-T responses against multiple myeloma and Claudin18.2-targeting gastric cancer, demonstrating sequential redosing with alternative envelopes. Critically, viroVbot3 exhibited minimal off-target organ biodistribution with CAR expression restricted to T lymphocytes. These findings establish viroVbot as a low-immunogenic platform for scalable in vivo CAR-T manufacturing with capability for sequential redosing across hematologic and solid tumors.",
-      "date": "2026-07-02",
+      "date": "2026-07-01",
       "doi": "10.64898/2026.06.30.735484",
       "mesh_terms": [],
       "preprint": true,
@@ -269,6 +269,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42453395/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42457339",
+      "title": "Sleeping Beauty mutagenesis identifies BACH2 and other regulators of CD8+ T-cell exhaustion, persistence in vivo, and CAR-T cell function under tumor-associated chronic antigen stimulation.",
+      "journal": "Journal for immunotherapy of cancer",
+      "authors": "Lee CJ, Larsson AT, Jubenville TA, Hudson WA, Seeman ZJ et al.",
+      "abstract": "Genes that enhance T-cell function represent promising targets for improving engineered T-cell therapies for cancer. While extensive CRISPR knockout screens have identified key genes enhancing T-cell persistence, employing Sleeping Beauty (SB) insertional mutagenesis, which induces both gain-of-function (GOF) and loss-of-function (LOF) mutations via the generation of fusion transcripts with endogenous genes, may uncover additional critical factors that previous approaches have overlooked.",
+      "date": "2026-07",
+      "doi": "10.1038/s41586-023-06733-x",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42457339/",
       "sowhat": "Abstract not available",
       "category": null
     },
