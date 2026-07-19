@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-07-18T08:02:06.378778+00:00",
-  "count": 65,
+  "fetched_at": "2026-07-19T08:47:19.856703+00:00",
+  "count": 66,
   "publications": [
     {
       "source": "pubmed",
@@ -299,6 +299,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42467218/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42471368",
+      "title": "Developability engineering of scFvs enables robust CAR function under transient mRNA expression.",
+      "journal": "Scientific reports",
+      "authors": "Mangolini M, Ramon A, Li B, Souster E, Hayre J et al.",
+      "abstract": "Lipid nanoparticle delivery of mRNA enables in vivo generation of CAR-T cells while avoiding viral vector manufacturing constraints. However, transient expression places stringent requirements on the developability of CAR components, particularly single-chain variable fragments (scFvs). Here we examine how intrinsic scFv biophysical quality governs CAR expression and function under mRNA delivery. Using a humanisation and optimisation workflow guided by computational developability metrics, we engineered scFv variants from three clinically relevant antibody families (FMC63, 14G2a and MGA271/chBRCA84D) spanning a range of baseline stability and aggregation propensity. Optimised variants showed increased humanness and, in most cases, improved thermal stability and reduced non-specific interactions while broadly preserving antigen recognition. Functional testing in primary human T cells following mRNA-LNP delivery revealed strong dependence on starting binder quality: optimisation produced minimal functional change for the stable, predominantly monomeric FMC63 scFv, whereas stabilisation of the aggregation-prone 14G2a scFv markedly increased CAR surface expression and cytotoxic activity. For MGA271-derived binders, optimisation reduced non-specific interactions and off-target killing despite reduced monovalent affinity. Together, these data establish developability engineering of scFvs as a critical enabling step for transient mRNA-encoded CAR therapies.",
+      "date": "2026-07",
+      "doi": "10.1038/s41598-026-60295-2",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42471368/",
       "sowhat": "Abstract not available",
       "category": null
     },
