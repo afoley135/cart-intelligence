@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-07-25T08:31:48.673212+00:00",
-  "count": 68,
+  "fetched_at": "2026-07-26T08:51:00.102138+00:00",
+  "count": 70,
   "publications": [
     {
       "source": "pubmed",
@@ -166,6 +166,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42134560/",
       "sowhat": "In vivo CAR-T generation could democratize cell therapy by eliminating costly manufacturing, if delivery and safety barriers are overcome.",
       "category": "Review article"
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "Post-loading ribonucleic acid into lipid nanoparticle carriers",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Bizmark, N., Amelemah, D. F., Nayagam, S., Subraveti, S. N., Kim, B. et al.",
+      "abstract": "Lipid nanoparticles (LNPs) are effective carriers for messenger ribonucleic acid (mRNA) delivery in vaccines; however, their reliance on extreme cold-chain storage limits global manufacturing and distribution. Conventional LNPs are formed by rapidly mixing four lipids with mRNA through electrostatic interactions between cationic ionizable lipids and negatively charged nucleic acids, facilitating nucleation and precipitation of mRNA-loaded LNPs. However, this binding also accelerates mRNA degradation, requiring stringent cold storage which limits widespread vaccine deployment. To overcome this limitation, we introduce a post-loading strategy in which empty LNPs (eLNPs) are first fabricated and RNA is subsequently loaded at a later stage. Using scalable confined impinging jet (CIJ) mixers, we optimized pH, buffer composition, lipid concentration, and ethanol content to produce colloidally stable eLNPs. Controlled adjustment of ethanol content and pH enabled efficient incorporation of four distinct RNA payloads while maintaining loaded LNP diameters below 100 nm. Post-loaded LNPs demonstrated mRNA delivery efficiencies in HeLa cells comparable to those of conventionally co-precipitated LNPs. Consistent size distributions and zeta potentials further confirmed comparable surface properties. Structural characterization by x-ray and neutron scattering revealed similar internal architectures for post-loaded and co-precipitated LNPs without compromising RNA loading efficiency. Together, these results demonstrate equivalent cellular delivery performance between the two formulations. This post-loading approach enables decentralized assembly of mRNA LNPs at the point of administration, with both eLNPs and mRNA stored under mild refrigeration, thereby improving vaccine accessibility. Moreover, eLNPs function as modular laboratory reagents, facilitating the translation of mRNA research toward clinical applications.",
+      "date": "2026-07-22",
+      "doi": "10.64898/2026.07.21.737377",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.07.21.737377",
+      "sowhat": "Abstract not available",
+      "category": null
     },
     {
       "source": "biorxiv",
@@ -341,6 +356,21 @@
       "abstract": "Interleukin (IL)-10 expressing CD19 chimeric antigen receptor (CAR) T cells (META 10-19) have demonstrated encouraging clinical activity in B-cell acute lymphoblastic leukemia, but their safety and efficacy in relapsed/refractory (R/R) diffuse large B-cell lymphoma (DLBCL) remain unknown.",
       "date": "2026-07",
       "doi": "10.1001/jamaoncol.2026.2490",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42490071/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42490071",
+      "title": "Ultralow-Dose Interleukin 10-Expressing Chimeric Antigen Receptor T Cells in Relapsed/Refractory Diffuse Large B-Cell Lymphoma: A Nonrandomized Clinical Trial.",
+      "journal": "JAMA oncology",
+      "authors": "Hu Y, Zhang M, Gao M, Dong Y, Fu S et al.",
+      "abstract": "Interleukin (IL)-10 expressing CD19 chimeric antigen receptor (CAR) T cells (META 10-19) have demonstrated encouraging clinical activity in B-cell acute lymphoblastic leukemia, but their safety and efficacy in relapsed/refractory (R/R) diffuse large B-cell lymphoma (DLBCL) remain unknown.",
+      "date": "2026-07",
+      "doi": "10.3324/haematol.2024.286027",
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42490071/",
