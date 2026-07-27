@@ -1,7 +1,21 @@
 {
-  "fetched_at": "2026-07-26T08:51:16.725876+00:00",
+  "fetched_at": "2026-07-27T09:36:10.419573+00:00",
   "count": 62,
   "abstracts": [
+    {
+      "source": "pubmed",
+      "pmid": "42502508",
+      "title": "Pharmacokinetic and pharmacodynamic characterization of CD8-targeted lentiviral vector for in vivo CD19-directed CAR-T therapy.",
+      "journal": "Molecular therapy. Advances",
+      "authors": "Duback V, Kharkwal SS, Vagin V, Paterson K, Sabbio A et al.",
+      "abstract": "Given challenges with access, manufacturability, and the requirement for lymphodepletion with autologous chimeric antigen receptor (CAR)-T cell therapy, a promising alternative is in vivo-mediated gene delivery using redirected viral vectors to generate tumor-antigen-specific CAR-T cells. While data supporting in vivo CAR-T cells in patients are emerging, limited studies have described the pharmacokinetics (PK) and pharmacodynamics (PD) of this approach. Here, we evaluated the PK/PD of a novel CD8-targeted lentiviral vector called \"fusosome,\" delivering a CD19-directed CAR transgene in xenograft mouse models. In NSG mice without target cells, the fusosome vector genomes cleared rapidly from plasma (90 minutes to 2 hours) and were detectable in tested tissues for up to 1 week. We observed prolonged persistence of viral particles in peripheral blood mononuclear cell (PBMC)-engrafted mice, with vector detection peaking within 10-40 min post-administration, depending on the tissue type. CAR transgene was detectable in various lymphoid organs after 7 days post-vector dosing. Dose-dependent tumor control and specific CAR-T cell generation were observed in tumor-bearing PBMC-engrafted mice. Overall, the PK/PD of fusosome and efficacy in the tumor model supports its potential as an in vivo gene delivery approach to treat patients with B cell lymphomas.",
+      "date": "2026-Sep",
+      "doi": "10.1038/s41577-021-00547-6",
+      "conference": "ASGCT",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42502508/",
+      "sowhat": "Abstract not available"
+    },
     {
       "source": "pubmed",
       "pmid": "42049130",
@@ -108,11 +122,11 @@
       "authors": "Wu X, Lu G, Tian L, Chen S, Caligiuri MA et al.",
       "abstract": "In this first-in-human open-label study, autologous FLT3 CAR-T cells were delivered to two patients with relapsed and refractory FLT3+ AML. Bone marrow examination revealed AML blasts with high but variable surface density of FLT3 expression. Following tumor cytoreduction and lymphodepletion, 1 × 106/kg of FLT3 CAR-T cells were administered, resulting in in vivo CAR-T cell expansion and grade 1 cytokine release syndrome in both patients. Both patients failed to achieve remission after CAR-T cell therapy, but bone marrow examination following therapy revealed the elimination of FLT3+ AML blasts, persistence of FLT3 - AML blasts, and early post-treatment preservation of normal CD34+ hematopoietic stem and progenitor cells (HSPCs) with variable FLT3 expression. Collectively, autologous FLT3 CAR-T cells can be safely administered and can eradicate FLT3⁺ blasts with minimal toxicity, without causing substantial damage to normal CD34⁺ HSPCs; however, they fail to induce leukemic remission due to the heterogeneity of FLT3 expression and the persistence of FLT3⁻ AML blasts.",
       "date": "2026-May",
-      "doi": "10.1038/s41698-026-01466-2",
+      "doi": "10.1182/bloodadvances.2022007405",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42129518/",
-      "sowhat": "FLT3 CAR-T shows target selectivity but insufficient efficacy in relapsed AML, highlighting dosing and antigen density challenges."
+      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
@@ -122,11 +136,11 @@
       "authors": "Bautista J, Echeverría CE, Rodríguez-Marcano MG, López-Cortés A",
       "abstract": "Circadian rhythms shape antitumor immunity by regulating endocrine signaling, vascular permissiveness, leukocyte trafficking, metabolism, and suppressive features of the tumor microenvironment across the 24-h cycle. Here, we propose that biological time may represent an important design variable for CAR T-cell therapy. This concept may be particularly relevant to in vivo CAR T platforms, which could extend temporal control beyond infusion timing through repeatable induction, tunable amplitude, and reversible shutdown. We discuss evidence that CD8⁺ T-cell clocks, neuroendocrine oscillations, endothelial gatekeeping, and rhythmic tumor-microenvironment remodeling influence immune access, effector competence, exhaustion risk, and inflammatory toxicity. We further examine how viral vectors, lipid nanoparticles, and programmable control circuits might enable circadian-aware CAR installation and duty-cycling. Together, these observations support chrono-synthetic CAR T as a testable translational framework for precision immuno-oncology.",
       "date": "2026-May",
-      "doi": "10.1038/s41698-026-01464-4",
+      "doi": "10.1073/pnas.1516953113",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42129307/",
-      "sowhat": "Circadian timing optimization could enhance in vivo CAR-T efficacy and safety by synchronizing cell function with tumor microenvironment rhythms."
+      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
@@ -312,20 +326,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "42285385",
-      "title": "Neutralizing LFA-1 alleviates acute lung injury by diminishing pulmonary retention of CAR-T cells.",
-      "journal": "Pharmacological research",
-      "authors": "Hou R, He W, Li H, Li W, Wang X et al.",
-      "abstract": "On-target, off-tumor toxicity presents a significant challenge in chimeric antigen receptor (CAR) T therapy for solid tumors. Traditional approaches to managing adverse reactions, such as suppressing in vivo CAR-T cell activity, risk impairing their antitumor efficacy, often resulting in treatment failure. Intravenously infused CAR-T cells initially traffic to the lungs, where they are activated by tumor-associated antigens (TAAs) expressed on pulmonary tissues, leading to acute lung injury. To address this, this study developed a strategy involving leukocyte function-associated antigen 1 (LFA-1) neutralization at the time of infusion. This approach modulates CAR-T cell pharmacokinetics to enhance efficacy while minimizing toxicity. Post-infusion, CAR-T cells preferentially sequester and activate in the lung, secreting tumor necrosis factor α (TNF-α), which upregulates intercellular adhesion molecule 1 (ICAM-1) expression on pulmonary endothelial cells. This triggers an \"activation-adhesion\" feedback loop via the LFA-1/ICAM-1 pathway, exacerbating lung injury. Neutralization of LFA-1 during infusion significantly reduces CAR-T cell adhesion to pulmonary endothelium, disrupts this feedback loop, and mitigates acute lung injury. By accelerating the pharmacokinetic progression of CAR-T cells beyond the lung, this strategy not only alleviates the acute toxicity associated with high-dose regimens but also enhances the antitumor efficacy of low-dose CAR-T cells, thus expanding the therapeutic window.",
-      "date": "2026-Jun",
-      "doi": "10.1016/j.phrs.2026.108292",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42285385/",
-      "sowhat": "LFA-1 neutralization reduces CAR-T pulmonary toxicity while preserving antitumor efficacy in solid tumors."
-    },
-    {
-      "source": "pubmed",
       "pmid": "42261652",
       "title": "In Vivo CAR T-Cell Therapy Spurs 100% ORR in Phase I.",
       "journal": "Cancer discovery",
@@ -480,20 +480,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "41593732",
-      "title": "In vivo engineering of CAR-T cells: delivery strategies and clinical translation.",
-      "journal": "Biomarker research",
-      "authors": "Gao Y, Hu J, An N, Wen X, Li C",
-      "abstract": "Chimeric antigen receptor (CAR)-T cell therapy has transformed the treatment landscape for hematologic malignancies. Nonetheless, its broad clinical adoption is constrained by the logistical, financial, and safety burdens associated with ex vivo cell manufacturing. In vivo CAR-T engineering has emerged as a transformative alternative, enabling the direct reprogramming of endogenous T cells through systemic delivery of CAR-encoding constructs via viral or non-viral vectors. This strategy eliminates the need for leukapheresis, genetic modification, and reinfusion, paving the way for simplified, scalable, and potentially “off-the-shelf” immunotherapies. While challenges such as cytokine release syndrome (CRS) and immune effector cell-associated neurotoxicity syndrome (ICANS) remain shared hurdles, in vivo approaches introduce added complexities, including vector immunogenicity and innate immune sensing. By leveraging RNA-based platforms, in vivo CAR-T engineering is evolving into a programmable immunotherapy modality beyond oncology. At the same time, regulatory frameworks for systemic in vivo reprogramming remain underdeveloped, underscoring the need for harmonized guidelines that balance innovation with patient safety. This review synthesizes progress across major delivery platforms, analyzes key translational and regulatory barriers specific to in vivo approaches, and highlights emerging innovations in vector tropism, immune modulation, and scalable manufacturing. As the field matures, in vivo CAR-T strategies may unlock broader therapeutic applications across oncology and autoimmune disease, redefining the accessibility and precision of cellular immunotherapy.",
-      "date": "2026-Jan",
-      "doi": "10.1016/j.addr.2023.115135",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41593732/",
-      "sowhat": "In vivo CAR-T engineering bypasses manufacturing bottlenecks by reprogramming endogenous T cells via systemic vector delivery."
-    },
-    {
-      "source": "pubmed",
       "pmid": "41800026",
       "title": "From Ex Vivo to In Vivo: Advances in Lentiviral Vector Engineering for CAR-T Therapy.",
       "journal": "Immune network",
@@ -603,6 +589,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42088834/",
       "sowhat": "Chemotherapy and ICIs reshape host T-cell repertoire to enhance in vivo CAR-T potency through strategic pre-conditioning."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42285385",
+      "title": "Neutralizing LFA-1 alleviates acute lung injury by diminishing pulmonary retention of CAR-T cells.",
+      "journal": "Pharmacological research",
+      "authors": "Hou R, He W, Li H, Li W, Wang X et al.",
+      "abstract": "On-target, off-tumor toxicity presents a significant challenge in chimeric antigen receptor (CAR) T therapy for solid tumors. Traditional approaches to managing adverse reactions, such as suppressing in vivo CAR-T cell activity, risk impairing their antitumor efficacy, often resulting in treatment failure. Intravenously infused CAR-T cells initially traffic to the lungs, where they are activated by tumor-associated antigens (TAAs) expressed on pulmonary tissues, leading to acute lung injury. To address this, this study developed a strategy involving leukocyte function-associated antigen 1 (LFA-1) neutralization at the time of infusion. This approach modulates CAR-T cell pharmacokinetics to enhance efficacy while minimizing toxicity. Post-infusion, CAR-T cells preferentially sequester and activate in the lung, secreting tumor necrosis factor α (TNF-α), which upregulates intercellular adhesion molecule 1 (ICAM-1) expression on pulmonary endothelial cells. This triggers an \"activation-adhesion\" feedback loop via the LFA-1/ICAM-1 pathway, exacerbating lung injury. Neutralization of LFA-1 during infusion significantly reduces CAR-T cell adhesion to pulmonary endothelium, disrupts this feedback loop, and mitigates acute lung injury. By accelerating the pharmacokinetic progression of CAR-T cells beyond the lung, this strategy not only alleviates the acute toxicity associated with high-dose regimens but also enhances the antitumor efficacy of low-dose CAR-T cells, thus expanding the therapeutic window.",
+      "date": "2026-Aug",
+      "doi": "10.1016/j.phrs.2026.108292",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42285385/",
+      "sowhat": "LFA-1 neutralization reduces CAR-T pulmonary toxicity while preserving antitumor efficacy in solid tumors."
     },
     {
       "source": "pubmed",
