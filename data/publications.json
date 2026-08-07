@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-06T08:47:41.175686+00:00",
-  "count": 73,
+  "fetched_at": "2026-08-07T07:39:15.639887+00:00",
+  "count": 75,
   "publications": [
     {
       "source": "pubmed",
@@ -194,6 +194,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42546776/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42556595",
+      "title": "Cascading Attrition of In Vivo CAR-T Therapy: From Systemic Delivery Failure to Functional Collapse.",
+      "journal": "Critical reviews in oncology/hematology",
+      "authors": "Rao H, Xu S, Chen J, Guo Z",
+      "abstract": "Ex vivo chimeric antigen receptor (CAR)-T cell therapy demonstrates strong efficacy but remains limited by high costs and lengthy manufacturing. In vivo in situ reprogramming provides a scalable \"off-the-shelf\" alternative by directly engineering endogenous T cells; however, clinical translation is hindered by an efficacy-attrition paradox. Here we review the cascading loss of functional vector dose across multi-scale physiological barriers-from opsonin-driven sequestration and protein-corona formation in circulation, to metabolic checkpoints and nuclear transport restrictions within resting T cells. By comparing lentiviral vectors and lipid nanoparticles, we examine how each platform navigates these distinct hurdles. A key insight is that overcoming such stochastic failure cascades requires deterministic rather than incremental design: rational integration of synthetic biology tools-immune-cloaking surfaces, logic-gated circuits-enables precise navigation through complex in vivo microenvironments. This progress shifts the field from passive dose escalation toward engineered resilience, transforming in vivo CAR-T generation into a clinically viable platform for hematologic malignancies, solid tumors, and autoimmune diseases.",
+      "date": "2026-08",
+      "doi": "10.1016/j.critrevonc.2026.105521",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42556595/",
       "sowhat": "Abstract not available",
       "category": null
     },
@@ -419,6 +434,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42508766/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42470101",
+      "title": "Injectable bioinstructive microfoam for rapid bedside/in vivo programming of CAR-T cells.",
+      "journal": "Molecular therapy : the journal of the American Society of Gene Therapy",
+      "authors": "Stephan SB, Cummings CL, Fitzgerald K, West-Foyle H, Cavanaugh EJ et al.",
+      "abstract": "While chimeric antigen receptor (CAR) T cell therapies have transformed the treatment of hematological malignancies and are being explored for solid tumors, their widespread use remains limited by high costs, complex manufacturing requirements, long wait times, and unequal access. Here, we describe a methylcellulose-based gene therapy microfoam that enables rapid generation of CAR-T cells for subcutaneous administration within hours of blood collection. Specifically, we demonstrate that colocalization of T cells and vector within the foam promotes efficient CAR gene transfer. Following subcutaneous injection, newly programmed CAR-T cells disperse systemically and mediate regression of distal tumors in mouse xenograft models of lymphoma and hepatocellular carcinoma, with antitumor activity comparable to conventionally manufactured CAR-T cells. The platform operates as a sterile closed system and does not require prolonged cell culture, centralized manufacturing facilities, or cleanroom-based cell production. These findings establish proof of concept for a simplified CAR-T generation strategy that may reduce manufacturing complexity and infrastructure requirements relative to conventional CAR-T therapy while improving the accessibility of cellular immunotherapies.",
+      "date": "2026-07",
+      "doi": "10.1016/j.ymthe.2026.07.037",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42470101/",
       "sowhat": "Abstract not available",
       "category": null
     },
