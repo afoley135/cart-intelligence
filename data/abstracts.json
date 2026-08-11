@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-10T07:47:12.797613+00:00",
-  "count": 62,
+  "fetched_at": "2026-08-11T07:40:00.733578+00:00",
+  "count": 63,
   "abstracts": [
     {
       "source": "pubmed",
@@ -494,20 +494,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "41751878",
-      "title": "In Vivo CAR-T Therapies-A New Era of Programmable Immunity.",
-      "journal": "International journal of molecular sciences",
-      "authors": "Pierini S, Qureshi R, Pustylnikov S, Bartosh Z, Akimova T",
-      "abstract": "Ex vivo chimeric antigen receptor (CAR) T cell therapies have achieved remarkable clinical success over the past decade, enabling effective treatment of several hematologic malignancies once considered incurable. However, their broader use remains limited. Barriers include complex and costly manufacturing, long production timelines, and risk of significant side effects and toxicities, challenges that have been further exacerbated by the reduced investment across the biotech sector since 2022. Emerging in vivo CAR-T approaches seek to overcome many of these limitations by generating CAR-T cells directly within the patient, most commonly using lentiviral or lipid nanoparticles (LNPs) delivery vectors. This strategy has the potential to streamline production, allow more tunable and repeatable dosing, and markedly reduce overall costs. However, it also raises new questions regarding genomic safety, the specificity and durability of CAR expression, host immune responses, pharmacokinetics, and regulatory oversight. In this review, we summarize the major and emerging in vivo CAR-T delivery platforms-analyzing their underlying technology, preclinical and clinical performance, and developmental paths-and discuss the scientific, technical, and biological challenges shaping this rapidly emerging field. We further outline future directions and opportunities in the field of programmable T cell immunity.",
-      "date": "2026-Feb",
-      "doi": "10.1111/cts.70101",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41751878/",
-      "sowhat": "In vivo CAR-T manufacturing via LNP/lentiviral vectors could simplify production and reduce costs versus ex vivo approaches."
-    },
-    {
-      "source": "pubmed",
       "pmid": "41749385",
       "title": "In vivo CAR-T engineering: insights from the 2025 ASH annual meeting.",
       "journal": "Experimental hematology & oncology",
@@ -564,8 +550,36 @@
     },
     {
       "source": "pubmed",
+      "pmid": "42574812",
+      "title": "In vivo generation of CD19 CAR T cells for the treatment of mouse systemic lupus erythematosus.",
+      "journal": "International immunopharmacology",
+      "authors": "Xie H, Chen D, Lin Z, Luo Q, Chen W et al.",
+      "abstract": "Systemic lupus erythematosus (SLE) is a severe autoimmune disease with significant health impacts, yet effective therapies remain elusive. Recent advances underscore the promise of chimeric antigen receptor (CAR) T-cell therapy for SLE. However, conventional CAR T cells manufacturing is complex, limiting its clinical application.",
+      "date": "2026-Aug",
+      "doi": "10.1016/j.intimp.2026.117256",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42574812/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42574802",
+      "title": "In vivo CAR-T therapy: The shift from ex vivo culturing to direct in situ immune reprogramming.",
+      "journal": "International immunopharmacology",
+      "authors": "Gopalakrishnan J, Rathod B, Puri S",
+      "abstract": "CAR T-cell therapy using chimeric antigen receptors (CARs) has provided a radical shift in the treatment of several hematological malignancies, producing high response rates and durable remissions. However, conventional ex vivo manufacturing is limited by complex processing steps, high costs, variability in product quality, and clinically relevant delays that restrict patient eligibility. In vivo manufacturing has emerged as a next-generation approach in which immune cells are reprogrammed directly within the patient, eliminating the need for exogenous handling and culture. This strategy uses viral and non-viral delivery platforms, including lentiviral vectors, adeno-associated viruses, lipid nanoparticles, and targeted polymer systems, together with DNA, mRNA, and genome editing tools such as CRISPR-based technologies. Early feasibility data are supported mainly by preclinical models and translational studies, while safety remains a central concern due to potential immunotoxicity, off-target transduction, and regulatory challenges. This review highlights key engineering strategies enabling in vivo CAR T-cell generation, summarizes emerging clinical research and development, and discusses future opportunities for expanding in vivo CAR T-cell therapies as scalable immunotherapy platforms.",
+      "date": "2026-Aug",
+      "doi": "10.1016/j.intimp.2026.117255",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42574802/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
       "pmid": "42556595",
-      "title": "Cascading Attrition of In Vivo CAR-T Therapy: From Systemic Delivery Failure to Functional Collapse.",
+      "title": "Cascading attrition of in vivo CAR-T therapy: From systemic delivery failure to functional collapse.",
       "journal": "Critical reviews in oncology/hematology",
       "authors": "Rao H, Xu S, Chen J, Guo Z",
       "abstract": "Ex vivo chimeric antigen receptor (CAR)-T cell therapy demonstrates strong efficacy but remains limited by high costs and lengthy manufacturing. In vivo in situ reprogramming provides a scalable \"off-the-shelf\" alternative by directly engineering endogenous T cells; however, clinical translation is hindered by an efficacy-attrition paradox. Here we review the cascading loss of functional vector dose across multi-scale physiological barriers-from opsonin-driven sequestration and protein-corona formation in circulation, to metabolic checkpoints and nuclear transport restrictions within resting T cells. By comparing lentiviral vectors and lipid nanoparticles, we examine how each platform navigates these distinct hurdles. A key insight is that overcoming such stochastic failure cascades requires deterministic rather than incremental design: rational integration of synthetic biology tools-immune-cloaking surfaces, logic-gated circuits-enables precise navigation through complex in vivo microenvironments. This progress shifts the field from passive dose escalation toward engineered resilience, transforming in vivo CAR-T generation into a clinically viable platform for hematologic malignancies, solid tumors, and autoimmune diseases.",
