@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-11T07:40:00.733578+00:00",
+  "fetched_at": "2026-08-12T07:23:12.300394+00:00",
   "count": 63,
   "abstracts": [
     {
@@ -508,20 +508,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "41680851",
-      "title": "T-cell-targeted fusogenic nanovesicles generate CAR-T cells in vivo for rheumatoid arthritis therapy.",
-      "journal": "Biomarker research",
-      "authors": "Liang S, Lin K, Zhou S, Zeng Y, Chen Y et al.",
-      "abstract": "Rheumatoid arthritis (RA) is a chronic autoimmune disease in which pathogenic B cells drive persistent inflammation and joint damage. Although CD19-targeted CAR-T cell therapy enables effective B-cell depletion, conventional ex vivo manufacturing and viral vector-based genetic modification limit its scalability and clinical application. Strategies that allow efficient CAR-T cell generation directly in vivo may therefore provide a more practical approach to sustained immune modulation.",
-      "date": "2026-Feb",
-      "doi": "10.1016/j.ard.2025.06.2120",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41680851/",
-      "sowhat": "In vivo CAR-T generation via nanovesicles could circumvent manufacturing bottlenecks, enabling scalable RA therapy without viral vectors."
-    },
-    {
-      "source": "pubmed",
       "pmid": "41672452",
       "title": "Toward In Vivo CAR T Cell Therapy: Perfecting CAR and Lipid Nanoparticle Design.",
       "journal": "Nano letters",
@@ -547,6 +533,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42088834/",
       "sowhat": "Chemotherapy and ICIs reshape host T-cell repertoire to enhance in vivo CAR-T potency through strategic pre-conditioning."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42576384",
+      "title": "Lipid Nanoparticles Based Multi-Scale Systemic Immune Programming for Cancer Therapy.",
+      "journal": "Molecular therapy : the journal of the American Society of Gene Therapy",
+      "authors": "Lin X, Li Y, Shen X, Li B, Xu Y",
+      "abstract": "The clinical reach of cancer immunotherapy is currently limited by off-target toxicity, physical barriers in solid tumors, and the complex manufacturing of personalized cell therapies. This review presents multi-scale systemic immune programming as a transformative approach, in which lipid nanoparticles (LNPs) function not merely as delivery vehicles but as programmable platforms that direct immune responses across biological scales. At the molecular and cellular levels, LNP design and intracellular delivery regulate mRNA stability, translation, and antigen presentation. At the tissue level, intratumoral mRNA delivery reprograms the tumor microenvironment to overcome stromal barriers and immunosuppression. At the systemic level, LNPs coordinate immune responses, including in vivo CAR-T engineering and vaccine-driven immune memory. At the organismal level, liver-targeted LNPs restore metabolic regulators, reverse cachexia, and improve host resilience. Building on this framework, we propose a dual-track therapeutic paradigm that integrates tumor-directed immune activation with host physiological restoration. Together, this approach positions LNP-based therapies to treat cancer as a systemic immune-metabolic disorder rather than a localized disease.",
+      "date": "2026-Aug",
+      "doi": "10.1016/j.ymthe.2026.08.007",
+      "conference": "ASGCT",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42576384/",
+      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
