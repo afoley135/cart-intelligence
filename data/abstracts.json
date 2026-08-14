@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-13T07:51:43.511006+00:00",
-  "count": 63,
+  "fetched_at": "2026-08-14T07:18:18.270615+00:00",
+  "count": 65,
   "abstracts": [
     {
       "source": "pubmed",
@@ -546,6 +546,34 @@
       "conference": "ASGCT",
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42576384/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42587334",
+      "title": "FECH, a novel metabolic target influencing CAR T-cell phenotype and function.",
+      "journal": "Biomarker research",
+      "authors": "Pellegrino M, Vespa S, Salvatori I, Mac GD, Valle C et al.",
+      "abstract": "Recent phase I/II clinical trials have demonstrated that chimeric antigen receptor (CAR) T cells targeting the disialogangliosade GD2 represent a promising therapeutic option for pediatric patients with relapsed or refractory high-risk neuroblastoma (NB). However, incomplete and heterogeneous clinical responses highlight the need to improve CAR T-cell efficacy and persistence. We previously demonstrated the therapeutic benefit of combining the dual insulin-like growth factor 1 receptor/insulin receptor (IGF1R/IR) inhibitor linsitinib (LIN) with third-generation GD2.CAR T cells in diffuse intrinsic pontine glioma, where LIN induced tumor cell death and modulated the CAR T-cell phenotype. Here, we extended these findings to NB and explored the mechanisms of LIN-mediated CAR T-cell modulation. LIN, in combination with CAR T cells, significantly enhanced antitumor activity in LIN-sensitive NB cell lines. Mechanistically, we investigated ferrochelatase (FECH), a mitochondrial enzyme involved in heme biosynthesis, and a known off-target of LIN. LIN treatment or selective FECH inhibition with N-methyl protoporphyrin IX reduced intracellular heme, attenuated activation and exhaustion marker expression and promoted central memory characteristics associated with improved in vivo CAR T-cell persistence and functionality. Both treatments similarly decreased ATP production by reducing glycolysis and mitochondrial respiration in chronical antigen-activated CAR T cells. Collectively, these data reveal a dual mechanism of action for LIN, combining direct tumor cell cytotoxicity with metabolic reprogramming of CAR T cells linked to heme biosynthesis. These findings identify heme metabolism as regulator of CAR T-cell phenotype and function and support further investigation of FECH to enhance therapeutic efficacy in NB and beyond.",
+      "date": "2026-Aug",
+      "doi": "10.1038/s41590-018-0045-y",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42587334/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42587055",
+      "title": "An inherent T cell-activating mRNA delivery carrier for in vivo CAR T generation.",
+      "journal": "Nature materials",
+      "authors": "Cao Q, Yao Y, Zheng W, Liu H, Jiang M et al.",
+      "abstract": "The clinical success of chimeric antigen receptor (CAR) T cell therapy requires scalable, non-invasive strategies for in vivo T cell engineering. Although mRNA delivery offers a promising alternative, lipid-nanoparticle-based carriers show limited efficiency for in vivo T cell transfection and typically require antibody conjugation. Here we report an inherent T cell-activating polymer-lipid nanoparticle that enables ligand-free, efficient mRNA transfection and activation of T cells in vivo. This mRNA delivery vehicle, composed of p-toluenesulfonyl arginine (RT)-modified oligoethylenimine-based lipid nanoparticles (ERTLNPs), preferentially mediated mRNA transfection in the spleen following systemic administration. Without exogenous stimulation, ERTLNPs intrinsically activated T cells, triggering robust mRNA expression and proliferation. Mechanistically, ERTLNPs engaged the PI3K/AKT/mTOR signalling axis to reprogram T cell metabolism, promoting expansion and restraining exhaustion. The systemic delivery of mRNA encoding fibroblast activation protein CAR via ERTLNPs contributed to the in situ generation of functional CAR T cells, which efficiently eliminated pathological fibroblasts in models of cancer and fibrosis, with minimal off-target effects. This ligand-free, metabolically reprogramming mRNA delivery system provides a clinically translatable approach for in vivo CAR T cell generation.",
+      "date": "2026-Aug",
+      "doi": "10.4161/cbt.11.3.14099",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42587055/",
       "sowhat": "Abstract not available"
     },
     {
