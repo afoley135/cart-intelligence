@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-17T06:37:14.037115+00:00",
-  "count": 84,
+  "fetched_at": "2026-08-18T06:53:51.868676+00:00",
+  "count": 85,
   "publications": [
     {
       "source": "pubmed",
@@ -209,6 +209,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42502508/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "A lipid nanoparticle platform for high yield CRISPR-targeted homology directed repair enables fully non-viral CAR T cell generation",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Chen, J. J., Lawanprasert, A., Kleinhenz, A., Namala, M. G. D., Tang, Y. et al.",
+      "abstract": "CRISPR-mediated homology directed repair (HDR) enables targeted CAR integration with improved fitness and therapeutic potential of CAR T cells. However, current methods for generating HDR-engineered CAR T cells rely on viral transduction or electroporation, approaches that limit global implementation and constrain patient access due to their cost, toxicity, and requirement for centralized manufacturing. Through a screen of ionizable lipids, we identified LNP systems that enable CRISPR-mediated gene knock-in (KI) in primary human T cells and are amenable to hand mixing by ethanol injection as a research tool or machine formulation for larger scale manufacturing. Modifying the linear dsDNA HDR template with truncated Cas9 target sequences (tCTS) enhanced HDR rates across multiple LNP systems. We optimized two LNP formulations capable of HDR-mediated KI of a large 4kB CD19 CAR-EGFR HDR template into the TRAC locus with rates of [&ge;]8% and >10x improved edited cell yields compared to electroporation. We demonstrate that LNP-generated CAR T cells exhibited similar growth kinetics, activation states, differentiation states, and killing capacity compared to electroporation-generated CAR T cells. Our LNP platform components are fully disclosed, commercially sourced, and enable efficient fully non-viral CRISPR-HDR cell engineering across diverse applications.",
+      "date": "2026-08-05",
+      "doi": "10.64898/2026.08.04.741347",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.08.04.741347",
       "sowhat": "Abstract not available",
       "category": null
     },
