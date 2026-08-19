@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-18T06:53:51.868676+00:00",
-  "count": 85,
+  "fetched_at": "2026-08-19T07:10:47.674839+00:00",
+  "count": 87,
   "publications": [
     {
       "source": "pubmed",
@@ -215,6 +215,21 @@
     {
       "source": "biorxiv",
       "pmid": null,
+      "title": "Multi-omics characterization of extracellular vesicles derived from virus-positive Merkel cell carcinoma cells",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Westerkamp, U., Bluemke, P., Salviano-Silva, A., Schmidt, C., Mair, T. et al.",
+      "abstract": "Merkel cell carcinoma (MCC) is a highly aggressive skin cancer, with approximately 80% of cases driven by Merkel cell polyomavirus (MCPyV). Although extracellular vesicles (EVs) are increasingly recognized as mediators of intercellular communication within the tumor microenvironment, their molecular cargo in MCPyV positive MCC has not been comprehensively characterized. Here, we performed a multi-omics characterization of EVs released by two MCPyV positive MCC cell lines. EVs were isolated by differential ultracentrifugation and characterized by nanoparticle tracking analysis, imaging flow cytometry, cryo-electron microscopy, and immunoblotting, demonstrating a heterogeneous population of small and large EVs. Proteomic and transcriptomic analyses revealed that MCC derived EVs possess distinct protein, mRNA, and miRNA cargo compared with their parental cells, with enrichment of molecules associated with gene expression, RNA processing, intracellular signaling, and vesicle mediated transport. Despite differences in the molecular composition of EVs derived from WaGa and MKL1 cells, functional enrichment analyses revealed highly similar biological pathways. To investigate whether the viral oncoprotein small T antigen (sT) contributes to EV cargo composition, EVs from inducible sT knockdown cells were analyzed. Loss of sT was associated with modest changes in the EV proteome and mRNA cargo, whereas the overall EV-associated miRNA profile remained largely unchanged. Collectively, these findings provide the first comprehensive molecular characterization of EVs released by MCPyV positive MCC cells and establish a foundation for investigating the contribution of EV-mediated communication to MCC biology and tumor microenvironment interactions.",
+      "date": "2026-08-17",
+      "doi": "10.64898/2026.08.15.745013",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.08.15.745013",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
       "title": "A lipid nanoparticle platform for high yield CRISPR-targeted homology directed repair enables fully non-viral CAR T cell generation",
       "journal": "bioRxiv (preprint)",
       "authors": "Chen, J. J., Lawanprasert, A., Kleinhenz, A., Namala, M. G. D., Tang, Y. et al.",
@@ -359,6 +374,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42587055/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42611631",
+      "title": "In Situ Generation of Claudin18.2-Specific CAR-T Cells via Lipid Nanoparticle-Mediated mRNA Delivery.",
+      "journal": "Journal of visualized experiments : JoVE",
+      "authors": "Li H, Li J, Wang Y, Chen L",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has achieved remarkable clinical success in hematological malignancies; however, its broader application is limited by high manufacturing costs and insufficient efficacy against solid tumors. To overcome these challenges, an in situ CAR-T cell generation strategy was developed based on lipid nanoparticle (LNP)-mediated delivery of CAR mRNA targeting Claudin18.2, enabling the transient production of CAR-T cells directly within tumor tissue. Following LNP transfection, activated T cells exhibited efficient surface expression of CARs. These transient CAR-T cells demonstrated potent cytotoxic activity against Claudin18.2-positive gastric carcinoma cell lines, including NUGC4 and NCI-N87, and produced significant antitumor efficacy in tumor-bearing mouse models. This protocol describes detailed procedures for in vitro transcription of CAR mRNA, LNP formulation, T-cell activation and transfection, CAR expression analysis, and in vitro and in vivo functional evaluation of CAR-T-mediated cytotoxicity. Taken together, this strategy provides a cost-effective and versatile platform for generating transient CAR-T cells and offers a promising approach for treating solid tumors.",
+      "date": "2026-08",
+      "doi": "10.3791/71482",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42611631/",
       "sowhat": "Abstract not available",
       "category": null
     },
