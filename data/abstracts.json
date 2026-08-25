@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-24T06:54:27.506577+00:00",
+  "fetched_at": "2026-08-25T06:44:01.757241+00:00",
   "count": 66,
   "abstracts": [
     {
@@ -85,20 +85,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42173871/",
       "sowhat": "In vivo CAR-T platforms via viral vectors and LNPs offer manufacturing simplification and cost reduction but face novel regulatory toxicity and immunogenicity challenges."
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42173446",
-      "title": "Rapid receptor internalization potentiates CD7-targeted lipid nanoparticles for efficient mRNA delivery to T cells and in vivo CAR T-cell engineering.",
-      "journal": "Journal of controlled release : official journal of the Controlled Release Society",
-      "authors": "Zeng J, Papp TE, Akyianu A, Bahena A, Leo L et al.",
-      "abstract": "Targeted lipid nanoparticles (tLNPs) enable efficient mRNA delivery to T cells, allowing for in situ generation of chimeric antigen receptor (CAR) T cells without ex vivo manipulation. This strategy has shown promising therapeutic efficacy in preclinical studies of cardiac fibrosis, cancer, and autoimmune diseases. While multiple T-cell surface receptors have been targeted across studies for tLNP-mediated in vivo CAR T-cell generation and exhibit diverse efficiencies, their comparative performance and the mechanisms underlying these differences remain unclear. Here, we systematically compared tLNPs with antibody-based moieties targeting T-cell receptors including CD2, CD4, CD5, CD7, CD8, or a CD4 + 8 dual-targeting combination under identical conditions, assessing their mRNA delivery efficiency in human T cells and PBMCs in vitro, and subsequently validating the best performer in vivo in humanized mice. Among all moieties tested, CD7-targeted tLNPs achieved the highest mRNA delivery to T cells and efficiently generated functional aCD20 CAR T cells in vivo. Mechanistic analysis revealed that receptor internalization, rather than the receptor abundance, is the primary determinant of delivery efficiency, a property intrinsic to each receptor and largely independent of antibody clone. These findings provide a rational framework for selecting optimal targeting moiety to enable highly efficient in vivo CAR T-cell engineering.",
-      "date": "2026-May",
-      "doi": "10.1016/j.jconrel.2026.115043",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42173446/",
-      "sowhat": "CD7-targeted LNPs enable efficient in vivo CAR-T engineering without ex vivo manipulation via rapid receptor internalization."
     },
     {
       "source": "pubmed",
@@ -494,20 +480,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "41672452",
-      "title": "Toward In Vivo CAR T Cell Therapy: Perfecting CAR and Lipid Nanoparticle Design.",
-      "journal": "Nano letters",
-      "authors": "Sciuto L, Kooijmans SAA, Schiffelers RM",
-      "abstract": "CAR T cell therapy represents a leading therapeutic modality in the treatment of hematological cancers. However, conventional ex vivo manufacturing processes are extremely complex, costly, and time-consuming. Hence, in vivo CAR-T cell therapy represents a promising alternative, where T cells are genetically modified directly within the patient. This novel approach requires the careful design of three modular and interdependent nanoscale parameters: CAR architecture, targeted lipid nanoparticle delivery systems, and nucleic acid cargo format. Each component is highly modular, therefore systematic optimization can enhance the safety and efficacy of in vivo CAR T cell generation. Here, we review the molecular and mechanistic principles underlying this therapeutic strategy, emphasizing how these nanoscale design features govern CAR T cell production and functional performance in vivo. Advancing our understanding of these parameters is critical to developing efficient, safe, and clinically translatable in vivo CAR T cell cancer therapies.",
-      "date": "2026-Feb",
-      "doi": "10.1084/jem.20230903",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41672452/",
-      "sowhat": "In vivo CAR-T manufacturing eliminates ex vivo complexity by optimizing LNP delivery, CAR architecture, and nucleic acid cargo design simultaneously."
-    },
-    {
-      "source": "pubmed",
       "pmid": "42088834",
       "title": "Remodeling memory T cells with chemotherapy and immune checkpoint inhibitors as host pre-conditioning to empower in vivo CAR-T therapy.",
       "journal": "Synthetic and systems biotechnology",
@@ -519,6 +491,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42088834/",
       "sowhat": "Chemotherapy and ICIs reshape host T-cell repertoire to enhance in vivo CAR-T potency through strategic pre-conditioning."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42636161",
+      "title": "T-cell immunosenescence limits CD19 CAR T-cell function in chronic lymphocytic leukemia.",
+      "journal": "Blood",
+      "authors": "Noll JH, Dersh D, Li JY, Hemani H, Lavorando M et al.",
+      "abstract": "CD19-directed CAR T-cells (CTL019) can produce durable remissions in chronic lymphocytic leukemia (CLL), but therapeutic success depends on whether autologous T-cells expand, persist, and retain cytotoxic function after manufacturing. Failure of CLL T-cells is often attributed to exhaustion, although many dysfunctional CLL T-cells retain inflammatory cytokine production. We tested whether this paradox reflects immunosenescence, an aging-like program defined by costimulatory loss, DNA damage, inflammatory secretion, repertoire restriction, and proliferative arrest. In response-linked preinfusion CTL019 products, nonresponders and short partial responders had higher senescence and senescence-associated secretory phenotype (SASP) programs than the functional-responder group, comprising complete responders and partial responders with transformed disease. These programs were detectable before infusion and became more prominent during manufacture in susceptible products. They tracked with weak in vivo CAR T-cell expansion and were associated with inferior survival. Serum proteomics revealed a circulating, CLL-associated SASP-like inflammatory milieu in nonresponders. Flow cytometry and T-cell receptor (TCR) profiling showed that poor responders carried CD27⁻CD28⁻ and KLRG1⁺ CD8 T-cells at apheresis, lower product CD27, and reduced product TCR diversity. Research-manufactured CAR T-cells from treatment-naïve CLL samples displayed the same state, most prominently in CD4 CAR T-cells, with SA-β-gal, p16, p53, DNA damage, depletion of less-differentiated states, and senescence-enriched transcriptomes. Under repeated CD19 stimulation, CLL-derived products reached a proliferative ceiling, and p53-high products lost cytotoxic reserve. Ibrutinib improved proliferative fitness, attenuated senescence-associated features and SASP output in paired patient and direct-exposure assays, and enhanced CAR T-cell expansion in an ibrutinib-resistant CLL model. Together, these data identify immunosenescence as a measurable and functionally consequential barrier to CAR T-cell efficacy in CLL and a candidate for therapeutic modulation.",
+      "date": "2026-Aug",
+      "doi": "10.1182/blood.2025032274",
+      "conference": "ASH",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42636161/",
+      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
@@ -540,7 +526,7 @@
       "title": "In vivo CAR T cells on the highway: a roadmap for the next decade.",
       "journal": "Expert opinion on biological therapy",
       "authors": "Barden M, Harrer DC, Abken H",
-      "abstract": "Chimeric antigen receptor (CAR) T cell therapy has shown efficacy in the treatment of hematological malignancies. However, the application to a broader patient population is still limited by the complex logistics in coordinating the lymphodepleting chemotherapy and the labor-, time-, and cost-intensive ex vivo manufacturing of patients' CAR T cells in specialized centers. By combining recent advances in lipid nanotechnology, RNA chemistry, and viral particle targeting, engineering CAR T cells in the patient's blood stream is becoming an emerging option that may overcome current limitations. Advanced pre-clinical and early clinical studies support this approach by demonstrating successful engineering of CAR T cells in vivo and producing some anti-tumor responses in clinical trials.",
+      "abstract": "Chimeric antigen receptor (CAR) T cell therapy has shown efficacy in the treatment of hematological malignancies. However, the application to a broader patient population is still limited by the complex logistics in coordinating the lymphodepleting chemotherapy and the labor-, time-, and cost-intensive ex vivo manufacturing of patients' CAR T cells in specialized centers. By combining recent advances in lipid nanotechnology, RNA chemistry, and viral particle targeting, engineering CAR T cells in the patient's bloodstream is becoming an emerging option that may overcome current limitations. Advanced pre-clinical and early clinical studies support this approach by demonstrating successful engineering of CAR T cells in vivo and producing some anti-tumor responses in clinical trials.",
       "date": "2026-Aug",
       "doi": "10.1080/14712598.2026.2722287",
       "conference": null,
@@ -645,6 +631,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42261652/",
       "sowhat": "KLN-1010 achieves 100% ORR with MRD clearance in multiple myeloma, validating in vivo CAR-T manufacturing strategy."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42173446",
+      "title": "Rapid receptor internalization potentiates CD7-targeted lipid nanoparticles for efficient mRNA delivery to T cells and in vivo CAR T-cell engineering.",
+      "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+      "authors": "Zeng J, Papp TE, Akyianu A, Bahena A, Leo L et al.",
+      "abstract": "Targeted lipid nanoparticles (tLNPs) enable efficient mRNA delivery to T cells, allowing for in situ generation of chimeric antigen receptor (CAR) T cells without ex vivo manipulation. This strategy has shown promising therapeutic efficacy in preclinical studies of cardiac fibrosis, cancer, and autoimmune diseases. While multiple T-cell surface receptors have been targeted across studies for tLNP-mediated in vivo CAR T-cell generation and exhibit diverse efficiencies, their comparative performance and the mechanisms underlying these differences remain unclear. Here, we systematically compared tLNPs with antibody-based moieties targeting T-cell receptors including CD2, CD4, CD5, CD7, CD8, or a CD4 + 8 dual-targeting combination under identical conditions, assessing their mRNA delivery efficiency in human T cells and PBMCs in vitro, and subsequently validating the best performer in vivo in humanized mice. Among all moieties tested, CD7-targeted tLNPs achieved the highest mRNA delivery to T cells and efficiently generated functional aCD20 CAR T cells in vivo. Mechanistic analysis revealed that receptor internalization, rather than the receptor abundance, is the primary determinant of delivery efficiency, a property intrinsic to each receptor and largely independent of antibody clone. These findings provide a rational framework for selecting optimal targeting moiety to enable highly efficient in vivo CAR T-cell engineering.",
+      "date": "2026-Aug",
+      "doi": "10.1016/j.jconrel.2026.115043",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42173446/",
+      "sowhat": "CD7-targeted LNPs enable efficient in vivo CAR-T engineering without ex vivo manipulation via rapid receptor internalization."
     },
     {
       "source": "pubmed",

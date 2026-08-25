@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-24T06:54:05.871325+00:00",
-  "count": 90,
+  "fetched_at": "2026-08-25T06:43:44.564074+00:00",
+  "count": 91,
   "publications": [
     {
       "source": "pubmed",
@@ -398,7 +398,7 @@
       "title": "In vivo CAR T cells on the highway: a roadmap for the next decade.",
       "journal": "Expert opinion on biological therapy",
       "authors": "Barden M, Harrer DC, Abken H",
-      "abstract": "Chimeric antigen receptor (CAR) T cell therapy has shown efficacy in the treatment of hematological malignancies. However, the application to a broader patient population is still limited by the complex logistics in coordinating the lymphodepleting chemotherapy and the labor-, time-, and cost-intensive ex vivo manufacturing of patients' CAR T cells in specialized centers. By combining recent advances in lipid nanotechnology, RNA chemistry, and viral particle targeting, engineering CAR T cells in the patient's blood stream is becoming an emerging option that may overcome current limitations. Advanced pre-clinical and early clinical studies support this approach by demonstrating successful engineering of CAR T cells in vivo and producing some anti-tumor responses in clinical trials.",
+      "abstract": "Chimeric antigen receptor (CAR) T cell therapy has shown efficacy in the treatment of hematological malignancies. However, the application to a broader patient population is still limited by the complex logistics in coordinating the lymphodepleting chemotherapy and the labor-, time-, and cost-intensive ex vivo manufacturing of patients' CAR T cells in specialized centers. By combining recent advances in lipid nanotechnology, RNA chemistry, and viral particle targeting, engineering CAR T cells in the patient's bloodstream is becoming an emerging option that may overcome current limitations. Advanced pre-clinical and early clinical studies support this approach by demonstrating successful engineering of CAR T cells in vivo and producing some anti-tumor responses in clinical trials.",
       "date": "2026-08",
       "doi": "10.1080/14712598.2026.2722287",
       "mesh_terms": [],
@@ -419,6 +419,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42629461/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42636161",
+      "title": "T-cell immunosenescence limits CD19 CAR T-cell function in chronic lymphocytic leukemia.",
+      "journal": "Blood",
+      "authors": "Noll JH, Dersh D, Li JY, Hemani H, Lavorando M et al.",
+      "abstract": "CD19-directed CAR T-cells (CTL019) can produce durable remissions in chronic lymphocytic leukemia (CLL), but therapeutic success depends on whether autologous T-cells expand, persist, and retain cytotoxic function after manufacturing. Failure of CLL T-cells is often attributed to exhaustion, although many dysfunctional CLL T-cells retain inflammatory cytokine production. We tested whether this paradox reflects immunosenescence, an aging-like program defined by costimulatory loss, DNA damage, inflammatory secretion, repertoire restriction, and proliferative arrest. In response-linked preinfusion CTL019 products, nonresponders and short partial responders had higher senescence and senescence-associated secretory phenotype (SASP) programs than the functional-responder group, comprising complete responders and partial responders with transformed disease. These programs were detectable before infusion and became more prominent during manufacture in susceptible products. They tracked with weak in vivo CAR T-cell expansion and were associated with inferior survival. Serum proteomics revealed a circulating, CLL-associated SASP-like inflammatory milieu in nonresponders. Flow cytometry and T-cell receptor (TCR) profiling showed that poor responders carried CD27⁻CD28⁻ and KLRG1⁺ CD8 T-cells at apheresis, lower product CD27, and reduced product TCR diversity. Research-manufactured CAR T-cells from treatment-naïve CLL samples displayed the same state, most prominently in CD4 CAR T-cells, with SA-β-gal, p16, p53, DNA damage, depletion of less-differentiated states, and senescence-enriched transcriptomes. Under repeated CD19 stimulation, CLL-derived products reached a proliferative ceiling, and p53-high products lost cytotoxic reserve. Ibrutinib improved proliferative fitness, attenuated senescence-associated features and SASP output in paired patient and direct-exposure assays, and enhanced CAR T-cell expansion in an ibrutinib-resistant CLL model. Together, these data identify immunosenescence as a measurable and functionally consequential barrier to CAR T-cell efficacy in CLL and a candidate for therapeutic modulation.",
+      "date": "2026-08",
+      "doi": "10.1182/blood.2025032274",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42636161/",
       "sowhat": "Abstract not available",
       "category": null
     },
