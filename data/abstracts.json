@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T06:44:01.757241+00:00",
+  "fetched_at": "2026-08-26T07:22:30.867969+00:00",
   "count": 66,
   "abstracts": [
     {
@@ -466,20 +466,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "41749385",
-      "title": "In vivo CAR-T engineering: insights from the 2025 ASH annual meeting.",
-      "journal": "Experimental hematology & oncology",
-      "authors": "Asadi G, Rajabinejad M",
-      "abstract": "In vivo chimeric antigen receptor (CAR)-T engineering is a prominent field of research in cancer immunology, in which vectors are used to reprogram endogenous T-cells into CAR-T cells. Viral and nonviral platforms presented at the 67th Annual Meeting of the American Society of Hematology (ASH) offer precise T-cell targeting and efficient CAR expression. Preclinical models demonstrated robust generation of CAR-T cells, potent tumor clearance, and strong clinical translational potential. However, certain limitations remained to be addressed in future studies. This correspondence summarizes the key findings from the meeting, discusses current translational challenges, and highlights future directions.",
-      "date": "2026-Feb",
-      "doi": "10.1182/blood-2025-4117",
-      "conference": "ASH",
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41749385/",
-      "sowhat": "In vivo CAR-T engineering using viral/nonviral vectors shows preclinical efficacy but faces translational hurdles requiring further development."
-    },
-    {
-      "source": "pubmed",
       "pmid": "42088834",
       "title": "Remodeling memory T cells with chemotherapy and immune checkpoint inhibitors as host pre-conditioning to empower in vivo CAR-T therapy.",
       "journal": "Synthetic and systems biotechnology",
@@ -504,6 +490,20 @@
       "conference": "ASH",
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42636161/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42576385",
+      "title": "In vivo engineering of T cells with a synthetic cytokine receptor enables selective enrichment and expansion of anti-CD22 CAR T cells.",
+      "journal": "Molecular therapy : the journal of the American Society of Gene Therapy",
+      "authors": "Friesen TJ, Sheih A, Perdue N, Ericson NG, Jarrell D et al.",
+      "abstract": "Ex vivo-manufactured chimeric antigen receptor (CAR) T cells targeting CD19 have transformed treatment strategies for patients with B cell malignancies and have shown promising results in autoimmune disease. Yet despite their success, significant barriers remain that impede patient access to these therapies, including their complex manufacturing and the need for lymphodepleting chemotherapy. Moreover, many patients who receive ex vivo-manufactured CD19 CAR T cells do not achieve durable responses, suggesting that the expansion and persistence of CAR T cells may need improvement, and/or that strategies targeting alternative antigens may be needed for patients who are refractory to or relapse following treatment with CD19-directed therapies. Umoja is developing a surface-engineered lentiviral vector platform capable of generating CAR T cells in vivo without lymphodepletion. UB-VV400 delivers a payload composed of a fully human anti-CD22 CAR and the rapamycin-activated cytokine receptor (RACR), which enable preferential expansion and enrichment of CAR T cells in response to rapamycin. Here, we describe preclinical studies demonstrating that UB-VV400 generates anti-CD22 CAR T cells that kill CD22-expressing B cells and tumor cells in vitro and in vivo, and that engagement of RACR results in the selective expansion and enrichment of CAR T cells in vivo leading to complete tumor clearance and B cell depletion.",
+      "date": "2026-Aug",
+      "doi": "10.1016/j.ymthe.2026.08.003",
+      "conference": "ASGCT",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42576385/",
       "sowhat": "Abstract not available"
     },
     {
