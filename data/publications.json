@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-31T12:36:11.120709+00:00",
-  "count": 94,
+  "fetched_at": "2026-09-01T11:33:09.873741+00:00",
+  "count": 95,
   "publications": [
     {
       "source": "pubmed",
@@ -464,6 +464,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42669593/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42670153",
+      "title": "Isolating T-Cell Potent Lentiviral Vector Subpopulations through Rational Design of Nanofiber Anion-Exchange Adsorbents.",
+      "journal": "Biotechnology and bioengineering",
+      "authors": "Pamenter G, Ovari G, Kulkarni A, Williams-Fegredo T, Knevelman C et al.",
+      "abstract": "Generation of CAR-T cell therapies relies predominantly on lentiviral vectors (LVs). As in vivo CAR-T trials progress, demand for larger quantities of higher-potency LV is expected. However, primary capture by anion-exchange chromatography (AIEX) remains a major manufacturing bottleneck from use of adsorbents not tailored to LVs, leading to complex binding phenomena such as time-dependent product loss and a heterogenous two-peak elution profile arising from two distinct LV subpopulations (Peak 1 and Peak 2). Current industry practice is to collect both peaks to maximize total product recovery. Yet peak-specific differences in product potency and demand for higher purity products for use in in vivo CAR-T cell therapy will likely drive a need to separate these LV species. Electrospun nanofibers offer a promising next-generation adsorbent for addressing these challenges, making it essential to understand how Q-nanofiber design affects LV recovery and Peak 1/Peak 2 selectivity. This work indicates that Peak 1 and Peak 2 LVs differ in their T-cell transduction potency. Despite generating higher numbers of CD3+GFP+ T cells at low doses, Peak 1 sees reducing T-cell viability and %CD3+GFP+ cells at higher doses, likely from an inhibitory effect of VSV-G vesicles that are co-eluted with Peak 1 LV during AIEX. In contrast, Peak 2 LV maintained increasing %CD3+GFP+ T cells and high viability across doses. A Q-nanofiber adsorbent enabling high-recovery AIEX while increasing LV peak separation was therefore required to isolate the more potent Peak 2 LV subpopulation. Increasing nanofiber porosity (0.4-0.6 v/v) enhanced LV recovery by reducing time-dependent loss, whereas Peak Separation increased with ligand density and nanofiber diameter. An optimal Q-nanofiber structure was therefore identified and validated across two LV batches, achieving high recovery (64%-82%) while isolating Peak 2 LV from the major VSV-G elution.",
+      "date": "2026-08",
+      "doi": "10.1002/bit.70360",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42670153/",
       "sowhat": "Abstract not available",
       "category": null
     },

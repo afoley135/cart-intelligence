@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-08-31T12:36:32.468735+00:00",
-  "count": 69,
+  "fetched_at": "2026-09-01T11:33:33.800402+00:00",
+  "count": 70,
   "abstracts": [
     {
       "source": "pubmed",
@@ -522,13 +522,27 @@
     },
     {
       "source": "pubmed",
+      "pmid": "42670153",
+      "title": "Isolating T-Cell Potent Lentiviral Vector Subpopulations through Rational Design of Nanofiber Anion-Exchange Adsorbents.",
+      "journal": "Biotechnology and bioengineering",
+      "authors": "Pamenter G, Ovari G, Kulkarni A, Williams-Fegredo T, Knevelman C et al.",
+      "abstract": "Generation of CAR-T cell therapies relies predominantly on lentiviral vectors (LVs). As in vivo CAR-T trials progress, demand for larger quantities of higher-potency LV is expected. However, primary capture by anion-exchange chromatography (AIEX) remains a major manufacturing bottleneck from use of adsorbents not tailored to LVs, leading to complex binding phenomena such as time-dependent product loss and a heterogenous two-peak elution profile arising from two distinct LV subpopulations (Peak 1 and Peak 2). Current industry practice is to collect both peaks to maximize total product recovery. Yet peak-specific differences in product potency and demand for higher purity products for use in in vivo CAR-T cell therapy will likely drive a need to separate these LV species. Electrospun nanofibers offer a promising next-generation adsorbent for addressing these challenges, making it essential to understand how Q-nanofiber design affects LV recovery and Peak 1/Peak 2 selectivity. This work indicates that Peak 1 and Peak 2 LVs differ in their T-cell transduction potency. Despite generating higher numbers of CD3+GFP+ T cells at low doses, Peak 1 sees reducing T-cell viability and %CD3+GFP+ cells at higher doses, likely from an inhibitory effect of VSV-G vesicles that are co-eluted with Peak 1 LV during AIEX. In contrast, Peak 2 LV maintained increasing %CD3+GFP+ T cells and high viability across doses. A Q-nanofiber adsorbent enabling high-recovery AIEX while increasing LV peak separation was therefore required to isolate the more potent Peak 2 LV subpopulation. Increasing nanofiber porosity (0.4-0.6 v/v) enhanced LV recovery by reducing time-dependent loss, whereas Peak Separation increased with ligand density and nanofiber diameter. An optimal Q-nanofiber structure was therefore identified and validated across two LV batches, achieving high recovery (64%-82%) while isolating Peak 2 LV from the major VSV-G elution.",
+      "date": "2026-Aug",
+      "doi": "10.1002/bit.70360",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42670153/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
       "pmid": "42669593",
       "title": "CAR-Engineered Cell Therapies Beyond Cancer: Reprogramming Fibrosis and Immune-Mediated Inflammation.",
       "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
       "authors": "Xu PJ, Zhang ZJ, Jin J, Xu HY, Gu YX et al.",
       "abstract": "Chimeric antigen receptor (CAR)-engineered cell therapies are being extended from hematological malignancies to autoimmune, inflammatory, and fibrotic diseases, although the maturity of evidence differs markedly among platforms and indications. Early clinical evidence from case reports, small case series, and early-phase trials suggests that CD19- or BCMA-directed CAR-T cells can induce deep B-cell or plasma-cell depletion and sustained remission in selected patients with refractory autoimmune diseases; however, their comparative efficacy, durability, and long-term safety remain incompletely defined. By contrast, CAR-based treatment of organ fibrosis remains predominantly preclinical. In animal models, transient in vivo CAR-T generation has attenuated fibrosis, whereas CAR-macrophage(CAR-M) approaches have demonstrated targeted phagocytosis and microenvironmental remodeling. Evidence for CAR-natural killer cells (CAR-NK) in non-oncological diseases is currently limited to preclinical studies and an individual-patient observation, despite their potential advantages for allogeneic and off-the-shelf manufacturing. This Review critically compares CAR-T, CAR-M, and CAR-NK platforms, examines emerging unconventional immune-cell and iPSC-derived products, and evaluates programmable and in vivo CAR-engineering strategies. We propose \"controllable spatiotemporal reprogramming\" as a framework linking target specificity, tissue distribution, activity duration, reversibility, manufacturing, and disease-specific safety requirements.",
       "date": "2026-Aug",
-      "doi": "10.1002/advs.77503",
+      "doi": "10.20944/preprints202602.1189.v1",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42669593/",
