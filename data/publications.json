@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-09-27T11:06:54.904431+00:00",
-  "count": 118,
+  "fetched_at": "2026-09-28T12:44:54.887335+00:00",
+  "count": 121,
   "publications": [
     {
       "source": "pubmed",
@@ -224,6 +224,36 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42492739/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42802858",
+      "title": "Advancing In Vivo Chimeric Antigen Receptor T-Cell Engineering to Accelerate Clinical Translation.",
+      "journal": "MedComm",
+      "authors": "Bai Z, Yi M, Hu S, Xue D, Wei L et al.",
+      "abstract": "Chimeric antigen receptor T-cell (CAR-T) therapy is a transformative tumor immunotherapy that redirects autologous T cells to eliminate malignant cells. However, its broader clinical translation is constrained by complex and costly ex vivo manufacturing, variable product quality, and limited control over in vivo activity. In vivo CAR-T engineering enables direct T-cell programming in the body, reducing reliance on ex vivo manufacturing while improving T-cell fitness and antitumor efficacy. This approach also enables flexible dosing and may obviate lymphodepletion. This review first summarizes recent advances in in vivo CAR-T engineering and the evolution of CAR architectures. We then examine viral and non-viral delivery systems, including lentiviral vectors (LVs), adeno-associated virus (AAV) vectors, lipid nanoparticles (LNPs), polymeric nanoparticles (PNPs), and emerging platforms, highlighting their distinct advantages and limitations. We further evaluate strategies to facilitate clinical translation, focusing on safety and efficacy. Finally, we discuss emerging opportunities enabled by biomaterials and artificial intelligence to improve scalability and accessibility while broadening therapeutic applications. This review provides a framework for understanding in vivo CAR-T engineering and highlights key strategies for overcoming translational barriers and advancing next-generation CAR-T therapies.",
+      "date": "2026-10",
+      "doi": "10.1002/mco2.71030",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42802858/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "Lipid nanoparticle induced model endosomal membrane disruption",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Pramanik, S., Vasudevan, A., Liang, Z., Karole, A., Berchel, M. et al.",
+      "abstract": "Endosomal escape remains the central bottleneck limiting lipid nanoparticle (LNP)-mediated mRNA delivery. In this study, we use giant unilamellar vesicles (GUVs) mimicking the endosomal membrane to directly visualize the interaction and membrane disruptions caused by two model LNPs constituted by two different ionizable lipids: LP01 and BiP-20 (a Branched ionizable Phospholipid) that are both benchmark ionizable lipids for in vivo gene editing in liver. Despite identical TNS-measured apparent pKa (6.6) for both lipids in our conditions, LP01 LNP showed maximal membrane engagement at pH 5.8, while BiP20 LNP required pH 5.1, demonstrating that bulk pKa alone cannot predict the pH at which functional membrane interaction occurs. Using confocal microscopy, we show that the LNP engagement with the endosomal membrane proceeds through first electrostatic attraction, clustering, membrane disruption by forming highly curved morphologies, and finally leading to the rupture of the whole endosomal mimicking membrane. Notably, the mRNA cargo is released only upon complete lysis of the membrane. This indicates that the membrane destabilization and cargo release are mechanistically distinct steps. These findings establish a cell-free platform for dissecting individual sub-steps of endosomal escape.",
+      "date": "2026-09-13",
+      "doi": "10.64898/2026.09.11.751062",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.09.11.751062",
       "sowhat": "Abstract not available",
       "category": null
     },
@@ -701,6 +731,21 @@
       "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has transformed the treatment of haematological malignancies, but conventional viral transduction results in semi-random genomic integration, contributing to heterogeneous CAR expression and potential insertional effects. Site-specific genome engineering offers an alternative by directing CAR insertion to defined genomic loci, allowing greater control over transgene expression and cellular function. This narrative review evaluates advances in site-specific CAR T-cell engineering, focusing on integration mechanisms, donor platforms, genomic loci, safety, and translational readiness. Homology-directed repair (HDR) and homology-independent targeted integration (HITI) are critically compared alongside viral and non-viral donor systems. Candidate loci are evaluated according to their functional consequences and level of evidence, with TRAC representing the most extensively characterised target, while PDCD1, CD7, CD247, and other loci offer distinct functional opportunities but remain supported by varying levels of preclinical and translational evidence. The review also examines genomic risks associated with targeted editing, including structural rearrangements and chromosome-scale abnormalities, and considers emerging applications in allogeneic, solid-tumour, and in vivo CAR T-cell engineering. Overall, site-specific integration provides a framework for linking CAR placement to therapeutic function, but no single locus or integration strategy is universally optimal. Clinical evidence remains limited relative to the expanding preclinical landscape, and genomic safety, scalable manufacturing, and clinical validation remain major priorities for translation.",
       "date": "2026-08",
       "doi": "10.3390/biomedicines14091925",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42792667/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42792667",
+      "title": "From Delivery to Design: Site-Specific Genome Engineering for Next-Generation CAR T-Cell Therapy.",
+      "journal": "Biomedicines",
+      "authors": "Aldahshan H, Al-Hubaysh A, Alrabiah DK, Alturki M, Alkharji RR et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has transformed the treatment of haematological malignancies, but conventional viral transduction results in semi-random genomic integration, contributing to heterogeneous CAR expression and potential insertional effects. Site-specific genome engineering offers an alternative by directing CAR insertion to defined genomic loci, allowing greater control over transgene expression and cellular function. This narrative review evaluates advances in site-specific CAR T-cell engineering, focusing on integration mechanisms, donor platforms, genomic loci, safety, and translational readiness. Homology-directed repair (HDR) and homology-independent targeted integration (HITI) are critically compared alongside viral and non-viral donor systems. Candidate loci are evaluated according to their functional consequences and level of evidence, with TRAC representing the most extensively characterised target, while PDCD1, CD7, CD247, and other loci offer distinct functional opportunities but remain supported by varying levels of preclinical and translational evidence. The review also examines genomic risks associated with targeted editing, including structural rearrangements and chromosome-scale abnormalities, and considers emerging applications in allogeneic, solid-tumour, and in vivo CAR T-cell engineering. Overall, site-specific integration provides a framework for linking CAR placement to therapeutic function, but no single locus or integration strategy is universally optimal. Clinical evidence remains limited relative to the expanding preclinical landscape, and genomic safety, scalable manufacturing, and clinical validation remain major priorities for translation.",
+      "date": "2026-08",
+      "doi": "10.1016/j.immuni.2025.09.003",
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42792667/",

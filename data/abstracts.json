@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-09-27T11:07:15.589101+00:00",
-  "count": 79,
+  "fetched_at": "2026-09-28T12:45:12.271454+00:00",
+  "count": 80,
   "abstracts": [
     {
       "source": "pubmed",
@@ -196,6 +196,20 @@
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42049130/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42802858",
+      "title": "Advancing In Vivo Chimeric Antigen Receptor T-Cell Engineering to Accelerate Clinical Translation.",
+      "journal": "MedComm",
+      "authors": "Bai Z, Yi M, Hu S, Xue D, Wei L et al.",
+      "abstract": "Chimeric antigen receptor T-cell (CAR-T) therapy is a transformative tumor immunotherapy that redirects autologous T cells to eliminate malignant cells. However, its broader clinical translation is constrained by complex and costly ex vivo manufacturing, variable product quality, and limited control over in vivo activity. In vivo CAR-T engineering enables direct T-cell programming in the body, reducing reliance on ex vivo manufacturing while improving T-cell fitness and antitumor efficacy. This approach also enables flexible dosing and may obviate lymphodepletion. This review first summarizes recent advances in in vivo CAR-T engineering and the evolution of CAR architectures. We then examine viral and non-viral delivery systems, including lentiviral vectors (LVs), adeno-associated virus (AAV) vectors, lipid nanoparticles (LNPs), polymeric nanoparticles (PNPs), and emerging platforms, highlighting their distinct advantages and limitations. We further evaluate strategies to facilitate clinical translation, focusing on safety and efficacy. Finally, we discuss emerging opportunities enabled by biomaterials and artificial intelligence to improve scalability and accessibility while broadening therapeutic applications. This review provides a framework for understanding in vivo CAR-T engineering and highlights key strategies for overcoming translational barriers and advancing next-generation CAR-T therapies.",
+      "date": "2026-Oct",
+      "doi": "10.1002/mco2.71030",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42802858/",
       "sowhat": "Abstract not available"
     },
     {
@@ -640,7 +654,7 @@
       "authors": "Aldahshan H, Al-Hubaysh A, Alrabiah DK, Alturki M, Alkharji RR et al.",
       "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has transformed the treatment of haematological malignancies, but conventional viral transduction results in semi-random genomic integration, contributing to heterogeneous CAR expression and potential insertional effects. Site-specific genome engineering offers an alternative by directing CAR insertion to defined genomic loci, allowing greater control over transgene expression and cellular function. This narrative review evaluates advances in site-specific CAR T-cell engineering, focusing on integration mechanisms, donor platforms, genomic loci, safety, and translational readiness. Homology-directed repair (HDR) and homology-independent targeted integration (HITI) are critically compared alongside viral and non-viral donor systems. Candidate loci are evaluated according to their functional consequences and level of evidence, with TRAC representing the most extensively characterised target, while PDCD1, CD7, CD247, and other loci offer distinct functional opportunities but remain supported by varying levels of preclinical and translational evidence. The review also examines genomic risks associated with targeted editing, including structural rearrangements and chromosome-scale abnormalities, and considers emerging applications in allogeneic, solid-tumour, and in vivo CAR T-cell engineering. Overall, site-specific integration provides a framework for linking CAR placement to therapeutic function, but no single locus or integration strategy is universally optimal. Clinical evidence remains limited relative to the expanding preclinical landscape, and genomic safety, scalable manufacturing, and clinical validation remain major priorities for translation.",
       "date": "2026-Aug",
-      "doi": "10.3390/biomedicines14091925",
+      "doi": "10.1016/j.immuni.2025.09.003",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42792667/",
