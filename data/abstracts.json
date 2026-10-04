@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-10-03T11:16:46.790040+00:00",
-  "count": 73,
+  "fetched_at": "2026-10-04T11:38:06.376406+00:00",
+  "count": 72,
   "abstracts": [
     {
       "source": "pubmed",
@@ -900,34 +900,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "41943115",
-      "title": "Correction: Novel non-viral in vivo CAR-T therapies: latest updates from the 2025 ASH annual meeting.",
-      "journal": "Experimental hematology & oncology",
-      "authors": "Xue B, Liu Y, Liang A, Zhang W",
-      "abstract": "",
-      "date": "2026-Apr",
-      "doi": "10.1186/s40164-026-00772-6",
-      "conference": "ASH",
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41943115/",
-      "sowhat": "Abstract not available"
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41942453",
-      "title": "In vivo CAR T cell generation using retargeted and functionalized lentiviral vectors with reduced immunogenicity.",
-      "journal": "Nature communications",
-      "authors": "Ibrahim KE, Mears KS, Allen PM, Chinai JM, Avila OI et al.",
-      "abstract": "Despite striking efficacy against hematologic malignancies, the cost and complexity of CAR T manufacturing present significant barriers to broader patient access. Beyond manufacturing challenges, ex vivo expansion of T cells may be detrimental to their function and persistence. Thus, delivery of CARs to reprogram host cells in vivo would represent a significant advance towards a readily available therapy, but has been limited by low efficiency, low specificity, and immunogenicity of viral vectors. Here, we describe the design of pseudotyped lentiviral vectors (LV) with superior functionality and high target specificity. We show that LV pseudotyped with chimeric envelope glycoproteins from dolphin morbillivirus (DMV) can be engineered to selectively infect human T cells and evade neutralizing antibody responses in measles-vaccinated human serum. We further demonstrate that camelid-derived nanobodies are a superior retargeting domain, overcoming limitations inherent to the use of single-chain variable fragment antibodies. Using a chimeric DMV-pseudotyped virus targeting the CD7 receptor, we demonstrate efficient and highly specific infection of T cells both in vitro and in vivo, generating functional CAR T cells and inducing therapeutic efficacy in a preclinical B cell lymphoma model.",
-      "date": "2026-Apr",
-      "doi": "10.1038/s41598-017-17204-5",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41942453/",
-      "sowhat": "Lentiviral vectors engineered for in vivo CAR-T generation bypass manufacturing bottlenecks while improving T cell persistence and specificity."
-    },
-    {
-      "source": "pubmed",
       "pmid": "41834375",
       "title": "Balancing Multivalent Avidity and Receptor Availability Governs mRNA Delivery by Antibody-Functionalized Lipid Nanoparticles.",
       "journal": "Nano letters",
@@ -939,6 +911,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41834375/",
       "sowhat": "Optimal antibody density on LNPs balances targeting avidity and receptor preservation, critical for efficient in vivo CAR-T cell engineering delivery."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42827775",
+      "title": "In vivo CAR-T cell generation: a production-rate framework linking vector and cellular pharmacology.",
+      "journal": "Frontiers in immunology",
+      "authors": "Hu J, Zhu D, Zheng S",
+      "abstract": "In vivo CAR-T cell generation is advancing rapidly within gene and cell therapy, but it is often framed as an \"in-body\" version of ex vivo CAR-T-a view that obscures fundamental pharmacological differences. We propose that in vivo CAR-T is better understood as a vector-to-cell pharmacological transition, in which vector pharmacology directly shapes cellular pharmacology: vector dose is only the administered input, whereas therapeutic cellular exposure is hypothesized to depend jointly on the rate, duration, and functional quality of CAR-T cells generated within the patient. Three generation-phase constraints - niche competition without lymphodepletion, founding-state lock-in, and antigen-encounter timing mismatch - define this transition and inform platform-indication matching. We develop this as a testable organizing hypothesis rather than a validated pharmacokinetic model, specifying which quantities are observed, which are inferred, and which are derived, together with four falsifiable predictions and the measurements required to evaluate them. \"Production rate × functional window\" is retained as a mnemonic for the two axes involved - the kinetics and duration of cellular generation, and the functional quality of the cells generated - rather than as an arithmetic product.",
+      "date": "2026",
+      "doi": "10.3389/fimmu.2026.1939127",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42827775/",
+      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
