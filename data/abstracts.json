@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-10-10T11:58:57.876139+00:00",
-  "count": 72,
+  "fetched_at": "2026-10-11T12:28:59.993316+00:00",
+  "count": 73,
   "abstracts": [
     {
       "source": "pubmed",
@@ -252,6 +252,20 @@
       "conference": "ASGCT",
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42470101/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42856446",
+      "title": "Functional Exhaustion Limits CAR-NK Therapy in Glioblastoma but Can Be Mitigated by Early Repeated Dosing.",
+      "journal": "Research square",
+      "authors": "Chaudhry K, Muniraj N, Lang H, Geiger A, Paul G et al.",
+      "abstract": "With the commercial success of Chimeric Antigen Receptor T (CAR-T) cell therapies in the blood cancer setting, there are increasing numbers of clinical trials evaluating this treatment modality in patients with solid tumors, including brain tumors. Allogeneic CAR-natural killer (NK) cell therapy offers an attractive \"off-the-shelf\" option using the CAR platform. However, this approach remains comparatively untested clinically, with only one published clinical trial to date in patients with central nervous system (CNS) tumors. Building on our prior in vitro characterization of allogeneic B7H3-CAR-NK for brain tumors, we compared B7H3/CD28z CAR-NK and CAR-T cells in an aggressive adult Glioblastoma Multiforme (GBM) model in vitro and in an orthotopic murine xenograft system. CAR-NK cells killed GBM targets more rapidly than CAR-T cells in vitro, and secreted higher levels of IFN-γ. However, in vivo, CAR-T cells controlled tumor growth and prolonged survival while CAR-NK cells failed to restrict tumor outgrowth despite confirmed tumor infiltration and persistence. Neither B7H3 antigen upregulation on NK cells nor trogocytosis-driven fratricide accounted for this discrepancy. Instead, we discovered that CAR-NK cells lost cytolytic activity, proliferative capacity, and cytokine secretion after multiple rounds of tumor challenge. This coincided with a downregulation of activating receptors and upregulation of inhibitory receptors. In contrast, CAR-T cells retained their cytolytic activity through four rounds of tumor challenge. While negating the consequences of tumor-induced suppression (by abrogating TGF-β signaling and increasing IL15 signaling), restored in vitro serial killing capacity and reduced in vivo tumor burden, these engineering strategies were insufficient to enhance overall survival. In contrast, administering multiple doses of NK cell products early did confer a survival benefit in preclinical models, suggesting that the CAR-NK cell platform may be more effective when utilized clinically in the adjuvant setting for patients with high-risk brain tumors such as GBM.",
+      "date": "2026-Oct",
+      "doi": "10.21203/rs.3.rs-10808000/v1",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42856446/",
       "sowhat": "Abstract not available"
     },
     {
@@ -892,11 +906,11 @@
       "authors": "Li C, Liu H, Liao S, Wang Y, Yin G et al.",
       "abstract": "Autoimmune diseases, characterized by a breakdown in immune tolerance and persistent autoantibody production, have traditionally been managed primarily through broad-spectrum immunosuppression. Chimeric antigen receptor (CAR) T-cell therapy, a groundbreaking modality once exclusive to oncology, has recently emerged as a transformative approach for treating autoimmunity. We conducted a comprehensive review and investigation into the applications of CAR T-cell therapy in distinct autoimmune diseases, mainly rheumatic diseases, exploring the full spectrum of CAR T modalities, including autologous, allogeneic, and the latest in vivo CAR T strategies. By combining preclinical studies with clinical evidence, we aim to elucidate the substantial potential of CAR T cells to achieve drug-free remission in autoimmune disorders through deep depletion of B cells and immune reset. Despite these promising outcomes from small cohorts or case studies, significant hurdles remain in the realms of safety and toxicity management, economic burden, complex manufacturing processes, and accessibility. In summary, this cross-disease and cross-platform review has thoroughly examined the current state of CAR T-cell therapy research for autoimmune diseases up to December 2025, providing updated insights and future perspectives on this transformative therapeutic strategy.",
       "date": "2026-Apr",
-      "doi": "10.1111/cts.70146",
+      "doi": "10.1007/s12016-026-09151-9",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42008018/",
-      "sowhat": "In vivo CAR-T emerges as potential drug-free remission strategy for autoimmune diseases beyond oncology applications."
+      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
