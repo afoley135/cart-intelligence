@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-12T14:33:05.788663+00:00",
+  "fetched_at": "2026-10-13T13:35:24.014948+00:00",
   "count": 73,
   "abstracts": [
     {
@@ -252,6 +252,20 @@
       "conference": "ASGCT",
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42470101/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42863461",
+      "title": "Toward the next generation of CAR T cell therapies for cancer.",
+      "journal": "Cancer cell",
+      "authors": "Usta D, Mackall CL",
+      "abstract": "With seven products approved by the US Food and Drug Administration (FDA) for 15 indications and more than 2,600 active clinical trials, chimeric antigen receptor (CAR) T cell therapy is firmly established as an effective therapeutic modality for cancer treatment, and promising early data demonstrate its potential in autoimmune diseases. Key challenges facing the field include extending efficacy to solid tumors and reducing the cost and complexity of manufacturing to improve patient access. In this review, we summarize the clinical lessons learned from the now substantial experience with commercial CAR T cells and clinical trials and discuss three waves shaping next-generation development: multi-engineered and logic-gated CAR T cells, rational combination strategies, and in vivo CAR T cell generation. By integrating clinical experience with emerging strategies, we highlight where CAR T cell therapy has succeeded, where current approaches remain insufficient, and how next-generation cell therapies may be designed to overcome these barriers.",
+      "date": "2026-Oct",
+      "doi": "10.1016/j.ccell.2026.09.005",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42863461/",
       "sowhat": "Abstract not available"
     },
     {
@@ -911,20 +925,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42008018/",
       "sowhat": "Abstract not available"
-    },
-    {
-      "source": "pubmed",
-      "pmid": "41834375",
-      "title": "Balancing Multivalent Avidity and Receptor Availability Governs mRNA Delivery by Antibody-Functionalized Lipid Nanoparticles.",
-      "journal": "Nano letters",
-      "authors": "Hashiba K, Fukasaka M, Okuma C, Kobayashi-Ooka Y, Kajiwara K et al.",
-      "abstract": "Expanding the therapeutic scope of mRNA requires delivery systems with precise cell selectivity. Antibody-functionalized lipid nanoparticles (LNPs) enable programmable targeting, but quantitative rules linking surface avidity to delivery remain unresolved. Here, we establish a single-domain antibody (VHH)-LNP platform with controlled orientation and tunable ligand density, combined with an antigen-specific ligand binding fluorescence assay using single-particle nanoflow cytometry to quantify only functional ligands. Using this system, we show that CD8-targeted LNPs exhibit a bell-shaped dependence of delivery efficiency on ligand density, revealing an optimal avidity of ∼0.1 VHH per 100 nm2. Mechanistically, excessive ligand density induces receptor degradation, while optimal avidity balances multivalent engagement with receptor preservation. Optimized LNPs achieve selective mRNA expression in CD8+ T cells and enable in vivo CAR-T generation, resulting in dose-dependent B cell depletion at 10-30 μg/kg. Surface avidity thus emerges as a quantitative design parameter, transforming antibody-decorated LNP engineering from empirical to rule-based design.",
-      "date": "2026-Apr",
-      "doi": "10.1016/j.ymthe.2022.02.001",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41834375/",
-      "sowhat": "Optimal antibody density on LNPs balances targeting avidity and receptor preservation, critical for efficient in vivo CAR-T cell engineering delivery."
     },
     {
       "source": "pubmed",
