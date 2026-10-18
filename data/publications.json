@@ -1,7 +1,22 @@
 {
-  "fetched_at": "2026-10-17T10:18:32.276847+00:00",
-  "count": 136,
+  "fetched_at": "2026-10-18T10:25:48.470706+00:00",
+  "count": 139,
   "publications": [
+    {
+      "source": "pubmed",
+      "pmid": "42890454",
+      "title": "In vivo CAR-T for the treatment of autoimmune diseases: Current progress and future directions.",
+      "journal": "Genes & diseases",
+      "authors": "Zhao Y, Liu Y, Peng X, Ma X, Yang Q",
+      "abstract": "Autoimmune diseases are a clinical challenge because current immunosuppressive therapies fail to eliminate pathogenic immunocytes, such as autoreactive B cells, plasma cells, and antigen-presenting cells, which induce chronic inflammation. Chimeric antigen receptor T (CAR-T) cell therapy offers a targeted strategy to eliminate these disease-driving populations. Early ex vivo CAR-T cell studies on severe autoimmunity have shown effective B-cell depletion and sustained remission. However, its toxicity, cost, and lengthy manufacturing process limit its widespread clinical use. In vivo CAR-T technologies-using viral vectors or mRNA lipid nanoparticles to generate CAR-T cells directly within the patient-aim to overcome these barriers. Preclinical and emerging clinical data indicate that these platforms can rapidly reprogram circulating T cells, induce potent B-cell clearance, and achieve clinical improvement in refractory diseases. Viral vectors provide durable expression but raise integration and immunogenicity concerns, whereas mRNA-LNP systems enable transient, controllable CAR expression with greater manufacturing scalability. These advances have positioned in vivo CAR-T cells as a promising therapeutic strategy for autoimmune diseases. Continuing progress in delivery specificity, safety engineering, trial design, and cost-effective production is essential for translating this approach into widely accessible treatments. In this review, we synthesized preclinical and emerging clinical evidence, compared delivery platforms, and proposed practical recommendations for safety engineering, trial design, and manufacturing, which will help guide future translational efforts and accelerate clinical adoption.",
+      "date": "2027-02",
+      "doi": "10.1016/j.gendis.2026.102245",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42890454/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
     {
       "source": "pubmed",
       "pmid": "41679521",
@@ -380,7 +395,7 @@
     {
       "source": "pubmed",
       "pmid": "42887676",
-      "title": "The Triad of Vascular Ageing: Cellular Senescence, Inflammaging, and Epigenetic Remodelling in Atherosclerosis.",
+      "title": "The triad of vascular ageing: Cellular senescence, inflammaging, and epigenetic remodelling in atherosclerosis.",
       "journal": "Mechanisms of ageing and development",
       "authors": "Dabravolski SA, Borodko DD, Antonov SA, Lukina SS, Poletaev AA et al.",
       "abstract": "Atherosclerotic cardiovascular disease remains a leading global cause of the cardiovascular mortality burden, yet traditional lipid-centric models fail to explain the residual cardiovascular risk observed in older populations. This review, synthesising contemporary literature from 2020 onwards alongside foundational studies, explores the paradigm shift towards the 'geroscience hypothesis', positing that intrinsic biological ageing of the vascular wall is a potent amplifier and primary driver of atherogenesis acting in synergy with circulating lipids. We delineate a pathogenic triad: cellular senescence, systemic inflammaging, and epigenetic dysregulation. At the cellular level, mechanical and metabolic stressors force endothelial and vascular smooth muscle cells into a usually stable senescent state, triggering the Senescence-Associated Secretory Phenotype. Immunologically, ASCVD in the elderly is driven by metabolically exhausted macrophages, the emergence of clonal haematopoiesis of indeterminate potential, and cytotoxic memory T cells. Crucially, metabolic stressors such as hyperglycaemia induce long-lasting alterations to the chromatin landscape of haematopoietic stem cells, establishing 'trained immunity' and a persistent pro-inflammatory metabolic memory. These processes are deeply governed by an altered epigenetic landscape, including the loss of protective sirtuins and aberrant RNA methylation, which dynamically accelerate biological clocks like GrimAge. Clinically, vascular ageing trajectories are highly sexually dimorphic and heavily influenced by midlife metabolic clustering and endocrine shifts and murine models suggest highly sexually dimorphic plaque immunophenotypes. Finally, we evaluate the translational frontier of precision senotherapeutics. We contrast senomorphics, such as repurposed metformin and natural polyphenols that suppress the SASP, with targeted senolytics. Emerging nanotechnology-including in vivo CAR-T lipid nanoparticles and responsive peptide nanoassemblies-offers preclinical proof-of-concept strategies to selectively clear senescent cells without systemic toxicity. Ultimately, mitigating ASCVD requires moving beyond lipid management to integratively target the biological clock of the artery.",
@@ -389,6 +404,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42887676/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42891071",
+      "title": "Lipid-based mRNA chimeric antigen receptor T cells for enhanced in vitro antitumor activity.",
+      "journal": "iScience",
+      "authors": "Gao H, Fang Y, Tian Z, Guo C, Wang P et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T cell therapy provides substantial clinical benefits in hematologic malignancies. However, cell engineering using conventional viral vectors is costly, labor intensive, and prone to safety risks, while electroporation-induced cellular damage limits manufacturing scalability. This study reports a safe, high-efficiency, nonviral platform for generating mRNA-engineered CAR T cells. Herein, eight ionizable lipids are synthesized and formulated into lipid nanoparticles. Systematic screening and structural optimization identified lipid 6 as the lead candidate. Transfection efficiency is validated by delivering enhanced green fluorescent protein (eGFP) mRNA into DC2.4, peripheral blood mononuclear, dendritic, and natural killer cells. Murine models confirm robust in vivo expression and a favorable safety profile. Lipid 6-mediated delivery of MUC1 mRNA generates MUC1-CAR T cells characterized by high surface receptor expression and potent cytotoxicity against MUC1-positive tumor cells. These findings establish lipid 6 as a feasible strategy for primary human T cell engineering, facilitating functional CAR expression with minimal toxicity.",
+      "date": "2026-10",
+      "doi": "10.1016/j.isci.2026.117390",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42891071/",
       "sowhat": "Abstract not available",
       "category": null
     },
@@ -941,6 +971,21 @@
       "abstract": "Objective: To evaluate the safety, pharmacokinetic profile, and preliminary efficacy of a novel lentiviral-based CD19-targeted in vivo chimeric antigen receptor T (CAR-T) cell therapy in a patient with multiply relapsed/refractory B-acute lymphoblastic leukemia (B-ALL) . Methods: A 28-year-old patient with B-ALL at the 920th Hospital of Joint Logistics Support Force, received a single intravenous infusion of a lentiviral-based CD19-targeted in vivo CAR-T product at a dose of 7×10(8) TU. The safety and pharmacokinetic profiles and disease response data were collected and analyzed. Additionally, the outcomes of the current clinical studies on vivo CAR-T cell therapy were reviewed. Results: The patient with high-risk and heavily pretreated B-ALL achieved minimal residual disease negative complete remission by day 16 post infusion, which was sustained until day 50 and enabled subsequent hematopoietic stem cell transplantation. The adverse events mainly consisted of an acute inflammatory reaction within 24 hours after infusion and cytokine release syndrome during the CAR-T expansion phase. Pharmacokinetic monitoring detected peripheral blood CAR-T cells on day 6, with a peak level of 8 629.38 cells/μl on day 14. Literature review suggested that clinical research on in vivo CAR-T cell therapy remains at an early stage, with limited evidence available, and that no prior clinical outcomes of its application in B-ALL patients were reported. Conclusion: CD19-targeted in vivo CAR-T cell therapy demonstrated manageable safety and robust in vivo expansion in our patient, enabling rapid remission and creating a critical window for transplantation. Our case preliminarily supports the feasibility and potential clinical value of in vivo CAR-T cell therapy in high-risk, heavily pretreated B-ALL patients and provides a valuable practical reference for clinical application.",
       "date": "2026-08",
       "doi": "10.3760/cma.j.cn121090-20260510-00234",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42851178/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42851178",
+      "title": "[CD19-targeted in vivo CAR-T cell therapy for high-risk/refractory B-acute lymphoblastic leukemia: a case report and literature review].",
+      "journal": "Zhonghua xue ye xue za zhi = Zhonghua xueyexue zazhi",
+      "authors": "Li Y, Ma FY, Zhang LH, Ren J, Wang SB",
+      "abstract": "Objective: To evaluate the safety, pharmacokinetic profile, and preliminary efficacy of a novel lentiviral-based CD19-targeted in vivo chimeric antigen receptor T (CAR-T) cell therapy in a patient with multiply relapsed/refractory B-acute lymphoblastic leukemia (B-ALL) . Methods: A 28-year-old patient with B-ALL at the 920th Hospital of Joint Logistics Support Force, received a single intravenous infusion of a lentiviral-based CD19-targeted in vivo CAR-T product at a dose of 7×10(8) TU. The safety and pharmacokinetic profiles and disease response data were collected and analyzed. Additionally, the outcomes of the current clinical studies on vivo CAR-T cell therapy were reviewed. Results: The patient with high-risk and heavily pretreated B-ALL achieved minimal residual disease negative complete remission by day 16 post infusion, which was sustained until day 50 and enabled subsequent hematopoietic stem cell transplantation. The adverse events mainly consisted of an acute inflammatory reaction within 24 hours after infusion and cytokine release syndrome during the CAR-T expansion phase. Pharmacokinetic monitoring detected peripheral blood CAR-T cells on day 6, with a peak level of 8 629.38 cells/μl on day 14. Literature review suggested that clinical research on in vivo CAR-T cell therapy remains at an early stage, with limited evidence available, and that no prior clinical outcomes of its application in B-ALL patients were reported. Conclusion: CD19-targeted in vivo CAR-T cell therapy demonstrated manageable safety and robust in vivo expansion in our patient, enabling rapid remission and creating a critical window for transplantation. Our case preliminarily supports the feasibility and potential clinical value of in vivo CAR-T cell therapy in high-risk, heavily pretreated B-ALL patients and provides a valuable practical reference for clinical application.",
+      "date": "2026-08",
+      "doi": "10.1182/blood-2025-LBA-1",
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42851178/",
