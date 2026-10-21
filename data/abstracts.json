@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-10-20T11:04:20.708269+00:00",
-  "count": 72,
+  "fetched_at": "2026-10-21T11:17:10.522624+00:00",
+  "count": 73,
   "abstracts": [
     {
       "source": "pubmed",
@@ -925,6 +925,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/41490421/",
       "sowhat": "In vivo CAR-T engineering bypasses costly ex vivo manufacturing by reprogramming patient T cells directly, dramatically improving scalability and accessibility."
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42898640",
+      "title": "Why only 3 months? Immunological constraints on CAR-T therapy in gastrointestinal cancers.",
+      "journal": "Frontiers in immunology",
+      "authors": "Zeng L, Wei S, Chen N, Xie X",
+      "abstract": "In June 2026, satri-cel/CT041, a chimeric antigen receptor (CAR) T-cell product targeting Claudin18.2, received approval from China's National Medical Products Administration for the treatment of Claudin18.2-positive, HER2-negative advanced gastric/gastroesophageal junction adenocarcinoma after failure of at least two prior lines of therapy. This marks the first CAR-T product approved worldwide for solid tumours. The approval ends the long-standing debate over whether CAR-T cells can be effective against solid malignancies, yet it simultaneously raises a more pointed issue: in its pivotal randomised controlled trial, median progression-free survival was 3.25 months (95% CI 2.86-4.53) with satri-cel against 1.77 months (95% CI 1.61-2.04) with treatment of physician's choice, giving a hazard ratio of 0.37 (95% CI 0.24-0.56). The two medians differ by 1.48 months; that figure marks where each survival distribution is cut in half and is not the benefit any individual patient can expect, and approval does not equate to a cure. Taking this as a starting point, this review systematically dissects the immunological bottlenecks that constrain CAR-T efficacy in gastrointestinal tumours. We first trace the evidence chain from phase I studies through the randomised controlled trial to exploratory adjuvant-therapy settings and then integrate the landscape of targets-Claudin18.2, glypican-3, carcinoembryonic antigen, mesothelin, and CDH17-within a target-tumour matrix encompassing gastric cancer, colorectal cancer, hepatocellular carcinoma, and pancreatic cancer. The core section focuses on four intertwined immunological constraints: spatiotemporal heterogeneity and escape at the antigen level; a therapeutic window shaped jointly by epitope masking within tight junctions and immune privilege of the gastric mucosal stem cell niche-this mechanism not only explains why Claudin18.2-directed CAR-T cells exhibit an acceptable safety profile despite target expression on normal tissues but also provides a paradigm for rational selection of next-generation targets; a suppressive microenvironment composed of regulatory T cells, myeloid-derived suppressor cells, tumour-associated macrophages, transforming growth factor-β, adenosine, and a hypoxic and acidotic metabolic milieu; and CAR-T exhaustion driven by chronic antigen stimulation. We particularly emphasise that metabolic stress and exhaustion are not two parallel obstacles. We put forward a mechanistic model in which persistent antigen stimulation combined with intratumoral hypoxia acts as a \"double hit\": through mitochondrial dysfunction and reactive oxygen species accumulation, the two inputs raise nuclear factor of activated T-cell (NFAT) activity and so drive the TOX/NR4A-dominated exhaustion program. This model is assembled from chronic-infection and mouse tumour systems and has not been tested in human CAR-T cells or in satri-cel-treated patients. We advance it as a framework for organising the four bottlenecks and for explaining why single-point interventions struggle to lift the efficacy ceiling, not as a demonstrated account. On this basis, we discuss strategies such as armouring, logic gating, transcription factor engineering, gene editing, and chemokine receptor modification, along with combination regimens involving checkpoint inhibition, oncolytic viruses, locoregional administration, and microbiome modulation, and we evaluate alternative platforms including CAR-macrophages, CAR-NK cells, and in vivo CAR-T generation. The watershed has been crossed, but the work of turning 3 months into 30 has only just begun.",
+      "date": "2026",
+      "doi": "10.1073/pnas.1716266115",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42898640/",
+      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
