@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-10-22T11:23:17.780197+00:00",
-  "count": 73,
+  "fetched_at": "2026-10-23T11:29:35.393800+00:00",
+  "count": 74,
   "abstracts": [
     {
       "source": "pubmed",
@@ -252,6 +252,20 @@
       "conference": "ASGCT",
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42470101/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42906542",
+      "title": "In vivo Gene Writing with engineered retrotransposons.",
+      "journal": "Cell",
+      "authors": "Li D, De Iaco A, Ngan KC, Smyshlyaev G, Kumbhojkar N et al.",
+      "abstract": "Efficient integration of gene-length cargos in vivo remains challenging. Non-long terminal repeat (non-LTR) retrotransposons, which naturally mobilize large DNA segments through an RNA intermediate, could potentially address these limitations. Here, we developed a computational pipeline to systematically identify a diverse set of non-LTR retrotransposons. Extensive engineering generated elements capable of the efficient and stable insertion of reporter genes in human cells using RNA templates introduced in trans, which we term Gene Writers. Gene Writers successfully generated CD19 and CD20 chimeric antigen receptor T (CAR-T) cells ex vivo with robust antitumor activity. Lipid nanoparticle-mediated RNA delivery enabled in vivo CAR-T cell generation and stable B cell depletion in a humanized mouse model. Our study delineates a comprehensive framework for the discovery, engineering, and application of non-LTR retrotransposons and demonstrates their utility for gene-sized cargo delivery in vivo, thereby bridging a critical gap in existing gene therapy modalities.",
+      "date": "2026-Oct",
+      "doi": "10.1016/j.cell.2026.09.054",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42906542/",
       "sowhat": "Abstract not available"
     },
     {
