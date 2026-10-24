@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-10-23T11:29:14.604054+00:00",
-  "count": 142,
+  "fetched_at": "2026-10-24T10:30:16.050950+00:00",
+  "count": 145,
   "publications": [
     {
       "source": "pubmed",
@@ -453,6 +453,21 @@
       "category": null
     },
     {
+      "source": "pubmed",
+      "pmid": "42913010",
+      "title": "In situ CAR-M engineered by liposomal mRNA nanomedicine remodels fibrotic microenvironment for ameliorating liver fibrosis.",
+      "journal": "Science advances",
+      "authors": "Xiao H, Li X, Cai K, Leng Y, Miao X et al.",
+      "abstract": "Liver fibrosis is a severe complication of diverse chronic liver diseases characterized by a dysregulated hepatic microenvironment, and effective clinical therapeutic strategies for this condition remain lacking to date. Chimeric antigen receptor macrophages (CAR-Ms) hold considerable therapeutic potential for liver fibrosis via antigen-specific recognition and efferocytotic activity, yet their clinical translation is largely hindered by the sophisticated ex vivo preparation procedures. Herein, we report an in situ CAR-M engineering strategy that uses a phosphatidylserine (PS)-incorporated, macrophage-targeted lipid nanoparticle (LNP) for the codelivery of CAR messenger RNA (mRNA) and Cas9 mRNA in vivo. Our findings demonstrate that this engineered LNP achieves efficient targeting of liver-resident macrophages. Transfection with fibroblast activation protein α (FAPα)-CAR mRNA equips macrophages with the capacity to specifically target activated hepatic stellate cells (aHSCs), whereas Cas9-mediated follistatin-like protein 1 (FSTL-1) gene editing enhances the efferocytotic function of macrophages in liver tissues. Consequently, functional CAR-Ms are generated in situ, which elicits robust antifibrotic effects, including reduced collagen deposition, restored sinusoidal architecture and enhanced immune-mediated antifibrotic activity. Collectively, our customized LNP-mediated in situ engineering of liver macrophages into CAR-Ms enables precise antifibrotic intervention for liver fibrosis and circumvents the cumbersome ex vivo CAR-M preparation process.",
+      "date": "2026-10",
+      "doi": "10.1126/sciadv.aeh6590",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42913010/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
       "source": "biorxiv",
       "pmid": null,
       "title": "Lipid nanoparticle induced model endosomal membrane disruption",
@@ -644,6 +659,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42809179/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42915066",
+      "title": "Rational Design of Modular Elastin-like Polypeptide Nanoparticles for Nonviral Gene Delivery.",
+      "journal": "Accounts of chemical research",
+      "authors": "Qu F, Thompson DH",
+      "abstract": "Gene therapy has evolved into a cornerstone modality in modern medicine, with applications spanning antisense oligonucleotide treatments, RNA interference therapies, mRNA vaccines, in vivo CAR-T cell therapies, and CRISPR-mediated in vivo gene editing. The demands of this proliferating therapeutic approach compel the development of delivery systems that excel in achieving target specificity, repeat dosing compatibility, storage stability, and scalable manufacturability. Although viral vectors and lipid nanoparticles (LNPs) have achieved clinical success, they face inherent challenges in fully meeting these evolving requirements, highlighting the need for alternatives. Nonviral gene delivery is a highly complex process that requires the delivery system to strike the proper balance between plasma and shelf stability, appropriate kinetic response for cargo release in the target biological milieu, and capacity for resorption or clearance from the body to minimize acute and/or long-term toxicity. Elastin-like polypeptides (ELPs), derived from human tropoelastin motifs, have emerged as promising scaffolds due to their tunable properties, low immunogenicity, and biodegradable nature. A growing number of laboratories are embracing the potential of ELPs to advance novel gene delivery systems toward these goals. This Account describes our laboratory's sustained contributions in the ELP field over the past decade, culminating in the layer-by-layer elastin-like polypeptide nucleic acid nanoparticle (LENN) platform, which is a modular and biomanufacturable nonviral gene delivery system. We pioneered a fast organic solvent extraction-precipitation purification for ELPs that is sequence independent, yields material with low endotoxin levels, and preserves the functionality of fusion domains. LENN assembly is achieved by the electrostatic condensation of nucleic acids using cyclodextrin-polyarginine conjugates to form the core, followed by coating with ELP shells through reversible host-guest interactions, producing nanoparticles capable of high RNA encapsulation. This Account presents a head-to-head design comparison of LENN versus LNPs, representative peptide-based vectors, and polymeric nonviral systems, illustrating the modularity of LENN that allows for independent optimization of key functional elements. Targeted LENN undergoes rapid internalization and endosomal escape in EGFR+ bladder cancer cells, enabling efficient mRNA expression and siRNA knockdown. Mechanistic studies confirm cellular entry via the clathrin-mediated uptake pathway and activation of lipid remodeling processes that facilitate cargo release. In an initial proof-of-concept study, EGF-modified LENN exhibited tumor association following intravesical administration in orthotopic bladder cancer models. These studies illustrate the modularity of the LENN design and its potential as a tunable, biocompatible platform for nucleic acid therapeutics.",
+      "date": "2026-09",
+      "doi": "10.1021/acs.accounts.6c00176",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42915066/",
       "sowhat": "Abstract not available",
       "category": null
     },
@@ -2129,6 +2159,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42898640/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42909370",
+      "title": "mRNA-dendritic cell antigen vaccine potentiates CD38 CAR-T Cell therapy for relapsed/refractory acute myeloid leukemia.",
+      "journal": "Theranostics",
+      "authors": "Lu Y, Cai X, Li Y, Lv Y, Tang Y et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has emerged as a promising strategy for management of relapsed/refractory acute myeloid leukemia (R/R AML). Safety and preliminary activity of CD38-targeted CAR-T cells in R/R AML were demonstrated in our prior study; however, relapse with CD38-positive blasts persisted, which was partly associated with insufficient effector function and persistence of CAR-T cells. Given that CAR-T cell hypofunction is promoted by inadequate antigen stimulation, a lipid nanoparticle-delivered CD38 mRNA vaccine was developed to enhance CD38 CAR-T cell efficacy via exogenous antigen presentation.",
+      "date": "2026",
+      "doi": "10.7150/thno.139339",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42909370/",
       "sowhat": "Abstract not available",
       "category": null
     }
