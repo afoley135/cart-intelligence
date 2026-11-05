@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-04T13:50:52.170111+00:00",
-  "count": 154,
+  "fetched_at": "2026-11-05T14:17:30.522381+00:00",
+  "count": 156,
   "publications": [
     {
       "source": "pubmed",
@@ -245,6 +245,21 @@
     {
       "source": "biorxiv",
       "pmid": null,
+      "title": "Xeno-Free Peptide-Functionalized Hydrogels Support hiPSC Encapsulation and In Situ Differentiation into Cardiomyocytes with Enhanced Structural Maturation",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Hashemi, M., Devi, N. D., Kargar Gaz Kooh, Y., Chen, C., Malayath, G. et al.",
+      "abstract": "While defined synthetic substrates can replace Matrigel for human induced pluripotent stem cell (hiPSC) culture and hiPSC-derived cardiomyocyte (hiPSC-CM) production, existing approaches culture cells on two-dimensional surfaces and yield structurally immature cardiomyocytes, limiting their use in disease modeling and regenerative medicine. Here, we developed a xeno-free, fully-defined cyclic RGD (cRGD)-functionalized alginate platform in which we encapsulated hiPSCs to support their expansion and in situ cardiac differentiation. cRGD functionalization was essential for hiPSC survival and pluripotency, with maximal support achieved at a low ligand density (25 M). In the presence of cRGD, hiPSC encapsulation into softer gels made from lower molecular weight alginates led to enhanced hiPSC expansion and improved cardiogenesis. Strikingly, differentiation in situ with 3D gels led to hiPSC-CM with higher structural maturity, including a markedly increased proportion of cardiomyocytes positive for the structural maturation markers Desmin and MYH7. Finally, after enzymatic retrieval from hydrogels, cardiomyocytes derived from softer gels formed tissue-engineered myocardium with superior contractile stress compared to tissue fashioned from hiPSC-CM derived from more rigid gels. Together, these results demonstrate the promise of this defined, tunable platform for biomanufacturing of structurally more mature cardiomyocytes from hiPSC.",
+      "date": "2026-11-04",
+      "doi": "10.64898/2026.07.08.737331",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.07.08.737331",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
       "title": "An adjuvant for in vivo CAR-T therapy potentiation against solid tumors",
       "journal": "bioRxiv (preprint)",
       "authors": "Sun, Y., Ma, Y., Guan, T., Yan, Y., Ming, Y. et al.",
@@ -254,6 +269,36 @@
       "mesh_terms": [],
       "preprint": true,
       "url": "https://doi.org/10.64898/2026.10.30.763005",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42979453",
+      "title": "CAR-T in solid tumors: Obstacles and potential strategies.",
+      "journal": "Acta pharmaceutica Sinica. B",
+      "authors": "Ding Z, Li Y, Huang M",
+      "abstract": "Chimeric antigen receptor T (CAR-T) cell therapy has achieved remarkable success in treating hematologic malignancies, yet its efficacy in solid tumors remains constrained by multiple challenges. In this review, we summarize the main obstacles hindering CAR-T therapy in solid tumors, including suboptimal antigen targeting, poor trafficking and infiltration into tumor sites, and insufficient persistence of CAR-T cells. Furthermore, we discuss emerging strategies to overcome these hurdles, which can be categorized into two complementary aspects. The first focuses on optimizing intrinsic CAR-T properties for improved adaptation to the tumor microenvironment (TME), such as enriching less-differentiated T cell subsets, modifying CAR constructs, refining ex vivo culture conditions, and modulating specific genes or metabolic pathways through genetic or pharmacological interventions. The second approach aims to remodel the immunosuppressive TME by neutralizing inhibitory mediators, blocking immune checkpoints, and targeting immunosuppressive cell populations and stromal components. Importantly, we also summarized recent progress in in vivo CAR-T therapy. This review provides a comprehensive overview of the obstacles facing CAR-T in solid tumors, addressing both the underlying mechanisms and the translational potential of current and future strategies.",
+      "date": "2026-11",
+      "doi": "10.1200/JCO.2025.43.16_suppl.4084",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42979453/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42979064",
+      "title": "In vivo CAR-T therapy: Delivery systems and beyond for addressing expression, persistence, and safety challenges.",
+      "journal": "Acta pharmaceutica Sinica. B",
+      "authors": "Zhang Z, Shang X, Zhang T, Ju D",
+      "abstract": "The clinical translation of ex vivo CAR-T therapy is constrained by its complex manufacturing processes, limited treatment accessibility, and the toxicities associated with lymphodepleting chemotherapy. In vivo CAR-T strategies, which utilize viral or non-viral vectors to reprogram a patient's T cells directly in situ genetically, offer a promising alternative. This review provides a systematic examination of the critical barriers impeding the advancement of in vivo CAR-T therapy. We first summarize the factors influencing the targeting ability of both the delivery system and the CAR molecule. As for the vectors, we detail how the composition and physicochemical properties of LNPs shift their tropism from the liver to the spleen and provide a critical comparison of active targeting strategies based on different T-cell surface antigens. As for the CAR molecule, target selection is primarily dictated by the intended disease. Furthermore, we discuss the determinants of poor CAR-T cell persistence, including unstable mRNA payloads and exhaustion-associated signaling pathways. Addressing the challenges of solid tumor treatment, we dissect the multifaceted role of the tumor microenvironment. Finally, this review illustrates the mechanisms underlying overactivation and immunogenicity triggered by both viral and non-viral vector systems.",
+      "date": "2026-11",
+      "doi": "10.1016/j.apsb.2026.08.030",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42979064/",
       "sowhat": "Abstract not available",
       "category": null
     },
@@ -1184,21 +1229,6 @@
       "mesh_terms": [],
       "preprint": true,
       "url": "https://doi.org/10.64898/2026.07.21.737377",
-      "sowhat": "Abstract not available",
-      "category": null
-    },
-    {
-      "source": "biorxiv",
-      "pmid": null,
-      "title": "Xeno-Free Peptide-Functionalized Hydrogels Support hiPSC Encapsulation and In Situ Differentiation into Structurally Mature Cardiomyocytes",
-      "journal": "bioRxiv (preprint)",
-      "authors": "Hashemi, M., Devi, N. D., Kargar Gaz Kooh, Y., Chen, C., Bahmani, B. et al.",
-      "abstract": "While defined synthetic substrates can replace Matrigel for human induced pluripotent stem cell (hiPSC) culture and hiPSC-derived cardiomyocyte (hiPSC-CM) production, existing approaches culture cells on two-dimensional surfaces and yield structurally immature cardiomyocytes, limiting their use in disease modeling and regenerative medicine. Here, we developed a xeno-free, fully-defined cyclic RGD (cRGD)-functionalized alginate platform in which we encapsulated hiPSCs to support their expansion and in situ cardiac differentiation. cRGD functionalization was essential for hiPSC survival and pluripotency, with maximal support achieved at a low ligand density (25 {micro}M). In the presence of cRGD, hiPSC encapsulation into softer gels made from lower molecular weight alginates led to enhanced hiPSC expansion and improved cardiogenesis. Strikingly, differentiation in situ with 3D gels led to hiPSC-CM with higher structural maturity, including a markedly increased proportion of Desmin-positive cardiomyocytes. Finally, after enzymatic retrieval from hydrogels, cardiomyocytes derived from softer gels formed tissue-engineered myocardium with superior contractile force compared to tissue fashioned from hiPSC-CM derived from more rigid gels. Together, these results demonstrate the promise of this defined, tunable platform for biomanufacturing of structurally mature cardiomyocytes from hiPSC.",
-      "date": "2026-07-10",
-      "doi": "10.64898/2026.07.08.737331",
-      "mesh_terms": [],
-      "preprint": true,
-      "url": "https://doi.org/10.64898/2026.07.08.737331",
       "sowhat": "Abstract not available",
       "category": null
     },

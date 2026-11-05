@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-04T13:51:09.303808+00:00",
+  "fetched_at": "2026-11-05T14:17:47.994507+00:00",
   "count": 77,
   "abstracts": [
     {
@@ -438,6 +438,34 @@
     },
     {
       "source": "pubmed",
+      "pmid": "42979453",
+      "title": "CAR-T in solid tumors: Obstacles and potential strategies.",
+      "journal": "Acta pharmaceutica Sinica. B",
+      "authors": "Ding Z, Li Y, Huang M",
+      "abstract": "Chimeric antigen receptor T (CAR-T) cell therapy has achieved remarkable success in treating hematologic malignancies, yet its efficacy in solid tumors remains constrained by multiple challenges. In this review, we summarize the main obstacles hindering CAR-T therapy in solid tumors, including suboptimal antigen targeting, poor trafficking and infiltration into tumor sites, and insufficient persistence of CAR-T cells. Furthermore, we discuss emerging strategies to overcome these hurdles, which can be categorized into two complementary aspects. The first focuses on optimizing intrinsic CAR-T properties for improved adaptation to the tumor microenvironment (TME), such as enriching less-differentiated T cell subsets, modifying CAR constructs, refining ex vivo culture conditions, and modulating specific genes or metabolic pathways through genetic or pharmacological interventions. The second approach aims to remodel the immunosuppressive TME by neutralizing inhibitory mediators, blocking immune checkpoints, and targeting immunosuppressive cell populations and stromal components. Importantly, we also summarized recent progress in in vivo CAR-T therapy. This review provides a comprehensive overview of the obstacles facing CAR-T in solid tumors, addressing both the underlying mechanisms and the translational potential of current and future strategies.",
+      "date": "2026-Nov",
+      "doi": "10.1200/JCO.2025.43.16_suppl.4084",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42979453/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42979064",
+      "title": "In vivo CAR-T therapy: Delivery systems and beyond for addressing expression, persistence, and safety challenges.",
+      "journal": "Acta pharmaceutica Sinica. B",
+      "authors": "Zhang Z, Shang X, Zhang T, Ju D",
+      "abstract": "The clinical translation of ex vivo CAR-T therapy is constrained by its complex manufacturing processes, limited treatment accessibility, and the toxicities associated with lymphodepleting chemotherapy. In vivo CAR-T strategies, which utilize viral or non-viral vectors to reprogram a patient's T cells directly in situ genetically, offer a promising alternative. This review provides a systematic examination of the critical barriers impeding the advancement of in vivo CAR-T therapy. We first summarize the factors influencing the targeting ability of both the delivery system and the CAR molecule. As for the vectors, we detail how the composition and physicochemical properties of LNPs shift their tropism from the liver to the spleen and provide a critical comparison of active targeting strategies based on different T-cell surface antigens. As for the CAR molecule, target selection is primarily dictated by the intended disease. Furthermore, we discuss the determinants of poor CAR-T cell persistence, including unstable mRNA payloads and exhaustion-associated signaling pathways. Addressing the challenges of solid tumor treatment, we dissect the multifaceted role of the tumor microenvironment. Finally, this review illustrates the mechanisms underlying overactivation and immunogenicity triggered by both viral and non-viral vector systems.",
+      "date": "2026-Nov",
+      "doi": "10.1016/j.apsb.2026.08.030",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42979064/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
       "pmid": "42777095",
       "title": "In Vivo CAR T-cell Therapy: Determinants of Response and Durability.",
       "journal": "Blood cancer discovery",
@@ -564,20 +592,6 @@
     },
     {
       "source": "pubmed",
-      "pmid": "42146330",
-      "title": "Parallel Activation and Interference CRISPR (PAIR) with Sequencing Uncovers DNA Repair Networks Guiding Precision Cell Engineering.",
-      "journal": "bioRxiv : the preprint server for biology",
-      "authors": "Chang C, Gan D, Diao L, Wang L, Lacelle C et al.",
-      "abstract": "The dynamic balance of cellular homeostasis is often maintained by opposing regulatory pathways, yet most genetic screens interrogate them in one direction and therefore miss the bidirectional gene-gene interactions that shape complex phenotypes such as DNA damage response (DDR). Here, we present PAIR (Parallel Activation and Interference CRISPR), a bidirectional perturbation platform that enables simultaneous activation and suppression of distinct genes within the same cell using CRISPR activation (CRISPRa) and Cas13d RNA knockdown. Applying PAIR to the CRISPR/Cas9 induced DSB repair screen, we mapped gene-gene interactions across competing repair branches and identify synergistic perturbations, including NBN activation combined with suppression of end-joining factors, that shift repair outcomes toward homology-directed repair (HDR) and improve the precision of CRISPR-based gene editing. Using coupled PAIR with single- cell transcriptomic, we further demonstrated that NBN activation induces inflammatory and interferon programs, whereas co-suppression of end-joining factors buffers this response, revealing transcriptional states missed by conventional unidirectional perturbations. To translate these findings into non-viral chimeric antigen receptor (CAR) T cell engineering, we developed an mRNA-based strategy for parallel overexpression and knockdown of NBN-anchored DDR effectors in primary T cells, priming the T cells into a transient HDR-favored state that enhances the efficiency of CAR knock-in on the TRAC locus. Together, the PAIR system provides a general framework for studying opposing regulatory networks, uncovering hidden cell states, and guiding cell-state engineering through bidirectional perturbation.",
-      "date": "2026-May",
-      "doi": "10.64898/2026.05.08.722799",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42146330/",
-      "sowhat": "PAIR-CRISPR maps bidirectional DNA repair interactions enabling precision engineering of cell therapy manufacturing processes."
-    },
-    {
-      "source": "pubmed",
       "pmid": "42130331",
       "title": "β-Hydroxy Thioether-Derived Ionizable Lipids for Spleen-Tropic mRNA Delivery and In Vivo Chimeric Antigen Receptor T Cell Engineering.",
       "journal": "ACS nano",
@@ -617,20 +631,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42129307/",
       "sowhat": "Abstract not available"
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42104450",
-      "title": "Nanotechnology-enhanced CAR-T therapy strategies in cancer, aging, and autoimmune diseases.",
-      "journal": "Journal of hematology & oncology",
-      "authors": "Li H, Li J, Liu X, Wei X, Zeng X et al.",
-      "abstract": "Chimeric antigen receptor T-cell (CAR-T) therapy has emerged as a transformative immunotherapy, which achieves remarkable success in hematological malignancies. However, broader application of CAR-T therapy is hindered by multiple challenges, including limited efficacy in solid tumors, antigen escape, severe toxicities, and complex, costly manufacturing. Recent studies have emerged that nanotechnology offers innovative solutions to overcome barriers. In this review, we summarized how nanotechnology enhances CAR-T therapy across six dimensions: CAR design, transfection, expansion, modification, monitoring, and combination with other therapies. We discussed the applications of various nanomaterials to improve CAR-T cell function, including lipid nanoparticles, nanogels, and nanobodies. Specifically, we recapitulate that nanotechnology facilitates the generation of CAR-T cells in vivo, enables spatiotemporal control of T cells, remodels the immunosuppressive microenvironment in solid tumors, and enables dual-targeting strategies to mitigate antigen escape. Finally, we outlined the clinical application of nanotechnology in hematological malignancies and solid tumors, as well as non-malignant senescence and autoimmune diseases. Collectively, we believe the integration of nanotechnology enhances the safety and efficacy and broadens therapeutic scope, which will open a new era of precision medicine.",
-      "date": "2026-May",
-      "doi": "10.1021/acsomega.4c09718",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42104450/",
-      "sowhat": "Nanotechnology enhances CAR-T efficacy in solid tumors while reducing manufacturing complexity and toxicity across multiple therapeutic dimensions."
     },
     {
       "source": "pubmed",
