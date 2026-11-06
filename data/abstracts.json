@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-05T14:17:47.994507+00:00",
-  "count": 77,
+  "fetched_at": "2026-11-06T14:23:26.062819+00:00",
+  "count": 79,
   "abstracts": [
     {
       "source": "pubmed",
@@ -262,7 +262,7 @@
       "authors": "Wang P, Yu A, Mutaher M, Eisele AS, Mouche S et al.",
       "abstract": "Folate is an essential driver of one-carbon metabolism. The cellular consequences of its deprivation in CD8 + T cell and impact on anti-tumor function are unknown. Single cell RNA-seq analysis of primary central nervous system lymphoma (PCNSL) patients' tumor samples revealed exhaustion in T cells with high folate metabolism gene expression signature. Functional genomics, metabolite profiling, and glycomics identified disrupted cell surface glycosylation as a major consequence of folate deprivation in CD8 + T cells. Mechanistically, folate deprivation reduced nucleotide sugar levels, perturbed glycosylation, and triggered the apoptotic unfolded protein response. Overexpressing folate transporters in adoptively transferred CD8 + T cells increased intratumoral T cell numbers and reduced exhaustion. Therefore, our data draw a mechanistic line between one-carbon metabolism, cell-surface glycosylation, and anti-tumor T cell function, and support a hypothesis that increased folate uptake can enhance CD8 + T cell function including ex vivo and in vivo CAR-T cells.",
       "date": "2026-Oct",
-      "doi": "10.64898/2026.10.06.756889",
+      "doi": "10.1007/s11306-021-01848-6",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42926674/",
@@ -434,6 +434,34 @@
       "conference": "AACR",
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42467218/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42986451",
+      "title": "Integrating RNA technologies with CAR-T cell therapy: strategies to overcome current limitations and expand clinical applications.",
+      "journal": "Cancer chemotherapy and pharmacology",
+      "authors": "Yumashev A, Sanoyeva M, Muradova E, Khalmatova N, Karimov M et al.",
+      "abstract": "Chimeric antigen receptor T cell (CAR-T) therapy has emerged as a prominent cancer treatment modality, demonstrating significant clinical success. To date, several CAR-T products have been approved by the U.S. Food and Drug Administration (FDA) for the management of hematological malignancies. Despite these advances, several challenges continue to limit the broader application of CAR-T therapy. These challenges include complex and costly manufacturing processes, safety concerns associated with integrating viral vectors, individualized production requirements, therapy-related adverse effects, and limited efficacy against solid tumors. Recent progress in ribonucleic acid (RNA)-based technologies has introduced promising strategies to improve the safety, adaptability, and therapeutic performance of CAR-T cells. This review provides a comprehensive translational perspective on the integration of RNA technologies with CAR-T therapy. Specifically, it categorizes current approaches into four key areas: RNA-driven non-viral CAR-T cell manufacturing, RNA vaccine-mediated enhancement of CAR-T activity, RNA interference (RNAi)-based modulation, and in vivo CAR-T cell generation. Among the reviewed approaches, ex vivo messenger RNA (mRNA)-based CAR-T engineering currently has the greatest clinical maturity, whereas RNA vaccine-mediated boosting shows particular promise for enhancing CAR-T expansion and persistence, especially in solid tumors. In vivo RNA-mediated CAR-T generation remains at an early stage of development, with evidence still predominantly derived from preclinical studies, but may ultimately represent the most transformative approach by simplifying manufacturing and improving accessibility.Trial registration number: Not applicable.",
+      "date": "2026-Nov",
+      "doi": "10.1007/s00280-026-04961-2",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42986451/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42983097",
+      "title": "In vivo CAR-T double knockout screen maps synergistic antitumour gene pairs.",
+      "journal": "Nature",
+      "authors": "Zhou L, Renauer PA, Tang K, Li S, Luo Z et al.",
+      "abstract": "Chimeric antigen receptor (CAR)-T cell therapy has transformed the treatment of haematological malignancies, but its efficacy remains limited by multiple negative regulatory mechanisms intrinsic to T cells1-4. Here we perform a high-throughput in vivo CAR-T double-knockout (DKO) CRISPR screen, and identify multiple DKO gene pairs that are both effective and synergistic. The top pair, NR4A1-SOCS3 DKO, has multiple favourable immunological features. Whole-transcriptome profiling and in vivo single-cell RNA sequencing reveal that NR4A1-SOCS3 DKO specifically upregulates metabolic pathways in CAR-T cells, which show significantly higher metabolic fitness and mitochondrial activity. NR4A1-SOCS3 DKO CAR-T cells and T cells exhibit exceptionally potent antitumour efficacy and long-term tumour control across different tumour models without compromising safety features. NR4A1-SOCS3 DKO outperforms several benchmark single-gene and dual-gene modifications in T cells and CAR-T cells5-9. These data demonstrate high-throughput in vivo CAR-T DKO screening for rapid discovery of combination targets, and establish NR4A1-SOCS3 as a promising pair of intracellular checkpoints to engineer high-performance CAR-T therapies against cancer.",
+      "date": "2026-Nov",
+      "doi": "10.1186/1471-2105-14-244",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42983097/",
       "sowhat": "Abstract not available"
     },
     {
