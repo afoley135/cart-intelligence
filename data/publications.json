@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-06T14:23:06.591200+00:00",
-  "count": 160,
+  "fetched_at": "2026-11-07T12:28:28.575136+00:00",
+  "count": 161,
   "publications": [
     {
       "source": "pubmed",
@@ -243,6 +243,21 @@
       "category": null
     },
     {
+      "source": "pubmed",
+      "pmid": "42854615",
+      "title": "Pre-clinical validation of OSCAR-3 mRNA-based CAR T cells for targeting osteosarcomas.",
+      "journal": "Cytotherapy",
+      "authors": "Mensali N, Joaquina S, de Montlaur C, Casey NP, Nesset TO et al.",
+      "abstract": "Osteosarcoma (OS) is a rare cancer affecting children and young adults with a good prognosis when localized. Nevertheless, primary metastases or metastatic relapses are associated with high mortality, underlying the need for novel treatment strategies. Immunotherapy, and more recently Chimeric antigen receptor (CAR)-based therapy, is being investigated as a new approach for the management of solid tumors, although clinical results in OS have so far been limited.",
+      "date": "2026-12",
+      "doi": "10.1016/j.jcyt.2026.102930",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42854615/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
       "source": "biorxiv",
       "pmid": null,
       "title": "Xeno-Free Peptide-Functionalized Hydrogels Support hiPSC Encapsulation and In Situ Differentiation into Cardiomyocytes with Enhanced Structural Maturation",
@@ -344,6 +359,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42983097/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42992542",
+      "title": "Application of Mechanistic Modeling to Support Dose-Relevant Decision Making for CAR-T Cell Therapy in Oncology: A Systematic Scoping Review.",
+      "journal": "Clinical and translational science",
+      "authors": "Odujinrin D, McClelland G",
+      "abstract": "CAR-T therapy has improved outcomes in selected relapsed or refractory hematologic malignancies. However, rational dose-relevant decision application remains challenging because the administered (nominal) cell dose does not reliably predict in vivo exposure, toxicity, or clinical response. These relationships are not adequately characterized by empirical dose escalation alone. Mechanistic modeling may offer a biologically interpretable way to connect preclinical evidence and patient-level CAR-T posology, but its application remains incompletely defined. We conducted a systematic scoping review using JBI methodology and PRISMA-ScR guidance, searching MEDLINE, Embase, Scopus, and Google Scholar (2010-2025). Eligible studies reported original CK/PD, PK/PD, QSP, PBPK/PD, stochastic, or agent-based models for dose-relevant application or regimen optimization. Nineteen studies met the inclusion criteria (13 mechanistic and 6 semi-mechanistic models) spanning hematologic and solid-tumor settings. Although these studies evaluated aspects of CAR-T pharmacology, none provided prospectively validated clinical dose-selection evidence. Overall, CAR-T expansion appeared to be more influenced by tumor burden, antigen engagement, product-specific attributes, lymphodepletion, and host or tumor-site factors than by nominal dose. Solid-tumor models highlighted delivery route, trafficking, biodistribution, and microenvironment barriers. Emerging in vivo CAR-T platforms shifted dose considerations toward vector or mRNA dose and repeat dosing. Mechanistic modeling appears useful for framing CAR-T dose-relevant and regimen questions, but the current evidence is best interpreted as a taxonomy of model applications rather than proof of prospective clinical dose selection utility. Consistent with ICH M15 principles, future clinical, and regulatory application will require defined context of use, stronger validation, uncertainty assessment, and biological integration.",
+      "date": "2026-11",
+      "doi": "10.1111/cts.70756",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42992542/",
       "sowhat": "Abstract not available",
       "category": null
     },
@@ -668,7 +698,7 @@
       "title": "One-carbon metabolism sustains effector T cell function through cell-surface glycosylation.",
       "journal": "bioRxiv : the preprint server for biology",
       "authors": "Wang P, Yu A, Mutaher M, Eisele AS, Mouche S et al.",
-      "abstract": "Folate is an essential driver of one-carbon metabolism. The cellular consequences of its deprivation in CD8 + T cell and impact on anti-tumor function are unknown. Single cell RNA-seq analysis of primary central nervous system lymphoma (PCNSL) patients' tumor samples revealed exhaustion in T cells with high folate metabolism gene expression signature. Functional genomics, metabolite profiling, and glycomics identified disrupted cell surface glycosylation as a major consequence of folate deprivation in CD8 + T cells. Mechanistically, folate deprivation reduced nucleotide sugar levels, perturbed glycosylation, and triggered the apoptotic unfolded protein response. Overexpressing folate transporters in adoptively transferred CD8 + T cells increased intratumoral T cell numbers and reduced exhaustion. Therefore, our data draw a mechanistic line between one-carbon metabolism, cell-surface glycosylation, and anti-tumor T cell function, and support a hypothesis that increased folate uptake can enhance CD8 + T cell function including ex vivo and in vivo CAR-T cells.",
+      "abstract": "Folate is an essential driver of one-carbon metabolism. The cellular consequences of its deprivation in CD8+ T cell and impact on anti-tumor function are unknown. Single cell RNA-seq analysis of primary central nervous system lymphoma (PCNSL) patients' tumor samples revealed exhaustion in T cells with high folate metabolism gene expression signature. Functional genomics, metabolite profiling, and glycomics identified disrupted cell surface glycosylation as a major consequence of folate deprivation in CD8+ T cells. Mechanistically, folate deprivation reduced nucleotide sugar levels, perturbed glycosylation, and triggered the apoptotic unfolded protein response. Overexpressing folate transporters in adoptively transferred CD8+ T cells increased intratumoral T cell numbers and reduced exhaustion. Therefore, our data draw a mechanistic line between one-carbon metabolism, cell-surface glycosylation, and anti-tumor T cell function, and support a hypothesis that increased folate uptake can enhance CD8+ T cell function including ex vivo and in vivo CAR-T cells.",
       "date": "2026-10",
       "doi": "10.1007/s11306-021-01848-6",
       "mesh_terms": [],
@@ -1739,21 +1769,6 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42696794/",
-      "sowhat": "Abstract not available",
-      "category": null
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42854615",
-      "title": "Pre-clinical validation of OSCAR-3 mRNA-based CAR T cells for targeting osteosarcomas.",
-      "journal": "Cytotherapy",
-      "authors": "Mensali N, Joaquina S, de Montlaur C, Casey NP, Nesset TO et al.",
-      "abstract": "Osteosarcoma (OS) is a rare cancer affecting children and young adults with a good prognosis when localized. Nevertheless, primary metastases or metastatic relapses are associated with high mortality, underlying the need for novel treatment strategies. Immunotherapy, and more recently Chimeric antigen receptor (CAR)-based therapy, is being investigated as a new approach for the management of solid tumors, although clinical results in OS have so far been limited.",
-      "date": "2026-06",
-      "doi": "10.1016/j.jcyt.2026.102930",
-      "mesh_terms": [],
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42854615/",
       "sowhat": "Abstract not available",
       "category": null
     },
