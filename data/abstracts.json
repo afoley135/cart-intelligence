@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-07T12:28:48.270155+00:00",
-  "count": 80,
+  "fetched_at": "2026-11-08T12:36:16.961051+00:00",
+  "count": 81,
   "abstracts": [
     {
       "source": "pubmed",
@@ -438,13 +438,27 @@
     },
     {
       "source": "pubmed",
+      "pmid": "42995488",
+      "title": "CD3scFv-Engineered AAV Capsid Drives Superior In Vitro and In Vivo CAR-T Cell Generation and Leads to Complete Eradication of CD19+ Tumors.",
+      "journal": "Molecular therapy : the journal of the American Society of Gene Therapy",
+      "authors": "Chen H, Hoang T, Smith A, Shahim T, Ho CY et al.",
+      "abstract": "Adeno-associated viruses (AAV) are emerging vectors for in vivo delivery of chimeric antigen receptor (CAR) therapies. Natural AAV serotypes were previously considered unsuitable due to their poor transduction of non-activated human T cells. To overcome this limitation, we inserted an anti-CD3 single-chain variable fragment (CD3scFv) into one of the three AAV capsid proteins (VP1, VP2, or VP3) to specifically target and activate human T cells. This strategy preserved normal vector production yields, while enabling specific T cell targeting. Using AAV6 as a representative serotype, our lead candidate AVO-100 achieved more than 200-fold higher transduction efficiency of primary human T cells compared to unmodified counterpart. In vitro, AVO-100-mediated CD19-CAR delivery resulted in efficient CAR expression and killing of CD19+ Raji lymphoma cells in co-culture assays. In vivo, a single intravenous dose of AVO-100 at 2×108 vector genomes (vg) per subject using NSG mice bearing Raji xenografts, prompted complete tumor eradication and significantly prolonged survival, whereas control untreated animals succumbed to a progressive disease. These results demonstrate that site-selective CD3scFv insertion into a single AAV capsid protein provides a robust, versatile platform for improved T cell transduction and effective in vivo CAR-T cell generation, offering a promising off-the-shelf approach for treating B cell malignancies.",
+      "date": "2026-Nov",
+      "doi": "10.1016/j.ymthe.2026.10.035",
+      "conference": "ASGCT",
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42995488/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
       "pmid": "42992542",
       "title": "Application of Mechanistic Modeling to Support Dose-Relevant Decision Making for CAR-T Cell Therapy in Oncology: A Systematic Scoping Review.",
       "journal": "Clinical and translational science",
       "authors": "Odujinrin D, McClelland G",
       "abstract": "CAR-T therapy has improved outcomes in selected relapsed or refractory hematologic malignancies. However, rational dose-relevant decision application remains challenging because the administered (nominal) cell dose does not reliably predict in vivo exposure, toxicity, or clinical response. These relationships are not adequately characterized by empirical dose escalation alone. Mechanistic modeling may offer a biologically interpretable way to connect preclinical evidence and patient-level CAR-T posology, but its application remains incompletely defined. We conducted a systematic scoping review using JBI methodology and PRISMA-ScR guidance, searching MEDLINE, Embase, Scopus, and Google Scholar (2010-2025). Eligible studies reported original CK/PD, PK/PD, QSP, PBPK/PD, stochastic, or agent-based models for dose-relevant application or regimen optimization. Nineteen studies met the inclusion criteria (13 mechanistic and 6 semi-mechanistic models) spanning hematologic and solid-tumor settings. Although these studies evaluated aspects of CAR-T pharmacology, none provided prospectively validated clinical dose-selection evidence. Overall, CAR-T expansion appeared to be more influenced by tumor burden, antigen engagement, product-specific attributes, lymphodepletion, and host or tumor-site factors than by nominal dose. Solid-tumor models highlighted delivery route, trafficking, biodistribution, and microenvironment barriers. Emerging in vivo CAR-T platforms shifted dose considerations toward vector or mRNA dose and repeat dosing. Mechanistic modeling appears useful for framing CAR-T dose-relevant and regimen questions, but the current evidence is best interpreted as a taxonomy of model applications rather than proof of prospective clinical dose selection utility. Consistent with ICH M15 principles, future clinical, and regulatory application will require defined context of use, stronger validation, uncertainty assessment, and biological integration.",
       "date": "2026-Nov",
-      "doi": "10.1111/cts.70756",
+      "doi": "10.1186/2046-4053-1-7",
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42992542/",
