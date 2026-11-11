@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-10T14:54:27.232117+00:00",
-  "count": 81,
+  "fetched_at": "2026-11-11T14:39:16.570391+00:00",
+  "count": 80,
   "abstracts": [
     {
       "source": "pubmed",
@@ -452,6 +452,20 @@
     },
     {
       "source": "pubmed",
+      "pmid": "43005928",
+      "title": "The synthetic biology frontier: engineered oncolytic viruses and viral vectors for next-generation cancer therapy and gene delivery.",
+      "journal": "RSC advances",
+      "authors": "Alsharedeh RH, Aljabali AAA, Obeid MA, Alqudah A, Gammoh O et al.",
+      "abstract": "Viruses are no longer used merely as naturally occurring tools for gene transfer or as blunt cytolytic agents. Researchers are rewriting their genomes, capsids, tropisms, regulatory elements, and payloads to create therapeutic systems that sense disease, execute conditional programs, and remodel pathological tissue. In oncology, engineered oncolytic viruses (OVs) can combine tumor-selective replication with immunogenic cell death, antigen release, and local immune stimulation. In parallel, viral-vector engineering, particularly AAV and LVs, is addressing central limitations of gene delivery: the prevalence of pre-existing neutralizing antibodies, the difficulty of systemic administration and repeat dosing (AAV), and the manufacturing bottleneck of ex vivo cell therapies (LV). The clinical record is encouraging but uneven: T-VEC has shown that an engineered herpes simplex virus can improve durable responses in selected melanoma lesions, while G47Δ/teserpaturev and newer armed HSV platforms provide evidence of feasibility, safety, and occasional durable responses in difficult solid tumors. Lentiviral vector-based in vivo CAR-T cell generation, exemplified by KLN-1010/inMMyCAR and related first-in-human programs, signals a paradigm shift away from ex vivo manufacturing. However, the broader field has not converted its large preclinical literature into a proportional number of clinically meaningful, systemically deployable medicines. The main bottlenecks remain delivery, tumor heterogeneity, immune clearance, suboptimal pharmacodynamic biomarkers, manufacturing complexity, resistance, and the difficulty of proving benefit for products with delayed or immunologically mediated effects. This review examines the synthetic biology toolkit for programmable viral therapeutics through a unified engineering framework that integrates OVs, AAV, and LVs by design principle rather than by vector class. We discuss tumor-selective promoters, microRNA detargeting, retargeted capsids and ligands, attenuation, genome-scale assembly, immune-stimulatory payloads, bispecific and trispecific engagers, logic-gated circuits, safety switches, serodivergent AAV capsids, biomimetic cloaking, cell carriers, biomaterial delivery systems, and in vivo CAR-T generation. Our central thesis is that the next generation of viral medicines will be selected not by the most elaborate genome, but by the most coherent alignment of five measurable success factors: tumor selectivity, immune remodeling, delivery and biodistribution, controllable safety, and manufacturability. The emerging paradigm is therefore programmable viral therapeutics: context-sensitive biological medicines designed to operate within the constraints of human tumors and human immunity.",
+      "date": "2026-Nov",
+      "doi": "10.1038/s41408-021-00459-7",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43005928/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
       "pmid": "42992542",
       "title": "Application of Mechanistic Modeling to Support Dose-Relevant Decision Making for CAR-T Cell Therapy in Oncology: A Systematic Scoping Review.",
       "journal": "Clinical and translational science",
@@ -592,6 +606,20 @@
     },
     {
       "source": "pubmed",
+      "pmid": "42587055",
+      "title": "An inherent T cell-activating mRNA delivery carrier for in vivo CAR T generation.",
+      "journal": "Nature materials",
+      "authors": "Cao Q, Yao Y, Zheng W, Liu H, Jiang M et al.",
+      "abstract": "The clinical success of chimeric antigen receptor (CAR) T cell therapy requires scalable, non-invasive strategies for in vivo T cell engineering. Although mRNA delivery offers a promising alternative, lipid-nanoparticle-based carriers show limited efficiency for in vivo T cell transfection and typically require antibody conjugation. Here we report an inherent T cell-activating polymer-lipid nanoparticle that enables ligand-free, efficient mRNA transfection and activation of T cells in vivo. This mRNA delivery vehicle, composed of p-toluenesulfonyl arginine (RT)-modified oligoethylenimine-based lipid nanoparticles (ERTLNPs), preferentially mediated mRNA transfection in the spleen following systemic administration. Without exogenous stimulation, ERTLNPs intrinsically activated T cells, triggering robust mRNA expression and proliferation. Mechanistically, ERTLNPs engaged the PI3K/AKT/mTOR signalling axis to reprogram T cell metabolism, promoting expansion and restraining exhaustion. The systemic delivery of mRNA encoding fibroblast activation protein CAR via ERTLNPs contributed to the in situ generation of functional CAR T cells, which efficiently eliminated pathological fibroblasts in models of cancer and fibrosis, with minimal off-target effects. This ligand-free, metabolically reprogramming mRNA delivery system provides a clinically translatable approach for in vivo CAR T cell generation.",
+      "date": "2026-Nov",
+      "doi": "10.4161/cbt.11.3.14099",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42587055/",
+      "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
       "pmid": "42556595",
       "title": "Cascading attrition of in vivo CAR-T therapy: From systemic delivery failure to functional collapse.",
       "journal": "Critical reviews in oncology/hematology",
@@ -659,34 +687,6 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42130331/",
       "sowhat": "Novel ionizable lipid enables spleen-targeted in vivo CAR-T engineering with 57-fold mRNA delivery enhancement."
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42129518",
-      "title": "First-in-human study of FLT3 CAR-T cell therapy for relapsed acute myeloid leukemia.",
-      "journal": "NPJ precision oncology",
-      "authors": "Wu X, Lu G, Tian L, Chen S, Caligiuri MA et al.",
-      "abstract": "In this first-in-human open-label study, autologous FLT3 CAR-T cells were delivered to two patients with relapsed and refractory FLT3+ AML. Bone marrow examination revealed AML blasts with high but variable surface density of FLT3 expression. Following tumor cytoreduction and lymphodepletion, 1 × 106/kg of FLT3 CAR-T cells were administered, resulting in in vivo CAR-T cell expansion and grade 1 cytokine release syndrome in both patients. Both patients failed to achieve remission after CAR-T cell therapy, but bone marrow examination following therapy revealed the elimination of FLT3+ AML blasts, persistence of FLT3 - AML blasts, and early post-treatment preservation of normal CD34+ hematopoietic stem and progenitor cells (HSPCs) with variable FLT3 expression. Collectively, autologous FLT3 CAR-T cells can be safely administered and can eradicate FLT3⁺ blasts with minimal toxicity, without causing substantial damage to normal CD34⁺ HSPCs; however, they fail to induce leukemic remission due to the heterogeneity of FLT3 expression and the persistence of FLT3⁻ AML blasts.",
-      "date": "2026-May",
-      "doi": "10.1182/bloodadvances.2022007405",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42129518/",
-      "sowhat": "Abstract not available"
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42129307",
-      "title": "Circadian engineering of in vivo CAR T cell therapy for precision oncology.",
-      "journal": "NPJ precision oncology",
-      "authors": "Bautista J, Echeverría CE, Rodríguez-Marcano MG, López-Cortés A",
-      "abstract": "Circadian rhythms shape antitumor immunity by regulating endocrine signaling, vascular permissiveness, leukocyte trafficking, metabolism, and suppressive features of the tumor microenvironment across the 24-h cycle. Here, we propose that biological time may represent an important design variable for CAR T-cell therapy. This concept may be particularly relevant to in vivo CAR T platforms, which could extend temporal control beyond infusion timing through repeatable induction, tunable amplitude, and reversible shutdown. We discuss evidence that CD8⁺ T-cell clocks, neuroendocrine oscillations, endothelial gatekeeping, and rhythmic tumor-microenvironment remodeling influence immune access, effector competence, exhaustion risk, and inflammatory toxicity. We further examine how viral vectors, lipid nanoparticles, and programmable control circuits might enable circadian-aware CAR installation and duty-cycling. Together, these observations support chrono-synthetic CAR T as a testable translational framework for precision immuno-oncology.",
-      "date": "2026-May",
-      "doi": "10.1073/pnas.1516953113",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42129307/",
-      "sowhat": "Abstract not available"
     },
     {
       "source": "pubmed",
@@ -952,20 +952,6 @@
       "conference": null,
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42587334/",
-      "sowhat": "Abstract not available"
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42587055",
-      "title": "An inherent T cell-activating mRNA delivery carrier for in vivo CAR T generation.",
-      "journal": "Nature materials",
-      "authors": "Cao Q, Yao Y, Zheng W, Liu H, Jiang M et al.",
-      "abstract": "The clinical success of chimeric antigen receptor (CAR) T cell therapy requires scalable, non-invasive strategies for in vivo T cell engineering. Although mRNA delivery offers a promising alternative, lipid-nanoparticle-based carriers show limited efficiency for in vivo T cell transfection and typically require antibody conjugation. Here we report an inherent T cell-activating polymer-lipid nanoparticle that enables ligand-free, efficient mRNA transfection and activation of T cells in vivo. This mRNA delivery vehicle, composed of p-toluenesulfonyl arginine (RT)-modified oligoethylenimine-based lipid nanoparticles (ERTLNPs), preferentially mediated mRNA transfection in the spleen following systemic administration. Without exogenous stimulation, ERTLNPs intrinsically activated T cells, triggering robust mRNA expression and proliferation. Mechanistically, ERTLNPs engaged the PI3K/AKT/mTOR signalling axis to reprogram T cell metabolism, promoting expansion and restraining exhaustion. The systemic delivery of mRNA encoding fibroblast activation protein CAR via ERTLNPs contributed to the in situ generation of functional CAR T cells, which efficiently eliminated pathological fibroblasts in models of cancer and fibrosis, with minimal off-target effects. This ligand-free, metabolically reprogramming mRNA delivery system provides a clinically translatable approach for in vivo CAR T cell generation.",
-      "date": "2026-Aug",
-      "doi": "10.4161/cbt.11.3.14099",
-      "conference": null,
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42587055/",
       "sowhat": "Abstract not available"
     },
     {

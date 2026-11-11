@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-10T14:54:04.064632+00:00",
-  "count": 164,
+  "fetched_at": "2026-11-11T14:38:56.505720+00:00",
+  "count": 165,
   "publications": [
     {
       "source": "pubmed",
@@ -419,6 +419,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42992542/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43005928",
+      "title": "The synthetic biology frontier: engineered oncolytic viruses and viral vectors for next-generation cancer therapy and gene delivery.",
+      "journal": "RSC advances",
+      "authors": "Alsharedeh RH, Aljabali AAA, Obeid MA, Alqudah A, Gammoh O et al.",
+      "abstract": "Viruses are no longer used merely as naturally occurring tools for gene transfer or as blunt cytolytic agents. Researchers are rewriting their genomes, capsids, tropisms, regulatory elements, and payloads to create therapeutic systems that sense disease, execute conditional programs, and remodel pathological tissue. In oncology, engineered oncolytic viruses (OVs) can combine tumor-selective replication with immunogenic cell death, antigen release, and local immune stimulation. In parallel, viral-vector engineering, particularly AAV and LVs, is addressing central limitations of gene delivery: the prevalence of pre-existing neutralizing antibodies, the difficulty of systemic administration and repeat dosing (AAV), and the manufacturing bottleneck of ex vivo cell therapies (LV). The clinical record is encouraging but uneven: T-VEC has shown that an engineered herpes simplex virus can improve durable responses in selected melanoma lesions, while G47Δ/teserpaturev and newer armed HSV platforms provide evidence of feasibility, safety, and occasional durable responses in difficult solid tumors. Lentiviral vector-based in vivo CAR-T cell generation, exemplified by KLN-1010/inMMyCAR and related first-in-human programs, signals a paradigm shift away from ex vivo manufacturing. However, the broader field has not converted its large preclinical literature into a proportional number of clinically meaningful, systemically deployable medicines. The main bottlenecks remain delivery, tumor heterogeneity, immune clearance, suboptimal pharmacodynamic biomarkers, manufacturing complexity, resistance, and the difficulty of proving benefit for products with delayed or immunologically mediated effects. This review examines the synthetic biology toolkit for programmable viral therapeutics through a unified engineering framework that integrates OVs, AAV, and LVs by design principle rather than by vector class. We discuss tumor-selective promoters, microRNA detargeting, retargeted capsids and ligands, attenuation, genome-scale assembly, immune-stimulatory payloads, bispecific and trispecific engagers, logic-gated circuits, safety switches, serodivergent AAV capsids, biomimetic cloaking, cell carriers, biomaterial delivery systems, and in vivo CAR-T generation. Our central thesis is that the next generation of viral medicines will be selected not by the most elaborate genome, but by the most coherent alignment of five measurable success factors: tumor selectivity, immune remodeling, delivery and biodistribution, controllable safety, and manufacturability. The emerging paradigm is therefore programmable viral therapeutics: context-sensitive biological medicines designed to operate within the constraints of human tumors and human immunity.",
+      "date": "2026-11",
+      "doi": "10.1038/s41408-021-00459-7",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43005928/",
       "sowhat": "Abstract not available",
       "category": null
     },
