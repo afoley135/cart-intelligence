@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-13T14:22:09.733823+00:00",
-  "count": 166,
+  "fetched_at": "2026-11-14T13:07:22.391808+00:00",
+  "count": 170,
   "publications": [
     {
       "source": "pubmed",
@@ -434,6 +434,51 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/43005928/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43024723",
+      "title": "Engineering exhaustion-resistance CD19 CAR T cells to address translational barriers for the treatment of cancer and autoimmune disease.",
+      "journal": "Science advances",
+      "authors": "Sayed AAA, Chan T, Bolinger CG, Chauhan P, Chakiath M et al.",
+      "abstract": "PRGN-3008 is a CD19 CAR T cell designed to overcome key limitations in ex vivo and in vivo CAR T manufacturing, cost, safety, and therapeutic durability. Featuring decentralized overnight manufacturing without ex vivo expansion, PRGN-3008 is engineered using a single nonviral transposon to encode CD19 CAR, membrane-bound interleukin-15 (mbIL-15) for improved persistence, PD-1-targeting microRNAs to prevent exhaustion, and an inducible safety switch for controlled in vivo elimination. Safety studies showed low vector copy numbers, favorable integration profile, and efficient CAR T ablation upon safety-switch activation. The combined mbIL-15 expression and PD-1 down-regulation preserved PRGN-3008 polyfunctionality and sustained cytotoxicity across repeated tumor challenges, outperforming nonarmored or singly modified CAR T cells. In xenograft models, overnight-manufactured PRGN-3008 without ex vivo expansion and activation achieved durable tumor clearance, prolonged tumor-free survival, robust antigen dependent expansion, and enrichment of memory T cell phenotypes linked to clinical durability. Notably, PRGN-3008 generated from heavily pretreated patients with systemic lupus erythematosus or lupus nephritis, maintained effector function, resisted terminal differentiation under chronic antigen exposure, and effectively depleted autoreactive B cells in a humanized mouse model. Transcriptomic analysis revealed that the combination of mbIL-15 expression and PD-1 down-regulation enhances the expression of genes associated with bioenergetic pathways, including oxidative phosphorylation, mitochondrial biogenesis, glycolysis, and glutamine utilization, thereby supporting resistance to exhaustion and sustained effector function. Collectively, these data support PRGN-3008 as a clinically translatable, scalable, and controllable CAR T with the potential to expand access to cell therapy across oncology and autoimmune indications.",
+      "date": "2026-11",
+      "doi": "10.1126/sciadv.aej2663",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024723/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43024040",
+      "title": "Development of new CAR-T cell therapies for hematological cancers.",
+      "journal": "International journal of hematology",
+      "authors": "Shibata K, Hosen N",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has achieved remarkable success in treating B-cell malignancies and multiple myeloma. However, CAR-T therapy for acute myeloid leukemia (AML) remains challenging. Key issues include the lack of a tumor-specific target antigen, antigen expression heterogeneity, on-target off-tumor toxicity, and limitations of individualized manufacturing of autologous cell therapies. Recent strategies include optimized antigen recognition, multi-antigen targeting, and use of donor-recipient HLA mismatch following allogeneic hematopoietic cell transplantation. Additionally, off-the-shelf cell therapies including CAR NK cells are being developed. Furthermore, in vivo CAR T-cell generation has emerged as a distinct approach that may eliminate the need for ex vivo manufacturing. This review discusses these strategies and explores how optimizing target selection, the effector cell platform, and manufacturing processes could expand CAR-based cellular therapy.",
+      "date": "2026-11",
+      "doi": "10.1038/s41586-026-10235-x",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024040/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42995234",
+      "title": "In situ CAR engineering and nanoparticle-mediated TREM2 degradation for macrophage reprogramming in malignant ascites.",
+      "journal": "Nature materials",
+      "authors": "Li Y, Yang T, Zhang X, Peng R, Gong J et al.",
+      "abstract": "Peritoneal metastasis (PM) and the resulting malignant tumour ascites characterize advanced gastrointestinal cancers, often leading to poor prognosis and limited response to current therapies. Single-cell analysis of patient-derived PM and malignant tumour ascites reveals an approximately 90% enrichment of TREM2+-tumour-associated macrophages, which drive CD8+ T cell dysfunction and tumour growth. Here we develop lipid nanoparticles encapsulating mRNA to reprogram these tumour-associated macrophages into chimeric antigen receptor macrophages targeting Claudin18.2-positive tumour ascites. The lipid nanoparticles incorporate a TREM2+ ligand to enhance the targeting of TREM2 macrophages. The piperazine-containing phosphoramide ionizable lipid synergizes with the TREM2 ligand to inhibit ligand dissociation, promoting TREM2 internalization and degradation via lysosomal and autophagosomal pathways. This inhibits AKT signalling and reprograms tumour-associated macrophages towards an antitumour phenotype, enhancing progenitor exhausted and effector memory CD8+ T cell responses, altering the PM transcriptome, and reducing immunosuppression in both malignant tumour ascites and tumours. Combined with PD-1 blockade, this therapy suppresses tumour growth and extends survival in mice, and with matching immunological effects in clinical samples, demonstrates its translational potential for PM immunotherapy.",
+      "date": "2026-11",
+      "doi": "10.1002/advs.202517672",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42995234/",
       "sowhat": "Abstract not available",
       "category": null
     },
@@ -2489,6 +2534,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/43017074/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43022662",
+      "title": "Nanomedicine-Enhanced CAR-Engineered Immunotherapy for Lung Cancer: Focusing on Multimodal Strategies and Precision Therapy.",
+      "journal": "International journal of nanomedicine",
+      "authors": "He X, He J, Zhang Z, Teng Y, Wang B et al.",
+      "abstract": "Lung cancer remains a major therapeutic challenge because of its molecular and antigenic heterogeneity, rapid evolution, treatment resistance, and immunosuppressive tumor microenvironment (TME). Although chimeric antigen receptor T-cell (CAR-T) therapy has transformed the treatment of hematological malignancies, its efficacy in lung cancer remains constrained by antigen heterogeneity, poor tumor trafficking and infiltration, T-cell dysfunction, suppressive stromal and myeloid compartments, manufacturing complexity, and pulmonary on-target off-tumor toxicity. Nanomedicine offers a versatile platform to address these barriers by improving CAR-T manufacturing and functional fitness, enabling targeted delivery of nucleic acids and immunomodulators, remodeling the TME, enhancing local accumulation and controlled activation, and supporting transient in situ generation of CAR-engineered immune cells. This review integrates these advances within a Route-Antigen-Microenvironment-Programming (RAMP) framework and emphasizes the mechanistic interdependence among delivery route, target selection, local tumor ecology, and CAR generation and control. We examine the antigen landscapes of non-small-cell and small-cell lung cancer and propose a quantitative framework for antigen selection that incorporates antigen density, spatial and temporal heterogeneity, normal-tissue safety, and engineering compensability. We further discuss nanotechnology-assisted manufacturing, cell-surface nanobackpacks, tumor preconditioning, local biomaterial reservoirs, in vivo CAR programming, pulmonary delivery, multimodal therapy, and theranostic monitoring. Most nano-enabled approaches are still supported primarily by preclinical studies or evidence from non-lung-cancer settings, underscoring the need for standardized assessment of biodistribution, reproducibility, immunogenicity, pulmonary safety, and long-term material fate. Integrating quantitative antigen profiling with biodegradable and controllable materials and lung-relevant translational models may help advance CAR-engineered immunotherapy toward a spatially controlled, dynamically monitored, and personalized therapeutic platform for lung cancer.",
+      "date": "2026",
+      "doi": "10.1021/acsnano.5c09800",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43022662/",
       "sowhat": "Abstract not available",
       "category": null
     }
