@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-15T13:30:49.868315+00:00",
-  "count": 170,
+  "fetched_at": "2026-11-16T14:42:44.144746+00:00",
+  "count": 171,
   "publications": [
     {
       "source": "pubmed",
@@ -254,6 +254,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42854615/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "Single-AAV-mediated cardiomyocyte-specific adenine base editing ameliorates cardiac hypertrophy in vivo",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Monnikhof, T., Han, S. J., Stumpo, L., Koshian, S., Agirman, C. et al.",
+      "abstract": "Hypertrophic cardiomyopathy (HCM) is the most common inherited cardiac disorder, frequently accompanied by cardiac hypercontractility, diastolic dysfunction, heart failure and sudden cardiac death. The disease is predominantly caused by pathogenic variants in genes encoding sarcomeric proteins and current therapeutic strategies largely focus on symptom management. Adeno-associated virus-based (AAV) delivery of base editing tools has emerged as an alternative strategy that acts directly on the genetic cause of disease. However, canonical SpCas9-based editors are too large to package into a single-AAV vector which mandates dual-AAV approaches that require higher overall vector doses with elevated toxicity risk and increased manufacturing costs. Here, we report the development and application of a single vector approach for cardiomyocyte-specific adenine base editing to correct a Dutch founder mutation in MYBPC3 (c.2827C>T, p.Arg943Ter) that causes HCM. We systematically compared compact base editors in human induced pluripotent stem cell-derived cardiomyocytes (hiPSC-CMs) and selected the most efficient configuration, which reversed disease-associated hypercontractility in engineered human myocardium (EHM). To fit the editor/guide construct in a single-AAV vector, we screened a library of rationally designed small chimeric promoters and identified 6C2 to effectively drive expression in hiPSC-CMs and cardiac tissue of both mice and non-human primates (NHP) with exceptional specificity. Delivered in a single next-generation cardiotropic AAV capsid, we achieved therapeutic correction in an HCM mouse model at doses 20-fold below published dual-AAV cardiomyopathy base editing approaches. These results establish cardiomyocyte-specific, single vector-mediated base editing as a viable therapeutic strategy for inherited cardiomyopathies.",
+      "date": "2026-11-13",
+      "doi": "10.64898/2026.11.12.765297",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.11.12.765297",
       "sowhat": "Abstract not available",
       "category": null
     },
