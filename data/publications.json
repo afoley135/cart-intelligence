@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-16T14:42:44.144746+00:00",
-  "count": 171,
+  "fetched_at": "2026-11-17T15:55:31.515409+00:00",
+  "count": 172,
   "publications": [
     {
       "source": "pubmed",
@@ -494,6 +494,21 @@
       "mesh_terms": [],
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42995234/",
+      "sowhat": "Abstract not available",
+      "category": null
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43040071",
+      "title": "A CD7-targeted AAV variant enables efficient T and NK cell engineering in vivo.",
+      "journal": "Nature biotechnology",
+      "authors": "Hong L, Chen G, Liu Y, Cao Y, Li X et al.",
+      "abstract": "Adeno-associated virus (AAV) vectors have been applied for precise genome engineering in human T cells but poor tropism restricts their efficiency and translational potential. Here, through directed evolution of the AAV6 capsid in primary human T cells, we identified a family of variants containing an APR motif at residues 455-457. The lead candidate, AAV.APR31, enabled robust transduction of primary T and NK cells at nearly 100-1,000-fold lower doses than AAV6 and outperformed the human T cell-tropic capsid AAV-hT7. CRISPR screening identified CD7 as a lineage-specific entry enhancer alongside the canonical AAVR pathway and structural analysis suggested that the APR motif facilitates CD7 engagement. Unlike existing delivery systems confined to one engineering mode, AAV.APR31 enabled transient transgene delivery, site-specific knock-in and transposon integration in human T and NK cells, generating CAR-T cells functionally equivalent to lentiviral vector-manufactured products. Systemic administration of AAV.APR31-generated CAR-T cells in vivo resulted in potent tumor control in hematologic and solid tumor mouse models.",
+      "date": "2026-11",
+      "doi": "10.21105/joss.03021",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43040071/",
       "sowhat": "Abstract not available",
       "category": null
     },
