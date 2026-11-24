@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-23T17:42:44.465649+00:00",
-  "count": 1358,
+  "fetched_at": "2026-11-24T17:32:19.684477+00:00",
+  "count": 1361,
   "patents": [
     {
       "id": "WO2026060032.A2",
@@ -22012,6 +22012,54 @@
       "claim_type": null,
       "novelty_summary": null,
       "relevant": null
+    },
+    {
+      "id": "US20260366031.A1",
+      "title": "CIRCULAR RNA ENCODING CARS AND THE USE THEREOF",
+      "abstract": "The present invention provides a circular RNA encoding CARs and the use thereof to create immune cells that target specific diseases, e.g., lymphoma, multiple myeloma and leukemia and autoimmune diseases, such as systemic lupus erythematosus, lupus nephritis and myasthenia gravis.",
+      "assignee": "THERORNA SHANGHAI CO LTD [CN]; THERORNA SHANGHAI CO., LTD.",
+      "watchlist_company": "Create Medicines",
+      "filing_date": "",
+      "patent_number": "US20260366031A1",
+      "application_number": "20260366031",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260366031A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent presents circular RNA (circRNA) as a novel vehicle for CAR encoding, offering potential advantages over linear mRNA in terms of stability, immunogenicity, and translation efficiency. This addresses a key challenge in CAR-T manufacturing by providing a potentially superior nucleic acid platform for transient CAR expression without genomic integration, with applications spanning hematologic malignancies and autoimmune diseases.",
+      "relevant": true
+    },
+    {
+      "id": "US20260364200.A1",
+      "title": "GENE EDITING COMPOSITIONS OF POLYPEPTIDES AND NUCLEIC AC",
+      "abstract": "[0000]    Provided for herein are viral particles comprising a heterologous viral structural protein, targeting moiety, and at least one nucleic acid molecule encoding for a gene editing system, compositions comprising the same, and methods of using the same.",
+      "assignee": "INTERIUS BIOTHERAPEUTICS INC [US]; Interius BioTherapeutics, Inc.",
+      "watchlist_company": "Interius BioTherapeutics",
+      "filing_date": "",
+      "patent_number": "US20260364200A1",
+      "application_number": "20260364200",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260364200A1",
+      "data_type": "patent",
+      "claim_type": "Composition + Method",
+      "novelty_summary": "The patent describes engineered viral particles with heterologous structural proteins and targeting moieties that deliver gene editing systems (likely CRISPR or similar) via pseudotyped viral vectors. This is significant for CAR-T because it enables non-integrating, targeted delivery of gene editing payloads to immune cells, potentially allowing ex vivo CAR-T engineering without viral integration risks or improved in vivo editing of T cell populations.",
+      "relevant": true
+    },
+    {
+      "id": "US20260365612.A1",
+      "title": "LIPID NANOPARTICLE COMPOSITIONS FOR DELIVERING CIRCULAR POLYNUCLEOTIDES",
+      "abstract": "Disclosed herein are novel lipids that can be used in combination with other lipid components, such as helper lipids, structural lipids, and cholesterols, to form lipid nanoparticles for delivery of therapeutic agents, such as nucleic acids (e.g., circular polynucleotides), both in vitro and in vivo.",
+      "assignee": "ORNA THERAPEUTICS INC [US]; Orna Therapeutics, Inc.",
+      "watchlist_company": "Orna Therapeutics",
+      "filing_date": "",
+      "patent_number": "US20260365612A1",
+      "application_number": "20260365612",
+      "source": "EPO OPS",
+      "url": "https://patents.google.com/patent/US20260365612A1",
+      "data_type": "patent",
+      "claim_type": "Composition of matter",
+      "novelty_summary": "The patent discloses novel lipid formulations specifically optimized for packaging and delivering circular polynucleotides (circular RNA/DNA) via lipid nanoparticles for both in vitro and in vivo applications. This addresses a key delivery challenge in gene therapy by providing improved LNP compositions tailored to circular nucleic acid cargo, which could enable more efficient and stable in vivo delivery compared to linear RNA therapeutics.",
+      "relevant": true
     }
   ]
 }
