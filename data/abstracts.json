@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-24T17:14:28.765254+00:00",
-  "count": 79,
+  "fetched_at": "2026-11-25T17:29:03.282603+00:00",
+  "count": 81,
   "abstracts": [
     {
       "source": "pubmed",
@@ -197,6 +197,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42470101/",
       "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43083781",
+      "title": "From mRNA Vaccines to In Vivo CAR-T Therapy: RNA-LNP Design and the Pharmacology of CAR-Positive Cells.",
+      "journal": "Vaccines",
+      "authors": "Wang Y, Yu L, Ma X, Ma L, Yang Y et al.",
+      "abstract": "mRNA vaccines established scalable manufacturing and lipid nanoparticle (LNP) delivery for sequence-defined, non-integrating RNA medicines. In vivo CAR-T therapy repurposes this platform to generate CAR-positive lymphocytes after intravenous dosing, but its active product is a time-varying cell population rather than the injected RNA mass. This review critically examines the pharmacological sequence from biodistribution and cell-specific uptake to cytosolic RNA release, surface CAR expression, effector function, and disease response. The evidence comprises primary human T cells, mice, humanized mice, non-human primates, and 11 patients described in one correspondence and two meeting abstracts (as of July 2026). Matched studies show that receptor internalization can outweigh surface abundance, ligand density follows a non-monotonic relationship with delivery, and lipid chemistry and ligand presentation independently alter productive T-cell transfection. Preclinical models demonstrate transient CAR expression and target-cell depletion, whereas current human reports establish feasibility but not durable efficacy, a dose-response relationship, or the incidence of uncommon toxicities. We therefore distinguish administered dose, cell-resolved CAR-positive-cell exposure, and pharmacodynamic response, and propose their joint measurement as the basis for comparing platforms and selecting repeat-dose regimens.",
+      "date": "2026-Oct",
+      "doi": "10.3390/vaccines14110951",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43083781/",
+      "sowhat": "LNP-mRNA in vivo CAR-T delivery achieves functional CAR expression in patients, establishing manufacturability and scalable manufacturing advantages over ex vivo approaches."
     },
     {
       "source": "pubmed",
@@ -407,6 +421,20 @@
       "preprint": false,
       "url": "https://pubmed.ncbi.nlm.nih.gov/42995488/",
       "sowhat": "Abstract not available"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43082705",
+      "title": "Will In Vivo CAR T Cell Therapy Contribute to a More Effective Therapy for Solid Tumors?",
+      "journal": "Cells",
+      "authors": "Agostini M, Traldi P, Hamdan M",
+      "abstract": "Over the last decade, chimeric antigen receptor (CAR) T cell therapies have demonstrated notable success for the treatment of some aggressive hematological diseases such as lymphoma. However, the same success could not be replicated for solid tumors. This missing efficacy towards solid tumors is frequently linked to the extensive heterogeneity of tumor antigens and rather hostile and complex immunosuppressive tumor microenvironment. Unlike blood cancers where easy circulation facilitates strong interaction with CAR T therapy, such interaction in the case of solid tumors is hampered by poor infiltration, physical barriers in the tumor microenvironment, and limited expansion to solid tumor sites. As well as these intrinsic characteristics of solid tumors, the complex manufacturing process, high production costs, and challenges in quality control and risk management of ex vivo CAR T are behind the increasing role of in vivo CAR T cell therapy. This emerging approach is based on the use of in vivo engineering, using lipid nanoparticles and viral victor platforms. Early results suggest that the use of both platforms is likely to address a number of important limitations associated with ex vivo CAR T. Data furnished by clinical, pharmaceutical, and academic research have put in focus the central role of the tumor microenvironment in solid tumor resistance to most existing therapeutic modalities, including cell therapy. The same research findings underline the need for more innovation to enhance the therapeutic performance of chimeric antigen receptor (CAR) T cell therapies. Such innovation implies more versatile CAR constructs, and more efficient, simpler, and more economic production of engineered T cells, which is likely to be realized through wider application of the in vivo approach.",
+      "date": "2026-Nov",
+      "doi": "10.3390/cells15222043",
+      "conference": null,
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43082705/",
+      "sowhat": "In vivo CAR-T approach addresses solid tumor barriers: infiltration, expansion, and immunosuppressive microenvironment limitations."
     },
     {
       "source": "pubmed",
