@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-25T17:28:41.228549+00:00",
-  "count": 172,
+  "fetched_at": "2026-11-26T16:30:44.610981+00:00",
+  "count": 179,
   "publications": [
     {
       "source": "pubmed",
@@ -260,6 +260,51 @@
     {
       "source": "biorxiv",
       "pmid": null,
+      "title": "A stop codon shared by all Gyps vultures, including the three Critically Endangered species of South Asia, lies in a coding exon of the bird gene CYP2C45",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Das, C., Sinha, K.",
+      "abstract": "Veterinary diclofenac devastated three South Asian Gyps vultures, but the basis of their sensitivity is unclear. A stop codon reported in a Cape vulture P450 gene, described as CYP2C19 in a retained intron, was re-examined with public data: 45 genome assemblies, raw reads of seven Gyps birds and a liver transcriptome. The gene is the bird CYP2C45, without a one-to-one human orthologue. The stop (codon 338, CGA[-&gt;]TGA) lies in coding exon 7; the intron is spliced normally, the mRNA carries the stop, and the truncated protein lacks the haem-binding cysteine. The stop was found in all eight living Gyps species, homozygous wherever testable, and in none of 27 other raptors, including two killed by diclofenac. It arose once, 1.5-10.6 million years ago on the Gyps stem, and the gene has since evolved near-neutrally. This genus-wide loss marks Gyps vulnerability but cannot explain diclofenac deaths in other raptors.",
+      "date": "2026-11-23",
+      "doi": "10.64898/2026.11.22.768365",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.11.22.768365",
+      "sowhat": "Gyps vultures share a homozygous stop codon in CYP2C45, explaining diclofenac sensitivity but irrelevant to CAR-T development.",
+      "category": "Preclinical data"
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "VINCIT: A virus-incorporated biomaterial niche enables spatially controlled in vivo CAR T cell engineering",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Goodier, K. D., Zhu, Y., Wei, C., Jiang, Z., Jiang, Y. et al.",
+      "abstract": "In vivo generation of chimeric antigen receptor (CAR) T cells could bypass the complex manufacturing required for conventional cell therapies, but systemic gene delivery remains limited by off target exposure and inefficient access to target immune cells. Here, we develop VINCIT (Virus Incorporated Niche for Cellular ImmunoTherapy), an injectable nanofiber hydrogel composite that establishes a localized immune-engineering niche for CAR T cell generation in vivo. VINCIT spatially retains viral vectors while recruiting endogenous immune cells, enabling local transduction of T cells, after which the engineered T cells enter the circulation. VINCIT spatially confines transgene expression compared with intravenous viral delivery and markedly enhances T cell transduction compared with subcutaneously injected free virus. VINCIT is compatible with both adeno-associated and lentiviral vectors, and CAR T cells generated in vivo exhibit antigen-specific effector responses and mediate CD19+ B cell depletion. In a humanized mouse model of lymphoma, a single VINCIT administration produces sustained tumor control and extends median survival from 32 to 110 days. Mechanistically, efficient CAR T cell generation requires coordinated interactions among multiple immune populations, with neutrophil depletion markedly reducing cellular recruitment and subsequent T cell programming. These findings establish a localized biomaterial niche for spatially controlled in vivo immune cell engineering.",
+      "date": "2026-11-18",
+      "doi": "10.64898/2026.11.16.767176",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.11.16.767176",
+      "sowhat": "VINCIT enables localized in vivo CAR-T engineering, reducing off-target exposure while improving manufacturing efficiency.",
+      "category": "Manufacturing / process"
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "Development of lentiviral vectors specifically targeting CD4+ cells",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Cox, D., Almeida, N., Khan, H., Chanas, S., Marongiu, M. et al.",
+      "abstract": "Because of their central role in immunity, CD4+ T cells are a key target for genetic modification in many therapeutic applications, and lentiviral vectors with a VSV-G envelope are often used for this engineering. However, due to their broad tropism, these vectors are inadequate for cell-targeted in vivo gene delivery. Here, we explored using HIV-1 Env, which has a natural tropism towards these cells, as an alternative. We describe a three-plasmid vector production system to incorporate a panel of CCR5- or CXCR4-tropic Envs. These Env proteins are expressed from pCAG, a plasmid with reduced HIV-1 elements. We identify HIV-1 Env-incorporating vectors that can be produced with sufficient titres to specifically transduce primary CD4+ T cells in the context of in vitro mixed populations of peripheral blood mononuclear cells. We show efficient and specific transduction of HIV-1 Env vectors delivering an anti-CD19 chimeric antigen receptor (CAR). We demonstrate functional activity of the generated CD4+ CAR T cells, leading to the targeted killing of B cells in those mixed cell populations. Our methodology enables the production of HIV-1 Env-incorporating lentiviral vectors with defined CD4 targeted delivery, opening avenues for direct in vivo CAR T cell generation.",
+      "date": "2026-11-16",
+      "doi": "10.64898/2026.11.12.765936",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.11.12.765936",
+      "sowhat": "CD4-tropic lentiviral vectors enable selective in vivo CAR-T engineering without off-target transduction of bystander cells.",
+      "category": "Manufacturing / process"
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
       "title": "Single-AAV-mediated cardiomyocyte-specific adenine base editing ameliorates cardiac hypertrophy in vivo",
       "journal": "bioRxiv (preprint)",
       "authors": "Monnikhof, T., Han, S. J., Stumpo, L., Koshian, S., Agirman, C. et al.",
@@ -271,6 +316,21 @@
       "url": "https://doi.org/10.64898/2026.11.12.765297",
       "sowhat": "Abstract not available",
       "category": "Clinical data"
+    },
+    {
+      "source": "biorxiv",
+      "pmid": null,
+      "title": "LRPPRC gene replacement therapy preserves cardiac function and prevents premature death in a mouse model of mitochondrial disease",
+      "journal": "bioRxiv (preprint)",
+      "authors": "Zanin, S., Lager, F., Simon-Sola, M., Gaborit, C., Renault, G. et al.",
+      "abstract": "Pathogenic variants in LRPPRC disrupt mitochondrial gene expression, causing severe and incurable mitochondrial disease with neurological involvement accompanied by hepatopathy or cardiomyopathy. The development for gene therapy for LRPPRC-linked disease is hindered by the large LRPPRC coding sequence exceeding AAV cargo capacity when combined with classical regulatory elements. Here, we engineered compact single rAAV9 vectors expressing human or mouse LRPPRC and administered them intravenously to heart and skeletal muscle-specific Lrpprc knockout mice. This approach restored cardiac LRPPRC expression, preserved oxidative phosphorylation (OXPHOS) function, prevented cardiomyopathy and markedly extended survival. While skeletal muscle rescue was partial, the therapy effectively prevented fatal cardiac dysfunction. These findings provide the first in vivo proof-of-concept that AAV-mediated LRPPRC gene replacement can preserve OXPHOS function and prevent lethal cardiomyopathy, supporting its potential as a therapeutic strategy for mitochondrial disease linked to LRPPRC deficiency.",
+      "date": "2026-11-13",
+      "doi": "10.64898/2026.11.12.762002",
+      "mesh_terms": [],
+      "preprint": true,
+      "url": "https://doi.org/10.64898/2026.11.12.762002",
+      "sowhat": "AAV9-delivered LRPPRC gene therapy restores mitochondrial function and extends survival in cardiac disease models.",
+      "category": "Preclinical data"
     },
     {
       "source": "biorxiv",
@@ -526,6 +586,36 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42945966/",
       "sowhat": "Abstract not available",
       "category": "Preclinical data"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43090038",
+      "title": "CAR Macrophages in Brain Tumor Immunotherapy: Molecular Engineering Strategies and Emerging Frontiers.",
+      "journal": "Biomolecules",
+      "authors": "Ou H, Yun J, Han Y, Li Y, Ran Y et al.",
+      "abstract": "The CNS is partly shielded from immune attack, which allows tumor cells to escape many conventional therapies, including CAR-T. CAR-M therapy is an alternative approach that exploits the ability of myeloid cells to enter the CNS, engulf tumor cells, and shift the immunosuppressive microenvironment. This review focuses on molecular engineering principles for next-generation CAR-M constructs, including signaling domain selection, CD47-SIRPα checkpoint strategies, and gene delivery platforms for myeloid cells. We also discuss CNS-specific delivery routes and the multi-layered anti-tumor mechanisms of CAR-M, such as phagocytosis, TME remodeling, and innate-adaptive immune bridging. Combination strategies with checkpoint inhibitors, oncolytic viruses, and chemotherapy are analyzed, together with emerging approaches like SIGLEC9-based chimeric switch receptors, enucleated MSC-mediated in situ CAR-M generation, and circRNA-based CAR expression. We then address CNS-specific safety considerations and translational challenges.",
+      "date": "2026-11",
+      "doi": "10.3390/biom16111650",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43090038/",
+      "sowhat": "CAR-macrophages overcome CNS immune barriers where CAR-T fails through engineered phagocytosis and microenvironment remodeling.",
+      "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43082705",
+      "title": "Will In Vivo CAR T Cell Therapy Contribute to a More Effective Therapy for Solid Tumors?",
+      "journal": "Cells",
+      "authors": "Agostini M, Traldi P, Hamdan M",
+      "abstract": "Over the last decade, chimeric antigen receptor (CAR) T cell therapies have demonstrated notable success for the treatment of some aggressive hematological diseases such as lymphoma. However, the same success could not be replicated for solid tumors. This missing efficacy towards solid tumors is frequently linked to the extensive heterogeneity of tumor antigens and rather hostile and complex immunosuppressive tumor microenvironment. Unlike blood cancers where easy circulation facilitates strong interaction with CAR T therapy, such interaction in the case of solid tumors is hampered by poor infiltration, physical barriers in the tumor microenvironment, and limited expansion to solid tumor sites. As well as these intrinsic characteristics of solid tumors, the complex manufacturing process, high production costs, and challenges in quality control and risk management of ex vivo CAR T are behind the increasing role of in vivo CAR T cell therapy. This emerging approach is based on the use of in vivo engineering, using lipid nanoparticles and viral victor platforms. Early results suggest that the use of both platforms is likely to address a number of important limitations associated with ex vivo CAR T. Data furnished by clinical, pharmaceutical, and academic research have put in focus the central role of the tumor microenvironment in solid tumor resistance to most existing therapeutic modalities, including cell therapy. The same research findings underline the need for more innovation to enhance the therapeutic performance of chimeric antigen receptor (CAR) T cell therapies. Such innovation implies more versatile CAR constructs, and more efficient, simpler, and more economic production of engineered T cells, which is likely to be realized through wider application of the in vivo approach.",
+      "date": "2026-11",
+      "doi": "10.3389/fimmu.2025.1658580",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43082705/",
+      "sowhat": "In vivo CAR-T manufacturing could overcome solid tumor barriers of infiltration, immunosuppression, and poor expansion.",
+      "category": "Review article"
     },
     {
       "source": "biorxiv",
@@ -841,6 +931,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42926674/",
       "sowhat": "Abstract not available",
       "category": "Clinical data"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43083781",
+      "title": "From mRNA Vaccines to In Vivo CAR-T Therapy: RNA-LNP Design and the Pharmacology of CAR-Positive Cells.",
+      "journal": "Vaccines",
+      "authors": "Wang Y, Yu L, Ma X, Ma L, Yang Y et al.",
+      "abstract": "mRNA vaccines established scalable manufacturing and lipid nanoparticle (LNP) delivery for sequence-defined, non-integrating RNA medicines. In vivo CAR-T therapy repurposes this platform to generate CAR-positive lymphocytes after intravenous dosing, but its active product is a time-varying cell population rather than the injected RNA mass. This review critically examines the pharmacological sequence from biodistribution and cell-specific uptake to cytosolic RNA release, surface CAR expression, effector function, and disease response. The evidence comprises primary human T cells, mice, humanized mice, non-human primates, and 11 patients described in one correspondence and two meeting abstracts (as of July 2026). Matched studies show that receptor internalization can outweigh surface abundance, ligand density follows a non-monotonic relationship with delivery, and lipid chemistry and ligand presentation independently alter productive T-cell transfection. Preclinical models demonstrate transient CAR expression and target-cell depletion, whereas current human reports establish feasibility but not durable efficacy, a dose-response relationship, or the incidence of uncommon toxicities. We therefore distinguish administered dose, cell-resolved CAR-positive-cell exposure, and pharmacodynamic response, and propose their joint measurement as the basis for comparing platforms and selecting repeat-dose regimens.",
+      "date": "2026-10",
+      "doi": "10.1038/s41568-022-00491-0",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43083781/",
+      "sowhat": "In vivo CAR-T via mRNA-LNP requires understanding cell pharmacology beyond RNA delivery to optimize clinical efficacy.",
+      "category": "Review article"
     },
     {
       "source": "biorxiv",
