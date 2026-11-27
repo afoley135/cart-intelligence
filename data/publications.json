@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-26T16:30:44.610981+00:00",
-  "count": 179,
+  "fetched_at": "2026-11-27T16:44:21.869778+00:00",
+  "count": 180,
   "publications": [
     {
       "source": "pubmed",
@@ -256,6 +256,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42854615/",
       "sowhat": "Abstract not available",
       "category": "Preclinical data"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "42962824",
+      "title": "In vivo chimeric antigen receptor T cell therapy: From mechanistic innovation to clinical translation.",
+      "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+      "authors": "Ren Y, Lin H, Wei J",
+      "abstract": "Conventional ex vivo chimeric antigen receptor (CAR) T cell therapy is limited by cumbersome manufacturing workflows, prohibitive costs and various treatment-related risks. In vivo CAR-T technology directly generates engineered cells within patients, conferring distinct advantages in operational simplicity, biosafety and clinical accessibility. This review systematically evaluates existing delivery platforms and classifies in vivo CAR-T into two core paradigms: persistent engineering and transient reprogramming, each featuring distinct properties tailored to different clinical indications. It further summarizes preclinical advances and clinical data covering hematological malignancies, solid tumors, autoimmune disorders and organ fibrosis, in which numerous investigational candidates have exhibited encouraging efficacy. Ultimately, five translational barriers summarized as the 5S challenges (specificity, stability, safety, suppression and scalability) and their matched optimization tactics are comprehensively discussed. This review provides a clinician-oriented decision matrix that links carriers selection to disease biology, and a 5S optimization framework to guide next-generation vector design. Collectively, these insights establish a translational roadmap for customizing in vivo CAR-T design to specific clinical indications and take a critical step toward realizing the full therapeutic potential of this disruptive modality.",
+      "date": "2026-12",
+      "doi": "10.1016/j.jconrel.2026.115511",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42962824/",
+      "sowhat": "Abstract not available",
+      "category": "Review article"
     },
     {
       "source": "biorxiv",
@@ -618,6 +633,21 @@
       "category": "Review article"
     },
     {
+      "source": "pubmed",
+      "pmid": "43090038",
+      "title": "CAR Macrophages in Brain Tumor Immunotherapy: Molecular Engineering Strategies and Emerging Frontiers.",
+      "journal": "Biomolecules",
+      "authors": "Ou H, Yun J, Han Y, Li Y, Ran Y et al.",
+      "abstract": "The CNS is partly shielded from immune attack, which allows tumor cells to escape many conventional therapies, including CAR-T. CAR-M therapy is an alternative approach that exploits the ability of myeloid cells to enter the CNS, engulf tumor cells, and shift the immunosuppressive microenvironment. This review focuses on molecular engineering principles for next-generation CAR-M constructs, including signaling domain selection, CD47-SIRPα checkpoint strategies, and gene delivery platforms for myeloid cells. We also discuss CNS-specific delivery routes and the multi-layered anti-tumor mechanisms of CAR-M, such as phagocytosis, TME remodeling, and innate-adaptive immune bridging. Combination strategies with checkpoint inhibitors, oncolytic viruses, and chemotherapy are analyzed, together with emerging approaches like SIGLEC9-based chimeric switch receptors, enucleated MSC-mediated in situ CAR-M generation, and circRNA-based CAR expression. We then address CNS-specific safety considerations and translational challenges.",
+      "date": "2026-11",
+      "doi": "10.1038/s41434-025-00534-9",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43090038/",
+      "sowhat": "CAR-macrophages overcome CNS immune barriers where CAR-T fails, via engineered phagocytosis and microenvironment remodeling.",
+      "category": "Review article"
+    },
+    {
       "source": "biorxiv",
       "pmid": null,
       "title": "PINPOINT enables non-destructive nanoscopic quality control of individual lipid nanoparticles and their mRNA cargo",
@@ -901,21 +931,6 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42940171/",
       "sowhat": "Abstract not available",
       "category": "Clinical data"
-    },
-    {
-      "source": "pubmed",
-      "pmid": "42962824",
-      "title": "In vivo chimeric antigen receptor T cell therapy: From mechanistic innovation to clinical translation.",
-      "journal": "Journal of controlled release : official journal of the Controlled Release Society",
-      "authors": "Ren Y, Lin H, Wei J",
-      "abstract": "Conventional ex vivo chimeric antigen receptor (CAR) T cell therapy is limited by cumbersome manufacturing workflows, prohibitive costs and various treatment-related risks. In vivo CAR-T technology directly generates engineered cells within patients, conferring distinct advantages in operational simplicity, biosafety and clinical accessibility. This review systematically evaluates existing delivery platforms and classifies in vivo CAR-T into two core paradigms: persistent engineering and transient reprogramming, each featuring distinct properties tailored to different clinical indications. It further summarizes preclinical advances and clinical data covering hematological malignancies, solid tumors, autoimmune disorders and organ fibrosis, in which numerous investigational candidates have exhibited encouraging efficacy. Ultimately, five translational barriers summarized as the 5S challenges (specificity, stability, safety, suppression and scalability) and their matched optimization tactics are comprehensively discussed. This review provides a clinician-oriented decision matrix that links carriers selection to disease biology, and a 5S optimization framework to guide next-generation vector design. Collectively, these insights establish a translational roadmap for customizing in vivo CAR-T design to specific clinical indications and take a critical step toward realizing the full therapeutic potential of this disruptive modality.",
-      "date": "2026-10",
-      "doi": "10.1016/j.jconrel.2026.115511",
-      "mesh_terms": [],
-      "preprint": false,
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42962824/",
-      "sowhat": "Abstract not available",
-      "category": "Review article"
     },
     {
       "source": "pubmed",
