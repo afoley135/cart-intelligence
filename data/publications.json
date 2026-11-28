@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-27T16:44:21.869778+00:00",
-  "count": 180,
+  "fetched_at": "2026-11-28T15:18:34.693564+00:00",
+  "count": 181,
   "publications": [
     {
       "source": "pubmed",
@@ -290,21 +290,6 @@
     {
       "source": "biorxiv",
       "pmid": null,
-      "title": "VINCIT: A virus-incorporated biomaterial niche enables spatially controlled in vivo CAR T cell engineering",
-      "journal": "bioRxiv (preprint)",
-      "authors": "Goodier, K. D., Zhu, Y., Wei, C., Jiang, Z., Jiang, Y. et al.",
-      "abstract": "In vivo generation of chimeric antigen receptor (CAR) T cells could bypass the complex manufacturing required for conventional cell therapies, but systemic gene delivery remains limited by off target exposure and inefficient access to target immune cells. Here, we develop VINCIT (Virus Incorporated Niche for Cellular ImmunoTherapy), an injectable nanofiber hydrogel composite that establishes a localized immune-engineering niche for CAR T cell generation in vivo. VINCIT spatially retains viral vectors while recruiting endogenous immune cells, enabling local transduction of T cells, after which the engineered T cells enter the circulation. VINCIT spatially confines transgene expression compared with intravenous viral delivery and markedly enhances T cell transduction compared with subcutaneously injected free virus. VINCIT is compatible with both adeno-associated and lentiviral vectors, and CAR T cells generated in vivo exhibit antigen-specific effector responses and mediate CD19+ B cell depletion. In a humanized mouse model of lymphoma, a single VINCIT administration produces sustained tumor control and extends median survival from 32 to 110 days. Mechanistically, efficient CAR T cell generation requires coordinated interactions among multiple immune populations, with neutrophil depletion markedly reducing cellular recruitment and subsequent T cell programming. These findings establish a localized biomaterial niche for spatially controlled in vivo immune cell engineering.",
-      "date": "2026-11-18",
-      "doi": "10.64898/2026.11.16.767176",
-      "mesh_terms": [],
-      "preprint": true,
-      "url": "https://doi.org/10.64898/2026.11.16.767176",
-      "sowhat": "VINCIT enables localized in vivo CAR-T engineering, reducing off-target exposure while improving manufacturing efficiency.",
-      "category": "Manufacturing / process"
-    },
-    {
-      "source": "biorxiv",
-      "pmid": null,
       "title": "Development of lentiviral vectors specifically targeting CD4+ cells",
       "journal": "bioRxiv (preprint)",
       "authors": "Cox, D., Almeida, N., Khan, H., Chanas, S., Marongiu, M. et al.",
@@ -391,6 +376,21 @@
       "url": "https://doi.org/10.64898/2026.10.30.763005",
       "sowhat": "Abstract not available",
       "category": "Clinical data"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43100566",
+      "title": "VINCIT: A virus-incorporated biomaterial niche enables spatially controlled in vivo CAR T cell engineering.",
+      "journal": "bioRxiv : the preprint server for biology",
+      "authors": "Goodier KD, Zhu Y, Wei C, Jiang Z, Jiang Y et al.",
+      "abstract": "In vivo generation of chimeric antigen receptor (CAR) T cells could bypass the complex manufacturing required for conventional cell therapies, but systemic gene delivery remains limited by off-target exposure and inefficient access to target immune cells. Here, we develop VINCIT (Virus-Incorporated Niche for Cellular ImmunoTherapy), an injectable nanofiber-hydrogel composite that establishes a localized immune-engineering niche for CAR T cell generation in vivo. VINCIT spatially retains viral vectors while recruiting endogenous immune cells, enabling local transduction of T cells, after which the engineered T cells enter the circulation. VINCIT spatially confines transgene expression compared with intravenous viral delivery and markedly enhances T cell transduction compared with subcutaneously injected free virus. VINCIT is compatible with both adeno-associated and lentiviral vectors, and CAR T cells generated in vivo exhibit antigen-specific effector responses and mediate CD19 + B cell depletion. In a humanized mouse model of lymphoma, a single VINCIT administration produces sustained tumor control and extends median survival from 32 to 110 days. Mechanistically, efficient CAR T cell generation requires coordinated interactions among multiple immune populations, with neutrophil depletion markedly reducing cellular recruitment and subsequent T cell programming. These findings establish a localized biomaterial niche for spatially controlled in vivo immune cell engineering.",
+      "date": "2026-11",
+      "doi": "10.64898/2026.11.16.767176",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43100566/",
+      "sowhat": "VINCIT enables localized in vivo CAR-T engineering, reducing off-target exposure while improving manufacturing efficiency.",
+      "category": "Manufacturing / process"
     },
     {
       "source": "pubmed",
@@ -646,6 +646,21 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/43090038/",
       "sowhat": "CAR-macrophages overcome CNS immune barriers where CAR-T fails, via engineered phagocytosis and microenvironment remodeling.",
       "category": "Review article"
+    },
+    {
+      "source": "pubmed",
+      "pmid": "43098692",
+      "title": "Simplified manufacturing workflow for leukapheresis-free CAR-T cell production.",
+      "journal": "Journal for immunotherapy of cancer",
+      "authors": "Giannaki M, Latrovali EI, Paschoudi K, Mavrikou I, Vallianou I et al.",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has transformed the treatment of B-cell malignancies; however, its broader implementation remains challenged by centralized, leukapheresis-dependent manufacturing, prolonged production timelines, high costs, and access constraints. As CAR-T therapies expand toward earlier lines of treatment and additional indications, there is a growing need for simplified and decentralized manufacturing platforms that can reduce critical time to treatment and broaden patient access.",
+      "date": "2026-11",
+      "doi": "10.1038/s41591-023-02480-8",
+      "mesh_terms": [],
+      "preprint": false,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43098692/",
+      "sowhat": "Leukapheresis-free CAR-T manufacturing enables decentralized production, faster treatment timelines, and expanded patient access beyond current centralized constraints.",
+      "category": "Manufacturing / process"
     },
     {
       "source": "biorxiv",
